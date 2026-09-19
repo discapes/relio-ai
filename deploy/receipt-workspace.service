@@ -1,5 +1,5 @@
 [Unit]
-Description=RELEX solution 3 starter
+Description=Receipt RELEX project memory
 After=network.target
 
 [Service]
@@ -9,6 +9,7 @@ ExecStart=/usr/bin/env node --env-file-if-exists=.env scripts/start.mjs
 Environment=NODE_ENV=production
 Environment=HOST=127.0.0.1
 Environment=PORT=34342
+Environment=ORIGIN=https://receipt-workspace.hai1.iffe.eu
 Restart=on-failure
 RestartSec=3
 
