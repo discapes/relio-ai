@@ -1,0 +1,43 @@
+{
+	"name": "relex-solution-3",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev --host 127.0.0.1 --port 34342 --strictPort",
+		"build": "vite build",
+		"preview": "vite preview --host 127.0.0.1 --port 34342 --strictPort",
+		"prepare": "svelte-kit sync",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "npm run check -- --watch",
+		"start": "node --env-file-if-exists=.env scripts/start.mjs",
+		"test": "tsx --test tests/*.test.ts",
+		"test:e2e": "playwright test",
+		"format": "prettier --write .",
+		"format:check": "prettier --check .",
+		"screenshots": "node scripts/screenshots.mjs"
+	},
+	"devDependencies": {
+		"@axe-core/playwright": "^4.13.0",
+		"@playwright/test": "^1.63.0",
+		"@sveltejs/kit": "^2.63.0",
+		"@sveltejs/vite-plugin-svelte": "^7.1.2",
+		"@types/node": "^26.6.1",
+		"prettier": "^3.9.8",
+		"prettier-plugin-svelte": "^4.1.1",
+		"svelte": "^5.56.1",
+		"svelte-check": "^4.6.0",
+		"tsx": "^4.23.13",
+		"typescript": "^6.0.3",
+		"vite": "^8.0.16"
+	},
+	"dependencies": {
+		"@fontsource-variable/dm-sans": "^5.3.0",
+		"@fontsource-variable/manrope": "^5.3.0",
+		"@lucide/svelte": "^1.47.0",
+		"@sveltejs/adapter-node": "^5.5.7"
+	},
+	"engines": {
+		"node": ">=24.18.0"
+	}
+}
