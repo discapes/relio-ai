@@ -1,0 +1,16 @@
+[Unit]
+Description=RELEX solution 3 starter
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/user/aaltoai/challenges/relex/solution_3
+ExecStart=/usr/bin/env node --env-file-if-exists=.env scripts/start.mjs
+Environment=NODE_ENV=production
+Environment=HOST=127.0.0.1
+Environment=PORT=34342
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target
