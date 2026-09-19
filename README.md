@@ -1,37 +1,58 @@
-# Solution 3
+# Receipt
 
-A blank SvelteKit + TypeScript starter with the shared RELEX/Elisa tooling and Signal Room color palette. The home page renders no visible content. Components and styles remain available but are not mounted. There are no demo or settings routes, and loading the page does not open SQLite.
+Receipt gives RELEX employees a prepared Acme project briefing, a private assistant and shared project memory with source receipts. The email demonstration represents the employee's Outlook: adding the visible project agent in To/Cc delivers a message into shared memory and lets the agent decide whether a reply would help.
+
+Application: https://receipt-workspace.hai1.iffe.eu · fixed port **34342**.
 
 ## Run
 
-Requires Node 24.18+ and npm.
+Requires Node 24.18+, the parsed sibling repository `../corpus_parsed/acme`, and the Helsinki inference endpoint at `http://127.0.0.1:8000/v1` with `glm-5.3-flash`.
 
 ```sh
-npm ci
-cp .env.example .env
-npm run dev
+npm install
+npm run build
+npm start
 ```
 
-Open http://127.0.0.1:34342. Production: `npm run build && npm start`. Fixed port: **34342**.
+`DATA_DIR` defaults to `./data`. `CORPUS_DIR`, `INFERENCE_URL`, `INFERENCE_MODEL`, `HOST`, `PORT` and `ORIGIN` can be set in `.env`. Keep the inference URL on the approved Helsinki infrastructure. Port 8000 is the existing SSH forward; this application does not manage it.
 
-## Available foundations
+Prepare reusable role-specific briefs and model-derived memory before a presentation:
 
-Svelte 5, SvelteKit 2, TypeScript, Vite, Node adapter, SQLite helper, local DM Sans and Manrope fonts, Lucide icons, Signal Room CSS, and unused Card, Badge and Dialog components. The SQLite helper and its validation/persistence test are retained for future use; no route calls it.
+```sh
+DISABLE_BACKGROUND=1 npx tsx scripts/prepare.mts
+```
 
-## Verify
+Preparation uses full permitted source text and publishes verified batches. New browser workspaces copy the prepared baseline at their level. Personal preferences and later email updates trigger their own persisted refresh jobs. Failed jobs expose retry controls. A daily refresh runs after 06:00 Europe/Helsinki while the service is running.
+
+## Use
+
+Start on My workspace. Inspect a source receipt, save a followed topic or ask an arbitrary project question. Project memory provides full-archive search, a claim list and a graph connecting claims to supporting records. People provides attributed source records, generated stakeholder guidance and authorised deletion.
+
+Email demo is a simulator with editable recipients and message content. Use the bakery scheduling example to add knowledge or the UAT example to demonstrate a useful intervention. Messages without the project agent stay in the employee's simulated mailbox. Model processing is visible and can continue while you navigate.
+
+Demo controls switch the simulated employee/access level. Ana has L3 and erasure rights; Marco has L2; Nadia has L1; the colleague persona belongs to another project. These controls represent the production identity-provider boundary. Each browser has an isolated persisted workspace. Starting a fresh demo creates a separate workspace and preserves the old one.
+
+## Checks
 
 ```sh
 npm run check
 npm test
-npx playwright install chromium
+npm run build
 npm run test:e2e
-npm run format:check
 ```
 
-Browser tests build and start their own server on 34342; stop any running app first. The browser smoke test checks the blank page. Playwright and axe remain installed for future workflows. Start the app and run `npm run screenshots` for desktop/mobile captures.
+Browser tests own port 34342 and use isolated test data with inference jobs disabled. To test an already running server, set `PLAYWRIGHT_BASE_URL`; this uses the server's configured data. Live evaluation is separate:
+
+```sh
+DISABLE_BACKGROUND=1 npx tsx scripts/evaluate-practice.ts
+```
+
+The nine practice questions are checked against independent references in `docs/practice_reference.md`. `docs/VALIDATION.md` records actual outcomes, failures and limitations.
 
 ## Operations
 
-The app runs directly on the host. `deploy/relex-solution-3.service` is an optional systemd user service template, not installed automatically. Ensure Node is on its PATH. For public hosting, configure Caddy separately and set `ORIGIN` to the public HTTPS origin and `HOST` to an interface reachable by the proxy. No public route is configured.
+The systemd user unit is `receipt-workspace.service` and runs Node on the host. Source configuration is in `deploy/receipt-workspace.service`. Use `systemctl --user status receipt-workspace`, `systemctl --user restart receipt-workspace`, and `journalctl --user -u receipt-workspace -n 100` for operations. SQLite state is in `data/app.sqlite`; preserve this directory across deployment.
 
-The retained database helper uses `DATA_DIR` (default `data/`) if called. Runtime data is ignored by Git.
+Interrupted running jobs become visible failed jobs on restart; queued jobs resume when the application is opened. Retry a failed brief/extraction from the workspace or a failed email from its thread. A model outage leaves previous valid dated briefs available. Inference-generated prose can still need correction; source receipts and the full archive remain available for inspection.
+
+See `docs/SOLUTION.md`, `docs/DESIGN.md`, `docs/PITCH.md` and `docs/demo_scenarios.md` for architecture, submission design and the demonstration.
