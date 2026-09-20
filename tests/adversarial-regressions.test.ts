@@ -150,7 +150,12 @@ test('delivered evidence and daily refresh update every existing employee access
 		];
 		assert.deepEqual(queued(), expected);
 		database().prepare('DELETE FROM wf_jobs WHERE workspace_id=?').run(workspace);
-		await wf.scheduledRefresh(new Date('2026-09-20T10:00:00Z'));
+		process.env.ENABLE_SCHEDULED_REFRESH = '1';
+		try {
+			await wf.scheduledRefresh(new Date('2026-09-20T10:00:00Z'));
+		} finally {
+			delete process.env.ENABLE_SCHEDULED_REFRESH;
+		}
 		assert.deepEqual(queued(), expected);
 	} finally {
 		globalThis.fetch = originalFetch;

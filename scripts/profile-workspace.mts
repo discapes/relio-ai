@@ -20,7 +20,6 @@ try {
 				workflows.prepareWorkspace(ctx);
 				const people = memory.people(ctx);
 				const fingerprint = workflows.guidanceFingerprint(ctx);
-				workflows.ensurePeopleGuidance(ctx, people, fingerprint);
 				return {
 					...workflows.workspaceData(ctx, people),
 					personGuidance: workflows.preparedGuidance(ctx, 'charlotte-meyer', {

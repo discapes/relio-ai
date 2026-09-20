@@ -24,7 +24,7 @@ Prepare reusable role-specific briefs and model-derived memory before a presenta
 DISABLE_BACKGROUND=1 npx tsx scripts/prepare.mts
 ```
 
-Preparation uses full permitted source text and publishes verified batches. New browser workspaces copy the prepared baseline at their level. Personal preferences and later email updates trigger their own persisted refresh jobs. Failed jobs expose retry controls. A daily refresh runs after 06:00 Europe/Helsinki while the service is running.
+Preparation uses full permitted source text and publishes verified batches. New browser workspaces copy the prepared baseline at their level. Personal preferences and later email updates trigger their own persisted refresh jobs. Failed jobs expose retry controls. Daily refresh after 06:00 Europe/Helsinki is available with `ENABLE_SCHEDULED_REFRESH=1`; it is disabled in the demo.
 
 ## Use
 

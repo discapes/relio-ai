@@ -349,7 +349,9 @@
 <div class="app-shell">
 	<aside class="sidebar" aria-label="Workspace navigation">
 		<a class="brand" href="/" aria-label="Relio workspace"
-			><img class="brand-symbol" src={relexSymbol} width="32" height="32" alt="" /><span class="brand-wordmark">Relio</span></a
+			><img class="brand-symbol" src={relexSymbol} width="32" height="32" alt="" /><span
+				class="brand-wordmark">Relio</span
+			></a
 		>
 		<div class="workspace">
 			<span class="workspace-logo">A</span>
@@ -966,7 +968,8 @@
 										people={data.people}
 										answer={data.personGuidance}
 									/>{:else}<p class="subtle" role="status">
-										Preparing guidance for this project view…
+										No prepared guidance matches the current project evidence. Ask your project for
+										an updated brief.
 									</p>{/if}
 								<h3 class="section-subheading">Source connections</h3>
 								{#each person.sourceIds.slice(0, 8) as id}{@const s = data.sources.find(

@@ -210,16 +210,31 @@ export function preparedGuidance(
 	)
 		return null;
 	const fingerprint = snapshot?.fingerprint ?? guidanceFingerprint(ctx);
-	// Baseline reuse requires identical evidence and private context; erased workspaces never read it.
-	const workspaces = ctx.epoch === 0 ? [ctx.workspaceId, 'prepared-baseline'] : [ctx.workspaceId];
-	for (const workspace of workspaces) {
+	const lookup = (workspace: string, key: string): Answer | null => {
 		const row = db()
 			.prepare(
 				'SELECT payload FROM wf_people_guidance WHERE workspace_id=? AND project_id=? AND owner=? AND level=? AND epoch=? AND person_id=? AND fingerprint=?'
 			)
-			.get(workspace, ctx.projectId, ctx.persona.id, ctx.level, ctx.epoch, personId, fingerprint);
-		if (row) return JSON.parse(String(row.payload));
-	}
+			.get(workspace, ctx.projectId, ctx.persona.id, ctx.level, ctx.epoch, personId, key);
+		return row ? JSON.parse(String(row.payload)) : null;
+	};
+	const personal = lookup(ctx.workspaceId, fingerprint);
+	if (personal) return personal;
+	if (ctx.epoch !== 0 || ctx.workspaceId === 'prepared-baseline') return null;
+	const baseline = memory.context('prepared-baseline', ctx.persona.id, ctx.level);
+	const projectEvidence = (scope: Context) =>
+		JSON.stringify({
+			project: scope.projectId,
+			owner: scope.persona.id,
+			role: scope.persona.role,
+			name: scope.persona.name,
+			level: scope.level,
+			sources: memory.sources(scope)
+		});
+	// Archive guidance remains useful after private chat or preferences change.
+	// Reuse is confined to the same employee, access level and exact project evidence.
+	if (projectEvidence(ctx) === projectEvidence(baseline))
+		return lookup(baseline.workspaceId, guidanceFingerprint(baseline));
 	return null;
 }
 const preparingGuidance = new Map<string, Promise<Answer>>();
@@ -282,46 +297,6 @@ export function registerGuidancePreparation(ctx: Context) {
 }
 export function finishGuidancePreparation() {
 	db().prepare('DELETE FROM wf_guidance_preparations WHERE worker_pid=?').run(process.pid);
-}
-function preparationRunning(ctx: Context, fingerprint: string) {
-	const rows = db()
-		.prepare(
-			'SELECT workspace_id,worker_pid FROM wf_guidance_preparations WHERE owner=? AND level=? AND fingerprint=?'
-		)
-		.all(ctx.persona.id, ctx.level, fingerprint);
-	return rows.some((row) => {
-		if (
-			row.workspace_id !== ctx.workspaceId &&
-			!(ctx.epoch === 0 && row.workspace_id === 'prepared-baseline')
-		)
-			return false;
-		try {
-			process.kill(Number(row.worker_pid), 0);
-			return true;
-		} catch {
-			return false;
-		}
-	});
-}
-export function ensurePeopleGuidance(
-	ctx: Context,
-	people = memory.people(ctx),
-	fingerprint = guidanceFingerprint(ctx)
-) {
-	if (preparationRunning(ctx, fingerprint)) return;
-	const snapshot = { fingerprint, personIds: new Set(people.map((p) => p.id)) };
-	for (const person of people) {
-		if (preparedGuidance(ctx, person.id, snapshot)) continue;
-		const kind = `guidance:L${ctx.level}:${person.id}:${fingerprint.slice(0, 16)}`;
-		const prior = db()
-			.prepare('SELECT status,error FROM wf_jobs WHERE workspace_id=? AND owner=? AND kind=?')
-			.get(ctx.workspaceId, ctx.persona.id, kind);
-		if (
-			!prior ||
-			(prior.status === 'failed' && String(prior.error).includes('Application restarted'))
-		)
-			queueJob(ctx, kind, { personId: person.id });
-	}
 }
 export function preferences(ctx: Context): Preference[] {
 	return db()
@@ -1409,20 +1384,6 @@ export function workspaceData(ctx: Context, personList = memory.people(ctx)): Wo
 export function prepareWorkspace(ctx: Context) {
 	db();
 	seedPrepared(ctx);
-	if (
-		!artifacts(ctx, 'brief').some((answer) => answer.level === ctx.level) &&
-		!db()
-			.prepare('SELECT id FROM wf_jobs WHERE workspace_id=? AND owner=? AND kind=?')
-			.get(ctx.workspaceId, ctx.persona.id, `brief:L${ctx.level}`)
-	)
-		queueJob(ctx, 'brief');
-	if (
-		!memory.claims(ctx).some((c) => c.level === ctx.level) &&
-		!db()
-			.prepare('SELECT id FROM wf_jobs WHERE workspace_id=? AND owner=? AND kind=?')
-			.get(ctx.workspaceId, ctx.persona.id, `extract:L${ctx.level}`)
-	)
-		queueJob(ctx, 'extract');
 	schedulePump();
 }
 
@@ -1453,6 +1414,7 @@ function seedPrepared(ctx: Context) {
 		);
 }
 export async function scheduledRefresh(at = new Date()) {
+	if (process.env.ENABLE_SCHEDULED_REFRESH !== '1') return;
 	const clock = new Intl.DateTimeFormat('en-CA', {
 		timeZone: 'Europe/Helsinki',
 		year: 'numeric',
