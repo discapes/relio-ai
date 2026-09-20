@@ -16,6 +16,8 @@ docs/ADVERSARIAL_REVIEW.md Independent whole-product findings and bounded retest
 docs/ADVERSARIAL_TRIAGE.md Finding decisions, fixes, regressions and remaining boundaries; internal only.
 src/lib/server/reviewer.ts Reviewer-facing design, usage, architecture and scoped practice references.
 src/lib/components/GuideArticle.svelte Same-shell prose, responsive evidence tables and source links for reviewer pages.
+src/lib/components/ExtendedSlides.svelte Responsive native PDF viewer with Open PDF and Download links at /?view=slides.
+static/relio_pitch.pdf User-supplied extended pitch deck, copied verbatim from artifacts/relio_pitch.pdf; orig: relio_pitch.pdf.
 docs/DESIGN.md One-page reviewer design covering provenance, stale facts, deletion and inference location.
 docs/HOW_TO_USE.md Product walkthrough and how to inspect evidence, scope and erasure.
 docs/HOW_IT_WORKS.md Data flow, answer preparation, personal memory, access, updates and operating boundaries.
