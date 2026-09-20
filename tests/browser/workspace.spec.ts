@@ -6,7 +6,9 @@ test('workspace, memory, source viewer and simulator form one navigable product'
 }) => {
 	await page.goto('/', { waitUntil: 'networkidle' });
 	await expect(page.getByRole('heading', { name: 'Good morning, Ana.' })).toBeVisible();
-	await expect(page.getByRole('heading', { name: 'Your morning brief' })).toBeVisible();
+	await expect(
+		page.getByRole('heading', { name: 'Your morning brief', exact: true })
+	).toBeVisible();
 	await page.getByRole('link', { name: 'Project memory' }).click();
 	await expect(page.getByRole('heading', { name: 'Project memory', exact: true })).toBeVisible();
 	const source = page.locator('a[href^="/source/"]').first();
@@ -132,7 +134,8 @@ test('reviewer pages stay in the sidebar, expose intended material and scope pra
 	});
 	expect(switched.ok()).toBe(true);
 	await page.goto('/?view=practice');
-	await expect(page.locator('article a[href^="/source/"]')).toHaveCount(0);
+	expect(await page.locator('article a[href^="/source/"]').count()).toBeGreaterThan(0);
+	await expect(page.getByText(/supporting evidence requires higher access/).first()).toBeVisible();
 	await page.goto('/?view=design');
 	await expect(page.getByRole('heading', { name: 'Design', level: 1, exact: true })).toBeVisible();
 	for (const path of [

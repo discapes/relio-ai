@@ -8,9 +8,11 @@ Preparation uses the original guidance task and verification pipeline. RELEX col
 
 `wf_people_guidance` retains completed answers under workspace, project, employee, access level, erasure epoch, person and a SHA-256 context fingerprint. The fingerprint includes the permitted source records and the exact private context used by the original guidance workflow. Navigation, restart and the passage of time do not change it. Source updates or personal-memory changes select a new context without deleting previous completed rows.
 
-The prepared baseline covers Ana at L1/L2/L3, Marco at L1/L2 and Nadia at L1: 18 people at L1, 18 at L2 and 20 at L3, totaling 110 guides. The app first selects an existing guide matching the employee's full project and private context. Otherwise, it uses that employee's prepared archive guide at the same access level, provided the project evidence matches exactly. Private chats and preferences do not invalidate this archive fallback. Opening People reads stored results and starts no inference. Changed or erased project evidence cannot reuse an incompatible baseline; Ask can produce a current brief when requested.
+The prepared baseline covers Ana at L1/L2/L3, Marco at L1/L2 and Nadia at L1: 18 people at L1, 18 at L2 and 20 at L3, totaling 110 guides. The app first selects an existing guide matching the employee's full project and private context. Otherwise, it can use a previous personal snapshot or that employee's prepared archive guide at the same access level. Each displayed citation must still quote surviving permitted evidence. Added sources preserve the prepared version, with a compact freshness note; private chats and preferences also preserve available guidance. Opening People starts no inference. Ask can produce current guidance when requested.
 
-Erasure removes prepared guidance only from the affected workspace, and its incremented epoch prevents any baseline reuse. A fresh-demo reset creates another workspace; it does not clear the earlier workspace or the baseline. The original erasure state remains intact.
+Erasure rechecks stored guidance and baseline-derived snapshots against the current workspace. Paragraphs containing a removed identity or withdrawn supporting quote disappear, and surviving citations are renumbered. Remaining local snapshots move to the new workspace epoch. Baseline records stay intact in their own workspace, and retrieval never copies withdrawn source material back. Unchanged supported claims and brief passages remain available. This uses displayed statement/support checks; it does not establish complete independence from every record in the original model context.
+
+A fresh-demo reset creates another workspace and leaves earlier workspaces and the baseline intact.
 
 ## Durable operation
 
@@ -36,13 +38,13 @@ All 13 answers completed before the first deployment retained their exact IDs af
 
 The final current-context read check completed at 08:30 UTC. Fresh workspace reads reused every baseline guide; the existing personalized Ana workspace also returned all 20 guides.
 
-| Employee/view | L1 | L2 | L3 | Total |
-| --- | ---: | ---: | ---: | ---: |
-| Ana baseline | 18 | 18 | 20 | 56 |
-| Marco baseline | 18 | 18 | — | 36 |
-| Nadia baseline | 18 | — | — | 18 |
-| Existing personalized Ana view | — | — | 20 | 20 |
-| Total | 54 | 36 | 40 | 130 |
+| Employee/view                  |  L1 |  L2 |  L3 | Total |
+| ------------------------------ | --: | --: | --: | ----: |
+| Ana baseline                   |  18 |  18 |  20 |    56 |
+| Marco baseline                 |  18 |  18 |   — |    36 |
+| Nadia baseline                 |  18 |   — |   — |    18 |
+| Existing personalized Ana view |   — |   — |  20 |    20 |
+| Total                          |  54 |  36 |  40 |   130 |
 
 All 130 requested guides are available, with zero missing profiles. The journal records 13 unsuccessful earlier attempts, resolved through resume. The later 43-guide phase completed without a failed profile. Four concurrent inference requests were used, with all slots assigned to Ana until her 76 variants were ready. The remaining persona scopes followed. Preparation workers have exited.
 
@@ -50,7 +52,7 @@ The final persistence check compared answer IDs from the journal with SQLite: al
 
 Fresh Chromium navigation on https://relio-ai.eu opened all 20 default Ana profiles, waited for each selected person's heading and stored guidance, and confirmed the old generation button was absent. Desktop and mobile captures are in `docs/screenshots/people-prepared-desktop.png` and `people-prepared-mobile.png`. Mobile had no horizontal overflow.
 
-The page loader now reuses one scoped person snapshot per request. End-to-end profile HTTP samples remained around 2.3 seconds, so this change has no claimed measured page-speed gain. It introduces no cross-request identity cache. Private chat activity keeps the matching archive guidance available. Source changes require an existing compatible guide or an explicit request through Ask.
+The page loader now reuses one scoped person snapshot per request. End-to-end profile HTTP samples remained around 2.3 seconds, so this change has no claimed measured page-speed gain. It introduces no cross-request identity cache. Private chat activity keeps the matching archive guidance available. Source changes keep a checked prepared snapshot with a freshness note; Ask can generate a current answer on request.
 
 ## Preparation trigger correction
 

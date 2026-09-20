@@ -87,7 +87,7 @@ test('private chat keeps prepared archive guidance available without starting pr
 	assert.equal(wf.preparedGuidance(ctx, person.id)?.id, 'prepared-lena');
 	assert.equal(wf.workspaceData(ctx).jobs.length, 0);
 });
-test('changed project evidence cannot silently reuse the original archive guidance', () => {
+test('new project evidence keeps the prepared snapshot with a freshness note and no jobs', () => {
 	const { person } = seed();
 	const ctx = memory.context('new-project-evidence', 'p1', 3);
 	memory.addSource(ctx, {
@@ -102,7 +102,8 @@ test('changed project evidence cannot silently reuse the original archive guidan
 		position: 'Message 1',
 		participants: ['Lena Fischer']
 	});
-	assert.equal(wf.preparedGuidance(ctx, person.id), null);
+	assert.equal(wf.preparedGuidance(ctx, person.id)?.id, 'prepared-lena');
+	assert.match(wf.preparedGuidance(ctx, person.id)?.snapshotNote ?? '', /latest project update/);
 	wf.prepareWorkspace(ctx);
 	assert.equal(wf.workspaceData(ctx).jobs.length, 0);
 });

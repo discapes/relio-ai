@@ -117,6 +117,34 @@ function suppressed(workspaceId: string, text: string) {
 export function isSuppressed(workspaceId: string, text: string) {
 	return suppressed(workspaceId, text);
 }
+// Suppression hashes let follow-up questions omit a removed identity without
+// keeping a plaintext alias list or sending the original name to inference.
+export function sanitizeErasedText(workspaceId: string, text: string): string {
+	const hashes = new Set(
+		db()
+			.prepare('SELECT token_hash FROM memory_suppression WHERE workspace_id=?')
+			.all(workspaceId)
+			.map((row) => String(row.token_hash))
+	);
+	const matches = [
+		...text.matchAll(/[\p{L}\p{N}._%+-]+@[\p{L}\p{N}.-]+\.[\p{L}]{2,}|[\p{L}\p{N}]+/gu)
+	];
+	const ranges: [number, number][] = [];
+	for (let i = 0; i < matches.length; i++) {
+		for (let n = Math.min(5, matches.length - i); n > 0; n--) {
+			const start = matches[i].index!;
+			const end = matches[i + n - 1].index! + matches[i + n - 1][0].length;
+			if (hashes.has(hash(workspaceId, tokens(text.slice(start, end)).join(' ')))) {
+				ranges.push([start, end]);
+				i += n - 1;
+				break;
+			}
+		}
+	}
+	for (const [start, end] of ranges.reverse())
+		text = text.slice(0, start) + 'the removed person' + text.slice(end);
+	return text;
+}
 interface Mailbox {
 	name: string;
 	email: string;
@@ -684,18 +712,29 @@ export function erasePerson(ctx: Context, id: string) {
 						.run(JSON.stringify(cleaned), ctx.workspaceId, source.id);
 			}
 		}
-		let artifacts = Number(
-			db()
-				.prepare('SELECT COUNT(*) AS n FROM memory_claims WHERE workspace_id=?')
-				.get(ctx.workspaceId)?.n ?? 0
-		);
-		// All interpretations are rebuilt after erasure; surviving primary evidence remains available.
-		db().prepare('DELETE FROM memory_claims WHERE workspace_id=?').run(ctx.workspaceId);
-		for (const hook of erasureHooks) artifacts += hook(ctx.workspaceId, aliases, changed);
 		for (const alias of aliases)
 			db()
 				.prepare('INSERT OR IGNORE INTO memory_suppression VALUES (?,?)')
 				.run(ctx.workspaceId, hash(ctx.workspaceId, tokens(alias).join(' ')));
+		let artifacts = 0;
+		const changedIds = new Set(changed);
+		for (const row of db()
+			.prepare('SELECT id,payload FROM memory_claims WHERE workspace_id=?')
+			.all(ctx.workspaceId)) {
+			const claim = JSON.parse(String(row.payload)) as Claim;
+			if (
+				suppressed(ctx.workspaceId, JSON.stringify(claim)) ||
+				claim.personIds?.includes(id) ||
+				!claim.sourceIds.length ||
+				claim.sourceIds.some((sourceId) => changedIds.has(sourceId))
+			) {
+				db()
+					.prepare('DELETE FROM memory_claims WHERE workspace_id=? AND id=?')
+					.run(ctx.workspaceId, String(row.id));
+				artifacts++;
+			}
+		}
+		for (const hook of erasureHooks) artifacts += hook(ctx.workspaceId, aliases, changed);
 		db().prepare('UPDATE memory_workspaces SET epoch=epoch+1 WHERE id=?').run(ctx.workspaceId);
 		const receipt = {
 			id: randomUUID(),

@@ -30,7 +30,8 @@ src/lib/people.ts Scoped recorded-name matching and email-evidenced organization
 src/lib/components/NameText.svelte Escaped name links to selected People profiles across sources, mail, claims and evidence.
 src/lib/presentation/citations.ts Inline reference tokens and document/passage grouping with original receipt numbers.
 src/lib/components/ Evidence presentation, Figtree PNG/text cards, status badges and source-connected knowledge graph.
-src/lib/components/ChatStream.svelte Ask progress, incremental provisional drafts, cancellation and checked final-answer handoff.
+src/lib/components/ChatStream.svelte Shared Ask and meeting-preparation progress, streamed drafts and checked final answers.
+src/lib/chat-session.svelte.ts Layout-owned browser chat state surviving ordinary navigation with workspace, access and erasure cancellation.
 src/lib/server/chat-activity.ts Request-scoped progress and cancellation, with detached background processing.
 src/routes/chat/stream/+server.ts Scoped, uncached NDJSON chat stream with session and epoch guards.
 docs/STREAMING.md Transport, provisional/final boundary, isolation checks and measured live timing.
@@ -55,5 +56,11 @@ docs/ Product architecture, demo scenarios, reviewed answers, raw evaluations, m
 scripts/quality-probe.mts Controlled original-question evaluations with preserved outputs.
 scripts/reverify-extraction.mts Document-balanced revalidation of captured model candidates.
 deploy/ Node systemd user service configuration.
+
+src/lib/server/answer-retention.ts Retains generated passages with surviving exact evidence and renumbers citations after erasure.
+src/lib/server/practice-guide.ts Filters reviewed Practice answer passages by current access and surviving evidence.
+docs/PRACTICE_EVIDENCE.json Reviewed Practice paragraph dependencies and source text hashes.
+docs/PROVENANCE_UX.md Snapshot freshness, selective erasure retention, reviewer sections and persistent Ask behavior with limitations.
+tests/provenance-retention.test.ts Independent statement retention, baseline reuse after erasure and sanitized deletion follow-ups.
 
 Run npm run check, npm test, npm run build and npm run test:e2e. Perform final desktop/mobile Chromium visual review after functional checks. Record actual live-model evidence and remaining limitations in docs/VALIDATION.md. Commit coherent phases and keep this file current.

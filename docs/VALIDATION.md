@@ -157,3 +157,11 @@ Prepared-guidance final result: 130/130 current-context guides were readable at 
 ## Page-load performance, 20 September
 
 Production release at 11:40 EEST includes normalized People discovery and synchronous scoped read reuse. All 80 deterministic tests passed, with the reviewer corpus-path check rerun after configuring the isolated checkout. All 13 browser workflows passed. Desktop and mobile Chromium review confirmed the supplied Charlotte profile and prepared evidence. See [performance measurements](PERFORMANCE.md) for isolated timings and the remaining variable live latency.
+
+## Provenance UX and meeting streaming, 20 September
+
+The deterministic suite passes 89 tests. Svelte checking reports zero errors and warnings. Nineteen Chromium workflows passed across an empty preparation fixture and a prepared-baseline fixture on isolated port 45937. The empty fixture exercises the truthful briefing action; the prepared fixture exercises existing graph, guidance and navigation behavior. Follow-up runs verified the hydration and navigation timing correction for Switch view. Meeting preparation uses the same provisional stream, verification boundary and final answer history as Ask.
+
+A separate production-data backup audit found 20 guides, a brief and 75 claims in a fresh Ana workspace, with no jobs. Adding a source preserved them. Deleting Kwame retained 19 guides, the usable brief and 53 claims, with no queued jobs and no erased aliases in returned guide/brief/claim/Practice content. L1 and L2 guide references were checked against permitted surviving source records. Practice keeps all nine headings and 30 permitted source links at L1. Desktop and mobile screenshots of the scoped Practice page and pending-question navigation were reviewed; neither had horizontal overflow.
+
+This work ran no live inference and did not mutate the production database. The implementation keeps generated-content retention limits in `PROVENANCE_UX.md`, including the original model's broad input context and the existing transcript-erasure heuristics.

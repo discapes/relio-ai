@@ -27,6 +27,8 @@ test.beforeEach(async ({ page }) => {
 			const original = window.fetch;
 			window.fetch = (input, options) => {
 				if (String(input) !== '/chat/stream') return original(input, options);
+				(window as any).__chatRequests = ((window as any).__chatRequests || 0) + 1;
+				(window as any).__chatBody = JSON.parse(String(options?.body));
 				let ended = false;
 				const stream = new ReadableStream({
 					start(controller) {
@@ -127,7 +129,7 @@ test('Ask shows immediate progress and provisional streamed text, then clickable
 	await expect(page.getByRole('button', { name: 'Ask project question' })).toBeEnabled();
 });
 
-test('Stop, errors and navigation clear the draft and keep Ask usable; identity change clears idle input', async ({
+test('Stop and errors restore Ask; ordinary navigation retains the request and identity changes clear it', async ({
 	page
 }) => {
 	await page.goto('/', { waitUntil: 'networkidle' });
@@ -150,10 +152,94 @@ test('Stop, errors and navigation clear the draft and keep Ask usable; identity 
 	).toBeVisible();
 	await expect(page.locator('.stream-draft')).toHaveCount(0);
 	await page.getByRole('link', { name: 'My workspace', exact: true }).click();
-	await expect(page.locator('#question')).toHaveValue('');
+	await expect(page.locator('#question')).toHaveValue('What was approved?');
+	await expect(page.locator('.stream-draft')).toBeVisible();
+	await page.getByRole('button', { name: 'Stop', exact: true }).click();
 	await page.locator('#question').fill('PRIVATE unsent owner-specific question');
 	await page.getByRole('button', { name: 'Switch view', exact: true }).click();
 	await page.locator('[name=personaId]').selectOption('p2');
 	await page.getByRole('button', { name: 'Apply', exact: true }).click();
 	await expect(page.locator('#question')).toHaveValue('');
+});
+
+test('Ask survives source navigation and completion away from the workspace without a second request', async ({
+	page
+}) => {
+	await page.goto('/', { waitUntil: 'networkidle' });
+	await page.locator('#question').fill('What was approved?');
+	await page.getByRole('button', { name: 'Ask project question' }).click();
+	await expect(page.locator('.stream-draft')).toBeVisible();
+	await page.getByRole('link', { name: 'Project memory' }).click();
+	await page.locator('a[href^="/source/"]').first().click();
+	await expect(page.locator('.source-text')).toBeVisible();
+	await expect(page.getByRole('link', { name: 'Working on your question' })).toBeVisible();
+	await page.getByRole('link', { name: 'Working on your question' }).click();
+	await expect(page.locator('.stream-draft')).toBeVisible();
+	await expect(page.locator('#question')).toHaveValue('What was approved?');
+	await page.getByRole('link', { name: 'People', exact: true }).click();
+	await expect(page.getByRole('heading', { name: 'People & context' })).toBeVisible();
+	await page.evaluate(() => (window as any).__finishChat());
+	await expect(page.getByRole('link', { name: 'Your answer is ready' })).toBeVisible();
+	await page.getByRole('link', { name: 'Your answer is ready' }).click();
+	await expect(page.locator('.answer-result .answer-text')).toContainText('The approved scope');
+	await expect(page.locator('.stream-draft')).toHaveCount(0);
+	expect(await page.evaluate(() => (window as any).__chatRequests)).toBe(1);
+});
+
+test('an access change while Ask runs on another page clears the draft and final result', async ({
+	page
+}) => {
+	await page.goto('/', { waitUntil: 'networkidle' });
+	await page.locator('#question').fill('What was approved?');
+	await page.getByRole('button', { name: 'Ask project question' }).click();
+	await expect(page.locator('.stream-draft')).toBeVisible();
+	await page.getByRole('link', { name: 'People', exact: true }).click();
+	await page.evaluate(async () => {
+		const body = new FormData();
+		body.set('personaId', 'p2');
+		body.set('level', '2');
+		await fetch('/session', { method: 'POST', body });
+	});
+	await expect(page.getByRole('complementary', { name: 'Your question' })).toHaveCount(0);
+	await page.getByRole('link', { name: 'My workspace', exact: true }).click();
+	await expect(page.locator('#question')).toHaveValue('');
+	await expect(page.locator('.stream-draft')).toHaveCount(0);
+	await page.evaluate(() => (window as any).__finishChat());
+	await expect(page.locator('.answer-result')).toHaveCount(0);
+});
+
+test('meeting preparation uses Ask progress and streaming with the selected meeting ID', async ({
+	page
+}) => {
+	await page.goto('/', { waitUntil: 'networkidle' });
+	const meeting = page.locator('.meeting').first();
+	const title = await meeting.locator('h3').innerText();
+	await meeting.getByRole('button', { name: 'Prepare for this meeting' }).click();
+	await expect(page.getByRole('region', { name: 'Answer progress' })).toBeVisible();
+	await expect(page.locator('.stream-draft')).toBeVisible();
+	await expect(page.locator('#question')).toHaveValue(`Prepare me for ${title}.`);
+	const body = await page.evaluate(() => (window as any).__chatBody);
+	expect(body.meetingId).toBeTruthy();
+	expect(await page.evaluate(() => (window as any).__chatRequests)).toBe(1);
+	await page.evaluate(() => (window as any).__finishChat());
+	await expect(page.locator('.answer-result .answer-text')).toContainText('The approved scope');
+	await expect(page.getByRole('button', { name: 'Ask project question' })).toBeEnabled();
+});
+
+test('an empty morning brief shows an action until preparation has actually been queued', async ({
+	page
+}) => {
+	await page.goto('/', { waitUntil: 'networkidle' });
+	await expect(
+		page.getByRole('heading', { name: 'Prepare your morning brief', exact: true })
+	).toBeVisible();
+	await expect(
+		page.getByRole('heading', { name: 'Your briefing is being prepared', exact: true })
+	).toHaveCount(0);
+	await page.getByRole('button', { name: 'Prepare my brief', exact: true }).click();
+	await expect(
+		page.getByRole('heading', { name: 'Your briefing is being prepared', exact: true })
+	).toBeVisible();
+	await expect(page.getByRole('button', { name: 'Prepare my brief', exact: true })).toHaveCount(0);
+	await expect(page.getByRole('button', { name: 'Refresh', exact: true })).toBeDisabled();
 });

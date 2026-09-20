@@ -6,7 +6,9 @@ GLM-5.3-Flash sends actual content deltas through its OpenAI-compatible SSE inte
 
 The draft is labelled **Draft · source checks pending**. It can change during verification and has no clickable citation claims. After the verification pipeline checks the original passages and binds source records, the final answer replaces the draft and uses the shared clickable evidence component. Only the checked final answer enters conversation history. A remembered-preference confirmation can complete directly without a factual draft.
 
-Stop cancels the current request and clears the draft. Failures and interrupted connections clear provisional text and restore the question controls, with a retry button. Navigation, persona/access changes, workspace reset and erasure also cancel outstanding work. Idle unsent questions are cleared when the selected identity, access level or workspace changes.
+Stop cancels the current request and clears the draft. Failures and interrupted connections clear provisional text and restore the question controls, with a retry button. Ordinary navigation through People, project memory, reviewer pages and individual sources keeps the request running. A compact link returns to the pending question or completed answer. The root layout owns the browser request state through Svelte context; no mutable chat state is shared between server renders. Persona/access changes, workspace reset and erasure cancel outstanding work and clear private input, drafts and the retained result. Closing or reloading the browser document still disconnects an unfinished request.
+
+“Prepare for this meeting” uses the same stream and progress panel. It sends the selected meeting ID; the server resolves the permitted meeting and uses the existing meeting-preparation task with its attendees, purpose and personal context. Its checked result appears in Ask and is retained in conversation history. The meeting shortcut starts one request; Stop and retry use the same controls as an ordinary question. Morning-brief refresh remains a background job, and an empty briefing displays preparation progress only when a corresponding job is queued or running.
 
 ## Boundaries
 
@@ -32,9 +34,11 @@ These timings describe one measured request. Question complexity, inference load
 
 ## Validation
 
-`tests/chat-stream.test.ts` checks incremental JSON/UTF-8 decoding, actual model-delta delivery, cancellation and session revisions. `tests/chat-response.test.ts` checks provisional text before final verification, final-only persistence, reset cancellation when the abandoned workspace retains its epoch, and isolation of a real queued other-owner briefing containing a private canary. Browser tests cover immediate progress, provisional-to-final replacement, clickable final receipts, stop/retry/error handling, navigation, identity changes and mobile accessibility. The inference capability probe and full UAT query used the actual Helsinki endpoint; browser fixtures perform no model calls.
+`tests/chat-stream.test.ts` checks incremental JSON/UTF-8 decoding, actual model-delta delivery, cancellation and session revisions. `tests/chat-response.test.ts` checks provisional text before final verification, final-only persistence, reset cancellation when the abandoned workspace retains its epoch, and isolation of a real queued other-owner briefing containing a private canary. Browser tests cover immediate progress, provisional-to-final replacement, clickable final receipts, stop/retry/error handling, source navigation and return, completion while away, access changes while away, the meeting-preparation shortcut and mobile accessibility. The inference capability probe and full UAT query used the actual Helsinki endpoint; browser fixtures perform no model calls.
 
 The isolated streaming review server uses port 43691, `DATA_DIR=/tmp/receipt-stream-validation` and `DISABLE_BACKGROUND=1`.
 
 
 After person erasure, provisional drafts pass the existing suppression-token check before publication. The client receives text with the trailing five words held back until subsequent text makes them safe to check; the final checked answer supplies the complete result. This prevents a stored erased identity from appearing in an incomplete streamed name before the final persistence guard. A rejected draft returns a neutral error and creates no answer artifact. The whole-product review and triage are internal records in `ADVERSARIAL_REVIEW.md` and `ADVERSARIAL_TRIAGE.md`.
+
+The navigation and meeting-shortcut regression checks use the isolated development server on port 45937, `DATA_DIR=/tmp/relio-navigation-ux`, `DISABLE_BACKGROUND=1` and an unreachable inference URL. Browser stream fixtures run without model requests.
