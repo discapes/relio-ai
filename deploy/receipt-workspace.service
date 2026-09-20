@@ -1,5 +1,5 @@
 [Unit]
-Description=Receipt RELEX project memory
+Description=Relio RELEX project memory
 After=network.target
 
 [Service]
@@ -10,7 +10,8 @@ Environment=NODE_ENV=production
 Environment=APP_BUILD_DIR=.releases/current
 Environment=HOST=127.0.0.1
 Environment=PORT=34342
-Environment=ORIGIN=https://receipt-workspace.hai1.iffe.eu
+Environment=PROTOCOL_HEADER=x-forwarded-proto
+Environment=HOST_HEADER=x-forwarded-host
 Restart=on-failure
 RestartSec=3
 TimeoutStopSec=10

@@ -1,8 +1,8 @@
-# Receipt: project memory for the Acme account
+# Relio: project memory for the Acme account
 
-Receipt helps a RELEX employee prepare for customer work, recover the scope of earlier decisions and contribute useful evidence to email conversations. Its main screen is a personal workspace with a saved morning brief, questions and meeting preparation. Shared project memory connects those outputs to original messages and transcript passages.
+Relio helps a RELEX employee prepare for customer work, recover the scope of earlier decisions and contribute useful evidence to email conversations. Its main screen is a personal workspace with a saved morning brief, questions and meeting preparation. Shared project memory connects those outputs to original messages and transcript passages.
 
-Receipt is deployed at https://receipt-workspace.hai1.iffe.eu. This document describes the implementation and measured boundaries on 20 September 2026. Deployment details and commands belong in the [README](../README.md); completed checks and outstanding acceptance work belong in [VALIDATION.md](VALIDATION.md). Feature descriptions here explain the implementation and user path; validation requires observed results.
+Relio is deployed at https://relio-ai.eu. This document describes the implementation and measured boundaries on 20 September 2026. Deployment details and commands belong in the [README](../README.md); completed checks and outstanding acceptance work belong in [VALIDATION.md](VALIDATION.md). Feature descriptions here explain the implementation and user path; validation requires observed results.
 
 ## Using the workspace
 

@@ -1,6 +1,6 @@
 # How it works
 
-Receipt combines a shared record of a customer project with an employee’s private working memory. The shared record supplies evidence for questions, briefings and email contributions. Private preferences help decide what deserves that employee’s attention. They are kept separate from the project email agent and customer sharing.
+Relio combines a shared record of a customer project with an employee’s private working memory. The shared record supplies evidence for questions, briefings and email contributions. Private preferences help decide what deserves that employee’s attention. They are kept separate from the project email agent and customer sharing.
 
 ## From conversations to project memory
 

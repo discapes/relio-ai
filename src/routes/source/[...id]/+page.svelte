@@ -35,7 +35,7 @@
 	});
 </script>
 
-<svelte:head><title>{data.source.title} · Receipt</title></svelte:head>
+<svelte:head><title>{data.source.title} · Relio</title></svelte:head>
 <main class="source-page">
 	<a class="back-link" href="/?view=memory">← Project memory</a>
 	<div class="source-heading">

@@ -28,7 +28,6 @@
 	import NameText from '$lib/components/NameText.svelte';
 	import { affiliation } from '$lib/people';
 	import Badge from '$lib/components/Badge.svelte';
-	import relexLogo from '$lib/assets/relex_logo.svg';
 	import MemoryGraph from '$lib/components/MemoryGraph.svelte';
 	import type { WorkspaceData, Answer, Source, Mail as MailRecord } from '$lib/types';
 	let {
@@ -311,16 +310,16 @@
 </script>
 
 <svelte:head
-	><title>{viewTitle} · Receipt</title><meta
+	><title>{viewTitle} · Relio</title><meta
 		name="description"
-		content="Your Acme project memory, with evidence for every answer."
+		content="Relio gives your team Acme project memory, personal briefings and answers with source evidence."
 	/></svelte:head
 >
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="app-shell">
 	<aside class="sidebar" aria-label="Workspace navigation">
-		<a class="brand" href="/" aria-label="RELEX workspace"
-			><img src={relexLogo} alt="RELEX" width="145" height="44" /></a
+		<a class="brand" href="/" aria-label="Relio workspace"
+			><span class="brand-wordmark">Relio</span></a
 		>
 		<div class="workspace">
 			<span class="workspace-logo">A</span>
@@ -521,7 +520,7 @@
 										<BookOpen size={30} />
 										<h3>Your briefing is being prepared</h3>
 										<p>
-											Receipt is reading the project's evidence, your responsibilities and followed
+											Relio is reading the project's evidence, your responsibilities and followed
 											topics. The prepared brief will stay here between visits.
 										</p>
 										<form
@@ -1155,7 +1154,7 @@
 			{/if}
 		</main>
 		<footer>
-			<span>Receipt · Acme project memory</span><span
+			<span>Relio · Acme project memory</span><span
 				>Archive through {data.archiveDate} · Workspace {data.context.workspaceId.slice(0, 8)}</span
 			>
 		</footer>

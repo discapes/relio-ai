@@ -1,6 +1,6 @@
-# RELEX styling
+# Relio branding
 
-Receipt uses the colors inspected on RELEX’s website on 20 September 2026. The source research, reference screenshots and original component proposal are in the workspace’s sibling `../brand_plan/` directory. [RELEX’s website stylesheet](https://s32519.pcdn.co/wp-content/themes/relex-theme/build/css/layout.css?ver=1787243339) defines the original color values.
+Relio uses the colors inspected on RELEX’s website on 20 September 2026. The source research, reference screenshots and original component proposal are in the workspace’s sibling `../brand_plan/` directory. [RELEX’s website stylesheet](https://s32519.pcdn.co/wp-content/themes/relex-theme/build/css/layout.css?ver=1787243339) defines the original color values.
 
 `src/app.css` owns the semantic tokens. White cards sit on `#F7F8F8`; navy `#0A3256` is the primary text color. Blue `#177ABF` is the action color, with navy hover states. Pale blue `#E6F2FF` marks selection and briefing headers. Orange `#FF7110` is available as an accent token. The Outlook simulator retains its distinct blue mail chrome.
 
@@ -22,10 +22,18 @@ Figtree Variable 5.3.0 is bundled locally through Fontsource, including Latin, L
 
 Compact organization labels use 14px; inline references have a 13px floor and graph labels a 12px floor. Controls use `#617072` borders; decorative dividers use `#DDE0E1`. Focus outlines use navy. Selected navigation has a visible edge marker; selected tabs have an underline. Selected mail rows use navy secondary text to retain contrast against the simulator’s existing background.
 
-The memory graph shares these tokens, including its source-node outline and keyboard focus stroke. Its SVG is an accessible group containing source links. Evidence PNGs read the root colors, load Figtree before measuring, and use the same font for wrapping and rendering. The sidebar uses the official RELEX RGB logo at its original aspect ratio, and the favicon uses the official RELEX symbol. Both are served locally.
+The memory graph shares these tokens, including its source-node outline and keyboard focus stroke. Its SVG is an accessible group containing source links. Evidence PNGs read the root colors, load Figtree before measuring, and use the same font for wrapping and rendering. The sidebar displays the Relio wordmark in Figtree. Its locally served SVG favicon uses an R on the existing navy background. The RELEX logo and symbol remain bundled as reference assets.
 
 - `src/lib/assets/relex_logo.svg`: [official media-kit SVG](https://s32519.pcdn.co/wp-content/uploads/2024/01/relex-primary-logo-RGB-vector.svg); orig: `relex-primary-logo-RGB-vector.svg`.
 - `src/lib/assets/favicon.png`: [official site icon](https://s32519.pcdn.co/wp-content/uploads/2024/07/cropped-relex-mark-square-192x192.png); orig: `cropped-relex-mark-square-192x192.png`.
+
+## Relio release verification
+
+The public product name is Relio and its canonical address is https://relio-ai.eu/. The sidebar, browser titles, reviewer documents, preparation copy, assistant identity and evidence exports use this name. Source material and the ordinary evidence term “receipt” retain their original wording. Internal service names, database identifiers and cookie names remain unchanged. A read-only inspection found no old product-name references in stored generated answer text, so the rename required no data migration.
+
+The 20 September rename passed Svelte checks, all 75 deterministic tests and the production build. A public Chromium check covered all sidebar pages, source titles, a real persona-switch form submission and session persistence on both hostnames. Empty chat requests passed the origin check on both domains and returned the expected validation error, without model inference. Host-scoped cookies remained separate. A controlled answer fixture verified copied attribution and the `relio-acme-evidence.png` download. Desktop, mobile and PNG captures were visually reviewed; no JavaScript errors or mobile horizontal overflow were observed.
+
+The deployed service derives request origin from Caddy’s forwarded host and protocol headers. The startup script retains its local origin default when forwarded-host handling is absent. This preserves form and chat behavior on the new domain and previous alias. Immutable release: `2026-09-20T08-15-25-975Z`.
 
 ## Verification and operations
 
