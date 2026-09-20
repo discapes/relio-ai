@@ -49,7 +49,8 @@ tests/ Deterministic persistence, access, erasure, delivery and private-context 
 docs/PREPARED_PEOPLE.md Prepared guidance scope, durable storage, resumable generation and persistence checks.
 scripts/prepare-people.mts Resumable personalized People guidance preparation with retained results and per-context filters.
 scripts/ Baseline preparation, live capability/practice evaluation, atomic deployment, startup and screenshot capture.
-.releases/ Git-ignored immutable production builds; current symlink selects the deployed release.
+scripts/publish-build.mjs npm postbuild hook: copies successful production builds into immutable releases and atomically selects the next service startup release.
+.releases/ Git-ignored immutable production builds; current symlink selects the release loaded at service startup.
 docs/ Product architecture, demo scenarios, reviewed answers, raw evaluations, model-quality diagnostics, validation and submission documents.
 scripts/quality-probe.mts Controlled original-question evaluations with preserved outputs.
 scripts/reverify-extraction.mts Document-balanced revalidation of captured model candidates.
