@@ -1,6 +1,6 @@
 # Validation record
 
-Receipt is available at https://receipt-workspace.hai1.iffe.eu. This record separates deterministic application checks from live model interpretation. The application uses GLM 5.3 Flash on Verda (formerly DataCrunch) in Helsinki with thinking disabled by default.
+Relio is available at https://relio-ai.eu. This record separates deterministic application checks from live model interpretation. The application uses GLM 5.3 Flash on Verda (formerly DataCrunch) in Helsinki with thinking disabled by default.
 
 ## Application checks
 

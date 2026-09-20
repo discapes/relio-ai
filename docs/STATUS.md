@@ -1,6 +1,6 @@
 # Implementation status
 
-Receipt is deployed at https://receipt-workspace.hai1.iffe.eu on port 34342 through the `receipt-workspace.service` user service. The service runs the immutable release selected by `.releases/current`.
+Relio is deployed at https://relio-ai.eu on port 34342 through the `receipt-workspace.service` user service. The service runs the immutable release selected by `.releases/current`.
 
 The agreed product surfaces are implemented: personal morning briefs and memory, project questions, source search and graph, people guidance, Outlook simulation, calendar preparation, customer PNG/text cards and scoped erasure. Design, How to use, How it works and Practice answers open directly from the sidebar. Practice answers require Acme L3 and are withdrawn after erasure in that workspace. Internal process and quality reports remain repository documents.
 

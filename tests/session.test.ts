@@ -4,7 +4,7 @@ import { execFileSync } from 'node:child_process';
 import { mkdtempSync, statSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-process.env.DATA_DIR = mkdtempSync(join(tmpdir(), 'receipt-session-test-'));
+process.env.DATA_DIR = mkdtempSync(join(tmpdir(), 'relio-session-test-'));
 const { sessionContext, setWorkspaceCookie } = await import('../src/lib/server/session');
 const { context } = await import('../src/lib/server/memory');
 function cookies(initial: Record<string, string> = {}) {
@@ -55,7 +55,7 @@ test('copying a valid signature onto another workspace ID does not grant access'
 });
 
 test('a damaged persistent signing key fails closed on repeated requests', () => {
-	const directory = mkdtempSync(join(tmpdir(), 'receipt-bad-key-'));
+	const directory = mkdtempSync(join(tmpdir(), 'relio-bad-key-'));
 	writeFileSync(join(directory, '.session-secret'), 'broken', { mode: 0o600 });
 	const output = execFileSync(
 		process.execPath,

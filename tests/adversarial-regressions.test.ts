@@ -4,7 +4,7 @@ import { mkdtempSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import type { Level, Source } from '../src/lib/types';
-process.env.DATA_DIR = mkdtempSync(join(tmpdir(), 'receipt-adversarial-regression-'));
+process.env.DATA_DIR = mkdtempSync(join(tmpdir(), 'relio-adversarial-regression-'));
 process.env.DISABLE_BACKGROUND = '1';
 const memory = await import('../src/lib/server/memory');
 const wf = await import('../src/lib/server/workflows');

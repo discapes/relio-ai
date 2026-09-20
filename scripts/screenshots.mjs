@@ -1,6 +1,6 @@
 import { chromium } from '@playwright/test';
 import { mkdir } from 'node:fs/promises';
-const base = process.env.SCREENSHOT_URL || 'https://receipt-workspace.hai1.iffe.eu';
+const base = process.env.SCREENSHOT_URL || 'https://relio-ai.eu';
 await mkdir('docs/screenshots', { recursive: true });
 const browser = await chromium.launch();
 try {
