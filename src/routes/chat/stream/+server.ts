@@ -1,3 +1,4 @@
+import { recordUsageInput } from '$lib/server/usage';
 import { error } from '@sveltejs/kit';
 import { sessionContext } from '$lib/server/session';
 import { chatRevision } from '$lib/server/chat-activity';
@@ -31,5 +32,6 @@ export async function POST({ request, cookies, url }) {
 		error(409, 'Your session changed. Reload before asking again.');
 	if (chatRevision(ctx.workspaceId) !== revision)
 		error(409, 'Your session changed. Reload before asking again.');
+	recordUsageInput(input);
 	return chatResponse(ctx, input.question, request.signal, input.meetingId);
 }

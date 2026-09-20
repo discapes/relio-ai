@@ -4,7 +4,7 @@ Relio gives RELEX employees a prepared Acme project briefing, a private assistan
 
 Application: https://relio-ai.eu · fixed port **34342**. The previous hostname remains an alias. Caddy supplies forwarded host/protocol headers so form submissions and chat use the browser’s actual origin on either hostname. Browser cookies remain scoped to each domain; opening the new domain creates its own workspace and loads prepared baseline content.
 
-The sidebar links directly to **Design**, **How to use**, **How it works** and **Practice answers**. The practice reference requires Acme L3 and is withdrawn after erasure in that workspace. Architecture and usage pages remain available in every view. Internal evaluation reports stay in the repository.
+The sidebar links directly to **Design**, **How to use**, **How it works** and **Practice answers**. Practice answers retain the passages supported by the current view and surviving evidence after erasure. Architecture and usage pages remain available in every view. Internal evaluation reports stay in the repository.
 
 ## Run
 
@@ -66,3 +66,5 @@ Interrupted running jobs become visible failed jobs on restart; queued jobs resu
 See `docs/SOLUTION.md`, `docs/DESIGN.md`, `docs/PITCH.md` and `docs/demo_scenarios.md` for architecture, submission design and the demonstration. `docs/STREAMING.md` describes chat progress, provisional output and cancellation.
 
 People guidance is prepared and retained in SQLite. See [prepared People operations](docs/PREPARED_PEOPLE.md) for resumable batch generation and scope/persistence behavior.
+
+Internal demo usage logs and the local report command are documented in [docs/USAGE_LOGGING.md](docs/USAGE_LOGGING.md).

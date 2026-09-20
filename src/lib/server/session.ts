@@ -1,3 +1,4 @@
+import { usageContext, recordUsage } from './usage';
 import { createHmac, randomBytes, randomUUID, timingSafeEqual } from 'node:crypto';
 import { linkSync, mkdirSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -61,13 +62,20 @@ export function sessionContext(cookies: Cookies) {
 	if (!id) {
 		id = randomUUID();
 		setWorkspaceCookie(cookies, id);
+		recordUsage('workspace.created', { workspaceId: id, replacedInvalidCookie: Boolean(token) });
 		if (token) cookies.set('relex_session_notice', 'upgraded', settings());
 	}
 	const persona = cookies.get('relex_persona') || 'ana';
 	const raw = cookies.get('relex_level');
 	const selected = resolvePersona(persona);
-	if (!selected) return context(id, 'other', 1);
+	if (!selected) {
+		const ctx = context(id, 'other', 1);
+		usageContext(ctx);
+		return ctx;
+	}
 	const requested = raw ? Number(raw) : selected.level;
 	const level = ([1, 2, 3].includes(requested) ? Math.min(requested, selected.level) : 1) as Level;
-	return context(id, selected.id, level);
+	const ctx = context(id, selected.id, level);
+	usageContext(ctx);
+	return ctx;
 }

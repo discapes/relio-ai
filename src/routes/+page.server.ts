@@ -1,3 +1,4 @@
+import { recordUsageInput } from '$lib/server/usage';
 import { reviewerGuide } from '$lib/server/reviewer';
 import { fail } from '@sveltejs/kit';
 import { sessionContext, setWorkspaceCookie } from '$lib/server/session';
@@ -51,7 +52,9 @@ function action(fn: (ctx: Context, data: FormData) => unknown | Promise<unknown>
 			const ctx = sessionContext(cookies);
 			if (!ctx.persona.projects.includes(ctx.projectId))
 				throw new Error('This identity has no access to Acme.');
-			return { success: true, ...((await fn(ctx, await request.formData())) as object) };
+			const data = await request.formData();
+			recordUsageInput(data);
+			return { success: true, ...((await fn(ctx, data)) as object) };
 		} catch (error) {
 			return fail(400, {
 				error: error instanceof Error ? error.message : 'The request failed. Please retry.'
