@@ -83,7 +83,7 @@ const tokens = (text: string) =>
 	normalize(text).match(/[\p{L}\p{N}._%+-]+@[\p{L}\p{N}.-]+\.[\p{L}]{2,}|[\p{L}\p{N}]+/gu) ?? [];
 const hash = (workspaceId: string, value: string) =>
 	createHash('sha256').update(`${workspaceId}\0${value}`).digest('hex');
-function matcher(aliases: string[]) {
+function matcher(aliases: string[], normalizeText = normalize) {
 	const expressions = aliases.map(
 		(alias) =>
 			new RegExp(
@@ -92,7 +92,7 @@ function matcher(aliases: string[]) {
 			)
 	);
 	return (text: string) => {
-		const value = normalize(text);
+		const value = normalizeText(text);
 		return expressions.some((regex) => regex.test(value));
 	};
 }
@@ -287,14 +287,50 @@ function permitted(ctx: Context) {
 function writable(ctx: Context) {
 	if (!permitted(ctx)) throw new Error('Workspace access changed. Reload before continuing.');
 }
+
+type ReadScope = {
+	revision: string;
+	sources: Map<string, Source[]>;
+	people: Map<string, Person[]>;
+};
+let readScope: ReadScope | undefined;
+/** Reuse derived reads only during a synchronous load; background work starts outside this scope. */
+export function withMemoryReads<T>(read: () => T): T {
+	const previous = readScope;
+	readScope = { revision: '', sources: new Map(), people: new Map() };
+	try {
+		return read();
+	} finally {
+		readScope = previous;
+	}
+}
+function scopedReads(ctx: Context) {
+	if (!readScope) return undefined;
+	// Both this connection's writes and commits by preparation workers invalidate reused reads.
+	const revision = `${db().prepare('PRAGMA data_version').get()?.data_version}:${db().prepare('SELECT total_changes() AS changes').get()?.changes}`;
+	if (readScope.revision !== revision) {
+		readScope.sources.clear();
+		readScope.people.clear();
+		readScope.revision = revision;
+	}
+	return {
+		cache: readScope,
+		key: JSON.stringify([ctx.workspaceId, ctx.projectId, ctx.persona.id, ctx.level, ctx.epoch])
+	};
+}
 export function sources(ctx: Context): Source[] {
 	if (!permitted(ctx)) return [];
-	return db()
+	const scope = scopedReads(ctx);
+	const cached = scope?.cache.sources.get(scope.key);
+	if (cached) return cached;
+	const result = db()
 		.prepare(
 			'SELECT payload FROM memory_sources WHERE workspace_id=? AND project_id=? AND level<=? ORDER BY id'
 		)
 		.all(ctx.workspaceId, ctx.projectId, ctx.level)
-		.map((r) => JSON.parse(String(r.payload)));
+		.map((r) => JSON.parse(String(r.payload)) as Source);
+	scope?.cache.sources.set(scope.key, result);
+	return result;
 }
 export function getSource(ctx: Context, id: string): Source | undefined {
 	if (!permitted(ctx)) return undefined;
@@ -368,11 +404,12 @@ function personId(name: string) {
 }
 function signatureRoles(name: string, evidence: Source[]): string[] {
 	const result = new Set<string>();
+	const normalizedName = normalize(name);
 	for (const source of evidence) {
-		if (normalize(source.author) !== normalize(name)) continue;
+		if (normalize(source.author) !== normalizedName) continue;
 		const lines = source.text.split('\n').map((s) => s.trim());
 		for (let i = 0; i < lines.length - 1; i++)
-			if (normalize(lines[i]) === normalize(name)) {
+			if (normalize(lines[i]) === normalizedName) {
 				const role = lines[i + 1].replace(/\s*(?:\[?Image|Bild borttagen).*$/i, '').trim();
 				if (
 					role.length < 5 ||
@@ -387,8 +424,10 @@ function signatureRoles(name: string, evidence: Source[]): string[] {
 	}
 	return [...result];
 }
-function explicitIdentifiers(name: string, evidence: Source[]): string[] {
+function explicitIdentifiers(name: string, evidence: Source[], authored: Source[]): string[] {
 	const result = new Set<string>();
+	const authoredSet = new Set(authored);
+	const normalizedName = normalize(name);
 	const numericPattern = new RegExp(
 		`^(\\d{6})\\s+${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')},`,
 		'mu'
@@ -396,9 +435,9 @@ function explicitIdentifiers(name: string, evidence: Source[]): string[] {
 	for (const source of evidence) {
 		const numeric = numericPattern.exec(source.text);
 		if (numeric) result.add(numeric[1]);
-		if (normalize(source.author) !== normalize(name)) continue;
+		if (!authoredSet.has(source)) continue;
 		const lines = source.text.split('\n');
-		const signature = lines.findLastIndex((line) => normalize(line.trim()) === normalize(name));
+		const signature = lines.findLastIndex((line) => normalize(line.trim()) === normalizedName);
 		if (signature < 0) continue;
 		const tail = lines.slice(signature, signature + 10).join('\n');
 		for (const match of tail.matchAll(/[\w.%+-]+@[\w.-]+\.[A-Za-z]{2,}/g)) result.add(match[0]);
@@ -414,7 +453,29 @@ function roleAliases(role: string): string[] {
 	return [role, ...(parts.length === 2 ? [`${parts[1]} ${parts[0]}`, parts[0]] : [])];
 }
 export function people(ctx: Context): Person[] {
+	if (!permitted(ctx)) return [];
+	const scope = scopedReads(ctx);
+	const cached = scope?.cache.people.get(scope.key);
+	if (cached) return cached;
 	const permittedSources = sources(ctx);
+	// Normalize each source once; every person uses the same accessible evidence.
+	const authoredBy = new Map<string, Source[]>();
+	const participantEmails = new Map<string, string[]>();
+	const normalizedSources = permittedSources.map((source) => {
+		const author = normalize(source.author);
+		const authored = authoredBy.get(author) ?? [];
+		authored.push(source);
+		authoredBy.set(author, authored);
+		for (let i = 0; i < source.participants.length; i++) {
+			const next = source.participants[i + 1];
+			if (!next?.includes('@')) continue;
+			const name = normalize(source.participants[i]);
+			const emails = participantEmails.get(name) ?? [];
+			emails.push(next);
+			participantEmails.set(name, emails);
+		}
+		return { source, author, text: normalize(source.text) };
+	});
 	const canonical = new Map<string, string>();
 	for (const s of permittedSources)
 		for (const name of [s.author, ...s.participants]) {
@@ -450,37 +511,32 @@ export function people(ctx: Context): Person[] {
 		const last = normalize(name.split(' ').at(-1)!);
 		lastCounts.set(last, (lastCounts.get(last) ?? 0) + 1);
 	}
-	return [...names]
+	const result = [...names]
 		.sort()
 		.map((name) => {
-			const authored = permittedSources.filter((s) => normalize(s.author) === normalize(name));
-			const participantEmails = permittedSources.flatMap((s) =>
-				s.participants.flatMap((p, i) =>
-					normalize(p) === normalize(name) && s.participants[i + 1]?.includes('@')
-						? [s.participants[i + 1]]
-						: []
-				)
-			);
-			const email = authored.find((s) => s.email)?.email?.from ?? participantEmails[0] ?? '';
+			const normalizedName = normalize(name);
+			const authored = authoredBy.get(normalizedName) ?? [];
+			const email =
+				authored.find((s) => s.email)?.email?.from ??
+				participantEmails.get(normalizedName)?.[0] ??
+				'';
 			const first = name.split(' ')[0];
 			const last = name.split(' ').at(-1)!;
 			const aliases = [
 				name,
-				normalize(name),
-				...explicitIdentifiers(name, permittedSources),
+				normalizedName,
+				...explicitIdentifiers(name, permittedSources, authored),
 				...(email ? [email] : []),
 				...(firstCounts.get(normalize(first)) === 1 ? [first] : []),
 				...(lastCounts.get(normalize(last)) === 1 ? [last] : [])
 			];
-			const mentions = matcher(aliases);
-			const related = permittedSources.filter(
-				(s) =>
-					normalize(s.author) === normalize(name) ||
-					s.participants.includes(name) ||
-					mentions(s.text)
+			const mentions = matcher(aliases, (text) => text);
+			const related = normalizedSources.filter(
+				({ source, author, text }) =>
+					author === normalizedName || source.participants.includes(name) || mentions(text)
 			);
 			const role =
-				signatureRoles(name, permittedSources)[0] ??
+				signatureRoles(name, authored)[0] ??
 				personas.find((p) => p.name === name)?.role ??
 				(email.endsWith('@acme-org.example')
 					? 'Acme stakeholder'
@@ -495,10 +551,12 @@ export function people(ctx: Context): Person[] {
 				email,
 				role,
 				aliases: [...new Set(aliases)],
-				sourceIds: related.map((s) => s.id)
+				sourceIds: related.map(({ source }) => source.id)
 			};
 		})
 		.filter((p) => !suppressed(ctx.workspaceId, p.name));
+	scope?.cache.people.set(scope.key, result);
+	return result;
 }
 export function personAliases(ctx: Context, id: string) {
 	return people(ctx).find((p) => p.id === id)?.aliases ?? [];

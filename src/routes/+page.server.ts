@@ -5,34 +5,36 @@ import * as workflows from '$lib/server/workflows';
 import * as memory from '$lib/server/memory';
 import type { Actions, PageServerLoad } from './$types';
 import type { Context, Level } from '$lib/types';
-export const load: PageServerLoad = ({ cookies, setHeaders, url }) => {
-	setHeaders({ 'cache-control': 'private, no-store' });
-	const ctx = sessionContext(cookies);
-	if (ctx.persona.projects.includes(ctx.projectId)) workflows.prepareWorkspace(ctx);
-	const sessionNotice = cookies.get('relex_session_notice')
-		? 'Session security was updated. This browser now has a fresh isolated demo workspace; previous workspace data remains saved.'
-		: undefined;
-	if (sessionNotice) cookies.delete('relex_session_notice', { path: '/' });
-	const guidancePeople = url.searchParams.get('view') === 'people' ? memory.people(ctx) : undefined;
-	const guidanceSnapshot = guidancePeople
-		? {
-				fingerprint: workflows.guidanceFingerprint(ctx),
-				personIds: new Set(guidancePeople.map((person) => person.id))
-			}
-		: undefined;
-	if (guidancePeople)
-		workflows.ensurePeopleGuidance(ctx, guidancePeople, guidanceSnapshot!.fingerprint);
-	const personGuidance =
-		url.searchParams.get('view') === 'people' && url.searchParams.get('person')
-			? workflows.preparedGuidance(ctx, url.searchParams.get('person')!, guidanceSnapshot)
-			: null;
-	return {
-		...workflows.workspaceData(ctx, guidancePeople),
-		personGuidance,
-		sessionNotice,
-		reviewerGuide: reviewerGuide(ctx, url.searchParams.get('view') || '')
-	};
-};
+export const load: PageServerLoad = ({ cookies, setHeaders, url }) =>
+	memory.withMemoryReads(() => {
+		setHeaders({ 'cache-control': 'private, no-store' });
+		const ctx = sessionContext(cookies);
+		if (ctx.persona.projects.includes(ctx.projectId)) workflows.prepareWorkspace(ctx);
+		const sessionNotice = cookies.get('relex_session_notice')
+			? 'Session security was updated. This browser now has a fresh isolated demo workspace; previous workspace data remains saved.'
+			: undefined;
+		if (sessionNotice) cookies.delete('relex_session_notice', { path: '/' });
+		const guidancePeople =
+			url.searchParams.get('view') === 'people' ? memory.people(ctx) : undefined;
+		const guidanceSnapshot = guidancePeople
+			? {
+					fingerprint: workflows.guidanceFingerprint(ctx),
+					personIds: new Set(guidancePeople.map((person) => person.id))
+				}
+			: undefined;
+		if (guidancePeople)
+			workflows.ensurePeopleGuidance(ctx, guidancePeople, guidanceSnapshot!.fingerprint);
+		const personGuidance =
+			url.searchParams.get('view') === 'people' && url.searchParams.get('person')
+				? workflows.preparedGuidance(ctx, url.searchParams.get('person')!, guidanceSnapshot)
+				: null;
+		return {
+			...workflows.workspaceData(ctx, guidancePeople),
+			personGuidance,
+			sessionNotice,
+			reviewerGuide: reviewerGuide(ctx, url.searchParams.get('view') || '')
+		};
+	});
 const value = (data: FormData, key: string) => String(data.get(key) || '').trim();
 const list = (data: FormData, key: string) =>
 	value(data, key)
