@@ -19,6 +19,11 @@ try {
 		await page.screenshot({ path: `docs/screenshots/${name}.png`, fullPage: name !== 'memory' });
 	}
 	await page.goto(base + '/?view=memory', { waitUntil: 'networkidle' });
+	await page.getByRole('button', { name: 'Graph', exact: true }).click();
+	await page.screenshot({ path: 'docs/screenshots/graph.png', fullPage: true });
+	await page.goto(base + '/submission/design', { waitUntil: 'networkidle' });
+	await page.screenshot({ path: 'docs/screenshots/submission.png', fullPage: true });
+	await page.goto(base + '/?view=memory', { waitUntil: 'networkidle' });
 	await page.locator('a[href^="/source/"]').first().click();
 	await page.locator('.source-text').waitFor();
 	await page.screenshot({ path: 'docs/screenshots/source.png', fullPage: true });
