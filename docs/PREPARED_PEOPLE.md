@@ -19,15 +19,35 @@ The service uses the fixed project working directory and `data/app.sqlite`, outs
 Run preparation from the project directory:
 
 ```sh
-node --import tsx scripts/prepare-people.mts
+node --env-file-if-exists=.env --import tsx scripts/prepare-people.mts
 ```
 
-The script appends outcomes to `data/people-preparation.jsonl` and skips existing valid results. Rerunning resumes missing or failed profiles without repeating completed calls. `PREPARE_WORKSPACE`, `PREPARE_OWNER` and `PREPARE_LEVEL` restrict a run; `PREPARE_CONCURRENCY=1` reduces the default two workers. The configured Verda endpoint and original evidence verification remain in use. Guidance requests place the stable permitted evidence before the changing task and private context to support provider prefix reuse. Source content remains explicitly untrusted. Newly generated guides request 3–5 short paragraphs and at most 250 words; completed guides are preserved.
+The script appends outcomes to `data/people-preparation.jsonl` and skips existing valid results. Rerunning resumes missing or failed profiles without repeating completed calls. `PREPARE_WORKSPACE`, `PREPARE_OWNER` and `PREPARE_LEVEL` restrict a run; `PREPARE_PEOPLE` accepts exact names separated by `|`; `PREPARE_CONCURRENCY=1` reduces the default two workers. The configured Verda endpoint and original evidence verification remain in use. Guidance requests place the stable permitted evidence before the changing task and private context to support provider prefix reuse. Source content remains explicitly untrusted. Newly generated guides request 3–5 short paragraphs and at most 250 words; completed guides are preserved.
 
 The live browser service has its own bounded background queue. After a process interruption, revisiting People queues any missing profiles whose interrupted job needs recovery. Completed guidance stays available even if inference is temporarily unavailable.
 
 ## Validation
 
-Four focused deterministic checks cover context reuse and isolation, fresh-demo reset preservation, erasure exclusion, queue deduplication and interrupted preparation recovery. The full deterministic suite passes 72 tests. The public People browser workflow passes. Desktop and mobile captures show stored guidance with the generation button absent; mobile has no horizontal overflow. The 110 baseline guides and 20 guides for an existing personalized browser context are being prepared resumably. Final batch counts are recorded when generation completes.
+Four focused deterministic checks cover context reuse and isolation, fresh-demo reset preservation, erasure exclusion, queue deduplication and interrupted preparation recovery. The full deterministic suite passes 75 tests, including three transport checks for one bounded fresh-connection retry, cancellation and a second socket failure. The public People browser workflow passes. Desktop and mobile captures show stored guidance with the generation button absent; mobile has no horizontal overflow. Generation is complete: all 110 baseline guides and 20 guides for an existing personalized Ana context are stored and readable.
 
 All 13 answers completed before the first deployment retained their exact IDs after the service restarted. An additional 13 focused workflow/preparation tests passed after the guidance-only prompt ordering change.
+
+## Completed preparation, 20 September
+
+The final current-context read check completed at 08:30 UTC. Fresh workspace reads reused every baseline guide; the existing personalized Ana workspace also returned all 20 guides.
+
+| Employee/view | L1 | L2 | L3 | Total |
+| --- | ---: | ---: | ---: | ---: |
+| Ana baseline | 18 | 18 | 20 | 56 |
+| Marco baseline | 18 | 18 | — | 36 |
+| Nadia baseline | 18 | — | — | 18 |
+| Existing personalized Ana view | — | — | 20 | 20 |
+| Total | 54 | 36 | 40 | 130 |
+
+All 130 requested guides are available, with zero missing profiles. The journal records 13 unsuccessful earlier attempts, resolved through resume. The later 43-guide phase completed without a failed profile. Four concurrent inference requests were used, with all slots assigned to Ana until her 76 variants were ready. The remaining persona scopes followed. Preparation workers have exited.
+
+The final persistence check compared answer IDs from the journal with SQLite: all 118 guides completed before the latest service deployment were still present afterward. This count includes additional guides generated automatically in browser sessions. The required 130-guide coverage is checked independently against each current scope and fingerprint, rather than inferred from a total row count. The local report is `data/people-preparation-verification.json`; the append-only journal is `data/people-preparation.jsonl`.
+
+Fresh Chromium navigation on https://relio-ai.eu opened all 20 default Ana profiles, waited for each selected person's heading and stored guidance, and confirmed the old generation button was absent. Desktop and mobile captures are in `docs/screenshots/people-prepared-desktop.png` and `people-prepared-mobile.png`. Mobile had no horizontal overflow.
+
+The page loader now reuses one scoped person snapshot per request. End-to-end profile HTTP samples remained around 2.3 seconds, so this change has no claimed measured page-speed gain. It introduces no cross-request identity cache. A new project or private-memory context prepares updated guidance automatically; the completed matching context remains durable.
