@@ -66,27 +66,75 @@
 	let includeAgent = $state(false);
 	const agent = 'acme-memory@relexsolutions.example';
 	const action: SubmitFunction = ({ formElement }) => {
-  const started={workspaceId:data.context.workspaceId,epoch:data.context.epoch,personaId:data.context.persona.id,level:data.context.level};
-  busy=formElement.dataset.label||'Working';
-  return async({update})=>{
-   try{const current=await fetch('/state').then(r=>r.json());
-    if(Object.keys(started).some(key=>current[key]!==started[key as keyof typeof started])){form=undefined;await invalidateAll();}
-    else await update({reset:false});
-   }finally{busy='';}
-  };
- };
- let searchedSources=$state<Source[]|null>(null);
- let searchBusy=$state(false);
- let searchTotal=$state(0);
- let sourceOffset=$state(0);
- async function loadMoreSources(){searchBusy=true;try{const next=await fetch(`/search?q=${encodeURIComponent(search)}&offset=${sourceOffset}`).then(r=>r.json());searchedSources=[...(sourceOffset?searchedSources||[]:[]),...next.sources];sourceOffset+=next.sources.length;searchTotal=next.total;}finally{searchBusy=false;}}
- $effect(()=>{const query=search;const scope=data.context.epoch;void scope;
-  if(!query.trim()){searchedSources=null;return;}
-  const controller=new AbortController();
-  const timer=setTimeout(()=>{searchBusy=true;void fetch(`/search?q=${encodeURIComponent(query)}`,{signal:controller.signal}).then(r=>r.json()).then(result=>{searchedSources=result.sources;sourceOffset=result.sources.length;searchTotal=result.total;}).catch(()=>{}).finally(()=>{searchBusy=false;});},200);
-  return()=>{clearTimeout(timer);controller.abort();};
- });
- const visibleSources=$derived(searchedSources||data.sources);
+		const started = {
+			workspaceId: data.context.workspaceId,
+			epoch: data.context.epoch,
+			personaId: data.context.persona.id,
+			level: data.context.level
+		};
+		busy = formElement.dataset.label || 'Working';
+		return async ({ update }) => {
+			try {
+				const current = await fetch('/state').then((r) => r.json());
+				if (
+					Object.keys(started).some((key) => current[key] !== started[key as keyof typeof started])
+				) {
+					form = undefined;
+					await invalidateAll();
+				} else await update({ reset: false });
+			} finally {
+				busy = '';
+			}
+		};
+	};
+	let searchedSources = $state<Source[] | null>(null);
+	let searchBusy = $state(false);
+	let searchTotal = $state(0);
+	let sourceOffset = $state(0);
+	async function loadMoreSources() {
+		searchBusy = true;
+		try {
+			const next = await fetch(
+				`/search?q=${encodeURIComponent(search)}&offset=${sourceOffset}`
+			).then((r) => r.json());
+			searchedSources = [...(sourceOffset ? searchedSources || [] : []), ...next.sources];
+			sourceOffset += next.sources.length;
+			searchTotal = next.total;
+		} finally {
+			searchBusy = false;
+		}
+	}
+	$effect(() => {
+		const query = search;
+		const scope = data.context.epoch;
+		void scope;
+		if (!query.trim()) {
+			searchedSources = null;
+			sourceOffset = 0;
+			searchTotal = 0;
+			return;
+		}
+		const controller = new AbortController();
+		const timer = setTimeout(() => {
+			searchBusy = true;
+			void fetch(`/search?q=${encodeURIComponent(query)}`, { signal: controller.signal })
+				.then((r) => r.json())
+				.then((result) => {
+					searchedSources = result.sources;
+					sourceOffset = result.sources.length;
+					searchTotal = result.total;
+				})
+				.catch(() => {})
+				.finally(() => {
+					searchBusy = false;
+				});
+		}, 200);
+		return () => {
+			clearTimeout(timer);
+			controller.abort();
+		};
+	});
+	const visibleSources = $derived(searchedSources || data.sources);
 	const visibleClaims = $derived(
 		data.claims.filter((c) =>
 			`${c.kind} ${c.status} ${c.text}`.toLowerCase().includes(search.toLowerCase())
@@ -159,12 +207,13 @@
 				.then(async (state) => {
 					if (
 						state.workspaceId !== data.context.workspaceId ||
- state.epoch !== data.context.epoch ||
+						state.epoch !== data.context.epoch ||
 						state.personaId !== data.context.persona.id ||
 						state.level !== data.context.level
 					) {
 						form = undefined;
- searchedSources=null;search='';
+						searchedSources = null;
+						search = '';
 						selectedPerson = '';
 						mailId = '';
 						body = '';
@@ -536,7 +585,16 @@
 							<div class="card-body">
 								<p class="section-description">Simulated calendar · Helsinki time</p>
 								{#each data.meetings as meeting}<div class="meeting">
-										<span class="eyebrow">{meeting.date}</span>
+										<span class="eyebrow"
+											>{new Intl.DateTimeFormat('en-GB', {
+												weekday: 'short',
+												day: 'numeric',
+												month: 'short',
+												hour: '2-digit',
+												minute: '2-digit',
+												timeZone: 'Europe/Helsinki'
+											}).format(new Date(meeting.date))}</span
+										>
 										<h3>{meeting.title}</h3>
 										<p>{meeting.purpose}</p>
 										<small>{meeting.attendees.join(' · ')}</small>
@@ -675,7 +733,19 @@
 								No passages match this search.
 							</div>{/if}
 					</section>{/if}
-				{#if memoryTab==='sources'}<div class="source-pagination"><button class="button secondary" onclick={loadMoreSources} disabled={searchBusy || (searchedSources!==null && sourceOffset>=searchTotal)}>{searchBusy?'Searching archive…':searchedSources===null?'Browse all source passages':'Load more passages'}</button>{#if searchTotal}<small>{searchedSources?.length||0} of {searchTotal} matches</small>{/if}</div>{/if}
+				{#if memoryTab === 'sources'}<div class="source-pagination">
+						<button
+							class="button secondary"
+							onclick={loadMoreSources}
+							disabled={searchBusy || (searchedSources !== null && sourceOffset >= searchTotal)}
+							>{searchBusy
+								? 'Searching archive…'
+								: searchedSources === null
+									? 'Browse all source passages'
+									: 'Load more passages'}</button
+						>{#if searchTotal}<small>{searchedSources?.length || 0} of {searchTotal} matches</small
+							>{/if}
+					</div>{/if}
 				<section class="card share-card">
 					<div>
 						<h2>Share an evidence card</h2>
@@ -1000,6 +1070,21 @@
 						<p>Personal briefings, supported answers and useful email contributions.</p>
 					</div>
 				</div>
+				<section class="card card-body" style="margin-bottom:24px">
+					<h2>Submission documents</h2>
+					<p>
+						Read the one-page design, independently reviewed practice answers, actual model
+						evaluations and validation results.
+					</p>
+					{#if data.context.level === 3 && data.context.epoch === 0 && data.context.persona.projects.includes('acme')}
+						<a class="button secondary" href="/submission/design"
+							>Open submission documents<ArrowUpRight size={16} /></a
+						>
+					{:else}<p>
+							Original-archive submission documents are available in an Acme L3 view before erasure.
+							This workspace continues to use its permitted surviving evidence.
+						</p>{/if}
+				</section>
 				<div class="about-grid">
 					<section class="card card-body">
 						<ShieldCheck size={24} />

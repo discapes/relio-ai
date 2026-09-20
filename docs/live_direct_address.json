@@ -1,0 +1,60 @@
+{
+  "scenario": "A18 diagnostic assertion correction",
+  "liveArtifact": "/tmp/receipt-a18-diagnostic-review.json",
+  "originalFailureArtifact": "/tmp/receipt-a18-live-review.json",
+  "liveProcessingMs": 79504,
+  "modelRequests": 3,
+  "schemaRepair": {
+    "firstVerifierKeys": [
+      "participate",
+      "text",
+      "citations",
+      "trace",
+      "meeting"
+    ],
+    "retryKeys": [
+      "statements",
+      "trace"
+    ]
+  },
+  "liveChecksCompletedBeforeOutdatedAssertion": [
+    "Direct address produced reply",
+    "Sent message status Agent replied",
+    "Same simulated thread",
+    "Reply L1",
+    "Reply from project agent",
+    "Ana in To",
+    "Lena in Cc",
+    "Nonempty citations"
+  ],
+  "modelInputsContainedPrivateOrInternalCanary": false,
+  "correctedCitationAssertion": "Every returned deterministic sourceExcerpt must be an exact nonempty substring of its permitted original source; equality with the full signature-bearing source is unnecessary.",
+  "spanValidation": "Recomputed locally from the source IDs captured in the successful verifier result and the same deterministic sourceExcerpt implementation. No additional inference.",
+  "spans": [
+    {
+      "sourceId": "emails/15_uat-signoff#message-003",
+      "date": "2025-01-21T17:30:00",
+      "author": "Ana Duarte",
+      "quote": "Lena,\n\nAs discussed this afternoon, for signature.\n\n\"Acme Org confirms that user acceptance testing for core replenishment has been completed\nsatisfactorily for the 25 store pilot cohort, covering ambient and dry goods categories.\nThis sign-off does not extend to fresh categories, which remain in scope for a later\nphase, and does not constitute acceptance of the overall programme.\"\n\nTwo UAT defects remain open, both the same root cause on case pack and minimum order\nquantity rounding. Both are scheduled for fix this week and neither is a blocker.\n\nBest regards,",
+      "exactSourceSubstring": true,
+      "classification": "L1: customer in source audience"
+    },
+    {
+      "sourceId": "emails/15_uat-signoff#message-002",
+      "date": "2025-01-22T08:50:00",
+      "author": "Lena Fischer",
+      "quote": "Signed and attached. The wording is what I asked for, thank you for being careful with it.\n\nMit freundlichen Grüßen",
+      "exactSourceSubstring": true,
+      "classification": "L1: customer in source audience"
+    },
+    {
+      "sourceId": "emails/15_uat-signoff#message-001",
+      "date": "2025-01-24T16:20:00",
+      "author": "Kwame Boateng",
+      "quote": "Both rounding defects fixed and re-tested. Nine of nine scenarios now pass.",
+      "exactSourceSubstring": true,
+      "classification": "L1: customer in source audience"
+    }
+  ],
+  "limitation": "Audit did not retain full final reply prose or reach owner/unrelated-mailbox assertions before its stale whole-source equality assertion. Do not treat those as completed live checks."
+}

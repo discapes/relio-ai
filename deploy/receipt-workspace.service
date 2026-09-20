@@ -7,11 +7,13 @@ Type=simple
 WorkingDirectory=/home/user/aaltoai/challenges/relex/solution_3
 ExecStart=/usr/bin/env node --env-file-if-exists=.env scripts/start.mjs
 Environment=NODE_ENV=production
+Environment=APP_BUILD_DIR=.releases/current
 Environment=HOST=127.0.0.1
 Environment=PORT=34342
 Environment=ORIGIN=https://receipt-workspace.hai1.iffe.eu
 Restart=on-failure
 RestartSec=3
+TimeoutStopSec=10
 
 [Install]
 WantedBy=default.target

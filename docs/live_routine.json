@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "seconds": 37.356,
+  "mail": {
+    "id": "calendar-note",
+    "threadId": "demo/ee9945a4-e11a-48bb-9177-c78049e4d670",
+    "subject": "Bakery evidence review",
+    "from": "ana.duarte@relexsolutions.example",
+    "to": [
+      "priya.nair@acme-org.example"
+    ],
+    "cc": [
+      "acme-memory@relexsolutions.example"
+    ],
+    "body": "For everyone’s calendar: the bakery evidence review is Thursday 9 July 2026 at 10:00 Helsinki time. I will prepare the comparison of prepared extracts and a separate environment, including the earlier access decision and setup estimate. Priya will bring updated Acme requirements. The earlier access decision remains in place. Ana",
+    "date": "2026-07-06T09:15:00+03:00",
+    "status": "Memory updated",
+    "level": 1
+  },
+  "meetings": [
+    {
+      "id": "bakery",
+      "title": "Acme project check-in",
+      "date": "2026-07-08T10:00:00+03:00",
+      "attendees": [
+        "Ana Duarte",
+        "Priya Nair",
+        "Nadia Haddad"
+      ],
+      "purpose": "Review bakery integration, prepared extracts and outstanding Acme decisions."
+    },
+    {
+      "title": "Bakery evidence review",
+      "date": "2026-07-09T10:00:00+03:00",
+      "attendees": [
+        "Ana Duarte",
+        "Priya Nair"
+      ],
+      "purpose": "Ana prepares comparison of prepared extracts versus a separate environment, including the earlier access decision and setup estimate; Priya brings updated Acme requirements",
+      "id": "meeting-calendar-note",
+      "sourceIds": [
+        "runtime/calendar-note"
+      ]
+    }
+  ]
+}

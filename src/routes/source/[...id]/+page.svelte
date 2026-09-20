@@ -2,8 +2,18 @@
 	import { onMount } from 'svelte';
 	import { invalidateAll } from '$app/navigation';
 	import type { Source } from '$lib/types';
-	let { data }: { data: { source: Source; neighbours:Source[]; workspaceId:string; epoch: number; personaId: string; level: number } } =
-		$props();
+	let {
+		data
+	}: {
+		data: {
+			source: Source;
+			neighbours: Source[];
+			workspaceId: string;
+			epoch: number;
+			personaId: string;
+			level: number;
+		};
+	} = $props();
 	onMount(() => {
 		const timer = setInterval(() => {
 			void fetch('/state')
@@ -11,7 +21,7 @@
 				.then((state) => {
 					if (
 						state.workspaceId !== data.workspaceId ||
- state.epoch !== data.epoch ||
+						state.epoch !== data.epoch ||
 						state.personaId !== data.personaId ||
 						state.level !== data.level
 					)
@@ -58,8 +68,16 @@
 			<p><strong>Cc:</strong> {data.source.email.cc.join(', ') || '—'}</p>
 		</div>{/if}
 	<article class="source-text">{data.source.text}</article>
-	{#if data.neighbours.length}<section class="source-neighbours"><h2>Surrounding conversation</h2>{#each data.neighbours as neighbour}<article><a href={`/source/${encodeURIComponent(neighbour.id)}`}><strong>{neighbour.author}</strong> · {neighbour.position} · {neighbour.date}</a><p>{neighbour.text}</p></article>{/each}</section>{/if}
- <p class="source-note">
+	{#if data.neighbours.length}<section class="source-neighbours">
+			<h2>Surrounding conversation</h2>
+			{#each data.neighbours as neighbour}<article>
+					<a href={`/source/${encodeURIComponent(neighbour.id)}`}
+						><strong>{neighbour.author}</strong> · {neighbour.position} · {neighbour.date}</a
+					>
+					<p>{neighbour.text}</p>
+				</article>{/each}
+		</section>{/if}
+	<p class="source-note">
 		This is the application's current source record. Local dates from the archive retain their
 		original timezone ambiguity. Source IDs and positions connect this passage to its document.
 	</p>

@@ -2,6 +2,15 @@
 	import type { Answer } from '$lib/types';
 	let { answer, compact = false }: { answer: Answer; compact?: boolean } = $props();
 	let copied = $state(false);
+	let expanded = $state(false);
+	const briefParts = $derived(
+		answer.text.split(/\n\n+/).filter((paragraph) => paragraph.length > 60)
+	);
+	const shownText = $derived(
+		answer.kind === 'brief' && !expanded && answer.text.length > 2000
+			? briefParts.slice(0, 3).join('\n\n')
+			: answer.text
+	);
 	const sourceLink = (id: string) => `/source/${encodeURIComponent(id)}`;
 	function exportText() {
 		return `${answer.text}\n\n${answer.citations.map((c, i) => `[${i + 1}] ${c.title} · ${c.date} · ${c.author}\n${c.quote}`).join('\n\n')}\n\nGenerated ${answer.createdAt}. Customer-shareable evidence. Downloaded copies remain outside application erasure.`;
@@ -52,7 +61,13 @@
 	{#if answer.question && ['chat', 'share'].includes(answer.kind)}<p class="question-text">
 			{answer.question}
 		</p>{/if}
-	<div class="answer-text">{answer.text}</div>
+	<div class="answer-text">{shownText}</div>
+	{#if answer.kind === 'brief' && answer.text.length > 2000}<button
+			type="button"
+			class="text-button brief-expand"
+			onclick={() => (expanded = !expanded)}
+			>{expanded ? 'Show key items' : 'Read complete briefing'}</button
+		>{/if}
 	{#if answer.citations.length}<details class="receipts" open={!compact}>
 			<summary
 				>{answer.citations.length} source receipt{answer.citations.length === 1 ? '' : 's'}</summary
@@ -79,7 +94,11 @@
 			</ol>
 		</details>{/if}
 	<small class="generation-date"
-		>Prepared {answer.createdAt.replace('T', ' ').slice(0, 19)} · L{answer.level}</small
+		>Prepared {new Intl.DateTimeFormat('en-GB', {
+			dateStyle: 'medium',
+			timeStyle: 'short',
+			timeZone: 'Europe/Helsinki'
+		}).format(new Date(answer.createdAt))} Helsinki · L{answer.level}</small
 	>
 	{#if answer.kind === 'share'}<div class="export-actions">
 			<button type="button" class="button secondary" onclick={copy}

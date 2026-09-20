@@ -1,0 +1,9 @@
+{
+  "question": 1,
+  "durationMs": 72590,
+  "status": "failed",
+  "workspaceId": "practice_p1_1789861759953",
+  "generatedAt": "2026-09-19T23:49:19.998Z",
+  "error": "A factual paragraph lacks verified source support. Please retry or narrow the question.",
+  "prompt": "What did the master-data assessment report as complete in September 2024? Give every figure and the document each comes from. Distinguish assessment findings from remediation completion."
+}

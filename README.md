@@ -4,6 +4,8 @@ Receipt gives RELEX employees a prepared Acme project briefing, a private assist
 
 Application: https://receipt-workspace.hai1.iffe.eu · fixed port **34342**.
 
+Judges can open **How it works → Submission documents** for the design, reviewed practice answers, actual generated evaluations and validation. These source-bearing reference documents require Acme L3 and are withdrawn after erasure in that workspace.
+
 ## Run
 
 Requires Node 24.18+, the parsed sibling repository `../corpus_parsed/acme`, and the Helsinki inference endpoint at `http://127.0.0.1:8000/v1` with `glm-5.3-flash`.
@@ -47,11 +49,13 @@ Browser tests own port 34342 and use isolated test data with inference jobs disa
 DISABLE_BACKGROUND=1 npx tsx scripts/evaluate-practice.ts
 ```
 
-The nine practice questions are checked against independent references in `docs/practice_reference.md`. `docs/VALIDATION.md` records actual outcomes, failures and limitations.
+Reviewed submission answers for all nine practice questions are in `docs/practice_reference.md`. Actual generated answers remain in `docs/PRACTICE_ANSWERS.md`; `docs/practice_review.md` records earlier semantic limitations, and `docs/model_quality_review.md` contains the latest controlled P1/P3/P8 results and exact-record extraction review. `docs/VALIDATION.md` records actual outcomes, failures and limitations.
 
 ## Operations
 
 The systemd user unit is `receipt-workspace.service` and runs Node on the host. Source configuration is in `deploy/receipt-workspace.service`. Use `systemctl --user status receipt-workspace`, `systemctl --user restart receipt-workspace`, and `journalctl --user -u receipt-workspace -n 100` for operations. SQLite state is in `data/app.sqlite`; preserve this directory across deployment.
+
+Deploy updates with `node scripts/deploy.mjs`. It builds an immutable release, atomically switches `.releases/current`, and restarts the service. Running browser assets remain tied to their release while the next version builds. Runtime SQLite data stays outside release directories.
 
 Interrupted running jobs become visible failed jobs on restart; queued jobs resume when the application is opened. Retry a failed brief/extraction from the workspace or a failed email from its thread. A model outage leaves previous valid dated briefs available. Inference-generated prose can still need correction; source receipts and the full archive remain available for inspection.
 

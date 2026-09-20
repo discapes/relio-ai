@@ -1,0 +1,2513 @@
+{
+  "question": "Find one thing in the archive that was agreed and then never done. Show the trail from the agreement to the present, and say who would have needed to notice.",
+  "durationMs": 112103,
+  "error": "Error: Inference returned incomplete structured output. Retry the task.",
+  "calls": [
+    {
+      "durationMs": 304,
+      "promptCharacters": 385,
+      "task": "Employee request:\nFind one thing in the archive that was agreed and then never done. Show the trail from the agreement to the present, and say who would have needed to notice.\nCurr",
+      "repair": false,
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 292,
+        "total_tokens": 313,
+        "completion_tokens": 21,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0
+      },
+      "output": {
+        "action": "question",
+        "text": "",
+        "ids": [],
+        "needsEvidence": true,
+        "research": "commitments"
+      }
+    },
+    {
+      "durationMs": 19483,
+      "promptCharacters": 95125,
+      "task": "Build an evidence inventory for this research question: Find one thing in the archive that was agreed and then never done. Show the trail from the agreement to the present, and say",
+      "repair": false,
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 28048,
+        "total_tokens": 30919,
+        "completion_tokens": 2871,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "reasoning_tokens": 0
+      },
+      "output": {
+        "items": [
+          {
+            "fact": "2024-03-20: Marco Rossi committed in writing to include fresh as Phase 2 in the statement of work with a target window rather than leaving it open, responding to Lena Fischer's demand that fresh not become a someday item.",
+            "sourceIds": [
+              "T01U0105",
+              "T01U0107",
+              "T01U0108",
+              "T01U0109",
+              "T01U0110",
+              "T01U0111",
+              "T01U0112"
+            ],
+            "commitment": {
+              "acceptedAction": "\"Noted, and I will commit it as Phase 2 in the statement of work with... a target window rather than leaving it open.\"",
+              "owner": "Marco Rossi",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T01U0108",
+                "T01U0109",
+                "T01U0110",
+                "T01U0111",
+                "T01U0112"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2024-03-20: Marco Rossi committed to send Robert Kahn a written summary and the value case structure that week, after Robert asked for one page not forty.",
+            "sourceIds": [
+              "T01U0170",
+              "T01U0182"
+            ],
+            "commitment": {
+              "acceptedAction": "\"I will send a written summary and the value case structure this week.\"",
+              "owner": "Marco Rossi",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T01U0182"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2024-03-20: Marco Rossi committed to structure the value case around fresh waste plus inventory reduction, measured against an agreed baseline, in response to Robert Kahn's twelve-month ROI frame.",
+            "sourceIds": [
+              "T01U0146",
+              "T01U0151",
+              "T01U0153",
+              "T01U0155",
+              "T01U0156",
+              "T01U0158"
+            ],
+            "commitment": {
+              "acceptedAction": "\"Then we will structure the value case around fresh waste plus inventory reduction, measured against your current and then the...\" with \"We agree the baseline with you before go-live and report against it.\"",
+              "owner": "Marco Rossi",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T01U0151",
+                "T01U0155"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2024-04-18: Priya Nair accepted Tomas Lindholm's request to find out whether remaining shelf life or goods receipt date is available in the warehouse system, saying \"I can ask\"; Tomas noted it changes the design.",
+            "sourceIds": [
+              "T02U0129",
+              "T02U0131",
+              "T02U0132",
+              "T02U0133",
+              "T02U0134",
+              "T02U0135"
+            ],
+            "commitment": {
+              "acceptedAction": "\"I can ask.\" (to find out whether remaining shelf life is stored in the warehouse system)",
+              "owner": "Priya Nair",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T02U0133",
+                "T02U0135"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2024-04-18: Priya Nair accepted ownership of the master data cleansing workstream, saying \"That will be me\" and repeating \"It will be me\".",
+            "sourceIds": [
+              "T02U0141",
+              "T02U0142",
+              "T02U0144",
+              "T02U0145",
+              "T02U0147"
+            ],
+            "commitment": {
+              "acceptedAction": "\"That will be me.\" / \"It will be me.\" (owning the master data cleansing workstream)",
+              "owner": "Priya Nair",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T02U0145",
+                "T02U0147"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2024-04-18: Tomas Lindholm committed to deliver the technical assessment write-up in two weeks, covering ECC, batch, DC-2 named risk, and master data cleansing ownership.",
+            "sourceIds": [
+              "T02U0138",
+              "T02U0139",
+              "T02U0141",
+              "T02U0142",
+              "T02U0144"
+            ],
+            "commitment": {
+              "acceptedAction": "\"You will have it in two weeks.\" (the assessment write-up)",
+              "owner": "Tomas Lindholm",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T02U0139"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2024-09-30: Kwame Boateng recorded the agreed remediation scope for the pilot cohort (4,214 articles; 1,317 missing case pack; 3,105 missing/default supplier lead; shelf life 48% populated), with case pack as blocker and shelf life out of scope for the phase.",
+            "sourceIds": [
+              "E13M006"
+            ],
+            "commitment": {
+              "acceptedAction": "\"As agreed in the workshop, the remediation scope for the pilot cohort\" covering case pack, lead times, and shelf life exclusion for this phase.",
+              "owner": "Kwame Boateng",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E13M006"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2024-12-20: Ana Duarte recorded that shelf life remains at 48% and untouched, correct for this phase, and will become the critical path for phase two.",
+            "sourceIds": [
+              "E13M001",
+              "E13M002"
+            ],
+            "commitment": {
+              "acceptedAction": "\"One thing for the record so it is not a surprise in six months: shelf life remains at 48% and untouched. That is correct for this phase and it will become the critical path for phase two.\"",
+              "owner": "Ana Duarte",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E13M002"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2025-01-21/22: Ana Duarte sent the UAT sign-off wording to Lena Fischer for signature; Lena confirmed signed and attached on 2025-01-22. The signed attachment itself is unavailable; the email documents the confirmation.",
+            "sourceIds": [
+              "E15M001",
+              "E15M002",
+              "E15M003"
+            ],
+            "commitment": {
+              "acceptedAction": "\"Signed and attached.\" (UAT sign-off for core replenishment, 25 store pilot cohort, ambient and dry goods, excluding fresh categories)",
+              "owner": "Lena Fischer",
+              "state": "fulfilled",
+              "acceptanceSourceIds": [
+                "E15M002"
+              ],
+              "followupSourceIds": [
+                "E15M001"
+              ]
+            }
+          },
+          {
+            "fact": "2025-03-14: Ana Duarte committed to having a named second person on the runbook permanently by the end of next week, after Lena Fischer raised the cover question in January and was told it would be handled.",
+            "sourceIds": [
+              "E16M004",
+              "E16M005"
+            ],
+            "commitment": {
+              "acceptedAction": "\"I will have a named second person on the runbook permanently by the end of next week.\"",
+              "owner": "Ana Duarte",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E16M004"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2025-03-17: Priya Nair committed to implementing a file size check that week; Tomas Lindholm agreed and asked her to add it; Priya confirmed on 2025-03-21 that any file under 1KB now fails the job loudly.",
+            "sourceIds": [
+              "E16M001",
+              "E16M002",
+              "E16M003"
+            ],
+            "commitment": {
+              "acceptedAction": "\"The second one is a file size check and I can do it this week.\"",
+              "owner": "Priya Nair",
+              "state": "fulfilled",
+              "acceptanceSourceIds": [
+                "E16M003",
+                "E16M002"
+              ],
+              "followupSourceIds": [
+                "E16M001"
+              ]
+            }
+          },
+          {
+            "fact": "2025-02-20: Ana Duarte stated the store user list was still outstanding and needed by Monday to create accounts; Priya Nair had said on 2025-02-04 she would send store users separately (25 of them) but did not have all addresses yet.",
+            "sourceIds": [
+              "E14M001",
+              "E14M004"
+            ],
+            "commitment": {
+              "acceptedAction": "\"Store users I will send separately, there are 25 of them and I do not have all the addresses yet.\"",
+              "owner": "Priya Nair",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E14M004"
+              ],
+              "followupSourceIds": [
+                "E14M001"
+              ]
+            }
+          },
+          {
+            "fact": "2025-07-15: Ana Duarte committed to add a note to the project folder saying the cohort was reduced from 40 to 25 stores and when, after Marco Rossi raised that a note in a folder is not going to stop this happening again.",
+            "sourceIds": [
+              "E17M001",
+              "E17M002",
+              "E17M004",
+              "E17M005"
+            ],
+            "commitment": {
+              "acceptedAction": "\"But I will add a note to the folder saying the cohort was reduced and when.\"",
+              "owner": "Ana Duarte",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E17M002"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2026-01-21: Priya Nair asked that the consultancy delete her mobile number from the forwarded runbook and tell her when they have; no confirmation of deletion appears in the archive.",
+            "sourceIds": [
+              "E18M001",
+              "E18M002",
+              "E18M003"
+            ],
+            "commitment": {
+              "acceptedAction": "\"Please ask them to delete it and tell me when they have.\"",
+              "owner": "unknown",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E18M001"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2025-12-12: Lena Fischer committed to forward the operational sections of the fresh cutover runbook to the four regional managers without the contact page; Ana Duarte endorsed the approach.",
+            "sourceIds": [
+              "E18M005",
+              "E18M006"
+            ],
+            "commitment": {
+              "acceptedAction": "\"I am going to forward the operational sections to the four regional managers without the contact page, since they need to know what is happening Monday.\"",
+              "owner": "Lena Fischer",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E18M006",
+                "E18M005"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2026-06-17: Robert Kahn asked Marco Rossi to come back with a number for chain wide before the end of the month and to explain why the next number will be different; Marco delivered indicative numbers on 2026-06-26 including the explanation that the value case depended on fresh, which depended on a data field identified as a dependency in April 2024 and never obtained.",
+            "sourceIds": [
+              "E20M004",
+              "E20M005"
+            ],
+            "commitment": {
+              "acceptedAction": "\"You said you would come back with a number for chain wide rather than guess in the room.\"",
+              "owner": "Marco Rossi",
+              "state": "fulfilled",
+              "acceptanceSourceIds": [
+                "E20M005"
+              ],
+              "followupSourceIds": [
+                "E20M004"
+              ]
+            }
+          },
+          {
+            "fact": "2026-06-29: Robert Kahn said \"Then I will ask him\" regarding Nils Ackermann, owner of the warehouse system under logistics IT, after Lena Fischer reported Priya has asked him twice, in 2024 and again in 2025, without result.",
+            "sourceIds": [
+              "E20M001",
+              "E20M002",
+              "E20M003"
+            ],
+            "commitment": {
+              "acceptedAction": "\"Then I will ask him.\"",
+              "owner": "Robert Kahn",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E20M001"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2025-06-30 through 2025-09-01: Ana Duarte's weekly updates show repeated chasing of the shelf life field mapping from Acme IT, escalating to steering, with the question still open from four updates prior as of 2025-09-01 and the build proceeding on an approximation.",
+            "sourceIds": [
+              "R01M013",
+              "R01M014",
+              "R01M015",
+              "R01M016",
+              "R01M017",
+              "R01M018"
+            ],
+            "commitment": {
+              "acceptedAction": "\"Chase the shelf life field mapping (Phase 2 - Technical Implementation)\" / \"Shelf life escalation to steering\"",
+              "owner": "Ana Duarte",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "R01M018",
+                "R01M014"
+              ],
+              "followupSourceIds": [
+                "R01M013"
+              ]
+            }
+          },
+          {
+            "fact": "2025-11-24: Weekly update records that the OP_ID field exclusion was agreed and confirmed in writing, and that the plan was reissued on a two delivery basis with bakery descoped.",
+            "sourceIds": [
+              "R01M007"
+            ],
+            "commitment": {
+              "acceptedAction": "\"OP_ID field exclusion agreed and confirmed in writing\"",
+              "owner": "unknown",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "R01M007"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2025-08-29: Marco Rossi's August steering report states a data dependency with Acme IT has been open for five weeks; the field needed for shelf life aware ordering does not exist in the form required; a workaround is being prepared; Acme IT capacity is needed to confirm the workaround is acceptable.",
+            "sourceIds": [
+              "R02M006"
+            ],
+            "commitment": {
+              "acceptedAction": "\"What we need from you: Acme IT capacity to confirm the workaround is acceptable.\"",
+              "owner": "unknown",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "R02M006"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2026-03-02: Priya Nair decided Meridian would work from extracts rather than get read access to the environment, citing inability to explain to her data protection officer why a third party had read access to everything; Ivan Petrov accepted this as the right call.",
+            "sourceIds": [
+              "E19M001",
+              "E19M002"
+            ],
+            "commitment": {
+              "acceptedAction": "\"Extracts. Slower is acceptable, the other thing is not.\"",
+              "owner": "Priya Nair",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E19M002",
+                "E19M001"
+              ],
+              "followupSourceIds": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "durationMs": 31612,
+      "promptCharacters": 48806,
+      "task": "Build an evidence inventory for this research question: Find one thing in the archive that was agreed and then never done. Show the trail from the agreement to the present, and say",
+      "repair": false,
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 13886,
+        "total_tokens": 17694,
+        "completion_tokens": 3808,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "reasoning_tokens": 0
+      },
+      "output": {
+        "items": [
+          {
+            "fact": "2024-05-06: Priya Nair accepted ownership of the master data remediation workstream ('Agreed on all four. I will own the remediation, whatever Lena says about it.') in response to Tomas Lindholm's 2024-05-02 assessment naming case pack quantity as the blocking gap.",
+            "sourceIds": [
+              "E11M004",
+              "E11M005"
+            ]
+          },
+          {
+            "fact": "2024-05-06: Priya Nair accepted the action to ask whether goods receipt date is exposed outside the WMS ('I have asked') and committed to chase in August ('I will chase in August.'); Tomas Lindholm had asked for this on 2024-05-02.",
+            "sourceIds": [
+              "E11M004",
+              "E11M005"
+            ]
+          },
+          {
+            "fact": "2024-08-20: Tomas Lindholm chased the goods receipt date question ('It is August. Any word on whether goods receipt date is available outside the WMS?'), confirming the August chase was due.",
+            "sourceIds": [
+              "E11M003"
+            ]
+          },
+          {
+            "fact": "2024-08-22: Priya Nair reported the chase was done and the answer negative: the owner is back, goods receipt date is captured but not exposed; getting it out requires an extract nobody owns or a SAP write-back change request, which she would not raise for a non-current-phase item.",
+            "sourceIds": [
+              "E11M002"
+            ]
+          },
+          {
+            "fact": "2024-08-22: Tomas Lindholm closed the thread by logging goods receipt date exposure as a phase two dependency.",
+            "sourceIds": [
+              "E11M001"
+            ]
+          },
+          {
+            "fact": "2025-07-08: Nadia Haddad asked Priya Nair for the actual remaining shelf life field for fresh ordering configuration.",
+            "sourceIds": [
+              "E01M012"
+            ]
+          },
+          {
+            "fact": "2025-07-09: Priya Nair accepted the action to ask the warehouse team about remaining shelf life ('I will ask the warehouse team.'), explaining MHDHB is total not remaining and goods receipt date sits in the warehouse system.",
+            "sourceIds": [
+              "E01M011"
+            ]
+          },
+          {
+            "fact": "2025-07-22: Nadia Haddad chased the same deliverable ('Did the warehouse team come back on remaining shelf life?'), noting it is on the critical path for fresh UAT.",
+            "sourceIds": [
+              "E01M010"
+            ]
+          },
+          {
+            "fact": "2025-07-23: Priya Nair confirmed the warehouse team had not answered ('Not yet. Half of them are on holiday. I will chase.') — the accepted ask/chase action was performed but the data remained missing.",
+            "sourceIds": [
+              "E01M009"
+            ]
+          },
+          {
+            "fact": "2025-08-19: Ana Duarte chased status on the remaining shelf life thread and copied Lena Fischer, calling it the item mentioned in the steering call.",
+            "sourceIds": [
+              "E01M008"
+            ]
+          },
+          {
+            "fact": "2025-08-20: Priya Nair reported the warehouse team's answer: goods receipt date is captured but not exposed outside the WMS; obtaining it needs a WMS extract nobody owns or a SAP write-back change request.",
+            "sourceIds": [
+              "E01M007"
+            ]
+          },
+          {
+            "fact": "2025-08-26: Kwame Boateng responded that his June WMS extract look was for the DC-2 inventory feed, a different system, and does not help the shelf life question.",
+            "sourceIds": [
+              "E01M006"
+            ]
+          },
+          {
+            "fact": "2025-09-04: Nadia Haddad proposed an approximation (total shelf life from MHDHB minus average days-in-warehouse per article group derived from stock turn) and stated 'If nobody objects I will build it that way so we are not blocked.'",
+            "sourceIds": [
+              "E01M005"
+            ]
+          },
+          {
+            "fact": "2025-09-09: Ana Duarte put shelf life on the agenda for the Phase 2 escalation call on Friday and asked Priya to say before Friday if the warehouse extract is genuinely impossible.",
+            "sourceIds": [
+              "E01M004"
+            ]
+          },
+          {
+            "fact": "2025-09-11: Priya Nair replied 'It is not impossible, it is unowned... Proceed with your approximation.' — acceptance by explicit statement, not silence.",
+            "sourceIds": [
+              "E01M003"
+            ]
+          },
+          {
+            "fact": "2025-10-30: Ana Duarte, writing up config decisions, asked whether the approximation approach was ever confirmed by Acme; Nadia Haddad replied 'We proceeded. Nobody objected.' — no affirmative Acme confirmation of the approximation exists in the thread.",
+            "sourceIds": [
+              "E01M002",
+              "E01M001"
+            ]
+          },
+          {
+            "fact": "2024-07-29: Ana Duarte confirmed the pilot store group as agreed at kickoff as 40 stores across three regions and asked Priya for the store list to load with format attached.",
+            "sourceIds": [
+              "E09M006"
+            ]
+          },
+          {
+            "fact": "2024-09-03: Priya Nair delivered the store list and reported the pilot was reduced to 25 stores because regional managers pushed back and Lena agreed to the reduction; she assumed Ana had been told.",
+            "sourceIds": [
+              "E09M005"
+            ]
+          },
+          {
+            "fact": "2024-09-03: Ana Duarte accepted the reduction ('I was not told but 25 is fine. I will update the plan.') — an accepted action to update the plan.",
+            "sourceIds": [
+              "E09M004"
+            ]
+          },
+          {
+            "fact": "2025-05-20: Robert Kahn asked whether the pilot is 40 or 25, having seen both numbers that month.",
+            "sourceIds": [
+              "E09M002"
+            ]
+          },
+          {
+            "fact": "2025-05-20: Marco Rossi stated the headline numbers were drawn from a pilot cohort of 40 stores over ninety days since go-live.",
+            "sourceIds": [
+              "E09M003"
+            ]
+          },
+          {
+            "fact": "2025-05-21: Marco Rossi acknowledged the pilot was reduced in September 2024, called his 40-store note wrong, and accepted the action to correct the deck before Thursday.",
+            "sourceIds": [
+              "E09M001"
+            ]
+          },
+          {
+            "fact": "2026-04-07: Nadia Haddad reported Q1 2026 fresh results against the baseline agreed in December: waste 4.1% to 3.4% of fresh net sales, ~118 tonnes absolute reduction, ~296 tonnes CO2e avoided, availability +1.9 points, order automation 88%, for 25 pilot stores January to March; chilled ready meals excluded as it went live too late; caveats on warm February and the 118 tonnes being scaled from 25 stores; tonnage derived from nightly extract article movement totals rather than till data.",
+            "sourceIds": [
+              "E10M004"
+            ]
+          },
+          {
+            "fact": "2026-04-07: Lena Fischer told Robert Kahn waste is 3.4% against a 2.8% target, two thirds of the way there on the pilot cohort.",
+            "sourceIds": [
+              "E10M003"
+            ]
+          },
+          {
+            "fact": "2026-04-07: Robert Kahn asked what 118 tonnes costs at current prices.",
+            "sourceIds": [
+              "E10M002"
+            ]
+          },
+          {
+            "fact": "2026-04-08: Sofia Almeida accepted the produce number but said dairy looks too good and asked Nadia to check whether the dairy baseline includes the yoghurt range moved between categories in November; she also asked whether extract tonnage totals had been compared with till numbers for the same three months before going to the board.",
+            "sourceIds": [
+              "E10M001"
+            ]
+          },
+          {
+            "fact": "2024-06-18: Marco Rossi proposed SOW value case wording ('Both parties expect a return... within twelve months') and added a quarterly business review with a written report as an obligation on RELEX.",
+            "sourceIds": [
+              "E12M004"
+            ]
+          },
+          {
+            "fact": "2024-06-25: Lena Fischer reported legal replaced 'Both parties expect' with 'RELEX anticipates' and wanted the baseline defined in the contract; she said the baseline cannot be defined before knowing what is measured.",
+            "sourceIds": [
+              "E12M003"
+            ]
+          },
+          {
+            "fact": "2024-06-26: Marco Rossi accepted 'RELEX anticipates' and proposed wording the baseline as 'a baseline to be agreed in writing prior to go-live of the fresh phase'.",
+            "sourceIds": [
+              "E12M002"
+            ]
+          },
+          {
+            "fact": "2024-07-02: Lena Fischer confirmed the wording is in and the signed version would go out that week.",
+            "sourceIds": [
+              "E12M001"
+            ]
+          },
+          {
+            "fact": "2025-06-11: Marco Rossi proposed a three-wave Phase 2 fresh sequencing (produce and dairy first, then chilled ready meals, then bakery, roughly six weeks apart) and said 'If this works for you we would build the plan around it.'",
+            "sourceIds": [
+              "E03M008"
+            ]
+          },
+          {
+            "fact": "2025-08-14: Ana Duarte forwarded the proposal for planning, stated the three-wave approach is what they are building towards, and asked Nadia to sketch the UAT plan on that basis.",
+            "sourceIds": [
+              "E03M007"
+            ]
+          },
+          {
+            "fact": "2025-08-14: Nadia Haddad asked whether Acme actually confirmed three waves, noting no reply from Lena or Robert is visible in the thread.",
+            "sourceIds": [
+              "E03M006"
+            ]
+          },
+          {
+            "fact": "2025-08-15: Ana Duarte asked Marco directly ('Marco?').",
+            "sourceIds": [
+              "E03M005"
+            ]
+          },
+          {
+            "fact": "2025-08-15: Marco Rossi said the three-wave approach was discussed verbally in June steering, nobody pushed back, and 'I would treat it as agreed.'",
+            "sourceIds": [
+              "E03M004"
+            ]
+          },
+          {
+            "fact": "2025-11-20: Lena Fischer disputed the three-wave claim, stating what was agreed was fresh as Phase 2 in one delivery, and asked Marco to point to where three waves was agreed.",
+            "sourceIds": [
+              "E03M003"
+            ]
+          },
+          {
+            "fact": "2025-11-21: Marco Rossi admitted the three-wave plan was never minuted as a decision, stated Monday's go/no-go decided two deliveries (produce, dairy and chilled ready meals in December; bakery separately), and accepted the action to have Ana reissue the plan on the two-delivery basis today.",
+            "sourceIds": [
+              "E03M002"
+            ]
+          },
+          {
+            "fact": "2025-11-21: Lena Fischer accepted the two-delivery understanding ('Two deliveries is what I understood and it is what I have told Robert.').",
+            "sourceIds": [
+              "E03M001"
+            ]
+          },
+          {
+            "fact": "2025-11-18: Sofia Almeida requested in writing removal of the 'out October to November, surgery' line about her from handover pack Acme-fresh-handover-v3 page 4, confirmation when done, and a list of where else it appears; she wants kept the fact she is the only Acme person who knows the fresh categories.",
+            "sourceIds": [
+              "E04M004"
+            ]
+          },
+          {
+            "fact": "2025-11-19: Marco Rossi accepted the removal action ('I have asked Ana to remove it from the handover pack today and to check the project site.') and promised to come back with a list of other locations within a few days.",
+            "sourceIds": [
+              "E04M003"
+            ]
+          },
+          {
+            "fact": "2025-11-21: Ana Duarte reported handover pack updated to v4 with the line gone; the old version remains in project site document history which she cannot delete, and she raised it with RELEX IT.",
+            "sourceIds": [
+              "E04M002"
+            ]
+          },
+          {
+            "fact": "2026-03-12: Sofia Almeida chased: 'Was this ever finished? I have not had the list Marco promised, and the document history point was still open when we last spoke in November.' — Marco's promised list of other locations was never delivered and the document history deletion remained open.",
+            "sourceIds": [
+              "E04M001"
+            ]
+          },
+          {
+            "fact": "2025-11-18: Priya Nair set a condition that OP_ID (six-digit operator identifier, examples 447102 Marika Lindqvist store 118 Vantaa nights, 448933 Osman Yildirim store 118 Vantaa, 451207 Heidi Salminen store 094 Espoo) must be excluded at source before the next extract runs, and asked what would be done with already-delivered files; she offered the January session agenda for a complicated answer.",
+            "sourceIds": [
+              "E07M004"
+            ]
+          },
+          {
+            "fact": "2025-11-19: Nadia Haddad confirmed OP_ID is dropped at the extract from Friday night's run and that Kwame is checking downstream exposure, promising a definitive answer on already-delivered files.",
+            "sourceIds": [
+              "E07M003"
+            ]
+          },
+          {
+            "fact": "2025-11-24: Kwame Boateng answered: OP_ID is present in the raw landing zone for every daily file since 14 February, absent from aggregated waste tables, but present in June and September reconciliation extracts, two of which were emailed as attachments (once to Priya, once to a nine-person distribution list including three at Meridian); he can purge the landing zone but cannot purge the attachments.",
+            "sourceIds": [
+              "E07M002"
+            ]
+          },
+          {
+            "fact": "2025-11-24: Priya Nair noted three Meridian recipients (replying to the distribution list count).",
+            "sourceIds": [
+              "E07M001"
+            ]
+          },
+          {
+            "fact": "2026-02-03: Kwame Boateng attached the DC-2 incident log for January: fourteen failures, eleven silent; four correlate with a scheduled job on Acme's side that Priya has twice said does not exist.",
+            "sourceIds": [
+              "E05M006"
+            ]
+          },
+          {
+            "fact": "2026-02-04: Nadia Haddad agreed on the approach of asking Priya whether anything changed in the January maintenance window and letting her find it herself.",
+            "sourceIds": [
+              "E05M005"
+            ]
+          },
+          {
+            "fact": "2026-02-10: Ana Duarte sent the DC-2 incident log to Ivan Petrov and Ruth at Meridian 'As promised at the scoping session'.",
+            "sourceIds": [
+              "E05M004"
+            ]
+          },
+          {
+            "fact": "2026-02-10: Marco Rossi asked whether Ana forwarded the whole chain or just the attachment, citing an agreement on the 28th that this goes to Lena and she decides what Meridian sees.",
+            "sourceIds": [
+              "E05M003"
+            ]
+          },
+          {
+            "fact": "2026-02-10: Ana Duarte replied 'The whole chain. Why - oh.' (interrupted turn).",
+            "sourceIds": [
+              "E05M002"
+            ]
+          },
+          {
+            "fact": "2026-02-10: Ivan Petrov acknowledged receipt, said Meridian will build assuming roughly fortnightly failures, and advised ignoring the scheduled-job comment.",
+            "sourceIds": [
+              "E05M001"
+            ]
+          },
+          {
+            "fact": "2025-10-06: Sofia Almeida asked Nadia for test environment login details ahead of reviewing fresh UAT output that week.",
+            "sourceIds": [
+              "E02M006"
+            ]
+          },
+          {
+            "fact": "2025-10-06: Nadia Haddad sent the test URL and said credentials should be the same as production.",
+            "sourceIds": [
+              "E02M005"
+            ]
+          },
+          {
+            "fact": "2025-10-06: Sofia Almeida reported the login does not work even after a password reset.",
+            "sourceIds": [
+              "E02M004"
+            ]
+          },
+          {
+            "fact": "2025-10-07: Nadia Haddad created user SofAlme with password SofAlme2025! and asked Sofia to change it after first login.",
+            "sourceIds": [
+              "E02M003"
+            ]
+          },
+          {
+            "fact": "2025-10-07: Sofia Almeida confirmed access works.",
+            "sourceIds": [
+              "E02M002"
+            ]
+          },
+          {
+            "fact": "2026-02-17: Kwame Boateng revived the thread to reuse the access setup for the bakery workstream and asked Nadia whether SofAlme was created as a normal user or with elevated rights, saying he cannot tell from the admin panel; no answer appears in the supplied documents.",
+            "sourceIds": [
+              "E02M001"
+            ]
+          },
+          {
+            "fact": "2025-10-14: Nadia Haddad asked Sofia whether 'chilled convenience' sits under ready meals or is its own thing, noting master data has it both ways depending on site; Sofia's auto-reply (out 13 October to 17 November, covering contact Jonas Weiss who covers ambient and is not familiar with fresh) redirected the question.",
+            "sourceIds": [
+              "E06M004",
+              "E06M003"
+            ]
+          },
+          {
+            "fact": "2025-10-14: Nadia Haddad flagged Sofia's misconfigured out-of-office (a personal line going to all work contacts for six weeks) and asked whether someone should tell her.",
+            "sourceIds": [
+              "E06M002"
+            ]
+          },
+          {
+            "fact": "2025-10-14: Ana Duarte decided to mention it to Lena rather than to Sofia directly and said 'Do not forward it any further.'",
+            "sourceIds": [
+              "E06M001"
+            ]
+          },
+          {
+            "fact": "2026-04-09: Katarina Voss recorded four DPA actions due within four weeks: (1) written confirmation of hosting region and whether named in the current agreement, (2) fifth sub-processor identity, processing, location, transfer mechanism and why Acme was not notified, (3) confirmation the November erasure request is fully closed with a list of every location the data was held, (4) a stated retention period for meeting recordings and transcripts and a position on the existing two years of material.",
+            "sourceIds": [
+              "E08M004"
+            ]
+          },
+          {
+            "fact": "2026-04-29: Marco Rossi answered items 1, 2 and 4 (EU West hosting named in Schedule 2; fifth sub-processor Halberd Observability BV processing telemetry in the Netherlands and Ireland, notification gap due to a wrong classification now changed; retention eighteen months from creation effective 1 May with the two-year backlog being extracted then transcripts deleted) and stated 'I owe you item 3 and I do not want to send you a partial answer on it.'",
+            "sourceIds": [
+              "E08M003"
+            ]
+          },
+          {
+            "fact": "2026-04-30: Katarina Voss accepted the response to item 3's neighbours, registered a concern on item 4's extract-then-delete approach, and stated 'Item 3 remains open.'",
+            "sourceIds": [
+              "E08M002"
+            ]
+          },
+          {
+            "fact": "2026-06-23: Katarina Voss chased item 3 again with the single line 'Item 3.' — the November erasure request closure confirmation with a full location list remained outstanding roughly eleven weeks after the four-week deadline.",
+            "sourceIds": [
+              "E08M001"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "durationMs": 22962,
+      "promptCharacters": 48984,
+      "task": "Build an evidence inventory for this research question: Find one thing in the archive that was agreed and then never done. Show the trail from the agreement to the present, and say",
+      "repair": true,
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 13912,
+        "total_tokens": 18287,
+        "completion_tokens": 4375,
+        "prompt_tokens_details": {
+          "cached_tokens": 13824
+        },
+        "reasoning_tokens": 0
+      },
+      "output": {
+        "items": [
+          {
+            "fact": "2024-05-06: Priya Nair accepted ownership of the master data remediation workstream, writing 'Agreed on all four. I will own the remediation, whatever Lena says about it.'",
+            "sourceIds": [
+              "E11M004",
+              "E11M005"
+            ],
+            "commitment": {
+              "acceptedAction": "Own the master data remediation workstream (case pack quantity the blocking gap) — 'Agreed on all four. I will own the remediation, whatever Lena says about it.'",
+              "owner": "Priya Nair",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E11M004",
+                "E11M005"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2024-05-06: Priya Nair accepted the action to chase the warehouse question in August: 'I have asked. The person who owns that system is on secondment until August. I will chase in August.'",
+            "sourceIds": [
+              "E11M004",
+              "E11M005"
+            ],
+            "commitment": {
+              "acceptedAction": "Chase the warehouse team in August about whether goods receipt date is exposed outside the WMS — 'I will chase in August.'",
+              "owner": "Priya Nair",
+              "state": "fulfilled",
+              "acceptanceSourceIds": [
+                "E11M004",
+                "E11M005"
+              ],
+              "followupSourceIds": [
+                "E11M003",
+                "E11M002"
+              ]
+            }
+          },
+          {
+            "fact": "2024-05-02: Tomas Lindholm promised the assessment write-up ('Assessment written up as promised') — fulfilled same day.",
+            "sourceIds": [
+              "E11M005"
+            ],
+            "commitment": {
+              "acceptedAction": "Write up the technical assessment — 'Assessment written up as promised.'",
+              "owner": "Tomas Lindholm",
+              "state": "fulfilled",
+              "acceptanceSourceIds": [
+                "E11M005"
+              ],
+              "followupSourceIds": [
+                "E11M005"
+              ]
+            }
+          },
+          {
+            "fact": "2024-08-22: Tomas Lindholm accepted logging the goods receipt date question as a phase two dependency and closing the thread.",
+            "sourceIds": [
+              "E11M001"
+            ],
+            "commitment": {
+              "acceptedAction": "Log the goods receipt date availability question as a phase two dependency and close the thread — 'Logging it as a phase two dependency and closing this thread.'",
+              "owner": "Tomas Lindholm",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E11M001"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2024-09-03: Ana Duarte accepted updating the plan after the pilot reduction to 25 stores: 'I was not told but 25 is fine. I will update the plan.'",
+            "sourceIds": [
+              "E09M004",
+              "E09M005"
+            ],
+            "commitment": {
+              "acceptedAction": "Update the plan to reflect the reduced pilot of 25 stores — 'I will update the plan.'",
+              "owner": "Ana Duarte",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E09M004",
+                "E09M005"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2025-05-20: Marco Rossi accepted correcting his note in the deck before Thursday: 'My note below was wrong and I will correct it in the deck before Thursday.'",
+            "sourceIds": [
+              "E09M001"
+            ],
+            "commitment": {
+              "acceptedAction": "Correct the pilot cohort note in the deck before Thursday — 'I will correct it in the deck before Thursday.'",
+              "owner": "Marco Rossi",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E09M001"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2025-09-04: Nadia Haddad proposed building the shelf life approximation unless anyone objected; 2025-09-11 Priya Nair said 'Proceed with your approximation', and 2025-10-30 Nadia confirmed 'We proceeded. Nobody objected.'",
+            "sourceIds": [
+              "E01M005",
+              "E01M003",
+              "E01M001"
+            ],
+            "commitment": {
+              "acceptedAction": "Build the fresh shelf life configuration using the approximation (total shelf life from MHDHB minus average days-in-warehouse per article group) — 'If nobody objects I will build it that way so we are not blocked.'",
+              "owner": "Nadia Haddad",
+              "state": "fulfilled",
+              "acceptanceSourceIds": [
+                "E01M005",
+                "E01M003"
+              ],
+              "followupSourceIds": [
+                "E01M001"
+              ]
+            }
+          },
+          {
+            "fact": "2025-07-09: Priya Nair accepted asking the warehouse team about remaining shelf life ('I will ask the warehouse team'); 2025-07-22 Nadia chased; 2025-07-23 Priya replied 'Not yet... I will chase.'",
+            "sourceIds": [
+              "E01M011",
+              "E01M010",
+              "E01M009"
+            ],
+            "commitment": {
+              "acceptedAction": "Ask the warehouse team whether remaining shelf life / goods receipt date is obtainable — 'I will ask the warehouse team.'",
+              "owner": "Priya Nair",
+              "state": "fulfilled",
+              "acceptanceSourceIds": [
+                "E01M011"
+              ],
+              "followupSourceIds": [
+                "E01M010",
+                "E01M009"
+              ]
+            }
+          },
+          {
+            "fact": "2025-09-09: Ana Duarte asked Priya to say before Friday if the warehouse extract is genuinely impossible; 2025-09-11 Priya answered 'It is not impossible, it is unowned... Proceed with your approximation.'",
+            "sourceIds": [
+              "E01M004",
+              "E01M003"
+            ],
+            "commitment": {
+              "acceptedAction": "Say before Friday whether the warehouse extract is genuinely impossible — 'if the warehouse extract is genuinely impossible please say so before Friday so we can plan around it'.",
+              "owner": "Priya Nair",
+              "state": "fulfilled",
+              "acceptanceSourceIds": [
+                "E01M004"
+              ],
+              "followupSourceIds": [
+                "E01M003"
+              ]
+            }
+          },
+          {
+            "fact": "2025-10-06: Nadia Haddad accepted providing Sofia Almeida with test environment access details; delivered 2025-10-07 with new user SofAlme.",
+            "sourceIds": [
+              "E02M006",
+              "E02M005",
+              "E02M003",
+              "E02M002"
+            ],
+            "commitment": {
+              "acceptedAction": "Send Sofia the test environment login details — 'Can you send me details?' accepted by Nadia providing URL then credentials.",
+              "owner": "Nadia Haddad",
+              "state": "fulfilled",
+              "acceptanceSourceIds": [
+                "E02M006",
+                "E02M005"
+              ],
+              "followupSourceIds": [
+                "E02M003",
+                "E02M002"
+              ]
+            }
+          },
+          {
+            "fact": "2025-10-07: Nadia Haddad asked Sofia to change the SofAlme password after first login; no later record confirms she did.",
+            "sourceIds": [
+              "E02M003"
+            ],
+            "commitment": {
+              "acceptedAction": "Change the SofAlme password after first login — 'Please change it after first login.'",
+              "owner": "Sofia Almeida",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E02M003"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2026-02-17: Kwame Boateng asked Nadia whether SofAlme was created as a normal user or with elevated rights; no reply in the supplied records.",
+            "sourceIds": [
+              "E02M001"
+            ],
+            "commitment": {
+              "acceptedAction": "Answer whether SofAlme was created as a normal user or with elevated rights — 'Nadia, was SofAlme created as a normal user or with elevated rights?'",
+              "owner": "Nadia Haddad",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E02M001"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2025-08-14: Ana Duarte asked Nadia to sketch the UAT plan on the three-wave basis ('Nadia, can you sketch the UAT plan on that basis?'); Nadia's reply questioned whether Acme confirmed three waves rather than delivering the sketch.",
+            "sourceIds": [
+              "E03M007",
+              "E03M006"
+            ],
+            "commitment": {
+              "acceptedAction": "Sketch the UAT plan on the three-wave basis — 'Nadia, can you sketch the UAT plan on that basis?'",
+              "owner": "Nadia Haddad",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E03M007"
+              ],
+              "followupSourceIds": [
+                "E03M006"
+              ]
+            }
+          },
+          {
+            "fact": "2025-11-20: Marco Rossi accepted reissuing the Phase 2 plan on the two-delivery basis: 'I have asked Ana to reissue the plan on the two-delivery basis today.'",
+            "sourceIds": [
+              "E03M002",
+              "E03M003"
+            ],
+            "commitment": {
+              "acceptedAction": "Reissue the Phase 2 plan on the two-delivery basis — 'I have asked Ana to reissue the plan on the two-delivery basis today.'",
+              "owner": "Ana Duarte (via Marco Rossi)",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E03M002"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2025-11-19: Marco Rossi accepted coming back to Sofia with a list of where else the surgery note appears: 'I will come back to you on where else it appears... give me a few days.'",
+            "sourceIds": [
+              "E04M003",
+              "E04M004"
+            ],
+            "commitment": {
+              "acceptedAction": "Come back to Sofia with a list of where else the surgery note appears — 'I will come back to you on where else it appears.'",
+              "owner": "Marco Rossi",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "E04M003",
+                "E04M004"
+              ],
+              "followupSourceIds": [
+                "E04M001"
+              ]
+            }
+          },
+          {
+            "fact": "2025-11-19: Marco Rossi accepted having Ana remove the surgery line from the handover pack; 2025-11-21 Ana confirmed handover pack updated to v4 with the line gone.",
+            "sourceIds": [
+              "E04M003",
+              "E04M004",
+              "E04M002"
+            ],
+            "commitment": {
+              "acceptedAction": "Remove the 'out October to November, surgery' line from the handover pack and check the project site — 'I have asked Ana to remove it from the handover pack today and to check the project site.'",
+              "owner": "Ana Duarte (via Marco Rossi)",
+              "state": "fulfilled",
+              "acceptanceSourceIds": [
+                "E04M003",
+                "E04M004"
+              ],
+              "followupSourceIds": [
+                "E04M002"
+              ]
+            }
+          },
+          {
+            "fact": "2025-11-21: Ana Duarte reported the old handover pack version remains in the document history on the project site, which she cannot delete, and that she has raised it with RELEX IT; 2026-03-12 Sofia confirms the document history point was still open when last spoken in November and asks 'Was this ever finished?'",
+            "sourceIds": [
+              "E04M002",
+              "E04M001"
+            ],
+            "commitment": {
+              "acceptedAction": "Raise with RELEX IT the deletion of the old handover pack version from the project site document history — 'I have raised it with our IT.'",
+              "owner": "Ana Duarte / RELEX IT",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "E04M002"
+              ],
+              "followupSourceIds": [
+                "E04M001"
+              ]
+            }
+          },
+          {
+            "fact": "2025-11-18: Priya Nair required confirmation that OP_ID is dropped at source before the next extract; 2025-11-19 Nadia confirmed 'OP_ID is dropped at the extract from the next run, which is Friday night.'",
+            "sourceIds": [
+              "E07M004",
+              "E07M003"
+            ],
+            "commitment": {
+              "acceptedAction": "Exclude OP_ID at source before the next extract runs — 'It must be excluded at source before the next extract runs. Please confirm the field is dropped.'",
+              "owner": "Nadia Haddad",
+              "state": "fulfilled",
+              "acceptanceSourceIds": [
+                "E07M004"
+              ],
+              "followupSourceIds": [
+                "E07M003"
+              ]
+            }
+          },
+          {
+            "fact": "2025-11-19: Nadia Haddad accepted coming back with a definitive answer on whether OP_ID reached anything downstream ('I will come back with a definitive answer rather than a reassuring one'); 2025-11-24 Kwame delivered the answer on the historic files.",
+            "sourceIds": [
+              "E07M003",
+              "E07M002"
+            ],
+            "commitment": {
+              "acceptedAction": "Come back with a definitive answer on whether OP_ID made it into anything downstream — 'Kwame is checking whether the field made it into anything downstream. I will come back with a definitive answer.'",
+              "owner": "Nadia Haddad / Kwame Boateng",
+              "state": "fulfilled",
+              "acceptanceSourceIds": [
+                "E07M003"
+              ],
+              "followupSourceIds": [
+                "E07M002"
+              ]
+            }
+          },
+          {
+            "fact": "2025-11-24: Kwame Boateng stated 'I can purge the landing zone. I cannot purge the attachments.' No later record shows the landing zone purge was carried out.",
+            "sourceIds": [
+              "E07M002",
+              "E07M001"
+            ],
+            "commitment": {
+              "acceptedAction": "Purge the landing zone of OP_ID — 'I can purge the landing zone.'",
+              "owner": "Kwame Boateng",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E07M002"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2025-11-18: Priya Nair asked that the complicated answer on already-delivered files be put on the January session agenda; no later record shows the agenda item.",
+            "sourceIds": [
+              "E07M004"
+            ],
+            "commitment": {
+              "acceptedAction": "Put the answer about already-delivered files on the agenda for the January session — 'put it on the agenda for the January session rather than replying to this.'",
+              "owner": "Priya Nair",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E07M004"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2026-02-03: Kwame Boateng attached the DC-2 incident log for January (fourteen failures, eleven silent); 2026-02-10 Ana Duarte forwarded it to Ivan Petrov and Ruth 'As promised at the scoping session'.",
+            "sourceIds": [
+              "E05M006",
+              "E05M004"
+            ],
+            "commitment": {
+              "acceptedAction": "Provide the DC-2 incident log to Meridian so they can plan around feed reliability — 'As promised at the scoping session, the DC-2 incident log'.",
+              "owner": "Ana Duarte",
+              "state": "fulfilled",
+              "acceptanceSourceIds": [
+                "E05M004"
+              ],
+              "followupSourceIds": [
+                "E05M004",
+                "E05M001"
+              ]
+            }
+          },
+          {
+            "fact": "2026-02-10: Marco Rossi challenged Ana on whether she forwarded the whole chain, citing the 28th agreement that it went to Lena and she decided what Meridian saw; Ana's reply 'The whole chain. Why - oh.' confirms she forwarded the whole chain, contrary to that agreement.",
+            "sourceIds": [
+              "E05M003",
+              "E05M002"
+            ],
+            "commitment": {
+              "acceptedAction": "Send the incident log via Lena, with Lena deciding what Meridian saw — 'We agreed on the 28th that this went to Lena and she decided what Meridian saw.'",
+              "owner": "Ana Duarte",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E05M003"
+              ],
+              "followupSourceIds": [
+                "E05M002"
+              ]
+            }
+          },
+          {
+            "fact": "2026-02-10: Ivan Petrov said Meridian will build assuming roughly fortnightly failures and advised ignoring the scheduled-job comment.",
+            "sourceIds": [
+              "E05M001"
+            ],
+            "commitment": {
+              "acceptedAction": "Build assuming roughly fortnightly DC-2 feed failures — 'We will build assuming roughly fortnightly failures.'",
+              "owner": "Ivan Petrov",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E05M001"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2026-02-04: Nadia Haddad proposed asking Lena whether anything changed in the January maintenance window and letting her find it herself ('Let us ask her'); no later record shows the question was asked.",
+            "sourceIds": [
+              "E05M005"
+            ],
+            "commitment": {
+              "acceptedAction": "Ask Lena whether anything changed in the January maintenance window — 'Let us ask her whether anything changed in the January maintenance window and let her find it herself.'",
+              "owner": "Nadia Haddad",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E05M005"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2025-10-14: Nadia Haddad asked whether someone should tell Sofia about the misconfigured out of office; Ana Duarte accepted handling it via Lena ('I will mention it to Lena rather than to Sofia directly. Do not forward it any further.'); no later record shows Lena was told.",
+            "sourceIds": [
+              "E06M002",
+              "E06M001"
+            ],
+            "commitment": {
+              "acceptedAction": "Mention the misconfigured out of office to Lena rather than to Sofia directly — 'I will mention it to Lena rather than to Sofia directly.'",
+              "owner": "Ana Duarte",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E06M001"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2026-04-09: Katarina Voss requested four DPA-review actions within four weeks; 2026-04-29 Marco answered items 1, 2 and 4 and wrote 'I owe you item 3'; 2026-04-30 Katarina confirmed 'Item 3 remains open'; 2026-06-23 Katarina wrote 'Item 3.' — still chasing.",
+            "sourceIds": [
+              "E08M004",
+              "E08M003",
+              "E08M002",
+              "E08M001"
+            ],
+            "commitment": {
+              "acceptedAction": "Provide written confirmation that the November erasure request is fully closed, with a list of every location the data was held (item 3 of four, due within four weeks) — 'I would like all four within four weeks.'",
+              "owner": "Marco Rossi",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "E08M004",
+                "E08M003"
+              ],
+              "followupSourceIds": [
+                "E08M002",
+                "E08M001"
+              ]
+            }
+          },
+          {
+            "fact": "2026-04-29: Marco Rossi reported the transcript retention period set at eighteen months from creation effective 1 May, with the two-year backlog being extracted then deleted; 2026-04-30 Katarina Voss registered a concern rather than an action about extraction-then-deletion carrying personal data permanently.",
+            "sourceIds": [
+              "E08M003",
+              "E08M002"
+            ],
+            "commitment": {
+              "acceptedAction": "Work through the existing two years of transcript backlog: extract commitments and decisions into a record, then delete the underlying transcripts — 'The existing backlog is being worked through - commitments and decisions extracted into a record, then the underlying transcript deleted.'",
+              "owner": "Marco Rossi",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E08M003"
+              ],
+              "followupSourceIds": [
+                "E08M002"
+              ]
+            }
+          },
+          {
+            "fact": "2026-04-08: Sofia Almeida asked Nadia to check whether the dairy baseline includes the yoghurt range moved between categories in November; no reply in the supplied records.",
+            "sourceIds": [
+              "E10M001"
+            ],
+            "commitment": {
+              "acceptedAction": "Check whether the dairy baseline includes the yoghurt range — 'Can you check whether the dairy baseline includes the yoghurt range'.",
+              "owner": "Nadia Haddad",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E10M001"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2026-04-08: Sofia Almeida asked whether extract tonnage totals have been compared with till numbers for the same three months before the board report; no reply in the supplied records.",
+            "sourceIds": [
+              "E10M001"
+            ],
+            "commitment": {
+              "acceptedAction": "Compare the extract-derived tonnage with till numbers for January to March — 'Has anyone put those next to the till numbers for the same three months?'",
+              "owner": "unknown",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E10M001"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2026-04-07: Robert Kahn asked what 118 tonnes costs at current prices; no reply in the supplied records.",
+            "sourceIds": [
+              "E10M002"
+            ],
+            "commitment": {
+              "acceptedAction": "Provide the cost of 118 tonnes at current prices — 'What does 118 tonnes cost us at current prices?'",
+              "owner": "unknown",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E10M002"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2024-07-02: Lena Fischer confirmed the value case wording is in and the signed SOW version going out that week.",
+            "sourceIds": [
+              "E12M001",
+              "E12M002"
+            ],
+            "commitment": {
+              "acceptedAction": "Send out the signed SOW version with the agreed wording that week — 'Signed version going out this week.'",
+              "owner": "Lena Fischer",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E12M001"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2024-06-18: Marco Rossi added a quarterly business review with a written report as an obligation on RELEX in the value case wording; no later record in the supplied documents shows any quarterly written report being delivered.",
+            "sourceIds": [
+              "E12M004",
+              "E12M001"
+            ],
+            "commitment": {
+              "acceptedAction": "Provide a quarterly business review with a written report as an obligation on RELEX — 'Also added: a quarterly business review with a written report, as an obligation on us.'",
+              "owner": "Marco Rossi / RELEX",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "E12M004",
+                "E12M001"
+              ],
+              "followupSourceIds": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "durationMs": 41042,
+      "promptCharacters": 165743,
+      "task": "Build an evidence inventory for this research question: Find one thing in the archive that was agreed and then never done. Show the trail from the agreement to the present, and say",
+      "repair": false,
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 50871,
+        "total_tokens": 56598,
+        "completion_tokens": 5727,
+        "prompt_tokens_details": {
+          "cached_tokens": 512
+        },
+        "reasoning_tokens": 0
+      },
+      "output": {
+        "items": [
+          {
+            "fact": "On 2024-06-11 Robert Kahn asked that the value case (fresh waste reduction, ROI inside twelve months of signature) be written into the SOW; Marco Rossi agreed to put the value case in the statement of work and Henrik Sørensen agreed to write the value case and expectation (not a guarantee).",
+            "sourceIds": [
+              "T03U0033",
+              "T03U0037",
+              "T03U0038",
+              "T03U0040",
+              "T03U0044",
+              "T03U0047",
+              "T03U0053"
+            ],
+            "commitment": {
+              "acceptedAction": "\"We can put the value case in the statement of work.\" (Marco Rossi, agreeing to write the value case and the twelve-month ROI expectation into the SOW, without a guarantee)",
+              "owner": "Marco Rossi (with Henrik Sørensen concurring on wording)",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "T03U0044",
+                "T03U0047",
+                "T03U0053"
+              ],
+              "followupSourceIds": [
+                "T04U0006",
+                "T12U0008",
+                "T12U0011",
+                "T12U0012",
+                "T14U0124",
+                "T14U0126"
+              ]
+            },
+            "note": "Later records show the value case was written into the SOW as an expectation (T04U0006: 'That is in the SOW as an expectation, legal watered the wording'), so the writing-down action appears fulfilled; however the hoped-for outcome (fresh waste reduction with ROI inside twelve months) remains unmet because fresh is Phase 2 and not live (T12U0008, T12U0011, T12U0012, T14U0124, T14U0126)."
+          },
+          {
+            "fact": "On 2024-06-11 Robert Kahn asked that the quarterly review be put in the SOW as an obligation, not a nice idea; Marco Rossi agreed 'We will put it in.'",
+            "sourceIds": [
+              "T03U0054",
+              "T03U0057",
+              "T03U0059",
+              "T03U0060",
+              "T03U0062"
+            ],
+            "commitment": {
+              "acceptedAction": "\"We will put it in.\" (Marco Rossi, agreeing to put the quarterly review in the SOW as an obligation)",
+              "owner": "Marco Rossi",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "T03U0060",
+                "T03U0062"
+              ],
+              "followupSourceIds": [
+                "T12U0098",
+                "T12U0100",
+                "T12U0101",
+                "T12U0102",
+                "T12U0104",
+                "T14U0069",
+                "T14U0070",
+                "T14U0072"
+              ]
+            },
+            "note": "On 2025-05-22 Lena Fischer raised that the QBR cadence was agreed in the SOW and this was the first one at ninety days, feeling ad hoc; Marco Rossi agreed to formalise it (T12U0098-T12U0104). On 2025-06-24 Ana Duarte reported the cadence was set up quarterly with the next one in September (T14U0069-T14U0073), so the formalisation action appears fulfilled by then; the SOW-as-obligation wording itself is not separately evidenced as done."
+          },
+          {
+            "fact": "On 2024-07-09 in the internal handover, the delivery lead (Them) accepted to record the phase-two-inside-twelve-months risk in the risk log rather than the account plan, after Me insisted.",
+            "sourceIds": [
+              "T04U0019",
+              "T04U0020",
+              "T04U0021",
+              "T04U0022"
+            ],
+            "commitment": {
+              "acceptedAction": "\"I will put it in the account plan.\" corrected to \"Fine.\" — agreeing to put the twelve-month/phase-two conflict in the risk log",
+              "owner": "unknown (delivery lead, speaker attribution unresolved)",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T04U0020",
+                "T04U0022"
+              ],
+              "followupSourceIds": []
+            },
+            "note": "No later record confirms the risk log entry was made; the archive does not show the risk log contents."
+          },
+          {
+            "fact": "On 2024-07-09 in the internal handover, Me directed Kwame to note the missing remaining shelf-life field as the first item on the phase two dependency list with a date and an owner; the shelf-life-aware ordering commitment gap was accepted as the second item on that list.",
+            "sourceIds": [
+              "T04U0036",
+              "T04U0038",
+              "T04U0040",
+              "T04U0042",
+              "T04U0067",
+              "T04U0070"
+            ],
+            "commitment": {
+              "acceptedAction": "\"Kwame, note that as the first item on the phase two dependency list, and it needs a date and an owner.\" and \"Then that is the second thing on the dependency list.\"",
+              "owner": "Kwame Boateng (named by Me; Kwame not present in transcript)",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T04U0036",
+                "T04U0070"
+              ],
+              "followupSourceIds": [
+                "T08U0022",
+                "T08U0024",
+                "T08U0026",
+                "T08U0027",
+                "T14U0057",
+                "T14U0058",
+                "T14U0060",
+                "T14U0061",
+                "T14U0062"
+              ]
+            },
+            "note": "Later records show the warehouse/shelf-life question remained unanswered (T08U0022-T08U0027: Priya stopped chasing because nothing in phase one depends on it) and on 2025-06-24 Priya reported Nadia still asking for a field that does not exist, now an email thread rather than a decision (T14U0057-T14U0062). The dependency-list entry itself is not evidenced as created."
+          },
+          {
+            "fact": "On 2024-07-15 at kickoff, Tomas Lindholm accepted to send environment access details (names, emails, employee numbers, personal recovery emails) to Priya today so she could raise tickets, which take about two weeks.",
+            "sourceIds": [
+              "T05U0135",
+              "T05U0137",
+              "T05U0139",
+              "T05U0141",
+              "T05U0144",
+              "T05U0145",
+              "T05U0151",
+              "T05U0154",
+              "T05U0155"
+            ],
+            "commitment": {
+              "acceptedAction": "\"I will ask them and send it over.\" (Tomas Lindholm, agreeing to send names and personal recovery emails to Priya today so she can raise access tickets)",
+              "owner": "Tomas Lindholm",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T05U0145",
+                "T05U0155"
+              ],
+              "followupSourceIds": []
+            },
+            "note": "No later record confirms the names were sent or the tickets raised."
+          },
+          {
+            "fact": "On 2024-07-15 at kickoff, Ana Duarte accepted to send the integration/feeds diagram after the call; Priya agreed it was out of date but said yes.",
+            "sourceIds": [
+              "T05U0107",
+              "T05U0108"
+            ],
+            "commitment": {
+              "acceptedAction": "\"Can you send that diagram after?\" — Priya: \"It is a bit out of date but yes.\" (Ana Duarte requesting, Priya agreeing to send the feeds diagram)",
+              "owner": "Priya Nair",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T05U0108"
+              ],
+              "followupSourceIds": []
+            },
+            "note": "No later record confirms the diagram was sent."
+          },
+          {
+            "fact": "On 2024-07-15 at kickoff, Ana Duarte accepted to put DC-2 on the watch list from day one and add monitoring so failures are loud; on 2025-05-22 Priya confirmed the watch list worked in that they now know when it fails but it is not fixed.",
+            "sourceIds": [
+              "T05U0055",
+              "T05U0056",
+              "T05U0059",
+              "T12U0077",
+              "T12U0079",
+              "T12U0080"
+            ],
+            "commitment": {
+              "acceptedAction": "\"Let us put DC-2 on the watch list from day one then. We will add monitoring so at least it fails loudly.\"",
+              "owner": "Ana Duarte",
+              "state": "fulfilled",
+              "acceptanceSourceIds": [
+                "T05U0056",
+                "T05U0059"
+              ],
+              "followupSourceIds": [
+                "T12U0077",
+                "T12U0079",
+                "T12U0080"
+              ]
+            },
+            "note": "The monitoring action was fulfilled (failures detected, e.g. T11U0020 'The monitoring fired'), but the underlying DC-2 middleware problem persists (T12U0068, T12U0074, T12U0079-T12U0080)."
+          },
+          {
+            "fact": "On 2024-09-24 at the master data workshop, Priya Nair accepted to put the pre-recording agreement (Priya's team owns remediation with RELEX support) in the workshop output and confirm by email, and to note in the mail that the pilot is twenty-five stores and why.",
+            "sourceIds": [
+              "T06U0057",
+              "T06U0058",
+              "T06U0062",
+              "T06U0064",
+              "T06U0066",
+              "T06U0089",
+              "T06U0092",
+              "T06U0094",
+              "T06U0095",
+              "T06U0096",
+              "T06U0097"
+            ],
+            "commitment": {
+              "acceptedAction": "\"Then put it in the workshop output and I will confirm by email.\" and \"I will note it.\" (Priya Nair, agreeing to confirm ownership by email and to note the twenty-five-store change and rationale in the mail)",
+              "owner": "Priya Nair",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T06U0064",
+                "T06U0066",
+                "T06U0092",
+                "T06U0097"
+              ],
+              "followupSourceIds": []
+            },
+            "note": "No later record confirms the email confirmation or the noted rationale was sent."
+          },
+          {
+            "fact": "On 2024-09-24, Priya Nair accepted to remove the operator identifier column from the extract (a five-minute change she would put on the list), noted as an action by Ana Duarte.",
+            "sourceIds": [
+              "T06U0106",
+              "T06U0107",
+              "T06U0109",
+              "T06U0114",
+              "T06U0116",
+              "T06U0119"
+            ],
+            "commitment": {
+              "acceptedAction": "\"It is a five minute change. I will put it on the list.\" (Priya Nair, agreeing to remove the operator identifier from the extract)",
+              "owner": "Priya Nair",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T06U0114",
+                "T06U0116",
+                "T06U0119"
+              ],
+              "followupSourceIds": []
+            },
+            "note": "No later record confirms the column was removed."
+          },
+          {
+            "fact": "On 2024-11-12 at the ordering logic design workshop, Ana Duarte accepted to write Sofia's shelf-life threshold (under five days remaining, category-dependent) into the workshop output and into the phase two requirements, after Sofia said she had said it twice and did not know where it goes.",
+            "sourceIds": [
+              "T07U0053",
+              "T07U0057",
+              "T07U0059",
+              "T07U0060",
+              "T07U0061"
+            ],
+            "commitment": {
+              "acceptedAction": "\"It goes the workshop output... and into the phase two requirements. I will make sure it is in both.\" (Ana Duarte)",
+              "owner": "Ana Duarte",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T07U0059",
+                "T07U0060",
+                "T07U0061"
+              ],
+              "followupSourceIds": [
+                "T14U0057",
+                "T14U0058",
+                "T14U0060",
+                "T14U0061",
+                "T14U0062",
+                "T14U0063",
+                "T14U0064",
+                "T14U0066"
+              ]
+            },
+            "note": "On 2025-06-24 Priya reported the shelf-life field still does not exist in the form Nadia wants and it is an email thread rather than a decision (T14U0057-T14U0062); Ana said she would pick it up (T14U0063). Lena noted it had never been resolved since the first meeting with Marco (T14U0064-T14U0066). Whether the workshop output/phase two requirements entry was made is not evidenced."
+          },
+          {
+            "fact": "On 2025-01-21 at the UAT readiness review, Ana Duarte accepted to send Lena something to sign for UAT sign-off that day; Lena accepted to sign it, scoped as ambient core replenishment working for twenty-five stores.",
+            "sourceIds": [
+              "T08U0041",
+              "T08U0042",
+              "T08U0043",
+              "T08U0045",
+              "T08U0046",
+              "T08U0050",
+              "T08U0052",
+              "T08U0054"
+            ],
+            "commitment": {
+              "acceptedAction": "\"I will send it today.\" (Ana Duarte, agreeing to send the UAT sign-off document to Lena)",
+              "owner": "Ana Duarte",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T08U0046"
+              ],
+              "followupSourceIds": []
+            },
+            "note": "No later record confirms the document was sent or signed."
+          },
+          {
+            "fact": "On 2025-01-21, Ana Duarte accepted to raise the DC-2 cover question (who covers while Kwame is on holiday from 10 March) rather than pretend it was solved in the call.",
+            "sourceIds": [
+              "T08U0064",
+              "T08U0068",
+              "T08U0072",
+              "T08U0073",
+              "T08U0078",
+              "T08U0079",
+              "T08U0080"
+            ],
+            "commitment": {
+              "acceptedAction": "\"I will raise it. I am not going to pretend I have solved it in this call.\" (Ana Duarte, agreeing to raise the DC-2 holiday cover question)",
+              "owner": "Ana Duarte",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "T08U0078",
+                "T08U0079"
+              ],
+              "followupSourceIds": [
+                "T10U0121",
+                "T10U0123",
+                "T10U0125",
+                "T10U0126",
+                "T11U0025",
+                "T11U0043",
+                "T11U0045",
+                "T11U0046"
+              ]
+            },
+            "note": "On 2025-02-27 Ana again said 'I will raise resourcing' (T10U0121-T10U0126), showing the January raise had not produced a named person. On 2025-03-18 Ana admitted 'I raised the cover question in January and I did not close it' (T11U0025), and the 14 March failure hit planners with nobody covering (T11U0011-T11U0018, T11U0022). She then committed to get a named second person agreed internally (T11U0043-T11U0046)."
+          },
+          {
+            "fact": "On 2025-02-12 in the internal account review, Me assigned actions: Marco to get Phase 2 scoped before the ninety-day review, Ana to put DC-2 on the risk register with a named owner, and someone to write down that Sofia is a single point of failure; Them accepted 'I will do that today.'",
+            "sourceIds": [
+              "T09U0049",
+              "T09U0050",
+              "T09U0051"
+            ],
+            "commitment": {
+              "acceptedAction": "\"I will do that today.\" (Them, accepting the actions: Marco to scope Phase 2 before the ninety-day review, Ana to put DC-2 on the risk register with a named owner, someone to record Sofia as a single point of failure)",
+              "owner": "unknown (account director, speaker attribution unresolved)",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "T09U0049",
+                "T09U0051"
+              ],
+              "followupSourceIds": [
+                "T12U0011",
+                "T13U0068",
+                "T13U0072",
+                "T13U0073",
+                "T13U0074",
+                "T14U0036",
+                "T14U0037",
+                "T14U0038",
+                "T14U0039"
+              ]
+            },
+            "note": "Phase 2 scoping was not delivered before the ninety-day review: on 2025-05-22 Marco said only 'We are scoping it now' (T12U0011), and on 2025-06-24 the scoping proposal was still promised for mid-July (T14U0036-T14U0039). The Sofia single-point-of-failure note remained unrecorded: on 2025-06-10 Ana said it is in three risk registers 'in slightly different words' and Charlotte replied 'Then is in none' (T13U0068-T13U0074). DC-2 on the risk register with a named owner is not evidenced as done."
+          },
+          {
+            "fact": "On 2025-02-27 at the go-live cutover call, Ana Duarte accepted to raise the resourcing gap for Kwame's holiday (from 10 March) and committed that if the feed fails while Kwame is away, Priya should escalate to her directly and she will find someone.",
+            "sourceIds": [
+              "T10U0102",
+              "T10U0103",
+              "T10U0106",
+              "T10U0112",
+              "T10U0121",
+              "T10U0123",
+              "T10U0125",
+              "T10U0126"
+            ],
+            "commitment": {
+              "acceptedAction": "\"I will raise resourcing. Priya, if it fails while Kwame is away, escalate to me directly and I will find someone.\" (Ana Duarte)",
+              "owner": "Ana Duarte",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "T10U0121",
+                "T10U0123",
+                "T10U0125",
+                "T10U0126"
+              ],
+              "followupSourceIds": [
+                "T11U0022",
+                "T11U0025",
+                "T11U0041",
+                "T11U0043"
+              ]
+            },
+            "note": "On 2025-03-18 the feed failed on the sixth and the fourteenth; monitoring fired at Kwame who was in Portugal (T11U0022), and Lena's ask was 'Somebody who is not on holiday' (T11U0041). Ana admitted she raised the cover question in January and did not close it (T11U0025). The resourcing raise had not produced a named second person by 2025-03-18; Ana committed to get that agreed internally (T11U0043-T11U0046)."
+          },
+          {
+            "fact": "On 2025-03-18 at the hypercare review, Ana Duarte accepted to get a named second person on the runbook agreed internally once Kwame returned on Monday, alongside Tomas covering until then.",
+            "sourceIds": [
+              "T11U0043",
+              "T11U0045",
+              "T11U0046"
+            ],
+            "commitment": {
+              "acceptedAction": "\"From then I want a named second person on the runbook and I will get that agreed internally\" (Ana Duarte)",
+              "owner": "Ana Duarte",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T11U0043",
+                "T11U0045",
+                "T11U0046"
+              ],
+              "followupSourceIds": []
+            },
+            "note": "No later record confirms a named second person was agreed or added to the runbook."
+          },
+          {
+            "fact": "On 2025-03-18, Priya Nair accepted to write up the two distinct DC-2 failure modes (middleware on the sixth, empty upstream file on the fourteenth) in the incident log with the distinction kept.",
+            "sourceIds": [
+              "T11U0050",
+              "T11U0052",
+              "T11U0055",
+              "T11U0057",
+              "T11U0060",
+              "T11U0061",
+              "T11U0072",
+              "T11U0073",
+              "T11U0076",
+              "T11U0078"
+            ],
+            "commitment": {
+              "acceptedAction": "\"I will write it up.\" (Priya Nair, agreeing to record both failure modes with the distinction kept)",
+              "owner": "Priya Nair",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T11U0076",
+                "T11U0078"
+              ],
+              "followupSourceIds": []
+            },
+            "note": "No later record confirms the incident log write-up."
+          },
+          {
+            "fact": "On 2025-03-18, Tomas Lindholm withdrew his cutover recommendation of a file size check, noting it is still copied in the cutover pack, the runbook and the hypercare plan, and that a replacement (something that looks inside the file) does not exist yet; Priya said they will keep the size check in the meantime.",
+            "sourceIds": [
+              "T11U0112",
+              "T11U0113",
+              "T11U0117",
+              "T11U0118",
+              "T11U0119",
+              "T11U0120",
+              "T11U0123",
+              "T11U0125"
+            ],
+            "commitment": {
+              "acceptedAction": "\"I would withdraw that recommendation.\" (Tomas Lindholm, withdrawing the file size check recommendation; replacement detection not yet available)",
+              "owner": "Tomas Lindholm",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T11U0117"
+              ],
+              "followupSourceIds": []
+            },
+            "note": "The withdrawal is stated but no later record confirms the three documents were corrected or a content-level check was implemented."
+          },
+          {
+            "fact": "On 2025-05-22 at the 90-day business review, Marco Rossi accepted a set of actions: a joint engineering session on DC-2 with a dated permanent fix plan, accelerating Phase 2 scoping and starting UAT over the summer, formalising the QBR, and reframing ROI reporting so fresh waste is the headline once Phase 2 is live.",
+            "sourceIds": [
+              "T12U0082",
+              "T12U0083",
+              "T12U0084",
+              "T12U0111",
+              "T12U0112",
+              "T12U0114",
+              "T12U0116",
+              "T12U0119",
+              "T12U0121"
+            ],
+            "commitment": {
+              "acceptedAction": "\"So actions from my side. Joint engineering session on DC-2 with a dated permanent fix plan. Accelerate the Phase 2 scoping and start UAT over the summer. Formalise the QBR. And reframe the ROI reporting so fresh waste is the headline once Phase 2 is live.\" (Marco Rossi)",
+              "owner": "Marco Rossi",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "T12U0111",
+                "T12U0112",
+                "T12U0114",
+                "T12U0116"
+              ],
+              "followupSourceIds": [
+                "T14U0014",
+                "T14U0016",
+                "T14U0018",
+                "T14U0020",
+                "T14U0036",
+                "T14U0038",
+                "T14U0039",
+                "T14U0069",
+                "T14U0070",
+                "T14U0072"
+              ]
+            },
+            "note": "By 2025-06-24 the joint engineering session had happened on 4 June and produced a plan dated September (T14U0014-T14U0020), and the QBR was formalised quarterly with the next in September (T14U0069-T14U0072). But Phase 2 scoping was still only promised for mid-July (T14U0036-T14U0039), so the accelerate-and-scope action remained open at that date; UAT over the summer is not evidenced as started."
+          },
+          {
+            "fact": "On 2025-06-24 at the steering committee, Ana Duarte accepted an action to have the fresh waste baseline agreed in writing before fresh go-live, after Robert Kahn insisted the baseline be agreed before go-live, not after.",
+            "sourceIds": [
+              "T14U0131",
+              "T14U0135",
+              "T14U0137",
+              "T14U0138",
+              "T14U0141",
+              "T14U0144",
+              "T14U0147",
+              "T14U0148"
+            ],
+            "commitment": {
+              "acceptedAction": "\"Action on me. Baseline agreed in writing before fresh go live.\" (Ana Duarte)",
+              "owner": "Ana Duarte",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T14U0147",
+                "T14U0148"
+              ],
+              "followupSourceIds": []
+            },
+            "note": "No later record in the archive confirms the baseline was agreed in writing; fresh is not yet live."
+          },
+          {
+            "fact": "On 2025-06-24, Ana Duarte accepted to find out who on Acme's side had been asking Priya's team for direct warehouse system access and ensure it stops ('I will find out and it will not happen again').",
+            "sourceIds": [
+              "T14U0151",
+              "T14U0152",
+              "T14U0154",
+              "T14U0156",
+              "T14U0158",
+              "T14U0160",
+              "T14U0161"
+            ],
+            "commitment": {
+              "acceptedAction": "\"I will find out and it will not happen again.\" (Ana Duarte)",
+              "owner": "Ana Duarte",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T14U0161"
+              ],
+              "followupSourceIds": []
+            },
+            "note": "No later record confirms the inquiry or the outcome."
+          },
+          {
+            "fact": "On 2025-06-10 at the transition to continuous service, Charlotte Meyer accepted to hold the DC-2 permanent fix (dated 15 September, gated on Acme's quarterly change window) on the service risk register as well as in Ana's plan.",
+            "sourceIds": [
+              "T13U0034",
+              "T13U0037",
+              "T13U0038",
+              "T13U0040",
+              "T13U0041",
+              "T13U0043"
+            ],
+            "commitment": {
+              "acceptedAction": "\"Then I will hold it on the service risk register as well as it being in Ana's plan, rather than none.\" (Charlotte Meyer)",
+              "owner": "Charlotte Meyer",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T13U0041",
+                "T13U0043"
+              ],
+              "followupSourceIds": []
+            },
+            "note": "No later record confirms the service risk register entry."
+          },
+          {
+            "fact": "On 2025-06-10, Ana Duarte accepted to make the Ana/Charlotte responsibility boundary explicit in the handover, and to state in the handover which sessions have no transcript (the two February interface workshops and planner training) rather than claiming completeness.",
+            "sourceIds": [
+              "T13U0024",
+              "T13U0026",
+              "T13U0027",
+              "T13U0085",
+              "T13U0086",
+              "T13U0088",
+              "T13U0089",
+              "T13U0096",
+              "T13U0097"
+            ],
+            "commitment": {
+              "acceptedAction": "\"Then do that.\" (Lena to Ana on making the boundary explicit) and \"It will say what is missing.\" (Ana Duarte, agreeing the handover will state the three sessions without transcripts)",
+              "owner": "Ana Duarte",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T13U0027",
+                "T13U0097"
+              ],
+              "followupSourceIds": []
+            },
+            "note": "No later record confirms the handover content."
+          }
+        ]
+      }
+    },
+    {
+      "durationMs": 17524,
+      "promptCharacters": 142083,
+      "task": "Build an evidence inventory for this research question: Find one thing in the archive that was agreed and then never done. Show the trail from the agreement to the present, and say",
+      "repair": false,
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 44746,
+        "total_tokens": 47854,
+        "completion_tokens": 3108,
+        "prompt_tokens_details": {
+          "cached_tokens": 512
+        },
+        "reasoning_tokens": 0
+      },
+      "output": {
+        "items": [
+          {
+            "fact": "2025-09-12: Lena Fischer asked Marco Rossi to send her the four agreed items in writing that day so she could walk Robert through them the next day; Marco accepted ('Today').",
+            "sourceIds": [
+              "T15U0140",
+              "T15U0141",
+              "T15U0143",
+              "T15U0144",
+              "T15U0145",
+              "T15U0146"
+            ],
+            "commitment": {
+              "acceptedAction": "send me those four things in writing today",
+              "owner": "Marco Rossi",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T15U0140",
+                "T15U0144",
+                "T15U0145"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2025-09-12: Sofia Almeida asked that the consultant read the March notes before talking to her; Marco Rossi accepted ('He will read them before he talks to you').",
+            "sourceIds": [
+              "T15U0147",
+              "T15U0148",
+              "T15U0150",
+              "T15U0151"
+            ],
+            "commitment": {
+              "acceptedAction": "read the March notes before he talks to you",
+              "owner": "Marco Rossi (on behalf of the consultant)",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T15U0148",
+                "T15U0150"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2025-10-09: Ana Duarte asked Sofia Almeida to write down the chilled ready meals promotion rhythm before Monday; Sofia accepted and said 'I will send it tonight' to all three attendees.",
+            "sourceIds": [
+              "T16U0096",
+              "T16U0097",
+              "T16U0098",
+              "T16U0102",
+              "T16U0103",
+              "T16U0105",
+              "T16U0106",
+              "T16U0108"
+            ],
+            "commitment": {
+              "acceptedAction": "I will send it tonight (the promotion rhythm, to all three of you)",
+              "owner": "Sofia Almeida",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T16U0096",
+                "T16U0097",
+                "T16U0103",
+                "T16U0108"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2025-11-17: Sofia Almeida asked that the surgery reference be removed from the handover pack and that other occurrences be found; Marco Rossi accepted ('We will take it out') and, when pressed to find other occurrences, accepted ownership of the follow-up ('I will own that').",
+            "sourceIds": [
+              "T17U0073",
+              "T17U0077",
+              "T17U0078",
+              "T17U0085",
+              "T17U0091",
+              "T17U0093",
+              "T17U0096",
+              "T17U0098"
+            ],
+            "commitment": {
+              "acceptedAction": "We will take it out (remove the surgery reference) and find where else it appears; I will own that",
+              "owner": "Marco Rossi",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "T17U0078",
+                "T17U0091",
+                "T17U0098"
+              ],
+              "followupSourceIds": [
+                "T21U0088",
+                "T21U0091",
+                "T21U0093",
+                "T22U0108",
+                "T22U0111",
+                "T22U0113",
+                "T22U0117",
+                "T22U0125",
+                "T22U0127"
+              ]
+            }
+          },
+          {
+            "fact": "2025-11-17: Priya Nair required written confirmation on the OP_ID operator field, sent to her and copying Lena; Nadia Haddad accepted ('I will confirm in writing tomorrow').",
+            "sourceIds": [
+              "T17U0139",
+              "T17U0141",
+              "T17U0142",
+              "T17U0143",
+              "T17U0145",
+              "T17U0150",
+              "T17U0151",
+              "T17U0153",
+              "T17U0154"
+            ],
+            "commitment": {
+              "acceptedAction": "I will confirm in writing tomorrow (exclude the operator field at source; confirm the field name with you)",
+              "owner": "Nadia Haddad",
+              "state": "fulfilled",
+              "acceptanceSourceIds": [
+                "T17U0139",
+                "T17U0141",
+                "T17U0142",
+                "T17U0150",
+                "T17U0151",
+                "T17U0153",
+                "T17U0154"
+              ],
+              "followupSourceIds": [
+                "T18U0068",
+                "T18U0069"
+              ]
+            }
+          },
+          {
+            "fact": "2025-12-11: Ana Duarte asked Sofia Almeida to log her overrides rather than make them silently; Sofia accepted for a bounded period ('I will do it for six weeks and then tell you whether I am still doing it').",
+            "sourceIds": [
+              "T18U0032",
+              "T18U0033",
+              "T18U0034",
+              "T18U0035",
+              "T18U0036",
+              "T18U0041",
+              "T18U0042",
+              "T18U0044"
+            ],
+            "commitment": {
+              "acceptedAction": "I can log them... I will do it for six weeks and then tell you whether I am still doing it",
+              "owner": "Sofia Almeida",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T18U0036",
+                "T18U0041",
+                "T18U0042",
+                "T18U0044"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2026-01-28: Marco Rossi recorded actions including Sofia to send the bake-off split by store format and Nadia to define interface points by mid-February; Ruth Oyelaran and Ivan Petrov agreed.",
+            "sourceIds": [
+              "T19U0117",
+              "T19U0118",
+              "T19U0120",
+              "T19U0122",
+              "T19U0124",
+              "T19U0125",
+              "T19U0128",
+              "T19U0129"
+            ],
+            "commitment": {
+              "acceptedAction": "Sofia to send the bake-off split by store format. Nadia to define interface points by mid-February",
+              "owner": "Sofia Almeida; Nadia Haddad",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T19U0117",
+                "T19U0118",
+                "T19U0120",
+                "T19U0122",
+                "T19U0128",
+                "T19U0129"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2026-01-28: Nadia Haddad offered to share the incident log and Marco Rossi said to check what is in it before sharing; Lena Fischer directed sending it to her for onward sharing at her discretion.",
+            "sourceIds": [
+              "T19U0093",
+              "T19U0095",
+              "T19U0097",
+              "T19U0112",
+              "T19U0113",
+              "T19U0122",
+              "T19U0124",
+              "T19U0125"
+            ],
+            "commitment": {
+              "acceptedAction": "Incident log to Lena for onward sharing at her discretion",
+              "owner": "Nadia Haddad",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T19U0093",
+                "T19U0095",
+                "T19U0097",
+                "T19U0122",
+                "T19U0124",
+                "T19U0125"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2026-03-17: Nadia Haddad asked Priya Nair to open the conversation with the till-system team about intraday sales history 'this month rather than in May'; Priya accepted ('I will open it this month').",
+            "sourceIds": [
+              "T20U0098",
+              "T20U0102",
+              "T20U0103",
+              "T20U0109",
+              "T20U0111",
+              "T20U0113",
+              "T20U0114"
+            ],
+            "commitment": {
+              "acceptedAction": "I will open it this month (conversation with the till-system team about intraday sales history)",
+              "owner": "Priya Nair",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T20U0111",
+                "T20U0113"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2026-03-17: Nadia Haddad committed to put the profile re-derivation ownership question on the open items list with no owner so it is visible rather than assumed.",
+            "sourceIds": [
+              "T20U0089",
+              "T20U0090",
+              "T20U0091",
+              "T20U0093",
+              "T20U0095",
+              "T20U0096"
+            ],
+            "commitment": {
+              "acceptedAction": "I will put it on the open items list with no owner, so it is visible rather than assumed",
+              "owner": "Nadia Haddad",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T20U0093",
+                "T20U0095",
+                "T20U0096"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2026-04-09: Marco Rossi committed to come back within a week with a written answer on the fifth sub-processor's processing locations; Katarina Voss requested it in writing.",
+            "sourceIds": [
+              "T21U0024",
+              "T21U0025",
+              "T21U0026",
+              "T21U0028",
+              "T21U0030",
+              "T21U0032",
+              "T21U0109"
+            ],
+            "commitment": {
+              "acceptedAction": "We will come back within a week (written answer on where the fifth sub-processor processes)",
+              "owner": "Marco Rossi / Tomas Lindholm",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T21U0028",
+                "T21U0030",
+                "T21U0032"
+              ],
+              "followupSourceIds": [
+                "T23U0003"
+              ]
+            }
+          },
+          {
+            "fact": "2026-04-09: Marco Rossi disclosed that a November erasure request was only partially closed and he had committed to finding the other locations of the health reference; Katarina Voss noted it was still open in April.",
+            "sourceIds": [
+              "T21U0088",
+              "T21U0091",
+              "T21U0093",
+              "T21U0094",
+              "T21U0096",
+              "T21U0110"
+            ],
+            "commitment": {
+              "acceptedAction": "I committed to finding the others (other locations of the health reference)",
+              "owner": "Marco Rossi",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "T21U0091"
+              ],
+              "followupSourceIds": [
+                "T21U0093",
+                "T21U0094",
+                "T21U0096",
+                "T22U0108",
+                "T22U0111",
+                "T22U0113",
+                "T22U0117",
+                "T22U0125",
+                "T22U0127"
+              ]
+            }
+          },
+          {
+            "fact": "2026-04-09: Katarina Voss recorded that a twelve-month retention period on recordings had been agreed but she could not find anywhere it is actually enforced; Guest 1 said there is a commitment and nobody whose job it is.",
+            "sourceIds": [
+              "T21U0152",
+              "T21U0153",
+              "T21U0154",
+              "T21U0155",
+              "T21U0162",
+              "T21U0163",
+              "T21U0164"
+            ],
+            "commitment": {
+              "acceptedAction": "We have agreed a retention period. Twelve months on the recordings",
+              "owner": "unknown",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "T21U0152",
+                "T21U0153",
+                "T21U0154"
+              ],
+              "followupSourceIds": [
+                "T21U0162",
+                "T21U0163",
+                "T21U0164",
+                "T23U0003"
+              ]
+            }
+          },
+          {
+            "fact": "2026-06-16: Robert Kahn asked Marco Rossi to come back with the chain-wide cost; Marco accepted ('I will come back') and Robert said 'Do that'.",
+            "sourceIds": [
+              "T22U0097",
+              "T22U0099",
+              "T22U0100"
+            ],
+            "commitment": {
+              "acceptedAction": "I will come back (with what chain-wide costs)",
+              "owner": "Marco Rossi",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T22U0099",
+                "T22U0100"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2026-06-16: Robert Kahn said 'Then I will ask' regarding the warehouse data field first asked about in April 2024, and asked for it to be sent to him.",
+            "sourceIds": [
+              "T22U0084",
+              "T22U0086",
+              "T22U0088",
+              "T22U0089",
+              "T22U0091"
+            ],
+            "commitment": {
+              "acceptedAction": "Then I will ask. Send me... (the warehouse data field information)",
+              "owner": "Robert Kahn",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T22U0091"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2026-06-16: Robert Kahn directed 'Then close it' on Sofia's November personal-detail removal request, which Marco Rossi reported as still not fully closed (three of four locations done) after seven months.",
+            "sourceIds": [
+              "T22U0108",
+              "T22U0111",
+              "T22U0113",
+              "T22U0117",
+              "T22U0125",
+              "T22U0127"
+            ],
+            "commitment": {
+              "acceptedAction": "Then close it (the November personal-detail removal request)",
+              "owner": "Marco Rossi",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "T22U0127"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "2026-06-16: Nadia Haddad reported she had only just completed something Sofia asked her in April (comparing extract totals to till numbers for January to March); the comparison revealed a reconciliation gap.",
+            "sourceIds": [
+              "T22U0129",
+              "T22U0130",
+              "T22U0132",
+              "T22U0134",
+              "T22U0135"
+            ],
+            "commitment": {
+              "acceptedAction": "Sofia asked me something in April and I have only just done it (put the extract totals next to the till numbers for January to March)",
+              "owner": "Nadia Haddad",
+              "state": "fulfilled",
+              "acceptanceSourceIds": [
+                "T22U0129",
+                "T22U0130"
+              ],
+              "followupSourceIds": [
+                "T22U0132",
+                "T22U0134",
+                "T22U0135"
+              ]
+            }
+          },
+          {
+            "fact": "2026-06-16: Marco Rossi said 'We will come back on it' regarding the extract reconciliation cause; Robert Kahn asked 'When?' with no recorded answer in the supplied transcript.",
+            "sourceIds": [
+              "T22U0144",
+              "T22U0145",
+              "T22U0146",
+              "T22U0147",
+              "T22U0148",
+              "T22U0149"
+            ],
+            "commitment": {
+              "acceptedAction": "We will come back on it (the extract reconciliation cause)",
+              "owner": "Marco Rossi / Nadia Haddad",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T22U0147"
+              ],
+              "followupSourceIds": [
+                "T22U0148",
+                "T22U0149"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "durationMs": 39490,
+      "promptCharacters": 142312,
+      "task": "Build an evidence inventory for this research question: Find one thing in the archive that was agreed and then never done. Show the trail from the agreement to the present, and say",
+      "repair": true,
+      "finishReason": "length",
+      "usage": {
+        "prompt_tokens": 44786,
+        "total_tokens": 54786,
+        "completion_tokens": 10000,
+        "prompt_tokens_details": {
+          "cached_tokens": 44544
+        },
+        "reasoning_tokens": 0
+      },
+      "output": "{\"items\":[{\"fact\":\"On 2025-09-12 Lena Fischer asked Marco Rossi to send her the four escalation points in writing that same day so she could walk Robert through them the next day, and Marco Rossi answered 'Today.'\",\"sourceIds\":[\"T15U0140\",\"T15U0141\",\"T15U0143\",\"T15U0144\",\"T15U0145\",\"T15U0146\"],\"commitment\":{\"acceptedAction\":\"send me those four things in writing today\",\"owner\":\"Marco Rossi\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T15U0140\",\"T15U0141\",\"T15U0143\",\"T15U0144\",\"T15U0145\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2025-09-12 Sofia Almeida asked that the consultant read the March notes before talking to her, and Marco Rossi answered 'He will read them before he talks to you.'\",\"sourceIds\":[\"T15U0147\",\"T15U0148\",\"T15U0149\",\"T15U0150\",\"T15U0151\"],\"commitment\":{\"acceptedAction\":\"He will read them before he talks to you\",\"owner\":\"Marco Rossi\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T15U0147\",\"T15U0148\",\"T15U0150\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2025-09-12 Marco Rossi proposed driving fresh-food UAT at RELEX's cost so the work does not wait on Acme capacity, and Lena Fischer agreed ('Sure').\",\"sourceIds\":[\"T15U0104\",\"T15U0105\",\"T15U0106\",\"T15U0107\"],\"commitment\":{\"acceptedAction\":\"drive fresh-food UAT, at our cost, so the work does not sit waiting on your team having spare capacity\",\"owner\":\"Marco Rossi\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T15U0104\",\"T15U0105\",\"T15U0106\",\"T15U0107\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2025-09-12 Marco Rossi proposed holding a fresh-food go/no-go decision on 15 November, and Lena Fischer and Sofia Almeida agreed.\",\"sourceIds\":[\"T15U0110\",\"T15U0112\",\"T15U0114\",\"T15U0116\",\"T15U0117\",\"T15U0123\",\"T15U0124\",\"T15U0125\",\"T15U0126\"],\"commitment\":{\"acceptedAction\":\"hold a fresh-food go or no-go decision on the fifteenth of November\",\"owner\":\"Marco Rossi\",\"state\":\"fulfilled\",\"acceptanceSourceIds\":[\"T15U0110\",\"T15U0112\",\"T15U0114\",\"T15U0116\",\"T15U0117\",\"T15U0123\",\"T15U0124\",\"T15U0125\",\"T15U0126\"],\"followupSourceIds\":[\"T17U0002\"]}},{\"fact\":\"On 2025-09-12 Lena Fischer accepted ownership of the UAT resourcing problem and committed to fix it by adding capacity.\",\"sourceIds\":[\"T15U0027\",\"T15U0028\",\"T15U0029\",\"T15U0030\"],\"commitment\":{\"acceptedAction\":\"Then I will fix that... I will add capacity\",\"owner\":\"Lena Fischer\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T15U0027\",\"T15U0028\",\"T15U0029\",\"T15U0030\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2025-10-09 Ana Duarte asked Sofia Almeida to write down the chilled ready meals promotion rhythm before Monday, and Sofia agreed to send it that night to all three of them.\",\"sourceIds\":[\"T16U0096\",\"T16U0097\",\"T16U0098\",\"T16U0102\",\"T16U0103\",\"T16U0105\",\"T16U0106\",\"T16U0108\"],\"commitment\":{\"acceptedAction\":\"I will send it tonight... I will send it to all three of you\",\"owner\":\"Sofia Almeida\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T16U0096\",\"T16U0097\",\"T16U0098\",\"T16U0102\",\"T16U0103\",\"T16U0105\",\"T16U0106\",\"T16U0108\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2025-11-17 Sofia Almeida demanded the surgery reference be removed from the handover document and asked to find where else it appears; Marco Rossi accepted ('We will take it out') and Lena Fischer asked for proper follow-up, which Marco Rossi accepted ('I will own that').\",\"sourceIds\":[\"T17U0073\",\"T17U0077\",\"T17U0078\",\"T17U0085\",\"T17U0091\",\"T17U0093\",\"T17U0096\",\"T17U0097\",\"T17U0098\"],\"commitment\":{\"acceptedAction\":\"We will take it out... I will own that (follow up properly, not just in this meeting's notes)\",\"owner\":\"Marco Rossi\",\"state\":\"outstanding\",\"acceptanceSourceIds\":[\"T17U0078\",\"T17U0096\",\"T17U0097\",\"T17U0098\"],\"followupSourceIds\":[\"T21U0088\",\"T21U0091\",\"T21U0093\",\"T22U0108\",\"T22U0109\",\"T22U0111\",\"T22U0113\",\"T22U0117\",\"T22U0118\",\"T22U0121\",\"T22U0125\",\"T22U0127\"]}},{\"fact\":\"On 2025-11-17 Nadia Haddad committed to confirm in writing the next day how the OP_ID operator field would be handled, and Priya Nair required it be sent to her copying Lena as a condition, which Marco Rossi called reasonable and Nadia accepted.\",\"sourceIds\":[\"T17U0139\",\"T17U0141\",\"T17U0142\",\"T17U0143\",\"T17U0145\",\"T17U0150\",\"T17U0151\",\"T17U0153\",\"T17U0154\"],\"commitment\":{\"acceptedAction\":\"I will confirm in writing tomorrow... we exclude it at source\",\"owner\":\"Nadia Haddad\",\"state\":\"fulfilled\",\"acceptanceSourceIds\":[\"T17U0139\",\"T17U0141\",\"T17U0142\",\"T17U0143\",\"T17U0145\",\"T17U0150\",\"T17U0151\",\"T17U0153\",\"T17U0154\"],\"followupSourceIds\":[\"T18U0068\",\"T18U0069\"]}},{\"fact\":\"On 2025-12-11 Ana Duarte asked Sofia Almeida to log her overrides rather than make them silently; Sofia accepted to log them for six weeks and then report whether she is still doing it.\",\"sourceIds\":[\"T18U0032\",\"T18U0033\",\"T18U0034\",\"T18U0035\",\"T18U0036\",\"T18U0041\",\"T18U0042\",\"T18U0044\"],\"commitment\":{\"acceptedAction\":\"I can log them... I will do it for six weeks and then tell you whether I am still doing it\",\"owner\":\"Sofia Almeida\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T18U0032\",\"T18U0033\",\"T18U0034\",\"T18U0035\",\"T18U0036\",\"T18U0041\",\"T18U0042\",\"T18U0044\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-01-28 Marco Rossi recorded actions: Sofia to send the bake-off split by store format; Nadia to define interface points by mid-February; incident log to Lena for onward sharing at her discretion; start in March. Ivan Petrov and Lena Fischer agreed.\",\"sourceIds\":[\"T19U0117\",\"T19U0118\",\"T19U0120\",\"T19U0122\",\"T19U0124\",\"T19U0125\",\"T19U0126\",\"T19U0128\",\"T19U0129\"],\"commitment\":{\"acceptedAction\":\"Sofia to send the bake-off split by store format\",\"owner\":\"Sofia Almeida\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T19U0117\",\"T19U0118\",\"T19U0119\",\"T19U0128\",\"T19U0129\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-01-28 Nadia Haddad accepted the action to define interface points by mid-February as part of the recorded actions list.\",\"sourceIds\":[\"T19U0120\",\"T19U0122\",\"T19U0123\"],\"commitment\":{\"acceptedAction\":\"Nadia to define interface points by mid-February\",\"owner\":\"Nadia Haddad\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T19U0120\",\"T19U0122\",\"T19U0123\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-01-28 Nadia Haddad offered to share the incident log and Marco Rossi directed it to Lena for onward sharing at her discretion after checking contents; Lena agreed.\",\"sourceIds\":[\"T19U0093\",\"T19U0095\",\"T19U0097\",\"T19U0122\",\"T19U0124\",\"T19U0125\"],\"commitment\":{\"acceptedAction\":\"Incident log to Lena for onward sharing at her discretion\",\"owner\":\"Nadia Haddad\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T19U0093\",\"T19U0095\",\"T19U0097\",\"T19U0122\",\"T19U0124\",\"T19U0125\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-03-17 Priya Nair accepted Nadia Haddad's request to open the conversation with the till-system team about intraday sales history that month rather than in May ('I will open it this month').\",\"sourceIds\":[\"T20U0098\",\"T20U0102\",\"T20U0103\",\"T20U0109\",\"T20U0111\",\"T20U0113\"],\"commitment\":{\"acceptedAction\":\"I will open it this month\",\"owner\":\"Priya Nair\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T20U0098\",\"T20U0102\",\"T20U0103\",\"T20U0109\",\"T20U0111\",\"T20U0113\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-03-17 Nadia Haddad committed to put the profile re-derivation question on the open items list with no owner so it is visible rather than assumed.\",\"sourceIds\":[\"T20U0093\",\"T20U0095\",\"T20U0096\"],\"commitment\":{\"acceptedAction\":\"I will put it on the open items list with no owner, so it is visible rather than assumed\",\"owner\":\"Nadia Haddad\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T20U0093\",\"T20U0095\",\"T20U0096\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-04-09 Marco Rossi committed to come back within a week with a written answer on the fifth sub-processor's processing locations.\",\"sourceIds\":[\"T21U0028\",\"T21U0030\",\"T21U0032\"],\"commitment\":{\"acceptedAction\":\"We will come back within a week (with a written answer on the fifth sub-processor)\",\"owner\":\"Marco Rossi\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T21U0028\",\"T21U0030\",\"T21U0032\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-04-09 Marco Rossi disclosed that the November erasure request was not fully closed: he had committed to finding the other locations of the health reference and had not closed it; Katarina Voss noted it was April, five months later.\",\"sourceIds\":[\"T21U0088\",\"T21U0091\",\"T21U0093\",\"T21U0094\",\"T21U0096\"],\"commitment\":{\"acceptedAction\":\"I committed to finding the others (locations of the health reference)\",\"owner\":\"Marco Rossi\",\"state\":\"outstanding\",\"acceptanceSourceIds\":[\"T21U0088\",\"T21U0091\"],\"followupSourceIds\":[\"T21U0093\",\"T21U0094\",\"T21U0096\",\"T22U0108\",\"T22U0109\",\"T22U0111\",\"T22U0113\",\"T22U0117\",\"T22U0118\",\"T22U0121\",\"T22U0125\",\"T22U0127\"]}},{\"fact\":\"On 2026-04-09 Katarina Voss stated a twelve-month retention period on recordings had been agreed but she could not find anywhere it actually happens; Guest 1 said there is a commitment and nobody whose job it is; no owner was assigned in the meeting.\",\"sourceIds\":[\"T21U0152\",\"T21U0153\",\"T21U0154\",\"T21U0162\",\"T21U0163\",\"T21U0164\"],\"commitment\":{\"acceptedAction\":\"unknown (the twelve-month retention commitment predates this call; no owner was assigned)\",\"owner\":\"unknown\",\"state\":\"outstanding\",\"acceptanceSourceIds\":[\"T21U0152\",\"T21U0153\",\"T21U0154\"],\"followupSourceIds\":[\"T21U0162\",\"T21U0163\",\"T21U0164\"]}},{\"fact\":\"On 2026-06-16 Marco Rossi reported Sofia's November request to remove a personal detail from documentation is still not fully closed after seven months: three of four locations done, the fourth is a document version; Robert Kahn instructed 'Then close it.'\",\"sourceIds\":[\"T22U0108\",\"T22U0109\",\"T22U0111\",\"T22U0113\",\"T22U0117\",\"T22U0118\",\"T22U0121\",\"T22U0125\",\"T22U0127\"],\"commitment\":{\"acceptedAction\":\"close it (complete removal of the personal detail from the fourth location)\",\"owner\":\"Marco Rossi\",\"state\":\"outstanding\",\"acceptanceSourceIds\":[\"T22U0127\"],\"followupSourceIds\":[\"T22U0127\"]}},{\"fact\":\"On 2026-06-16 Robert Kahn asked to be sent the answer on the warehouse data field request (first asked April 2024) and Marco Rossi committed 'I will come back' on chain-wide cost; Robert said 'Do that.'\",\"sourceIds\":[\"T22U0091\",\"T22U0094\",\"T22U0095\",\"T22U0096\",\"T22U0097\",\"T22U0099\",\"T22U0100\"],\"commitment\":{\"acceptedAction\":\"I will come back (with chain-wide cost)\",\"owner\":\"Marco Rossi\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T22U0097\",\"T22U0099\",\"T22U0100\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-06-16 Nadia Haddad reported she had only just completed Sofia's April request to compare extract totals with till numbers for January to March; the extract is lower and not a rounding difference; Marco Rossi committed 'We will come back on it' with no date given when Robert Kahn asked 'When?'\",\"sourceIds\":[\"T22U0129\",\"T22U0130\",\"T22U0132\",\"T22U0134\",\"T22U0135\",\"T22U0144\",\"T22U0145\",\"T22U0146\",\"T22U0147\",\"T22U0148\",\"T22U0149\"],\"commitment\":{\"acceptedAction\":\"We will come back on it (the extract-versus-till reconciliation cause)\",\"owner\":\"Marco Rossi\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T22U0146\",\"T22U0147\"],\"followupSourceIds\":[\"T22U0148\",\"T22U0149\"]}},{\"fact\":\"On 2026-06-16 Robert Kahn asked whether he was wrong to take the 3.4 waste figure to the board in April and wanted to know before the next board meeting; no owner accepted that action in the recorded discussion.\",\"sourceIds\":[\"T22U0140\",\"T22U0141\",\"T22U0142\",\"T22U0143\",\"T22U0144\",\"T22U0145\",\"T22U0146\"],\"commitment\":{\"acceptedAction\":\"unknown (Robert Kahn requested confirmation whether the 3.4 figure was wrong before the next board meeting; no explicit owner accepted)\",\"owner\":\"unknown\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T22U0144\",\"T22U0145\"],\"followupSourceIds\":[\"T22U0146\"]}},{\"fact\":\"On 2026-07-02 the internal renewal discussion noted the four DPO actions are closed except the retention policy, which is with legal.\",\"sourceIds\":[\"T23U0003\"],\"commitment\":{\"acceptedAction\":\"unknown (retention policy action predates this call; status reported as with legal)\",\"owner\":\"unknown\",\"state\":\"outstanding\",\"acceptanceSourceIds\":[\"T23U0003\"],\"followupSourceIds\":[\"T23U0003\"]}},{\"fact\":\"On 2026-07-02 the internal discussion recorded that Nadia Haddad raised workload twice in her check-ins and asked about the internal move process; no action was accepted in this call.\",\"sourceIds\":[\"T23U0016\",\"T23U0018\",\"T23U0020\"],\"commitment\":{\"acceptedAction\":\"unknown (no action accepted in this call regarding Nadia's workload)\",\"owner\":\"unknown\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T23U0016\",\"T23U0018\",\"T23U0020\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-07-02 the internal discussion agreed to note the anonymisation/single-point-of-failure tension and take it to whoever owns it internally; the other party noted there is no obvious owner.\",\"sourceIds\":[\"T23U0046\",\"T23U0047\",\"T23U0048\",\"T23U0049\"],\"commitment\":{\"acceptedAction\":\"Note it and take it to whoever owns this internally\",\"owner\":\"unknown\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T23U0047\"],\"followupSourceIds\":[\"T23U0048\",\"T23U0049\"]}},{\"fact\":\"On 2026-06-16 Robert Kahn asked 'Priya knows?' about the warehouse data field first asked about in April 2024; Lena Fischer confirmed 'Priya has asked. It a different team.'\",\"sourceIds\":[\"T22U0084\",\"T22U0086\",\"T22U0088\",\"T22U0089\"],\"commitment\":{\"acceptedAction\":\"unknown (Priya has asked the other team for the warehouse data field; no new action accepted in this call)\",\"owner\":\"Priya Nair\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T22U0088\",\"T22U0089\"],\"followupSourceIds\":[\"T22U0089\"]}},{\"fact\":\"On 2025-12-11 Nadia Haddad noted the warehouse data was first asked for in April 2024 and is still not available, which is why the shelf-life approximation is used.\",\"sourceIds\":[\"T18U0009\",\"T18U0024\",\"T18U0026\"],\"commitment\":{\"acceptedAction\":\"unknown (the April 2024 warehouse data request predates the supplied records; no owner recorded)\",\"owner\":\"unknown\",\"state\":\"outstanding\",\"acceptanceSourceIds\":[\"T18U0024\",\"T18U0026\"],\"followupSourceIds\":[\"T18U0024\",\"T18U0026\"]}},{\"fact\":\"On 2026-06-16 Lena Fischer stated Sofia is on a spreadsheet because 'we never solved her data problem'; Sofia confirmed this is accurate.\",\"sourceIds\":[\"T22U0068\",\"T22U0069\",\"T22U0070\",\"T22U0071\",\"T22U0073\",\"T22U0075\"],\"commitment\":{\"acceptedAction\":\"unknown (the underlying data problem resolution predates the supplied records; no owner recorded)\",\"owner\":\"unknown\",\"state\":\"outstanding\",\"acceptanceSourceIds\":[\"T22U0070\",\"T22U0071\"],\"followupSourceIds\":[\"T22U0073\",\"T22U0075\"]}},{\"fact\":\"On 2025-11-17 Marco Rossi committed to come back to Lena Fischer on where the three-wave plan came from and she asked for it in writing.\",\"sourceIds\":[\"T17U0005\",\"T17U0007\",\"T17U0008\",\"T17U0010\",\"T17U0011\",\"T17U0012\",\"T17U0013\"],\"commitment\":{\"acceptedAction\":\"We will come back to you on where that came from\",\"owner\":\"Marco Rossi\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T17U0010\",\"T17U0011\",\"T17U0012\",\"T17U0013\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-04-09 Katarina Voss requested four actions in writing that afternoon: a stated retention period, a written answer on the fifth sub-processor, confirmation the November request is fully closed with a list of where the data was, and a forward position on accumulation; Marco Rossi said 'Please do.'\",\"sourceIds\":[\"T21U0100\",\"T21U0102\",\"T21U0103\",\"T21U0107\",\"T21U0109\",\"T21U0110\",\"T21U0112\"],\"commitment\":{\"acceptedAction\":\"I will send you the four actions in writing this afternoon\",\"owner\":\"Katarina Voss\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T21U0100\",\"T21U0102\",\"T21U0103\"],\"followupSourceIds\":[\"T23U0003\"]}},{\"fact\":\"On 2026-06-16 Robert Kahn asked 'Katarina knows?' about the still-open erasure request; Marco Rossi confirmed 'Katarina has it as an open action.'\",\"sourceIds\":[\"T22U0123\",\"T22U0125\"],\"commitment\":{\"acceptedAction\":\"unknown (Katarina holds the erasure-request closure as an open action; no new action accepted in this call)\",\"owner\":\"Katarina Voss\",\"state\":\"outstanding\",\"acceptanceSourceIds\":[\"T22U0123\",\"T22U0125\"],\"followupSourceIds\":[\"T22U0125\"]}},{\"fact\":\"On 2025-09-12 Marco Rossi committed to fix the fresh-food allocation defect, stating it was already in development and would take days not weeks.\",\"sourceIds\":[\"T15U0015\",\"T15U0022\",\"T15U0025\"],\"commitment\":{\"acceptedAction\":\"we fix the defect, and that starts today\",\"owner\":\"Marco Rossi\",\"state\":\"fulfilled\",\"acceptanceSourceIds\":[\"T15U0015\",\"T15U0022\",\"T15U0025\",\"T15U0104\"],\"followupSourceIds\":[\"T17U0023\",\"T17U0025\"]}},{\"fact\":\"On 2025-11-17 Marco Rossi recorded the go-live decision for 15 December on produce, dairy and chilled ready meals with bakery descoped, the operator field excluded at extract confirmed in writing, and Sofia's request handled and traced; Lena Fischer agreed.\",\"sourceIds\":[\"T17U0165\",\"T17U0167\",\"T17U0169\",\"T17U0171\"],\"commitment\":{\"acceptedAction\":\"Go-live on the fifteenth of December for produce, dairy and chilled ready meals\",\"owner\":\"Marco Rossi\",\"state\":\"fulfilled\",\"acceptanceSourceIds\":[\"T17U0165\",\"T17U0167\",\"T17U0169\",\"T17U0171\"],\"followupSourceIds\":[\"T18U0001\",\"T18U0003\",\"T18U0007\",\"T18U0068\",\"T18U0069\"]}},{\"fact\":\"On 2026-01-28 Marco Rossi stated Meridian would consume a forecast and own the production plan, and Nadia Haddad confirmed 'That works for us'; Ivan Petrov agreed.\",\"sourceIds\":[\"T19U0049\",\"T19U0050\",\"T19U0051\",\"T19U0117\"],\"commitment\":{\"acceptedAction\":\"Meridian to consume a forecast and own the production plan\",\"owner\":\"Ivan Petrov\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T19U0049\",\"T19U0050\",\"T19U0051\",\"T19U0117\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-03-17 Nadia Haddad stated the agreed boundary precisely: RELEX produces a day-level forecast plus a fixed intraday profile, not an intraday forecast; Ruth Oyelaran noted it on Meridian's side.\",\"sourceIds\":[\"T20U0084\",\"T20U0086\",\"T20U0088\"],\"commitment\":{\"acceptedAction\":\"We produce a day level forecast plus a fixed intraday profile. We do not produce an intraday forecast\",\"owner\":\"Nadia Haddad\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T20U0084\",\"T20U0086\",\"T20U0088\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-03-17 Sofia Almeida said she would be the one to re-derive the intraday profile shape, but Nadia Haddad deferred the decision to the open items list with no owner.\",\"sourceIds\":[\"T20U0091\",\"T20U0093\",\"T20U0095\",\"T20U0096\"],\"commitment\":{\"acceptedAction\":\"It will be me (re-derive the profile shape) — deferred, not accepted\",\"owner\":\"Sofia Almeida\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T20U0091\"],\"followupSourceIds\":[\"T20U0093\",\"T20U0095\",\"T20U0096\"]}},{\"fact\":\"On 2025-12-11 Nadia Haddad confirmed the rollback plan is Sofia reverting fresh ordering to manual within four hours; Sofia noted she has been the rollback plan for two years.\",\"sourceIds\":[\"T18U0071\",\"T18U0072\",\"T18U0075\",\"T18U0076\",\"T18U0078\",\"T18U0079\",\"T18U0080\"],\"commitment\":{\"acceptedAction\":\"We revert fresh ordering to manual within four hours (rollback plan is Sofia)\",\"owner\":\"Sofia Almeida\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T18U0071\",\"T18U0076\",\"T18U0078\",\"T18U0079\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2025-12-11 Lena Fischer confirmed store communications went out Monday with a non-technical person on the phone from Tuesday writing down what was said.\",\"sourceIds\":[\"T18U0083\",\"T18U0084\",\"T18U0088\",\"T18U0091\"],\"commitment\":{\"acceptedAction\":\"Someone from my team. Not technical. Answers the phone and writes down what they said\",\"owner\":\"Lena Fischer\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T18U0083\",\"T18U0084\",\"T18U0088\",\"T18U0091\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-06-16 Ana Duarte reported fresh waste moved from 4.1% to 3.2% against a target of 2.8%, roughly 240 tonnes avoided over six months on the 25-store cohort, about 600 tonnes CO2 equivalent; Robert Kahn asked when he can scale it and Ana said when it is chain wide, which is not scoped yet.\",\"sourceIds\":[\"T22U0005\",\"T22U0006\",\"T22U0013\",\"T22U0021\",\"T22U0023\",\"T22U0030\",\"T22U0032\",\"T22U0037\"],\"commitment\":{\"acceptedAction\":\"unknown (no action accepted; scope boundary stated that chain-wide rollout is not scoped yet)\",\"owner\":\"unknown\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T22U0037\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-06-16 Marco Rossi stated signature was July 2024 and fresh went live December 2025, so the twelve-month ROI question (asked since March 2024) is not met on that reading; an alternative reading starting the clock at fresh go-live puts it in December 2026, which he does not argue for.\",\"sourceIds\":[\"T22U0041\",\"T22U0043\",\"T22U0045\",\"T22U0049\",\"T22U0051\",\"T22U0053\",\"T22U0055\"],\"commitment\":{\"acceptedAction\":\"unknown (no action accepted; ROI status reported)\",\"owner\":\"unknown\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T22U0043\",\"T22U0045\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-07-02 the internal discussion noted commercial terms of 980 at signature with a possible ~200 additional if the bakery expansion with Meridian lands.\",\"sourceIds\":[\"T23U0006\"],\"commitment\":{\"acceptedAction\":\"unknown (no action accepted; commercial figures reported)\",\"owner\":\"unknown\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T23U0006\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-07-02 the internal discussion noted Kahn got his twelve months roughly, with fresh live in December and Q1 waste numbers good enough that he stopped counting.\",\"sourceIds\":[\"T23U0009\"],\"commitment\":{\"acceptedAction\":\"unknown (no action accepted; status reported)\",\"owner\":\"unknown\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T23U0009\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-07-02 the internal discussion agreed to keep the union/works-council on-call rota point out of the account plan entirely as it is employment relations, not Acme-related.\",\"sourceIds\":[\"T23U0029\",\"T23U0033\",\"T23U0034\",\"T23U0035\",\"T23U0037\"],\"commitment\":{\"acceptedAction\":\"Keep it out of the account plan entirely\",\"owner\":\"unknown\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T23U0034\",\"T23U0035\",\"T23U0037\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-07-02 the internal discussion noted the retention policy action is with legal, the only one of the four DPO actions not closed.\",\"sourceIds\":[\"T23U0003\"],\"commitment\":{\"acceptedAction\":\"unknown (retention policy with legal; no new action accepted)\",\"owner\":\"unknown\",\"state\":\"outstanding\",\"acceptanceSourceIds\":[\"T23U0003\"],\"followupSourceIds\":[\"T23U0003\"]}},{\"fact\":\"On 2025-11-17 Priya Nair raised that the OP_ID field had been in every feed since February, and Nadia Haddad confirmed it would be excluded at source; Kwame Boateng later confirmed exclusion at the extract from 21 November, confirmed in writing to Priya.\",\"sourceIds\":[\"T17U0103\",\"T17U0104\",\"T17U0106\",\"T17U0108\",\"T17U0109\",\"T17U0112\",\"T17U0115\",\"T17U0161\",\"T17U0163\",\"T18U0068\",\"T18U0069\"],\"commitment\":{\"acceptedAction\":\"we drop it at the extract... we exclude it at source\",\"owner\":\"Nadia Haddad\",\"state\":\"fulfilled\",\"acceptanceSourceIds\":[\"T17U0150\",\"T17U0151\",\"T17U0153\",\"T17U0154\"],\"followupSourceIds\":[\"T18U0068\",\"T18U0069\"]}},{\"fact\":\"On 2025-12-11 Kwame Boateng reported fresh master data loaded with shelf life populated on 61% for the three categories in scope, up from 48%, because Priya's team did a pass in October.\",\"sourceIds\":[\"T18U0047\",\"T18U0050\",\"T18U0052\",\"T18U0054\"],\"commitment\":{\"acceptedAction\":\"unknown (Priya's team's October data pass predates the supplied records; no explicit action recorded)\",\"owner\":\"Priya Nair\",\"state\":\"fulfilled\",\"acceptanceSourceIds\":[\"T18U0052\"],\"followupSourceIds\":[\"T18U0052\"]}},{\"fact\":\"On 2025-12-11 Kwame Boateng reported DC-1 and DC-2 feeds yes with the standing caveat; since the file size check added in March there have been no silent failures, only loud ones, four since March.\",\"sourceIds\":[\"T18U0056\",\"T18U0058\",\"T18U0060\",\"T18U0062\",\"T18U0064\"],\"commitment\":{\"acceptedAction\":\"unknown (the March file size check predates the supplied records; no explicit action recorded)\",\"owner\":\"unknown\",\"state\":\"fulfilled\",\"acceptanceSourceIds\":[\"T18U0060\",\"T18U0062\"],\"followupSourceIds\":[\"T18U0064\"]}},{\"fact\":\"On 2026-06-16 Nadia Haddad reported the extract job ran and the file landed every night but nobody has ever checked what was in it; the 3.4 waste figure is derived off those totals.\",\"sourceIds\":[\"T22U0136\",\"T22U0137\",\"T22U0138\",\"T22U0139\",\"T22U0140\",\"T22U0141\"],\"commitment\":{\"acceptedAction\":\"unknown (no action accepted; gap reported)\",\"owner\":\"unknown\",\"state\":\"outstanding\",\"acceptanceSourceIds\":[\"T22U0139\"],\"followupSourceIds\":[\"T22U0139\"]}},{\"fact\":\"On 2026-06-16 Robert Kahn asked what chain-wide rollout costs and Marco Rossi said 'I will come back'; Robert said 'Do that.'\",\"sourceIds\":[\"T22U0097\",\"T22U0099\",\"T22U0100\"],\"commitment\":{\"acceptedAction\":\"I will come back (with chain-wide cost)\",\"owner\":\"Marco Rossi\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T22U0097\",\"T22U0099\",\"T22U0100\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-06-16 Robert Kahn asked to be sent the warehouse data field answer ('Send me when the...') but the turn is interrupted and no explicit owner accepted in the recorded discussion.\",\"sourceIds\":[\"T22U0091\",\"T22U0092\",\"T22U0093\"],\"commitment\":{\"acceptedAction\":\"unknown (Robert Kahn's request is interrupted; no explicit owner accepted)\",\"owner\":\"unknown\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T22U0091\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-04-09 Katarina Voss noted the anonymisation issue: a document describes the fresh category manager with sole knowledge without naming her, which still identifies one person; Marco Rossi acknowledged he had not thought about it that way.\",\"sourceIds\":[\"T21U0124\",\"T21U0125\",\"T21U0126\",\"T21U0134\",\"T21U0136\",\"T21U0138\",\"T21U0140\",\"T21U0142\",\"T21U0144\"],\"commitment\":{\"acceptedAction\":\"unknown (no action accepted; finding raised)\",\"owner\":\"unknown\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T21U0142\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-07-02 the internal discussion flagged that every risk register contains single-point-of-failure descriptions that identify one person; the agreed action was to note it and take it to whoever owns it internally, with no obvious owner identified.\",\"sourceIds\":[\"T23U0041\",\"T23U0043\",\"T23U0046\",\"T23U0047\",\"T23U0048\",\"T23U0049\"],\"commitment\":{\"acceptedAction\":\"Note it and take it to whoever owns this internally\",\"owner\":\"unknown\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T23U0047\"],\"followupSourceIds\":[\"T23U0048\",\"T23U0049\"]}},{\"fact\":\"On 2025-09-12 Marco Rossi stated the DC-2 permanent fix continues at reduced pace because the same engineers are on the defect; Priya Nair concluded DC-2 slips again.\",\"sourceIds\":[\"T15U0129\",\"T15U0130\",\"T15U0133\",\"T15U0135\",\"T15U0137\"],\"commitment\":{\"acceptedAction\":\"unknown (status reported; no new action accepted)\",\"owner\":\"unknown\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T15U0129\",\"T15U0130\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-01-28 Lena Fischer told Meridian the DC-2 feed still fails, less often than before, roughly once a fortnight, and planners stop trusting numbers for a day or two after; she advised building assuming the feed is imperfect.\",\"sourceIds\":[\"T19U0079\",\"T19U0082\",\"T19U0083\",\"T19U0084\",\"T19U0086\",\"T19U0091\"],\"commitment\":{\"acceptedAction\":\"unknown (status reported; no new action accepted)\",\"owner\":\"unknown\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T19U0079\",\"T19U0084\",\"T19U0086\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-01-28 Marco Rossi stated RELEX has capacity from March for the bakery workstream and they would start in March.\",\"sourceIds\":[\"T19U0054\",\"T19U0057\",\"T19U0125\",\"T19U0126\"],\"commitment\":{\"acceptedAction\":\"we start in March\",\"owner\":\"Marco Rossi\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T19U0054\",\"T19U0057\",\"T19U0125\",\"T19U0126\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2026-03-17 the bakery design workshop confirmed Meridian owns the production plan and RELEX owns the demand signal, with the boundary at day-level forecast plus fixed intraday profile.\",\"sourceIds\":[\"T20U0001\",\"T20U0003\",\"T20U0049\",\"T20U0050\",\"T20U0052\",\"T20U0084\",\"T20U0086\"],\"commitment\":{\"acceptedAction\":\"We produce a day level forecast plus a fixed intraday profile; Meridian consumes it and decides how it becomes a production plan\",\"owner\":\"Nadia Haddad\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T20U0049\",\"T20U0050\",\"T20U0052\",\"T20U0084\",\"T20U0086\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2025-10-09 Nadia Haddad proposed taking everything that is obviously a configuration question herself and Jonas taking anything documented, reducing what waits for Sofia; Sofia estimated maybe a third of what it would be; Nadia said 'Then let us do that.'\",\"sourceIds\":[\"T16U0067\",\"T16U0070\",\"T16U0071\",\"T16U0072\",\"T16U0073\"],\"commitment\":{\"acceptedAction\":\"I take everything that is obviously a configuration question and handle it myself, and Jonas takes anything documented\",\"owner\":\"Nadia Haddad\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T16U0067\",\"T16U0070\",\"T16U0071\",\"T16U0072\",\"T16U0073\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2025-10-09 Ana Duarte said she would not ask Sofia to work while she is off; Sofia replied 'You will not have to ask.'\",\"sourceIds\":[\"T16U0050\",\"T16U0052\"],\"commitment\":{\"acceptedAction\":\"I am not going to ask you to work while you are off\",\"owner\":\"Ana Duarte\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T16U0050\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2025-10-09 Sofia Almeida asked that people not be told why she is off; Jonas knows because he had to; Ana Duarte and Nadia Haddad acknowledged.\",\"sourceIds\":[\"T16U0118\",\"T16U0120\",\"T16U0122\",\"T16U0123\"],\"commitment\":{\"acceptedAction\":\"I would rather people did not know why I am off\",\"owner\":\"Ana Duarte\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T16U0118\",\"T16U0120\",\"T16U0122\",\"T16U0123\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2025-11-17 Sofia Almeida said she would send her requests as an email as well because she has watched things said in calls disappear; Lena Fischer supported proper follow-up; Marco Rossi accepted ownership.\",\"sourceIds\":[\"T17U0093\",\"T17U0094\",\"T17U0096\",\"T17U0097\",\"T17U0098\"],\"commitment\":{\"acceptedAction\":\"I am going to send this to you as an email as well\",\"owner\":\"Sofia Almeida\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T17U0093\",\"T17U0094\"],\"followupSourceIds\":[]}},{\"fact\":\"On 2025-11-17 Marco Rossi committed 'We will take it out' regarding the surgery reference in the handover document, and separately 'I will own that' for proper follow-up; the removal was still not fully closed as of 2026-06-16 (three of four locations done).\",\"sourceIds\":[\"T17U0078\",\"T17U0098\",\"T22U0111\",\"T22U0113\",\"T22U0117\",\"T22U0118\",\"T22U0121\"],\"commitment\":{\"acceptedAction\":\"We will take it out (surgery reference from handover document)\",\"owner\":\"Marco Rossi\",\"state\":\"outstanding\",\"acceptanceSourceIds\":[\"T17U0078\"],\"followupSourceIds\":[\"T22U0111\",\"T22U0113\",\"T22U0117\",\"T22U0118\",\"T22U0121\"]}},{\"fact\":\"On 2026-04-09 Marco Rossi confirmed the November erasure request was removed from the notes they knew about but he committed to finding the others and had not closed it; Katarina Voss noted it was April, five months later.\",\"sourceIds\":[\"T21U0088\",\"T21U0091\",\"T21U0093\",\"T21U0094\",\"T21U0096\"],\"commitment\":{\"acceptedAction\":\"I committed to finding the others\",\"owner\":\"Marco Rossi\",\"state\":\"outstanding\",\"acceptanceSourceIds\":[\"T21U0091\"],\"followupSourceIds\":[\"T21U0093\",\"T21U0094\",\"T21U0096\"]}},{\"fact\":\"On 2026-06-16 Marco Rossi reported three of four locations done on the personal-detail removal, with the fourth being a document version; Robert Kahn instructed 'Then close it.'\",\"sourceIds\":[\"T22U0111\",\"T22U0113\",\"T22U0127\"],\"commitment\":{\"acceptedAction\":\"Then close it\",\"owner\":\"Marco Rossi\",\"state\":\"outstanding\",\"acceptanceSourceIds\":[\"T22U0127\"],\"followupSourceIds\":[\"T22U0127\"]}},{\"fact\":\"On 2026-06-16 Nadia Haddad reported she had only just completed Sofia's April request to compare extract totals with till numbers; the extract is lower and not a rounding difference; the 3.4 figure is derived off those totals; Robert Kahn took 3.4 to the board in April and wants to know whether he was wrong before the next board meeting; Marco Rossi committed 'We will come back on it' with no date.\",\"sourceIds\":[\"T22U0129\",\"T22U0130\",\"T22U0132\",\"T22U0134\",\"T22U0135\",\"T22U0140\",\"T22U0141\",\"T22U0142\",\"T22U0144\",\"T22U0145\",\"T22U0146\",\"T22U0147\",\"T22U0148\",\"T22U0149\"],\"commitment\":{\"acceptedAction\":\"We will come back on it (extract-versus-till reconciliation)\",\"owner\":\"Marco Rossi\",\"state\":\"unknown\",\"acceptanceSourceIds\":[\"T22U0147\"],\"followupSourceIds\":[\"T22U0148\",\"T22U0149\"]}},{\"fact\":\"On 2026-06-16 Robert Kahn asked to be sent the warehouse data field answer; the turn is interrupted ('Send me when the...') and no explicit owner accepted in the recorded discussion"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "runAt": "2026-09-20T00:34:47.658Z",
+  "results": [
+    {
+      "question": 1,
+      "prompt": "What did the master-data assessment report as complete in September 2024? Give every figure and the document each comes from.",
+      "durationMs": 84873,
+      "status": "generated",
+      "workspaceId": "practice_p1_1789864326992",
+      "generatedAt": "2026-09-20T00:32:07.064Z",
+      "citations": 6
+    },
+    {
+      "question": 2,
+      "durationMs": 47772,
+      "status": "generated",
+      "workspaceId": "practice_p2_1789861833614",
+      "generatedAt": "2026-09-19T23:50:33.676Z",
+      "citations": 7
+    },
+    {
+      "question": 3,
+      "prompt": "Who proposed removing the operator ID field from the data extract, who agreed, and had it already been sent anywhere by then?",
+      "durationMs": 74805,
+      "status": "generated",
+      "workspaceId": "practice_p3_1789864412805",
+      "generatedAt": "2026-09-20T00:33:32.851Z",
+      "citations": 22
+    },
+    {
+      "question": 4,
+      "durationMs": 55108,
+      "status": "generated",
+      "workspaceId": "practice_p4_1789861929744",
+      "generatedAt": "2026-09-19T23:52:09.815Z",
+      "citations": 9
+    },
+    {
+      "question": 5,
+      "durationMs": 67648,
+      "status": "generated",
+      "workspaceId": "practice_p5_1789861985849",
+      "generatedAt": "2026-09-19T23:53:05.893Z",
+      "citations": 12
+    },
+    {
+      "question": 6,
+      "durationMs": 41007,
+      "status": "generated",
+      "workspaceId": "practice_p6_1789862054531",
+      "generatedAt": "2026-09-19T23:54:14.597Z",
+      "citations": 13
+    },
+    {
+      "question": 7,
+      "durationMs": 145929,
+      "status": "generated",
+      "workspaceId": "practice_p7_1789862587681",
+      "generatedAt": "2026-09-20T00:03:07.749Z",
+      "erasure": {
+        "id": "805501fd-5b9c-49b9-bdf1-1ccd99ccfe4e",
+        "createdAt": "2026-09-20T00:03:10.412Z",
+        "sourcesRemoved": 115,
+        "artifactsRemoved": 0
+      },
+      "citations": 35
+    },
+    {
+      "question": 8,
+      "prompt": "Find one thing in the archive that was agreed and then never done. Show the trail from the agreement to the present, and say who would have needed to notice.",
+      "durationMs": 327109,
+      "status": "generated",
+      "workspaceId": "practice_p8_1789862925636",
+      "generatedAt": "2026-09-20T00:08:45.695Z",
+      "citations": 51
+    },
+    {
+      "question": 9,
+      "durationMs": 44304,
+      "status": "generated",
+      "workspaceId": "practice_p9_1789861609069",
+      "generatedAt": "2026-09-19T23:46:49.136Z",
+      "citations": 18
+    }
+  ]
+}

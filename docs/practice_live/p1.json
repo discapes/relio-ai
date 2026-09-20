@@ -1,0 +1,76 @@
+{
+  "question": 1,
+  "prompt": "What did the master-data assessment report as complete in September 2024? Give every figure and the document each comes from.",
+  "durationMs": 84873,
+  "status": "generated",
+  "workspaceId": "practice_p1_1789864326992",
+  "generatedAt": "2026-09-20T00:32:07.064Z",
+  "answer": {
+    "id": "5675e07a-6694-474c-8c2a-74f25ac35de5",
+    "text": "On 30 September 2024, Kwame Boateng reported the master-data remediation scope for the pilot cohort with four figures: 4,214 articles in the cohort, 1,317 missing case pack quantity, 3,105 missing or default supplier lead, and shelf life populated at 48% . In the same message he assessed case pack as the blocker, said lead times can be worked around by deriving actuals from receipt history, and stated shelf life is out of scope for this phase . He also attached a file containing the 1,317 articles missing case pack quantity; that attachment itself is not available in the supplied evidence . [1]\n\nThe figures were later confirmed unchanged. On 20 December 2024 Ana Duarte recorded that shelf life remains at 48% and untouched, correct for this phase and set to become the critical path for phase two . On 21 January 2025 Priya Nair reported case pack for the cohort done, with 1,300 articles finished on 19 December 2024 , lead times untouched and still mostly sevens , and shelf life untouched and not in scope . [2] [3] [4] [5] [6]",
+    "citations": [
+      {
+        "sourceId": "emails/13_master-data-remediation#message-006",
+        "quote": "Priya,\n\nAs agreed in the workshop, the remediation scope for the pilot cohort:\n\n  Articles in cohort                 4,214\n  Missing case pack quantity         1,317\n  Missing or default supplier lead   3,105\n  Shelf life populated               48%\n\nCase pack is the blocker. Lead times we can work around by deriving actuals from receipt\nhistory. Shelf life is out of scope for this phase.\n\nFile attached with the 1,317.",
+        "title": "Master data remediation - progress",
+        "date": "2024-09-30T10:05:00",
+        "author": "Kwame Boateng",
+        "position": "Message 6"
+      },
+      {
+        "sourceId": "emails/13_master-data-remediation#message-002",
+        "quote": "Recorded, and thank you. I have put it in the steering report.\n\nOne thing for the record so it is not a surprise in six months: shelf life remains at 48%\nand untouched. That is correct for this phase and it will become the critical path for\nphase two.\n\nBest regards,",
+        "title": "Re: Master data remediation - progress",
+        "date": "2024-12-20T08:40:00",
+        "author": "Ana Duarte",
+        "position": "Message 2"
+      },
+      {
+        "sourceId": "transcripts/08_2025-01-21_uat-readiness-review#utterance-0003",
+        "quote": "Case pack for the cohort is done. Thirteen hundred articles, finished on the nineteenth of December.",
+        "title": "UAT readiness review",
+        "date": "2025-01-21",
+        "author": "Priya Nair",
+        "position": "0:16 · utterance 3"
+      },
+      {
+        "sourceId": "transcripts/08_2025-01-21_uat-readiness-review#utterance-0011",
+        "quote": "I have not touched. They are",
+        "title": "UAT readiness review",
+        "date": "2025-01-21",
+        "author": "Priya Nair",
+        "position": "0:58 · utterance 11"
+      },
+      {
+        "sourceId": "transcripts/08_2025-01-21_uat-readiness-review#utterance-0012",
+        "quote": "still mostly sevens.",
+        "title": "UAT readiness review",
+        "date": "2025-01-21",
+        "author": "Priya Nair",
+        "position": "1:04 · utterance 12"
+      },
+      {
+        "sourceId": "transcripts/08_2025-01-21_uat-readiness-review#utterance-0022",
+        "quote": "Untouched. Not in scope. And before anyone asks, the warehouse question is still unanswered,",
+        "title": "UAT readiness review",
+        "date": "2025-01-21",
+        "author": "Priya Nair",
+        "position": "1:54 · utterance 22"
+      }
+    ],
+    "createdAt": "2026-09-20T00:33:31.933Z",
+    "kind": "chat",
+    "level": 3,
+    "question": "What did the master-data assessment report as complete in September 2024? Give every figure and the document each comes from.",
+    "trace": [
+      "Read 2974 permitted source records at L3.",
+      "Prepared 123 evidence observations across 4 source partitions.",
+      "Located the 2024-09-30 message (emails/13_master-data-remediation#message-006) and verified all four figures (4,214 / 1,317 / 3,105 / 48%) appear verbatim in it",
+      "Verified the scope statements (case pack blocker, lead times workaround, shelf life out of scope) and the attachment note are in the same message; noted the attachment is not available in supplied evidence",
+      "Cross-checked the 2024-12-20 confirmation of shelf life at 48% (emails/13_master-data-remediation#message-002)",
+      "Cross-checked the 2025-01-21 UAT readiness review: case pack done with 1,300 articles finished 19 December (utterance-0003), lead times untouched and mostly sevens (utterances-0011/0012), shelf life untouched and not in scope (utterance-0022)",
+      "Confirmed no other supplied passage reports additional September 2024 assessment figures",
+      "Verified 6 quoted passages against runtime sources."
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "question": 7,
+  "durationMs": 176546,
+  "status": "failed",
+  "workspaceId": "practice_p7_1789861350691",
+  "generatedAt": "2026-09-19T23:42:30.765Z",
+  "erasure": {
+    "id": "791e8c28-1520-482c-8c41-65ae55f95c4e",
+    "createdAt": "2026-09-19T23:42:33.376Z",
+    "sourcesRemoved": 121,
+    "artifactsRemoved": 0
+  },
+  "error": "Inference returned no answer. Retry the task."
+}

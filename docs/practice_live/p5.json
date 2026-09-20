@@ -1,0 +1,122 @@
+{
+  "question": 5,
+  "durationMs": 67648,
+  "status": "generated",
+  "workspaceId": "practice_p5_1789861985849",
+  "generatedAt": "2026-09-19T23:53:05.893Z",
+  "answer": {
+    "id": "36a837cf-b911-4b9c-866a-1899c51ef1c2",
+    "text": "At the solution demo and value workshop on 20 March 2024, Sofia Almeida said the shelf life field in the product master was \"populated for maybe half the range\" — an informal estimate, not a measurement. [1] [2]\n\nAt the technical due diligence on 18 April 2024, Priya Nair gave the same rough estimate — populated for maybe half — and added that some of the populated values were wrong, because nobody had owned the field since it was created. [3] [4] [5]\n\nAt the master data workshop on 24 September 2024, Kwame Boateng stated that shelf life is populated on 48% (T06U0025). He repeated the 48% figure in the remediation scope email of 30 September 2024, which listed \"Shelf life populated 48%\" for the pilot cohort of 4,214 articles and noted shelf life was out of scope for that phase (E13M006). Ana Duarte's steering note of 20 December 2024 recorded that shelf life remained at 48% and untouched for that phase (E13M002). [6] [7] [8]\n\nAt the fresh cutover call on 11 December 2025, Kwame Boateng stated the shelf life field is populated on 61% for the three categories in scope, up from 48%, because Priya's team did a pass in October (T18U0050, T18U0052). This is the latest population figure in the archive. [9] [10]\n\nThe 61% figure is scoped to the three in-scope fresh categories, so it is not directly comparable to the cohort-wide 48% figure. No later population figure appears in the archive through July 2026; the June 2026 reconciliation issue Nadia Haddad raised concerns extract totals versus till data for January to March, not the population rate (T22U0130, T22U0132). [10] [11] [12]\n\nRecommendation: when quoting a figure, state its scope — 48% was cohort-wide (E13M006), 61% covers the three live fresh categories only (T18U0052) — and cite the 11 December 2025 cutover call as the current number, noting it is the latest recorded figure rather than one verified after that date. [7] [9] [10]",
+    "citations": [
+      {
+        "sourceId": "transcripts/01_2024-03-20_solution-demo-value-workshop#utterance-0049",
+        "quote": "We have a shelf life field in the product master. It is",
+        "title": "Solution demo & value workshop",
+        "date": "2024-03-20",
+        "author": "Sofia Almeida",
+        "position": "5:45 · utterance 49"
+      },
+      {
+        "sourceId": "transcripts/01_2024-03-20_solution-demo-value-workshop#utterance-0050",
+        "quote": "populated for maybe half the range...",
+        "title": "Solution demo & value workshop",
+        "date": "2024-03-20",
+        "author": "Sofia Almeida",
+        "position": "5:54 · utterance 50"
+      },
+      {
+        "sourceId": "transcripts/02_2024-04-18_technical-due-diligence#utterance-0105",
+        "quote": "you know Populated for maybe half, and wrong for",
+        "title": "Technical due diligence",
+        "date": "2024-04-18",
+        "author": "Priya Nair",
+        "position": "9:21 · utterance 105"
+      },
+      {
+        "sourceId": "transcripts/02_2024-04-18_technical-due-diligence#utterance-0106",
+        "quote": "some of what is populated, because nobody has owned that",
+        "title": "Technical due diligence",
+        "date": "2024-04-18",
+        "author": "Priya Nair",
+        "position": "9:27 · utterance 106"
+      },
+      {
+        "sourceId": "transcripts/02_2024-04-18_technical-due-diligence#utterance-0107",
+        "quote": "field since was created.",
+        "title": "Technical due diligence",
+        "date": "2024-04-18",
+        "author": "Priya Nair",
+        "position": "9:33 · utterance 107"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0025",
+        "quote": "And shelf life is populated on forty-eight percent.",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Kwame Boateng",
+        "position": "4:39 · utterance 25"
+      },
+      {
+        "sourceId": "emails/13_master-data-remediation#message-006",
+        "quote": "Priya,\n\nAs agreed in the workshop, the remediation scope for the pilot cohort:\n\n  Articles in cohort                 4,214\n  Missing case pack quantity         1,317\n  Missing or default supplier lead   3,105\n  Shelf life populated               48%\n\nCase pack is the blocker. Lead times we can work around by deriving actuals from receipt\nhistory. Shelf life is out of scope for this phase.\n\nFile attached with the 1,317.\n\nKwame Boateng\nTechnical Consultant Image\n+44 7700 900 318\nk.boateng@relexsolutions.example\nImage\nrelexsolutions.example",
+        "title": "Master data remediation - progress",
+        "date": "2024-09-30T10:05:00",
+        "author": "Kwame Boateng",
+        "position": "Message 6"
+      },
+      {
+        "sourceId": "emails/13_master-data-remediation#message-002",
+        "quote": "Recorded, and thank you. I have put it in the steering report.\n\nOne thing for the record so it is not a surprise in six months: shelf life remains at 48%\nand untouched. That is correct for this phase and it will become the critical path for\nphase two.\n\nBest regards,\nAna Duarte\nProject Manager Image\n+351 913 882 145 | UTC +01:00\nana.duarte@relexsolutions.example\nRua do Ouro 42, 1100-063 Lisboa\nConnect with me\nImage\nImage\nPlan better. Sell more. Waste less\nrelexsolutions.example Image\nLinkedInYouTube",
+        "title": "Re: Master data remediation - progress",
+        "date": "2024-12-20T08:40:00",
+        "author": "Ana Duarte",
+        "position": "Message 2"
+      },
+      {
+        "sourceId": "transcripts/18_2025-12-11_fresh-cutover-call#utterance-0050",
+        "quote": "shelf life field is populated on sixty-one",
+        "title": "Fresh cutover call",
+        "date": "2025-12-11",
+        "author": "Kwame Boateng",
+        "position": "4:19 · utterance 50"
+      },
+      {
+        "sourceId": "transcripts/18_2025-12-11_fresh-cutover-call#utterance-0052",
+        "quote": "percent for the three categories in scope, up from forty-eight, because Priya's team did pass in October.",
+        "title": "Fresh cutover call",
+        "date": "2025-12-11",
+        "author": "Kwame Boateng",
+        "position": "4:28 · utterance 52"
+      },
+      {
+        "sourceId": "transcripts/22_2026-06-16_q2-business-review#utterance-0130",
+        "quote": "I put the extract totals next to the till numbers for January to March.",
+        "title": "Q2 quarterly business review",
+        "date": "2026-06-16",
+        "author": "Nadia Haddad",
+        "position": "10:41 · utterance 130"
+      },
+      {
+        "sourceId": "transcripts/22_2026-06-16_q2-business-review#utterance-0132",
+        "quote": "They do not reconcile. The extract is lower.",
+        "title": "Q2 quarterly business review",
+        "date": "2026-06-16",
+        "author": "Nadia Haddad",
+        "position": "10:51 · utterance 132"
+      }
+    ],
+    "createdAt": "2026-09-19T23:54:13.539Z",
+    "kind": "evaluation",
+    "level": 3,
+    "question": "What proportion of articles had shelf-life data populated? Give every figure in the archive with its date and source, and say which one is current.",
+    "trace": [
+      "Read 2974 permitted source records at L3.",
+      "Verified all four figures against cited turns: 'maybe half' (T01U0049-T01U0050, Sofia Almeida), 'maybe half, and wrong for some' (T02U0105-T02U0107, Priya Nair), 48% (T06U0025 Kwame Boateng; E13M006; E13M002), 61% (T18U0050+T18U0052, Kwame Boateng).",
+      "Confirmed the interrupted sentence at T18U0050/T18U0052 is completed by the same speaker (Kwame Boateng), so 61% is attributed to him.",
+      "Confirmed the 48% figure appears in three records (2024-09-24 workshop, 2024-09-30 remediation scope email, 2024-12-20 steering note) and is consistent.",
+      "Checked for later population figures through July 2026; the June 2026 reconciliation issue (T22U0130, T22U0132) concerns extract totals vs till data, not population rate, so nothing supersedes 61%.",
+      "Distinguished informal estimates ('maybe half') from measured figures (48%, 61%) and preserved scope differences (cohort-wide vs three in-scope fresh categories).",
+      "Verified 12 quoted passages against runtime sources."
+    ]
+  }
+}

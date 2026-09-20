@@ -1,20 +1,20 @@
-# Practice-question reference answers
+# Reviewed practice answers
 
-These answers were checked against the parsed source records and original archive. They are independent evaluation references for the live agent. The archive ends on 2 July 2026. Record IDs identify exact email messages and transcript utterances; timestamps below are elapsed meeting positions. Source dates have no recorded timezone. Attachments mentioned in emails are unavailable in the supplied archive.
+These answers were checked against the parsed source records and original archive. They are independently reviewed submission answers and evaluation references, rather than unedited model output. Actual generated answers and measured limitations are preserved in [PRACTICE_ANSWERS.md](PRACTICE_ANSWERS.md) and [practice_review.md](practice_review.md). The archive ends on 2 July 2026. Record IDs identify exact email messages and transcript utterances; timestamps below are elapsed meeting positions. Source dates have no recorded timezone. Attachments mentioned in emails are unavailable in the supplied archive.
 
 ## P1. September master-data assessment
 
 The assessment identified remaining gaps; the September evidence does not establish completion of remediation.
 
-| Figure or finding | Evidence |
-| --- | --- |
-| Case-pack quantity missing on 31% of active articles | Kwame, 24 September, 03:22–03:31, utterances 12–14 |
-| Store master and product hierarchy described as clean | Kwame, 03:50–04:01, utterances 17–19 |
-| Supplier lead times populated, with many defaulted to exactly seven days and considered unreliable | Kwame, 04:01–04:22, utterances 19–22; Priya confirms the defaulting at 04:29, utterance 23 |
-| Shelf life populated on 48% | Kwame, 04:39, utterance 25 |
-| Approximately 4,200 articles in the pilot cohort | Kwame, 05:44, utterance 37 |
-| Approximately 1,300 case-pack fixes discussed | Priya, 05:58–06:07, utterances 41–43; the preceding attempted count by Kwame is incomplete |
-| Exact pilot-cohort count: 4,214; missing case pack: 1,317; missing or default supplier lead: 3,105; shelf life populated: 48% | Kwame's 30 September email, message 6 |
+| Figure or finding                                                                                                             | Evidence                                                                                   |
+| ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| Case-pack quantity missing on 31% of active articles                                                                          | Kwame, 24 September, 03:22–03:31, utterances 12–14                                         |
+| Store master and product hierarchy described as clean                                                                         | Kwame, 03:50–04:01, utterances 17–19                                                       |
+| Supplier lead times populated, with many defaulted to exactly seven days and considered unreliable                            | Kwame, 04:01–04:22, utterances 19–22; Priya confirms the defaulting at 04:29, utterance 23 |
+| Shelf life populated on 48%                                                                                                   | Kwame, 04:39, utterance 25                                                                 |
+| Approximately 4,200 articles in the pilot cohort                                                                              | Kwame, 05:44, utterance 37                                                                 |
+| Approximately 1,300 case-pack fixes discussed                                                                                 | Priya, 05:58–06:07, utterances 41–43; the preceding attempted count by Kwame is incomplete |
+| Exact pilot-cohort count: 4,214; missing case pack: 1,317; missing or default supplier lead: 3,105; shelf life populated: 48% | Kwame's 30 September email, message 6                                                      |
 
 The workshop also reduced the pilot from 40 to 25 stores across three regions and mixed formats. Lena states the reduction at 08:14–09:00, utterances 68–75; Ana undertakes to reissue the plan at 09:59–10:15, utterances 87–90. Those figures describe deployment scope rather than data completeness.
 
@@ -57,16 +57,16 @@ Source: [UAT sign-off](../../materials/corpus/acme/emails/15_uat-signoff.txt), `
 
 ## P5. Shelf-life population over time
 
-| Date | Figure and interpretation | Source |
-| --- | --- | --- |
-| 20 March 2024 | “Maybe half the range”; an estimate, with ownership problems | Solution-demo workshop, Sofia, utterances 49–52, 05:45–06:09 |
-| 18 April 2024 | “Maybe half”; some populated values were wrong | Technical due diligence, Priya, utterances 105–107, 09:21–09:33 |
-| 24 September 2024 | 48% populated | Master-data workshop, Kwame, utterance 25, 04:39 |
-| 30 September 2024 | 48% in the written pilot-remediation summary | Master-data remediation, message 6 |
-| 20 December 2024 | Still 48%, untouched during phase one | Master-data remediation, Ana, message 2 |
-| 27 February 2025 | Described as still mostly empty, without a new numerical measurement | Go-live cutover, Priya, utterances 15–20, 01:22–01:50 |
-| 12 September 2025 | Sofia repeats her March account: about half, some wrong | Fresh escalation, utterances 62–66, 05:34–06:06; this is a retrospective account rather than a new audit |
-| 11 December 2025 | 61% for the three in-scope categories, up from 48% after the October cleanup | Fresh cutover, Kwame, utterances 50–54, 04:19–04:44 |
+| Date              | Figure and interpretation                                                    | Source                                                                                                   |
+| ----------------- | ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| 20 March 2024     | “Maybe half the range”; an estimate, with ownership problems                 | Solution-demo workshop, Sofia, utterances 49–52, 05:45–06:09                                             |
+| 18 April 2024     | “Maybe half”; some populated values were wrong                               | Technical due diligence, Priya, utterances 105–107, 09:21–09:33                                          |
+| 24 September 2024 | 48% populated                                                                | Master-data workshop, Kwame, utterance 25, 04:39                                                         |
+| 30 September 2024 | 48% in the written pilot-remediation summary                                 | Master-data remediation, message 6                                                                       |
+| 20 December 2024  | Still 48%, untouched during phase one                                        | Master-data remediation, Ana, message 2                                                                  |
+| 27 February 2025  | Described as still mostly empty, without a new numerical measurement         | Go-live cutover, Priya, utterances 15–20, 01:22–01:50                                                    |
+| 12 September 2025 | Sofia repeats her March account: about half, some wrong                      | Fresh escalation, utterances 62–66, 05:34–06:06; this is a retrospective account rather than a new audit |
+| 11 December 2025  | 61% for the three in-scope categories, up from 48% after the October cleanup | Fresh cutover, Kwame, utterances 50–54, 04:19–04:44                                                      |
 
 The latest explicit measurement is 61% for produce, dairy and chilled ready meals. Its denominator is the three categories in scope; the archive does not establish a current whole-estate or all-category percentage. Population also says nothing by itself about correctness or the availability of remaining shelf life. The field-mapping thread distinguishes total shelf life in MHDHB from remaining shelf life and documents the approximation.
 
@@ -91,7 +91,7 @@ Sources:
 
 ## P7. Answering P1 after deletion
 
-A direct runtime erasure check removed 121 source records from a fresh workspace. The check examined actual surviving runtime records after deletion. It used no model-generated answer or cache.
+A direct runtime erasure check removed 115 source records from a fresh workspace. The check examined actual surviving runtime records after deletion. It used no model-generated answer or cache.
 
 The September workshop's authored assessment figures and the 30 September assessment email were removed. Consequently, this workspace cannot cite the September evidence for 31%, 4,214 articles or 3,105 missing/default lead times. The original September source for 48% is also gone.
 
@@ -122,10 +122,12 @@ Sources: [March notes correction](../../materials/corpus/acme/emails/04_march-20
 
 The weekly reports establish that Ana reported “Nightly article extract completed, no errors” on 12 January, 9 February and 9 March 2026. They are dated status assertions. Establishing actual successful execution and correct, complete data requires run logs and source-content checks, which the archive does not provide for those runs.
 
+At the 16 June 2026 business review, Nadia explicitly explains the status line: the job ran and the file landed every night, while the contents had never been checked. She had compared January–March extract totals with till numbers and found that the extract was lower. She declines to state a numerical discrepancy because she has had the finding for only two days and does not yet trust the figure. Its cause remains unknown. The reported 3.4% waste figure was derived from those extract totals, so that figure needs review too. These observations are recorded at utterances 130–146, 10:41–12:06.
+
 The 9 February report itself also records two January DC-2 failures. That makes an unrestricted claim of error-free operation inappropriate, while leaving open whether the repeated article-extract line refers to a narrower process or reporting interval.
 
 Earlier incidents explain why a success status needs qualification. Priya's 17 March 2025 technical note says a job reported success after moving three files, including an empty upstream export. A file-size check was later added. The 18 March meeting records Tomas withdrawing the broader claim that expected file size catches this class of failure, because expected-size files can still contain the wrong content. The sources contain different incident descriptions; the answer should retain the source and date of each account.
 
 The supported answer is that the reports recorded successful nightly extraction. The archive cannot establish that every relevant run actually succeeded or that its contents were correct.
 
-Sources: [Weekly status reports](../../materials/corpus/acme/reports/01_weekly-status-thread.txt), messages 4, 3 and 2; [DC-2 incidents](../../materials/corpus/acme/emails/16_dc2-hypercare-incidents.txt), messages 3, 2 and 1, dated 17 and 21 March 2025; [Hypercare review](../../materials/corpus/acme/transcripts/11_2025-03-18_hypercare-review.txt), utterances 112–125, 09:20–10:31.
+Sources: [Q2 business review](../../materials/corpus/acme/transcripts/22_2026-06-16_q2-business-review.txt), utterances 130–146, 10:41–12:06; [Weekly status reports](../../materials/corpus/acme/reports/01_weekly-status-thread.txt), messages 4, 3 and 2; [DC-2 incidents](../../materials/corpus/acme/emails/16_dc2-hypercare-incidents.txt), messages 3, 2 and 1, dated 17 and 21 March 2025; [Hypercare review](../../materials/corpus/acme/transcripts/11_2025-03-18_hypercare-review.txt), utterances 112–125, 09:20–10:31.

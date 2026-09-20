@@ -1,0 +1,1688 @@
+{
+  "durationMs": 23787,
+  "count": 75,
+  "documents": [
+    "emails/13_master-data-remediation",
+    "emails/16_dc2-hypercare-incidents",
+    "emails/11_data-assessment-followup",
+    "emails/01_shelf-life-field-mapping",
+    "emails/12_sow-value-case-wording",
+    "transcripts/11_2025-03-18_hypercare-review",
+    "transcripts/17_2025-11-17_fresh-phase2-go-no-go",
+    "transcripts/08_2025-01-21_uat-readiness-review",
+    "transcripts/03_2024-06-11_commercial-sow-review",
+    "transcripts/01_2024-03-20_solution-demo-value-workshop",
+    "emails/10_q1-waste-reporting",
+    "emails/09_pilot-store-group",
+    "transcripts/16_2025-10-09_fresh-uat-cover-briefing",
+    "emails/15_uat-signoff",
+    "emails/18_fresh-cutover-runbook",
+    "transcripts/02_2024-04-18_technical-due-diligence",
+    "transcripts/14_2025-06-24_steering-committee",
+    "emails/04_march-2024-notes-correction",
+    "emails/19_meridian-environment-access",
+    "emails/14_go-live-user-access",
+    "emails/05_dc2-incident-log",
+    "emails/07_op-id-field-exclusion",
+    "transcripts/13_2025-06-10_transition-to-continuous-service",
+    "transcripts/12_2025-05-22_90-day-business-review",
+    "transcripts/06_2024-09-24_master-data-workshop",
+    "transcripts/15_2025-09-12_fresh-phase2-escalation",
+    "transcripts/18_2025-12-11_fresh-cutover-call",
+    "emails/17_cohort-reporting-basis",
+    "emails/06_fresh-category-hierarchy-question",
+    "emails/03_phase2-sequencing-proposal",
+    "transcripts/10_2025-02-27_go-live-cutover",
+    "transcripts/07_2024-11-12_ordering-logic-design",
+    "emails/08_dpa-review-actions",
+    "transcripts/20_2026-03-17_bakery-design-workshop",
+    "transcripts/04_2024-07-09_INTERNAL-handover-presales-to-delivery",
+    "emails/20_chain-wide-proposal",
+    "transcripts/19_2026-01-28_bakery-scoping-PARTNER",
+    "transcripts/09_2025-02-12_INTERNAL-account-review",
+    "emails/02_fresh-uat-environment-access",
+    "transcripts/05_2024-07-15_implementation-kickoff",
+    "reports/01_weekly-status-thread",
+    "transcripts/21_2026-04-09_data-protection-review",
+    "reports/02_monthly-steering-reports",
+    "transcripts/22_2026-06-16_q2-business-review",
+    "transcripts/23_2026-07-02_INTERNAL-renewal-resourcing"
+  ],
+  "transcriptClaims": 41,
+  "claims": [
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2024-09-30: Kwame Boateng scoped pilot remediation: 4,214 cohort articles, 1,317 missing case pack quantity (the blocker), 3,105 missing/default lead times, shelf life 48% populated and out of scope for the phase.",
+      "sourceIds": [
+        "emails/13_master-data-remediation#message-006"
+      ],
+      "id": "0489d60f-e1a5-4175-ba72-6c20c490f47c",
+      "level": 3
+    },
+    {
+      "kind": "correction",
+      "status": "corrected",
+      "text": "2025-03-17: Priya Nair distinguishes two DC-2 failure modes: 6 March middleware failure (known April 2024 issue) vs 14 March empty-file silent success; fixes differ, not to be merged in the incident log.",
+      "sourceIds": [
+        "emails/16_dc2-hypercare-incidents#message-003"
+      ],
+      "id": "055b28b4-a625-4b12-8bd6-56d95be7f66d",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2024-05-02: Tomas Lindholm's assessment flagged DC-2 (unsupported middleware, intermittent silent failure) as a named risk with monitoring from day one, and case pack quantity as the blocking master-data gap.",
+      "sourceIds": [
+        "emails/11_data-assessment-followup#message-005"
+      ],
+      "id": "0aebb58c-5121-4f72-8037-1fc0b95a92ff",
+      "level": 3
+    },
+    {
+      "kind": "decision",
+      "status": "proposed",
+      "text": "2025-09-04: Nadia Haddad proposed approximating remaining shelf life as total shelf life (MHDHB) minus average days-in-warehouse per article group; flagged slow movers would be overstated as fresher.",
+      "sourceIds": [
+        "emails/01_shelf-life-field-mapping#message-005"
+      ],
+      "id": "0b036eca-bf05-4373-b7e8-c42527a7962d",
+      "level": 3
+    },
+    {
+      "kind": "decision",
+      "status": "agreed",
+      "text": "2024-07-02: Lena Fischer accepted the SOW value-case wording with 'RELEX anticipates' and a baseline to be agreed in writing prior to fresh go-live; signed version going out that week.",
+      "sourceIds": [
+        "emails/12_sow-value-case-wording#message-001",
+        "emails/12_sow-value-case-wording#message-002"
+      ],
+      "id": "0e28bd2b-527e-46b1-8f54-75a7c66757be",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2025-03-18 hypercare: DC-2 feed failed twice (6th and 14th March, both DC-2); 14th failure gave planners stale stock, ~40 lines over-ordered, and two store managers told their regional manager the system does not work.",
+      "sourceIds": [
+        "transcripts/11_2025-03-18_hypercare-review#utterance-0011",
+        "transcripts/11_2025-03-18_hypercare-review#utterance-0031",
+        "transcripts/11_2025-03-18_hypercare-review#utterance-0035"
+      ],
+      "id": "138cef9d-1cf8-460f-8660-2bd3d1865d5c",
+      "level": 3
+    },
+    {
+      "kind": "decision",
+      "status": "agreed",
+      "text": "2025-11-17 go/no-go: defect fixed and verified; UAT ran nine working days on four fresh categories. Lena decided go-live on produce, dairy and chilled ready meals; bakery descoped to a separate later piece as it is largely in-store production, not an ordering problem.",
+      "sourceIds": [
+        "transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0023",
+        "transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0025",
+        "transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0032",
+        "transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0038",
+        "transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0042",
+        "transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0047"
+      ],
+      "id": "161aa3c1-156d-4831-9010-e53879fce277",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "outstanding",
+      "text": "2025-01-21: Shelf life untouched and out of scope; warehouse question still unanswered; Priya Nair stopped chasing as nothing in this phase depends on it; becomes phase two's problem.",
+      "sourceIds": [
+        "transcripts/08_2025-01-21_uat-readiness-review#utterance-0022",
+        "transcripts/08_2025-01-21_uat-readiness-review#utterance-0024",
+        "transcripts/08_2025-01-21_uat-readiness-review#utterance-0026",
+        "transcripts/08_2025-01-21_uat-readiness-review#utterance-0027"
+      ],
+      "id": "168312b0-3ef0-4bc0-aa97-cde3bf2a8dae",
+      "level": 3
+    },
+    {
+      "kind": "decision",
+      "status": "agreed",
+      "text": "2024-06-11: Robert Kahn requires the SOW to state the value case is fresh waste reduction with ROI expected inside twelve months of signature; no guarantee, per Henrik Sørensen.",
+      "sourceIds": [
+        "transcripts/03_2024-06-11_commercial-sow-review#utterance-0037",
+        "transcripts/03_2024-06-11_commercial-sow-review#utterance-0038",
+        "transcripts/03_2024-06-11_commercial-sow-review#utterance-0040",
+        "transcripts/03_2024-06-11_commercial-sow-review#utterance-0044",
+        "transcripts/03_2024-06-11_commercial-sow-review#utterance-0047"
+      ],
+      "id": "1f838896-08be-426e-a99c-3a9d8ef8fb20",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2024-03-20: Lena Fischer states fresh waste is Acme's biggest pain and board-level concern; a 15-20% reduction would make the case self-funding.",
+      "sourceIds": [
+        "transcripts/01_2024-03-20_solution-demo-value-workshop#utterance-0015",
+        "transcripts/01_2024-03-20_solution-demo-value-workshop#utterance-0016",
+        "transcripts/01_2024-03-20_solution-demo-value-workshop#utterance-0018",
+        "transcripts/01_2024-03-20_solution-demo-value-workshop#utterance-0019"
+      ],
+      "id": "280e57c6-a3f2-4c1d-95ce-76cf6f2de4a2",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2026-04-07: Nadia Haddad caveated Q1 figures: warm February flatters produce, 118 tonnes is scaled from 25 stores and must not be multiplied up externally, and tonnage is derived from extract totals not till counts.",
+      "sourceIds": [
+        "emails/10_q1-waste-reporting#message-004"
+      ],
+      "id": "286dd127-7384-49e7-9027-a73afbc53228",
+      "level": 3
+    },
+    {
+      "kind": "correction",
+      "status": "corrected",
+      "text": "2024-09-03: Priya Nair reported the pilot store group was reduced from 40 to 25 stores after regional-manager pushback, with Lena agreeing; Ana accepted and updated the plan the same day.",
+      "sourceIds": [
+        "emails/09_pilot-store-group#message-005",
+        "emails/09_pilot-store-group#message-004"
+      ],
+      "id": "2b56b810-0b2f-46e9-b987-9f37dff557b3",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "agreed",
+      "text": "2025-10-09 UAT cover briefing: Sofia out ~6 weeks from Monday with Jonas covering; agreed Nadia takes configuration questions, Jonas takes documented items, and anything else waits or goes to Sofia — reducing the blocked list to maybe a third.",
+      "sourceIds": [
+        "transcripts/16_2025-10-09_fresh-uat-cover-briefing#utterance-0001",
+        "transcripts/16_2025-10-09_fresh-uat-cover-briefing#utterance-0017",
+        "transcripts/16_2025-10-09_fresh-uat-cover-briefing#utterance-0031",
+        "transcripts/16_2025-10-09_fresh-uat-cover-briefing#utterance-0067",
+        "transcripts/16_2025-10-09_fresh-uat-cover-briefing#utterance-0072",
+        "transcripts/16_2025-10-09_fresh-uat-cover-briefing#utterance-0073"
+      ],
+      "id": "2c809419-0fda-47ee-b433-e5702c3465bc",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "agreed",
+      "text": "2025-01-22: Lena Fischer signed the UAT sign-off confirming core replenishment testing completed for the 25-store pilot cohort, ambient and dry goods only, explicitly excluding fresh categories and overall programme acceptance; the signed attachment itself is not in the archive, the email documents the confirmation.",
+      "sourceIds": [
+        "emails/15_uat-signoff#message-002",
+        "emails/15_uat-signoff#message-003"
+      ],
+      "id": "2e9dabee-af21-41d5-9f9a-7878a697975f",
+      "level": 3
+    },
+    {
+      "kind": "decision",
+      "status": "agreed",
+      "text": "2025-12-12: Ana Duarte distributes the fresh cutover runbook restricted to the named group, containing on-call mobiles for Kwame, Priya and Lena, per Priya's February request; Lena Fischer forwards operational sections to four regional managers without the contact page.",
+      "sourceIds": [
+        "emails/18_fresh-cutover-runbook#message-007",
+        "emails/18_fresh-cutover-runbook#message-006",
+        "emails/18_fresh-cutover-runbook#message-005"
+      ],
+      "id": "2fd274d8-fedf-49a3-9f65-287f8efb3cdf",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2024-04-18: Priya Nair: data out of ERP is nightly batch only (02:00 extract); no real-time interface will exist for this project.",
+      "sourceIds": [
+        "transcripts/02_2024-04-18_technical-due-diligence#utterance-0041",
+        "transcripts/02_2024-04-18_technical-due-diligence#utterance-0042",
+        "transcripts/02_2024-04-18_technical-due-diligence#utterance-0045",
+        "transcripts/02_2024-04-18_technical-due-diligence#utterance-0048"
+      ],
+      "id": "314787a3-4c5f-40ab-ae4b-a3dfb375429e",
+      "level": 3
+    },
+    {
+      "kind": "commitment",
+      "status": "agreed",
+      "text": "2025-06-24: Marco committed to delivering the Phase 2 fresh scoping proposal mid-July covering categories, order and dependencies; Kahn insisted the July proposal must contain a date.",
+      "sourceIds": [
+        "transcripts/14_2025-06-24_steering-committee#utterance-0036",
+        "transcripts/14_2025-06-24_steering-committee#utterance-0039",
+        "transcripts/14_2025-06-24_steering-committee#utterance-0119",
+        "transcripts/14_2025-06-24_steering-committee#utterance-0120"
+      ],
+      "id": "38aafbae-b936-4a9c-9f40-2157066bd6cf",
+      "level": 3
+    },
+    {
+      "kind": "correction",
+      "status": "corrected",
+      "text": "2025-11-21: Ana Duarte updated the handover pack to v4 removing the surgery note from Sofia's stakeholder entry; the old v3 remains in project-site document history, which Ana cannot delete and has raised with RELEX IT.",
+      "sourceIds": [
+        "emails/04_march-2024-notes-correction#message-002"
+      ],
+      "id": "39543427-8408-4392-821b-39b422c38a08",
+      "level": 3
+    },
+    {
+      "kind": "decision",
+      "status": "agreed",
+      "text": "2024-06-11: Robert Kahn requires quarterly reviews as an obligation in the SOW; Marco Rossi agrees to put it in.",
+      "sourceIds": [
+        "transcripts/03_2024-06-11_commercial-sow-review#utterance-0057",
+        "transcripts/03_2024-06-11_commercial-sow-review#utterance-0059",
+        "transcripts/03_2024-06-11_commercial-sow-review#utterance-0060",
+        "transcripts/03_2024-06-11_commercial-sow-review#utterance-0062"
+      ],
+      "id": "3bd3f19e-b399-45fa-b014-5f08c38106d3",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2026-02-24: Meridian (Ivan Petrov) requests read access to the test environment for two people for the bakery build; routing goes through Priya Nair as Acme's environment owner.",
+      "sourceIds": [
+        "emails/19_meridian-environment-access#message-007",
+        "emails/19_meridian-environment-access#message-006"
+      ],
+      "id": "4583c33d-66b5-4adc-a553-75ca718c404b",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2025-06-24 steering: core live four months, May numbers hold (automation 91% stable since April); DC-2 still fails ~twice weekly, joint engineering session happened 4 June producing a September-dated plan requiring middleware upgrade in Acme's quarterly change window.",
+      "sourceIds": [
+        "transcripts/14_2025-06-24_steering-committee#utterance-0009",
+        "transcripts/14_2025-06-24_steering-committee#utterance-0010",
+        "transcripts/14_2025-06-24_steering-committee#utterance-0014",
+        "transcripts/14_2025-06-24_steering-committee#utterance-0020",
+        "transcripts/14_2025-06-24_steering-committee#utterance-0024"
+      ],
+      "id": "4c3e4163-15e3-435f-9cc3-acde8e0e7c71",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "agreed",
+      "text": "2025-02-05: Lena Fischer decided Sofia Almeida should have go-live access despite fresh not being in the phase, so she can see how it works before phase two.",
+      "sourceIds": [
+        "emails/14_go-live-user-access#message-002"
+      ],
+      "id": "5710d221-be35-4afa-bf87-83705928234c",
+      "level": 3
+    },
+    {
+      "kind": "commitment",
+      "status": "agreed",
+      "text": "2026-02-10: Ana Duarte sent the DC-2 incident log to Meridian (Ivan Petrov, Ruth) as promised at the scoping session; Marco noted on 2026-02-10 the whole chain was forwarded despite the 28th agreement that Lena would decide what Meridian saw.",
+      "sourceIds": [
+        "emails/05_dc2-incident-log#message-004",
+        "emails/05_dc2-incident-log#message-003"
+      ],
+      "id": "57f2b8eb-39f9-4257-a773-fdddf27dbc9e",
+      "level": 3
+    },
+    {
+      "kind": "decision",
+      "status": "agreed",
+      "text": "2025-11-24: Priya Nair set OP_ID exclusion from the waste write-off extract as a condition, not a request; Nadia confirmed the field is dropped from the next run (Friday night).",
+      "sourceIds": [
+        "emails/07_op-id-field-exclusion#message-004",
+        "emails/07_op-id-field-exclusion#message-003"
+      ],
+      "id": "5a242268-e247-4b08-92ca-2f760d0a160c",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "agreed",
+      "text": "2025-06-10: service transition — Charlotte Meyer is operational contact from 1 July; Ana stays on Phase 2. Boundary agreed: live system incidents/DC-2 feed/monitoring are Charlotte's; permanent DC-2 fix is a change (Ana's), dated 15 September gated on Acme's quarterly change window.",
+      "sourceIds": [
+        "transcripts/13_2025-06-10_transition-to-continuous-service#utterance-0010",
+        "transcripts/13_2025-06-10_transition-to-continuous-service#utterance-0013",
+        "transcripts/13_2025-06-10_transition-to-continuous-service#utterance-0031",
+        "transcripts/13_2025-06-10_transition-to-continuous-service#utterance-0037",
+        "transcripts/13_2025-06-10_transition-to-continuous-service#utterance-0040"
+      ],
+      "id": "61989db2-b4c0-4391-882a-31d135a52b05",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2025-05-22: DC-2 nightly feed failing two-three times a week; Priya states middleware was flagged at kickoff and monitoring works but knowing is not fixing — a permanent fix is needed, not nightly restarts.",
+      "sourceIds": [
+        "transcripts/12_2025-05-22_90-day-business-review#utterance-0068",
+        "transcripts/12_2025-05-22_90-day-business-review#utterance-0074",
+        "transcripts/12_2025-05-22_90-day-business-review#utterance-0077",
+        "transcripts/12_2025-05-22_90-day-business-review#utterance-0079"
+      ],
+      "id": "62c14a09-54fb-4d44-9039-c4f8d773976d",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2024-09-24 workshop: case pack missing on 31% of active articles; shelf life populated on 48%; lead times mostly default sevens; case pack is the critical path for the pilot cohort.",
+      "sourceIds": [
+        "transcripts/06_2024-09-24_master-data-workshop#utterance-0014",
+        "transcripts/06_2024-09-24_master-data-workshop#utterance-0019",
+        "transcripts/06_2024-09-24_master-data-workshop#utterance-0021",
+        "transcripts/06_2024-09-24_master-data-workshop#utterance-0025",
+        "transcripts/06_2024-09-24_master-data-workshop#utterance-0028"
+      ],
+      "id": "6447c500-56fa-46ab-83f7-9a2ed2096280",
+      "level": 3
+    },
+    {
+      "kind": "decision",
+      "status": "agreed",
+      "text": "2025-09-11: Priya Nair (Acme IT) told Nadia to proceed with the shelf-life approximation; no formal Acme confirmation of the approach is recorded in the thread.",
+      "sourceIds": [
+        "emails/01_shelf-life-field-mapping#message-003",
+        "emails/01_shelf-life-field-mapping#message-001"
+      ],
+      "id": "6940d8a1-9668-4d6a-81e4-66e0fa59e92d",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "agreed",
+      "text": "2025-09-12 escalation: fresh Phase 2 ~6 weeks behind — UAT resourcing shortfall (Acme side, Lena accepted and committed to add capacity) plus a calculation defect producing negative quantities in the fresh allocation module (RELEX side, fix in days).",
+      "sourceIds": [
+        "transcripts/15_2025-09-12_fresh-phase2-escalation#utterance-0002",
+        "transcripts/15_2025-09-12_fresh-phase2-escalation#utterance-0013",
+        "transcripts/15_2025-09-12_fresh-phase2-escalation#utterance-0015",
+        "transcripts/15_2025-09-12_fresh-phase2-escalation#utterance-0025",
+        "transcripts/15_2025-09-12_fresh-phase2-escalation#utterance-0027",
+        "transcripts/15_2025-09-12_fresh-phase2-escalation#utterance-0030"
+      ],
+      "id": "6d01b940-359e-4bba-b2a1-e4493867d38d",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2025-12-11 cutover: fresh go-live Monday 15 Dec for produce/dairy/chilled; shelf-life runs on an approximation (total shelf life minus average warehouse days by article group), possibly two days optimistic on the slowest tenth; warehouse data first requested April 2024 remains unavailable.",
+      "sourceIds": [
+        "transcripts/18_2025-12-11_fresh-cutover-call#utterance-0009",
+        "transcripts/18_2025-12-11_fresh-cutover-call#utterance-0012",
+        "transcripts/18_2025-12-11_fresh-cutover-call#utterance-0018",
+        "transcripts/18_2025-12-11_fresh-cutover-call#utterance-0024",
+        "transcripts/18_2025-12-11_fresh-cutover-call#utterance-0026"
+      ],
+      "id": "74f3673f-7265-4da6-989a-f473d3c4de9e",
+      "level": 3
+    },
+    {
+      "kind": "commitment",
+      "status": "agreed",
+      "text": "2025-07-15: Ana Duarte will add a note to the project folder stating the cohort was reduced to 25 and when, keeping the original material as the record of what was agreed.",
+      "sourceIds": [
+        "emails/17_cohort-reporting-basis#message-002",
+        "emails/17_cohort-reporting-basis#message-003"
+      ],
+      "id": "767fed2a-c90e-46b3-8d5d-2760fff02ba2",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "agreed",
+      "text": "2025-11-17: Sofia's surgery detail found in handover doc Acme-fresh-handover-v3 page four; she asked for removal, keeping only that she is sole person knowing the categories. Marco committed to own finding other occurrences; Lena wanted it followed up properly.",
+      "sourceIds": [
+        "transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0057",
+        "transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0060",
+        "transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0064",
+        "transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0077",
+        "transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0078",
+        "transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0096",
+        "transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0098"
+      ],
+      "id": "78473fb8-69cb-458b-97ed-de47d5c2fc9e",
+      "level": 3
+    },
+    {
+      "kind": "question",
+      "status": "outstanding",
+      "text": "2025-10-14: Nadia Haddad asked whether 'chilled convenience' sits under ready meals or is its own node, noting master data differs by site; Sofia was out of office until 17 November with no answer recorded.",
+      "sourceIds": [
+        "emails/06_fresh-category-hierarchy-question#message-004",
+        "emails/06_fresh-category-hierarchy-question#message-003"
+      ],
+      "id": "78b379ac-270f-4a32-b468-8ea02055d303",
+      "level": 3
+    },
+    {
+      "kind": "commitment",
+      "status": "agreed",
+      "text": "2025-12-11: Sofia agreed to log her manual overrides for six weeks so the model can improve, then decide whether to continue; she remains the rollback plan (manual fresh ordering), as she has been for two years.",
+      "sourceIds": [
+        "transcripts/18_2025-12-11_fresh-cutover-call#utterance-0032",
+        "transcripts/18_2025-12-11_fresh-cutover-call#utterance-0036",
+        "transcripts/18_2025-12-11_fresh-cutover-call#utterance-0041",
+        "transcripts/18_2025-12-11_fresh-cutover-call#utterance-0076",
+        "transcripts/18_2025-12-11_fresh-cutover-call#utterance-0080"
+      ],
+      "id": "7bf901c1-39f2-42a2-81ae-077400e3904b",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2024-03-20: Sofia Almeida says shelf life is not properly in any system; the product master field is populated for maybe half the range and unowned.",
+      "sourceIds": [
+        "transcripts/01_2024-03-20_solution-demo-value-workshop#utterance-0040",
+        "transcripts/01_2024-03-20_solution-demo-value-workshop#utterance-0049",
+        "transcripts/01_2024-03-20_solution-demo-value-workshop#utterance-0050",
+        "transcripts/01_2024-03-20_solution-demo-value-workshop#utterance-0052"
+      ],
+      "id": "7f12dada-5c4b-444d-91e6-9e53b061cd2c",
+      "level": 3
+    },
+    {
+      "kind": "commitment",
+      "status": "agreed",
+      "text": "2025-03-17: Priya Nair commits to add a file size check that week so files under 1KB fail loudly; Tomas Lindholm agrees, noting an empty file passing as success should have been caught in design review.",
+      "sourceIds": [
+        "emails/16_dc2-hypercare-incidents#message-002",
+        "emails/16_dc2-hypercare-incidents#message-003",
+        "emails/16_dc2-hypercare-incidents#message-001"
+      ],
+      "id": "80b7f6cb-5c00-43c5-b1b1-e6553cfefa64",
+      "level": 3
+    },
+    {
+      "kind": "correction",
+      "status": "superseded",
+      "text": "2025-11-20: Lena Fischer disputed a claimed three-wave fresh rollout, saying only fresh-as-Phase-2-in-one-delivery was agreed; the three-wave plan had not been minuted as a decision.",
+      "sourceIds": [
+        "emails/03_phase2-sequencing-proposal#message-003",
+        "emails/03_phase2-sequencing-proposal#message-002"
+      ],
+      "id": "8217f874-b5f8-4a75-8d7f-921c58445334",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "agreed",
+      "text": "2025-02-27 cutover call: go-live is the 25-store pilot cohort (dry goods, DC-1); fresh not in scope, so shelf-life field mostly empty and flagged as a risk-log item.",
+      "sourceIds": [
+        "transcripts/10_2025-02-27_go-live-cutover#utterance-0017",
+        "transcripts/10_2025-02-27_go-live-cutover#utterance-0020",
+        "transcripts/10_2025-02-27_go-live-cutover#utterance-0021",
+        "transcripts/10_2025-02-27_go-live-cutover#utterance-0050"
+      ],
+      "id": "86136332-6d30-47b6-94bb-6583b229d935",
+      "level": 3
+    },
+    {
+      "kind": "decision",
+      "status": "agreed",
+      "text": "2024-11-12: Service levels set to 98/95 (down from 99) for the pilot; daily order/delivery on fast lines, twice weekly below; rounding to case pack where available.",
+      "sourceIds": [
+        "transcripts/07_2024-11-12_ordering-logic-design#utterance-0077",
+        "transcripts/07_2024-11-12_ordering-logic-design#utterance-0083",
+        "transcripts/07_2024-11-12_ordering-logic-design#utterance-0086",
+        "transcripts/07_2024-11-12_ordering-logic-design#utterance-0091"
+      ],
+      "id": "86386795-08e7-46a9-baff-539587069ccd",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "agreed",
+      "text": "2026-04-29: Marco Rossi answered three of four DPO actions: EU West hosting named in Schedule 2; fifth sub-processor Halberd Observability BV (Netherlands/Ireland telemetry) with notification process corrected; 18-month retention effective 1 May.",
+      "sourceIds": [
+        "emails/08_dpa-review-actions#message-003"
+      ],
+      "id": "8927eb84-63f1-47ba-b494-7248fdacccf4",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "agreed",
+      "text": "2026-04-09: DPO Katarina Voss recorded four processor-review actions (hosting region, fifth sub-processor, November erasure closure, recording retention) with all four wanted within four weeks.",
+      "sourceIds": [
+        "emails/08_dpa-review-actions#message-004"
+      ],
+      "id": "8a6e0e22-5452-490e-9762-4bbeca58082d",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "agreed",
+      "text": "2026-03-17 bakery design: agreed boundary — RELEX produces day-level forecast plus fixed intraday profile (not a true intraday forecast); Meridian consumes it. If the shape moves the profile is wrong until re-derived; who re-derives it left on the open items list with no owner.",
+      "sourceIds": [
+        "transcripts/20_2026-03-17_bakery-design-workshop#utterance-0049",
+        "transcripts/20_2026-03-17_bakery-design-workshop#utterance-0052",
+        "transcripts/20_2026-03-17_bakery-design-workshop#utterance-0068",
+        "transcripts/20_2026-03-17_bakery-design-workshop#utterance-0084",
+        "transcripts/20_2026-03-17_bakery-design-workshop#utterance-0086",
+        "transcripts/20_2026-03-17_bakery-design-workshop#utterance-0093",
+        "transcripts/20_2026-03-17_bakery-design-workshop#utterance-0095"
+      ],
+      "id": "8b3fb2cb-dbf4-4f16-8bc0-0a05ced8f5a2",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2024-07-09 handover: remaining shelf life does not exist as an accessible field (warehouse arrival date not exposed); recorded as phase two dependency needing owner and date.",
+      "sourceIds": [
+        "transcripts/04_2024-07-09_INTERNAL-handover-presales-to-delivery#utterance-0027",
+        "transcripts/04_2024-07-09_INTERNAL-handover-presales-to-delivery#utterance-0030",
+        "transcripts/04_2024-07-09_INTERNAL-handover-presales-to-delivery#utterance-0036"
+      ],
+      "id": "8e3d0990-0135-4662-86aa-47a1d44f8abe",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "proposed",
+      "text": "2026-06-26: Marco Rossi provides Robert Kahn indicative chain-wide numbers: three fresh categories, 340 stores, ~420k annual licence plus ~260k one-off implementation.",
+      "sourceIds": [
+        "emails/20_chain-wide-proposal#message-004"
+      ],
+      "id": "9263e590-e42b-409f-b672-19061ec56a45",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "agreed",
+      "text": "2026-01-28 bakery scoping (Meridian present): ~60% of bakery is bake-off (production plan, not an order — Sofia's point from the first March 2024 meeting); Meridian to consume a RELEX forecast and own the production plan; RELEX capacity from March; Nadia to define interface points by mid-February.",
+      "sourceIds": [
+        "transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0015",
+        "transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0016",
+        "transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0022",
+        "transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0049",
+        "transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0050",
+        "transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0117",
+        "transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0120",
+        "transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0126"
+      ],
+      "id": "9525bcc0-9c72-4b89-b349-022ba7292c48",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "agreed",
+      "text": "2025-10-09: chilled ready meals promotion cycle runs on a four-week rhythm set in 2019 and never documented; Sofia agreed to write down the rhythm (not the exceptions) and send to all three, since sending to one person means it is gone by December.",
+      "sourceIds": [
+        "transcripts/16_2025-10-09_fresh-uat-cover-briefing#utterance-0080",
+        "transcripts/16_2025-10-09_fresh-uat-cover-briefing#utterance-0082",
+        "transcripts/16_2025-10-09_fresh-uat-cover-briefing#utterance-0098",
+        "transcripts/16_2025-10-09_fresh-uat-cover-briefing#utterance-0100",
+        "transcripts/16_2025-10-09_fresh-uat-cover-briefing#utterance-0108"
+      ],
+      "id": "973f5196-801a-4b7a-b3b3-88e9fe80081a",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "agreed",
+      "text": "2025-03-18: two distinct failure modes identified — 6th was middleware, 14th was an empty file from an unfinished upstream export; Ana directed both be kept distinct in the incident log.",
+      "sourceIds": [
+        "transcripts/11_2025-03-18_hypercare-review#utterance-0052",
+        "transcripts/11_2025-03-18_hypercare-review#utterance-0055",
+        "transcripts/11_2025-03-18_hypercare-review#utterance-0072"
+      ],
+      "id": "9f1dcbbe-f34c-4210-9254-f7aafbb7f516",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2024-04-18: Priya Nair states Acme runs SAP ECC 6.0, not S/4, with no S/4 migration planned; Tomas Lindholm confirms ECC is fine.",
+      "sourceIds": [
+        "transcripts/02_2024-04-18_technical-due-diligence#utterance-0018",
+        "transcripts/02_2024-04-18_technical-due-diligence#utterance-0023",
+        "transcripts/02_2024-04-18_technical-due-diligence#utterance-0029",
+        "transcripts/02_2024-04-18_technical-due-diligence#utterance-0031",
+        "transcripts/02_2024-04-18_technical-due-diligence#utterance-0033"
+      ],
+      "id": "a29c5843-b97e-4d32-a8d2-ee05c018f2ed",
+      "level": 3
+    },
+    {
+      "kind": "decision",
+      "status": "agreed",
+      "text": "2025-11-21: Marco Rossi confirmed the go/no-go decision was two deliveries: produce, dairy and chilled ready meals together in December, bakery as a separate workstream; Ana asked to reissue the plan on that basis.",
+      "sourceIds": [
+        "emails/03_phase2-sequencing-proposal#message-002",
+        "emails/03_phase2-sequencing-proposal#message-001"
+      ],
+      "id": "a81d7ab3-1a59-4e62-8378-977d000baac5",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "agreed",
+      "text": "2025-01-21: Case pack remediation for the cohort (1,300 articles) finished 19 December; lead times untouched (mostly sevens), workaround to derive actuals from receipt history agreed.",
+      "sourceIds": [
+        "transcripts/08_2025-01-21_uat-readiness-review#utterance-0003",
+        "transcripts/08_2025-01-21_uat-readiness-review#utterance-0011",
+        "transcripts/08_2025-01-21_uat-readiness-review#utterance-0012",
+        "transcripts/08_2025-01-21_uat-readiness-review#utterance-0015",
+        "transcripts/08_2025-01-21_uat-readiness-review#utterance-0017",
+        "transcripts/08_2025-01-21_uat-readiness-review#utterance-0018"
+      ],
+      "id": "afd639f6-d384-49a0-bfdf-503149961b48",
+      "level": 3
+    },
+    {
+      "kind": "correction",
+      "status": "corrected",
+      "text": "2025-07-15: Ana Duarte confirms pilot cohort is 25 stores, reduced from 40 in September 2024 with plan reissued; the 40 persists in original kickoff material and a May slide.",
+      "sourceIds": [
+        "emails/17_cohort-reporting-basis#message-004",
+        "emails/17_cohort-reporting-basis#message-005",
+        "emails/17_cohort-reporting-basis#message-002"
+      ],
+      "id": "ba20db5b-3aa8-4ed5-8afb-fa2689762062",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "agreed",
+      "text": "2025-02-12 internal review: contract signed at 980k annual, 14% off list with 18% floor, leaving headroom if Phase 2 needs sweetening; agreed not to sweeten yet.",
+      "sourceIds": [
+        "transcripts/09_2025-02-12_INTERNAL-account-review#utterance-0006",
+        "transcripts/09_2025-02-12_INTERNAL-account-review#utterance-0007",
+        "transcripts/09_2025-02-12_INTERNAL-account-review#utterance-0008"
+      ],
+      "id": "bc3a7f80-037d-4fec-b092-99dd8ac52d18",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2025-06-10: Sofia Almeida confirmed as only person at Acme who understands fresh; noted in three risk registers in slightly different words, which Charlotte says means it is effectively in none.",
+      "sourceIds": [
+        "transcripts/13_2025-06-10_transition-to-continuous-service#utterance-0068",
+        "transcripts/13_2025-06-10_transition-to-continuous-service#utterance-0073",
+        "transcripts/13_2025-06-10_transition-to-continuous-service#utterance-0074"
+      ],
+      "id": "be3311bd-2174-4c7e-a720-68e78ad3f429",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2025-05-22 90-day review: forecast accuracy +6.2pts, ambient inventory -9%, order automation 91% on the 25-store pilot; Kahn objected that these are ambient numbers, not the fresh waste case he approved.",
+      "sourceIds": [
+        "transcripts/12_2025-05-22_90-day-business-review#utterance-0004",
+        "transcripts/12_2025-05-22_90-day-business-review#utterance-0008",
+        "transcripts/12_2025-05-22_90-day-business-review#utterance-0046"
+      ],
+      "id": "c692219f-cd42-4566-b1a7-f7f564bcd0df",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2025-10-06: Sofia Almeida could not access the fresh UAT environment with production credentials; a new dedicated user was created instead.",
+      "sourceIds": [
+        "emails/02_fresh-uat-environment-access#message-004",
+        "emails/02_fresh-uat-environment-access#message-003"
+      ],
+      "id": "c94b62f4-2d48-41c0-b272-aaeb54045c7c",
+      "level": 3
+    },
+    {
+      "kind": "decision",
+      "status": "agreed",
+      "text": "2024-07-15 kickoff: DC-2 goes on the watch list from day one with monitoring added so failures are loud; Q1 2025 held as core go-live target with master data flagged as explicit dependency.",
+      "sourceIds": [
+        "transcripts/05_2024-07-15_implementation-kickoff#utterance-0056",
+        "transcripts/05_2024-07-15_implementation-kickoff#utterance-0059",
+        "transcripts/05_2024-07-15_implementation-kickoff#utterance-0064",
+        "transcripts/05_2024-07-15_implementation-kickoff#utterance-0085",
+        "transcripts/05_2024-07-15_implementation-kickoff#utterance-0086"
+      ],
+      "id": "cc0109b0-b16d-4c50-bd18-98148a5e992a",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2025-11-24: Kwame Boateng reported OP_ID persists in raw landing-zone files since 14 February and in June/September reconciliation extract attachments emailed to nine people including three at Meridian; attachments cannot be purged.",
+      "sourceIds": [
+        "emails/07_op-id-field-exclusion#message-002"
+      ],
+      "id": "d319ac3c-7602-4957-9a44-4b568e6501b4",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2026-02-03: Kwame Boateng reported the January DC-2 incident log showed fourteen failures, eleven silent, four correlating with a scheduled job Priya has twice said does not exist.",
+      "sourceIds": [
+        "emails/05_dc2-incident-log#message-006"
+      ],
+      "id": "d4f69b57-0257-4f34-baef-f373fe643527",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2026-04-06 weekly: Q1 fresh waste 3.4% against a 4.1% baseline; timeline on plan; bakery build continues.",
+      "sourceIds": [
+        "reports/01_weekly-status-thread#message-001"
+      ],
+      "id": "d5cdf8c3-e011-4b5f-8e62-22128424ab17",
+      "level": 3
+    },
+    {
+      "kind": "decision",
+      "status": "agreed",
+      "text": "2024-09-24: Lena Fischer agrees pilot cohort reduced from 40 to 25 stores (two of three regions cannot support 40 in peak); Ana Duarte to reissue plan and store list request.",
+      "sourceIds": [
+        "transcripts/06_2024-09-24_master-data-workshop#utterance-0068",
+        "transcripts/06_2024-09-24_master-data-workshop#utterance-0071",
+        "transcripts/06_2024-09-24_master-data-workshop#utterance-0073",
+        "transcripts/06_2024-09-24_master-data-workshop#utterance-0075",
+        "transcripts/06_2024-09-24_master-data-workshop#utterance-0089"
+      ],
+      "id": "d774aacf-51c3-423f-ae23-59bf0d2427b1",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2026-04-09 DPO review (Katarina Voss): hosting is EU West Europe and named in the agreement; sub-processor count is now five (a monitoring/observability provider added), notification status unknown — first finding; Marco to come back within a week in writing.",
+      "sourceIds": [
+        "transcripts/21_2026-04-09_data-protection-review#utterance-0006",
+        "transcripts/21_2026-04-09_data-protection-review#utterance-0009",
+        "transcripts/21_2026-04-09_data-protection-review#utterance-0014",
+        "transcripts/21_2026-04-09_data-protection-review#utterance-0016",
+        "transcripts/21_2026-04-09_data-protection-review#utterance-0022",
+        "transcripts/21_2026-04-09_data-protection-review#utterance-0023",
+        "transcripts/21_2026-04-09_data-protection-review#utterance-0030"
+      ],
+      "id": "d8dcba99-7d87-429b-adc8-174ff6190a13",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2026-04-07: Nadia Haddad reported first full fresh quarter (Jan-Mar, 25 pilot stores): waste 4.1% to 3.4% of fresh net sales, ~118 tonnes reduced, ~296 tonnes CO2e avoided, availability +1.9 points, 88% order automation.",
+      "sourceIds": [
+        "emails/10_q1-waste-reporting#message-004"
+      ],
+      "id": "d9f4fc1e-daf0-453b-8484-8d21e4d5078f",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2026-03 steering: first full quarter fresh live; waste down from 4.1% to 3.4%; ~118 tonnes fresh waste and ~296 tonnes CO2e avoided across 25 stores; figure not to be scaled to full estate without discussion; twelve-month figure framed as anticipation, not commitment.",
+      "sourceIds": [
+        "reports/02_monthly-steering-reports#message-001"
+      ],
+      "id": "da4d4776-195c-4215-81f8-6c4f3fe86974",
+      "level": 3
+    },
+    {
+      "kind": "commitment",
+      "status": "agreed",
+      "text": "2024-05-06: Priya Nair agreed all four assessment conclusions and took ownership of master-data remediation; she had already asked about goods receipt date exposure, with the system owner on secondment until August.",
+      "sourceIds": [
+        "emails/11_data-assessment-followup#message-004"
+      ],
+      "id": "dbed1f25-d2a2-4ac0-a0c9-4b71b244ba1c",
+      "level": 3
+    },
+    {
+      "kind": "commitment",
+      "status": "outstanding",
+      "text": "2025-11-19: Marco Rossi committed to tell Sofia Almeida where else the surgery note appears, wanting a complete list; on 2026-03-12 Sofia reported still not having received it.",
+      "sourceIds": [
+        "emails/04_march-2024-notes-correction#message-003",
+        "emails/04_march-2024-notes-correction#message-001"
+      ],
+      "id": "dd09e2be-e479-4501-804c-d02a899ec195",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2025-02-12: Lena Fischer identified as unambiguous champion; losing her means losing the account. Robert Kahn (CFO) cares about fresh waste and has repeatedly said twelve months for ROI.",
+      "sourceIds": [
+        "transcripts/09_2025-02-12_INTERNAL-account-review#utterance-0010",
+        "transcripts/09_2025-02-12_INTERNAL-account-review#utterance-0012"
+      ],
+      "id": "e40bdf74-b0fe-43cb-8c54-2043c603ee07",
+      "level": 3
+    },
+    {
+      "kind": "correction",
+      "status": "corrected",
+      "text": "2025-05-21: Marco Rossi acknowledged his 40-store pilot figure was wrong, confirmed the reduction happened in September 2024, and committed to correct the deck before Thursday's review.",
+      "sourceIds": [
+        "emails/09_pilot-store-group#message-001",
+        "emails/09_pilot-store-group#message-002"
+      ],
+      "id": "e41f157f-c3c2-4d1f-9412-9a2aba5a190f",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2026-06-16 QBR: six months live on the 25-store cohort; fresh waste moved from 4.1% to 3.2% against a 2.8% target (~240 tonnes avoided, ~600 tCO2e); Ana again cautioned against scaling to the estate as the 25 stores are not a random sample; chain-wide rollout not yet scoped.",
+      "sourceIds": [
+        "transcripts/22_2026-06-16_q2-business-review#utterance-0005",
+        "transcripts/22_2026-06-16_q2-business-review#utterance-0006",
+        "transcripts/22_2026-06-16_q2-business-review#utterance-0013",
+        "transcripts/22_2026-06-16_q2-business-review#utterance-0019",
+        "transcripts/22_2026-06-16_q2-business-review#utterance-0021",
+        "transcripts/22_2026-06-16_q2-business-review#utterance-0030",
+        "transcripts/22_2026-06-16_q2-business-review#utterance-0037"
+      ],
+      "id": "e7a4e75d-272f-4171-8d03-8c8e99ecab45",
+      "level": 3
+    },
+    {
+      "kind": "decision",
+      "status": "agreed",
+      "text": "2024-07-15 kickoff: Priya Nair's team owns master data remediation with RELEX support; agreed pre-recording and written up by Ana Duarte.",
+      "sourceIds": [
+        "transcripts/05_2024-07-15_implementation-kickoff#utterance-0001",
+        "transcripts/05_2024-07-15_implementation-kickoff#utterance-0003",
+        "transcripts/05_2024-07-15_implementation-kickoff#utterance-0004",
+        "transcripts/05_2024-07-15_implementation-kickoff#utterance-0080",
+        "transcripts/05_2024-07-15_implementation-kickoff#utterance-0082"
+      ],
+      "id": "ec0bbb95-87d6-4496-891c-78db0f39ae5d",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "agreed",
+      "text": "2025-10-07: Nadia Haddad created fresh UAT user SofAlme for Sofia Almeida; Sofia confirmed login worked the same day.",
+      "sourceIds": [
+        "emails/02_fresh-uat-environment-access#message-003",
+        "emails/02_fresh-uat-environment-access#message-002"
+      ],
+      "id": "f05b4cca-a3d5-4778-a2f4-9d019e721c27",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2026-07-02 internal renewal/resourcing: renewal mid-2027; four DPO actions closed except retention policy (with legal); bakery expansion conversation ~200 additional via Meridian subcontract/partnership if it lands; Kahn effectively stopped counting the ROI clock after good Q1 waste numbers.",
+      "sourceIds": [
+        "transcripts/23_2026-07-02_INTERNAL-renewal-resourcing#utterance-0001",
+        "transcripts/23_2026-07-02_INTERNAL-renewal-resourcing#utterance-0003",
+        "transcripts/23_2026-07-02_INTERNAL-renewal-resourcing#utterance-0006",
+        "transcripts/23_2026-07-02_INTERNAL-renewal-resourcing#utterance-0009"
+      ],
+      "id": "f0bfd672-fa49-4288-966c-6b81c9d16542",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2024-07-09 handover: Sofia Almeida believes the shelf-life-aware ordering requirement is agreed; the SOW only says fresh is Phase 2, which is not the same thing.",
+      "sourceIds": [
+        "transcripts/04_2024-07-09_INTERNAL-handover-presales-to-delivery#utterance-0067"
+      ],
+      "id": "f2431497-85eb-4840-9624-fd33191d50e7",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2024-11-12: Sofia Almeida explains shelf-life threshold: under five days remaining the ordering difference matters, category dependent; to be recorded in workshop output and phase two requirements.",
+      "sourceIds": [
+        "transcripts/07_2024-11-12_ordering-logic-design#utterance-0053",
+        "transcripts/07_2024-11-12_ordering-logic-design#utterance-0057",
+        "transcripts/07_2024-11-12_ordering-logic-design#utterance-0059",
+        "transcripts/07_2024-11-12_ordering-logic-design#utterance-0060"
+      ],
+      "id": "f3c1572f-ef68-45a3-80a8-42a1761b6050",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2025-02-27: DC-2 feed ran eleven consecutive nights in test but had failed silently twice before; Kwame warns production failures may go unnoticed until morning orders look wrong.",
+      "sourceIds": [
+        "transcripts/10_2025-02-27_go-live-cutover#utterance-0027",
+        "transcripts/10_2025-02-27_go-live-cutover#utterance-0028",
+        "transcripts/10_2025-02-27_go-live-cutover#utterance-0035",
+        "transcripts/10_2025-02-27_go-live-cutover#utterance-0040"
+      ],
+      "id": "f7c80f80-9079-4cfb-9b36-f6c35f84be46",
+      "level": 3
+    },
+    {
+      "kind": "observation",
+      "status": "observation",
+      "text": "2025-09-12: Sofia stated on the record she is still doing fresh ordering by hand in a spreadsheet; a two-month email thread about her categories ran without her included, and she re-answered a shelf-life questionnaire she had already answered in the March 2024 demo.",
+      "sourceIds": [
+        "transcripts/15_2025-09-12_fresh-phase2-escalation#utterance-0036",
+        "transcripts/15_2025-09-12_fresh-phase2-escalation#utterance-0040",
+        "transcripts/15_2025-09-12_fresh-phase2-escalation#utterance-0056",
+        "transcripts/15_2025-09-12_fresh-phase2-escalation#utterance-0062"
+      ],
+      "id": "fa311e82-f54d-490e-b3a1-f1b7a94e9965",
+      "level": 3
+    }
+  ],
+  "calls": [
+    {
+      "durationMs": 12016,
+      "output": {
+        "claims": [
+          {
+            "claimId": "C1",
+            "text": "2025-09-04: Nadia Haddad proposed approximating remaining shelf life as total shelf life (MHDHB) minus average days-in-warehouse per article group; flagged slow movers would be overstated as fresher.",
+            "sourceIds": [
+              "E01M005"
+            ]
+          },
+          {
+            "claimId": "C2",
+            "text": "2025-09-11: Priya Nair (Acme IT) told Nadia to proceed with the shelf-life approximation; no formal Acme confirmation of the approach is recorded in the thread.",
+            "sourceIds": [
+              "E01M003",
+              "E01M001"
+            ]
+          },
+          {
+            "claimId": "C3",
+            "text": "2025-10-07: Nadia Haddad created fresh UAT user SofAlme for Sofia Almeida; Sofia confirmed login worked the same day.",
+            "sourceIds": [
+              "E02M003",
+              "E02M002"
+            ]
+          },
+          {
+            "claimId": "C4",
+            "text": "2025-10-06: Sofia Almeida could not access the fresh UAT environment with production credentials; a new dedicated user was created instead.",
+            "sourceIds": [
+              "E02M004",
+              "E02M003"
+            ]
+          },
+          {
+            "claimId": "C5",
+            "text": "2025-11-21: Marco Rossi confirmed the go/no-go decision was two deliveries: produce, dairy and chilled ready meals together in December, bakery as a separate workstream; Ana asked to reissue the plan on that basis.",
+            "sourceIds": [
+              "E03M002",
+              "E03M001"
+            ]
+          },
+          {
+            "claimId": "C6",
+            "text": "2025-11-20: Lena Fischer disputed a claimed three-wave fresh rollout, saying only fresh-as-Phase-2-in-one-delivery was agreed; the three-wave plan had not been minuted as a decision.",
+            "sourceIds": [
+              "E03M003",
+              "E03M002"
+            ]
+          },
+          {
+            "claimId": "C7",
+            "text": "2025-11-21: Ana Duarte updated the handover pack to v4 removing the surgery note from Sofia's stakeholder entry; the old v3 remains in project-site document history, which Ana cannot delete and has raised with RELEX IT.",
+            "sourceIds": [
+              "E04M002"
+            ]
+          },
+          {
+            "claimId": "C8",
+            "text": "2025-11-19: Marco Rossi committed to tell Sofia Almeida where else the surgery note appears, wanting a complete list; on 2026-03-12 Sofia reported still not having received it.",
+            "sourceIds": [
+              "E04M003",
+              "E04M001"
+            ]
+          },
+          {
+            "claimId": "C9",
+            "text": "2026-02-03: Kwame Boateng reported the January DC-2 incident log showed fourteen failures, eleven silent, four correlating with a scheduled job Priya has twice said does not exist.",
+            "sourceIds": [
+              "E05M006"
+            ]
+          },
+          {
+            "claimId": "C10",
+            "text": "2026-02-10: Ana Duarte sent the DC-2 incident log to Meridian (Ivan Petrov, Ruth) as promised at the scoping session; Marco noted on 2026-02-10 the whole chain was forwarded despite the 28th agreement that Lena would decide what Meridian saw.",
+            "sourceIds": [
+              "E05M004",
+              "E05M003"
+            ]
+          },
+          {
+            "claimId": "C11",
+            "text": "2025-10-14: Nadia Haddad asked whether 'chilled convenience' sits under ready meals or is its own node, noting master data differs by site; Sofia was out of office until 17 November with no answer recorded.",
+            "sourceIds": [
+              "E06M004",
+              "E06M003"
+            ]
+          },
+          {
+            "claimId": "C12",
+            "text": "2025-11-24: Priya Nair set OP_ID exclusion from the waste write-off extract as a condition, not a request; Nadia confirmed the field is dropped from the next run (Friday night).",
+            "sourceIds": [
+              "E07M004",
+              "E07M003"
+            ]
+          },
+          {
+            "claimId": "C13",
+            "text": "2025-11-24: Kwame Boateng reported OP_ID persists in raw landing-zone files since 14 February and in June/September reconciliation extract attachments emailed to nine people including three at Meridian; attachments cannot be purged.",
+            "sourceIds": [
+              "E07M002"
+            ]
+          },
+          {
+            "claimId": "C14",
+            "text": "2026-04-09: DPO Katarina Voss recorded four processor-review actions (hosting region, fifth sub-processor, November erasure closure, recording retention) with all four wanted within four weeks.",
+            "sourceIds": [
+              "E08M004"
+            ]
+          },
+          {
+            "claimId": "C15",
+            "text": "2026-04-29: Marco Rossi answered three of four DPO actions: EU West hosting named in Schedule 2; fifth sub-processor Halberd Observability BV (Netherlands/Ireland telemetry) with notification process corrected; 18-month retention effective 1 May.",
+            "sourceIds": [
+              "E08M003"
+            ]
+          },
+          {
+            "claimId": "C16",
+            "text": "2024-09-03: Priya Nair reported the pilot store group was reduced from 40 to 25 stores after regional-manager pushback, with Lena agreeing; Ana accepted and updated the plan the same day.",
+            "sourceIds": [
+              "E09M005",
+              "E09M004"
+            ]
+          },
+          {
+            "claimId": "C17",
+            "text": "2025-05-21: Marco Rossi acknowledged his 40-store pilot figure was wrong, confirmed the reduction happened in September 2024, and committed to correct the deck before Thursday's review.",
+            "sourceIds": [
+              "E09M001",
+              "E09M002"
+            ]
+          },
+          {
+            "claimId": "C18",
+            "text": "2026-04-07: Nadia Haddad reported first full fresh quarter (Jan-Mar, 25 pilot stores): waste 4.1% to 3.4% of fresh net sales, ~118 tonnes reduced, ~296 tonnes CO2e avoided, availability +1.9 points, 88% order automation.",
+            "sourceIds": [
+              "E10M004"
+            ]
+          },
+          {
+            "claimId": "C19",
+            "text": "2026-04-07: Nadia Haddad caveated Q1 figures: warm February flatters produce, 118 tonnes is scaled from 25 stores and must not be multiplied up externally, and tonnage is derived from extract totals not till counts.",
+            "sourceIds": [
+              "E10M004"
+            ]
+          },
+          {
+            "claimId": "C20",
+            "text": "2024-05-02: Tomas Lindholm's assessment flagged DC-2 (unsupported middleware, intermittent silent failure) as a named risk with monitoring from day one, and case pack quantity as the blocking master-data gap.",
+            "sourceIds": [
+              "E11M005"
+            ]
+          },
+          {
+            "claimId": "C21",
+            "text": "2024-05-06: Priya Nair agreed all four assessment conclusions and took ownership of master-data remediation; she had already asked about goods receipt date exposure, with the system owner on secondment until August.",
+            "sourceIds": [
+              "E11M004"
+            ]
+          },
+          {
+            "claimId": "C22",
+            "text": "2024-07-02: Lena Fischer accepted the SOW value-case wording with 'RELEX anticipates' and a baseline to be agreed in writing prior to fresh go-live; signed version going out that week.",
+            "sourceIds": [
+              "E12M001",
+              "E12M002"
+            ]
+          },
+          {
+            "claimId": "C23",
+            "text": "2024-09-30: Kwame Boateng scoped pilot remediation: 4,214 cohort articles, 1,317 missing case pack quantity (the blocker), 3,105 missing/default lead times, shelf life 48% populated and out of scope for the phase.",
+            "sourceIds": [
+              "E13M006"
+            ]
+          },
+          {
+            "claimId": "C24",
+            "text": "2025-02-05: Lena Fischer decided Sofia Almeida should have go-live access despite fresh not being in the phase, so she can see how it works before phase two.",
+            "sourceIds": [
+              "E14M002"
+            ]
+          },
+          {
+            "claimId": "C25",
+            "text": "2025-01-22: Lena Fischer signed the UAT sign-off confirming core replenishment testing completed for the 25-store pilot cohort, ambient and dry goods only, explicitly excluding fresh categories and overall programme acceptance; the signed attachment itself is not in the archive, the email documents the confirmation.",
+            "sourceIds": [
+              "E15M002",
+              "E15M003"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "durationMs": 14863,
+      "output": {
+        "claims": [
+          {
+            "claimId": "C1",
+            "text": "2024-03-20: Lena Fischer states fresh waste is Acme's biggest pain and board-level concern; a 15-20% reduction would make the case self-funding.",
+            "sourceIds": [
+              "T01U0015",
+              "T01U0016",
+              "T01U0018",
+              "T01U0019"
+            ]
+          },
+          {
+            "claimId": "C2",
+            "text": "2024-03-20: Sofia Almeida says shelf life is not properly in any system; the product master field is populated for maybe half the range and unowned.",
+            "sourceIds": [
+              "T01U0040",
+              "T01U0049",
+              "T01U0050",
+              "T01U0052"
+            ]
+          },
+          {
+            "claimId": "C3",
+            "text": "2024-04-18: Priya Nair states Acme runs SAP ECC 6.0, not S/4, with no S/4 migration planned; Tomas Lindholm confirms ECC is fine.",
+            "sourceIds": [
+              "T02U0018",
+              "T02U0023",
+              "T02U0029",
+              "T02U0031",
+              "T02U0033"
+            ]
+          },
+          {
+            "claimId": "C4",
+            "text": "2024-04-18: Priya Nair: data out of ERP is nightly batch only (02:00 extract); no real-time interface will exist for this project.",
+            "sourceIds": [
+              "T02U0041",
+              "T02U0042",
+              "T02U0045",
+              "T02U0048"
+            ]
+          },
+          {
+            "claimId": "C5",
+            "text": "2024-06-11: Robert Kahn requires the SOW to state the value case is fresh waste reduction with ROI expected inside twelve months of signature; no guarantee, per Henrik Sørensen.",
+            "sourceIds": [
+              "T03U0037",
+              "T03U0038",
+              "T03U0040",
+              "T03U0044",
+              "T03U0047"
+            ]
+          },
+          {
+            "claimId": "C6",
+            "text": "2024-06-11: Robert Kahn requires quarterly reviews as an obligation in the SOW; Marco Rossi agrees to put it in.",
+            "sourceIds": [
+              "T03U0057",
+              "T03U0059",
+              "T03U0060",
+              "T03U0062"
+            ]
+          },
+          {
+            "claimId": "C7",
+            "text": "2024-07-09 handover: remaining shelf life does not exist as an accessible field (warehouse arrival date not exposed); recorded as phase two dependency needing owner and date.",
+            "sourceIds": [
+              "T04U0027",
+              "T04U0030",
+              "T04U0036"
+            ]
+          },
+          {
+            "claimId": "C8",
+            "text": "2024-07-09 handover: Sofia Almeida believes the shelf-life-aware ordering requirement is agreed; the SOW only says fresh is Phase 2, which is not the same thing.",
+            "sourceIds": [
+              "T04U0067"
+            ]
+          },
+          {
+            "claimId": "C9",
+            "text": "2024-07-15 kickoff: Priya Nair's team owns master data remediation with RELEX support; agreed pre-recording and written up by Ana Duarte.",
+            "sourceIds": [
+              "T05U0001",
+              "T05U0003",
+              "T05U0004",
+              "T05U0080",
+              "T05U0082"
+            ]
+          },
+          {
+            "claimId": "C10",
+            "text": "2024-07-15 kickoff: DC-2 goes on the watch list from day one with monitoring added so failures are loud; Q1 2025 held as core go-live target with master data flagged as explicit dependency.",
+            "sourceIds": [
+              "T05U0056",
+              "T05U0059",
+              "T05U0064",
+              "T05U0085",
+              "T05U0086"
+            ]
+          },
+          {
+            "claimId": "C11",
+            "text": "2024-09-24 workshop: case pack missing on 31% of active articles; shelf life populated on 48%; lead times mostly default sevens; case pack is the critical path for the pilot cohort.",
+            "sourceIds": [
+              "T06U0014",
+              "T06U0019",
+              "T06U0021",
+              "T06U0025",
+              "T06U0028"
+            ]
+          },
+          {
+            "claimId": "C12",
+            "text": "2024-09-24: Lena Fischer agrees pilot cohort reduced from 40 to 25 stores (two of three regions cannot support 40 in peak); Ana Duarte to reissue plan and store list request.",
+            "sourceIds": [
+              "T06U0068",
+              "T06U0071",
+              "T06U0073",
+              "T06U0075",
+              "T06U0089"
+            ]
+          },
+          {
+            "claimId": "C13",
+            "text": "2024-11-12: Sofia Almeida explains shelf-life threshold: under five days remaining the ordering difference matters, category dependent; to be recorded in workshop output and phase two requirements.",
+            "sourceIds": [
+              "T07U0053",
+              "T07U0057",
+              "T07U0059",
+              "T07U0060"
+            ]
+          },
+          {
+            "claimId": "C14",
+            "text": "2024-11-12: Service levels set to 98/95 (down from 99) for the pilot; daily order/delivery on fast lines, twice weekly below; rounding to case pack where available.",
+            "sourceIds": [
+              "T07U0077",
+              "T07U0083",
+              "T07U0086",
+              "T07U0091"
+            ]
+          },
+          {
+            "claimId": "C15",
+            "text": "2025-01-21: Case pack remediation for the cohort (1,300 articles) finished 19 December; lead times untouched (mostly sevens), workaround to derive actuals from receipt history agreed.",
+            "sourceIds": [
+              "T08U0003",
+              "T08U0011",
+              "T08U0012",
+              "T08U0015",
+              "T08U0017",
+              "T08U0018"
+            ]
+          },
+          {
+            "claimId": "C16",
+            "text": "2025-01-21: Shelf life untouched and out of scope; warehouse question still unanswered; Priya Nair stopped chasing as nothing in this phase depends on it; becomes phase two's problem.",
+            "sourceIds": [
+              "T08U0022",
+              "T08U0024",
+              "T08U0026",
+              "T08U0027"
+            ]
+          },
+          {
+            "claimId": "C17",
+            "text": "2025-03-17: Priya Nair distinguishes two DC-2 failure modes: 6 March middleware failure (known April 2024 issue) vs 14 March empty-file silent success; fixes differ, not to be merged in the incident log.",
+            "sourceIds": [
+              "E16M003"
+            ]
+          },
+          {
+            "claimId": "C18",
+            "text": "2025-03-17: Priya Nair commits to add a file size check that week so files under 1KB fail loudly; Tomas Lindholm agrees, noting an empty file passing as success should have been caught in design review.",
+            "sourceIds": [
+              "E16M002",
+              "E16M003",
+              "E16M001"
+            ]
+          },
+          {
+            "claimId": "C19",
+            "text": "2025-07-15: Ana Duarte confirms pilot cohort is 25 stores, reduced from 40 in September 2024 with plan reissued; the 40 persists in original kickoff material and a May slide.",
+            "sourceIds": [
+              "E17M004",
+              "E17M005",
+              "E17M002"
+            ]
+          },
+          {
+            "claimId": "C20",
+            "text": "2025-07-15: Ana Duarte will add a note to the project folder stating the cohort was reduced to 25 and when, keeping the original material as the record of what was agreed.",
+            "sourceIds": [
+              "E17M002",
+              "E17M003"
+            ]
+          },
+          {
+            "claimId": "C21",
+            "text": "2025-12-12: Ana Duarte distributes the fresh cutover runbook restricted to the named group, containing on-call mobiles for Kwame, Priya and Lena, per Priya's February request; Lena Fischer forwards operational sections to four regional managers without the contact page.",
+            "sourceIds": [
+              "E18M007",
+              "E18M006",
+              "E18M005"
+            ]
+          },
+          {
+            "claimId": "C22",
+            "text": "2026-02-24: Meridian (Ivan Petrov) requests read access to the test environment for two people for the bakery build; routing goes through Priya Nair as Acme's environment owner.",
+            "sourceIds": [
+              "E19M007",
+              "E19M006"
+            ]
+          },
+          {
+            "claimId": "C23",
+            "text": "2026-06-26: Marco Rossi provides Robert Kahn indicative chain-wide numbers: three fresh categories, 340 stores, ~420k annual licence plus ~260k one-off implementation.",
+            "sourceIds": [
+              "E20M004"
+            ]
+          },
+          {
+            "claimId": "C24",
+            "text": "2026-04-06 weekly: Q1 fresh waste 3.4% against a 4.1% baseline; timeline on plan; bakery build continues.",
+            "sourceIds": [
+              "R01M001"
+            ]
+          },
+          {
+            "claimId": "C25",
+            "text": "2026-03 steering: first full quarter fresh live; waste down from 4.1% to 3.4%; ~118 tonnes fresh waste and ~296 tonnes CO2e avoided across 25 stores; figure not to be scaled to full estate without discussion; twelve-month figure framed as anticipation, not commitment.",
+            "sourceIds": [
+              "R02M001"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "durationMs": 11048,
+      "output": {
+        "claims": [
+          {
+            "claimId": "C1",
+            "text": "2025-02-12 internal review: contract signed at 980k annual, 14% off list with 18% floor, leaving headroom if Phase 2 needs sweetening; agreed not to sweeten yet.",
+            "sourceIds": [
+              "T09U0006",
+              "T09U0007",
+              "T09U0008"
+            ]
+          },
+          {
+            "claimId": "C2",
+            "text": "2025-02-12: Lena Fischer identified as unambiguous champion; losing her means losing the account. Robert Kahn (CFO) cares about fresh waste and has repeatedly said twelve months for ROI.",
+            "sourceIds": [
+              "T09U0010",
+              "T09U0012"
+            ]
+          },
+          {
+            "claimId": "C3",
+            "text": "2025-02-27 cutover call: go-live is the 25-store pilot cohort (dry goods, DC-1); fresh not in scope, so shelf-life field mostly empty and flagged as a risk-log item.",
+            "sourceIds": [
+              "T10U0017",
+              "T10U0020",
+              "T10U0021",
+              "T10U0050"
+            ]
+          },
+          {
+            "claimId": "C4",
+            "text": "2025-02-27: DC-2 feed ran eleven consecutive nights in test but had failed silently twice before; Kwame warns production failures may go unnoticed until morning orders look wrong.",
+            "sourceIds": [
+              "T10U0027",
+              "T10U0028",
+              "T10U0035",
+              "T10U0040"
+            ]
+          },
+          {
+            "claimId": "C5",
+            "text": "2025-03-18 hypercare: DC-2 feed failed twice (6th and 14th March, both DC-2); 14th failure gave planners stale stock, ~40 lines over-ordered, and two store managers told their regional manager the system does not work.",
+            "sourceIds": [
+              "T11U0011",
+              "T11U0031",
+              "T11U0035"
+            ]
+          },
+          {
+            "claimId": "C6",
+            "text": "2025-03-18: two distinct failure modes identified — 6th was middleware, 14th was an empty file from an unfinished upstream export; Ana directed both be kept distinct in the incident log.",
+            "sourceIds": [
+              "T11U0052",
+              "T11U0055",
+              "T11U0072"
+            ]
+          },
+          {
+            "claimId": "C7",
+            "text": "2025-05-22 90-day review: forecast accuracy +6.2pts, ambient inventory -9%, order automation 91% on the 25-store pilot; Kahn objected that these are ambient numbers, not the fresh waste case he approved.",
+            "sourceIds": [
+              "T12U0004",
+              "T12U0008",
+              "T12U0046"
+            ]
+          },
+          {
+            "claimId": "C8",
+            "text": "2025-05-22: DC-2 nightly feed failing two-three times a week; Priya states middleware was flagged at kickoff and monitoring works but knowing is not fixing — a permanent fix is needed, not nightly restarts.",
+            "sourceIds": [
+              "T12U0068",
+              "T12U0074",
+              "T12U0077",
+              "T12U0079"
+            ]
+          },
+          {
+            "claimId": "C9",
+            "text": "2025-06-10: service transition — Charlotte Meyer is operational contact from 1 July; Ana stays on Phase 2. Boundary agreed: live system incidents/DC-2 feed/monitoring are Charlotte's; permanent DC-2 fix is a change (Ana's), dated 15 September gated on Acme's quarterly change window.",
+            "sourceIds": [
+              "T13U0010",
+              "T13U0013",
+              "T13U0031",
+              "T13U0037",
+              "T13U0040"
+            ]
+          },
+          {
+            "claimId": "C10",
+            "text": "2025-06-10: Sofia Almeida confirmed as only person at Acme who understands fresh; noted in three risk registers in slightly different words, which Charlotte says means it is effectively in none.",
+            "sourceIds": [
+              "T13U0068",
+              "T13U0073",
+              "T13U0074"
+            ]
+          },
+          {
+            "claimId": "C11",
+            "text": "2025-06-24 steering: core live four months, May numbers hold (automation 91% stable since April); DC-2 still fails ~twice weekly, joint engineering session happened 4 June producing a September-dated plan requiring middleware upgrade in Acme's quarterly change window.",
+            "sourceIds": [
+              "T14U0009",
+              "T14U0010",
+              "T14U0014",
+              "T14U0020",
+              "T14U0024"
+            ]
+          },
+          {
+            "claimId": "C12",
+            "text": "2025-06-24: Marco committed to delivering the Phase 2 fresh scoping proposal mid-July covering categories, order and dependencies; Kahn insisted the July proposal must contain a date.",
+            "sourceIds": [
+              "T14U0036",
+              "T14U0039",
+              "T14U0119",
+              "T14U0120"
+            ]
+          },
+          {
+            "claimId": "C13",
+            "text": "2025-09-12 escalation: fresh Phase 2 ~6 weeks behind — UAT resourcing shortfall (Acme side, Lena accepted and committed to add capacity) plus a calculation defect producing negative quantities in the fresh allocation module (RELEX side, fix in days).",
+            "sourceIds": [
+              "T15U0002",
+              "T15U0013",
+              "T15U0015",
+              "T15U0025",
+              "T15U0027",
+              "T15U0030"
+            ]
+          },
+          {
+            "claimId": "C14",
+            "text": "2025-09-12: Sofia stated on the record she is still doing fresh ordering by hand in a spreadsheet; a two-month email thread about her categories ran without her included, and she re-answered a shelf-life questionnaire she had already answered in the March 2024 demo.",
+            "sourceIds": [
+              "T15U0036",
+              "T15U0040",
+              "T15U0056",
+              "T15U0062"
+            ]
+          },
+          {
+            "claimId": "C15",
+            "text": "2025-10-09 UAT cover briefing: Sofia out ~6 weeks from Monday with Jonas covering; agreed Nadia takes configuration questions, Jonas takes documented items, and anything else waits or goes to Sofia — reducing the blocked list to maybe a third.",
+            "sourceIds": [
+              "T16U0001",
+              "T16U0017",
+              "T16U0031",
+              "T16U0067",
+              "T16U0072",
+              "T16U0073"
+            ]
+          },
+          {
+            "claimId": "C16",
+            "text": "2025-10-09: chilled ready meals promotion cycle runs on a four-week rhythm set in 2019 and never documented; Sofia agreed to write down the rhythm (not the exceptions) and send to all three, since sending to one person means it is gone by December.",
+            "sourceIds": [
+              "T16U0080",
+              "T16U0082",
+              "T16U0098",
+              "T16U0100",
+              "T16U0108"
+            ]
+          },
+          {
+            "claimId": "C17",
+            "text": "2025-11-17 go/no-go: defect fixed and verified; UAT ran nine working days on four fresh categories. Lena decided go-live on produce, dairy and chilled ready meals; bakery descoped to a separate later piece as it is largely in-store production, not an ordering problem.",
+            "sourceIds": [
+              "T17U0023",
+              "T17U0025",
+              "T17U0032",
+              "T17U0038",
+              "T17U0042",
+              "T17U0047"
+            ]
+          },
+          {
+            "claimId": "C18",
+            "text": "2025-11-17: Sofia's surgery detail found in handover doc Acme-fresh-handover-v3 page four; she asked for removal, keeping only that she is sole person knowing the categories. Marco committed to own finding other occurrences; Lena wanted it followed up properly.",
+            "sourceIds": [
+              "T17U0057",
+              "T17U0060",
+              "T17U0064",
+              "T17U0077",
+              "T17U0078",
+              "T17U0096",
+              "T17U0098"
+            ]
+          },
+          {
+            "claimId": "C19",
+            "text": "2025-12-11 cutover: fresh go-live Monday 15 Dec for produce/dairy/chilled; shelf-life runs on an approximation (total shelf life minus average warehouse days by article group), possibly two days optimistic on the slowest tenth; warehouse data first requested April 2024 remains unavailable.",
+            "sourceIds": [
+              "T18U0009",
+              "T18U0012",
+              "T18U0018",
+              "T18U0024",
+              "T18U0026"
+            ]
+          },
+          {
+            "claimId": "C20",
+            "text": "2025-12-11: Sofia agreed to log her manual overrides for six weeks so the model can improve, then decide whether to continue; she remains the rollback plan (manual fresh ordering), as she has been for two years.",
+            "sourceIds": [
+              "T18U0032",
+              "T18U0036",
+              "T18U0041",
+              "T18U0076",
+              "T18U0080"
+            ]
+          },
+          {
+            "claimId": "C21",
+            "text": "2026-01-28 bakery scoping (Meridian present): ~60% of bakery is bake-off (production plan, not an order — Sofia's point from the first March 2024 meeting); Meridian to consume a RELEX forecast and own the production plan; RELEX capacity from March; Nadia to define interface points by mid-February.",
+            "sourceIds": [
+              "T19U0015",
+              "T19U0016",
+              "T19U0022",
+              "T19U0049",
+              "T19U0050",
+              "T19U0117",
+              "T19U0120",
+              "T19U0126"
+            ]
+          },
+          {
+            "claimId": "C22",
+            "text": "2026-03-17 bakery design: agreed boundary — RELEX produces day-level forecast plus fixed intraday profile (not a true intraday forecast); Meridian consumes it. If the shape moves the profile is wrong until re-derived; who re-derives it left on the open items list with no owner.",
+            "sourceIds": [
+              "T20U0049",
+              "T20U0052",
+              "T20U0068",
+              "T20U0084",
+              "T20U0086",
+              "T20U0093",
+              "T20U0095"
+            ]
+          },
+          {
+            "claimId": "C23",
+            "text": "2026-04-09 DPO review (Katarina Voss): hosting is EU West Europe and named in the agreement; sub-processor count is now five (a monitoring/observability provider added), notification status unknown — first finding; Marco to come back within a week in writing.",
+            "sourceIds": [
+              "T21U0006",
+              "T21U0009",
+              "T21U0014",
+              "T21U0016",
+              "T21U0022",
+              "T21U0023",
+              "T21U0030"
+            ]
+          },
+          {
+            "claimId": "C24",
+            "text": "2026-06-16 QBR: six months live on the 25-store cohort; fresh waste moved from 4.1% to 3.2% against a 2.8% target (~240 tonnes avoided, ~600 tCO2e); Ana again cautioned against scaling to the estate as the 25 stores are not a random sample; chain-wide rollout not yet scoped.",
+            "sourceIds": [
+              "T22U0005",
+              "T22U0006",
+              "T22U0013",
+              "T22U0019",
+              "T22U0021",
+              "T22U0030",
+              "T22U0037"
+            ]
+          },
+          {
+            "claimId": "C25",
+            "text": "2026-07-02 internal renewal/resourcing: renewal mid-2027; four DPO actions closed except retention policy (with legal); bakery expansion conversation ~200 additional via Meridian subcontract/partnership if it lands; Kahn effectively stopped counting the ROI clock after good Q1 waste numbers.",
+            "sourceIds": [
+              "T23U0001",
+              "T23U0003",
+              "T23U0006",
+              "T23U0009"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

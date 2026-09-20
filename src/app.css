@@ -636,6 +636,8 @@ p {
 	color: #284b32;
 }
 .nav-count {
+	white-space: nowrap;
+	flex-shrink: 0;
 	margin-left: auto;
 	background: #dfe9d4;
 	padding: 2px 6px;
@@ -2439,4 +2441,14 @@ footer {
 	margin-top: 20px;
 }
 
-.source-neighbours{margin-top:28px}.source-neighbours article{padding:18px 0;border-bottom:1px solid var(--border)}.source-neighbours p{white-space:pre-wrap;margin-top:10px}
+.source-neighbours {
+	margin-top: 28px;
+}
+.source-neighbours article {
+	padding: 18px 0;
+	border-bottom: 1px solid var(--border);
+}
+.source-neighbours p {
+	white-space: pre-wrap;
+	margin-top: 10px;
+}

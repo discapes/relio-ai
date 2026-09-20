@@ -1,0 +1,195 @@
+{
+  "question": 8,
+  "durationMs": 78403,
+  "status": "generated",
+  "workspaceId": "practice_p8_1789861530237",
+  "generatedAt": "2026-09-19T23:45:30.287Z",
+  "answer": {
+    "id": "386e880e-c9c7-42a2-bf4c-d51c11ea5649",
+    "text": "The clearest example in the archive is the remaining shelf life data field. On 18 April 2024, Tomas Lindholm asked Priya Nair whether it could be found out, saying \"Can you find out?\" and \"Please, right because it changes the design\"; Priya replied \"I can ask.\" [1] [2] [3]\n\nOn 6 May 2024 Priya confirmed the agreement in writing: \"Agreed on all four. I will own the remediation, whatever Lena says about it. On the warehouse question, I have asked. The person who owns that system is on secondment until August. I will chase in August.\" [4]\n\nOn 22 August 2024 Priya reported back that goods receipt date is captured but not exposed, and that getting it out means either an extract nobody owns or a change request; she wrote \"I will not be raising a change request for something that is not in the current phase.\" Tomas Lindholm then logged it as a phase two dependency and closed the thread. [5] [6]\n\nThe question resurfaced in weekly updates through July and August 2025: on 21 July 2025 the shelf life field mapping was reported unresolved for two weeks and blocking the ordering logic; on 4 August 2025 it was still unresolved with the Acme warehouse team unavailable; on 18 August 2025 it was four weeks open and approaching the point where a workaround was needed. [7] [8] [9]\n\nOn 11 September 2025 Priya Nair wrote: \"It is not impossible, it is unowned, which in practice is the same thing this year. Proceed with your approximation.\" The workaround was built instead of obtaining the field. [10]\n\nAt the fresh cutover call on 11 December 2025, Nadia Haddad confirmed the approximation runs but not without the warehouse data, which was first asked for in April 2024. [11] [12]\n\nAt the Q2 business review on 16 June 2026, Sofia Almeida said she spends about a day and a half out of five manually compensating on slow-moving fresh lines, because of a data field in the warehouse system first asked about in April 2024. [13] [14] [15] [16] [17] [18]\n\nOn 26 June 2026 Marco Rossi put it in writing to Robert Kahn that the twelve-month expectation was missed because \"The value case depended on fresh, and fresh depended on a data field that we identified as a dependency in April 2024 and never obtained.\" [19]\n\nWho would have needed to notice: Priya Nair owned the chase and stopped when the answer came back in August 2024; Tomas Lindholm logged it as a phase two dependency and closed the thread; Ana Duarte carried it in weekly status reports from July 2025 onward; and Lena Fischer said at the June 2025 steering committee that she had \"never once heard it resolved.\" [5] [6] [7] [20] [21]\n\nThe archive shows no record of anyone escalating the shelf life field to Robert Kahn or the steering committee as a decision item before the workaround was built. Certainty is limited to the archive: it shows the agreement, the chase, the closure of the thread, and the workaround, but not every internal conversation, so it is possible someone raised it outside these records.",
+    "citations": [
+      {
+        "sourceId": "transcripts/02_2024-04-18_technical-due-diligence#utterance-0132",
+        "quote": "Can you find out?",
+        "title": "Technical due diligence",
+        "date": "2024-04-18",
+        "author": "Tomas Lindholm",
+        "position": "11:18 · utterance 132"
+      },
+      {
+        "sourceId": "transcripts/02_2024-04-18_technical-due-diligence#utterance-0133",
+        "quote": "I can ask.",
+        "title": "Technical due diligence",
+        "date": "2024-04-18",
+        "author": "Priya Nair",
+        "position": "11:22 · utterance 133"
+      },
+      {
+        "sourceId": "transcripts/02_2024-04-18_technical-due-diligence#utterance-0134",
+        "quote": "Please, right because it changes the design.",
+        "title": "Technical due diligence",
+        "date": "2024-04-18",
+        "author": "Tomas Lindholm",
+        "position": "11:28 · utterance 134"
+      },
+      {
+        "sourceId": "emails/11_data-assessment-followup#message-004",
+        "quote": "This email originated from outside of RELEX. Be careful of attachments and links from unknown senders. Report suspicious emails using the report button.\n\nHi,\n\nAgreed on all four. I will own the remediation, whatever Lena says about it.\n\nOn the warehouse question, I have asked. The person who owns that system is on secondment\nuntil August. I will chase in August.\n\nPriya Nair\nIT Integration Lead\n+49 151 3307 9126\nAcme Org GmbH | Hansaring 82, 50670 Köln\nacme-org.example\nImage",
+        "title": "Re: Technical assessment - follow up",
+        "date": "2024-05-06T16:40:00",
+        "author": "Priya Nair",
+        "position": "Message 4"
+      },
+      {
+        "sourceId": "emails/11_data-assessment-followup#message-002",
+        "quote": "This email originated from outside of RELEX. Be careful of attachments and links from unknown senders. Report suspicious emails using the report button.\n\nHe is back and says it is captured but not exposed. Getting it out means either an extract\nthat nobody owns, or writing it back into SAP, which is a change request.\n\nI will not be raising a change request for something that is not in the current phase.\n\nPriya Nair\nIT Integration Lead\n+49 151 3307 9126\nAcme Org GmbH | Hansaring 82, 50670 Köln\nacme-org.example\nImage",
+        "title": "Re: Technical assessment - follow up",
+        "date": "2024-08-22T17:20:00",
+        "author": "Priya Nair",
+        "position": "Message 2"
+      },
+      {
+        "sourceId": "emails/11_data-assessment-followup#message-001",
+        "quote": "Understood. Logging it as a phase two dependency and closing this thread.\n\nMed vänliga hälsningar,\nTomas Lindholm\nSolution Architect Bild borttagen av avsändaren.\n+46 70 118 44 92\ntomas.lindholm@relexsolutions.example\nVasagatan 7, 111 20 Stockholm\nBild borttagen av avsändaren.\nrelexsolutions.example",
+        "title": "Technical assessment - follow up",
+        "date": "2024-08-22T17:55:00",
+        "author": "Tomas Lindholm",
+        "position": "Message 1"
+      },
+      {
+        "sourceId": "reports/01_weekly-status-thread#message-016",
+        "quote": "Hi All,\n\nHereby the weekly update.\n\nUpdate 21-07-2025 (Week 30)\n🟡Slight Delay\n\nQuestion\nWe need remaining shelf life at the point of order, per article per site. MARA-MHDHB appears to be total shelf life rather than remaining. Is remaining life stored anywhere, and if not, is goods receipt date available outside the WMS?\n\nRisk\nShelf life field mapping unresolved for two weeks. Blocks the ordering logic.\n\nTimeline\nOne week of float used. Not yet a concern.\n\n[Image removed by sender]\n\nTopics worked on last week\n1.                  Produce and dairy configuration 60% complete (Phase 3 - Business Configuration)\n2.                  Shelf life field mapping (Phase 2 - Technical Implementation) NOT FINISHED\n\nTopics planned for this week\n1.                Chase shelf life for the second time (Phase 2 - Technical Implementation)\n\nPotential risk identified 🟡Slight Delay\n1.                  Shelf life field mapping unresolved for two weeks. Blocks the ordering logic.\n\nIf there is anything else you'd like to see in these update emails, please don't hesitate to let us know.\n\nKind regards,\n\nBest regards,\nAna Duarte\nProject Manager Image\n+351 913 882 145 | UTC +01:00\nana.duarte@relexsolutions.example\nRua do Ouro 42, 1100-063 Lisboa\nConnect with me\nImage\nImage\nPlan better. Sell more. Waste less\nrelexsolutions.example Image\nLinkedInYouTube",
+        "title": "Re: Weekly Acme update",
+        "date": "2025-07-21T17:30:00",
+        "author": "Ana Duarte",
+        "position": "Message 16"
+      },
+      {
+        "sourceId": "reports/01_weekly-status-thread#message-015",
+        "quote": "Hi All,\n\nSorry for the delay in the weekly update!\n\nHereby the weekly update.\n\nUpdate 04-08-2025 (Week 32)\n🟡Slight Delay\n\nQuestion\nWe need remaining shelf life at the point of order, per article per site. MARA-MHDHB appears to be total shelf life rather than remaining. Is remaining life stored anywhere, and if not, is goods receipt date available outside the WMS?\n\nRisk\nShelf life still unresolved. Acme warehouse team unavailable.\n\nTimeline\nTwo weeks of float used.\n\n[Image removed by sender]\n\nTopics worked on last week\n1.                  Configuration continues on the parts that do not need shelf life (Phase 3 - Business Configuration)\n\nTopics planned for this week\n1.                Escalate shelf life if no answer this week (Phase 2 - Technical Implementation)\n\nPotential risk identified 🟡Slight Delay\n1.                  Shelf life still unresolved. Acme warehouse team unavailable.\n\nIf there is anything else you'd like to see in these update emails, please don't hesitate to let us know.\n\nKind regards,\n\nBest regards,\nAna Duarte\nProject Manager Image\n+351 913 882 145 | UTC +01:00\nana.duarte@relexsolutions.example\nRua do Ouro 42, 1100-063 Lisboa\nConnect with me\nImage\nImage\nPlan better. Sell more. Waste less\nrelexsolutions.example Image\nLinkedInYouTube",
+        "title": "Re: Weekly Acme update",
+        "date": "2025-08-04T16:15:00",
+        "author": "Ana Duarte",
+        "position": "Message 15"
+      },
+      {
+        "sourceId": "reports/01_weekly-status-thread#message-014",
+        "quote": "Hi All,\n\nHereby the weekly update.\n\nUpdate 18-08-2025 (Week 34)\n🟡Slight Delay\n\nQuestion\nRepeating from the last two updates. Is remaining shelf life stored anywhere, and if not, is goods receipt date available outside the WMS?\n\nRisk\nShelf life now four weeks open. Approaching the point where we need a workaround.\n\nTimeline\nHolding. The plan assumes shelf life resolves in August.\n\n[Image removed by sender]\n\nTopics worked on last week\n1.                  Chilled ready meals structure loaded (Phase 3 - Business Configuration)\n2.                  Shelf life field mapping (Phase 2 - Technical Implementation) NOT FINISHED\n\nTopics planned for this week\n1.                Shelf life escalation to steering\n\nPotential risk identified 🟡Slight Delay\n1.                  Shelf life now four weeks open. Approaching the point where we need a workaround.\n\nIf there is anything else you'd like to see in these update emails, please don't hesitate to let us know.\n\nKind regards,\n\nNadia Haddad\nSolution Consultant Image\n+46 76 552 30 18 | CET\nn.haddad@relexsolutions.example\nVasagatan 7, 111 20 Stockholm\nImage\nPlan better. Sell more. Waste less\nrelexsolutions.example",
+        "title": "Re: Weekly Acme update",
+        "date": "2025-08-18T17:05:00",
+        "author": "Nadia Haddad",
+        "position": "Message 14"
+      },
+      {
+        "sourceId": "emails/01_shelf-life-field-mapping#message-003",
+        "quote": "This email originated from outside of RELEX. Be careful of attachments and links from unknown senders. Report suspicious emails using the report button.\n\nIt is not impossible, it is unowned, which in practice is the same thing this year.\n\nProceed with your approximation.\n\nPriya Nair\nIT Integration Lead\n+49 151 3307 9126\nAcme Org GmbH | Hansaring 82, 50670 Köln\nacme-org.example\n[Image removed by sender]",
+        "title": "Re: Shelf life field mapping - fresh export",
+        "date": "2025-09-11T17:22:00",
+        "author": "Priya Nair",
+        "position": "Message 3"
+      },
+      {
+        "sourceId": "transcripts/18_2025-12-11_fresh-cutover-call#utterance-0024",
+        "quote": "Not without the warehouse data, which was first asked for in",
+        "title": "Fresh cutover call",
+        "date": "2025-12-11",
+        "author": "Nadia Haddad",
+        "position": "2:07 · utterance 24"
+      },
+      {
+        "sourceId": "transcripts/18_2025-12-11_fresh-cutover-call#utterance-0026",
+        "quote": "April 2024.",
+        "title": "Fresh cutover call",
+        "date": "2025-12-11",
+        "author": "Nadia Haddad",
+        "position": "2:16 · utterance 26"
+      },
+      {
+        "sourceId": "transcripts/22_2026-06-16_q2-business-review#utterance-0077",
+        "quote": "But, on the slow",
+        "title": "Q2 quarterly business review",
+        "date": "2026-06-16",
+        "author": "Sofia Almeida",
+        "position": "6:27 · utterance 77"
+      },
+      {
+        "sourceId": "transcripts/22_2026-06-16_q2-business-review#utterance-0079",
+        "quote": "moving fresh lines, about a day and a half.",
+        "title": "Q2 quarterly business review",
+        "date": "2026-06-16",
+        "author": "Sofia Almeida",
+        "position": "6:34 · utterance 79"
+      },
+      {
+        "sourceId": "transcripts/22_2026-06-16_q2-business-review#utterance-0080",
+        "quote": "Out of five.",
+        "title": "Q2 quarterly business review",
+        "date": "2026-06-16",
+        "author": "Robert Kahn",
+        "position": "6:43 · utterance 80"
+      },
+      {
+        "sourceId": "transcripts/22_2026-06-16_q2-business-review#utterance-0081",
+        "quote": "Out of five.",
+        "title": "Q2 quarterly business review",
+        "date": "2026-06-16",
+        "author": "Sofia Almeida",
+        "position": "6:46 · utterance 81"
+      },
+      {
+        "sourceId": "transcripts/22_2026-06-16_q2-business-review#utterance-0084",
+        "quote": "The reason is a data field that lives in the warehouse",
+        "title": "Q2 quarterly business review",
+        "date": "2026-06-16",
+        "author": "Sofia Almeida",
+        "position": "7:02 · utterance 84"
+      },
+      {
+        "sourceId": "transcripts/22_2026-06-16_q2-business-review#utterance-0086",
+        "quote": "system, which we first asked about April 2024.",
+        "title": "Q2 quarterly business review",
+        "date": "2026-06-16",
+        "author": "Sofia Almeida",
+        "position": "7:14 · utterance 86"
+      },
+      {
+        "sourceId": "emails/20_chain-wide-proposal#message-004",
+        "quote": "Robert,\n\nIndicative numbers attached. Summary here so you have it in the mail.\n\nChain wide for the three fresh categories, 340 stores: additional annual licence of\napproximately 420 thousand, plus implementation of approximately 260 thousand one off.\n\nOn your second point, and this is the honest version.\n\nThe twelve month expectation was missed for one reason above all others. The value case\ndepended on fresh, and fresh depended on a data field that we identified as a dependency\nin April 2024 and never obtained. Everything else largely went to plan. We built a\nworkaround in September 2025 which works acceptably on fast moving articles and poorly on\nslow moving ones, and your category manager has been compensating for the difference by\nhand ever since.\n\nFor the next number to be different, that field has to be available. It is not a RELEX\ndeliverable and I cannot commit to it on your behalf, which is why I am putting it in\nwriting rather than in a slide.\n\nIf it is not resolved, chain wide will reduce waste by less than the pilot suggests,\nbecause the slow moving articles are a larger share of the tail across 340 stores than\nacross 25.\n\nMarco Rossi\nAccount Executive Image\n+351 912 447 026 | CET/CEST\nmarco.rossi@relexsolutions.example\nRua do Ouro 42, 1100-063 Lisboa\nConnect with me\nImage\nImage\nPlan better. Sell more. Waste less\nrelexsolutions.example Image\nLinkedInYouTube\nImage",
+        "title": "Re: Chain wide rollout - indicative numbers",
+        "date": "2026-06-26T17:15:00",
+        "author": "Marco Rossi",
+        "position": "Message 4"
+      },
+      {
+        "sourceId": "transcripts/14_2025-06-24_steering-committee#utterance-0064",
+        "quote": "Please do, so because we have been I mean...",
+        "title": "Steering committee",
+        "date": "2025-06-24",
+        "author": "Lena Fischer",
+        "position": "5:38 · utterance 64"
+      },
+      {
+        "sourceId": "transcripts/14_2025-06-24_steering-committee#utterance-0066",
+        "quote": "meeting meeting with Marco and I have never once heard it resolved.",
+        "title": "Steering committee",
+        "date": "2025-06-24",
+        "author": "Lena Fischer",
+        "position": "5:51 · utterance 66"
+      }
+    ],
+    "createdAt": "2026-09-19T23:46:48.687Z",
+    "kind": "evaluation",
+    "level": 3,
+    "question": "Find one thing in the archive that was agreed and then never done. Show the trail from the agreement to the present, and say who would have needed to notice. Limit certainty to the archive.",
+    "trace": [
+      "Read 2974 permitted source records at L3.",
+      "Checked the April 2024 due diligence transcript for the original request and Priya's agreement to ask",
+      "Checked the May 2024 follow-up email confirming Priya owned the chase",
+      "Checked the August 2024 emails showing the answer came back and the thread was closed as a phase two dependency",
+      "Checked weekly status reports July-August 2025 showing the question repeatedly open and unresolved",
+      "Checked the September 2025 shelf life thread showing Priya authorising the approximation instead",
+      "Verified 21 quoted passages against runtime sources."
+    ]
+  },
+  "prompt": "Find one thing in the archive that was agreed and then never done. Show the trail from the agreement to the present, and say who would have needed to notice. Limit certainty to the archive."
+}

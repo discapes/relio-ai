@@ -1,0 +1,58 @@
+{
+  "question": 1,
+  "prompt": "What did the master-data assessment report as complete in September 2024? Give every figure and the document each comes from.",
+  "durationMs": 21620,
+  "status": "generated",
+  "workspaceId": "practice_p1_1789862810660",
+  "generatedAt": "2026-09-20T00:06:50.722Z",
+  "answer": {
+    "id": "dfe641b3-5ccc-48a8-a94d-e6500d1702c8",
+    "text": "The master-data assessment in September 2024 did not report case pack quantity remediation as complete. At the 24 September 2024 master-data workshop, Kwame Boateng reported that case pack quantity is missing on 31% of active articles and that shelf life is populated on 48% . On 30 September 2024, Kwame Boateng's email set out the agreed remediation scope for the pilot cohort: 4,214 articles in cohort, 1,317 missing case pack quantity, 3,105 missing or default supplier lead, and shelf life populated at 48%, with case pack identified as the blocker . Completion of all 1,317 case pack articles was reported later, on 19 December 2024, by Priya Nair . [1] [2] [3] [4]",
+    "citations": [
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0014",
+        "quote": "quantity is missing on thirty-one percent of active articles.",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Kwame Boateng",
+        "position": "3:31 · utterance 14"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0025",
+        "quote": "And shelf life is populated on forty-eight percent.",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Kwame Boateng",
+        "position": "4:39 · utterance 25"
+      },
+      {
+        "sourceId": "emails/13_master-data-remediation#message-006",
+        "quote": "Priya,\n\nAs agreed in the workshop, the remediation scope for the pilot cohort:\n\n  Articles in cohort                 4,214\n  Missing case pack quantity         1,317\n  Missing or default supplier lead   3,105\n  Shelf life populated               48%\n\nCase pack is the blocker. Lead times we can work around by deriving actuals from receipt\nhistory. Shelf life is out of scope for this phase.\n\nFile attached with the 1,317.",
+        "title": "Master data remediation - progress",
+        "date": "2024-09-30T10:05:00",
+        "author": "Kwame Boateng",
+        "position": "Message 6"
+      },
+      {
+        "sourceId": "emails/13_master-data-remediation#message-003",
+        "quote": "Done. All 1,317. The two unresponsive suppliers we resolved by measuring actual delivered\nquantities over six months and inferring the case pack, which is not ideal but it is\nright for 190 of the 200.\n\nI would like it recorded somewhere that this took my team three weeks of overtime in\nDecember.",
+        "title": "Re: Master data remediation - progress",
+        "date": "2024-12-19T18:15:00",
+        "author": "Priya Nair",
+        "position": "Message 3"
+      }
+    ],
+    "createdAt": "2026-09-20T00:07:12.339Z",
+    "kind": "evaluation",
+    "level": 3,
+    "question": "What did the master-data assessment report as complete in September 2024? Give every figure and the document each comes from.",
+    "trace": [
+      "Read 2974 permitted source records at L3.",
+      "Confirmed the 24 September 2024 workshop transcript reports case pack missing on 31% (T06U0014) and shelf life populated on 48% (T06U0025), both spoken by Kwame Boateng.",
+      "Confirmed the 30 September 2024 email (E13M006) contains the agreed pilot cohort scope figures: 4,214 in cohort, 1,317 missing case pack, 3,105 missing or default supplier lead, 48% shelf life populated.",
+      "Confirmed E13M003 dated 19 December 2024 reports completion of all 1,317 case pack articles, so completion was reported in December, not September 2024.",
+      "No September 2024 source reports case pack remediation as complete; the draft's negative framing is supported.",
+      "Verified 4 quoted passages against runtime sources."
+    ]
+  }
+}

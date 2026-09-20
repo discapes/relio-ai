@@ -1,0 +1,1705 @@
+{
+  "description": "Successful source-record extraction outputs captured before independent claim verification. Used only by the isolated re-verification script.",
+  "drafts": [
+    {
+      "focusFirstDocument": "emails/01_shelf-life-field-mapping",
+      "output": {
+        "claims": [
+          {
+            "kind": "decision",
+            "text": "2025-09-04: Nadia Haddad proposed approximating remaining shelf life as total shelf life (MHDHB) minus average days-in-warehouse per article group; flagged slow movers would be overstated as fresher.",
+            "status": "proposed",
+            "sourceIds": [
+              "E01M005"
+            ]
+          },
+          {
+            "kind": "decision",
+            "text": "2025-09-11: Priya Nair (Acme IT) told Nadia to proceed with the shelf-life approximation; no formal Acme confirmation of the approach is recorded in the thread.",
+            "status": "agreed",
+            "sourceIds": [
+              "E01M003",
+              "E01M001"
+            ]
+          },
+          {
+            "kind": "question",
+            "text": "2025-10-30: Ana Duarte asked whether Acme ever confirmed the shelf-life approximation; Nadia replied nobody objected and they proceeded, with no written Acme agreement found.",
+            "status": "outstanding",
+            "sourceIds": [
+              "E01M002",
+              "E01M001"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-07-09: Priya Nair confirmed MHDHB is total shelf life (partially populated); remaining life at order time is not stored in SAP and would require goods receipt date from the WMS.",
+            "status": "observation",
+            "sourceIds": [
+              "E01M011"
+            ]
+          },
+          {
+            "kind": "commitment",
+            "text": "2025-07-09: Priya Nair committed to ask the warehouse team about exposing goods receipt date; on 2025-07-23 she reported chasing, with the team half on holiday.",
+            "status": "outstanding",
+            "sourceIds": [
+              "E01M011",
+              "E01M009"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-08-20: Priya Nair reported goods receipt date is captured but not exposed outside the WMS; obtaining it needs an unowned WMS extract or a SAP write-back change request.",
+            "status": "observation",
+            "sourceIds": [
+              "E01M007"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-08-26: Kwame Boateng said his June WMS extract related to the DC-2 inventory feed, a different system, and does not help the shelf-life question.",
+            "status": "observation",
+            "sourceIds": [
+              "E01M006"
+            ]
+          },
+          {
+            "kind": "workstream",
+            "text": "2025-09-09: Ana Duarte placed shelf life on the Phase 2 escalation call agenda for that Friday, asking Priya to state in advance if the warehouse extract was impossible.",
+            "status": "agreed",
+            "sourceIds": [
+              "E01M004"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-10-07: Nadia Haddad created fresh UAT user SofAlme for Sofia Almeida; Sofia confirmed login worked the same day.",
+            "status": "agreed",
+            "sourceIds": [
+              "E02M003",
+              "E02M002"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-10-06: Sofia Almeida could not access the fresh UAT environment with production credentials; a new dedicated user was created instead.",
+            "status": "observation",
+            "sourceIds": [
+              "E02M004",
+              "E02M003"
+            ]
+          },
+          {
+            "kind": "question",
+            "text": "2026-02-17: Kwame Boateng asked whether SofAlme was created as a normal or elevated-rights user, to reuse the setup for the bakery workstream; no answer is recorded in this partition.",
+            "status": "outstanding",
+            "sourceIds": [
+              "E02M001"
+            ]
+          },
+          {
+            "kind": "decision",
+            "text": "2025-11-21: Marco Rossi confirmed the go/no-go decision was two deliveries: produce, dairy and chilled ready meals together in December, bakery as a separate workstream; Ana asked to reissue the plan on that basis.",
+            "status": "agreed",
+            "sourceIds": [
+              "E03M002",
+              "E03M001"
+            ]
+          },
+          {
+            "kind": "correction",
+            "text": "2025-11-20: Lena Fischer disputed a claimed three-wave fresh rollout, saying only fresh-as-Phase-2-in-one-delivery was agreed; the three-wave plan had not been minuted as a decision.",
+            "status": "superseded",
+            "sourceIds": [
+              "E03M003",
+              "E03M002"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-06-11: Marco Rossi proposed sequencing Phase 2 as three waves (produce+dairy, chilled ready meals, bakery) roughly six weeks apart; Lena and Robert's agreement was never evidenced in the thread.",
+            "status": "proposed",
+            "sourceIds": [
+              "E03M008",
+              "E03M006"
+            ]
+          },
+          {
+            "kind": "correction",
+            "text": "2025-11-21: Ana Duarte updated the handover pack to v4 removing the surgery note from Sofia's stakeholder entry; the old v3 remains in project-site document history, which Ana cannot delete and has raised with RELEX IT.",
+            "status": "corrected",
+            "sourceIds": [
+              "E04M002"
+            ]
+          },
+          {
+            "kind": "commitment",
+            "text": "2025-11-19: Marco Rossi committed to tell Sofia Almeida where else the surgery note appears, wanting a complete list; on 2026-03-12 Sofia reported still not having received it.",
+            "status": "outstanding",
+            "sourceIds": [
+              "E04M003",
+              "E04M001"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-11-18: Sofia Almeida requested removal of the 'out October to November, surgery' note from handover pack v3 page 4, asking that her sole fresh-category knowledge be kept as a recorded project risk.",
+            "status": "agreed",
+            "sourceIds": [
+              "E04M004"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-02-03: Kwame Boateng reported the January DC-2 incident log showed fourteen failures, eleven silent, four correlating with a scheduled job Priya has twice said does not exist.",
+            "status": "observation",
+            "sourceIds": [
+              "E05M006"
+            ]
+          },
+          {
+            "kind": "commitment",
+            "text": "2026-02-10: Ana Duarte sent the DC-2 incident log to Meridian (Ivan Petrov, Ruth) as promised at the scoping session; Marco noted on 2026-02-10 the whole chain was forwarded despite the 28th agreement that Lena would decide what Meridian saw.",
+            "status": "agreed",
+            "sourceIds": [
+              "E05M004",
+              "E05M003"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-02-10: Ivan Petrov said Meridian would build DC-2 planning around roughly fortnightly feed failures and advised ignoring the scheduled-job comment.",
+            "status": "observation",
+            "sourceIds": [
+              "E05M001"
+            ]
+          },
+          {
+            "kind": "question",
+            "text": "2025-10-14: Nadia Haddad asked whether 'chilled convenience' sits under ready meals or is its own node, noting master data differs by site; Sofia was out of office until 17 November with no answer recorded.",
+            "status": "outstanding",
+            "sourceIds": [
+              "E06M004",
+              "E06M003"
+            ]
+          },
+          {
+            "kind": "decision",
+            "text": "2025-11-24: Priya Nair set OP_ID exclusion from the waste write-off extract as a condition, not a request; Nadia confirmed the field is dropped from the next run (Friday night).",
+            "status": "agreed",
+            "sourceIds": [
+              "E07M004",
+              "E07M003"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-11-24: Kwame Boateng reported OP_ID persists in raw landing-zone files since 14 February and in June/September reconciliation extract attachments emailed to nine people including three at Meridian; attachments cannot be purged.",
+            "status": "observation",
+            "sourceIds": [
+              "E07M002"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-11-19: Nadia Haddad committed to give a definitive answer on downstream OP_ID exposure rather than a reassuring one; Kwame's 2025-11-24 reply supplied it.",
+            "status": "agreed",
+            "sourceIds": [
+              "E07M003",
+              "E07M002"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-04-09: DPO Katarina Voss recorded four processor-review actions (hosting region, fifth sub-processor, November erasure closure, recording retention) with all four wanted within four weeks.",
+            "status": "agreed",
+            "sourceIds": [
+              "E08M004"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-04-29: Marco Rossi answered three of four DPO actions: EU West hosting named in Schedule 2; fifth sub-processor Halberd Observability BV (Netherlands/Ireland telemetry) with notification process corrected; 18-month retention effective 1 May.",
+            "status": "agreed",
+            "sourceIds": [
+              "E08M003"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-04-30: Katarina Voss accepted the sub-processor response, registered a concern about transcript extraction-then-deletion permanence, and confirmed item 3 (November erasure request closure) remained open.",
+            "status": "outstanding",
+            "sourceIds": [
+              "E08M002"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-06-23: Katarina Voss emailed Marco Rossi referencing 'Item 3', indicating the erasure-closure action was still being chased; no closure evidence appears in this partition.",
+            "status": "outstanding",
+            "sourceIds": [
+              "E08M001"
+            ]
+          },
+          {
+            "kind": "correction",
+            "text": "2024-09-03: Priya Nair reported the pilot store group was reduced from 40 to 25 stores after regional-manager pushback, with Lena agreeing; Ana accepted and updated the plan the same day.",
+            "status": "corrected",
+            "sourceIds": [
+              "E09M005",
+              "E09M004"
+            ]
+          },
+          {
+            "kind": "correction",
+            "text": "2025-05-21: Marco Rossi acknowledged his 40-store pilot figure was wrong, confirmed the reduction happened in September 2024, and committed to correct the deck before Thursday's review.",
+            "status": "corrected",
+            "sourceIds": [
+              "E09M001",
+              "E09M002"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-04-07: Nadia Haddad reported first full fresh quarter (Jan-Mar, 25 pilot stores): waste 4.1% to 3.4% of fresh net sales, ~118 tonnes reduced, ~296 tonnes CO2e avoided, availability +1.9 points, 88% order automation.",
+            "status": "observation",
+            "sourceIds": [
+              "E10M004"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-04-07: Nadia Haddad caveated Q1 figures: warm February flatters produce, 118 tonnes is scaled from 25 stores and must not be multiplied up externally, and tonnage is derived from extract totals not till counts.",
+            "status": "observation",
+            "sourceIds": [
+              "E10M004"
+            ]
+          },
+          {
+            "kind": "question",
+            "text": "2026-04-08: Sofia Almeida asked whether the dairy baseline includes the yoghurt range moved between categories in November, and whether extract tonnage has been reconciled against till data before board presentation; no answer recorded here.",
+            "status": "outstanding",
+            "sourceIds": [
+              "E10M001"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-04-07: Lena Fischer reported fresh waste at 3.4% against a 2.8% target, two-thirds of the way there on the pilot cohort, calling it the first board-ready number in two years.",
+            "status": "observation",
+            "sourceIds": [
+              "E10M003"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2024-05-02: Tomas Lindholm's assessment flagged DC-2 (unsupported middleware, intermittent silent failure) as a named risk with monitoring from day one, and case pack quantity as the blocking master-data gap.",
+            "status": "observation",
+            "sourceIds": [
+              "E11M005"
+            ]
+          },
+          {
+            "kind": "commitment",
+            "text": "2024-05-06: Priya Nair agreed all four assessment conclusions and took ownership of master-data remediation; she had already asked about goods receipt date exposure, with the system owner on secondment until August.",
+            "status": "agreed",
+            "sourceIds": [
+              "E11M004"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2024-08-22: Priya Nair reported goods receipt date is captured but not exposed outside the WMS and declined to raise a change request outside the current phase; Tomas logged it as a phase two dependency.",
+            "status": "agreed",
+            "sourceIds": [
+              "E11M002",
+              "E11M001"
+            ]
+          },
+          {
+            "kind": "decision",
+            "text": "2024-07-02: Lena Fischer accepted the SOW value-case wording with 'RELEX anticipates' and a baseline to be agreed in writing prior to fresh go-live; signed version going out that week.",
+            "status": "agreed",
+            "sourceIds": [
+              "E12M001",
+              "E12M002"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2024-06-25: Lena Fischer reported Acme legal replaced 'Both parties expect' with 'RELEX anticipates' and wanted the baseline defined in contract; she said the baseline could not be defined before knowing what is measured.",
+            "status": "observation",
+            "sourceIds": [
+              "E12M003"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2024-06-18: Marco Rossi drafted value-case wording using 'expect' rather than 'guarantee', citing data-readiness dependency, and added a quarterly business review with written report as a RELEX obligation.",
+            "status": "proposed",
+            "sourceIds": [
+              "E12M004"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2024-09-30: Kwame Boateng scoped pilot remediation: 4,214 cohort articles, 1,317 missing case pack quantity (the blocker), 3,105 missing/default lead times, shelf life 48% populated and out of scope for the phase.",
+            "status": "observation",
+            "sourceIds": [
+              "E13M006"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2024-10-28: Priya Nair reported 780 of 1,317 case pack quantities done after four weeks, with two unresponsive suppliers covering about 200 articles.",
+            "status": "observation",
+            "sourceIds": [
+              "E13M005"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2024-12-19: Priya Nair completed all 1,317 case pack quantities, inferring 190 of the final 200 from six months of delivered quantities; she asked that her team's three weeks of December overtime be recorded.",
+            "status": "agreed",
+            "sourceIds": [
+              "E13M003"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2024-12-20: Ana Duarte recorded in the steering report that shelf life remains 48% populated and untouched, correct for the phase, and will become phase two's critical path.",
+            "status": "agreed",
+            "sourceIds": [
+              "E13M002",
+              "E13M001"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-02-05: Lena Fischer decided Sofia Almeida should have go-live access despite fresh not being in the phase, so she can see how it works before phase two.",
+            "status": "agreed",
+            "sourceIds": [
+              "E14M002"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-02-20: Ana Duarte booked go-live training (central team 24 Feb, store users 25-26 Feb) with the 25-store user list still outstanding and needed by Monday to create accounts.",
+            "status": "outstanding",
+            "sourceIds": [
+              "E14M001"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-02-04: Priya Nair supplied seven central-team users with roles (Lena and Priya administrators, Sofia and Jonas category managers, three planners); 25 store users to follow separately.",
+            "status": "observation",
+            "sourceIds": [
+              "E14M004"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-01-22: Lena Fischer signed the UAT sign-off confirming core replenishment testing completed for the 25-store pilot cohort, ambient and dry goods only, explicitly excluding fresh categories and overall programme acceptance; the signed attachment itself is not in the archive, the email documents the confirmation.",
+            "status": "agreed",
+            "sourceIds": [
+              "E15M002",
+              "E15M003"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-01-21: Ana Duarte reported two open UAT defects (case pack and minimum order quantity rounding, same root cause), scheduled for fix that week and not blockers.",
+            "status": "observation",
+            "sourceIds": [
+              "E15M003"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-01-24: Kwame Boateng confirmed both rounding defects fixed and re-tested, with nine of nine UAT scenarios passing.",
+            "status": "agreed",
+            "sourceIds": [
+              "E15M001"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "focusFirstDocument": "emails/16_dc2-hypercare-incidents",
+      "output": {
+        "claims": [
+          {
+            "kind": "observation",
+            "text": "2024-03-20: Lena Fischer states fresh waste is Acme's biggest pain and board-level concern; a 15-20% reduction would make the case self-funding.",
+            "status": "observation",
+            "sourceIds": [
+              "T01U0015",
+              "T01U0016",
+              "T01U0018",
+              "T01U0019"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2024-03-20: Sofia Almeida says shelf life is not properly in any system; the product master field is populated for maybe half the range and unowned.",
+            "status": "observation",
+            "sourceIds": [
+              "T01U0040",
+              "T01U0049",
+              "T01U0050",
+              "T01U0052"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2024-03-20: Sofia Almeida flags surgery scheduled for late in the year; if fresh lands while she is away it happens without anyone who understands the need.",
+            "status": "observation",
+            "sourceIds": [
+              "T01U0116",
+              "T01U0117",
+              "T01U0118",
+              "T01U0122"
+            ]
+          },
+          {
+            "kind": "decision",
+            "text": "2024-03-20: Marco Rossi commits fresh as Phase 2 in the statement of work with a target window rather than leaving it open, in writing.",
+            "status": "agreed",
+            "sourceIds": [
+              "T01U0108",
+              "T01U0109",
+              "T01U0110",
+              "T01U0111"
+            ]
+          },
+          {
+            "kind": "decision",
+            "text": "2024-03-20: Robert Kahn requires ROI inside twelve months; value case to be built on fresh waste plus inventory reduction, baseline agreed before go-live.",
+            "status": "agreed",
+            "sourceIds": [
+              "T01U0146",
+              "T01U0151",
+              "T01U0155",
+              "T01U0156"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2024-04-18: Priya Nair states Acme runs SAP ECC 6.0, not S/4, with no S/4 migration planned; Tomas Lindholm confirms ECC is fine.",
+            "status": "observation",
+            "sourceIds": [
+              "T02U0018",
+              "T02U0023",
+              "T02U0031",
+              "T02U0033"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2024-04-18: Priya Nair: data out of ERP is nightly batch only (02:00 extract); no real-time interface will exist for this project.",
+            "status": "observation",
+            "sourceIds": [
+              "T02U0041",
+              "T02U0045",
+              "T02U0048",
+              "T02U0054"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2024-04-18: Priya Nair: DC-2 runs unsupported middleware, integration fails silently every couple of weeks; budget to upgrade requested three times.",
+            "status": "observation",
+            "sourceIds": [
+              "T02U0066",
+              "T02U0071",
+              "T02U0072",
+              "T02U0082"
+            ]
+          },
+          {
+            "kind": "decision",
+            "text": "2024-04-18: Tomas Lindholm commits to record DC-2 as a named risk and design monitoring around it from day one, assuming failure rather than discovering it.",
+            "status": "agreed",
+            "sourceIds": [
+              "T02U0091",
+              "T02U0092",
+              "T02U0094",
+              "T02U0095"
+            ]
+          },
+          {
+            "kind": "question",
+            "text": "2024-04-18: Tomas Lindholm asks whether remaining shelf life is stored anywhere; Priya Nair says no (total only) and will ask the warehouse team; answer changes the design.",
+            "status": "outstanding",
+            "sourceIds": [
+              "T02U0115",
+              "T02U0118",
+              "T02U0126",
+              "T02U0133"
+            ]
+          },
+          {
+            "kind": "commitment",
+            "text": "2024-04-18: Priya Nair commits to own the master data cleansing workstream; Tomas Lindholm promises the written assessment within two weeks.",
+            "status": "agreed",
+            "sourceIds": [
+              "T02U0139",
+              "T02U0141",
+              "T02U0142",
+              "T02U0145"
+            ]
+          },
+          {
+            "kind": "decision",
+            "text": "2024-06-11: Robert Kahn requires the SOW to state the value case is fresh waste reduction with ROI expected inside twelve months of signature; no guarantee, per Henrik S\u00f8rensen.",
+            "status": "agreed",
+            "sourceIds": [
+              "T03U0033",
+              "T03U0037",
+              "T03U0044",
+              "T03U0047"
+            ]
+          },
+          {
+            "kind": "decision",
+            "text": "2024-06-11: Robert Kahn requires quarterly reviews as an obligation in the SOW; Marco Rossi agrees to put it in.",
+            "status": "agreed",
+            "sourceIds": [
+              "T03U0057",
+              "T03U0059",
+              "T03U0060",
+              "T03U0062"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2024-06-11: Marco Rossi proposes kickoff July 2024, first go-live Q1 2025 for core ambient replenishment at DC-1 plus pilot store group; fresh follows as Phase 2.",
+            "status": "proposed",
+            "sourceIds": [
+              "T03U0081",
+              "T03U0082",
+              "T03U0086",
+              "T03U0093"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2024-07-09 handover: remaining shelf life does not exist as an accessible field (warehouse arrival date not exposed); recorded as phase two dependency needing owner and date.",
+            "status": "observation",
+            "sourceIds": [
+              "T04U0027",
+              "T04U0030",
+              "T04U0036",
+              "T04U0038"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2024-07-09 handover: Sofia Almeida believes the shelf-life-aware ordering requirement is agreed; the SOW only says fresh is Phase 2, which is not the same thing.",
+            "status": "observation",
+            "sourceIds": [
+              "T04U0067",
+              "T04U0069",
+              "T04U0070"
+            ]
+          },
+          {
+            "kind": "decision",
+            "text": "2024-07-15 kickoff: Priya Nair's team owns master data remediation with RELEX support; agreed pre-recording and written up by Ana Duarte.",
+            "status": "agreed",
+            "sourceIds": [
+              "T05U0001",
+              "T05U0003",
+              "T05U0004",
+              "T05U0080"
+            ]
+          },
+          {
+            "kind": "decision",
+            "text": "2024-07-15 kickoff: DC-2 goes on the watch list from day one with monitoring added so failures are loud; Q1 2025 held as core go-live target with master data flagged as explicit dependency.",
+            "status": "agreed",
+            "sourceIds": [
+              "T05U0056",
+              "T05U0059",
+              "T05U0064",
+              "T05U0085"
+            ]
+          },
+          {
+            "kind": "commitment",
+            "text": "2024-07-15 kickoff: Tomas Lindholm to send Nadia Haddad and Kwame Boateng access details (incl. recovery emails) same day; Priya Nair raises tickets, about two weeks.",
+            "status": "agreed",
+            "sourceIds": [
+              "T05U0139",
+              "T05U0141",
+              "T05U0145",
+              "T05U0151"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2024-09-24 workshop: case pack missing on 31% of active articles; shelf life populated on 48%; lead times mostly default sevens; case pack is the critical path for the pilot cohort.",
+            "status": "observation",
+            "sourceIds": [
+              "T06U0014",
+              "T06U0019",
+              "T06U0025",
+              "T06U0028"
+            ]
+          },
+          {
+            "kind": "decision",
+            "text": "2024-09-24: Lena Fischer agrees pilot cohort reduced from 40 to 25 stores (two of three regions cannot support 40 in peak); Ana Duarte to reissue plan and store list request.",
+            "status": "agreed",
+            "sourceIds": [
+              "T06U0068",
+              "T06U0073",
+              "T06U0075",
+              "T06U0089"
+            ]
+          },
+          {
+            "kind": "decision",
+            "text": "2024-09-24: Priya Nair to remove the unexpected operator identifier (OP_ID) column from write-off extracts; noted as an action, a five-minute change.",
+            "status": "agreed",
+            "sourceIds": [
+              "T06U0101",
+              "T06U0104",
+              "T06U0109",
+              "T06U0114"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2024-11-12: Sofia Almeida explains shelf-life threshold: under five days remaining the ordering difference matters, category dependent; to be recorded in workshop output and phase two requirements.",
+            "status": "observation",
+            "sourceIds": [
+              "T07U0038",
+              "T07U0041",
+              "T07U0053",
+              "T07U0059"
+            ]
+          },
+          {
+            "kind": "decision",
+            "text": "2024-11-12: Service levels set to 98/95 (down from 99) for the pilot; daily order/delivery on fast lines, twice weekly below; rounding to case pack where available.",
+            "status": "agreed",
+            "sourceIds": [
+              "T07U0077",
+              "T07U0083",
+              "T07U0086",
+              "T07U0091"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-01-21: Case pack remediation for the cohort (1,300 articles) finished 19 December; lead times untouched (mostly sevens), workaround to derive actuals from receipt history agreed.",
+            "status": "agreed",
+            "sourceIds": [
+              "T08U0003",
+              "T08U0011",
+              "T08U0015",
+              "T08U0018"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-01-21: Shelf life untouched and out of scope; warehouse question still unanswered; Priya Nair stopped chasing as nothing in this phase depends on it; becomes phase two's problem.",
+            "status": "outstanding",
+            "sourceIds": [
+              "T08U0022",
+              "T08U0024",
+              "T08U0026",
+              "T08U0027"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-01-21: UAT: 11 business scenarios run, 9 pass, 2 fail on rounding where case pack and minimum order quantity disagree; fixable that week; Lena Fischer signs off ambient core for 25 stores only.",
+            "status": "agreed",
+            "sourceIds": [
+              "T08U0032",
+              "T08U0034",
+              "T08U0040",
+              "T08U0045"
+            ]
+          },
+          {
+            "kind": "decision",
+            "text": "2025-01-21: Cutover set for 27 February (not the following weekend due to a change freeze), first generated orders the Monday after.",
+            "status": "agreed",
+            "sourceIds": [
+              "T08U0057",
+              "T08U0059",
+              "T08U0060",
+              "T08U0062"
+            ]
+          },
+          {
+            "kind": "question",
+            "text": "2025-01-21: Kwame Boateng on holiday from 10 March for two weeks, ten days after go-live; no named DC-2 cover; Ana Duarte to raise it.",
+            "status": "outstanding",
+            "sourceIds": [
+              "T08U0064",
+              "T08U0068",
+              "T08U0072",
+              "T08U0078"
+            ]
+          },
+          {
+            "kind": "correction",
+            "text": "2025-03-17: Priya Nair distinguishes two DC-2 failure modes: 6 March middleware failure (known April 2024 issue) vs 14 March empty-file silent success; fixes differ, not to be merged in the incident log.",
+            "status": "corrected",
+            "sourceIds": [
+              "E16M003"
+            ]
+          },
+          {
+            "kind": "commitment",
+            "text": "2025-03-17: Priya Nair commits to add a file size check that week so files under 1KB fail loudly; Tomas Lindholm agrees, noting an empty file passing as success should have been caught in design review.",
+            "status": "agreed",
+            "sourceIds": [
+              "E16M002",
+              "E16M003",
+              "E16M001"
+            ]
+          },
+          {
+            "kind": "commitment",
+            "text": "2025-03-14: Ana Duarte commits to a named second person on the DC-2 runbook permanently by end of next week, after Lena Fischer raised the January cover question and monitoring alerted only holidaying Kwame.",
+            "status": "agreed",
+            "sourceIds": [
+              "E16M004",
+              "E16M005"
+            ]
+          },
+          {
+            "kind": "correction",
+            "text": "2025-07-15: Ana Duarte confirms pilot cohort is 25 stores, reduced from 40 in September 2024 with plan reissued; the 40 persists in original kickoff material and a May slide.",
+            "status": "corrected",
+            "sourceIds": [
+              "E17M004",
+              "E17M005",
+              "E17M002"
+            ]
+          },
+          {
+            "kind": "commitment",
+            "text": "2025-07-15: Ana Duarte will add a note to the project folder stating the cohort was reduced to 25 and when, keeping the original material as the record of what was agreed.",
+            "status": "agreed",
+            "sourceIds": [
+              "E17M002",
+              "E17M003"
+            ]
+          },
+          {
+            "kind": "decision",
+            "text": "2025-12-12: Ana Duarte distributes the fresh cutover runbook restricted to the named group, containing on-call mobiles for Kwame, Priya and Lena, per Priya's February request; Lena Fischer forwards operational sections to four regional managers without the contact page.",
+            "status": "agreed",
+            "sourceIds": [
+              "E18M007",
+              "E18M006",
+              "E18M005"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-01-21: Nadia Haddad forwarded the December fresh cutover runbook to Meridian (Ivan, Ruth) as a bakery template, unaware of two versions; the version sent included the contact page with personal mobile numbers.",
+            "status": "observation",
+            "sourceIds": [
+              "E18M004",
+              "E18M002",
+              "E18M003",
+              "E18M001"
+            ]
+          },
+          {
+            "kind": "commitment",
+            "text": "2026-01-21: Priya Nair requests the consultancy delete her mobile number received via the runbook and confirm when done; outstanding in the record.",
+            "status": "outstanding",
+            "sourceIds": [
+              "E18M001"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-02-24: Meridian (Ivan Petrov) requests read access to the test environment for two people for the bakery build; routing goes through Priya Nair as Acme's environment owner.",
+            "status": "observation",
+            "sourceIds": [
+              "E19M007",
+              "E19M006"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-02-26: Nadia Haddad: no category-level restriction exists in current configuration; options are full test read access, a separate environment, or prepared extracts.",
+            "status": "observation",
+            "sourceIds": [
+              "E19M004"
+            ]
+          },
+          {
+            "kind": "decision",
+            "text": "2026-03-02: Priya Nair decides Meridian works from extracts rather than direct read access, citing data protection officer constraints; Ivan Petrov accepts the approach.",
+            "status": "agreed",
+            "sourceIds": [
+              "E19M002",
+              "E19M001"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-06-26: Marco Rossi provides Robert Kahn indicative chain-wide numbers: three fresh categories, 340 stores, ~420k annual licence plus ~260k one-off implementation.",
+            "status": "proposed",
+            "sourceIds": [
+              "E20M004"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-06-26: Marco Rossi attributes the missed twelve-month ROI expectation chiefly to the fresh data field identified April 2024 and never obtained; September 2025 workaround works well on fast movers, poorly on slow movers with manual compensation.",
+            "status": "observation",
+            "sourceIds": [
+              "E20M004"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-06-29: Lena Fischer identifies Nils Ackermann (logistics IT) as owner of the warehouse system; Priya has asked him twice, 2024 and 2025; Robert Kahn to ask him.",
+            "status": "observation",
+            "sourceIds": [
+              "E20M002",
+              "E20M003",
+              "E20M001"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-04-06 weekly: Q1 fresh waste 3.4% against a 4.1% baseline; timeline on plan; bakery build continues.",
+            "status": "observation",
+            "sourceIds": [
+              "R01M001"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-03-09 weekly: bakery workstream started; interface points agreed; Q1 measurement approach drafted; nightly article extract completed without errors.",
+            "status": "observation",
+            "sourceIds": [
+              "R01M002"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-02-09 weekly: DC-2 feed failed twice in January 2026, less often than before go-live but still failing; bakery scoping slower than planned.",
+            "status": "observation",
+            "sourceIds": [
+              "R01M003"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-12-22 weekly: fresh go-live for produce, dairy and chilled ready meals completed 15 December (Phase 5); first week clean; monitoring over holiday period.",
+            "status": "observation",
+            "sourceIds": [
+              "R01M005"
+            ]
+          },
+          {
+            "kind": "decision",
+            "text": "2025-11-24 weekly: go/no-go held; produce, dairy and chilled approved; bakery descoped; OP_ID field exclusion agreed and confirmed in writing; plan reissued on two-delivery basis, go-live 15 December.",
+            "status": "agreed",
+            "sourceIds": [
+              "R01M007"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-11-10 weekly: UAT results compiled; recommendation to descope bakery, changing Phase 2 shape; four weeks behind; go/no-go the following week.",
+            "status": "observation",
+            "sourceIds": [
+              "R01M008"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-10-27 weekly: bakery accuracy poor, assessed as mostly bake-off, likely a scope change rather than a defect; four weeks behind.",
+            "status": "observation",
+            "sourceIds": [
+              "R01M009"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-10-13 weekly: Sofia Almeida unavailable from 13 October to mid November, the only source of fresh category knowledge, queuing UAT findings needing her judgement.",
+            "status": "observation",
+            "sourceIds": [
+              "R01M010"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-09-29 weekly: still six weeks behind; recovery depends on UAT throughput over October; defect fixed and verified; solution consultant onboarded.",
+            "status": "observation",
+            "sourceIds": [
+              "R01M011"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-09-15 weekly: fresh Phase 2 six weeks behind due to Acme UAT resourcing and a calculation defect producing negative quantities in test; escalation call held; approximation approach agreed internally; Nadia confirmed to drive UAT.",
+            "status": "observation",
+            "sourceIds": [
+              "R01M012"
+            ]
+          },
+          {
+            "kind": "decision",
+            "text": "2025-09-01 weekly: shelf life unresolved; proceeding on an approximation for remaining shelf life so the build is not blocked, unless overridden that week; escalation agenda planned.",
+            "status": "agreed",
+            "sourceIds": [
+              "R01M013"
+            ]
+          },
+          {
+            "kind": "question",
+            "text": "2025-08-18 weekly: remaining shelf life question repeated (is it stored anywhere; is goods receipt date available outside the WMS); four weeks open, approaching workaround point; escalation to steering planned.",
+            "status": "outstanding",
+            "sourceIds": [
+              "R01M014"
+            ]
+          },
+          {
+            "kind": "question",
+            "text": "2025-08-04 weekly: MARA-MHDHB appears to be total rather than remaining shelf life; question open; Acme warehouse team unavailable; two weeks of float used.",
+            "status": "outstanding",
+            "sourceIds": [
+              "R01M015"
+            ]
+          },
+          {
+            "kind": "question",
+            "text": "2025-07-21 weekly: shelf life field mapping unresolved for two weeks, blocking ordering logic; MARA-MHDHB appears total not remaining; second chase planned.",
+            "status": "outstanding",
+            "sourceIds": [
+              "R01M016"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-07-07 weekly: shelf life request sent to Priya; fresh category structure loaded for produce and dairy; on track.",
+            "status": "observation",
+            "sourceIds": [
+              "R01M017"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-06-30 weekly: fresh Phase 2 kick-off complete; scope confirmed against June steering; shelf life field requested from Acme IT.",
+            "status": "observation",
+            "sourceIds": [
+              "R01M018"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-03 steering: first full quarter fresh live; waste down from 4.1% to 3.4%; ~118 tonnes fresh waste and ~296 tonnes CO2e avoided across 25 stores; figure not to be scaled to full estate without discussion; twelve-month figure framed as anticipation, not commitment.",
+            "status": "observation",
+            "sourceIds": [
+              "R02M001"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-11-28 steering: go/no-go held 17 November; produce, dairy and chilled approved; bakery descoped to separate workstream starting March 2026; two deliveries rather than three; three-wave plans superseded.",
+            "status": "agreed",
+            "sourceIds": [
+              "R02M003"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-10-31 steering: two of six weeks recovered; go/no-go on track for 15 November; bakery descope confirmation requested in principle from Acme.",
+            "status": "observation",
+            "sourceIds": [
+              "R02M004"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-09-30 steering: fresh Phase 2 six weeks behind; defect fixed; RELEX added a solution consultant for two weeks at own cost; go/no-go set for 15 November; UAT capacity requested from Acme.",
+            "status": "observation",
+            "sourceIds": [
+              "R02M005"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-08-29 steering: shelf life data dependency with Acme IT open five weeks; field does not exist in required form; workaround prepared; December target unchanged at that stage.",
+            "status": "observation",
+            "sourceIds": [
+              "R02M006"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-07-31 steering: fresh Phase 2 configuration underway; one open dependency with Acme IT on a data field, not yet material; December target unchanged.",
+            "status": "observation",
+            "sourceIds": [
+              "R02M007"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "focusFirstDocument": "transcripts/09_2025-02-12_INTERNAL-account-review",
+      "output": {
+        "claims": [
+          {
+            "kind": "observation",
+            "text": "2025-02-12 internal review: contract signed at 980k annual, 14% off list with 18% floor, leaving headroom if Phase 2 needs sweetening; agreed not to sweeten yet.",
+            "status": "agreed",
+            "sourceIds": [
+              "T09U0006",
+              "T09U0007",
+              "T09U0008"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-02-12: Lena Fischer identified as unambiguous champion; losing her means losing the account. Robert Kahn (CFO) cares about fresh waste and has repeatedly said twelve months for ROI.",
+            "status": "observation",
+            "sourceIds": [
+              "T09U0010",
+              "T09U0012"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-02-12: twelve-month ROI clock from signature ends roughly end of 2025; Phase 2 not yet scoped, so timeline is tight. Renewal is mid-2027.",
+            "status": "observation",
+            "sourceIds": [
+              "T09U0018",
+              "T09U0041"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-02-12: Priya Nair (IT) is neither for nor against; will do what is agreed and be straight, but will not push uphill on RELEX's behalf.",
+            "status": "observation",
+            "sourceIds": [
+              "T09U0022",
+              "T09U0025"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-02-12: Sofia Almeida is single point of knowledge on fresh, covering two roles with no political weight; she flagged this herself in the demo. Action agreed to record her as single point of failure.",
+            "status": "agreed",
+            "sourceIds": [
+              "T09U0028",
+              "T09U0049",
+              "T09U0051"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-02-12: nobody circling core, but a competitor is circling the fresh module specifically; Lena mentioned Acme had been contacted but not by whom.",
+            "status": "observation",
+            "sourceIds": [
+              "T09U0037"
+            ]
+          },
+          {
+            "kind": "commitment",
+            "text": "2025-02-12: Marco to get Phase 2 scoped before the ninety-day review so there is something to show Kahn; DC-2 to go on the risk register with a named owner.",
+            "status": "agreed",
+            "sourceIds": [
+              "T09U0049"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-02-27 cutover call: go-live is the 25-store pilot cohort (dry goods, DC-1); fresh not in scope, so shelf-life field mostly empty and flagged as a risk-log item.",
+            "status": "agreed",
+            "sourceIds": [
+              "T10U0017",
+              "T10U0020",
+              "T10U0021",
+              "T10U0050"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-02-27: DC-2 feed ran eleven consecutive nights in test but had failed silently twice before; Kwame warns production failures may go unnoticed until morning orders look wrong.",
+            "status": "observation",
+            "sourceIds": [
+              "T10U0027",
+              "T10U0028",
+              "T10U0035",
+              "T10U0040"
+            ]
+          },
+          {
+            "kind": "commitment",
+            "text": "2025-02-27: Lena committed to putting a non-technical person from her team on the phone Monday after go-live to catch store-manager issues; Ana acknowledged she had no answer prepared for that gap.",
+            "status": "agreed",
+            "sourceIds": [
+              "T10U0088",
+              "T10U0092",
+              "T10U0096"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-02-27: Kwame on holiday from 10 March for two weeks with no named cover; Ana to raise resourcing and act as escalation path, which Priya notes means slower response.",
+            "status": "observation",
+            "sourceIds": [
+              "T10U0103",
+              "T10U0106",
+              "T10U0112",
+              "T10U0125",
+              "T10U0128"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-03-18 hypercare: DC-2 feed failed twice (6th and 14th March, both DC-2); 14th failure gave planners stale stock, ~40 lines over-ordered, and two store managers told their regional manager the system does not work.",
+            "status": "observation",
+            "sourceIds": [
+              "T11U0011",
+              "T11U0031",
+              "T11U0035"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-03-18: two distinct failure modes identified \u2014 6th was middleware, 14th was an empty file from an unfinished upstream export; Ana directed both be kept distinct in the incident log.",
+            "status": "agreed",
+            "sourceIds": [
+              "T11U0052",
+              "T11U0055",
+              "T11U0072"
+            ]
+          },
+          {
+            "kind": "decision",
+            "text": "2025-03-18: hypercare cadence agreed at twice weekly for three more weeks then weekly, conditional on the cover problem being fixed.",
+            "status": "agreed",
+            "sourceIds": [
+              "T11U0084",
+              "T11U0085",
+              "T11U0089"
+            ]
+          },
+          {
+            "kind": "correction",
+            "text": "2025-03-18: Tomas withdrew his cutover recommendation that a file-size check would catch this failure class; both files were expected size, so a content-level check is needed instead (size check retained meanwhile).",
+            "status": "corrected",
+            "sourceIds": [
+              "T11U0113",
+              "T11U0115",
+              "T11U0117",
+              "T11U0123",
+              "T11U0125"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-03-18: planners in two pilot stores resumed their own spreadsheets starting 15 March, the day after the stale-data incident; Tomas frames it as a trust event, not a numbers problem.",
+            "status": "observation",
+            "sourceIds": [
+              "T11U0094",
+              "T11U0103",
+              "T11U0106"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-05-22 90-day review: forecast accuracy +6.2pts, ambient inventory -9%, order automation 91% on the 25-store pilot; Kahn objected that these are ambient numbers, not the fresh waste case he approved.",
+            "status": "observation",
+            "sourceIds": [
+              "T12U0004",
+              "T12U0008",
+              "T12U0046"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-05-22: DC-2 nightly feed failing two-three times a week; Priya states middleware was flagged at kickoff and monitoring works but knowing is not fixing \u2014 a permanent fix is needed, not nightly restarts.",
+            "status": "observation",
+            "sourceIds": [
+              "T12U0068",
+              "T12U0074",
+              "T12U0077",
+              "T12U0079"
+            ]
+          },
+          {
+            "kind": "commitment",
+            "text": "2025-05-22: Marco's actions \u2014 joint engineering session on DC-2 with dated permanent fix plan, accelerate Phase 2 scoping with summer UAT, formalise QBR cadence, and reframe ROI reporting so fresh waste is the headline once Phase 2 is live.",
+            "status": "agreed",
+            "sourceIds": [
+              "T12U0111",
+              "T12U0112",
+              "T12U0114"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-06-10: service transition \u2014 Charlotte Meyer is operational contact from 1 July; Ana stays on Phase 2. Boundary agreed: live system incidents/DC-2 feed/monitoring are Charlotte's; permanent DC-2 fix is a change (Ana's), dated 15 September gated on Acme's quarterly change window.",
+            "status": "agreed",
+            "sourceIds": [
+              "T13U0010",
+              "T13U0013",
+              "T13U0031",
+              "T13U0037",
+              "T13U0040"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-06-10: Sofia Almeida confirmed as only person at Acme who understands fresh; noted in three risk registers in slightly different words, which Charlotte says means it is effectively in none.",
+            "status": "observation",
+            "sourceIds": [
+              "T13U0068",
+              "T13U0073",
+              "T13U0074"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-06-10: three sessions have no transcript \u2014 the two February interface workshops and planner training; recording depends on someone in the room saving it. Handover to state what is missing rather than claim completeness.",
+            "status": "agreed",
+            "sourceIds": [
+              "T13U0086",
+              "T13U0088",
+              "T13U0092",
+              "T13U0096"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-06-24 steering: core live four months, May numbers hold (automation 91% stable since April); DC-2 still fails ~twice weekly, joint engineering session happened 4 June producing a September-dated plan requiring middleware upgrade in Acme's quarterly change window.",
+            "status": "observation",
+            "sourceIds": [
+              "T14U0009",
+              "T14U0010",
+              "T14U0014",
+              "T14U0020",
+              "T14U0024"
+            ]
+          },
+          {
+            "kind": "commitment",
+            "text": "2025-06-24: Marco committed to delivering the Phase 2 fresh scoping proposal mid-July covering categories, order and dependencies; Kahn insisted the July proposal must contain a date.",
+            "status": "agreed",
+            "sourceIds": [
+              "T14U0036",
+              "T14U0039",
+              "T14U0119",
+              "T14U0120"
+            ]
+          },
+          {
+            "kind": "commitment",
+            "text": "2025-06-24: Ana took action to agree the fresh waste baseline in writing before fresh go-live; Kahn insisted baseline be agreed pre-go-live, not after.",
+            "status": "agreed",
+            "sourceIds": [
+              "T14U0135",
+              "T14U0138",
+              "T14U0141",
+              "T14U0147"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-09-12 escalation: fresh Phase 2 ~6 weeks behind \u2014 UAT resourcing shortfall (Acme side, Lena accepted and committed to add capacity) plus a calculation defect producing negative quantities in the fresh allocation module (RELEX side, fix in days).",
+            "status": "agreed",
+            "sourceIds": [
+              "T15U0002",
+              "T15U0013",
+              "T15U0015",
+              "T15U0025",
+              "T15U0027",
+              "T15U0030"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-09-12: Sofia stated on the record she is still doing fresh ordering by hand in a spreadsheet; a two-month email thread about her categories ran without her included, and she re-answered a shelf-life questionnaire she had already answered in the March 2024 demo.",
+            "status": "observation",
+            "sourceIds": [
+              "T15U0036",
+              "T15U0040",
+              "T15U0056",
+              "T15U0062"
+            ]
+          },
+          {
+            "kind": "decision",
+            "text": "2025-09-12: Marco proposed and Lena preferred \u2014 fix defect immediately, RELEX to drive fresh UAT at RELEX cost, and hold a go/no-go on 15 November rather than let dates slide; DC-2 permanent fix continues at reduced pace as same engineers are on the defect.",
+            "status": "agreed",
+            "sourceIds": [
+              "T15U0104",
+              "T15U0106",
+              "T15U0110",
+              "T15U0112",
+              "T15U0126",
+              "T15U0129"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-10-09 UAT cover briefing: Sofia out ~6 weeks from Monday with Jonas covering; agreed Nadia takes configuration questions, Jonas takes documented items, and anything else waits or goes to Sofia \u2014 reducing the blocked list to maybe a third.",
+            "status": "agreed",
+            "sourceIds": [
+              "T16U0001",
+              "T16U0017",
+              "T16U0031",
+              "T16U0067",
+              "T16U0072",
+              "T16U0073"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-10-09: chilled ready meals promotion cycle runs on a four-week rhythm set in 2019 and never documented; Sofia agreed to write down the rhythm (not the exceptions) and send to all three, since sending to one person means it is gone by December.",
+            "status": "agreed",
+            "sourceIds": [
+              "T16U0080",
+              "T16U0082",
+              "T16U0098",
+              "T16U0100",
+              "T16U0108"
+            ]
+          },
+          {
+            "kind": "decision",
+            "text": "2025-11-17 go/no-go: defect fixed and verified; UAT ran nine working days on four fresh categories. Lena decided go-live on produce, dairy and chilled ready meals; bakery descoped to a separate later piece as it is largely in-store production, not an ordering problem.",
+            "status": "agreed",
+            "sourceIds": [
+              "T17U0023",
+              "T17U0025",
+              "T17U0032",
+              "T17U0038",
+              "T17U0042",
+              "T17U0047"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-11-17: Sofia's surgery detail found in handover doc Acme-fresh-handover-v3 page four; she asked for removal, keeping only that she is sole person knowing the categories. Marco committed to own finding other occurrences; Lena wanted it followed up properly.",
+            "status": "agreed",
+            "sourceIds": [
+              "T17U0057",
+              "T17U0060",
+              "T17U0064",
+              "T17U0077",
+              "T17U0078",
+              "T17U0096",
+              "T17U0098"
+            ]
+          },
+          {
+            "kind": "decision",
+            "text": "2025-11-17: Priya raised that waste write-off records carry operator ID (OP_ID), identifying who discarded what per person/store/day; agreed to drop the field at the extract, confirmed in writing to Priya copying Lena \u2014 a condition, not a courtesy.",
+            "status": "agreed",
+            "sourceIds": [
+              "T17U0103",
+              "T17U0104",
+              "T17U0136",
+              "T17U0139",
+              "T17U0141",
+              "T17U0145",
+              "T17U0150"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-12-11 cutover: fresh go-live Monday 15 Dec for produce/dairy/chilled; shelf-life runs on an approximation (total shelf life minus average warehouse days by article group), possibly two days optimistic on the slowest tenth; warehouse data first requested April 2024 remains unavailable.",
+            "status": "observation",
+            "sourceIds": [
+              "T18U0009",
+              "T18U0012",
+              "T18U0018",
+              "T18U0024",
+              "T18U0026"
+            ]
+          },
+          {
+            "kind": "commitment",
+            "text": "2025-12-11: Sofia agreed to log her manual overrides for six weeks so the model can improve, then decide whether to continue; she remains the rollback plan (manual fresh ordering), as she has been for two years.",
+            "status": "agreed",
+            "sourceIds": [
+              "T18U0032",
+              "T18U0036",
+              "T18U0041",
+              "T18U0076",
+              "T18U0080"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-12-11: fresh master data loaded, shelf-life populated 61% for the three in-scope categories (up from 48% after Priya's team's October pass); DC-2 has had four loud failures since March but no silent ones since the file-size check was added.",
+            "status": "observation",
+            "sourceIds": [
+              "T18U0050",
+              "T18U0052",
+              "T18U0062",
+              "T18U0064"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2025-12-11: operator identifier field excluded at the extract from 21 November, confirmed in writing to Priya \u2014 closing the November condition.",
+            "status": "agreed",
+            "sourceIds": [
+              "T18U0067",
+              "T18U0068",
+              "T18U0069"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-01-28 bakery scoping (Meridian present): ~60% of bakery is bake-off (production plan, not an order \u2014 Sofia's point from the first March 2024 meeting); Meridian to consume a RELEX forecast and own the production plan; RELEX capacity from March; Nadia to define interface points by mid-February.",
+            "status": "agreed",
+            "sourceIds": [
+              "T19U0015",
+              "T19U0016",
+              "T19U0022",
+              "T19U0049",
+              "T19U0050",
+              "T19U0117",
+              "T19U0120",
+              "T19U0126"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-01-28: Lena gave Meridian the honest December go-live picture \u2014 produce and dairy working, DC-2 feed still fails roughly once a fortnight and planners stop trusting numbers for a day or two after; build assuming the feed is imperfect. Incident log to Lena for onward sharing at her discretion after content check.",
+            "status": "agreed",
+            "sourceIds": [
+              "T19U0079",
+              "T19U0084",
+              "T19U0091",
+              "T19U0093",
+              "T19U0095",
+              "T19U0122",
+              "T19U0124"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-03-17 bakery design: agreed boundary \u2014 RELEX produces day-level forecast plus fixed intraday profile (not a true intraday forecast); Meridian consumes it. If the shape moves the profile is wrong until re-derived; who re-derives it left on the open items list with no owner.",
+            "status": "agreed",
+            "sourceIds": [
+              "T20U0049",
+              "T20U0052",
+              "T20U0068",
+              "T20U0084",
+              "T20U0086",
+              "T20U0093",
+              "T20U0095"
+            ]
+          },
+          {
+            "kind": "commitment",
+            "text": "2026-03-17: intraday sales history sits in the till system, not SAP, owned by a different team; Priya committed to open that conversation this month rather than in May \u2014 flagged as the dependency that will bite otherwise.",
+            "status": "agreed",
+            "sourceIds": [
+              "T20U0098",
+              "T20U0102",
+              "T20U0106",
+              "T20U0109",
+              "T20U0111",
+              "T20U0113"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-04-09 DPO review (Katarina Voss): hosting is EU West Europe and named in the agreement; sub-processor count is now five (a monitoring/observability provider added), notification status unknown \u2014 first finding; Marco to come back within a week in writing.",
+            "status": "observation",
+            "sourceIds": [
+              "T21U0006",
+              "T21U0009",
+              "T21U0014",
+              "T21U0016",
+              "T21U0022",
+              "T21U0023",
+              "T21U0030"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-04-09: meeting recordings/transcripts on by default on both tenants going back two years with no retention period set (indefinite retention by default); example cited: Elin Bergqvist's family court date mentioned in an 11 September workshop recording she does not know exists.",
+            "status": "observation",
+            "sourceIds": [
+              "T21U0043",
+              "T21U0047",
+              "T21U0050",
+              "T21U0055",
+              "T21U0065",
+              "T21U0074",
+              "T21U0079",
+              "T21U0084"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-04-09: November erasure request (health reference) removed only from notes known about; Marco committed to finding the others and had not closed it by April. Katarina set four written actions: stated retention period, written answer on fifth sub-processor, confirmation the November request is fully closed with data locations, and a forward position on recordings.",
+            "status": "observation",
+            "sourceIds": [
+              "T21U0088",
+              "T21U0091",
+              "T21U0093",
+              "T21U0107",
+              "T21U0110",
+              "T21U0112"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-04-09: Katarina flagged that describing someone as 'the fresh category manager with sole knowledge' identifies exactly one person even name-removed \u2014 an unseen third-party competence assessment of an individual; Marco acknowledged. She also noted the agreed twelve-month recording retention has no owner and no mechanism (four teams, different shapes, first cannot carry a date).",
+            "status": "observation",
+            "sourceIds": [
+              "T21U0124",
+              "T21U0134",
+              "T21U0136",
+              "T21U0140",
+              "T21U0142",
+              "T21U0144",
+              "T21U0152",
+              "T21U0153",
+              "T21U0155",
+              "T21U0160",
+              "T21U0162",
+              "T21U0163"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-06-16 QBR: six months live on the 25-store cohort; fresh waste moved from 4.1% to 3.2% against a 2.8% target (~240 tonnes avoided, ~600 tCO2e); Ana again cautioned against scaling to the estate as the 25 stores are not a random sample; chain-wide rollout not yet scoped.",
+            "status": "observation",
+            "sourceIds": [
+              "T22U0005",
+              "T22U0006",
+              "T22U0013",
+              "T22U0019",
+              "T22U0021",
+              "T22U0030",
+              "T22U0037"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-06-16: on the twelve-month ROI question asked since March 2024, Marco confirmed signature was July 2024 and fresh went live December 2025, so on that reading the answer is no; he declined to argue for a fresh-go-live clock start (which would land December 2026).",
+            "status": "observation",
+            "sourceIds": [
+              "T22U0041",
+              "T22U0043",
+              "T22U0044",
+              "T22U0045",
+              "T22U0049",
+              "T22U0051"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-06-16: planners trust the system now (two stores off spreadsheets after four months); only Sofia still works manually \u2014 about a day and a half of her five-day week on slow-moving fresh lines \u2014 because the warehouse data field first requested April 2024 is still unsolved; Kahn asked to be sent the ask.",
+            "status": "observation",
+            "sourceIds": [
+              "T22U0068",
+              "T22U0070",
+              "T22U0079",
+              "T22U0084",
+              "T22U0086",
+              "T22U0089",
+              "T22U0091"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-06-16: Sofia's November erasure request still not fully closed (three of four locations done, fourth is a document version) \u2014 seven months open, Katarina has it as an open action; Kahn directed it be closed.",
+            "status": "observation",
+            "sourceIds": [
+              "T22U0108",
+              "T22U0111",
+              "T22U0113",
+              "T22U0117",
+              "T22U0125",
+              "T22U0127"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-06-16: Nadia reported (acting on Sofia's April request) that extract totals do not reconcile with till numbers for January\u2013March \u2014 extract is lower, not a rounding difference; the 3.4% figure reported to the board in April derives from those totals; cause unknown, team to come back.",
+            "status": "observation",
+            "sourceIds": [
+              "T22U0129",
+              "T22U0130",
+              "T22U0132",
+              "T22U0135",
+              "T22U0139",
+              "T22U0141",
+              "T22U0142",
+              "T22U0146",
+              "T22U0147"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-07-02 internal renewal/resourcing: renewal mid-2027; four DPO actions closed except retention policy (with legal); bakery expansion conversation ~200 additional via Meridian subcontract/partnership if it lands; Kahn effectively stopped counting the ROI clock after good Q1 waste numbers.",
+            "status": "observation",
+            "sourceIds": [
+              "T23U0001",
+              "T23U0003",
+              "T23U0006",
+              "T23U0009"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-07-02: Nadia Haddad (employee four, not Nadia \u00d6berg) is the only person who [knows the account] after eight months, has raised workload twice in one-to-ones and asked about the internal move process \u2014 a flight risk creating an 'Acme-shaped Sofia problem'; she is below band midpoint.",
+            "status": "observation",
+            "sourceIds": [
+              "T23U0013",
+              "T23U0016",
+              "T23U0018",
+              "T23U0020",
+              "T23U0026"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-07-02: two delivery team members raised the on-call rota through their union representative via the works council, not through management; agreed not to chase it and to keep it out of the account plan entirely as it is employment relations, not Acme-related.",
+            "status": "agreed",
+            "sourceIds": [
+              "T23U0029",
+              "T23U0033",
+              "T23U0034",
+              "T23U0035"
+            ]
+          },
+          {
+            "kind": "observation",
+            "text": "2026-07-02: Katarina's April anonymisation point applies internally too \u2014 risk registers and the account plan describe identifiable individuals (e.g. 'programme owner... thinly resourced') whose 'why' is medical or personal; tension noted between useful single-point-of-failure records and identifiability; to be taken to an internal owner (none obvious).",
+            "status": "observation",
+            "sourceIds": [
+              "T23U0038",
+              "T23U0041",
+              "T23U0043",
+              "T23U0046",
+              "T23U0047",
+              "T23U0048"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

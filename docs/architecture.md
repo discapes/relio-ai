@@ -8,4 +8,8 @@ The model client uses the Helsinki endpoint with bounded concurrency. Structured
 
 The UI uses server loads and form actions. POST actions: ask(question), refreshBrief, preference(text,id?), forgetPreference(id), promote(text,level), sendMail(threadId?,subject,to,cc,body,eventId), retryMail(id), guidance(personId), share(question), erase(personId), reset. Persona changes use /session; source views use /source/[id] and are checked against the current Context. All UI actions return {error? ,answer? ,success?}; successful mutations invalidate the page data.
 
-Workers: memory owns src/lib/server/memory.ts and its tests. UI owns Svelte components/routes .svelte files and app.css. Lead owns model.ts, workflows.ts, server routes/actions, types and integration. Memory exports context(workspaceId,personaId,level?), personas, sources(ctx), claims(ctx), people(ctx), getSource(ctx,id), addSource(ctx,source), erasePerson(ctx,id), epoch(workspaceId), ensureWorkspace(id), db(). Exact signatures may extend with tests and integration.
+Memory storage exports context, scoped source/claim/person reads, source ingestion, erasure, epoch checks and isolated reset. Workflow functions compose these operations with personal preferences, durable jobs, inference and publication guards. The implementation lead owns integration; specialist work has been handed back after testing.
+
+Submission documents use an allowlist. Their source-bearing baseline views and downloads require Acme membership, L3 and epoch zero. They use no-store responses and current-context polling. Original source fixtures are not exposed as file routes.
+
+Production runs an immutable build selected by an atomic release symlink. SQLite state and reviewed documents remain in the project directory, outside release bundles.

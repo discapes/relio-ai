@@ -1,0 +1,8 @@
+{
+  "question": 6,
+  "durationMs": 93520,
+  "status": "failed",
+  "workspaceId": "practice_p6_1789861256692",
+  "generatedAt": "2026-09-19T23:40:56.764Z",
+  "error": "Inference returned no answer. Retry the task."
+}

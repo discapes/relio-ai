@@ -1,0 +1,58 @@
+{
+  "question": 1,
+  "durationMs": 62577,
+  "status": "generated",
+  "workspaceId": "practice_p1_1789862407845",
+  "generatedAt": "2026-09-20T00:00:07.910Z",
+  "answer": {
+    "id": "0cee6b79-265b-4851-b809-5e46bee5e683",
+    "text": "In September 2024, the master-data assessment reported the remediation scope for the pilot cohort as agreed in a workshop: 4,214 articles in the cohort, 1,317 missing case pack quantity, 3,105 missing or default supplier lead, and shelf life populated on 48% of articles. The assessment also recorded that case pack was the blocker, that lead times could be worked around by deriving actuals from receipt history, and that shelf life was out of scope for that phase. [1]\n\nThese are assessment findings and scope decisions, not remediation completion. The remediation of the 1,317 case pack articles was only reported as done in December 2024, when Priya Nair confirmed completion, noting that two unresponsive suppliers were resolved by measuring actual delivered quantities over six months and inferring the case pack, which was right for 190 of the 200 articles. [2]\n\nSeparately, the pilot store group was reduced to 25 stores in September 2024, with the plan updated at the time. [3] [4]",
+    "citations": [
+      {
+        "sourceId": "emails/13_master-data-remediation#message-006",
+        "quote": "Priya,\n\nAs agreed in the workshop, the remediation scope for the pilot cohort:\n\n  Articles in cohort                 4,214\n  Missing case pack quantity         1,317\n  Missing or default supplier lead   3,105\n  Shelf life populated               48%\n\nCase pack is the blocker. Lead times we can work around by deriving actuals from receipt\nhistory. Shelf life is out of scope for this phase.\n\nFile attached with the 1,317.",
+        "title": "Master data remediation - progress",
+        "date": "2024-09-30T10:05:00",
+        "author": "Kwame Boateng",
+        "position": "Message 6"
+      },
+      {
+        "sourceId": "emails/13_master-data-remediation#message-003",
+        "quote": "Done. All 1,317. The two unresponsive suppliers we resolved by measuring actual delivered\nquantities over six months and inferring the case pack, which is not ideal but it is\nright for 190 of the 200.\n\nI would like it recorded somewhere that this took my team three weeks of overtime in\nDecember.",
+        "title": "Re: Master data remediation - progress",
+        "date": "2024-12-19T18:15:00",
+        "author": "Priya Nair",
+        "position": "Message 3"
+      },
+      {
+        "sourceId": "emails/09_pilot-store-group#message-001",
+        "quote": "25. The pilot was reduced in September 2024 and our plan was updated at the time. My\nnote below was wrong and I will correct it in the deck before Thursday.",
+        "title": "Pilot store group - confirmation",
+        "date": "2025-05-21T08:30:00",
+        "author": "Marco Rossi",
+        "position": "Message 1"
+      },
+      {
+        "sourceId": "emails/09_pilot-store-group#message-004",
+        "quote": "I was not told but 25 is fine. I will update the plan.\n\nBest regards,",
+        "title": "Re: Pilot store group - confirmation",
+        "date": "2024-09-03T15:58:00",
+        "author": "Ana Duarte",
+        "position": "Message 4"
+      }
+    ],
+    "createdAt": "2026-09-20T00:01:10.484Z",
+    "kind": "evaluation",
+    "level": 3,
+    "question": "What did the master-data assessment report as complete in September 2024? Give every figure and the document each comes from. Distinguish assessment findings from remediation completion.",
+    "trace": [
+      "Read 2974 permitted source records at L3.",
+      "Verified E13M006 (2024-09-30) for the workshop-agreed scope figures: 4,214 / 1,317 / 3,105 / 48% and the blocker/workaround/out-of-scope findings.",
+      "Verified E13M003 (2024-12-19) for the December 2024 completion of the 1,317 case pack articles, distinguishing it from the September assessment.",
+      "Verified E09M001 and E09M004 for the September 2024 pilot reduction to 25 stores and plan update.",
+      "Confirmed no September 2024 record reports remediation as complete; E13M005 (October) shows 780 of 1,317 done, confirming remediation was still in progress after the assessment.",
+      "Verified 4 quoted passages against runtime sources."
+    ]
+  },
+  "prompt": "What did the master-data assessment report as complete in September 2024? Give every figure and the document each comes from. Distinguish assessment findings from remediation completion."
+}

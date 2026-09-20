@@ -1,0 +1,130 @@
+{
+  "question": 6,
+  "durationMs": 41007,
+  "status": "generated",
+  "workspaceId": "practice_p6_1789862054531",
+  "generatedAt": "2026-09-19T23:54:14.597Z",
+  "answer": {
+    "id": "12fbb8fd-85e4-45bd-a975-b7177ca6c6e5",
+    "text": "No — bakery is not inside the fresh workstream now. It was removed from the fresh Phase 2 scope at the 17 November 2025 go/no-go and set up as its own separate workstream, which started in March 2026. [1] [2] [3] [4] [5]\n\nMarch 2024 – June 2025: bakery was inside fresh. At the July 2024 implementation kickoff, Lena Fischer listed the fresh scope as \"Produce, dairy, bakery, the chilled ready meals\" [T05U0116], and Marco Rossi's June 2025 sequencing proposal treated bakery as the third of three fresh waves [E03M008]. [6] [7]\n\nAugust–October 2025: bakery still in fresh, but failing. UAT ran on all four fresh categories, and the weekly updates flagged \"Bakery accuracy poor. Likely a scope change rather than a defect\" [R01M009], with the October steering report expecting to recommend descoping it [R02M004]. [8] [9]\n\n17 November 2025: bakery removed from fresh. At the go/no-go, Sofia Almeida explained bakery was poor because roughly half is baked in store and \"is not really an ordering problem\" [T17U0032][T17U0033], and Lena Fischer decided: \"Go live on produce, dairy and chilled ready meals. Bakery comes later as its own thing\" [T17U0047][T17U0049]. The weekly update recorded \"Bakery descoped\" [R01M007], and the November steering report states \"Bakery descoped to a separate workstream starting March 2026\" [R02M003]. [10] [11] [1] [2] [3] [4]\n\n2026: bakery runs as its own workstream. Scoping with Meridian began in January [R02M002], the workstream started in March [R01M002], and the design workshop in March 2026 treats it as a separate build where Meridian owns the production plan and RELEX owns the demand signal [T20U0003]. [12] [5] [13]\n\nSo the current answer: bakery is a separate workstream outside fresh, with its own scope, partner (Meridian) and timeline. [4] [12] [13]",
+    "citations": [
+      {
+        "sourceId": "transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0047",
+        "quote": "Then that is my decision. Go live on produce, dairy and chilled ready meals. Bakery comes later as its own,",
+        "title": "Fresh Phase 2 go/no-go",
+        "date": "2025-11-17",
+        "author": "Lena Fischer",
+        "position": "4:14 · utterance 47"
+      },
+      {
+        "sourceId": "transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0049",
+        "quote": "thing.",
+        "title": "Fresh Phase 2 go/no-go",
+        "date": "2025-11-17",
+        "author": "Lena Fischer",
+        "position": "4:26 · utterance 49"
+      },
+      {
+        "sourceId": "reports/01_weekly-status-thread#message-007",
+        "quote": "Hi All,\n\nHereby the weekly update.\n\nUpdate 24-11-2025 (Week 48)\n🟢 On Track\n\nNote that the plan has been reissued on a two delivery basis. Earlier plan documents showing three waves for fresh are superseded and should not be used.\n\nTimeline\nReplanned. Go-live 15 December for three categories.\n\n[Image removed by sender]\n\nTopics worked on last week\n1.                  Go/no-go held. Produce, dairy and chilled approved. Bakery descoped\n2.                  OP_ID field exclusion agreed and confirmed in writing\n\nTopics planned for this week\n1.                Cutover preparation (Phase 5 - Deployment)\n2.                Store communications\n\nIf there is anything else you'd like to see in these update emails, please don't hesitate to let us know.\n\nKind regards,\n\nBest regards,\nAna Duarte\nProject Manager Image\n+351 913 882 145 | UTC +01:00\nana.duarte@relexsolutions.example\nRua do Ouro 42, 1100-063 Lisboa\nConnect with me\nImage\nImage\nPlan better. Sell more. Waste less\nrelexsolutions.example Image\nLinkedInYouTube",
+        "title": "Re: Weekly Acme update",
+        "date": "2025-11-24T16:20:00",
+        "author": "Ana Duarte",
+        "position": "Message 7"
+      },
+      {
+        "sourceId": "reports/02_monthly-steering-reports#message-003",
+        "quote": "Hi Robert, Lena,\n\nMonthly steering report, November 2025.\n\nStatus: 🟢 On Track\n\nReplanned. Fresh go-live 15 December for three categories.\n\n- Go/no-go held 17 November. Produce, dairy and chilled approved.\n- Bakery descoped to a separate workstream starting March 2026.\n- This is two deliveries rather than three. Any plan document showing three waves is superseded.\n\n[Image removed by sender]\n\nWhat we need from you: None.\n\nMarco Rossi\nAccount Executive Image\n+351 912 447 026 | CET/CEST\nmarco.rossi@relexsolutions.example\nRua do Ouro 42, 1100-063 Lisboa\nConnect with me\nImage\nImage\nPlan better. Sell more. Waste less\nrelexsolutions.example Image\nLinkedInYouTube\nImage",
+        "title": "Re: Acme monthly steering report",
+        "date": "2025-11-28T17:00:00",
+        "author": "Marco Rossi",
+        "position": "Message 3"
+      },
+      {
+        "sourceId": "reports/01_weekly-status-thread#message-002",
+        "quote": "Hi All,\n\nHereby the weekly update.\n\nUpdate 09-03-2026 (Week 11)\n🟢 On Track\n\nTimeline\nBakery workstream started.\n\n[Image removed by sender]\n\nTopics worked on last week\n1.                  Bakery interface points agreed\n2.                  Q1 measurement approach drafted\n3.                  Nightly article extract completed, no errors\n\nTopics planned for this week\n1.                Bakery build begins\n2.                Prepare Q1 results\n\nIf there is anything else you'd like to see in these update emails, please don't hesitate to let us know.\n\nKind regards,\n\nBest regards,\nAna Duarte\nProject Manager Image\n+351 913 882 145 | UTC +01:00\nana.duarte@relexsolutions.example\nRua do Ouro 42, 1100-063 Lisboa\nConnect with me\nImage\nImage\nPlan better. Sell more. Waste less\nrelexsolutions.example Image\nLinkedInYouTube",
+        "title": "Re: Weekly Acme update",
+        "date": "2026-03-09T16:35:00",
+        "author": "Ana Duarte",
+        "position": "Message 2"
+      },
+      {
+        "sourceId": "transcripts/05_2024-07-15_implementation-kickoff#utterance-0116",
+        "quote": "so Produce, dairy, bakery, the chilled ready meals. Sofia would give you a better answer.",
+        "title": "Implementation kickoff",
+        "date": "2024-07-15",
+        "author": "Lena Fischer",
+        "position": "13:05 · utterance 116"
+      },
+      {
+        "sourceId": "emails/03_phase2-sequencing-proposal#message-008",
+        "quote": "Hello both,\n\nFollowing our conversation, a proposal for how we sequence Phase 2.\n\nRather than delivering all four fresh categories together in one go-live, we would\ndeliver produce and dairy first, then chilled ready meals, then bakery. Three smaller\ngo-lives roughly six weeks apart.\n\nThe advantage is that value starts landing earlier and each wave de-risks the next. The\ndisadvantage is more cutover events and a longer total elapsed time, which I know is in\ntension with the twelve-month window.\n\nIf this works for you we would build the plan around it. Happy to discuss.\n\nMarco Rossi\nAccount Executive [Image removed by sender]\n+351 912 447 026 | CET/CEST\nmarco.rossi@relexsolutions.example\nRua do Ouro 42, 1100-063 Lisboa\nConnect with me\n[Image removed by sender]\n[Image removed by sender]\nPlan better. Sell more. Waste less\nrelexsolutions.example [Image removed by sender]\nLinkedInYouTube\n[Image removed by sender]",
+        "title": "Phase 2 sequencing - proposal",
+        "date": "2025-06-11T17:20:00",
+        "author": "Marco Rossi",
+        "position": "Message 8"
+      },
+      {
+        "sourceId": "reports/01_weekly-status-thread#message-009",
+        "quote": "Hi All,\n\nSorry for the delay in the weekly update!\n\nHereby the weekly update.\n\nUpdate 27-10-2025 (Week 44)\n🟡Slight Delay\n\nRisk\nBakery accuracy poor. Likely a scope change rather than a defect.\n\nTimeline\nFour weeks behind. Holding.\n\n[Image removed by sender]\n\nTopics worked on last week\n1.                  UAT nine working days complete (Phase 4 - Testing)\n2.                  Bakery assessed as mostly bake-off\n\nTopics planned for this week\n1.                Prepare go/no-go recommendation\n\nPotential risk identified 🟡Slight Delay\n1.                  Bakery accuracy poor. Likely a scope change rather than a defect.\n\nIf there is anything else you'd like to see in these update emails, please don't hesitate to let us know.\n\nKind regards,\n\nBest regards,\nAna Duarte\nProject Manager Image\n+351 913 882 145 | UTC +01:00\nana.duarte@relexsolutions.example\nRua do Ouro 42, 1100-063 Lisboa\nConnect with me\nImage\nImage\nPlan better. Sell more. Waste less\nrelexsolutions.example Image\nLinkedInYouTube",
+        "title": "Re: Weekly Acme update",
+        "date": "2025-10-27T16:30:00",
+        "author": "Ana Duarte",
+        "position": "Message 9"
+      },
+      {
+        "sourceId": "reports/02_monthly-steering-reports#message-004",
+        "quote": "Hi Robert, Lena,\n\nMonthly steering report, October 2025.\n\nStatus: 🟡Slight Delay\n\nTwo of the six weeks recovered. Go/no-go on track for 15 November.\n\n- UAT running on produce, dairy and chilled ready meals.\n- Bakery accuracy is poor and we expect to recommend descoping it.\n- Acme's fresh category manager is unavailable until mid November, which limits how fast UAT findings can be resolved.\n\n[Image removed by sender]\n\nWhat we need from you: Confirmation that a bakery descope is acceptable in principle.\n\nMarco Rossi\nAccount Executive Image\n+351 912 447 026 | CET/CEST\nmarco.rossi@relexsolutions.example\nRua do Ouro 42, 1100-063 Lisboa\nConnect with me\nImage\nImage\nPlan better. Sell more. Waste less\nrelexsolutions.example Image\nLinkedInYouTube\nImage",
+        "title": "Re: Acme monthly steering report",
+        "date": "2025-10-31T16:20:00",
+        "author": "Marco Rossi",
+        "position": "Message 4"
+      },
+      {
+        "sourceId": "transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0032",
+        "quote": "Bakery is poor because half of it is baked in store and it is not",
+        "title": "Fresh Phase 2 go/no-go",
+        "date": "2025-11-17",
+        "author": "Sofia Almeida",
+        "position": "3:08 · utterance 32"
+      },
+      {
+        "sourceId": "transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0033",
+        "quote": "really an ordering problem.",
+        "title": "Fresh Phase 2 go/no-go",
+        "date": "2025-11-17",
+        "author": "Sofia Almeida",
+        "position": "3:17 · utterance 33"
+      },
+      {
+        "sourceId": "reports/02_monthly-steering-reports#message-002",
+        "quote": "Hi Robert, Lena,\n\nMonthly steering report, January 2026.\n\nStatus: 🟢 On Track\n\nSix weeks live. Stable.\n\n- No incidents over the holiday period.\n- Bakery workstream scoping with Meridian has begun.\n- Q1 measurement will be reported in April against the agreed baseline.\n\n[Image removed by sender]\n\nWhat we need from you: None.\n\nMarco Rossi\nAccount Executive Image\n+351 912 447 026 | CET/CEST\nmarco.rossi@relexsolutions.example\nRua do Ouro 42, 1100-063 Lisboa\nConnect with me\nImage\nImage\nPlan better. Sell more. Waste less\nrelexsolutions.example Image\nLinkedInYouTube\nImage",
+        "title": "Re: Acme monthly steering report",
+        "date": "2026-01-30T16:30:00",
+        "author": "Marco Rossi",
+        "position": "Message 2"
+      },
+      {
+        "sourceId": "transcripts/20_2026-03-17_bakery-design-workshop#utterance-0003",
+        "quote": "bakery. Meridian owns the production plan, we own the demand signal, and today we agree where,",
+        "title": "Bakery design workshop",
+        "date": "2026-03-17",
+        "author": "Nadia Haddad",
+        "position": "0:40 · utterance 3"
+      }
+    ],
+    "createdAt": "2026-09-19T23:54:55.601Z",
+    "kind": "evaluation",
+    "level": 3,
+    "question": "Is bakery inside the fresh workstream? Show how the answer changed over time and what it is now.",
+    "trace": [
+      "Read 2974 permitted source records at L3.",
+      "Checked earliest scope statement at July 2024 kickoff listing bakery within fresh",
+      "Checked June 2025 sequencing proposal placing bakery as third fresh wave",
+      "Checked weekly updates Aug–Oct 2025 for bakery accuracy problems within fresh UAT",
+      "Checked 17 Nov 2025 go/no-go transcript for the decision to descope bakery",
+      "Checked weekly and steering reports Nov 2025 confirming bakery descoped to separate workstream",
+      "Verified 13 quoted passages against runtime sources."
+    ]
+  }
+}
