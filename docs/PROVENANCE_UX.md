@@ -25,3 +25,17 @@ Brief empty states distinguish actual queued/running preparation from an idle vi
 ## Verification
 
 Isolated deterministic tests cover supported-paragraph retention, grouped citation normalization, baseline-backed guides after erasure, surviving claims, sanitized deletion follow-ups with zero inference, added-source freshness, and meeting streaming with inaccessible-meeting rejection. Browser checks cover ordinary navigation during generation, completion while away, return without duplicate requests, access-change cancellation and meeting progress. All tests use temporary data or SQLite backups; the live corpus and completed guidance were untouched during implementation.
+
+## Production verification
+
+Release `2026-09-20T10-20-14-165Z-2eeef25b-a631-4e53-b51f-38cba42f564e`
+was deployed after confirming the app and inference queues were empty. Public
+Chromium checks confirmed prepared People guidance, all nine Practice headings
+at L3 and L1, 30 permitted source links at L1, and the Extended slides viewer.
+All 168 existing guidance rows retained their original keys and payload hashes.
+The application queue remained empty after these visits.
+
+An independent check against a database copy retained all 20 Ana guides after
+adding a source. After erasing Kwame, 19 guides, the briefing and 53 of 75 claims
+remained, with no removed identity in the checked outputs and no new jobs.
+The temporary database copy was deleted after verification.
