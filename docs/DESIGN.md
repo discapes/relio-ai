@@ -8,7 +8,7 @@ SQLite stores each email message, report update and transcript turn with its ori
 
 ## How stale facts are caught
 
-Claims carry dated descriptions and statuses such as proposed, agreed, corrected and superseded. For chronology or commitment questions, the system first reviews document groups, then checks relevant original passages and neighbouring turns. Prompts require later corrections, scope changes and unresolved follow-ups to remain visible. New delivered mail and changed personal preferences queue fresh briefings; a daily scheduler checks for a new briefing after 06:00 Helsinki time. Source dates and answer preparation times are shown separately. This process can still miss an earlier decision or a later follow-up: a recent preparation time does not establish that a fact is current.
+Claims carry dated descriptions and statuses such as proposed, agreed, corrected and superseded. For chronology or commitment questions, the system first reviews document groups, then checks relevant original passages and neighbouring turns. Prompts require later corrections, scope changes and unresolved follow-ups to remain visible. New delivered mail and changed personal preferences queue fresh briefings; daily refresh after 06:00 Helsinki time is optional and disabled in the demo. Source dates and answer preparation times are shown separately. This process can still miss an earlier decision or a later follow-up: a recent preparation time does not establish that a fact is current.
 
 ## How deletion propagates
 

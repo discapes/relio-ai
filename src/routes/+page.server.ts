@@ -22,8 +22,6 @@ export const load: PageServerLoad = ({ cookies, setHeaders, url }) =>
 					personIds: new Set(guidancePeople.map((person) => person.id))
 				}
 			: undefined;
-		if (guidancePeople)
-			workflows.ensurePeopleGuidance(ctx, guidancePeople, guidanceSnapshot!.fingerprint);
 		const personGuidance =
 			url.searchParams.get('view') === 'people' && url.searchParams.get('person')
 				? workflows.preparedGuidance(ctx, url.searchParams.get('person')!, guidanceSnapshot)
