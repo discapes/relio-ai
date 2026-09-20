@@ -1,4 +1,4 @@
-# Receipt
+# Relio
 
 Active RELEX project implementation. Read ../spec/README.md and the full product conversation before changing behavior. Every delegated agent inherits full conversation history (fork_turns: all).
 
@@ -32,7 +32,8 @@ docs/STREAMING.md Transport, provisional/final boundary, isolation checks and me
 docs/live_stream_timing.json Actual server events and draft/final timing from the full UAT query.
 src/app.css RELEX semantic palette, stronger secondary text, 15px interface typography and locally bundled Figtree.
 src/lib/assets/relex_logo.svg Official RELEX RGB wordmark; orig: relex-primary-logo-RGB-vector.svg.
-src/lib/assets/favicon.png Official RELEX symbol; orig: cropped-relex-mark-square-192x192.png.
+src/lib/assets/relio_icon.svg Relio R favicon using the existing navy palette.
+src/lib/assets/favicon.png Archived RELEX symbol reference; orig: cropped-relex-mark-square-192x192.png.
 docs/CITATION_UX.md Grouped citation behavior, exact-reference preservation and bounded presentation changes.
 docs/BRANDING.md Color roles, font/logo attribution and isolated review server on port 41851.
 docs/screenshots/ Reviewed public RELEX-branded desktop/mobile, graph/focus, claims, source, email, people, erasure and design views.

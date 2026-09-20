@@ -1,8 +1,8 @@
-# Receipt
+# Relio
 
-Receipt gives RELEX employees a prepared Acme project briefing, a private assistant and shared project memory with source receipts. The email demonstration represents the employee's Outlook: adding the visible project agent in To/Cc delivers a message into shared memory and lets the agent decide whether a reply would help.
+Relio gives RELEX employees a prepared Acme project briefing, a private assistant and shared project memory with source receipts. The email demonstration represents the employee's Outlook: adding the visible project agent in To/Cc delivers a message into shared memory and lets the agent decide whether a reply would help.
 
-Application: https://receipt-workspace.hai1.iffe.eu · fixed port **34342**.
+Application: https://relio-ai.eu · fixed port **34342**. The previous hostname remains an alias. Caddy supplies forwarded host/protocol headers so form submissions and chat use the browser’s actual origin on either hostname. Browser cookies remain scoped to each domain; opening the new domain creates its own workspace and loads prepared baseline content.
 
 The sidebar links directly to **Design**, **How to use**, **How it works** and **Practice answers**. The practice reference requires Acme L3 and is withdrawn after erasure in that workspace. Architecture and usage pages remain available in every view. Internal evaluation reports stay in the repository.
 

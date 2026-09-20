@@ -1,6 +1,6 @@
 # How to use
 
-Start in My workspace. Receipt opens the Acme project with a saved morning brief for the selected employee. The brief brings together decisions, unresolved work and preparation for upcoming meetings. Its preparation time shows when it was generated; the evidence dates show when the underlying events were recorded.
+Start in My workspace. Relio opens the Acme project with a saved morning brief for the selected employee. The brief brings together decisions, unresolved work and preparation for upcoming meetings. Its preparation time shows when it was generated; the evidence dates show when the underlying events were recorded.
 
 ## Read a brief and check its evidence
 

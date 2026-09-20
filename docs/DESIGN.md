@@ -1,6 +1,6 @@
 # Design
 
-Receipt gives RELEX employees a shared customer-project memory and a personal morning brief. It starts with the supplied Acme archive and accepts new messages through an employee-side email simulator. Adding the project agent to a message’s recipients makes that delivered message available to project memory. The agent can contribute a cited reply when it judges that doing so helps the conversation.
+Relio gives RELEX employees a shared customer-project memory and a personal morning brief. It starts with the supplied Acme archive and accepts new messages through an employee-side email simulator. Adding the project agent to a message’s recipients makes that delivered message available to project memory. The agent can contribute a cited reply when it judges that doing so helps the conversation.
 
 ## How provenance is stored
 

@@ -1,4 +1,4 @@
-# Receipt: five-minute demonstration
+# Relio: five-minute demonstration
 
 Use the deployed URL recorded in the README. Rehearse this walkthrough against the final build and record results before calling the demonstration ready. New example messages are fictional continuations of the supplied synthetic archive.
 
@@ -16,7 +16,7 @@ Use the deployed URL recorded in the README. Rehearse this walkthrough against t
 
 Open **My workspace** and the morning brief.
 
-“Ana manages the Acme rollout. Receipt prepares the project changes, decisions and follow-ups she needs for customer conversations. Her own goals influence what appears here. Each item has dated evidence.”
+“Ana manages the Acme rollout. Relio prepares the project changes, decisions and follow-ups she needs for customer conversations. Her own goals influence what appears here. Each item has dated evidence.”
 
 Open a receipt and inspect the original passage. Point out archive coverage and the simulated July project date. Return to the workspace.
 

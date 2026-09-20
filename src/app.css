@@ -532,7 +532,7 @@ dialog form {
 		scroll-behavior: auto !important;
 	}
 }
-/* Receipt workspace */
+/* Relio workspace */
 
 body {
 	font-size: 15px;
@@ -584,10 +584,11 @@ p {
 .main-wrap {
 	margin-left: 242px;
 }
-.brand img {
-	display: block;
-	width: 145px;
-	height: auto;
+.brand-wordmark {
+	font-size: 38px;
+	font-weight: 750;
+	letter-spacing: -0.035em;
+	line-height: 44px;
 }
 .workspace {
 	margin: 34px 0 30px;
@@ -2035,8 +2036,9 @@ footer {
 		width: 100%;
 		padding: 18px 20px 13px;
 	}
-	.brand img {
-		width: 119px;
+	.brand-wordmark {
+		font-size: 32px;
+		line-height: 36px;
 	}
 	.sidebar nav {
 		display: flex;
