@@ -131,6 +131,13 @@ small {
 	display: inline-flex;
 	align-items: center;
 	align-self: flex-start;
+	gap: 10px;
+}
+.brand-symbol {
+	width: 32px;
+	height: 32px;
+	object-fit: contain;
+	flex-shrink: 0;
 }
 .workspace {
 	display: flex;
@@ -2486,4 +2493,26 @@ textarea::placeholder {
 	body:has(.guide-article) {
 		background: white;
 	}
+}
+
+/* Keep the next action and the result of a sent message easy to locate. */
+.workspace-heading-actions {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+#conversation,
+.mail-message,
+.evidence,
+.source-row,
+.claim-card {
+	scroll-margin-top: 24px;
+}
+.mail-message:focus {
+	outline: 2px solid var(--action);
+	outline-offset: -2px;
+}
+.evidence-return {
+	margin-bottom: 12px;
 }

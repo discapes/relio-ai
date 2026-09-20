@@ -57,13 +57,15 @@ test('many cited turns stay grouped and inline references reveal exact evidence 
 	await page.keyboard.press('Enter');
 	await expect(answer.locator('[data-receipt="1"]')).toBeFocused();
 	await expect(answer.locator('.receipt-selected')).toHaveCount(3);
+	await answer.getByRole('button', { name: 'Back to answer' }).click();
+	await expect(first).toBeFocused();
 	await expect(answer.locator('.document-evidence')).toHaveAttribute('open');
 	await expect(answer.locator('[data-receipt="2"] blockquote')).toHaveText(
 		'Recorded observation 2 from Ana Duarte.'
 	);
 	await expect(answer.locator('[data-receipt="2"] .source-evidence-link')).toHaveAttribute(
 		'href',
-		'/source/transcripts%2Freview%23utterance-0002'
+		/^\/source\/transcripts%2Freview%23utterance-0002\?returnTo=/
 	);
 	await answer.locator('.receipts > summary').click();
 	await answer
@@ -102,6 +104,6 @@ test('many cited turns stay grouped and inline references reveal exact evidence 
 	await expect(answer.locator('.receipt-selected')).toHaveCount(2);
 	await expect(answer.locator('[data-receipt="41"] .source-evidence-link')).toHaveAttribute(
 		'href',
-		'/source/emails%2Fdecision%23message-001'
+		/^\/source\/emails%2Fdecision%23message-001\?returnTo=/
 	);
 });

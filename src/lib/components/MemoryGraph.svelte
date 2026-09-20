@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { page } from '$app/state';
+	import { goto } from '$app/navigation';
+	import { sourceHref } from '$lib/presentation/navigation';
 	import type { Claim, Source, Person } from '$lib/types';
 	import NameText from './NameText.svelte';
 	import Badge from './Badge.svelte';
@@ -7,7 +10,19 @@
 		sources,
 		people = []
 	}: { claims: Claim[]; sources: Source[]; people?: Person[] } = $props();
-	let selected = $state('');
+	const selected = $derived(page.url.searchParams.get('claim') || '');
+	function selectClaim(id: string) {
+		void goto(`/?view=memory&tab=graph&claim=${encodeURIComponent(id)}`, {
+			noScroll: true,
+			keepFocus: true
+		});
+	}
+	const sourceLink = (id: string) =>
+		sourceHref(
+			id,
+			`/?view=memory&tab=graph&claim=${encodeURIComponent(active?.id || '')}`,
+			'graph-selection'
+		);
 	let visibleCount = $state(24);
 	const visible = $derived(claims.slice(0, visibleCount));
 	const active = $derived(claims.find((c) => c.id === selected) ?? visible[0]);
@@ -35,16 +50,22 @@
 </script>
 
 <div class="graph-wrap">
-	<div class="graph-controls" aria-label="Select a graph claim">
-		{#each visible as claim, i}<button
-				class:chosen={active?.id === claim.id}
-				onclick={() => (selected = claim.id)}
-				title={claim.text}>{i + 1}. {claim.kind.replaceAll('_', ' ')}</button
-			>{/each}
-		{#if claims.length > visibleCount}<button onclick={() => (visibleCount += 24)}
-				>Show more claims ({claims.length - visibleCount} remaining)</button
-			>{/if}
-	</div>
+	<label class="graph-picker"
+		>Topic
+		<select
+			aria-label="Select a graph topic"
+			value={active?.id || ''}
+			onchange={(event) => selectClaim(event.currentTarget.value)}
+		>
+			{#each claims as claim}<option value={claim.id}
+					>{claim.text.length > 120 ? claim.text.slice(0, 117) + '…' : claim.text}</option
+				>{/each}
+		</select>
+	</label>
+	{#if active}<div class="graph-selected" id="graph-selection" tabindex="-1">
+			<Badge status={active.status}>{active.status}</Badge>
+			<p><NameText text={active.text} {people} /></p>
+		</div>{/if}
 	<svg
 		viewBox="0 0 720 470"
 		role="group"
@@ -80,7 +101,7 @@
 			>{active?.status || 'project memory'}</text
 		>
 		{#each linked as source, i}{@const p = point(i, linked.length)}<a
-				href={`/source/${encodeURIComponent(source.id)}`}
+				href={sourceLink(source.id)}
 				aria-label={`Open supporting source ${i + 1}: ${source.title}, ${source.author}`}
 				><circle
 					cx={p.x}
@@ -109,16 +130,13 @@
 		>
 	</div>
 	{#if active}<div class="graph-detail">
-			<Badge status={active.status}>{active.status}</Badge>
-			<p><NameText text={active.text} {people} /></p>
-			<strong>Supporting sources</strong>{#each linked as source, i}<a
-					href={`/source/${encodeURIComponent(source.id)}`}
+			<strong>Supporting sources</strong>{#each linked as source, i}<a href={sourceLink(source.id)}
 					>{i + 1}. {source.title}<small>{source.date} · {source.author} · {source.position}</small
 					></a
 				>{/each}{#if !linked.length}<small>Supporting sources are unavailable in this view.</small
 				>{/if}{#if related.length}<strong>Claims from the same discussion</strong>
 				<div class="related-claims">
-					{#each related as claim}<button onclick={() => (selected = claim.id)}
+					{#each related as claim}<button onclick={() => selectClaim(claim.id)}
 							><span class="badge">{claim.kind.replaceAll('_', ' ')}</span>{claim.text}</button
 						>{/each}
 				</div>
@@ -129,3 +147,27 @@
 			Claims appear here after project memory has been prepared.
 		</p>{/if}
 </div>
+
+<style>
+	.graph-picker {
+		display: grid;
+		gap: 8px;
+		padding: 20px 24px 12px;
+		font-weight: 600;
+	}
+	.graph-picker select {
+		width: 100%;
+		min-width: 0;
+		text-overflow: ellipsis;
+	}
+	.graph-selected {
+		margin: 0 24px 16px;
+		padding: 16px;
+		border-left: 3px solid var(--action);
+		background: var(--surface-subtle);
+	}
+	.graph-selected p {
+		margin: 10px 0 0;
+		line-height: 1.65;
+	}
+</style>

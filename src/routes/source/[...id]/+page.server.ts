@@ -1,7 +1,8 @@
+import { sourceReturn } from '$lib/presentation/navigation';
 import { error } from '@sveltejs/kit';
 import { getSource, sources, people } from '$lib/server/memory';
 import { sessionContext } from '$lib/server/session';
-export function load({ cookies, params, setHeaders }) {
+export function load({ cookies, params, setHeaders, url }) {
 	setHeaders({ 'cache-control': 'private, no-store' });
 	const ctx = sessionContext(cookies);
 	const source = getSource(ctx, params.id);
@@ -12,6 +13,7 @@ export function load({ cookies, params, setHeaders }) {
 		.slice(Math.max(0, index - 3), index + 4)
 		.filter((item) => item.id !== source.id);
 	return {
+		returnTo: sourceReturn(url.searchParams.get('returnTo')),
 		source,
 		people: people(ctx),
 		neighbours,
