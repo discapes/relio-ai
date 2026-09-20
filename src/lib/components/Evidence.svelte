@@ -2,6 +2,8 @@
 	import type { Answer } from '$lib/types';
 	let { answer, compact = false }: { answer: Answer; compact?: boolean } = $props();
 	let copied = $state(false);
+	let exporting = $state(false);
+	let exportError = $state('');
 	let expanded = $state(false);
 	const briefParts = $derived(
 		answer.text.split(/\n\n+/).filter((paragraph) => paragraph.length > 60)
@@ -23,37 +25,53 @@
 			copied = false;
 		}
 	}
-	function download() {
-		const canvas = document.createElement('canvas');
-		const ctx = canvas.getContext('2d');
-		if (!ctx) return;
-		canvas.width = 1200;
-		ctx.font = '24px sans-serif';
-		const lines: string[] = [];
-		for (const paragraph of exportText().split('\n')) {
-			let line = '';
-			for (const word of paragraph.split(' ')) {
-				const next = line ? `${line} ${word}` : word;
-				if (ctx.measureText(next).width > 1040 && line) {
-					lines.push(line);
-					line = word;
-				} else line = next;
+	async function download() {
+		exporting = true;
+		exportError = '';
+		try {
+			const family = getComputedStyle(document.documentElement).fontFamily;
+			const bodyFont = `400 24px ${family}`;
+			const headingFont = `700 34px ${family}`;
+			await Promise.all([
+				document.fonts.load(bodyFont, exportText()),
+				document.fonts.load(headingFont, 'Acme · Evidence card')
+			]);
+			const theme = getComputedStyle(document.documentElement);
+			const canvas = document.createElement('canvas');
+			const ctx = canvas.getContext('2d');
+			if (!ctx) return;
+			canvas.width = 1200;
+			ctx.font = bodyFont;
+			const lines: string[] = [];
+			for (const paragraph of exportText().split('\n')) {
+				let line = '';
+				for (const word of paragraph.split(' ')) {
+					const next = line ? `${line} ${word}` : word;
+					if (ctx.measureText(next).width > 1040 && line) {
+						lines.push(line);
+						line = word;
+					} else line = next;
+				}
+				lines.push(line);
 			}
-			lines.push(line);
+			canvas.height = 200 + lines.length * 36;
+			ctx.fillStyle = theme.getPropertyValue('--surface').trim();
+			ctx.fillRect(0, 0, 1200, canvas.height);
+			ctx.fillStyle = theme.getPropertyValue('--text').trim();
+			ctx.font = headingFont;
+			ctx.fillText('Acme · Evidence card', 80, 80);
+			ctx.font = bodyFont;
+			ctx.fillStyle = theme.getPropertyValue('--text').trim();
+			lines.forEach((line, i) => ctx.fillText(line, 80, 145 + i * 36));
+			const a = document.createElement('a');
+			a.download = 'acme-evidence.png';
+			a.href = canvas.toDataURL('image/png');
+			a.click();
+		} catch {
+			exportError = 'The evidence image could not be prepared. Please try again.';
+		} finally {
+			exporting = false;
 		}
-		canvas.height = 200 + lines.length * 36;
-		ctx.fillStyle = '#f8f8f1';
-		ctx.fillRect(0, 0, 1200, canvas.height);
-		ctx.fillStyle = '#164c3b';
-		ctx.font = 'bold 34px sans-serif';
-		ctx.fillText('Acme · Evidence card', 80, 80);
-		ctx.font = '24px sans-serif';
-		ctx.fillStyle = '#243a30';
-		lines.forEach((line, i) => ctx.fillText(line, 80, 145 + i * 36));
-		const a = document.createElement('a');
-		a.download = 'acme-evidence.png';
-		a.href = canvas.toDataURL('image/png');
-		a.click();
 	}
 </script>
 
@@ -103,7 +121,10 @@
 	{#if answer.kind === 'share'}<div class="export-actions">
 			<button type="button" class="button secondary" onclick={copy}
 				>{copied ? 'Copied' : 'Copy text'}</button
-			><button type="button" class="button" onclick={download}>Download PNG</button>
+			><button type="button" class="button" onclick={download} disabled={exporting}
+				>{exporting ? 'Preparing image…' : 'Download PNG'}</button
+			>
 		</div>
+		{#if exportError}<p class="error" role="alert">{exportError}</p>{/if}
 		<small>Downloaded copies remain outside subsequent application erasure.</small>{/if}
 </div>
