@@ -6,6 +6,7 @@
 	"scripts": {
 		"dev": "vite dev --host 127.0.0.1 --port 34342 --strictPort",
 		"build": "vite build",
+		"postbuild": "node scripts/publish-build.mjs",
 		"preview": "vite preview --host 127.0.0.1 --port 34342 --strictPort",
 		"prepare": "svelte-kit sync",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
