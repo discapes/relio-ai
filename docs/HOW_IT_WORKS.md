@@ -26,7 +26,7 @@ Personal preferences and saved conversations belong to the selected employee. Cu
 
 Extracted claims retain dates and statuses, and questions about progress ask the model to compare later corrections and follow-ups. Briefings are refreshed through persistent jobs when relevant messages or preferences change, with optional daily checks after 06:00 Helsinki time. Daily checks are disabled in the demo. A briefing’s recent preparation time must be read alongside the dates of its evidence.
 
-Person erasure operates on runtime sources and their derivatives. It cleans identifying references, withdraws affected evidence and personal state, invalidates generated answers and claims, and cancels active work. A new workspace version prevents an earlier request from publishing after deletion. Hashed identifiers persist so that normal imports cannot restore erased material. Independent surviving evidence remains available. Original supplied files, other workspaces and previously downloaded copies have separate retention boundaries.
+Person erasure operates on runtime sources and their derivatives. It cleans identifying references, withdraws affected evidence and personal state, rechecks answer passages and claims against surviving evidence, and cancels active work. A new workspace version prevents an earlier request from publishing after deletion. Hashed identifiers persist so that normal imports cannot restore erased material. Independent surviving evidence, supported claims and usable answer passages remain available. Citation numbers are updated when a passage is removed. Original supplied files, other workspaces and previously downloaded copies have separate retention boundaries.
 
 ## Hosting and limits
 

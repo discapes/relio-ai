@@ -213,3 +213,49 @@ test('provisional chunks cannot display erased names before final validation', a
 		globalThis.fetch = original;
 	}
 });
+
+test('meeting shortcut streams through the same transport and persists an accessible meeting answer', async () => {
+	const ctx = memory.context('stream-meeting-shortcut', 'ana', 1);
+	memory.addSource(ctx, source);
+	const meeting = workflows.workspaceData(ctx).meetings[0];
+	let sawMeeting = false;
+	globalThis.fetch = async (_url, init) => {
+		const body = JSON.parse(String(init?.body));
+		sawMeeting ||= JSON.stringify(body.messages).includes(meeting.title);
+		assert.ok(
+			!body.messages[0].content.startsWith('Classify'),
+			'meeting shortcut directly prepares the known task'
+		);
+		return body.stream ? streamedDraft() : json(completion);
+	};
+	try {
+		const events: ChatEvent[] = [];
+		for await (const line of streamLines(
+			chatResponse(ctx, `Prepare for ${meeting.title}`, new AbortController().signal, meeting.id)
+				.body!
+		))
+			events.push(JSON.parse(line));
+		assert.equal(sawMeeting, true);
+		assert.ok(events.some((event) => event.type === 'draft'));
+		const final = events.find((event) => event.type === 'final');
+		assert.ok(final?.type === 'final');
+		assert.equal(final.answer.kind, 'meeting');
+		assert.equal(final.answer.question, `Prepare for ${meeting.title}`);
+		assert.ok(workflows.workspaceData(ctx).chat.some((answer) => answer.id === final.answer.id));
+		let calls = 0;
+		globalThis.fetch = async () => {
+			calls++;
+			throw new Error('Unavailable meeting must not call inference');
+		};
+		const unavailable = await chatResponse(
+			ctx,
+			'Prepare for a meeting',
+			new AbortController().signal,
+			'unknown-meeting'
+		).text();
+		assert.match(unavailable, /meeting is unavailable/);
+		assert.equal(calls, 0);
+	} finally {
+		globalThis.fetch = original;
+	}
+});

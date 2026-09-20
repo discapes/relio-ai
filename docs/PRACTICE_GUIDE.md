@@ -24,13 +24,11 @@ Sources: [Master data workshop, 24 September 2024](/source/transcripts%2F06_2024
 
 The 12 November 2024 ordering-logic workshop records Lena describing the existing theoretical target as 99% on everything, Tomas referring to 98% and 95% as a reduction, and Lena saying “Fine. Agreed.” The recorded passage supports agreement to those two target figures for the pilot discussion. It leaves the mapping of each target to product classes or categories unspecified. The recorded evidence leaves that mapping unresolved.
 
-The same passage records daily ordering, daily delivery on fast lines and twice-weekly delivery below that. These delivery frequencies do not establish the missing target-to-category mapping.
+The ordering workshop records daily ordering, daily delivery on fast lines and twice-weekly delivery below that. These delivery frequencies do not establish the missing target-to-category mapping.
 
 Source: [Ordering logic design workshop](/source/transcripts%2F07_2024-11-12_ordering-logic-design%23utterance-0073), 12 November 2024: utterance 73 at 06:34 (99%); utterances 77–79 at 06:49–06:59 (98% and 95%); utterance 83 at 07:25 (Lena's agreement); utterance 86 at 07:42 (ordering/delivery frequency). IDs follow `transcripts/07_2024-11-12_ordering-logic-design#utterance-0073`.
 
 ## P3. Operator ID removal and prior distribution
-
-There are two distinct stages.
 
 On 24 September 2024, Kwame identified an operator identifier in the extract he had already received. Priya proposed taking it out at 12:01. Kwame had said he did not need to receive it; Ana recorded the action, and Lena said “Yes” during the exchange. Priya said she would put the change on her list. The received extract establishes prior delivery to RELEX by that meeting.
 
@@ -51,7 +49,9 @@ Lena Fischer confirmed signing the limited core-replenishment UAT scope on 22 Ja
 
 > Acme Org confirms that user acceptance testing for core replenishment has been completed satisfactorily for the 25 store pilot cohort, covering ambient and dry goods categories. This sign-off does not extend to fresh categories, which remain in scope for a later phase, and does not constitute acceptance of the overall programme.
 
-Lena's response says “Signed and attached” and confirms the wording. The email supports the signatory and scope; the actual signed attachment is unavailable. Two rounding defects were still open when the wording was sent; Kwame reported them fixed and retested on 24 January, with nine of nine scenarios passing. That later defect closure does not expand the signed scope.
+Lena's response says “Signed and attached” and confirms the wording. The email supports the signatory and scope; the actual signed attachment is unavailable.
+
+Two rounding defects were still open when the wording was sent; Kwame reported them fixed and retested on 24 January, with nine of nine scenarios passing. That later defect closure does not expand the signed scope.
 
 Source: [UAT sign-off](/source/emails%2F15_uat-signoff%23message-003), `emails/15_uat-signoff#message-003` (21 January, Ana), `emails/15_uat-signoff#message-002` (22 January, Lena), `emails/15_uat-signoff#message-001` (24 January, Kwame).
 
@@ -91,18 +91,12 @@ Sources:
 
 ## P7. Answering P1 after deletion
 
-Erasing Kwame’s information removes the September assessment he authored. Independent statements by other participants support a narrower answer, with their own dates and limits.
+This question examines how independent evidence supports an answer after the assessment author is deleted. Each statement below remains available only while its own supporting evidence survives in this workspace.
 
-The September workshop's authored assessment figures and the 30 September assessment email were removed. Consequently, this workspace cannot cite the September evidence for 31%, 4,214 articles or 3,105 missing/default lead times. The original September source for 48% is also gone.
-
-Surviving independent evidence permits a narrower answer:
-
-- Priya's 24 September workshop turn still discusses approximately 1,300 fixes: utterance 41, 05:58. This provides an approximate contemporary figure.
+- Priya's 24 September workshop turn discusses approximately 1,300 fixes: utterance 41, 05:58. This provides an approximate contemporary figure.
 - Priya's 28 October email independently reports 780 of 1,317 completed; her 19 December email reports all 1,317 completed. Those later messages preserve the exact remediation denominator and their own dated progress reports.
-- Ana's 20 December email independently states shelf-life population remained at 48%, untouched during that phase. This supports a later report of the same figure; it cannot restore the deleted September citation.
-- Lena's 24 September reduction to 25 stores across three regions survives: utterance 75, 09:00.
-
-Ana, Priya and Lena remain named. The system invalidates derived claims and generated artifacts for rebuilding; it strips identifying references from surviving runtime passages and metadata. Unique roles established by signed messages and nearby pronoun continuations are also withdrawn conservatively. Suppression hashes and a workspace epoch prevent ordinary reimport and stale jobs from restoring erased content. Reset opens a separate workspace. Original supplied fixtures remain outside application source routes and model tools.
+- Ana's 20 December email independently states shelf-life population remained at 48%, untouched during that phase. This supports a later report of the same figure; it cannot restore a deleted September citation.
+- Lena's 24 September reduction to 25 stores across three regions provides independent evidence of deployment scope: utterance 75, 09:00.
 
 References: the surviving records above are in [Master-data remediation](/source/emails%2F13_master-data-remediation%23message-005), messages 5, 3 and 2, and [Master-data workshop](/source/transcripts%2F06_2024-09-24_master-data-workshop%23utterance-0041), utterances 41 and 75.
 
@@ -112,7 +106,9 @@ The promised list of locations containing Sofia's personal information remains o
 
 Sofia requested removal and a list of other locations on 18 November 2025. Marco promised the list on 19 November and asked for a few days. Ana reported the handover pack changed to v4 on 21 November, but said the older version remained in document history and had been escalated to IT. Sofia chased on 12 March 2026: she had still received no list, and the history issue remained open at their last discussion.
 
-Katarina made closure and a complete location list item 3 of the 9 April review actions, due within four weeks. Marco's 29 April response answered items 1, 2 and 4 and explicitly left item 3 outstanding. Katarina confirmed that on 30 April and chased “Item 3” again on 23 June. A 2 July internal resourcing conversation claims the four actions are closed except retention. That conflicts with the dated customer action trail and supplies no closure evidence for item 3. The speaker remains labelled Me/Them. The archive contains no later customer confirmation or delivered location list.
+Katarina made closure and a complete location list item 3 of the 9 April review actions, due within four weeks. Marco's 29 April response answered items 1, 2 and 4 and explicitly left item 3 outstanding. Katarina confirmed that on 30 April and chased “Item 3” again on 23 June.
+
+A 2 July internal resourcing conversation claims the four actions are closed except retention. That conflicts with the dated customer action trail and supplies no closure evidence for item 3. The speaker remains labelled Me/Them. The archive contains no later customer confirmation or delivered location list.
 
 Marco needed to notice his unfulfilled promise; Ana and IT owned the document-history follow-up, and Katarina was the customer reviewer tracking closure. The commitment remains outstanding at the 23 June follow-up, with uncertainty about events after the archive ends.
 

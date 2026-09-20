@@ -55,6 +55,7 @@ export interface Person {
 	sourceIds: string[];
 }
 export interface Answer {
+	snapshotNote?: string;
 	id: string;
 	text: string;
 	citations: Citation[];

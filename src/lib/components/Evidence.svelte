@@ -116,7 +116,9 @@
 </script>
 
 <div class:compact class="evidence" id={answerAnchor} bind:this={container}>
-	{#if answer.question && ['chat', 'share'].includes(answer.kind)}<p class="question-text">
+	{#if answer.question && ['chat', 'share', 'meeting'].includes(answer.kind)}<p
+			class="question-text"
+		>
 			<NameText text={answer.question} {people} />
 		</p>{/if}
 	<div class="answer-text" tabindex="-1">
@@ -206,6 +208,7 @@
 			timeZone: 'Europe/Helsinki'
 		}).format(new Date(answer.createdAt))} Helsinki · L{answer.level}</small
 	>
+	{#if answer.snapshotNote}<small class="snapshot-note">{answer.snapshotNote}</small>{/if}
 	{#if answer.kind === 'share'}<div class="export-actions">
 			<button type="button" class="button secondary" onclick={copy}
 				>{copied ? 'Copied' : 'Copy text'}</button
@@ -218,6 +221,12 @@
 </div>
 
 <style>
+	.snapshot-note {
+		display: block;
+		color: var(--muted);
+		margin-top: 6px;
+		line-height: 1.5;
+	}
 	.inline-citation {
 		display: inline-block;
 		padding: 0 7px;

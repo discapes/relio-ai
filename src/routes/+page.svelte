@@ -2,7 +2,8 @@
 	import { enhance } from '$app/forms';
 	import { invalidateAll, goto, afterNavigate, beforeNavigate } from '$app/navigation';
 	import { page } from '$app/state';
-	import { onMount, tick } from 'svelte';
+	import { getContext, onMount, tick } from 'svelte';
+	import { chatSessionKey, type ChatSession } from '$lib/chat-session.svelte';
 	import relexSymbol from '$lib/assets/favicon.png';
 	import { sourceHref } from '$lib/presentation/navigation';
 	import type { SubmitFunction } from '@sveltejs/kit';
@@ -40,6 +41,8 @@
 		data: WorkspaceData;
 		form?: { answer?: Answer; error?: string; success?: string | boolean; mail?: MailRecord };
 	} = $props();
+	const chatSession = getContext<ChatSession>(chatSessionKey);
+	const latestAnswer = $derived(chatSession.state.answer || form?.answer);
 	const view = $derived(page.url.searchParams.get('view') || 'workspace');
 	const viewTitle = $derived(
 		(
@@ -84,14 +87,16 @@
 	let previewPromote = $state(false);
 	let showMemory = $state(false);
 	let showDemo = $state(false);
+	let hydrated = $state(false);
 	let navigating = false;
 	let pollController: AbortController | undefined;
 	beforeNavigate(() => {
+		showDemo = false;
 		navigating = true;
 		pollController?.abort();
 	});
-	afterNavigate(() => {
-		showDemo = false;
+	afterNavigate(({ from }) => {
+		if (from) showDemo = false;
 		navigating = false;
 	});
 	let to = $state('');
@@ -250,6 +255,7 @@
 	const running = $derived(
 		data.jobs.filter((j) => ['queued', 'running', 'pending'].includes(j.status))
 	);
+	const briefRunning = $derived(running.some((job) => job.kind === 'brief'));
 	function setAgent(value: boolean) {
 		includeAgent = value;
 		cc = cc
@@ -291,6 +297,7 @@
 		}
 	}
 	onMount(() => {
+		hydrated = true;
 		const timer = setInterval(() => {
 			if (navigating || pollController) return;
 			const controller = new AbortController();
@@ -424,6 +431,7 @@
 				><button
 					class="text-button"
 					aria-expanded={showDemo}
+					disabled={!hydrated}
 					aria-controls="view-settings"
 					onclick={() => (showDemo = !showDemo)}>Switch view</button
 				>
@@ -548,15 +556,14 @@
 									use:enhance={action}
 									data-label="Refreshing your morning brief"
 								>
-									<button class="text-button" disabled={!!busy}
+									<button class="text-button" disabled={!!busy || briefRunning}
 										><RefreshCw size={15} />Refresh</button
 									>
 								</form>
 							</div>
 							<div class="brief-context">
-								<span class="status-dot"></span>Prepared for {data.context.persona.role}<span
-									>Archive through {data.archiveDate}</span
-								>
+								<span class="status-dot"></span>{data.brief ? 'Prepared for' : 'For'}
+								{data.context.persona.role}<span>Archive through {data.archiveDate}</span>
 							</div>
 							<div class="card-body">
 								{#if data.brief}<Evidence
@@ -565,19 +572,23 @@
 										compact
 									/>{:else}<div class="brief-empty">
 										<BookOpen size={30} />
-										<h3>Your briefing is being prepared</h3>
-										<p>
-											Relio is reading the project's evidence, your responsibilities and followed
-											topics. The prepared brief will stay here between visits.
-										</p>
-										<form
-											method="POST"
-											action="?/refreshBrief"
-											use:enhance={action}
-											data-label="Preparing your first brief"
-										>
-											<button class="button secondary" disabled={!!busy}>Prepare my brief</button>
-										</form>
+										{#if briefRunning}
+											<h3>Your briefing is being prepared</h3>
+											<p>You can keep exploring. Your brief will appear here when it is ready.</p>
+										{:else}
+											<h3>Prepare your morning brief</h3>
+											<p>
+												Summarize the available project evidence for your role and followed topics.
+											</p>
+											<form
+												method="POST"
+												action="?/refreshBrief"
+												use:enhance={action}
+												data-label="Preparing your morning brief"
+											>
+												<button class="button secondary" disabled={!!busy}>Prepare my brief</button>
+											</form>
+										{/if}
 									</div>{/if}
 							</div>
 							<div class="brief-bottom">
@@ -597,22 +608,12 @@
 								<p class="section-description">
 									Find an agreement, prepare a conversation, or ask what changed.
 								</p>
-								<ChatStream
-									context={data.context}
-									people={data.people}
-									onanswer={(answer) => {
-										form = { answer };
-									}}
-									onbusy={(value) => {
-										busy = value ? 'Reading project evidence' : '';
-									}}
-									disabled={!!busy}
-								/>
-								{#if form?.answer}<div class="answer-result">
-										<Evidence people={data.people} answer={form.answer} />
+								<ChatStream context={data.context} disabled={!!busy} />
+								{#if latestAnswer}<div class="answer-result">
+										<Evidence people={data.people} answer={latestAnswer} />
 									</div>{/if}{#each [...data.chat]
 									.reverse()
-									.slice(0, 8) as answer}{#if answer.id !== form?.answer?.id}<div
+									.slice(0, 8) as answer}{#if answer.id !== latestAnswer?.id}<div
 											class="answer-result"
 										>
 											<Evidence people={data.people} {answer} />
@@ -704,17 +705,21 @@
 										<small
 											><NameText text={meeting.attendees.join(' · ')} people={data.people} /></small
 										>
-										<form
-											method="POST"
-											action="?/refreshBrief"
-											use:enhance={action}
-											data-label="Preparing for your meeting"
+										<button
+											type="button"
+											class="text-button"
+											disabled={!!busy || chatSession.state.running}
+											onclick={async () => {
+												chatSession.state.question = `Prepare me for ${meeting.title}.`;
+												chatSession.state.meetingId = meeting.id;
+												const pending = chatSession.ask();
+												await tick();
+												document
+													.getElementById('conversation')
+													?.scrollIntoView({ block: 'start', behavior: 'instant' });
+												await pending;
+											}}>Prepare for this meeting<ArrowUpRight size={15} /></button
 										>
-											<input type="hidden" name="meetingId" value={meeting.id} /><button
-												class="text-button"
-												disabled={!!busy}>Prepare for this meeting<ArrowUpRight size={15} /></button
-											>
-										</form>
 									</div>{/each}
 							</div>
 						</section>

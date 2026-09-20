@@ -7,6 +7,7 @@ import {
 	withoutChatActivity
 } from './chat-activity';
 import { database } from './database';
+import { retainAnswer } from './answer-retention';
 import { completeTranscriptPassages } from './transcript-passages';
 import { latestMeeting, type MeetingScope } from './meeting-selection';
 import * as memory from './memory';
@@ -96,9 +97,47 @@ function db() {
 		}
 		memory.registerErasureHook((workspaceId: string, aliases: string[], sourceIds: string[]) => {
 			cancelChatStreams(workspaceId);
-			let count = Number(
-				d.prepare('DELETE FROM wf_people_guidance WHERE workspace_id=?').run(workspaceId).changes
-			);
+			let count = 0;
+			const matchesAlias = (text: string) =>
+				aliases.some((alias) =>
+					new RegExp(
+						`(?<![\\p{L}\\p{N}])${alias.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?![\\p{L}\\p{N}])`,
+						'iu'
+					).test(text)
+				) || memory.isSuppressed(workspaceId, text);
+			const scopeSources = (owner: string, level: Level) =>
+				new Map(
+					memory
+						.sources(memory.context(workspaceId, owner, level))
+						.map((source) => [source.id, source])
+				);
+			const nextEpoch = memory.epoch(workspaceId) + 1;
+			for (const row of d
+				.prepare('SELECT rowid,* FROM wf_people_guidance WHERE workspace_id=?')
+				.all(workspaceId)) {
+				const answer = retainAnswer(
+					JSON.parse(String(row.payload)),
+					scopeSources(String(row.owner), Number(row.level) as Level),
+					matchesAlias
+				);
+				const person = memory
+					.people(memory.context(workspaceId, String(row.owner), Number(row.level) as Level))
+					.find((person) => person.id === row.person_id);
+				if (
+					!answer ||
+					!person ||
+					matchesAlias(JSON.stringify(person)) ||
+					matchesAlias(JSON.stringify(memory.resolvePersona(String(row.owner)) ?? {}))
+				) {
+					d.prepare('DELETE FROM wf_people_guidance WHERE rowid=?').run(row.rowid);
+					count++;
+				} else
+					d.prepare('UPDATE wf_people_guidance SET epoch=?,payload=? WHERE rowid=?').run(
+						nextEpoch,
+						JSON.stringify(answer),
+						row.rowid
+					);
+			}
 			cancelModelCalls(workspaceId);
 			const erasedOwners = memory.personas
 				.filter((p) =>
@@ -114,6 +153,20 @@ function db() {
 					)
 					.all(workspaceId);
 				for (const row of rows) {
+					if (table === 'wf_artifacts' && !erasedOwners.includes(String(row.owner))) {
+						const original = JSON.parse(String(row.payload)) as Answer;
+						const retained = retainAnswer(
+							original,
+							scopeSources(String(row.owner), original.level),
+							matchesAlias
+						);
+						if (retained) {
+							d.prepare(
+								'UPDATE wf_artifacts SET epoch=?,payload=? WHERE workspace_id=? AND id=?'
+							).run(nextEpoch, JSON.stringify(retained), workspaceId, String(row.id));
+							continue;
+						}
+					}
 					const text = String(row.payload).toLocaleLowerCase();
 					const personal = aliases.some((alias) =>
 						new RegExp(
@@ -218,24 +271,49 @@ export function preparedGuidance(
 			.get(workspace, ctx.projectId, ctx.persona.id, ctx.level, ctx.epoch, personId, key);
 		return row ? JSON.parse(String(row.payload)) : null;
 	};
-	const personal = lookup(ctx.workspaceId, fingerprint);
+	const available = new Map(memory.sources(ctx).map((source) => [source.id, source]));
+	const validate = (answer: Answer | null) =>
+		answer &&
+		retainAnswer(
+			answer,
+			available,
+			(text) => memory.isSuppressed(ctx.workspaceId, text),
+			ctx.epoch > 0
+		);
+	const personal = validate(lookup(ctx.workspaceId, fingerprint));
 	if (personal) return personal;
-	if (ctx.epoch !== 0 || ctx.workspaceId === 'prepared-baseline') return null;
+	const previous = db()
+		.prepare(
+			'SELECT payload FROM wf_people_guidance WHERE workspace_id=? AND project_id=? AND owner=? AND level=? AND epoch=? AND person_id=? ORDER BY rowid DESC LIMIT 1'
+		)
+		.get(ctx.workspaceId, ctx.projectId, ctx.persona.id, ctx.level, ctx.epoch, personId);
+	if (previous) {
+		const retained = validate(JSON.parse(String(previous.payload)));
+		if (retained)
+			return {
+				...retained,
+				snapshotNote:
+					retained.snapshotNote ?? 'Prepared guidance; newer context may not be included.'
+			};
+	}
+	if (ctx.workspaceId === 'prepared-baseline') return null;
 	const baseline = memory.context('prepared-baseline', ctx.persona.id, ctx.level);
-	const projectEvidence = (scope: Context) =>
-		JSON.stringify({
-			project: scope.projectId,
-			owner: scope.persona.id,
-			role: scope.persona.role,
-			name: scope.persona.name,
-			level: scope.level,
-			sources: memory.sources(scope)
-		});
-	// Archive guidance remains useful after private chat or preferences change.
-	// Reuse is confined to the same employee, access level and exact project evidence.
-	if (projectEvidence(ctx) === projectEvidence(baseline))
-		return lookup(baseline.workspaceId, guidanceFingerprint(baseline));
-	return null;
+	// Revalidate each displayed passage against this workspace before reusing a
+	// baseline snapshot, including after erasure. No baseline source is copied back.
+	const row = db()
+		.prepare(
+			'SELECT payload FROM wf_people_guidance WHERE workspace_id=? AND project_id=? AND owner=? AND level=? AND epoch=0 AND person_id=? ORDER BY rowid DESC LIMIT 1'
+		)
+		.get(baseline.workspaceId, ctx.projectId, ctx.persona.id, ctx.level, personId);
+	const retained = validate(row ? JSON.parse(String(row.payload)) : null);
+	if (!retained) return null;
+	const changed = JSON.stringify(memory.sources(ctx)) !== JSON.stringify(memory.sources(baseline));
+	return changed
+		? {
+				...retained,
+				snapshotNote: retained.snapshotNote ?? 'Prepared before the latest project update.'
+			}
+		: retained;
 }
 const preparingGuidance = new Map<string, Promise<Answer>>();
 export async function preparePersonGuidance(ctx: Context, personId: string): Promise<Answer> {
@@ -630,10 +708,28 @@ export async function answerQuestion(
 ): Promise<Answer> {
 	requireCurrent(ctx);
 	chatStage('interpreting', 'Interpreting your question and checking your personal preferences.');
-	if (memory.isSuppressed(ctx.workspaceId, question))
-		throw new Error(
-			'This question contains identifying information erased from this workspace. Rephrase without that identity.'
-		);
+	const mentionedErasedPerson = memory.isSuppressed(ctx.workspaceId, question);
+	if (mentionedErasedPerson) question = memory.sanitizeErasedText(ctx.workspaceId, question);
+	if (
+		ctx.epoch > 0 &&
+		/\b(what (?:data |information )?remains|what(?: is|'s) left|deletion (?:receipt|status)|what was (?:deleted|removed)|which .* remain)\b/i.test(
+			question
+		)
+	) {
+		const receipt = memory.erasedReceipts(ctx)[0];
+		const remaining = memory.sources(ctx);
+		const text = `${receipt ? `The latest deletion removed ${receipt.sourcesRemoved} source records and withdrew ${receipt.artifactsRemoved} stored results. ` : 'The deletion has been applied to this workspace. '}${remaining.length} source records from ${new Set(remaining.map((source) => source.documentId)).size} documents remain available. You can browse the remaining project memory and ask about its topics using surviving evidence.`;
+		return saveArtifact(ctx, {
+			id: randomUUID(),
+			text,
+			citations: [],
+			createdAt: now(),
+			kind,
+			level: ctx.level,
+			question,
+			trace: ['Deletion receipt and remaining source counts checked in this workspace.']
+		});
+	}
 	if (!question.trim() || question.length > 8000)
 		throw new Error('Enter a question of up to 8,000 characters.');
 	let research = false;
@@ -824,7 +920,7 @@ export async function answerQuestion(
 		() => requireCurrent(ctx),
 		ctx.workspaceId,
 		false,
-		kind === 'chat' || kind === 'share' ? 3 : 1,
+		['chat', 'share', 'meeting'].includes(kind) ? 3 : 1,
 		['text', 'citations'],
 		undefined,
 		true
@@ -877,10 +973,19 @@ export async function answerQuestion(
 export async function generateBrief(ctx: Context, meetingId?: string) {
 	const upcoming = accessibleMeetings(ctx);
 	const meeting = upcoming.find((m) => m.id === meetingId);
+	if (meetingId && !meeting) throw new Error('This meeting is unavailable in the current view.');
 	const task = meeting
 		? `Prepare me for this simulated meeting: ${JSON.stringify(meeting)}. Show relevant commitments, changes, questions to ask and evidence-backed recommendations. Mark calendar data as simulated.`
 		: `Prepare my morning brief for Monday 6 July 2026, considering all subsequent delivered demo messages as new updates. Prioritise relevant changes, unresolved commitments at their last recorded follow-up, decisions needed, and preparation for these simulated meetings: ${JSON.stringify(upcoming)}. Write exactly four useful items, each 60–90 words with a short sentence-case label. Omit a repeated greeting, title and calendar header. Keep the complete brief under 400 words. Include source dates and precise evidence. Avoid repeating sensitive personal details when describing a correction or removal follow-up.`;
-	return answerQuestion(ctx, task, meeting ? 'meeting' : 'brief');
+	const answer = await answerQuestion(ctx, task, meeting ? 'meeting' : 'brief');
+	if (meeting) {
+		requireCurrent(ctx);
+		answer.question = `Prepare for ${meeting.title}`;
+		db()
+			.prepare('UPDATE wf_artifacts SET payload=? WHERE workspace_id=? AND id=?')
+			.run(JSON.stringify(answer), ctx.workspaceId, answer.id);
+	}
+	return answer;
 }
 export async function extractMemory(ctx: Context) {
 	const permitted = memory.sources(ctx);
@@ -1358,7 +1463,9 @@ export function workspaceData(ctx: Context, personList = memory.people(ctx)): Wo
 		claims: claimList,
 		people: personList.map((p) => ({ ...p, sourceIds: p.sourceIds.slice(0, 20) })),
 		brief,
-		chat: artifacts(ctx, 'chat').reverse(),
+		chat: artifacts(ctx)
+			.filter((answer) => ['chat', 'meeting'].includes(answer.kind))
+			.reverse(),
 		preferences: preferences(ctx),
 		mails: allMails(ctx),
 		meetings: accessibleMeetings(ctx),

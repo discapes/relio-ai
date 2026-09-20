@@ -13,6 +13,11 @@ export async function POST({ request, cookies, url }) {
 	const input = await request.json().catch(() => error(400, 'Enter a valid question.'));
 	if (typeof input?.question !== 'string' || !input.question.trim() || input.question.length > 8000)
 		error(400, 'Enter a question of up to 8,000 characters.');
+	if (
+		input.meetingId !== undefined &&
+		(typeof input.meetingId !== 'string' || !input.meetingId.trim() || input.meetingId.length > 200)
+	)
+		error(400, 'Choose an available meeting.');
 	const current = {
 		workspaceId: ctx.workspaceId,
 		personaId: ctx.persona.id,
@@ -26,5 +31,5 @@ export async function POST({ request, cookies, url }) {
 		error(409, 'Your session changed. Reload before asking again.');
 	if (chatRevision(ctx.workspaceId) !== revision)
 		error(409, 'Your session changed. Reload before asking again.');
-	return chatResponse(ctx, input.question, request.signal);
+	return chatResponse(ctx, input.question, request.signal, input.meetingId);
 }

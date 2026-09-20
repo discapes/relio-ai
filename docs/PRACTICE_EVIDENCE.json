@@ -1,0 +1,1524 @@
+{
+	"units": {
+		"1e27c262099b8693e76d5d4be60e9a5dccd1d35648f7b1d74ff54374020a4b98": {
+			"label": "P1: The assessment identified remaining gaps; the September evidence does not establish comple",
+			"sources": [
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0012",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0013",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0014",
+				"emails/13_master-data-remediation#message-006"
+			]
+		},
+		"4c2465898dfc7c436863bd9bbd53d0e9d45e4d7ae85d393addcd13fac47b7be4": {
+			"label": "P1: | Case-pack quantity missing on 31% of active articles                                    ",
+			"sources": [
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0012",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0013",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0014"
+			]
+		},
+		"ddc2f62f0c3e37ed33f1de0bc90aded1a9b79d93884eb7e1fdd4f747bf449843": {
+			"label": "P1: | Store master and product hierarchy described as clean                                   ",
+			"sources": [
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0017",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0018",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0019"
+			]
+		},
+		"65ae8fb652891a5a99133c46f3cb1f61a8f838abbf2f3b54be1753320776b8e0": {
+			"label": "P1: | Supplier lead times populated, with many defaulted to exactly seven days and considered ",
+			"sources": [
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0019",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0020",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0021",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0022",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0023"
+			]
+		},
+		"1298fa2bf5fcf270469cf1f140663afee746ef8a666e2f8ed9070cc722b5e954": {
+			"label": "P1: | Shelf life populated on 48%                                                             ",
+			"sources": ["transcripts/06_2024-09-24_master-data-workshop#utterance-0025"]
+		},
+		"fd7ac837f0cfcbb468f230719fc9724fd6e9675d422c468bac81813b55b05784": {
+			"label": "P1: | Approximately 4,200 articles in the pilot cohort                                        ",
+			"sources": ["transcripts/06_2024-09-24_master-data-workshop#utterance-0037"]
+		},
+		"2ff18d1da2c00e79d7139163126a430c1561d87e5d3ba5a51682774eacc0fbb6": {
+			"label": "P1: | Approximately 1,300 case-pack fixes discussed                                           ",
+			"sources": [
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0041",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0042",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0043"
+			]
+		},
+		"9dc2a602ac35fab7edeb622cc9d310b79e90410d94de6090b6f81211f2f8b155": {
+			"label": "P1: | Exact pilot-cohort count: 4,214; missing case pack: 1,317; missing or default supplier l",
+			"sources": ["emails/13_master-data-remediation#message-006"]
+		},
+		"133e4ededc6b89c53d0c5760641c0d4a7895e12130e1c13356fbfa8438896937": {
+			"label": "P1: The workshop also reduced the pilot from 40 to 25 stores across three regions and mixed fo",
+			"sources": [
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0068",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0069",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0070",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0071",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0072",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0073",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0074",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0075",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0087",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0088",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0089",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0090"
+			]
+		},
+		"d158f1ee52325cd8727d1e4288fac42d76ea14c69d44ce00b8e7220b976817a6": {
+			"label": "P2: The 12 November 2024 ordering-logic workshop records Lena describing the existing theoreti",
+			"sources": [
+				"transcripts/07_2024-11-12_ordering-logic-design#utterance-0073",
+				"transcripts/07_2024-11-12_ordering-logic-design#utterance-0075",
+				"transcripts/07_2024-11-12_ordering-logic-design#utterance-0077",
+				"transcripts/07_2024-11-12_ordering-logic-design#utterance-0078",
+				"transcripts/07_2024-11-12_ordering-logic-design#utterance-0079",
+				"transcripts/07_2024-11-12_ordering-logic-design#utterance-0083"
+			]
+		},
+		"8d57c5ef3b2e686dfd62627c43b42b86806bd8968eb67080df009ce7ecdd7593": {
+			"label": "P2: The ordering workshop records daily ordering, daily delivery on fast lines and twice-weekl",
+			"sources": ["transcripts/07_2024-11-12_ordering-logic-design#utterance-0086"]
+		},
+		"cfcb62906cebbb2641cc25921e1135513e93a16abe5c18f962675cc2563481da": {
+			"label": "P3: On 24 September 2024, Kwame identified an operator identifier in the extract he had alread",
+			"sources": [
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0099",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0100",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0101",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0102",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0103",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0104",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0105",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0106",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0107",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0108",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0109",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0110",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0111",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0112",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0113",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0114",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0115",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0116",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0117",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0118",
+				"transcripts/06_2024-09-24_master-data-workshop#utterance-0119"
+			]
+		},
+		"3a5e0293c46d4c539e29befcf08f11eefaea9a86d3f37f34f23635302e88458e": {
+			"label": "P3: On 17 November 2025, Priya raised the continuing inclusion of OP_ID as a condition of proc",
+			"sources": [
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0127",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0128",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0129",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0130",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0131",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0132",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0133",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0134",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0135",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0136",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0137",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0138",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0139",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0140",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0141",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0142",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0143",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0144",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0145",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0146",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0147",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0148",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0149",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0150",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0151",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0152",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0153",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0154",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0155",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0156",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0157",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0158",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0159",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0160",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0161",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0162",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0163",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0164",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0165",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0166",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0167",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0168",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0169",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0170",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0171"
+			]
+		},
+		"f63f9e20a58e2494694f3d0074ee3750ba4655fb11e46cfa903f5e859f06279b": {
+			"label": "P3: The 18 November email states that OP_ID had appeared in every file since February. Nadia c",
+			"sources": [
+				"emails/07_op-id-field-exclusion#message-002",
+				"emails/07_op-id-field-exclusion#message-003",
+				"emails/07_op-id-field-exclusion#message-004",
+				"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0067",
+				"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0068",
+				"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0069"
+			]
+		},
+		"fd0b3aeea641cbc9c473940caaf941e03373a4d9e7cccf6f707a1ff142b961dd": {
+			"label": "P4: Lena Fischer confirmed signing the limited core-replenishment UAT scope on 22 January 2025",
+			"sources": ["emails/15_uat-signoff#message-002", "emails/15_uat-signoff#message-003"]
+		},
+		"9c2b67cfda6c599a6cec0a9b6903bfc4292bf15175e319d687c73e5d03a970fa": {
+			"label": "P4: > Acme Org confirms that user acceptance testing for core replenishment has been completed",
+			"sources": ["emails/15_uat-signoff#message-003"]
+		},
+		"6dffe9e10562b3ae4adecdcc838982f029c52f41e7c243c73ac0ff9657b75b11": {
+			"label": "P4: Lena's response says “Signed and attached” and confirms the wording. The email supports th",
+			"sources": ["emails/15_uat-signoff#message-002"]
+		},
+		"38283a86c476f1943df34da0be9d9fbe0ef39fcf0e91ee1911832ebab15c1a11": {
+			"label": "P4: Two rounding defects were still open when the wording was sent; Kwame reported them fixed ",
+			"sources": ["emails/15_uat-signoff#message-001", "emails/15_uat-signoff#message-003"]
+		},
+		"e36a0b1207084487cf75aea6a9fe1df692f8cb25508d871a958526b9a615c21c": {
+			"label": "P5: | 20 March 2024     | “Maybe half the range”; an estimate, with ownership problems        ",
+			"sources": [
+				"transcripts/01_2024-03-20_solution-demo-value-workshop#utterance-0049",
+				"transcripts/01_2024-03-20_solution-demo-value-workshop#utterance-0050",
+				"transcripts/01_2024-03-20_solution-demo-value-workshop#utterance-0051",
+				"transcripts/01_2024-03-20_solution-demo-value-workshop#utterance-0052"
+			]
+		},
+		"c946cbbf3466a6be3c4e8928f91b18b727c1d62ea96a4c35fa6336a5a156b2a4": {
+			"label": "P5: | 18 April 2024     | “Maybe half”; some populated values were wrong                      ",
+			"sources": [
+				"transcripts/02_2024-04-18_technical-due-diligence#utterance-0105",
+				"transcripts/02_2024-04-18_technical-due-diligence#utterance-0106",
+				"transcripts/02_2024-04-18_technical-due-diligence#utterance-0107"
+			]
+		},
+		"4e458c3ad4eb683c91737208f6f6180706e41131ca76863019b09829bda3b681": {
+			"label": "P5: | 24 September 2024 | 48% populated                                                       ",
+			"sources": ["transcripts/06_2024-09-24_master-data-workshop#utterance-0025"]
+		},
+		"e990d11086fb962a8b2687de48c3dd3b9c7b1bd2704449dc67067eea9b09d981": {
+			"label": "P5: | 30 September 2024 | 48% in the written pilot-remediation summary                        ",
+			"sources": ["emails/13_master-data-remediation#message-006"]
+		},
+		"92d531c3efab9fbb6a7d19c497eedf12c556d12d64ac7ae14d38b9a7495f8cd4": {
+			"label": "P5: | 20 December 2024  | Still 48%, untouched during phase one                               ",
+			"sources": ["emails/13_master-data-remediation#message-002"]
+		},
+		"aa638e8d9849c3491b3b24aae6e16eed308d8e35602e69f37a0b4c27582dc6de": {
+			"label": "P5: | 27 February 2025  | Described as still mostly empty, without a new numerical measurement",
+			"sources": [
+				"transcripts/10_2025-02-27_go-live-cutover#utterance-0015",
+				"transcripts/10_2025-02-27_go-live-cutover#utterance-0016",
+				"transcripts/10_2025-02-27_go-live-cutover#utterance-0017",
+				"transcripts/10_2025-02-27_go-live-cutover#utterance-0018",
+				"transcripts/10_2025-02-27_go-live-cutover#utterance-0019",
+				"transcripts/10_2025-02-27_go-live-cutover#utterance-0020"
+			]
+		},
+		"efd7118d072d86fc646aa2aac44bba2dd86a600eb3d14eabb7aacb1afbfa68b6": {
+			"label": "P5: | 12 September 2025 | Sofia repeats her March account: about half, some wrong             ",
+			"sources": [
+				"transcripts/15_2025-09-12_fresh-phase2-escalation#utterance-0062",
+				"transcripts/15_2025-09-12_fresh-phase2-escalation#utterance-0063",
+				"transcripts/15_2025-09-12_fresh-phase2-escalation#utterance-0064",
+				"transcripts/15_2025-09-12_fresh-phase2-escalation#utterance-0065",
+				"transcripts/15_2025-09-12_fresh-phase2-escalation#utterance-0066"
+			]
+		},
+		"7101b7dc30622a1ab4b4fc5574b38e2782b926a73fa7477dfa9f8ff2823c9089": {
+			"label": "P5: | 11 December 2025  | 61% for the three in-scope categories, up from 48% after the October",
+			"sources": [
+				"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0050",
+				"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0051",
+				"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0052",
+				"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0053",
+				"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0054"
+			]
+		},
+		"a07db3d2d9763a6b23fdb4de334156cc7a6d1fb6180a41c551bd303fcd51538b": {
+			"label": "P5: The latest explicit measurement is 61% for produce, dairy and chilled ready meals. Its den",
+			"sources": [
+				"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0050",
+				"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0051",
+				"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0052",
+				"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0053",
+				"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0054",
+				"emails/01_shelf-life-field-mapping#message-001"
+			]
+		},
+		"310e22f9f58d47f9c864703e05886bcc3b57d3b3e52f2183e021dd068ea4ad10": {
+			"label": "P6: Bakery was included in the initial fresh-phase discussion. At the 15 July 2024 kickoff, Le",
+			"sources": [
+				"transcripts/05_2024-07-15_implementation-kickoff#utterance-0116",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0030",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0031",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0032",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0033",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0034",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0035",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0036",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0037",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0038",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0039",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0040",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0041",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0042",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0043",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0044",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0045",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0046",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0047",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0048",
+				"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0049",
+				"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0007"
+			]
+		},
+		"2501e14ab60c3bbbe2c66267ae852afa11a0a0bf4a78abaff92a5a870e50cae5": {
+			"label": "P6: In January 2026, bakery became a separate partner workstream: RELEX supplies a demand sign",
+			"sources": [
+				"transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0043",
+				"transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0044",
+				"transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0045",
+				"transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0046",
+				"transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0047",
+				"transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0048",
+				"transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0049",
+				"transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0050",
+				"transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0051",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0049",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0050",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0051",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0052",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0053",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0054",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0055",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0056",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0057",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0058",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0059",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0060",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0061",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0062",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0063",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0064",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0065",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0066",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0067",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0068",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0069",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0070",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0071",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0072",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0073",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0074",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0075",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0076",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0077",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0078",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0079",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0080",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0081",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0082",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0083",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0084",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0085",
+				"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0086",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0094",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0095",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0096"
+			]
+		},
+		"604d3682ea73fa98f8b435ae6ffeb179a321370c34c32bae10c12baf5062c53b": {
+			"label": "P6: The current archive position is therefore a separate bakery workstream under development. ",
+			"sources": [
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0094",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0095",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0096",
+				"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0007"
+			]
+		},
+		"168f97fb01a04fcfdb2e6bcb72bb6bd84716d1bbcc549bb4d4c73fe716f1692f": {
+			"label": "P7: This question examines how independent evidence supports an answer after the assessment au",
+			"sources": []
+		},
+		"a09111b64fb73e28cd60d1d99453a965e11165e37dc5808ca96dd558f69efc38": {
+			"label": "P7: - Priya's 24 September workshop turn discusses approximately 1,300 fixes: utterance 41, 05",
+			"sources": ["transcripts/06_2024-09-24_master-data-workshop#utterance-0041"]
+		},
+		"e77fe2d29625a65a6a1fdc7f19c6dd61e554e4748d19e5c606df9af88946d6b8": {
+			"label": "P7: - Priya's 28 October email independently reports 780 of 1,317 completed; her 19 December e",
+			"sources": [
+				"emails/13_master-data-remediation#message-005",
+				"emails/13_master-data-remediation#message-003"
+			]
+		},
+		"e4754aa28f4a424da24cb4d7a752c264793a594021b0df4f9c8827a632e17d15": {
+			"label": "P7: - Ana's 20 December email independently states shelf-life population remained at 48%, unto",
+			"sources": ["emails/13_master-data-remediation#message-002"]
+		},
+		"5f3e1f558e5ce95cc97cac18e091e4f090d27baf4c11840066ab3e0555088925": {
+			"label": "P7: - Lena's 24 September reduction to 25 stores across three regions provides independent evi",
+			"sources": ["transcripts/06_2024-09-24_master-data-workshop#utterance-0075"]
+		},
+		"b5184c2bf55102317c4fd07b24960eb196cd17671a8dbd46d4c93e063f2a5921": {
+			"label": "P8: The promised list of locations containing Sofia's personal information remains outstanding",
+			"sources": [
+				"emails/04_march-2024-notes-correction#message-001",
+				"emails/08_dpa-review-actions#message-001"
+			]
+		},
+		"de7f85069860d064f34bbe19dada5534c04a85cdca8d3e296947cdb374952504": {
+			"label": "P8: Sofia requested removal and a list of other locations on 18 November 2025. Marco promised ",
+			"sources": [
+				"emails/04_march-2024-notes-correction#message-001",
+				"emails/04_march-2024-notes-correction#message-002",
+				"emails/04_march-2024-notes-correction#message-003",
+				"emails/04_march-2024-notes-correction#message-004"
+			]
+		},
+		"2e9d23cb07a473396c49cc3f6aa958295c13defe89e32ab3010f26d54b246987": {
+			"label": "P8: Katarina made closure and a complete location list item 3 of the 9 April review actions, d",
+			"sources": [
+				"emails/08_dpa-review-actions#message-001",
+				"emails/08_dpa-review-actions#message-002",
+				"emails/08_dpa-review-actions#message-003",
+				"emails/08_dpa-review-actions#message-004"
+			]
+		},
+		"a6efd7035bfa91f94e2a5272594e76f1c50d840e0372f4cb0ca0b0c2cb96710a": {
+			"label": "P8: A 2 July internal resourcing conversation claims the four actions are closed except retent",
+			"sources": [
+				"transcripts/23_2026-07-02_INTERNAL-renewal-resourcing#utterance-0003",
+				"emails/08_dpa-review-actions#message-001"
+			]
+		},
+		"8520947da42c2d466d3857aa27ff5e1851d097bc6b1eee4f133e232dcfd0b462": {
+			"label": "P8: Marco needed to notice his unfulfilled promise; Ana and IT owned the document-history foll",
+			"sources": [
+				"emails/04_march-2024-notes-correction#message-001",
+				"emails/04_march-2024-notes-correction#message-002",
+				"emails/04_march-2024-notes-correction#message-003",
+				"emails/04_march-2024-notes-correction#message-004",
+				"emails/08_dpa-review-actions#message-001"
+			]
+		},
+		"9bdcc6e1e526d007e84698968c90dfd4ab9fd07456c77f855839736e93d28556": {
+			"label": "P9: The weekly reports establish that Ana reported “Nightly article extract completed, no erro",
+			"sources": [
+				"reports/01_weekly-status-thread#message-002",
+				"reports/01_weekly-status-thread#message-003",
+				"reports/01_weekly-status-thread#message-004"
+			]
+		},
+		"bac64f2d7a9fcea17200ec7efb148e1145294fcc2abc880a401e23f68b5a06c8": {
+			"label": "P9: At the 16 June 2026 business review, Nadia explicitly explains the status line: the job ra",
+			"sources": [
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0130",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0131",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0132",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0133",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0134",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0135",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0136",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0137",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0138",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0139",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0140",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0141",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0142",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0143",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0144",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0145",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0146"
+			]
+		},
+		"6fb05e009fb92b0c40062b752c0dadd34270e3397263dd751ad93b7fa6ae7119": {
+			"label": "P9: The 9 February report itself also records two January DC-2 failures. That makes an unrestr",
+			"sources": ["reports/01_weekly-status-thread#message-003"]
+		},
+		"1bfe26b39e8e7997145b3fb1e4b496fb65bf0875f609ca4768dbc2ae919ecec6": {
+			"label": "P9: Earlier incidents explain why a success status needs qualification. Priya's 17 March 2025 ",
+			"sources": [
+				"emails/16_dc2-hypercare-incidents#message-001",
+				"emails/16_dc2-hypercare-incidents#message-002",
+				"emails/16_dc2-hypercare-incidents#message-003",
+				"transcripts/11_2025-03-18_hypercare-review#utterance-0112",
+				"transcripts/11_2025-03-18_hypercare-review#utterance-0113",
+				"transcripts/11_2025-03-18_hypercare-review#utterance-0114",
+				"transcripts/11_2025-03-18_hypercare-review#utterance-0115",
+				"transcripts/11_2025-03-18_hypercare-review#utterance-0116",
+				"transcripts/11_2025-03-18_hypercare-review#utterance-0117",
+				"transcripts/11_2025-03-18_hypercare-review#utterance-0118",
+				"transcripts/11_2025-03-18_hypercare-review#utterance-0119",
+				"transcripts/11_2025-03-18_hypercare-review#utterance-0120",
+				"transcripts/11_2025-03-18_hypercare-review#utterance-0121",
+				"transcripts/11_2025-03-18_hypercare-review#utterance-0122",
+				"transcripts/11_2025-03-18_hypercare-review#utterance-0123",
+				"transcripts/11_2025-03-18_hypercare-review#utterance-0124",
+				"transcripts/11_2025-03-18_hypercare-review#utterance-0125"
+			]
+		},
+		"907e9ce7f2521c346446ad327683455964521e4c7a83d108460ecf0e7188269f": {
+			"label": "P9: The supported answer is that the reports recorded successful nightly extraction. The archi",
+			"sources": [
+				"reports/01_weekly-status-thread#message-002",
+				"reports/01_weekly-status-thread#message-003",
+				"reports/01_weekly-status-thread#message-004",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0130",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0131",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0132",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0133",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0134",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0135",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0136",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0137",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0138",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0139",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0140",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0141",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0142",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0143",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0144",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0145",
+				"transcripts/22_2026-06-16_q2-business-review#utterance-0146"
+			]
+		}
+	},
+	"sources": {
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0012": {
+			"hash": "2e5ba3c4c9c91f1f5b7d77650e6fac3763d209e4fca79269b1f79616d2a5f1aa",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0013": {
+			"hash": "8f032ea13b58e16d1d26d27ee7b8f7465a743c31c69daa0914951f36ac1a4b88",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0014": {
+			"hash": "7d511bc402ed0192fd8dca6ac58612503894f7e86f3003c7ac4b84ba8ef37f95",
+			"level": 1
+		},
+		"emails/13_master-data-remediation#message-006": {
+			"hash": "bc02776581c828d6c0d7acf5db26ed2a01e0f3c112019f661d5debbb9a39f33d",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0017": {
+			"hash": "740642db699979c027e0ae76d438716a16fc1e1bfbbae5e01e73a69d69d57f5c",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0018": {
+			"hash": "445ea76e0fecc22edfb57a2ca2be09cca64ca11a356ce23a5287505de22c9fc0",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0019": {
+			"hash": "e87b9a9ac8ba0aee34fdd0965fb45a6a879f23933812b85066301f3407b72f07",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0020": {
+			"hash": "85c9830b7dd1348f57cd84dd5838ed4d7d5bf08afd38091e77f1e8bc842c0060",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0021": {
+			"hash": "7d8e08865b0048279f5da931cd0b87d11fd7502d3cffcf7c2ba430b1ae08b549",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0022": {
+			"hash": "137a67cb2ea9cff88ce9ff96e953603b1a538f692e8e6df8f0c2663700be8d76",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0023": {
+			"hash": "823d1a5c40e5294e16fbc659d7650ccca0fd07ca8fd6b6121bfbe8c627b34e00",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0025": {
+			"hash": "64d0cb328d0ade1b6ab738c292320d691716230bd64f6a32c3c3d479b2330db5",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0037": {
+			"hash": "b523cc4c51a1471af79f5f480fdab36c2c1d38008cc8a52f510a97dfcd7fe10a",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0041": {
+			"hash": "7a96fb005334718518a8a1cb69245cb18a1fb2d7fcb6d4092e5575e0f182f4e4",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0042": {
+			"hash": "334328a126b2f6fb3fe237920c70a4e64c64ca657fde58eee492f624684de3e4",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0043": {
+			"hash": "2ce8bd535f0c5ec4dfa73b454a535ec82af142ed414a64543769dbef1d806721",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0068": {
+			"hash": "7579d2ce98b48a265d8cc43dfd5de6f10f7a58a8405c8858093986d298f00cf2",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0069": {
+			"hash": "348fa9eb5cbd8fcb9798db32d13c239e6633546436534ded93b40a0dc7e39560",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0070": {
+			"hash": "d1c30145e17b69d4f418d9b9e6a579678b0833dfbef8e00cb69d451f534f7bd4",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0071": {
+			"hash": "12424ff9c960915449912a1b4ea7394a39f629f626053e43abd584e921bec4a3",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0072": {
+			"hash": "c10c037156053bfe962132f8eb70e273899bcbf44d3db5e8d88a465a07e84d9e",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0073": {
+			"hash": "e3625bd86f590977ecdba80494da9cc2a465a6f8fd4ec5de1f7b90de5a41352b",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0074": {
+			"hash": "2cc9a59ae14e48454a6a01a2e286a525b9f2d6201a205dec4fbbb8f9755ef363",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0075": {
+			"hash": "05d694bb35dce8b2024d1e23e1640d8137b0c24c4ccdbc92646aafc2c7a0b436",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0087": {
+			"hash": "cd313a103003c257f55f327f13ab58033d7296c384375d35a6e563677b4d2c6f",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0088": {
+			"hash": "cd5592e5e3140daa2f3fe0541c004877a65933bc07d69dbec8e3a441e7877c90",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0089": {
+			"hash": "b900f1a0fa63040a3553e6232ed96fffc82e0ae9857639dd17d8aade8b18c38b",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0090": {
+			"hash": "4e0d555c0b5db39730b6611d1b45d019fc07bb91870d0e291dca8a567a82e400",
+			"level": 1
+		},
+		"transcripts/07_2024-11-12_ordering-logic-design#utterance-0073": {
+			"hash": "3d7b3ef6a9caadbb0e1be60f0f0044675069fc0022a98adb1491d2e5b12a449b",
+			"level": 1
+		},
+		"transcripts/07_2024-11-12_ordering-logic-design#utterance-0075": {
+			"hash": "8dc1fa39159dead8b6ac4192156d36b235bcbe0fc5c82fb5cec932f1164a2297",
+			"level": 1
+		},
+		"transcripts/07_2024-11-12_ordering-logic-design#utterance-0077": {
+			"hash": "d7c39a6403154832d65bbaf3517e8784b273b88e5d595c54b5466141e04cfc6c",
+			"level": 1
+		},
+		"transcripts/07_2024-11-12_ordering-logic-design#utterance-0078": {
+			"hash": "54c2afeb52d05e30721ba9b45c0ea8508b9ecc4defc8a24f7646b8ae96a7e380",
+			"level": 1
+		},
+		"transcripts/07_2024-11-12_ordering-logic-design#utterance-0079": {
+			"hash": "4f6d56543574579d2cdf2aff01e1efc013dadf2c8978119a1fdd83678652b16e",
+			"level": 1
+		},
+		"transcripts/07_2024-11-12_ordering-logic-design#utterance-0083": {
+			"hash": "36d3f1aabdea6f0029392784498a502e88ddba5612669e8b493bcca8961cbf64",
+			"level": 1
+		},
+		"transcripts/07_2024-11-12_ordering-logic-design#utterance-0086": {
+			"hash": "5758be051f768d8e298afdabc37f3ae2e3b949a19e8ae4aca191cea99a49752d",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0099": {
+			"hash": "bf4e2f022e9519e2e2818229a5a473722e75f3503ea398ed66e01cd6cbb85b3a",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0100": {
+			"hash": "fb64479ab8868d5a83006df4fad0f0c697f8e5f217d558fb128038082d025c63",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0101": {
+			"hash": "b437585eaeaa0e3c7706baeff694e0959519eb5a967d401f66b471ee8b31b369",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0102": {
+			"hash": "5179dad09edbbe176af499524ea56a17b9f173415ba495ec6b1d1086f04f0eb5",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0103": {
+			"hash": "7ee288d7b16873e36c39a6d478c819d5cff1e9d5a2da68114ae5a1c1eac2cfb8",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0104": {
+			"hash": "1fd0000db555ed9636302be4e23045ecfb3c2848183a7e0bdfe7b2fba2c22cfb",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0105": {
+			"hash": "cd5592e5e3140daa2f3fe0541c004877a65933bc07d69dbec8e3a441e7877c90",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0106": {
+			"hash": "ce84669922890fee5cd7aeeb9d1eafa5c9be71a3ee5ddede4a7c45282c60af8c",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0107": {
+			"hash": "84ddcd170acd0b0164378648154f1064f65bcc2be6168bfc24a6ce0b6e864408",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0108": {
+			"hash": "cd5592e5e3140daa2f3fe0541c004877a65933bc07d69dbec8e3a441e7877c90",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0109": {
+			"hash": "63e6e52a87e3053f2331911f2d1dd1bdc8554c600ddaf5984de4fb66073a24db",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0110": {
+			"hash": "8f032ea13b58e16d1d26d27ee7b8f7465a743c31c69daa0914951f36ac1a4b88",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0111": {
+			"hash": "f5479034d0318b8f729373d097035be4c8570def4dcfaf56af85eab84be52d09",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0112": {
+			"hash": "5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0113": {
+			"hash": "fe58e3057bdaa8782c9cde29f16f399d171125caa1a94c19bc648d5f0ba02494",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0114": {
+			"hash": "b43fed094e21c7b936da5016cf6ecf1b993582f1ba6f2b839db9cca6f3a2aca8",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0115": {
+			"hash": "8f032ea13b58e16d1d26d27ee7b8f7465a743c31c69daa0914951f36ac1a4b88",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0116": {
+			"hash": "cc8fd2559049489bff59f5317d00aff235c3a26572b72d40d325f6e78302814f",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0117": {
+			"hash": "8569efc4ed5a6273140c2b6ec0ab8d99f4398210808fbb7c0cbbae4fbcc21350",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0118": {
+			"hash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad",
+			"level": 1
+		},
+		"transcripts/06_2024-09-24_master-data-workshop#utterance-0119": {
+			"hash": "3a51caf0aea2387a41a217c4056c80cdbe76806c08d1e981154ec0181dbd1821",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0127": {
+			"hash": "45a05a63db695a0c9fc3818e9c5b7227d045d44f30e00b65b5fb9b4f7a24c2b8",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0128": {
+			"hash": "1de6850cab243226d38f75359ff4e29cd3692215b5991c57638f8eb15e93f0f9",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0129": {
+			"hash": "5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0130": {
+			"hash": "64cf37f9c3814bce59a8e1c04aa94a30cca675ad2ad9c62deccf53e8430dafd6",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0131": {
+			"hash": "6417ca19d26e42e6294dfcea329f97a1174dfa8d999eaa79981699f724f57555",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0132": {
+			"hash": "c10c037156053bfe962132f8eb70e273899bcbf44d3db5e8d88a465a07e84d9e",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0133": {
+			"hash": "d1828f1b1de34a567b3c997e40c63aae4349a1a3a7488e263d25467c53fa1646",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0134": {
+			"hash": "dc4d3ca74f73e5a2985b39a61e44c504ae6b30a8d9b927ae5bc827ea8119b066",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0135": {
+			"hash": "85c9830b7dd1348f57cd84dd5838ed4d7d5bf08afd38091e77f1e8bc842c0060",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0136": {
+			"hash": "8502f0369bfe52f29de5d68dedb0b1738cc832ec344f07ce85b337c10dee4707",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0137": {
+			"hash": "03b25bed61dad2fc92bb7ca539a0f5abb89e97a767e3ca68789d47009f9fa5c3",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0138": {
+			"hash": "7a5c4a2a907799bf015bdf2a9969dce4b6fb89468120354b12fe6a92fc15ddea",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0139": {
+			"hash": "e41334a27c787ba938f8d6fec9739f29e1bfc38d7ab94cfe5cf6506c572fd55c",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0140": {
+			"hash": "6d18075b0efcbf3f4ef30815f5f9e77bb1e63b748794560be73b65da5eea87d4",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0141": {
+			"hash": "0bb22b3bd6a24ffc36080f729acc9fed6e0293c292db92fbf7238676b8f9dcd3",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0142": {
+			"hash": "ec700630329582b4c1f4b3073d253239c5fa2b25bcca6003ba1fbe2ef947a992",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0143": {
+			"hash": "e21d9fccfe86740b5c33f8b915cdc0dc6c573ae705e78c60eaa592d8d509644f",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0144": {
+			"hash": "03b25bed61dad2fc92bb7ca539a0f5abb89e97a767e3ca68789d47009f9fa5c3",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0145": {
+			"hash": "68a9341ee5d10cae499f5b8e96ded9dfcf10119ba460b6f6cc37d77e4fed08dd",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0146": {
+			"hash": "cd5592e5e3140daa2f3fe0541c004877a65933bc07d69dbec8e3a441e7877c90",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0147": {
+			"hash": "27b6b793d4e7cf4d30ef7ad550e60915f11cca95cdd2b10d8708fc6ce36b71d4",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0148": {
+			"hash": "6eaba6ac4f20e504cebb4b04cf388ee07bb17dbcab673b97ba3fc091835b93f5",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0149": {
+			"hash": "f42acbad9245ed788ab8ee11dd0cd9f19c8ce2e6f7819e63c1ce58f8fc4af414",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0150": {
+			"hash": "95e9c5bcef6c81089c0e01c9b67301e223bee9cff8b1de7daf700624af0ceca2",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0151": {
+			"hash": "6f39388276f71989bfbf90a928bbefbb0aea18995b263dc6ef5d3d0a6c05ba2c",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0152": {
+			"hash": "cd5592e5e3140daa2f3fe0541c004877a65933bc07d69dbec8e3a441e7877c90",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0153": {
+			"hash": "2f7ba822e525cfe48d935b446bf390509ec62f0410e170c3320d314327cdb5ca",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0154": {
+			"hash": "5902437a19d393052f534325e5bd71fb30cc98c02f8cde9853db7060d98325e9",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0155": {
+			"hash": "445ea76e0fecc22edfb57a2ca2be09cca64ca11a356ce23a5287505de22c9fc0",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0156": {
+			"hash": "532070814ac971d65f9d1b349d07c9baea8a1525cf71e1ebfae02fa0fb5e67a8",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0157": {
+			"hash": "5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0158": {
+			"hash": "528ab306af042841b3829c73b9ecf007afd3d43c8f89b3508b3a1c1dc55fef83",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0159": {
+			"hash": "202fd507be4d3005452d0799d0daa22eb7867cca6dab4ef23e822ee458d17b8d",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0160": {
+			"hash": "285d51177cb2618fe768121d47440311b748aafe48e02cebb310bc92a44e16fe",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0161": {
+			"hash": "744029b72a97e443250a5f8dce9deaeac3d491ed874ebc48aed01048202430c4",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0162": {
+			"hash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0163": {
+			"hash": "b1f7c39a8e313c819887f2007a3f8ae916f7abb77f9c478fb8c3283ba2017e10",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0164": {
+			"hash": "62991c199e7fec0ffbd83281fe8a6242e522309d690b4898d85b2dfd787d995a",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0165": {
+			"hash": "01da35b4ab1e57d5898714a2755acb9f68d080778242cad9296412cca768ad40",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0166": {
+			"hash": "2de94f20bcb5d2ba1cc7028348cf2b69ccb4f9e12f2927f442d482db163c74d8",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0167": {
+			"hash": "94adc873dda6af84bafffc352931975f0872b92baa0f65260fbd9c99068126b1",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0168": {
+			"hash": "03b25bed61dad2fc92bb7ca539a0f5abb89e97a767e3ca68789d47009f9fa5c3",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0169": {
+			"hash": "e32ffce43bb82f6daa4373d32743df80b45defde77f46c0a500d485d9e808593",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0170": {
+			"hash": "8569efc4ed5a6273140c2b6ec0ab8d99f4398210808fbb7c0cbbae4fbcc21350",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0171": {
+			"hash": "49721faa8421febb20dcbfb1501817c14af322c3323990fead880c2c9b360363",
+			"level": 1
+		},
+		"emails/07_op-id-field-exclusion#message-002": {
+			"hash": "0675f6695fc1513966a58be39ff7378a59dd5f8cc7d022f19c58ead00fbc9f25",
+			"level": 1
+		},
+		"emails/07_op-id-field-exclusion#message-003": {
+			"hash": "0bb6a594f25f8c27760c0e77c29ce538ff0e3ed678b5df1e786ec0e69c1cedb5",
+			"level": 1
+		},
+		"emails/07_op-id-field-exclusion#message-004": {
+			"hash": "1819919c27e333ebe04c22818520cad4bb43ba30352345bf69d516bf1d7fd58f",
+			"level": 1
+		},
+		"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0067": {
+			"hash": "a581bf9256436290c1291ae577ad028042281208550878e4c0821692dff82ee0",
+			"level": 1
+		},
+		"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0068": {
+			"hash": "dd9e2afd4ebb7c5ed59f8d1dd15182d603cab87ac05f646a4540bf2e41c2af02",
+			"level": 1
+		},
+		"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0069": {
+			"hash": "4d6a6768f91ba30f050c16ea6bacd266ce79a2dd62d9f6f88502d23895c90f56",
+			"level": 1
+		},
+		"emails/15_uat-signoff#message-002": {
+			"hash": "6beea2ac79975dab82f6a3f541de2f53d1990849acf260a0a38cff7144738580",
+			"level": 1
+		},
+		"emails/15_uat-signoff#message-003": {
+			"hash": "f38fa7c9499098a2d5c907449118ac1aeb09e13dc9e47486fd7021caadffdf65",
+			"level": 1
+		},
+		"emails/15_uat-signoff#message-001": {
+			"hash": "a607e99e7ea61fa80b9ae0c7368a263f9acaba18c3966d145159e151f0c82c2d",
+			"level": 1
+		},
+		"transcripts/01_2024-03-20_solution-demo-value-workshop#utterance-0049": {
+			"hash": "893858bfa8e531e0e1bff3b23aefef601ab2a5969c484d01e03dbb0cd3c8187e",
+			"level": 1
+		},
+		"transcripts/01_2024-03-20_solution-demo-value-workshop#utterance-0050": {
+			"hash": "6b7554988473f3151078fe476bcf4ebcab18a4ce604240f5cad1bb88b1e624f6",
+			"level": 1
+		},
+		"transcripts/01_2024-03-20_solution-demo-value-workshop#utterance-0051": {
+			"hash": "c3fde5e551c79abb830164a9f9c6e08a8516c8d736fc59a8a8ed8e50272cb7e3",
+			"level": 1
+		},
+		"transcripts/01_2024-03-20_solution-demo-value-workshop#utterance-0052": {
+			"hash": "fb13fed8c22e4bfbc5968ef0b29274b3c9dba0a96f469fd3aaebd548fdf51f97",
+			"level": 1
+		},
+		"transcripts/02_2024-04-18_technical-due-diligence#utterance-0105": {
+			"hash": "3dd1fa314abc94ca3be4e7127d9c478a9839f13fa97313384ceb3c0df95684e7",
+			"level": 1
+		},
+		"transcripts/02_2024-04-18_technical-due-diligence#utterance-0106": {
+			"hash": "86b6585abfc02928002eb5f26d9fedc41241a914c488c3bfa9a9a331943149b8",
+			"level": 1
+		},
+		"transcripts/02_2024-04-18_technical-due-diligence#utterance-0107": {
+			"hash": "2631e180e3314cdb1717ec138e64d0e82bfca084783cbec25b0fee24278351e9",
+			"level": 1
+		},
+		"emails/13_master-data-remediation#message-002": {
+			"hash": "e3546b92b69b302cc0a262f2bb5b63bf1d16fb49fb674474f4dc146ce7b40d39",
+			"level": 1
+		},
+		"transcripts/10_2025-02-27_go-live-cutover#utterance-0015": {
+			"hash": "b70f5f8123dc2bffad733067d9aa2a90f229d9eb0ca34d00f50e7e034ee9aceb",
+			"level": 1
+		},
+		"transcripts/10_2025-02-27_go-live-cutover#utterance-0016": {
+			"hash": "5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da",
+			"level": 1
+		},
+		"transcripts/10_2025-02-27_go-live-cutover#utterance-0017": {
+			"hash": "190e28d8529f1b0ce34255a3aad522f26e69fcf1397442ea35760afd8cb006e9",
+			"level": 1
+		},
+		"transcripts/10_2025-02-27_go-live-cutover#utterance-0018": {
+			"hash": "42ee06f34626e57292cf8317aaf0e233f1b348e7d695cfeb0c33bf4f77579c40",
+			"level": 1
+		},
+		"transcripts/10_2025-02-27_go-live-cutover#utterance-0019": {
+			"hash": "22e4661dcb52515d9a430ea5959d20591850ed7cc3fb31c938f333eae449b616",
+			"level": 1
+		},
+		"transcripts/10_2025-02-27_go-live-cutover#utterance-0020": {
+			"hash": "0f597ddadcee882c652dda7239ece730c91d7895c135f13cf61f6d07f74b0a84",
+			"level": 1
+		},
+		"transcripts/15_2025-09-12_fresh-phase2-escalation#utterance-0062": {
+			"hash": "1aba90b8f6e7e418afb0603990af55fdad6df2916f7520c991f93b56ccb8a46e",
+			"level": 1
+		},
+		"transcripts/15_2025-09-12_fresh-phase2-escalation#utterance-0063": {
+			"hash": "9bf72bf1be66ec29731d98ef66c613ba79ba813f249245c05ad9a2395fd1ef3c",
+			"level": 1
+		},
+		"transcripts/15_2025-09-12_fresh-phase2-escalation#utterance-0064": {
+			"hash": "c0222828db6748523a28369a65908d05e8465aa560b04a25ba6078b2f27a072e",
+			"level": 1
+		},
+		"transcripts/15_2025-09-12_fresh-phase2-escalation#utterance-0065": {
+			"hash": "0340ecb7d0a8dde33aa6d1f2148534629eab32a9c3a53ad10004262a0d5acbda",
+			"level": 1
+		},
+		"transcripts/15_2025-09-12_fresh-phase2-escalation#utterance-0066": {
+			"hash": "229a6ada9a76fa649411b53b827244c67b748261244ed3c0536b6014b30f38d3",
+			"level": 1
+		},
+		"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0050": {
+			"hash": "01064631278e13d43e250705daba1aa8c1ac73b80bbabbb17abae89c0fe38662",
+			"level": 1
+		},
+		"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0051": {
+			"hash": "445ea76e0fecc22edfb57a2ca2be09cca64ca11a356ce23a5287505de22c9fc0",
+			"level": 1
+		},
+		"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0052": {
+			"hash": "ca28cf332d11a292f0eab520339725d82cbd8aa9f1f7dbd86383794e0f10640e",
+			"level": 1
+		},
+		"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0053": {
+			"hash": "39e7576b453d1ed7fa9e1164aa2cba53ae4ab16f9fda56fe8600c04c85e33ffd",
+			"level": 1
+		},
+		"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0054": {
+			"hash": "bb778e74ce121435dc78dbfed5a815f5f9a831cbbf817cd7ccab164b125b1289",
+			"level": 1
+		},
+		"emails/01_shelf-life-field-mapping#message-001": {
+			"hash": "23d422409603f8938fedd5b8d535846ec045e5b3d7d9902d1ccdd9de15f6c16f",
+			"level": 1
+		},
+		"transcripts/05_2024-07-15_implementation-kickoff#utterance-0116": {
+			"hash": "0f2039811d6352170ed241f4a2e2b65c6dba93005e249f363cdd2408e8d9374f",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0030": {
+			"hash": "1b56c1acaee2f88cb2c6b915ccfcf5b0039bb17e99e1c9018927b7946a687fd7",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0031": {
+			"hash": "1d27a68e492af11700d25ec8dfddf73594633122918f161d8dbfeb9a03a16f46",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0032": {
+			"hash": "d2e1530bfafb40c39f4813dbb831c67fa96e698b007126974e3735ac5fe9ac4d",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0033": {
+			"hash": "0c25a01ac11d57067fb2010485a4e0d21a79fc868bb1187eecde9f56a5fc9e1c",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0034": {
+			"hash": "5567d532764c7b2f63240de52c81ba4aeb46b36abc899e0d4966c117afd01d6c",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0035": {
+			"hash": "c10c037156053bfe962132f8eb70e273899bcbf44d3db5e8d88a465a07e84d9e",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0036": {
+			"hash": "bc21b5b64e45369fdb7c165834a1b5883d3c12a60833bb01a3d26beb93d74b53",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0037": {
+			"hash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0038": {
+			"hash": "61fc9ff8b1854f894d4927d7a87c0d4b58d3deef4d8a769b77d9b3a4531ad4d5",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0039": {
+			"hash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0040": {
+			"hash": "b3f907f75b58aa380f505e84ec7d704d67478ca4d22b0ebf0e983bc4c81b0b42",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0041": {
+			"hash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0042": {
+			"hash": "1d65222c474d4077c6421f54911a34eb7ee0a75808d13415aa1b9fb5a37363ef",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0043": {
+			"hash": "2de94f20bcb5d2ba1cc7028348cf2b69ccb4f9e12f2927f442d482db163c74d8",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0044": {
+			"hash": "5653a9a29d54e815cd096640d00f24fb1738a76921330fd880fc2e1271a38162",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0045": {
+			"hash": "202fd507be4d3005452d0799d0daa22eb7867cca6dab4ef23e822ee458d17b8d",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0046": {
+			"hash": "c07286b04b66963a64be52d745afa45c23bba2a380296293b26b61438ca026b8",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0047": {
+			"hash": "86473c0769166ee3414018e0268c3d5fcf06da1684285bd64a404850139b5dcd",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0048": {
+			"hash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad",
+			"level": 1
+		},
+		"transcripts/17_2025-11-17_fresh-phase2-go-no-go#utterance-0049": {
+			"hash": "96063957faf790c2e4f200b6336f140ae7821c04059469a477f2a327d9835106",
+			"level": 1
+		},
+		"transcripts/18_2025-12-11_fresh-cutover-call#utterance-0007": {
+			"hash": "fe3d1987f25185245a302a4224d2b90a801178232d96b04eafbbcaa50239d30d",
+			"level": 1
+		},
+		"transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0043": {
+			"hash": "2c2c92e31990abc63d67885bf4199bec10b8f75d4d28a8928317173ab0121758",
+			"level": 1
+		},
+		"transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0044": {
+			"hash": "8f3d04b7725eabdecc9a1838d5ddb84909889127b297ad46d18498dac5297a51",
+			"level": 1
+		},
+		"transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0045": {
+			"hash": "f8de5235a137907cc0adb5acf022c750af46981e5b286f2a0116f59d6a810b95",
+			"level": 1
+		},
+		"transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0046": {
+			"hash": "5548c6505b289d27893bdabdb8d8fc642c244bbdbf3e1421c2a456fa49046b07",
+			"level": 1
+		},
+		"transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0047": {
+			"hash": "cd5592e5e3140daa2f3fe0541c004877a65933bc07d69dbec8e3a441e7877c90",
+			"level": 1
+		},
+		"transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0048": {
+			"hash": "031c0ee40ffbd0333e96f3eff4a9435f5c6fc18400e48af797197406c11a0e38",
+			"level": 1
+		},
+		"transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0049": {
+			"hash": "719fc785d476d497fe6e8fdc85eefe9e356e95dd9871e71c2108c3348d7732d5",
+			"level": 1
+		},
+		"transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0050": {
+			"hash": "3afee410f344c5fb0d725e6b03be19c64245ec423ee6baf9b014cac5b1fe402b",
+			"level": 1
+		},
+		"transcripts/19_2026-01-28_bakery-scoping-PARTNER#utterance-0051": {
+			"hash": "5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0049": {
+			"hash": "eeb44f8a72ef3c1955857ad68c913bc74f77789b49f8ff95f128ee3d5de7631b",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0050": {
+			"hash": "d2b28271aa621bf54988e10d7f42cb82ec6c20196c1601f546750a8f4b9678a8",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0051": {
+			"hash": "5f9a2b795615ba6a3d5455fd5624d773fbca5bcd16249c421fd37411dc9837da",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0052": {
+			"hash": "0ae1ff0915729638f0b928ebb31f97fd06a638c6caf22e8da6c72209fcac9cd9",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0053": {
+			"hash": "8f032ea13b58e16d1d26d27ee7b8f7465a743c31c69daa0914951f36ac1a4b88",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0054": {
+			"hash": "c4f96b2906f88c487147e098c222a18479d6f6fdbecf4e7980bb5ca3f3f955a7",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0055": {
+			"hash": "cd2a18763dcbd9db9f012eed7d49290c5388d29273b858c1f104fbdf4eda0e71",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0056": {
+			"hash": "2de94f20bcb5d2ba1cc7028348cf2b69ccb4f9e12f2927f442d482db163c74d8",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0057": {
+			"hash": "04bb865543160e4e2aebf27f3c0aaa27372d4fe9e8378c0472d9802c1b8b9796",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0058": {
+			"hash": "169b175608a750e54865aeeb8ee319283c1a9bd9d201f42b20c0f27f84b7b9eb",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0059": {
+			"hash": "c83c551d8f48a57703976f5004a13031130e0f0cde31738365f21d3722e0e56b",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0060": {
+			"hash": "cc37139887c7a50e3d0f7e2bd82889b24a965f3cd6cf59d7aa172b45a9f45a6b",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0061": {
+			"hash": "03b25bed61dad2fc92bb7ca539a0f5abb89e97a767e3ca68789d47009f9fa5c3",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0062": {
+			"hash": "527913356fc9a0eb50545efb6ebae5167f5ac6be9cfcb493dc623df929eb0019",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0063": {
+			"hash": "85c9830b7dd1348f57cd84dd5838ed4d7d5bf08afd38091e77f1e8bc842c0060",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0064": {
+			"hash": "a86a0689062d6d829b62ad1f10f1532b28b748b6efe68ee1dc74667e41beb6b2",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0065": {
+			"hash": "a6f5726ac1c7932ba03c747eadf864dc5102bcecf699e9cfabe8522c9987f74a",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0066": {
+			"hash": "573402a2c20a59e66e31dabc783dfbac94465ae7721d881f1a784227011cdd44",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0067": {
+			"hash": "85c9830b7dd1348f57cd84dd5838ed4d7d5bf08afd38091e77f1e8bc842c0060",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0068": {
+			"hash": "288facbc0b9140df7adee9bb0a4b28a019736b8b982abcfc954d9b1487d5ffa9",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0069": {
+			"hash": "ec2fe998db17cfd193a7ed75f45d01ee4d520e68ee3c8a3c2cede792e782abd4",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0070": {
+			"hash": "cd5592e5e3140daa2f3fe0541c004877a65933bc07d69dbec8e3a441e7877c90",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0071": {
+			"hash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0072": {
+			"hash": "d1aa380fe8bebb9f6edcc55fe35647dbbd9c6130619411a8f217a5db87b86c20",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0073": {
+			"hash": "202fd507be4d3005452d0799d0daa22eb7867cca6dab4ef23e822ee458d17b8d",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0074": {
+			"hash": "b620e22c9b15abff32857b9f362da72d906ed377e4590ce7a62d746c16ce5900",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0075": {
+			"hash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0076": {
+			"hash": "5004705504e9b2083c203195350dae0bfcd4e5674f9096da4135e98b987ceaec",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0077": {
+			"hash": "900071425f809a147209c83c76353b45927c95dabba1f31931b795e0006984a0",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0078": {
+			"hash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0079": {
+			"hash": "a1c461d0aca3635abf2d68653d18fbd7d941e9f0790daac6d45107d567ba9d7f",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0080": {
+			"hash": "9c3e3bc85d37f7a40b531b910f9868fb4ceb0cfb1106f4bb0f197014dc895615",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0081": {
+			"hash": "546e4788931b251d92a9e1d19c821ce63603e5438a56526ca4f78966329e3ecd",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0082": {
+			"hash": "f8de5235a137907cc0adb5acf022c750af46981e5b286f2a0116f59d6a810b95",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0083": {
+			"hash": "01a9cb03dcf1c53cac3f0340744e00b71c8d8c24e2b285b306be3b3daba18374",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0084": {
+			"hash": "caaf36f7f2e6fbdc89b6feac6e15b7314dad10f16d25035353ecd2caf42c3569",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0085": {
+			"hash": "85fec70372b092bb42d021a6d1b373081dde8bcf90feb49e0725e285043fb0ad",
+			"level": 1
+		},
+		"transcripts/20_2026-03-17_bakery-design-workshop#utterance-0086": {
+			"hash": "1d4d9abdff6891573a5bd91ce6a7f04a2487f84cbc9cbbfb16587196edb8dd03",
+			"level": 1
+		},
+		"transcripts/22_2026-06-16_q2-business-review#utterance-0094": {
+			"hash": "bec6d095c7ea7c7f8b3a4da85b53c2c5bd4f8cba26887d355a2367c8ade678cf",
+			"level": 1
+		},
+		"transcripts/22_2026-06-16_q2-business-review#utterance-0095": {
+			"hash": "b196715de7ffd576f4bc90ef76e9947aa7c0af35bd9c01d79ec2b25169a87921",
+			"level": 1
+		},
+		"transcripts/22_2026-06-16_q2-business-review#utterance-0096": {
+			"hash": "b72e63d51d65aa54329c2c05ced19406525b0f5ea188dc0f64ecf07383f4bcd8",
+			"level": 1
+		},
+		"emails/13_master-data-remediation#message-005": {
+			"hash": "cc59828a1cf172978224e1706c494a4268e1e4c6d33b9d859d79d93c02aba461",
+			"level": 1
+		},
+		"emails/13_master-data-remediation#message-003": {
+			"hash": "586460afbb4b0519f11d99c5b70ea5f4016e08d87e35830bad11387a80ede333",
+			"level": 1
+		},
+		"emails/04_march-2024-notes-correction#message-001": {
+			"hash": "694a0feefe121f509ad9863b20dddfef8b306b6f72a633496036dd481795c986",
+			"level": 1
+		},
+		"emails/08_dpa-review-actions#message-001": {
+			"hash": "3a84f60e8a76362005258bde508f770cd05a4d1a27f57ea77e2ed9bf48597dda",
+			"level": 1
+		},
+		"emails/04_march-2024-notes-correction#message-002": {
+			"hash": "579bd257d019b167e8c072a0ec163a978d172e401ce37c1ab9fb02d9ae38e644",
+			"level": 1
+		},
+		"emails/04_march-2024-notes-correction#message-003": {
+			"hash": "9ea425802df310a47c261758fa699f63cef5742f2e9f899ee076cb8992252648",
+			"level": 1
+		},
+		"emails/04_march-2024-notes-correction#message-004": {
+			"hash": "6dcf6fdc7631ab1cfccb97b3bc9c4ef6c7dd9658eb06028be80bea9270349b7a",
+			"level": 1
+		},
+		"emails/08_dpa-review-actions#message-002": {
+			"hash": "ab11b99b6ab4023fad1ffcfb423c10c53a487d07f9ede6ba3fce6db615e26537",
+			"level": 1
+		},
+		"emails/08_dpa-review-actions#message-003": {
+			"hash": "8586d25caa46dc66e2290cc219d3abd5fffa1b311a6415280608f11d74006c40",
+			"level": 1
+		},
+		"emails/08_dpa-review-actions#message-004": {
+			"hash": "400cd2ed25c54ce0e741412be4e0b255e624d2a22a2add89a76b4db849785d36",
+			"level": 1
+		},
+		"transcripts/23_2026-07-02_INTERNAL-renewal-resourcing#utterance-0003": {
+			"hash": "9972e84ae7fb089f11f92ad29825c9eb3333deb0378666aad548354977e7f902",
+			"level": 3
+		},
+		"reports/01_weekly-status-thread#message-002": {
+			"hash": "d77e1076e5af21342e9083ab5348d7c312113c4e96b345c4a1013a48b81788bc",
+			"level": 1
+		},
+		"reports/01_weekly-status-thread#message-003": {
+			"hash": "31fb159a814b8f98a923779ea77167aa8d544aedfe3fc746e008b9b862a07822",
+			"level": 1
+		},
+		"reports/01_weekly-status-thread#message-004": {
+			"hash": "b6405700a64f671535acf96007188c6f3bb6336bc30671c1c84ec297da879adc",
+			"level": 1
+		},
+		"transcripts/22_2026-06-16_q2-business-review#utterance-0130": {
+			"hash": "6aaefdb9b93aaea1425e15c3c99591a3558e3259e191cffbe40de50bccc5fef5",
+			"level": 1
+		},
+		"transcripts/22_2026-06-16_q2-business-review#utterance-0131": {
+			"hash": "e8ba09e6814280d255cd0a6b5e9361ad893a729774f457ef4c549359b151bbd0",
+			"level": 1
+		},
+		"transcripts/22_2026-06-16_q2-business-review#utterance-0132": {
+			"hash": "dcf578cab800ec351f3cb1e3a0b8132154dfbd1da1ea30a96d30e8ffbb7088c6",
+			"level": 1
+		},
+		"transcripts/22_2026-06-16_q2-business-review#utterance-0133": {
+			"hash": "abb78abc0b57f0424ac34e612b04193eac25acef7d89e0460b5a8eef23a0a014",
+			"level": 1
+		},
+		"transcripts/22_2026-06-16_q2-business-review#utterance-0134": {
+			"hash": "daf72763c7e4077d95c01d7accb24a96fa4d7c4760b40de0a30c0cd88cd5d567",
+			"level": 1
+		},
+		"transcripts/22_2026-06-16_q2-business-review#utterance-0135": {
+			"hash": "9d7c81562d40212721bfb44df5cb25a04e64abf58082eaced976dc73daa8edbd",
+			"level": 1
+		},
+		"transcripts/22_2026-06-16_q2-business-review#utterance-0136": {
+			"hash": "6f4927c7dc45ab1bb0d8cb5ab2fb1d1b272ea99235b5a56c9adaaf48b3509d66",
+			"level": 1
+		},
+		"transcripts/22_2026-06-16_q2-business-review#utterance-0137": {
+			"hash": "087d026d0ccf65407989d0b38dc3a44151441a21bc3fc67d2ce2875191be411f",
+			"level": 1
+		},
+		"transcripts/22_2026-06-16_q2-business-review#utterance-0138": {
+			"hash": "112ae1bbf4b32a7595b7989c3b27629326dbc53cc15934f29bd2e20cfc0df87d",
+			"level": 1
+		},
+		"transcripts/22_2026-06-16_q2-business-review#utterance-0139": {
+			"hash": "63a51337a22ba43ebe40036bb099c005a6432219b77e1c28d5184b3261dd7eea",
+			"level": 1
+		},
+		"transcripts/22_2026-06-16_q2-business-review#utterance-0140": {
+			"hash": "fd56b02adb0e69c77114a9e70f6e1a31a1b2aea194f4a7431260b0397963dd89",
+			"level": 1
+		},
+		"transcripts/22_2026-06-16_q2-business-review#utterance-0141": {
+			"hash": "aaef3a0f9325a19d0575bcb9b51596b87945e6c53efe071d607bbe874b6db442",
+			"level": 1
+		},
+		"transcripts/22_2026-06-16_q2-business-review#utterance-0142": {
+			"hash": "8da51ad411d68f5354ca25d5bc8275b05dbede3e2d9cb484c02402624de3a77b",
+			"level": 1
+		},
+		"transcripts/22_2026-06-16_q2-business-review#utterance-0143": {
+			"hash": "19fd90e0484989b54b4274579350f0804cfe52ced9d510c731404721645225ab",
+			"level": 1
+		},
+		"transcripts/22_2026-06-16_q2-business-review#utterance-0144": {
+			"hash": "7f01c7e42be9c2bf3ef6a436442b7bb44ed37024bd412aae22ef52fb85973645",
+			"level": 1
+		},
+		"transcripts/22_2026-06-16_q2-business-review#utterance-0145": {
+			"hash": "5b1f4de52f8c4cf357af9044d65882dcffd2b72f93b5213b3a03660343700c88",
+			"level": 1
+		},
+		"transcripts/22_2026-06-16_q2-business-review#utterance-0146": {
+			"hash": "172ed4bc29113d01cf2c62f2ee8578fd053f8f50b37f0ea87600bd80f7aa9bd6",
+			"level": 1
+		},
+		"emails/16_dc2-hypercare-incidents#message-001": {
+			"hash": "6f26a93fd3ce480042f1007c227d3115b79604fc9d6b3cc298228724afa14ccc",
+			"level": 1
+		},
+		"emails/16_dc2-hypercare-incidents#message-002": {
+			"hash": "f87924ff86d70d768b4b4e5a4d30248f1d5e89ad5bf96cc46d0829c91dd316a2",
+			"level": 1
+		},
+		"emails/16_dc2-hypercare-incidents#message-003": {
+			"hash": "43646c21e66d8214ecc2d92362bdd2553b2ce347bf422f36081744db200c6702",
+			"level": 1
+		},
+		"transcripts/11_2025-03-18_hypercare-review#utterance-0112": {
+			"hash": "be0772828070940b846e49354d35205c16b96f3b3c6ff1f648b2d3d5329ee671",
+			"level": 1
+		},
+		"transcripts/11_2025-03-18_hypercare-review#utterance-0113": {
+			"hash": "bf57876727fa1b2c959ac6b6915f8a49e53a108a0916793c3acb8f349172956f",
+			"level": 1
+		},
+		"transcripts/11_2025-03-18_hypercare-review#utterance-0114": {
+			"hash": "9f534415a9e73c5c254e270dbafa84efaa0ce0a89057a9ead17d6f7b60318cb0",
+			"level": 1
+		},
+		"transcripts/11_2025-03-18_hypercare-review#utterance-0115": {
+			"hash": "5b5d226a36094e6b12987a5b8a182f7a5c3dbdf7231359891568d03ba50ec8be",
+			"level": 1
+		},
+		"transcripts/11_2025-03-18_hypercare-review#utterance-0116": {
+			"hash": "2f0119e3cf1d10983138aed4a72df841d04b67575974af010594084970fdf1c9",
+			"level": 1
+		},
+		"transcripts/11_2025-03-18_hypercare-review#utterance-0117": {
+			"hash": "8a8210dc6f57084a292e6a0d415cdf5ffdc178299aa9330ad5907647d6928faa",
+			"level": 1
+		},
+		"transcripts/11_2025-03-18_hypercare-review#utterance-0118": {
+			"hash": "264e0aac57c71ed92eef200909d58788cda4fb33a13ecc46c761595c12fc4a9e",
+			"level": 1
+		},
+		"transcripts/11_2025-03-18_hypercare-review#utterance-0119": {
+			"hash": "991fec77c8a9412a35e0a4f527cfba17ba9146ddd34e99af6db1419aefb9c8bc",
+			"level": 1
+		},
+		"transcripts/11_2025-03-18_hypercare-review#utterance-0120": {
+			"hash": "cf0f8b9291ed432908af49b6d1ce85e6b6ef9362418a35bf81d225438276e030",
+			"level": 1
+		},
+		"transcripts/11_2025-03-18_hypercare-review#utterance-0121": {
+			"hash": "2b43d01a841b95ef7bf8e8af72ac5626a007bf78b69407346bef1d4d694e541c",
+			"level": 1
+		},
+		"transcripts/11_2025-03-18_hypercare-review#utterance-0122": {
+			"hash": "65d145a99634becfd3f2f4de90a5a0022516b1c369f41695d1981ea8fe263ea0",
+			"level": 1
+		},
+		"transcripts/11_2025-03-18_hypercare-review#utterance-0123": {
+			"hash": "b406db42474c4b7d5b8d2a19862d982282d44a3b1dcb15c141912d1f9c0d167d",
+			"level": 1
+		},
+		"transcripts/11_2025-03-18_hypercare-review#utterance-0124": {
+			"hash": "f8de5235a137907cc0adb5acf022c750af46981e5b286f2a0116f59d6a810b95",
+			"level": 1
+		},
+		"transcripts/11_2025-03-18_hypercare-review#utterance-0125": {
+			"hash": "40554032b10543a374d4f3bd7d18e109b53675715724ebd0bdb7bb835d696651",
+			"level": 1
+		}
+	}
+}

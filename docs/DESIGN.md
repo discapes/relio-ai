@@ -12,7 +12,7 @@ Claims carry dated descriptions and statuses such as proposed, agreed, corrected
 
 ## How deletion propagates
 
-An authorised employee selects a person for erasure. The application removes or cleans identifying runtime evidence and recipient metadata, invalidates derived claims and answers, and removes affected mail, calendar and personal state. It cancels active inference and increments the workspace version so earlier work cannot publish. Hashed identifiers prevent ordinary reimport after restart. A receipt records deletion counts. Independently supported information can survive with other people still named. Alias and nearby-pronoun handling is heuristic and can withdraw extra context. Deletion covers the selected workspace; original fixtures, other workspaces, downloaded copies and infrastructure backups have separate retention boundaries.
+An authorised employee selects a person for erasure. The application removes or cleans identifying runtime evidence and recipient metadata, removes affected claims and answer passages while retaining surviving supported content, and removes affected mail, calendar and personal state. It cancels active inference and increments the workspace version so earlier work cannot publish. Hashed identifiers prevent ordinary reimport after restart. A receipt records deletion counts. Independently supported information can survive with other people still named. Alias and nearby-pronoun handling is heuristic and can withdraw extra context. Deletion covers the selected workspace; original fixtures, other workspaces, downloaded copies and infrastructure backups have separate retention boundaries.
 
 ## Where inference runs
 

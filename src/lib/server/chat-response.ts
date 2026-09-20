@@ -1,10 +1,15 @@
 import type { Context } from '../types';
 import type { ChatEvent } from '../chat-stream';
 import { epoch, isSuppressed } from './memory';
-import { answerQuestion } from './workflows';
+import { answerQuestion, generateBrief } from './workflows';
 import { registerChat, withChatActivity } from './chat-activity';
 
-export function chatResponse(ctx: Context, question: string, requestSignal: AbortSignal) {
+export function chatResponse(
+	ctx: Context,
+	question: string,
+	requestSignal: AbortSignal,
+	meetingId?: string
+) {
 	const abort = new AbortController();
 	const unregister = registerChat(ctx.workspaceId, abort);
 	const disconnect = () => abort.abort();
@@ -38,9 +43,13 @@ export function chatResponse(ctx: Context, question: string, requestSignal: Abor
 				emit({
 					type: 'stage',
 					stage: 'starting',
-					message: 'Checking your project access and preparing the question.'
+					message: meetingId
+						? 'Checking your project access and preparing the meeting.'
+						: 'Checking your project access and preparing the question.'
 				});
-				const answer = await answerQuestion(ctx, question);
+				const answer = meetingId
+					? await generateBrief(ctx, meetingId)
+					: await answerQuestion(ctx, question);
 				emit({ type: 'final', answer });
 			})
 				.catch((error) => {
