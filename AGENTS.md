@@ -71,5 +71,6 @@ src/lib/usage-browser.ts Passive browser observation of navigation and controls,
 src/routes/usage/+server.ts Bounded event collection endpoint; stored logs have no public read route.
 scripts/usage-report.mjs Local usage summaries and browser/workspace timelines from rotated NDJSON logs.
 docs/USAGE_LOGGING.md Internal analytics events, limits, commands and isolated validation on port 43729.
+docs/VISITOR_OUTCOME_AUDIT.md Read-only review of two observed visitor sessions, checking actual saved answers, erasure, email, calendar provenance and brief attribution against sources.
 tests/usage.test.ts Logger failure containment, rotation, input bounds and automatic-request exclusion.
 tests/browser/usage.spec.ts Browser navigation/control collection and failed-delivery behavior.
