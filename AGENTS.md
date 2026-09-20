@@ -38,8 +38,10 @@ docs/live_stream_timing.json Actual server events and draft/final timing from th
 src/app.css RELEX semantic palette, stronger secondary text, 15px interface typography and locally bundled Figtree.
 src/lib/assets/relex_logo.svg Official RELEX RGB wordmark; orig: relex-primary-logo-RGB-vector.svg.
 src/lib/assets/relio_icon.svg Relio R favicon using the existing navy palette.
-src/lib/assets/favicon.png Archived RELEX symbol reference; orig: cropped-relex-mark-square-192x192.png.
+src/lib/assets/favicon.png Official RELEX symbol displayed left of the Relio sidebar title; orig: cropped-relex-mark-square-192x192.png.
 docs/CITATION_UX.md Grouped citation behavior, exact-reference preservation and bounded presentation changes.
+docs/JUDGE_UX.md First-use improvements, browser checks and deferred answer-quality issues.
+src/lib/presentation/navigation.ts Source-return locations for answers, graph topics, profiles and source lists.
 docs/BRANDING.md Color roles, font/logo attribution and isolated review server on port 41851.
 docs/screenshots/ Reviewed public RELEX-branded desktop/mobile, graph/focus, claims, source, email, people, erasure and design views.
 docs/FIGTREE_LICENSE.txt Figtree OFL-1.1 license; orig: @fontsource-variable/figtree/LICENSE.
