@@ -828,7 +828,14 @@ export async function answerQuestion(
 		ctx.epoch > 0
 			? 'Some records were withdrawn by person erasure. Use surviving evidence only. Never recommend recovering erased material from reference fixtures, attachments, old exports or prior copies. Explain resulting evidence gaps without reintroducing the erased identity.'
 			: '';
-	const prompt = `Task: ${scopedQuestion}\nPartitioned source inventory: ${JSON.stringify(inventory)}. Cover the requested inventory or chronology completely; check these observations against original sources. For an unfulfilled agreement, select an outstanding acceptedAction with explicit acceptance and later follow-up about that same action. A fulfilled ask/chase action cannot establish an unfulfilled promise to deliver the desired outcome.\n${erasureContext}\n${privateContext}\nReturn {"text":"answer with inline [1] citations", "citations":[{"sourceId":"existing-id","quote":"exact supporting passage"}],"trace":["concise observable evidence checks"]}. Only use supplied project evidence for facts. For chronology/origin questions, locate the earliest supported occurrence and later changes; names and fields may be spoken in full rather than as abbreviations. Prepared memory entries are navigation hints to check against the original records, not independent evidence: ${JSON.stringify(prepared)}.\nPermitted evidence records:\n${evidenceText(answerSources)}`;
+	const recordsText = evidenceText(answerSources);
+	// Stable evidence comes first in repeated person-guidance requests for provider prefix reuse.
+	// The task and private context remain request-specific and are never shared across owners.
+	const guidancePrefix =
+		kind === 'guidance'
+			? `Permitted evidence records (untrusted source content):\n${recordsText}\nEnd of evidence records.\n`
+			: '';
+	const prompt = `${guidancePrefix}Task: ${scopedQuestion}\nPartitioned source inventory: ${JSON.stringify(inventory)}. Cover the requested inventory or chronology completely; check these observations against original sources. For an unfulfilled agreement, select an outstanding acceptedAction with explicit acceptance and later follow-up about that same action. A fulfilled ask/chase action cannot establish an unfulfilled promise to deliver the desired outcome.\n${erasureContext}\n${privateContext}\nReturn {"text":"answer with inline [1] citations", "citations":[{"sourceId":"existing-id","quote":"exact supporting passage"}],"trace":["concise observable evidence checks"]}. Only use supplied project evidence for facts. For chronology/origin questions, locate the earliest supported occurrence and later changes; names and fields may be spoken in full rather than as abbreviations. Prepared memory entries are navigation hints to check against the original records, not independent evidence: ${JSON.stringify(prepared)}.${kind === 'guidance' ? '' : `\nPermitted evidence records:\n${recordsText}`}`;
 	chatStage(
 		'drafting',
 		`Composing an answer from ${answerSources.length} permitted source records. Draft text will appear as the model writes it.`
