@@ -17,3 +17,5 @@ node --import tsx scripts/profile-workspace.mts
 ```
 
 This reports People discovery, workspace assembly and the People load flow. The first sample includes runtime warmup. It disables model background jobs and removes its temporary database afterward.
+
+The release was deployed at 11:40 EEST on 20 September. All 13 browser workflows passed. A live Chromium check confirmed Charlotte guidance, mobile layout without horizontal overflow, and the supplied slides PDF. Production checks from vai1 returned HTTP 200 in 0.26–3.37 seconds; live contention still causes occasional delays beyond the isolated request cost. The first request after restart took 1.03 seconds locally through HTTPS.
