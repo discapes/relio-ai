@@ -1,4 +1,5 @@
 import { redirect, error } from '@sveltejs/kit';
+import { cancelChatStreams } from '$lib/server/chat-activity';
 import { resolvePersona } from '$lib/server/memory';
 export async function POST({ request, cookies }) {
 	const data = await request.formData();
@@ -14,6 +15,8 @@ export async function POST({ request, cookies }) {
 		secure: process.env.ORIGIN?.startsWith('https://') === true,
 		maxAge: 60 * 60 * 24 * 30
 	};
+	const workspaceId = cookies.get('relex_workspace');
+	if (workspaceId) cancelChatStreams(workspaceId);
 	cookies.set('relex_persona', persona.id, settings);
 	cookies.set('relex_level', String(level), settings);
 	redirect(303, '/');

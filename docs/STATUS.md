@@ -1,14 +1,14 @@
 # Implementation status
 
-Receipt is deployed at https://receipt-workspace.hai1.iffe.eu on port 34342 through the `receipt-workspace.service` user service. Code commit `846a491` is running from immutable release `2026-09-20T00-38-46-293Z`.
+Receipt is deployed at https://receipt-workspace.hai1.iffe.eu on port 34342 through the `receipt-workspace.service` user service. The service runs the immutable release selected by `.releases/current`.
 
-The agreed product surfaces are implemented: personal morning briefs and memory, project questions, source search and graph, people guidance, Outlook simulation, calendar preparation, customer PNG/text cards and scoped erasure. Submission documents are available from How it works. Source-bearing reference views and downloads require Acme L3 and are withdrawn after erasure in that workspace.
+The agreed product surfaces are implemented: personal morning briefs and memory, project questions, source search and graph, people guidance, Outlook simulation, calendar preparation, customer PNG/text cards and scoped erasure. Design, How to use, How it works and Practice answers open directly from the sidebar. Practice answers require Acme L3 and are withdrawn after erasure in that workspace. Internal process and quality reports remain repository documents.
 
 ## Verified delivery
 
 - All 2,974 parsed records from 45 documents import with original IDs and positions.
-- The final deterministic suite passes 35 tests. Svelte check reports zero errors and warnings; production build succeeds.
-- All five public browser workflows pass, including desktop/mobile accessibility, identity/source boundaries, simulator delivery, private memory and submission-document access.
+- The final deterministic suite passes 54 tests. Svelte check reports zero errors and warnings; production build succeeds.
+- All ten browser workflows pass, including desktop/mobile accessibility, identity/source boundaries, simulator delivery, private memory and reviewer-page access and streamed chat.
 - All six advertised employee/access modes have prepared live-model briefs: Ana L1/L2/L3, Marco L1/L2 and Nadia L1. Fresh public review observed immediate cited briefs in every mode.
 - Prepared semantic memory contains 35 L1, 38 L2 and 75 L3 entries. The L3 batch covers all 45 documents, including 41 transcript-derived entries.
 - Live routine email ingestion stayed silent and created the scheduled calendar event in 37.4 seconds. New-message questions, updated briefings, UAT intervention, stakeholder guidance and L1 cards completed through live inference.

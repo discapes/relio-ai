@@ -1,0 +1,522 @@
+[
+  {
+    "seconds": 0.092,
+    "type": "stage",
+    "stage": "starting",
+    "message": "Checking your project access and preparing the question."
+  },
+  {
+    "seconds": 0.092,
+    "type": "stage",
+    "stage": "interpreting",
+    "message": "Interpreting your question and checking your personal preferences."
+  },
+  {
+    "seconds": 0.502,
+    "type": "stage",
+    "stage": "sources",
+    "message": "Found 2974 permitted records across 45 documents at L3."
+  },
+  {
+    "seconds": 0.502,
+    "type": "stage",
+    "stage": "drafting",
+    "message": "Composing an answer from 2974 permitted source records. Draft text will appear as the model writes it."
+  },
+  {
+    "seconds": 0.502,
+    "type": "draft",
+    "text": ""
+  },
+  {
+    "seconds": 15.988,
+    "type": "draft",
+    "text": "The"
+  },
+  {
+    "seconds": 16.005,
+    "type": "draft",
+    "text": "The UAT sign-off covered"
+  },
+  {
+    "seconds": 16.019,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only"
+  },
+  {
+    "seconds": 16.035,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the "
+  },
+  {
+    "seconds": 16.05,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort"
+  },
+  {
+    "seconds": 16.065,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and"
+  },
+  {
+    "seconds": 16.082,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories."
+  },
+  {
+    "seconds": 16.1,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did"
+  },
+  {
+    "seconds": 16.119,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories,"
+  },
+  {
+    "seconds": 16.139,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained"
+  },
+  {
+    "seconds": 16.158,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase"
+  },
+  {
+    "seconds": 16.176,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute"
+  },
+  {
+    "seconds": 16.195,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme ["
+  },
+  {
+    "seconds": 16.214,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1"
+  },
+  {
+    "seconds": 16.233,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1]."
+  },
+  {
+    "seconds": 16.251,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe"
+  },
+  {
+    "seconds": 16.269,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording"
+  },
+  {
+    "seconds": 16.288,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte"
+  },
+  {
+    "seconds": 16.306,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21"
+  },
+  {
+    "seconds": 16.324,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed"
+  },
+  {
+    "seconds": 16.343,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22"
+  },
+  {
+    "seconds": 16.361,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 ["
+  },
+  {
+    "seconds": 16.38,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1"
+  },
+  {
+    "seconds": 16.399,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In"
+  },
+  {
+    "seconds": 16.417,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the U"
+  },
+  {
+    "seconds": 16.436,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the"
+  },
+  {
+    "seconds": 16.454,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed"
+  },
+  {
+    "seconds": 16.473,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing"
+  },
+  {
+    "seconds": 16.491,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works"
+  },
+  {
+    "seconds": 16.51,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty"
+  },
+  {
+    "seconds": 16.53,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the"
+  },
+  {
+    "seconds": 16.549,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3"
+  },
+  {
+    "seconds": 16.567,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that"
+  },
+  {
+    "seconds": 16.586,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven"
+  },
+  {
+    "seconds": 16.604,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had"
+  },
+  {
+    "seconds": 16.623,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run,"
+  },
+  {
+    "seconds": 16.642,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed"
+  },
+  {
+    "seconds": 16.66,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed,"
+  },
+  {
+    "seconds": 16.679,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the"
+  },
+  {
+    "seconds": 16.698,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding"
+  },
+  {
+    "seconds": 16.717,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and"
+  },
+  {
+    "seconds": 16.737,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were"
+  },
+  {
+    "seconds": 16.755,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that"
+  },
+  {
+    "seconds": 16.774,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were"
+  },
+  {
+    "seconds": 16.792,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated"
+  },
+  {
+    "seconds": 16.812,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as"
+  },
+  {
+    "seconds": 16.828,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non"
+  },
+  {
+    "seconds": 16.844,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1"
+  },
+  {
+    "seconds": 16.859,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kw"
+  },
+  {
+    "seconds": 16.873,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later"
+  },
+  {
+    "seconds": 16.888,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both"
+  },
+  {
+    "seconds": 16.903,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and"
+  },
+  {
+    "seconds": 16.918,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with"
+  },
+  {
+    "seconds": 16.932,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios"
+  },
+  {
+    "seconds": 16.947,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4"
+  },
+  {
+    "seconds": 16.962,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\n"
+  },
+  {
+    "seconds": 16.979,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on"
+  },
+  {
+    "seconds": 16.997,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on evidence"
+  },
+  {
+    "seconds": 17.016,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on evidence: Lena"
+  },
+  {
+    "seconds": 17.034,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on evidence: Lena Fischer's email"
+  },
+  {
+    "seconds": 17.053,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on evidence: Lena Fischer's email says"
+  },
+  {
+    "seconds": 17.07,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on evidence: Lena Fischer's email says \""
+  },
+  {
+    "seconds": 17.085,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on evidence: Lena Fischer's email says \"Signed and attached\","
+  },
+  {
+    "seconds": 17.099,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on evidence: Lena Fischer's email says \"Signed and attached\", but the signed attachment"
+  },
+  {
+    "seconds": 17.115,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on evidence: Lena Fischer's email says \"Signed and attached\", but the signed attachment itself is not"
+  },
+  {
+    "seconds": 17.13,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on evidence: Lena Fischer's email says \"Signed and attached\", but the signed attachment itself is not in the supplied records"
+  },
+  {
+    "seconds": 17.144,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on evidence: Lena Fischer's email says \"Signed and attached\", but the signed attachment itself is not in the supplied records;"
+  },
+  {
+    "seconds": 17.16,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on evidence: Lena Fischer's email says \"Signed and attached\", but the signed attachment itself is not in the supplied records; the email documents the"
+  },
+  {
+    "seconds": 17.174,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on evidence: Lena Fischer's email says \"Signed and attached\", but the signed attachment itself is not in the supplied records; the email documents the confirmation of signature"
+  },
+  {
+    "seconds": 17.19,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on evidence: Lena Fischer's email says \"Signed and attached\", but the signed attachment itself is not in the supplied records; the email documents the confirmation of signature. Fresh"
+  },
+  {
+    "seconds": 17.204,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on evidence: Lena Fischer's email says \"Signed and attached\", but the signed attachment itself is not in the supplied records; the email documents the confirmation of signature. Fresh UAT was a"
+  },
+  {
+    "seconds": 17.219,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on evidence: Lena Fischer's email says \"Signed and attached\", but the signed attachment itself is not in the supplied records; the email documents the confirmation of signature. Fresh UAT was a separate later"
+  },
+  {
+    "seconds": 17.234,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on evidence: Lena Fischer's email says \"Signed and attached\", but the signed attachment itself is not in the supplied records; the email documents the confirmation of signature. Fresh UAT was a separate later exercise ("
+  },
+  {
+    "seconds": 17.249,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on evidence: Lena Fischer's email says \"Signed and attached\", but the signed attachment itself is not in the supplied records; the email documents the confirmation of signature. Fresh UAT was a separate later exercise (September"
+  },
+  {
+    "seconds": 17.263,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on evidence: Lena Fischer's email says \"Signed and attached\", but the signed attachment itself is not in the supplied records; the email documents the confirmation of signature. Fresh UAT was a separate later exercise (September-Nov"
+  },
+  {
+    "seconds": 17.279,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on evidence: Lena Fischer's email says \"Signed and attached\", but the signed attachment itself is not in the supplied records; the email documents the confirmation of signature. Fresh UAT was a separate later exercise (September-November 2025"
+  },
+  {
+    "seconds": 17.294,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on evidence: Lena Fischer's email says \"Signed and attached\", but the signed attachment itself is not in the supplied records; the email documents the confirmation of signature. Fresh UAT was a separate later exercise (September-November 2025) and was"
+  },
+  {
+    "seconds": 17.309,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on evidence: Lena Fischer's email says \"Signed and attached\", but the signed attachment itself is not in the supplied records; the email documents the confirmation of signature. Fresh UAT was a separate later exercise (September-November 2025) and was not part"
+  },
+  {
+    "seconds": 17.323,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on evidence: Lena Fischer's email says \"Signed and attached\", but the signed attachment itself is not in the supplied records; the email documents the confirmation of signature. Fresh UAT was a separate later exercise (September-November 2025) and was not part of this sign-off"
+  },
+  {
+    "seconds": 17.339,
+    "type": "draft",
+    "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme [1].\n\nThe wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025 [1][2]. In the UAT readiness review the same day, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished [3]. At that point eleven business scenarios had been run, nine passed, and two failed on the same rounding root cause (case pack and minimum order quantity); both were scheduled for fix that week and were stated as non-blockers [1][3]. Kwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios passing [4].\n\nNote on evidence: Lena Fischer's email says \"Signed and attached\", but the signed attachment itself is not in the supplied records; the email documents the confirmation of signature. Fresh UAT was a separate later exercise (September-November 2025) and was not part of this sign-off."
+  },
+  {
+    "seconds": 18.841,
+    "type": "stage",
+    "stage": "verifying",
+    "message": "Checking the draft against original passages, including numbers, dates and attribution."
+  },
+  {
+    "seconds": 21.75,
+    "type": "stage",
+    "stage": "binding",
+    "message": "Bound 7 source excerpts to the checked answer. Saving your conversation."
+  },
+  {
+    "seconds": 21.75,
+    "type": "final",
+    "answer": {
+      "id": "8b9b8f5c-0cee-485d-966f-282be278c094",
+      "text": "The UAT sign-off covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. It explicitly did not extend to fresh categories, which remained in scope for a later phase, and it did not constitute acceptance of the overall programme. [1]\n\nThe sign-off wording was drafted by Ana Duarte on 21 January 2025 and signed by Lena Fischer on 22 January 2025. [1] [2]\n\nIn the UAT readiness review on 21 January 2025, Lena Fischer confirmed she was signing that ambient core replenishment works for twenty-five stores, not that the project is finished. [3] [4] [5] [6]\n\nAt the time of the sign-off wording, two UAT defects remained open, both the same root cause on case pack and minimum order quantity rounding. Both were scheduled for fix that week and neither was a blocker. [1]\n\nKwame Boateng later reported both rounding defects fixed and re-tested, with nine of nine scenarios now passing. [7]\n\nLena Fischer's email says \"Signed and attached\", but the signed attachment itself is not present in the supplied records; the email documents the confirmation of signature. [2]",
+      "citations": [
+        {
+          "sourceId": "emails/15_uat-signoff#message-003",
+          "quote": "Lena,\n\nAs discussed this afternoon, for signature.\n\n\"Acme Org confirms that user acceptance testing for core replenishment has been completed\nsatisfactorily for the 25 store pilot cohort, covering ambient and dry goods categories.\nThis sign-off does not extend to fresh categories, which remain in scope for a later\nphase, and does not constitute acceptance of the overall programme.\"\n\nTwo UAT defects remain open, both the same root cause on case pack and minimum order\nquantity rounding. Both are scheduled for fix this week and neither is a blocker.\n\nBest regards,",
+          "title": "UAT sign-off - core replenishment",
+          "date": "2025-01-21T17:30:00",
+          "author": "Ana Duarte",
+          "position": "Message 3"
+        },
+        {
+          "sourceId": "emails/15_uat-signoff#message-002",
+          "quote": "Signed and attached. The wording is what I asked for, thank you for being careful with it.\n\nMit freundlichen Gr\u00fc\u00dfen",
+          "title": "Re: UAT sign-off - core replenishment",
+          "date": "2025-01-22T08:50:00",
+          "author": "Lena Fischer",
+          "position": "Message 2"
+        },
+        {
+          "sourceId": "transcripts/08_2025-01-21_uat-readiness-review#utterance-0049",
+          "quote": "And, what am I signing exactly? Because I",
+          "title": "UAT readiness review",
+          "date": "2025-01-21",
+          "author": "Lena Fischer",
+          "position": "4:02 \u00b7 utterance 49"
+        },
+        {
+          "sourceId": "transcripts/08_2025-01-21_uat-readiness-review#utterance-0050",
+          "quote": "want to be careful. I am signing that ambiant core",
+          "title": "UAT readiness review",
+          "date": "2025-01-21",
+          "author": "Lena Fischer",
+          "position": "4:08 \u00b7 utterance 50"
+        },
+        {
+          "sourceId": "transcripts/08_2025-01-21_uat-readiness-review#utterance-0052",
+          "quote": "replenishment works for twenty-five stores, not that the project is finished.",
+          "title": "UAT readiness review",
+          "date": "2025-01-21",
+          "author": "Lena Fischer",
+          "position": "4:17 \u00b7 utterance 52"
+        },
+        {
+          "sourceId": "transcripts/08_2025-01-21_uat-readiness-review#utterance-0054",
+          "quote": "That is exactly what you are signing, and from the...",
+          "title": "UAT readiness review",
+          "date": "2025-01-21",
+          "author": "Ana Duarte",
+          "position": "4:27 \u00b7 utterance 54"
+        },
+        {
+          "sourceId": "emails/15_uat-signoff#message-001",
+          "quote": "Both rounding defects fixed and re-tested. Nine of nine scenarios now pass.",
+          "title": "UAT sign-off - core replenishment",
+          "date": "2025-01-24T16:20:00",
+          "author": "Kwame Boateng",
+          "position": "Message 1"
+        }
+      ],
+      "createdAt": "2026-09-20T01:30:10.352Z",
+      "kind": "chat",
+      "level": 3,
+      "question": "What was the scope of the UAT sign-off?",
+      "trace": [
+        "Read 2974 permitted source records at L3.",
+        "Verified sign-off scope wording and explicit exclusions (fresh categories, overall programme) against E15M003",
+        "Verified drafting date (2025-01-21) from E15M003 and signature confirmation (2025-01-22) from E15M002",
+        "Verified Lena Fischer's statement of what she was signing across T08U0049, T08U0050, T08U0052 and Ana Duarte's confirmation in T08U0054",
+        "Verified two open defects, root cause, fix schedule and non-blocker status from E15M003",
+        "Verified later defect resolution and nine of nine scenario pass rate from E15M001",
+        "Verified 7 quoted passages against runtime sources."
+      ]
+    }
+  }
+]

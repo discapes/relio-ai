@@ -1,6 +1,6 @@
 # Validation record
 
-Receipt is available at https://receipt-workspace.hai1.iffe.eu. This record separates deterministic application checks from live model interpretation. The application uses GLM-5.3-Flash on the team-provided Helsinki endpoint with thinking disabled by default.
+Receipt is available at https://receipt-workspace.hai1.iffe.eu. This record separates deterministic application checks from live model interpretation. The application uses GLM 5.3 Flash on Verda (formerly DataCrunch) in Helsinki with thinking disabled by default.
 
 ## Application checks
 
@@ -70,7 +70,7 @@ Complex exhaustive/chronology questions now use a bounded, document-balanced inv
 
 `PRACTICE_ANSWERS.md` contains actual generated outputs and exact prompts. `practice_reference.md` is an independent source-checked reference. `practice_review.md` records correctness, incomplete coverage and failures. Earlier runs are preserved; a later success does not erase latency or reliability findings.
 
-Identity selection, email transport and calendar input are explicit demonstrations. Inference location is Helsinki as supplied by the team. Runtime erasure covers the selected application workspace, its source copies and stored derivatives. Original challenge fixtures, other workspaces, downloaded files and inference-provider retention are separate boundaries. Indirect identity handling uses aliases, unique roles and local continuation passages; arbitrary coreference needs inspection. The application does not promise deterministic semantic correctness from model verification.
+Identity selection, email transport and calendar input are explicit demonstrations. The team confirms inference is hosted on Verda (formerly DataCrunch) in Helsinki. Runtime erasure covers the selected application workspace, its source copies and stored derivatives. Original challenge fixtures, other workspaces, downloaded files and inference-provider retention are separate boundaries. Indirect identity handling uses aliases, unique roles and local continuation passages; arbitrary coreference needs inspection. The application does not promise deterministic semantic correctness from model verification.
 
 ## Latest controlled semantic limits
 
@@ -109,3 +109,23 @@ Evidence now has clickable inline reference chips and collapsed document/meeting
 Desktop source/People and mobile People captures were visually reviewed after the checks. The citation agent reviewed collapsed desktop and expanded mobile evidence. Updated captures are in `docs/screenshots/` with `people-organizations`, `source-name-links` and `citations` prefixes. Existing tests continue to cover lower-access source rejection, erasure and private context boundaries.
 
 Published through the atomic release script as `2026-09-20T01-16-56-665Z`. The user service is active. A fresh public Chromium session received HTTP 200, found 17 linked identity occurrences in the UAT source/header/context, opened Ana's selected profile, showed the collaboration preparation button and filtered to five Acme customer profiles. No browser JavaScript errors occurred.
+
+## Interface readability and hosting attribution
+
+The interface identifies GLM 5.3 Flash as hosted on Verda (formerly DataCrunch) in Helsinki, as confirmed by the team. The architecture description keeps the separate Hetzner application host explicit. Switch view is the single entry for simulated identity/access selection and fresh-workspace reset. Its panel closes on tab, recorded-name and source navigation.
+
+Secondary text changed from `#617072` to `#546467`. Ordinary 14px interface text increased to 15px, organization labels to 14px, citation references to at least 13px, and the smallest graph labels from 11px to 12px. Task-specific icons replace sparkle icons. The Acme sidebar subtitle and duplicate controls link were removed.
+
+The production build and Svelte checks passed. Six workspace browser checks passed on isolated port 41851, including desktop/mobile accessibility, a visible tablet Switch view control, hosting attribution and navigation closure. The extended deep-link/source-navigation regression passed separately. Desktop and mobile captures were inspected after these checks. Combined chat-stream validation is recorded separately below.
+
+## Streaming chat
+
+The combined release passed 52 deterministic tests and all 10 browser workflows on isolated port 41851 (45.3 seconds). Streaming tests cover incremental UTF-8/JSON decoding, actual provider delta forwarding, checked-final persistence, cancellation, reset/session revision changes and isolation from another employee’s background preparation. Browser checks cover immediate progress, provisional text, final clickable citations, Stop, interrupted responses, navigation and clearing idle private input after an identity change.
+
+A real full UAT query through GLM 5.3 Flash on Verda in Helsinki produced its first activity update after 0.092 seconds, the permitted-record inventory after 0.502 seconds, its first draft text after 15.988 seconds, verification progress after 18.841 seconds and the final answer with seven citations after 21.750 seconds. These are one measured run, not a latency guarantee. The provisional draft is marked as awaiting source checks and is replaced by the checked answer. [Streaming implementation and boundaries](STREAMING.md) describes the transport and publication behavior.
+
+## Reviewer pages in the workspace
+
+Design, How to use, How it works and Practice answers now open from the same sidebar as the product. The old icon-card explanation, submission portal and all `/submission/` endpoints were removed. The three general guides contain fresh prose; the practice guide contains reviewed answers and 31 checked runtime source links. Internal process, validation and quality reports remain repository files. Practice content is withheld outside Acme L3 and after erasure, while the source-neutral guides remain available.
+
+The final combined build passed Svelte checks with zero warnings and all 54 deterministic tests. The browser suite covered ten workflows: nine passed in the full run, and the two streaming workflows passed in the focused rerun after the navigation test was corrected to wait for the destination page before navigating back. The four reviewer pages passed serious/critical accessibility checks; source links opened their exact runtime records, mobile layout stayed within the viewport, and legacy portal URLs returned 404. Desktop sidebar/design and mobile practice/provisional-draft captures were inspected. Chromium printed the 434-word Design page as one A4 page with the application chrome hidden.

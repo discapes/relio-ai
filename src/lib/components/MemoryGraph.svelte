@@ -67,7 +67,7 @@
 				y={(235 + p.y) / 2 - 7}
 				text-anchor="middle"
 				fill="var(--muted)"
-				font-size="11">supported by</text
+				font-size="12">supported by</text
 			>{/each}
 		<circle cx="360" cy="235" r="54" fill="var(--text)" /><text
 			x="360"
@@ -98,7 +98,7 @@
 					font-weight="700">{i + 1}</text
 				><text x={p.x} y={p.y + 44} text-anchor="middle" fill="var(--text)" font-size="12"
 					>{source.author.slice(0, 30) || 'Unattributed'}</text
-				><text x={p.x} y={p.y + 61} text-anchor="middle" fill="var(--muted)" font-size="11"
+				><text x={p.x} y={p.y + 61} text-anchor="middle" fill="var(--muted)" font-size="12"
 					>{source.date.slice(0, 10)} · {source.type}</text
 				></a
 			>{/each}

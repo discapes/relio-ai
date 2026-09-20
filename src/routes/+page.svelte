@@ -1,12 +1,11 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import { invalidateAll, goto } from '$app/navigation';
+	import { invalidateAll, goto, afterNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 	import { onMount } from 'svelte';
 	import type { SubmitFunction } from '@sveltejs/kit';
 	import {
 		ArrowUpRight,
-		ArrowUp,
 		BookOpen,
 		CalendarDays,
 		ChevronRight,
@@ -18,13 +17,14 @@
 		Plus,
 		RefreshCw,
 		Search,
-		Settings2,
 		ShieldCheck,
-		Sparkles,
+		LayoutDashboard,
 		Trash2,
 		Users
 	} from '@lucide/svelte';
 	import Evidence from '$lib/components/Evidence.svelte';
+	import ChatStream from '$lib/components/ChatStream.svelte';
+	import GuideArticle from '$lib/components/GuideArticle.svelte';
 	import NameText from '$lib/components/NameText.svelte';
 	import { affiliation } from '$lib/people';
 	import Badge from '$lib/components/Badge.svelte';
@@ -39,6 +39,20 @@
 		form?: { answer?: Answer; error?: string; success?: string | boolean; mail?: MailRecord };
 	} = $props();
 	const view = $derived(page.url.searchParams.get('view') || 'workspace');
+	const viewTitle = $derived(
+		(
+			{
+				workspace: 'My workspace',
+				memory: 'Project memory',
+				people: 'People',
+				email: 'Email demo',
+				design: 'Design',
+				'how-to-use': 'How to use',
+				about: 'How it works',
+				practice: 'Practice answers'
+			} as Record<string, string>
+		)[view] || 'My workspace'
+	);
 	const firstName = $derived(data.context.persona.name.split(' ')[0]);
 	let sessionPersona = $state('');
 	let sessionLevel = $state(0);
@@ -53,13 +67,15 @@
 	const selectedPerson = $derived(page.url.searchParams.get('person') || '');
 	let organization = $state('all');
 	let confirmErase = $state(false);
-	let question = $state('');
 	let preferenceText = $state('');
 	let preferenceId = $state('');
 	let promoteText = $state('');
 	let previewPromote = $state(false);
 	let showMemory = $state(false);
 	let showDemo = $state(false);
+	afterNavigate(() => {
+		showDemo = false;
+	});
 	let to = $state('');
 	let cc = $state('');
 	let subject = $state('');
@@ -228,7 +244,6 @@
 						to = '';
 						cc = '';
 						subject = '';
-						question = '';
 						preferenceText = '';
 						preferenceId = '';
 						promoteText = '';
@@ -246,17 +261,7 @@
 </script>
 
 <svelte:head
-	><title
-		>{view === 'email'
-			? 'Email demo'
-			: view === 'memory'
-				? 'Project memory'
-				: view === 'people'
-					? 'People'
-					: view === 'about'
-						? 'How it works'
-						: 'My workspace'} · Receipt</title
-	><meta
+	><title>{viewTitle} · Receipt</title><meta
 		name="description"
 		content="Your Acme project memory, with evidence for every answer."
 	/></svelte:head
@@ -269,13 +274,13 @@
 		>
 		<div class="workspace">
 			<span class="workspace-logo">A</span>
-			<div><strong>Acme Org</strong><small>Customer project</small></div>
+			<div><strong>Acme Org</strong></div>
 			<ChevronRight size={16} />
 		</div>
 		<p class="nav-label">YOUR WORKSPACE</p>
 		<nav aria-label="Main navigation">
 			<a href="/?view=workspace" aria-current={view === 'workspace' ? 'page' : undefined}
-				><Sparkles size={19} />My workspace</a
+				><LayoutDashboard size={19} />My workspace</a
 			>
 			<a href="/?view=memory" aria-current={view === 'memory' ? 'page' : undefined}
 				><GitBranch size={19} />Project memory<span class="nav-count">{data.stats.documents}</span
@@ -284,18 +289,29 @@
 			<a href="/?view=people" aria-current={view === 'people' ? 'page' : undefined}
 				><Users size={19} />People</a
 			>
+			<a href="/?view=design" aria-current={view === 'design' ? 'page' : undefined}
+				><FileText size={19} />Design</a
+			>
+			<a href="/?view=how-to-use" aria-current={view === 'how-to-use' ? 'page' : undefined}
+				><BookOpen size={19} />How to use</a
+			>
 			<a href="/?view=about" aria-current={view === 'about' ? 'page' : undefined}
 				><CircleHelp size={19} />How it works</a
+			>
+			<a href="/?view=practice" aria-current={view === 'practice' ? 'page' : undefined}
+				><MessageSquare size={19} />Practice answers</a
 			>
 		</nav>
 		<div class="demo-nav">
 			<span class="nav-label">DEMONSTRATION</span><a
 				href="/?view=email"
 				class:active={view === 'email'}><Mail size={19} />Email demo<ArrowUpRight size={16} /></a
-			><button onclick={() => (showDemo = !showDemo)}><Settings2 size={18} />Demo controls</button>
+			>
 		</div>
 		<div class="sidebar-bottom">
-			<div class="connection"><span></span>Helsinki inference</div>
+			<div class="connection" title="GLM 5.3 Flash on Verda (formerly DataCrunch), Helsinki">
+				<span></span>Verda · Helsinki
+			</div>
 			<div class="profile">
 				<span class="avatar"
 					>{data.context.persona.name
@@ -312,17 +328,7 @@
 	<div class="main-wrap">
 		<header class="topbar">
 			<div>
-				Acme Org<span class="separator">/</span><strong
-					>{view === 'workspace'
-						? 'My workspace'
-						: view === 'memory'
-							? 'Project memory'
-							: view === 'people'
-								? 'People'
-								: view === 'email'
-									? 'Email demo'
-									: 'How it works'}</strong
-				>
+				Acme Org<span class="separator">/</span><strong>{viewTitle}</strong>
 			</div>
 			<div class="header-right">
 				<span class="access-pill"
@@ -331,12 +337,17 @@
 						: data.context.level === 2
 							? 'RELEX internal'
 							: 'Restricted'}</span
-				><button class="text-button" onclick={() => (showDemo = !showDemo)}>Switch view</button>
+				><button
+					class="text-button"
+					aria-expanded={showDemo}
+					aria-controls="view-settings"
+					onclick={() => (showDemo = !showDemo)}>Switch view</button
+				>
 			</div>
 		</header>
-		{#if showDemo}<section class="demo-controls">
+		{#if showDemo}<section class="demo-controls" id="view-settings" aria-label="Switch view">
 				<div>
-					<strong>Demonstration controls</strong>
+					<strong>Switch view</strong>
 					<p>
 						Choose a simulated employee and their permitted access level. Each browser has its own
 						workspace.
@@ -385,9 +396,13 @@
 				</form>
 			</section>{/if}
 		<main id="main">
-			{#if busy || running.length}<div class="working" role="status">
-					<span class="spinner"></span>{busy ||
-						`Preparing ${running[0]?.kind.replaceAll('_', ' ')}`}<small
+			{#if (busy && busy !== 'Reading project evidence') || running.length}<div
+					class="working"
+					role="status"
+				>
+					<span class="spinner"></span>{busy && busy !== 'Reading project evidence'
+						? busy
+						: `Preparing ${running[0]?.kind.replaceAll('_', ' ')}`}<small
 						>You can keep exploring the project.</small
 					>
 				</div>{/if}
@@ -427,7 +442,7 @@
 						<section class="card brief-card">
 							<div class="section-heading">
 								<div class="heading-icon">
-									<Sparkles size={20} />
+									<BookOpen size={20} />
 									<h2>Your morning brief</h2>
 								</div>
 								<form
@@ -452,7 +467,7 @@
 										answer={data.brief}
 										compact
 									/>{:else}<div class="brief-empty">
-										<Sparkles size={30} />
+										<BookOpen size={30} />
 										<h3>Your briefing is being prepared</h3>
 										<p>
 											Receipt is reading the project's evidence, your responsibilities and followed
@@ -485,34 +500,17 @@
 								<p class="section-description">
 									Find an agreement, prepare a conversation, or ask what changed.
 								</p>
-								<div class="suggestions">
-									{#each ['What exactly did Acme approve in the UAT sign-off?', 'When is the bakery evidence review?', 'What decisions are needed from Acme?'] as suggestion}<button
-											onclick={() => (question = suggestion)}
-											>{suggestion}<ArrowUpRight size={14} /></button
-										>{/each}
-								</div>
-								<form
-									method="POST"
-									action="?/ask"
-									use:enhance={action}
-									data-label="Reading project evidence"
-									class="ask-form"
-								>
-									<label class="sr-only" for="question">Question about Acme</label><textarea
-										id="question"
-										name="question"
-										bind:value={question}
-										required
-										rows="3"
-										placeholder="Ask about Acme, or tell me what you want to follow…"></textarea>
-									<div>
-										<small
-											><ShieldCheck size={14} />L{data.context.level} evidence · Your personal memory</small
-										><button class="button" disabled={!!busy} aria-label="Ask project question"
-											><ArrowUp size={18} />Ask</button
-										>
-									</div>
-								</form>
+								<ChatStream
+									context={data.context}
+									people={data.people}
+									onanswer={(answer) => {
+										form = { answer };
+									}}
+									onbusy={(value) => {
+										busy = value ? 'Reading project evidence' : '';
+									}}
+									disabled={!!busy}
+								/>
 								{#if form?.answer}<div class="answer-result">
 										<Evidence people={data.people} answer={form.answer} />
 									</div>{/if}{#each [...data.chat]
@@ -863,7 +861,7 @@
 									<input type="hidden" name="personId" value={person.id} /><button
 										class="button"
 										disabled={!!busy}
-										><Sparkles size={16} />{affiliation(person).kind === 'customer'
+										><MessageSquare size={16} />{affiliation(person).kind === 'customer'
 											? 'Prepare customer conversation'
 											: affiliation(person).kind === 'relex'
 												? 'Prepare collaboration brief'
@@ -1108,123 +1106,11 @@
 						</section>
 					</div>
 				</div>
+			{:else if data.reviewerGuide}
+				<GuideArticle document={data.reviewerGuide} />
 			{:else}
-				<div class="page-heading">
-					<div>
-						<p class="eyebrow">DESIGN & DATA BOUNDARIES</p>
-						<h1>How Receipt works</h1>
-						<p>From a visible participant in your email to an evidence-backed project memory.</p>
-					</div>
-				</div>
-				<div class="about-flow">
-					<div>
-						<Mail size={25} /><strong>Collect</strong>
-						<p>Imported Acme records and new messages addressed to the project agent.</p>
-					</div>
-					<ChevronRight />
-					<div>
-						<GitBranch size={25} /><strong>Connect</strong>
-						<p>Sources, decisions, commitments and people retain dated evidence links.</p>
-					</div>
-					<ChevronRight />
-					<div>
-						<Sparkles size={25} /><strong>Prepare</strong>
-						<p>Personal briefings, supported answers and useful email contributions.</p>
-					</div>
-				</div>
-				<section class="card card-body" style="margin-bottom:24px">
-					<h2>Submission documents</h2>
-					<p>
-						Read the one-page design, independently reviewed practice answers, actual model
-						evaluations and validation results.
-					</p>
-					{#if data.context.level === 3 && data.context.epoch === 0 && data.context.persona.projects.includes('acme')}
-						<a class="button secondary" href="/submission/design"
-							>Open submission documents<ArrowUpRight size={16} /></a
-						>
-					{:else}<p>
-							Original-archive submission documents are available in an Acme L3 view before erasure.
-							This workspace continues to use its permitted surviving evidence.
-						</p>{/if}
-				</section>
-				<div class="about-grid">
-					<section class="card card-body">
-						<ShieldCheck size={24} />
-						<h2>Access before inference</h2>
-						<p>
-							Project membership and clearance determine available evidence before it reaches the
-							model. L1 contains customer-shareable sources, L2 adds internal material, and L3 adds
-							restricted context.
-						</p>
-						<p>
-							Customer cards and email replies use a fresh context for their intended audience.
-							Personal conversations and preferences belong to the selected employee.
-						</p>
-					</section>
-					<section class="card card-body">
-						<BookOpen size={24} />
-						<h2>Every answer has a receipt</h2>
-						<p>
-							Claims connect to original passages with authors, dates and message or utterance
-							positions. The source viewer shows the current application-owned record.
-						</p>
-						<p>
-							The archive can contain conflicting accounts, corrections and unavailable attachments.
-							Answers must preserve those distinctions.
-						</p>
-					</section>
-					<section class="card card-body">
-						<Settings2 size={24} />
-						<h2>What the demonstration simulates</h2>
-						<p>
-							The email screen represents an employee's Outlook. Sending runs actual ingestion and
-							model participation in the local application. Demo identities represent the production
-							SSO boundary. Calendar entries and new example emails are labelled additions.
-						</p>
-						<p>
-							The initial Acme archive is imported historical material. Archive coverage and
-							generation times are shown separately.
-						</p>
-					</section>
-					<section class="card card-body">
-						<Trash2 size={24} />
-						<h2>Erasure and retained boundaries</h2>
-						<p>
-							Person erasure cleans runtime source copies, withdraws unsupported derived information
-							and invalidates affected generated artifacts. A receipt records the operation without
-							repeating deleted personal content.
-						</p>
-						<p>
-							The supplied reference fixtures and previously downloaded exports remain outside the
-							runtime erasure operation. Reopening this workspace preserves its erasure state.
-						</p>
-					</section>
-					<section class="card card-body">
-						<Sparkles size={24} />
-						<h2>Inference in Helsinki</h2>
-						<p>
-							GLM 5.3 Flash runs through the configured endpoint in a Helsinki datacentre. The
-							application stores its working memory in SQLite and runs on the host.
-						</p>
-						<p>
-							Generated answers and citations are validated before publication. Model requests use
-							bounded execution and failures remain visible for retry.
-						</p>
-					</section>
-					<section class="card card-body">
-						<CalendarDays size={24} />
-						<h2>A prepared personal workspace</h2>
-						<p>
-							The morning brief combines permitted project evidence, your role, followed topics and
-							upcoming simulated meetings. Prepared briefs are saved between visits, with their
-							generation time.
-						</p>
-						<p>
-							You can inspect and change remembered goals, refresh a brief and explicitly share a
-							private note with the project.
-						</p>
-					</section>
-				</div>
+				<div class="page-heading"><h1>Page unavailable</h1></div>
+				<p>Choose a page from the sidebar.</p>
 			{/if}
 		</main>
 		<footer>

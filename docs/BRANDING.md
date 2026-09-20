@@ -4,7 +4,7 @@ Receipt uses the colors inspected on RELEX’s website on 20 September 2026. The
 
 `src/app.css` owns the semantic tokens. White cards sit on `#F7F8F8`; navy `#0A3256` is the primary text color. Blue `#177ABF` is the action color, with navy hover states. Pale blue `#E6F2FF` marks selection and briefing headers. Orange `#FF7110` is available as an accent token. The Outlook simulator retains its distinct blue mail chrome.
 
-Figtree Variable 5.3.0 is bundled locally through Fontsource, including Latin, Latin Extended and italic faces. Its range is 300–900. Body copy remains 14–16px; headings use weight 700 and reduced negative letter-spacing. The [font license](FIGTREE_LICENSE.txt) is OFL-1.1; orig: `@fontsource-variable/figtree/LICENSE`.
+Figtree Variable 5.3.0 is bundled locally through Fontsource, including Latin, Latin Extended and italic faces. Its range is 300–900. Body copy uses 15–16px; headings use weight 700 and reduced negative letter-spacing. The [font license](FIGTREE_LICENSE.txt) is OFL-1.1; orig: `@fontsource-variable/figtree/LICENSE`.
 
 ## Color roles
 
@@ -12,7 +12,7 @@ Figtree Variable 5.3.0 is bundled locally through Fontsource, including Latin, L
 | --- | --- | --- |
 | Primary action | White | `#177ABF` |
 | Selected navigation, access level | `#0A3256` | `#E6F2FF` |
-| Secondary text | `#617072` | White, `#F7F8F8` or `#E6F2FF` |
+| Secondary text | `#546467` | White, `#F7F8F8` or `#E6F2FF` |
 | Agreed, current, completed | `#3E770C` | `#E9F7DF` |
 | Outstanding, superseded, stale | `#0A3256` | `#FFF4CC` |
 | Proposed, suggestion | `#773C76` | `#ECE6FF` |
@@ -20,7 +20,7 @@ Figtree Variable 5.3.0 is bundled locally through Fontsource, including Latin, L
 
 `Badge.svelte` assigns status tones while displaying the original status text. Unrecognized status values receive the neutral treatment. Access levels remain neutral and carry their explicit level label.
 
-Controls use `#617072` borders; decorative dividers use `#DDE0E1`. Focus outlines use navy. Selected navigation has a visible edge marker; selected tabs have an underline. Selected mail rows use navy secondary text to retain contrast against the simulator’s existing background.
+Compact organization labels use 14px; inline references have a 13px floor and graph labels a 12px floor. Controls use `#617072` borders; decorative dividers use `#DDE0E1`. Focus outlines use navy. Selected navigation has a visible edge marker; selected tabs have an underline. Selected mail rows use navy secondary text to retain contrast against the simulator’s existing background.
 
 The memory graph shares these tokens, including its source-node outline and keyboard focus stroke. Its SVG is an accessible group containing source links. Evidence PNGs read the root colors, load Figtree before measuring, and use the same font for wrapping and rendering. The sidebar uses the official RELEX RGB logo at its original aspect ratio, and the favicon uses the official RELEX symbol. Both are served locally.
 

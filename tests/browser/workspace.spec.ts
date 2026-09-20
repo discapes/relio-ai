@@ -93,18 +93,35 @@ test('desktop and mobile core controls have no serious accessibility failures', 
 	}
 });
 
-test('submission documents are readable and gated by the selected view', async ({ page }) => {
-	await page.goto('/?view=about', { waitUntil: 'networkidle' });
-	await page.getByRole('link', { name: 'Open submission documents' }).click();
-	await expect(page.getByRole('heading', { name: 'One-page design', level: 1 })).toBeVisible();
-	await page
-		.getByRole('navigation', { name: 'Submission documents' })
-		.getByRole('link', { name: 'Reviewed practice answers', exact: true })
-		.click();
-	await expect(
-		page.getByRole('heading', { name: 'Reviewed practice answers', level: 1 })
-	).toBeVisible();
+test('reviewer pages stay in the sidebar, expose intended material and scope practice sources', async ({
+	page
+}) => {
+	await page.goto('/', { waitUntil: 'networkidle' });
+	for (const [label, view] of [
+		['Design', 'design'],
+		['How to use', 'how-to-use'],
+		['How it works', 'about'],
+		['Practice answers', 'practice']
+	]) {
+		await page.getByRole('link', { name: label, exact: true }).click();
+		await expect(page).toHaveURL(new RegExp('view=' + view));
+		await expect(page.getByRole('heading', { name: label, level: 1, exact: true })).toBeVisible();
+		await expect(page.getByRole('navigation', { name: 'Main navigation' })).toBeVisible();
+		const accessibility = await new AxeBuilder({ page }).analyze();
+		expect(
+			accessibility.violations.filter(
+				(item) => item.impact === 'critical' || item.impact === 'serious'
+			)
+		).toEqual([]);
+	}
 	expect(await page.locator('article a[href^="/source/"]').count()).toBeGreaterThan(0);
+	await page.locator('article a[href^="/source/"]').first().click();
+	await expect(page.locator('.source-text')).toBeVisible();
+	await page.goBack();
+	await expect(
+		page.getByRole('heading', { name: 'Practice answers', level: 1, exact: true })
+	).toBeVisible();
+	await expect(page.getByRole('link', { name: 'Open submission documents' })).toHaveCount(0);
 	await page.setViewportSize({ width: 390, height: 844 });
 	expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(
 		true
@@ -114,6 +131,57 @@ test('submission documents are readable and gated by the selected view', async (
 		headers: { origin: new URL(page.url()).origin }
 	});
 	expect(switched.ok()).toBe(true);
-	expect((await page.request.get('/submission/answers')).status()).toBe(403);
-	expect((await page.request.get('/submission/answers/download')).status()).toBe(403);
+	await page.goto('/?view=practice');
+	await expect(page.locator('article a[href^="/source/"]')).toHaveCount(0);
+	await page.goto('/?view=design');
+	await expect(page.getByRole('heading', { name: 'Design', level: 1, exact: true })).toBeVisible();
+	for (const path of [
+		'/submission/design',
+		'/submission/answers',
+		'/submission/quality',
+		'/submission/answers/download'
+	]) {
+		expect((await page.request.get(path)).status()).toBe(404);
+	}
+});
+
+test('view switching has one entry, closes on navigation, and identifies inference hosting', async ({
+	page
+}) => {
+	await page.goto('/');
+	await expect(page.getByRole('button', { name: 'Demo controls', exact: true })).toHaveCount(0);
+	await expect(page.getByText('Customer project', { exact: true })).toHaveCount(0);
+	const toggle = page.getByRole('button', { name: 'Switch view', exact: true });
+	await toggle.click();
+	await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+	await expect(page.getByRole('button', { name: 'Start a fresh demo' })).toBeVisible();
+	await page.getByRole('link', { name: 'People', exact: true }).click();
+	await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+	await expect(page.locator('#view-settings')).toHaveCount(0);
+	await page.getByRole('link', { name: 'Project memory' }).click();
+	await toggle.click();
+	await page.locator('.person-name').first().click();
+	await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+	await page.getByRole('link', { name: 'Project memory' }).click();
+	await toggle.click();
+	await page.locator('a[href^="/source/"]').first().click();
+	await expect(page.locator('.source-text')).toBeVisible();
+	await page.goBack();
+	await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+	await page.getByRole('link', { name: 'How it works', exact: true }).click();
+	await expect(page.getByText(/Verda.*formerly DataCrunch/).first()).toBeVisible();
+	await expect(page.locator('.lucide-sparkles')).toHaveCount(0);
+	for (const width of [900, 390]) {
+		await page.setViewportSize({ width, height: 900 });
+		await expect(toggle).toBeVisible();
+		expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(
+			true
+		);
+	}
+	const typography = await page.locator('footer').evaluate((el) => ({
+		size: getComputedStyle(el).fontSize,
+		muted: getComputedStyle(document.documentElement).getPropertyValue('--muted').trim()
+	}));
+	expect(typography.size).toBe('15px');
+	expect(typography.muted).toBe('#546467');
 });

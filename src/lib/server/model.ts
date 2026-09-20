@@ -1,17 +1,38 @@
 import { createHash } from 'node:crypto';
+import { chatActivity, assertChatCurrent, chatStage } from './chat-activity';
+import { partialTextField, streamLines } from '../chat-stream';
 import type { Citation, Source } from '../types';
 
 const endpoint = process.env.INFERENCE_URL || 'http://127.0.0.1:8000/v1';
 export const modelName = process.env.INFERENCE_MODEL || 'glm-5.3-flash';
 let active = 0;
-const waiting: { priority: number; resolve: () => void }[] = [];
-async function acquire(priority: number) {
-	if (active >= 2)
-		await new Promise<void>((resolve) => {
-			waiting.push({ priority, resolve });
-			waiting.sort((a, b) => b.priority - a.priority);
-		});
-	active++;
+const waiting: { priority: number; resolve: () => void; reject: () => void }[] = [];
+async function acquire(priority: number, signal?: AbortSignal) {
+	signal?.throwIfAborted();
+	if (active < 2) {
+		active++;
+		return;
+	}
+	chatStage('queued', 'Waiting for an inference slot on the Helsinki model.');
+	await new Promise<void>((resolve, reject) => {
+		const entry = {
+			priority,
+			resolve: () => {
+				signal?.removeEventListener('abort', abort);
+				active++;
+				resolve();
+			},
+			reject: () => reject(new DOMException('Request cancelled', 'AbortError'))
+		};
+		const abort = () => {
+			const index = waiting.indexOf(entry);
+			if (index >= 0) waiting.splice(index, 1);
+			entry.reject();
+		};
+		waiting.push(entry);
+		waiting.sort((a, b) => b.priority - a.priority);
+		signal?.addEventListener('abort', abort, { once: true });
+	});
 }
 function release() {
 	active--;
@@ -29,10 +50,12 @@ export async function modelJSON<T>(
 	thinking = false,
 	priority = 1,
 	requiredKeys: string[] = [],
-	validate?: (value: unknown) => string | undefined
+	validate?: (value: unknown) => string | undefined,
+	streamText = false
 ): Promise<T> {
 	thinking = thinking && process.env.ENABLE_REASONING === '1';
-	await acquire(priority);
+	const activity = chatActivity();
+	await acquire(priority, activity?.signal);
 	const controller = new AbortController();
 	if (workspaceId) {
 		const group = controllers.get(workspaceId) || new Set<AbortController>();
@@ -42,14 +65,21 @@ export async function modelJSON<T>(
 	try {
 		let repair = '';
 		for (let attempt = 0; attempt < 2; attempt++) {
+			assertChatCurrent();
 			guard?.();
+			if (streamText && activity) activity.emit({ type: 'draft', text: '' });
 			const useThinking = thinking && attempt === 0;
 			const response = await fetch(`${endpoint}/chat/completions`, {
 				method: 'POST',
 				headers: { 'content-type': 'application/json' },
-				signal: AbortSignal.any([AbortSignal.timeout(180_000), controller.signal]),
+				signal: AbortSignal.any([
+					AbortSignal.timeout(180_000),
+					controller.signal,
+					...(activity ? [activity.signal] : [])
+				]),
 				body: JSON.stringify({
 					model: modelName,
+					stream: !!(streamText && activity),
 					messages: [
 						{ role: 'system', content: system },
 						{
@@ -70,8 +100,44 @@ export async function modelJSON<T>(
 			});
 			if (!response.ok)
 				throw new Error(`Inference service returned ${response.status}. Retry the task.`);
-			const result = await response.json();
-			const content = result.choices?.[0]?.message?.content;
+			let content = '';
+			let result: {
+				choices?: { finish_reason?: string; message?: { content?: string } }[];
+				usage?: unknown;
+			} = {};
+			if (streamText && activity) {
+				if (!response.body) throw new Error('Inference stream was unavailable. Retry the task.');
+				let shown = '';
+				let finished = false;
+				for await (const line of streamLines(response.body)) {
+					assertChatCurrent();
+					guard?.();
+					if (!line.startsWith('data:')) continue;
+					const data = line.slice(5).trim();
+					if (data === '[DONE]') {
+						finished = true;
+						break;
+					}
+					if (!data) continue;
+					const chunk = JSON.parse(data);
+					if (chunk.error) throw new Error('Inference stream failed. Retry the task.');
+					const delta = chunk.choices?.[0]?.delta?.content;
+					if (typeof delta !== 'string') continue;
+					content += delta;
+					const text = partialTextField(content);
+					if (text !== shown) {
+						shown = text;
+						activity.emit({ type: 'draft', text });
+					}
+				}
+				if (!finished)
+					throw new Error('Inference connection ended before completion. Retry the task.');
+			} else {
+				result = await response.json();
+				content = result.choices?.[0]?.message?.content || '';
+			}
+			assertChatCurrent();
+			guard?.();
 			if (!content) {
 				console.warn(
 					'inference_empty_response',
@@ -92,6 +158,10 @@ export async function modelJSON<T>(
 				if (issue) throw new Error(issue);
 				return parsed as T;
 			} catch (error) {
+				chatStage(
+					'repair',
+					'The model output needs a format correction. Retrying with the same permitted evidence.'
+				);
 				repair = `\nThe previous response failed validation: ${error instanceof Error ? error.message : 'Invalid JSON'}. Return a corrected complete output using the supplied source records.`;
 				if (attempt === 0) continue;
 				throw new Error('Inference returned incomplete structured output. Retry the task.');
