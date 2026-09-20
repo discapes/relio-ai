@@ -2,7 +2,9 @@
 	import { enhance } from '$app/forms';
 	import { invalidateAll, goto, afterNavigate, beforeNavigate } from '$app/navigation';
 	import { page } from '$app/state';
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
+	import relexSymbol from '$lib/assets/favicon.png';
+	import { sourceHref } from '$lib/presentation/navigation';
 	import type { SubmitFunction } from '@sveltejs/kit';
 	import {
 		ArrowUpRight,
@@ -25,6 +27,7 @@
 	import Evidence from '$lib/components/Evidence.svelte';
 	import ChatStream from '$lib/components/ChatStream.svelte';
 	import GuideArticle from '$lib/components/GuideArticle.svelte';
+	import ExtendedSlides from '$lib/components/ExtendedSlides.svelte';
 	import NameText from '$lib/components/NameText.svelte';
 	import { affiliation } from '$lib/people';
 	import Badge from '$lib/components/Badge.svelte';
@@ -46,6 +49,7 @@
 				people: 'People',
 				email: 'Email demo',
 				design: 'Design',
+				slides: 'Extended slides',
 				'how-to-use': 'How to use',
 				about: 'How it works',
 				practice: 'Practice answers'
@@ -60,8 +64,16 @@
 			data.context.persona
 	);
 	let busy = $state('');
-	let search = $state('');
-	let memoryTab = $state('sources');
+	let search = $state(page.url.searchParams.get('q') || '');
+	const memoryTab = $derived(page.url.searchParams.get('tab') || 'sources');
+	function setMemoryTab(tab: string) {
+		void goto(`/?view=memory&tab=${tab}`, { noScroll: true, keepFocus: true });
+	}
+	function memorySource(id: string) {
+		const origin = new URL(page.url);
+		if (search) origin.searchParams.set('q', search);
+		return sourceHref(id, origin.pathname + origin.search, `source-${id}`);
+	}
 	let personSearch = $state('');
 	const selectedPerson = $derived(page.url.searchParams.get('person') || '');
 	let organization = $state('all');
@@ -88,10 +100,25 @@
 	let body = $state('');
 	let threadId = $state('');
 	let eventId = $state('');
-	let mailId = $state('');
+	let mailId = $state(page.url.searchParams.get('mail') || '');
 	let composing = $state(false);
 	let includeAgent = $state(false);
 	const agent = 'acme-memory@relexsolutions.example';
+	async function showMail(id: string) {
+		mailId = id;
+		composing = false;
+		await goto(`/?view=email&mail=${encodeURIComponent(id)}`, { noScroll: true, keepFocus: true });
+		await tick();
+		const message = document.getElementById(`mail-${id}`);
+		message?.focus({ preventScroll: true });
+		message?.scrollIntoView({ block: 'start', behavior: 'instant' });
+	}
+	const jobLabels: Record<string, string> = {
+		extract: 'Updating project memory',
+		brief: 'Preparing your morning brief',
+		email: 'Reading the new email',
+		guidance: 'Preparing conversation guidance'
+	};
 	const action: SubmitFunction = ({ formElement }) => {
 		const started = {
 			workspaceId: data.context.workspaceId,
@@ -189,7 +216,10 @@
 			cancelSourceRequest();
 		};
 	});
-	afterNavigate(cancelSourceRequest);
+	afterNavigate(() => {
+		cancelSourceRequest();
+		if (view === 'memory' && search.trim()) void fetchSources(search, 0);
+	});
 	const visibleSources = $derived(searchedSources || data.sources);
 	const visibleClaims = $derived(
 		data.claims.filter((c) =>
@@ -319,7 +349,7 @@
 <div class="app-shell">
 	<aside class="sidebar" aria-label="Workspace navigation">
 		<a class="brand" href="/" aria-label="Relio workspace"
-			><span class="brand-wordmark">Relio</span></a
+			><img class="brand-symbol" src={relexSymbol} width="32" height="32" alt="" /><span class="brand-wordmark">Relio</span></a
 		>
 		<div class="workspace">
 			<span class="workspace-logo">A</span>
@@ -349,6 +379,9 @@
 			>
 			<a href="/?view=practice" aria-current={view === 'practice' ? 'page' : undefined}
 				><MessageSquare size={19} />Practice answers</a
+			>
+			<a href="/?view=slides" aria-current={view === 'slides' ? 'page' : undefined}
+				><FileText size={19} />Extended slides</a
 			>
 		</nav>
 		<div class="demo-nav">
@@ -416,7 +449,7 @@
 								>{/each}</select
 						></label
 					><label
-						>View level<select name="level" value={sessionLevel || data.context.level}
+						>View level<select name="level" value={String(sessionLevel || data.context.level)}
 							><option value="1">L1 · Customer-shareable</option
 							>{#if selectedSessionPersona.level >= 2}<option value="2">L2 · RELEX internal</option
 								>{/if}{#if selectedSessionPersona.level >= 3}<option value="3"
@@ -452,7 +485,7 @@
 				>
 					<span class="spinner"></span>{busy && busy !== 'Reading project evidence'
 						? busy
-						: `Preparing ${running[0]?.kind.replaceAll('_', ' ')}`}<small
+						: jobLabels[running[0]?.kind] || 'Updating your workspace'}<small
 						>You can keep exploring the project.</small
 					>
 				</div>{/if}
@@ -482,9 +515,21 @@
 						<h1>Good morning, {firstName}.</h1>
 						<p>Your project context, ready for the day ahead.</p>
 					</div>
-					<div class="date-mark">
-						<CalendarDays size={18} />
-						<div><strong>Monday, 6 July 2026</strong><small>Demonstration project date</small></div>
+					<div class="workspace-heading-actions">
+						<a
+							class="button secondary"
+							href="#conversation"
+							onclick={(event) => {
+								event.preventDefault();
+								document.getElementById('question')?.focus();
+							}}>Ask your project</a
+						>
+						<div class="date-mark">
+							<CalendarDays size={18} />
+							<div>
+								<strong>Monday, 6 July 2026</strong><small>Demonstration project date</small>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="workspace-grid">
@@ -726,11 +771,11 @@
 				</div>
 				<div class="memory-toolbar">
 					<div class="segmented">
-						<button class:chosen={memoryTab === 'sources'} onclick={() => (memoryTab = 'sources')}
+						<button class:chosen={memoryTab === 'sources'} onclick={() => setMemoryTab('sources')}
 							><FileText size={16} />Sources</button
-						><button class:chosen={memoryTab === 'claims'} onclick={() => (memoryTab = 'claims')}
+						><button class:chosen={memoryTab === 'claims'} onclick={() => setMemoryTab('claims')}
 							>Decisions & observations</button
-						><button class:chosen={memoryTab === 'graph'} onclick={() => (memoryTab = 'graph')}
+						><button class:chosen={memoryTab === 'graph'} onclick={() => setMemoryTab('graph')}
 							><GitBranch size={16} />Graph</button
 						>
 					</div>
@@ -745,11 +790,14 @@
 				{#if memoryTab === 'graph'}<section class="card">
 						<div class="section-heading">
 							<h2>Evidence connections</h2>
-							<span class="subtle">Select a numbered claim to inspect its sources</span>
+							<span class="subtle">Select a topic to inspect its sources</span>
 						</div>
 						<MemoryGraph people={data.people} claims={visibleClaims} sources={data.sources} />
 					</section>{:else if memoryTab === 'claims'}<div class="claims-grid">
-						{#each visibleClaims.slice(0, 60) as claim}<article class="card claim-card">
+						{#each visibleClaims.slice(0, 60) as claim}<article
+								class="card claim-card"
+								id={`claim-${claim.id}`}
+							>
 								<div class="pills">
 									<span class="badge">{claim.kind.replaceAll('_', ' ')}</span><Badge
 										status={claim.status}>{claim.status}</Badge
@@ -757,8 +805,12 @@
 								</div>
 								<p><NameText text={claim.text} people={data.people} /></p>
 								<div class="claim-sources">
+									<a
+										href={`/?view=memory&tab=graph&claim=${encodeURIComponent(claim.id)}#graph-selection`}
+										>View connections</a
+									>
 									{#each claim.sourceIds.slice(0, 4) as id, i}<a
-											href={`/source/${encodeURIComponent(id)}`}
+											href={sourceHref(id, '/?view=memory&tab=claims', `claim-${claim.id}`)}
 											><FileText size={14} />Source {i + 1}<ArrowUpRight size={13} /></a
 										>{/each}
 								</div>
@@ -768,11 +820,12 @@
 							No matching claims. Source records remain available in the Sources view.
 						</div>{/if}{:else}<section class="card source-list">
 						<div class="list-head">
-							<strong>{visibleSources.length.toLocaleString()} matching passages</strong><span
-								class="subtle">Search the complete archive or load more passages</span
-							>
+							<strong
+								>{visibleSources.length.toLocaleString()}
+								{search.trim() ? 'matching passages shown' : 'passages shown'}</strong
+							><span class="subtle">Search the complete archive or load more passages</span>
 						</div>
-						{#each visibleSources as source}<article class="source-row">
+						{#each visibleSources as source}<article class="source-row" id={`source-${source.id}`}>
 								<span class="source-icon"
 									>{#if source.type === 'email'}<Mail size={19} />{:else}<FileText
 											size={19}
@@ -780,9 +833,9 @@
 								>
 								<div>
 									<div class="source-title">
-										<a href={`/source/${encodeURIComponent(source.id)}`}
-											><strong>{source.title}</strong></a
-										><span class="badge">L{source.level}</span>
+										<a href={memorySource(source.id)}><strong>{source.title}</strong></a><span
+											class="badge">L{source.level}</span
+										>
 									</div>
 									<small
 										><NameText text={source.author} people={data.people} /> · {source.date} · {source.position}</small
@@ -794,9 +847,8 @@
 											: ''}
 									</p>
 								</div>
-								<a
-									aria-label={`Open source: ${source.title}`}
-									href={`/source/${encodeURIComponent(source.id)}`}><ArrowUpRight size={18} /></a
+								<a aria-label={`Open source: ${source.title}`} href={memorySource(source.id)}
+									><ArrowUpRight size={18} /></a
 								>
 							</article>{/each}{#if !visibleSources.length}<div class="empty">
 								No passages match this search.
@@ -919,7 +971,9 @@
 								<h3 class="section-subheading">Source connections</h3>
 								{#each person.sourceIds.slice(0, 8) as id}{@const s = data.sources.find(
 										(s) => s.id === id
-									)}{#if s}<a class="person-source" href={`/source/${encodeURIComponent(id)}`}
+									)}{#if s}<a
+											class="person-source"
+											href={sourceHref(id, `/?view=people&person=${encodeURIComponent(person.id)}`)}
 											><FileText size={16} /><span
 												>{s.title}<small>{s.date} · {s.author}</small></span
 											><ArrowUpRight size={15} /></a
@@ -1006,8 +1060,7 @@
 							{#each threads.slice(0, 60) as mail}<button
 									class:selected={selectedMail?.threadId === mail.threadId}
 									onclick={() => {
-										mailId = mail.id;
-										composing = false;
+										void showMail(mail.id);
 									}}
 									><strong>{mail.subject}</strong><small>{mail.from}</small>
 									<p>{mail.body.slice(0, 90)}</p>
@@ -1025,9 +1078,8 @@
 										return async (result) => {
 											if (typeof fn === 'function') await fn(result);
 											if (result.result.type === 'success') {
-												mailId = form?.mail?.id || mailId;
 												eventId = crypto.randomUUID();
-												composing = false;
+												await showMail(form?.mail?.id || mailId);
 											}
 										};
 									}}
@@ -1093,7 +1145,11 @@
 										>Reply</button
 									>
 								</div>
-								{#each thread as mail}<article class="mail-message">
+								{#each thread as mail}<article
+										class="mail-message"
+										id={`mail-${mail.id}`}
+										tabindex="-1"
+									>
 										<div class="mail-message-heading">
 											<span class="avatar"
 												>{mail.from.includes('memory') ? 'R' : mail.from[0]?.toUpperCase()}</span
@@ -1103,7 +1159,7 @@
 													>{mail.date}</small
 												>
 											</div>
-											<span class="badge">{mail.status.replaceAll('_', ' ')}</span>
+											<span class="badge" role="status">{mail.status.replaceAll('_', ' ')}</span>
 										</div>
 										<div class="mail-recipients">
 											<p>
@@ -1146,6 +1202,8 @@
 						</section>
 					</div>
 				</div>
+			{:else if view === 'slides'}
+				<ExtendedSlides />
 			{:else if data.reviewerGuide}
 				<GuideArticle document={data.reviewerGuide} />
 			{:else}

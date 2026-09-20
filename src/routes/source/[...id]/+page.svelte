@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { sourceHref } from '$lib/presentation/navigation';
 	import { onMount } from 'svelte';
 	import { invalidateAll } from '$app/navigation';
 	import NameText from '$lib/components/NameText.svelte';
@@ -8,6 +9,7 @@
 	}: {
 		data: {
 			source: Source;
+			returnTo: { href: string; label: string };
 			people: Person[];
 			neighbours: Source[];
 			workspaceId: string;
@@ -37,7 +39,7 @@
 
 <svelte:head><title>{data.source.title} · Relio</title></svelte:head>
 <main class="source-page">
-	<a class="back-link" href="/?view=memory">← Project memory</a>
+	<a class="back-link" href={data.returnTo.href}>← {data.returnTo.label}</a>
 	<div class="source-heading">
 		<span class="eyebrow">Source receipt</span>
 		<h1><NameText text={data.source.title} people={data.people} /></h1>
@@ -80,8 +82,12 @@
 			<h2>Surrounding conversation</h2>
 			{#each data.neighbours as neighbour}<article>
 					<strong><NameText text={neighbour.author} people={data.people} /></strong> ·
-					<a href={`/source/${encodeURIComponent(neighbour.id)}`}
-						>{neighbour.position} · {neighbour.date}</a
+					<a
+						href={sourceHref(
+							neighbour.id,
+							data.returnTo.href.split('#')[0],
+							decodeURIComponent(data.returnTo.href.split('#')[1] || '')
+						)}>{neighbour.position} · {neighbour.date}</a
 					>
 					<p><NameText text={neighbour.text} people={data.people} /></p>
 				</article>{/each}
