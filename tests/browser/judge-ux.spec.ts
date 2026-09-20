@@ -7,7 +7,7 @@ test('access selection, topic graph and source return preserve the visible task'
 	await page.getByRole('button', { name: 'Switch view', exact: true }).click();
 	await expect(page.locator('select[name=level]')).toHaveValue('3');
 	await page.getByRole('button', { name: 'Switch view', exact: true }).click();
-	await page.getByRole('link', { name: 'Ask your project', exact: true }).click();
+	await page.getByRole('button', { name: 'Ask your project', exact: true }).click();
 	await expect(page.locator('#question')).toBeFocused();
 	await page.goto('/?view=memory&tab=graph', { waitUntil: 'networkidle' });
 	const picker = page.getByRole('combobox', { name: 'Select a graph topic' });

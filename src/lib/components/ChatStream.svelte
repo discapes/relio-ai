@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { getContext, tick } from 'svelte';
+	import { inferencePaused, inferencePausedMessage } from '$lib/inference';
 	import { ArrowUp, ArrowUpRight, ShieldCheck } from '@lucide/svelte';
 	import { chatSessionKey, type ChatSession } from '$lib/chat-session.svelte';
 	import type { Context } from '$lib/types';
@@ -9,7 +10,7 @@
 	let progressElement = $state<HTMLElement | undefined>();
 	async function ask(event?: SubmitEvent) {
 		event?.preventDefault();
-		if (disabled) return;
+		if (inferencePaused || disabled) return;
 		const pending = chat.ask();
 		await tick();
 		progressElement?.scrollIntoView({
@@ -24,7 +25,7 @@
 	{#each ['What exactly did Acme approve in the UAT sign-off?', 'When is the bakery evidence review?', 'What decisions are needed from Acme?'] as suggestion}
 		<button
 			type="button"
-			disabled={progress.running || disabled}
+			disabled={inferencePaused || progress.running || disabled}
 			onclick={() => ((progress.question = suggestion), (progress.meetingId = ''))}
 			>{suggestion}<ArrowUpRight size={14} /></button
 		>
@@ -40,12 +41,16 @@
 		required
 		maxlength="8000"
 		rows="3"
-		disabled={progress.running}
-		placeholder="Ask about Acme, or tell me what you want to follow…"></textarea>
+		disabled={inferencePaused || progress.running || disabled}
+		placeholder={inferencePaused
+			? inferencePausedMessage
+			: 'Ask about Acme, or tell me what you want to follow…'}></textarea>
 	<div>
 		<small><ShieldCheck size={14} />L{context.level} evidence · Your personal memory</small>
-		<button class="button" disabled={progress.running || disabled} aria-label="Ask project question"
-			><ArrowUp size={18} />Ask</button
+		<button
+			class="button"
+			disabled={inferencePaused || progress.running || disabled}
+			aria-label="Ask project question"><ArrowUp size={18} />Ask</button
 		>
 	</div>
 </form>
@@ -81,7 +86,7 @@
 		<button
 			type="button"
 			class="button secondary"
-			disabled={progress.running || disabled}
+			disabled={inferencePaused || progress.running || disabled}
 			onclick={() => ask()}>Try again</button
 		>
 	</div>{/if}

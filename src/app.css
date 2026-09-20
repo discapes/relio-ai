@@ -546,7 +546,7 @@ body {
 }
 button:disabled {
 	opacity: 0.55;
-	cursor: wait;
+	cursor: not-allowed;
 }
 h1 {
 	font-size: clamp(30px, 3vw, 42px);
