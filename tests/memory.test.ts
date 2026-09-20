@@ -282,3 +282,21 @@ test('surname-only references are erased with the supported identity', () => {
 	assert.ok(!/\bkahn\b/i.test(JSON.stringify(sources(clean))));
 	assert.ok(people(clean).some((p) => p.name === 'Lena Fischer'));
 });
+
+test('name-link metadata contains only permitted and surviving people', () => {
+	const ctx = context('name-link-scope', 'ana');
+	addSource(ctx, {
+		...source('restricted-identity', 'Zelda Restricted owns this note.', 3),
+		author: 'Zelda Restricted',
+		participants: ['Zelda Restricted']
+	});
+	assert.ok(people(ctx).some((p) => p.name === 'Zelda Restricted'));
+	assert.ok(
+		!people(context('name-link-scope', 'nadia')).some((p) =>
+			p.aliases.some((a) => a.includes('Zelda'))
+		)
+	);
+	const zelda = people(ctx).find((p) => p.name === 'Zelda Restricted')!;
+	erasePerson(ctx, zelda.id);
+	assert.ok(!people(ctx).some((p) => p.aliases.some((a) => a.includes('Zelda'))));
+});

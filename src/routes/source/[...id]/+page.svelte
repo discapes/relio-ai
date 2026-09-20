@@ -1,12 +1,14 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { invalidateAll } from '$app/navigation';
-	import type { Source } from '$lib/types';
+	import NameText from '$lib/components/NameText.svelte';
+	import type { Source, Person } from '$lib/types';
 	let {
 		data
 	}: {
 		data: {
 			source: Source;
+			people: Person[];
 			neighbours: Source[];
 			workspaceId: string;
 			epoch: number;
@@ -38,7 +40,7 @@
 	<a class="back-link" href="/?view=memory">← Project memory</a>
 	<div class="source-heading">
 		<span class="eyebrow">Source receipt</span>
-		<h1>{data.source.title}</h1>
+		<h1><NameText text={data.source.title} people={data.people} /></h1>
 		<div class="pills">
 			<span class="badge">{data.source.type}</span><span class="badge">L{data.source.level}</span
 			>{#if data.source.generated}<span class="badge">Agent-generated</span>{/if}
@@ -47,7 +49,7 @@
 	<dl class="source-meta">
 		<div>
 			<dt>Author / speaker</dt>
-			<dd>{data.source.author || 'Unattributed'}</dd>
+			<dd><NameText text={data.source.author || 'Unattributed'} people={data.people} /></dd>
 		</div>
 		<div>
 			<dt>Recorded date</dt>
@@ -63,18 +65,25 @@
 		</div>
 	</dl>
 	{#if data.source.email}<div class="source-mail">
-			<p><strong>From:</strong> {data.source.email.from}</p>
-			<p><strong>To:</strong> {data.source.email.to.join(', ')}</p>
-			<p><strong>Cc:</strong> {data.source.email.cc.join(', ') || '—'}</p>
+			<p><strong>From:</strong> <NameText text={data.source.email.from} people={data.people} /></p>
+			<p>
+				<strong>To:</strong>
+				<NameText text={data.source.email.to.join(', ')} people={data.people} />
+			</p>
+			<p>
+				<strong>Cc:</strong>
+				<NameText text={data.source.email.cc.join(', ') || '—'} people={data.people} />
+			</p>
 		</div>{/if}
-	<article class="source-text">{data.source.text}</article>
+	<article class="source-text"><NameText text={data.source.text} people={data.people} /></article>
 	{#if data.neighbours.length}<section class="source-neighbours">
 			<h2>Surrounding conversation</h2>
 			{#each data.neighbours as neighbour}<article>
+					<strong><NameText text={neighbour.author} people={data.people} /></strong> ·
 					<a href={`/source/${encodeURIComponent(neighbour.id)}`}
-						><strong>{neighbour.author}</strong> · {neighbour.position} · {neighbour.date}</a
+						>{neighbour.position} · {neighbour.date}</a
 					>
-					<p>{neighbour.text}</p>
+					<p><NameText text={neighbour.text} people={data.people} /></p>
 				</article>{/each}
 		</section>{/if}
 	<p class="source-note">

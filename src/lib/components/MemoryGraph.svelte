@@ -1,7 +1,12 @@
 <script lang="ts">
-	import type { Claim, Source } from '$lib/types';
+	import type { Claim, Source, Person } from '$lib/types';
+	import NameText from './NameText.svelte';
 	import Badge from './Badge.svelte';
-	let { claims, sources }: { claims: Claim[]; sources: Source[] } = $props();
+	let {
+		claims,
+		sources,
+		people = []
+	}: { claims: Claim[]; sources: Source[]; people?: Person[] } = $props();
 	let selected = $state('');
 	let visibleCount = $state(24);
 	const visible = $derived(claims.slice(0, visibleCount));
@@ -105,7 +110,7 @@
 	</div>
 	{#if active}<div class="graph-detail">
 			<Badge status={active.status}>{active.status}</Badge>
-			<p>{active.text}</p>
+			<p><NameText text={active.text} {people} /></p>
 			<strong>Supporting sources</strong>{#each linked as source, i}<a
 					href={`/source/${encodeURIComponent(source.id)}`}
 					>{i + 1}. {source.title}<small>{source.date} · {source.author} · {source.position}</small

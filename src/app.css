@@ -2492,3 +2492,26 @@ textarea::placeholder {
 	stroke: var(--focus);
 	stroke-width: 4;
 }
+
+.people-filter {
+	padding: 0 1.25rem 1rem;
+	display: grid;
+	gap: 0.4rem;
+}
+.people-filter label {
+	font-size: 0.8rem;
+	color: var(--muted);
+}
+.organization-label {
+	display: block;
+	color: var(--action-hover);
+	font-size: 0.8rem;
+	margin: 0.15rem 0;
+}
+.source-row .source-title a {
+	color: inherit;
+	text-decoration: none;
+}
+.source-row .source-title a:hover {
+	text-decoration: underline;
+}

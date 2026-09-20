@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import { getSource, sources } from '$lib/server/memory';
+import { getSource, sources, people } from '$lib/server/memory';
 import { sessionContext } from '$lib/server/session';
 export function load({ cookies, params, setHeaders }) {
 	setHeaders({ 'cache-control': 'private, no-store' });
@@ -13,6 +13,7 @@ export function load({ cookies, params, setHeaders }) {
 		.filter((item) => item.id !== source.id);
 	return {
 		source,
+		people: people(ctx),
 		neighbours,
 		workspaceId: ctx.workspaceId,
 		epoch: ctx.epoch,
