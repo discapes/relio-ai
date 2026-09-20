@@ -64,3 +64,12 @@ docs/PROVENANCE_UX.md Snapshot freshness, selective erasure retention, reviewer 
 tests/provenance-retention.test.ts Independent statement retention, baseline reuse after erasure and sanitized deletion follow-ups.
 
 Run npm run check, npm test, npm run build and npm run test:e2e. Perform final desktop/mobile Chromium visual review after functional checks. Record actual live-model evidence and remaining limitations in docs/VALIDATION.md. Commit coherent phases and keep this file current.
+
+src/hooks.server.ts Fail-open request observation for user page entries and actions; excludes polling, data loads and static assets.
+src/lib/server/usage.ts Bounded asynchronous local usage logs, request context and explicit input/event fields.
+src/lib/usage-browser.ts Passive browser observation of navigation and controls, delivered in small batches.
+src/routes/usage/+server.ts Bounded event collection endpoint; stored logs have no public read route.
+scripts/usage-report.mjs Local usage summaries and browser/workspace timelines from rotated NDJSON logs.
+docs/USAGE_LOGGING.md Internal analytics events, limits, commands and isolated validation on port 43729.
+tests/usage.test.ts Logger failure containment, rotation, input bounds and automatic-request exclusion.
+tests/browser/usage.spec.ts Browser navigation/control collection and failed-delivery behavior.

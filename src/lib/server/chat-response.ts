@@ -1,3 +1,4 @@
+import { recordUsage } from './usage';
 import type { Context } from '../types';
 import type { ChatEvent } from '../chat-stream';
 import { epoch, isSuppressed } from './memory';
@@ -10,6 +11,7 @@ export function chatResponse(
 	requestSignal: AbortSignal,
 	meetingId?: string
 ) {
+	const started = performance.now();
 	const abort = new AbortController();
 	const unregister = registerChat(ctx.workspaceId, abort);
 	const disconnect = () => abort.abort();
@@ -51,8 +53,18 @@ export function chatResponse(
 					? await generateBrief(ctx, meetingId)
 					: await answerQuestion(ctx, question);
 				emit({ type: 'final', answer });
+				recordUsage('question.completed', {
+					durationMs: Math.round(performance.now() - started),
+					citationCount: answer.citations.length,
+					meetingId
+				});
 			})
 				.catch((error) => {
+					recordUsage('question.failed', {
+						outcome: abort.signal.aborted ? 'cancelled' : 'error',
+						durationMs: Math.round(performance.now() - started),
+						meetingId
+					});
 					if (!closed && !requestSignal.aborted) {
 						controller.enqueue(
 							encoder.encode(

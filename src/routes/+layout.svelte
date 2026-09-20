@@ -1,11 +1,33 @@
 <script lang="ts">
 	import '../app.css';
 	import favicon from '$lib/assets/relio_icon.svg';
-	import { setContext, onDestroy } from 'svelte';
+	import { setContext, onDestroy, onMount } from 'svelte';
+	import { installUsageObserver } from '$lib/usage-browser';
 	import { page, navigating } from '$app/state';
-	import { invalidateAll } from '$app/navigation';
+	import { invalidateAll, afterNavigate } from '$app/navigation';
 	import { chatSessionKey, createChatSession } from '$lib/chat-session.svelte';
 	let { children } = $props();
+	let usage: ReturnType<typeof installUsageObserver> | undefined;
+	onMount(() => {
+		try {
+			usage = installUsageObserver(() => {
+				const data = page.data;
+				return data.context
+					? {
+							workspaceId: data.context.workspaceId,
+							personaId: data.context.persona.id,
+							level: data.context.level
+						}
+					: { workspaceId: data.workspaceId, personaId: data.personaId, level: data.level };
+			});
+		} catch {
+			/* Analytics cannot prevent the workspace from mounting. */
+		}
+		return () => usage?.destroy();
+	});
+	afterNavigate((navigation) => {
+		if (navigation.type !== 'enter') usage?.navigate();
+	});
 	const chat = createChatSession(invalidateAll);
 	setContext(chatSessionKey, chat);
 	const awayFromChat = $derived(

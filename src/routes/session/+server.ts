@@ -1,9 +1,11 @@
+import { recordUsageInput } from '$lib/server/usage';
 import { redirect, error } from '@sveltejs/kit';
 import { cancelChatStreams } from '$lib/server/chat-activity';
 import { sessionContext } from '$lib/server/session';
 import { resolvePersona } from '$lib/server/memory';
 export async function POST({ request, cookies }) {
 	const data = await request.formData();
+	recordUsageInput(data);
 	const id = String(data.get('personaId') || 'ana');
 	const persona = resolvePersona(id);
 	if (!persona) error(400, 'Unknown identity');
