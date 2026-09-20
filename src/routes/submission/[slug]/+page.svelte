@@ -116,11 +116,11 @@
 		padding: 9px 13px;
 	}
 	nav a[aria-current] {
-		background: #eaf1e3;
+		background: var(--surface-selected);
 	}
 	article {
 		overflow-wrap: anywhere;
-		background: white;
+		background: var(--surface);
 		border: 1px solid var(--border);
 		border-radius: 12px;
 		padding: 32px;
@@ -154,7 +154,7 @@
 	}
 	tr:first-child {
 		font-weight: 700;
-		background: #f5f8f1;
+		background: var(--surface-selected);
 	}
 	@media (max-width: 600px) {
 		.submission-page {

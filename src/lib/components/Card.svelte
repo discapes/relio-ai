@@ -9,11 +9,11 @@
 		title: string;
 		description?: string;
 		children: Snippet;
-		tone?: 'default' | 'sage';
+		tone?: 'default' | 'tinted';
 	} = $props();
 </script>
 
-<section class:sage={tone === 'sage'} class="card">
+<section class:tinted={tone === 'tinted'} class="card">
 	<div class="card-heading">
 		<h2>{title}</h2>
 		{#if description}<p>{description}</p>{/if}

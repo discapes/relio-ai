@@ -51,6 +51,10 @@ DISABLE_BACKGROUND=1 npx tsx scripts/evaluate-practice.ts
 
 Reviewed submission answers for all nine practice questions are in `docs/practice_reference.md`. Actual generated answers remain in `docs/PRACTICE_ANSWERS.md`; `docs/practice_review.md` records earlier semantic limitations, and `docs/model_quality_review.md` contains the latest controlled P1/P3/P8 results and exact-record extraction review. `docs/VALIDATION.md` records actual outcomes, failures and limitations.
 
+## Appearance
+
+The interface uses RELEX navy, blue and pale blue with locally bundled Figtree. Status colors distinguish agreed, proposed, stale and corrected claims. Graphs and exported evidence images share the palette. See [branding and font attribution](docs/BRANDING.md) for tokens, source references and isolated visual-review operations.
+
 ## Operations
 
 The systemd user unit is `receipt-workspace.service` and runs Node on the host. Source configuration is in `deploy/receipt-workspace.service`. Use `systemctl --user status receipt-workspace`, `systemctl --user restart receipt-workspace`, and `journalctl --user -u receipt-workspace -n 100` for operations. SQLite state is in `data/app.sqlite`; preserve this directory across deployment.

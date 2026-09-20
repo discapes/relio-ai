@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Claim, Source } from '$lib/types';
+	import Badge from './Badge.svelte';
 	let { claims, sources }: { claims: Claim[]; sources: Source[] } = $props();
 	let selected = $state('');
 	let visibleCount = $state(24);
@@ -41,12 +42,12 @@
 	</div>
 	<svg
 		viewBox="0 0 720 470"
-		role="img"
+		role="group"
 		aria-label="Selected claim linked to its supporting source passages and authors"
 	>
 		<defs
 			><pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"
-				><circle cx="2" cy="2" r="1" fill="#cbd8cd" /></pattern
+				><circle cx="2" cy="2" r="1" fill="var(--border)" /></pattern
 			></defs
 		><rect width="720" height="470" fill="url(#dots)" />
 		{#each linked as source, i}{@const p = point(i, linked.length)}<line
@@ -54,38 +55,45 @@
 				y1="235"
 				x2={p.x}
 				y2={p.y}
-				stroke="#98b79c"
+				stroke="var(--action)"
 				stroke-width="1.5"
 			/><text
 				x={(360 + p.x) / 2}
 				y={(235 + p.y) / 2 - 7}
 				text-anchor="middle"
-				fill="#667e5c"
+				fill="var(--muted)"
 				font-size="11">supported by</text
 			>{/each}
-		<circle cx="360" cy="235" r="54" fill="#174e3b" /><text
+		<circle cx="360" cy="235" r="54" fill="var(--text)" /><text
 			x="360"
 			y="230"
 			text-anchor="middle"
-			fill="white"
+			fill="var(--on-action)"
 			font-size="15"
 			font-weight="700">{active?.kind.replaceAll('_', ' ') || 'Acme'}</text
-		><text x="360" y="253" text-anchor="middle" fill="#dcebe0" font-size="12"
+		><text x="360" y="253" text-anchor="middle" fill="var(--surface-selected)" font-size="12"
 			>{active?.status || 'project memory'}</text
 		>
 		{#each linked as source, i}{@const p = point(i, linked.length)}<a
 				href={`/source/${encodeURIComponent(source.id)}`}
 				aria-label={`Open supporting source ${i + 1}: ${source.title}, ${source.author}`}
-				><circle cx={p.x} cy={p.y} r="24" fill="#e2edda" stroke="#668b61" stroke-width="2" /><text
+				><circle
+					cx={p.x}
+					cy={p.y}
+					r="24"
+					fill="var(--surface-selected)"
+					stroke="var(--action)"
+					stroke-width="2"
+				/><text
 					x={p.x}
 					y={p.y + 5}
 					text-anchor="middle"
-					fill="#24533d"
+					fill="var(--text)"
 					font-size="14"
 					font-weight="700">{i + 1}</text
-				><text x={p.x} y={p.y + 44} text-anchor="middle" fill="#304b3b" font-size="12"
+				><text x={p.x} y={p.y + 44} text-anchor="middle" fill="var(--text)" font-size="12"
 					>{source.author.slice(0, 30) || 'Unattributed'}</text
-				><text x={p.x} y={p.y + 61} text-anchor="middle" fill="#657a5c" font-size="11"
+				><text x={p.x} y={p.y + 61} text-anchor="middle" fill="var(--muted)" font-size="11"
 					>{source.date.slice(0, 10)} · {source.type}</text
 				></a
 			>{/each}
@@ -96,7 +104,7 @@
 		>
 	</div>
 	{#if active}<div class="graph-detail">
-			<span class="badge">{active.status}</span>
+			<Badge status={active.status}>{active.status}</Badge>
 			<p>{active.text}</p>
 			<strong>Supporting sources</strong>{#each linked as source, i}<a
 					href={`/source/${encodeURIComponent(source.id)}`}

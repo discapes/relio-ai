@@ -25,6 +25,8 @@
 		Users
 	} from '@lucide/svelte';
 	import Evidence from '$lib/components/Evidence.svelte';
+	import Badge from '$lib/components/Badge.svelte';
+	import relexLogo from '$lib/assets/relex_logo.svg';
 	import MemoryGraph from '$lib/components/MemoryGraph.svelte';
 	import type { WorkspaceData, Answer, Source, Mail as MailRecord } from '$lib/types';
 	let {
@@ -255,10 +257,9 @@
 >
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="app-shell">
-	<aside class="sidebar">
-		<a class="brand" href="/"
-			><span class="brand-icon"><BookOpen size={22} /></span>receipt<span class="brand-dot">.</span
-			></a
+	<aside class="sidebar" aria-label="Workspace navigation">
+		<a class="brand" href="/" aria-label="RELEX workspace"
+			><img src={relexLogo} alt="RELEX" width="145" height="44" /></a
 		>
 		<div class="workspace">
 			<span class="workspace-logo">A</span>
@@ -516,7 +517,7 @@
 							</div>
 						</section>
 					</div>
-					<aside class="right-column">
+					<aside class="right-column" aria-label="Personal context">
 						<section class="card personal-card">
 							<div class="section-heading">
 								<h2>Your focus</h2>
@@ -692,8 +693,8 @@
 					</section>{:else if memoryTab === 'claims'}<div class="claims-grid">
 						{#each visibleClaims.slice(0, 60) as claim}<article class="card claim-card">
 								<div class="pills">
-									<span class="badge">{claim.kind.replaceAll('_', ' ')}</span><span
-										class="badge success">{claim.status}</span
+									<span class="badge">{claim.kind.replaceAll('_', ' ')}</span><Badge
+										status={claim.status}>{claim.status}</Badge
 									><span class="subtle">L{claim.level}</span>
 								</div>
 								<p>{claim.text}</p>
@@ -910,7 +911,7 @@
 						><span class="sim-badge">Simulated Outlook</span>
 					</div>
 					<div class="mail-layout">
-						<aside class="mail-list">
+						<aside class="mail-list" aria-label="Mail folders and threads">
 							<div class="mail-list-heading">
 								<strong>Inbox & sent</strong><span>{threads.length}</span>
 							</div>

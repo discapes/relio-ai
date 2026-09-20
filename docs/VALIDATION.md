@@ -83,3 +83,15 @@ Research answers now explicitly identify their selected-evidence scope. The fina
 Code commit `846a491` runs from immutable release `2026-09-20T00-38-46-293Z`. The final public restart/erasure check passed at 00:39:28 UTC on 20 September 2026, including reference-view and download withdrawal. Normal-TLS external availability returned HTTP200 in 0.857 seconds. The complete public browser suite passed five tests in 21.6 seconds. The selected-evidence wording change was followed by a clean type check and nine passing affected workflow tests; the preceding complete suite passed all 35 tests.
 
 Public document entry points are `/submission/design`, `/submission/answers` and `/submission/quality`, also linked from How it works. They require Acme membership, L3 and an unerased workspace. Original fixtures are not exposed by file-serving routes.
+
+## RELEX brand migration, 20 September 2026
+
+Applied the verified navy/blue palette and Figtree Variable across the shell, source views, status badges, memory graph, submission pages and exported evidence PNGs. The sidebar now uses RELEX’s official RGB SVG logo; the favicon is RELEX’s official square symbol. Source URLs and font licensing are documented in `BRANDING.md`.
+
+Validation used an isolated SQLite backup with background inference disabled on port 41851. `npm run check` passed with zero errors/warnings, `npm test` passed all 35 tests, and the production build passed. After the logo and accessibility changes, the complete five-test browser suite passed again in 21.2 seconds.
+
+The expanded Chromium review covered 23 view/state combinations: workspace, memory sources, source reader, claims, graph, people, erasure confirmation, email list/thread/composer, submission design, workspace/memory/people/email at 390px and 768px, all three access levels, and evidence preview. The final run reported zero axe violations, zero horizontal page overflow and zero browser JavaScript errors. The first audit exposed insufficient selected-mail contrast and the graph’s image role around interactive links; both were corrected, along with duplicated aside landmark names.
+
+Figtree loaded locally. The logo matched the official reference SVG byte-for-byte. Keyboard focus produced a 3px navy input outline and a 4px navy graph-source outline. Replaying a previously saved share response into the isolated browser exercised the real PNG export without a new inference call: the 1200 × 2468 image downloaded successfully, with white background, navy text and Figtree wrapping. This export check covers rendering and download behavior; existing workflow tests cover source-sharing boundaries.
+
+Desktop/mobile workspace, graph, claims, source, email, erasure and submission captures were visually reviewed after the checks. Raw audit reports, the exported PNG and review scripts are in the workspace’s `artifacts/relex_brand/implementation/` directory.
