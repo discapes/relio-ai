@@ -74,3 +74,5 @@ docs/USAGE_LOGGING.md Internal analytics events, limits, commands and isolated v
 docs/VISITOR_OUTCOME_AUDIT.md Read-only review of two observed visitor sessions, checking actual saved answers, erasure, email, calendar provenance and brief attribution against sources.
 tests/usage.test.ts Logger failure containment, rotation, input bounds and automatic-request exclusion.
 tests/browser/usage.spec.ts Browser navigation/control collection and failed-delivery behavior.
+
+src/lib/inference.ts UI pause setting and message; PUBLIC_INFERENCE_PAUSED=true disables inference controls on the deployed demo. Set false and restart to restore them.

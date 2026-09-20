@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import { inferencePaused, inferencePausedMessage } from '$lib/inference';
 	import { invalidateAll, goto, afterNavigate, beforeNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 	import { getContext, onMount, tick } from 'svelte';
@@ -124,7 +125,23 @@
 		email: 'Reading the new email',
 		guidance: 'Preparing conversation guidance'
 	};
-	const action: SubmitFunction = ({ formElement }) => {
+	const action: SubmitFunction = ({ formElement, cancel }) => {
+		if (
+			inferencePaused &&
+			[
+				'refreshBrief',
+				'preference',
+				'forgetPreference',
+				'promote',
+				'sendMail',
+				'retryMail',
+				'retryJob',
+				'share'
+			].some((name) => formElement.action.endsWith(`?/${name}`))
+		) {
+			cancel();
+			return;
+		}
 		const started = {
 			workspaceId: data.context.workspaceId,
 			epoch: data.context.epoch,
@@ -488,6 +505,7 @@
 				</form>
 			</section>{/if}
 		<main id="main">
+			{#if inferencePaused}<p class="notice" role="status">{inferencePausedMessage}</p>{/if}
 			{#if data.sessionNotice}<p class="notice" role="status">{data.sessionNotice}</p>{/if}
 			{#if (busy && busy !== 'Reading project evidence') || running.length}<div
 					class="working"
@@ -510,7 +528,7 @@
 					>
 						<input type="hidden" name="id" value={job.id} /><button
 							class="text-button"
-							disabled={!!busy}>Retry preparation</button
+							disabled={inferencePaused || !!busy}>Retry preparation</button
 						>
 					</form>
 				</div>{/each}
@@ -526,13 +544,14 @@
 						<p>Your project context, ready for the day ahead.</p>
 					</div>
 					<div class="workspace-heading-actions">
-						<a
+						<button
+							type="button"
 							class="button secondary"
-							href="#conversation"
+							disabled={inferencePaused}
 							onclick={(event) => {
 								event.preventDefault();
 								document.getElementById('question')?.focus();
-							}}>Ask your project</a
+							}}>Ask your project</button
 						>
 						<div class="date-mark">
 							<CalendarDays size={18} />
@@ -556,7 +575,7 @@
 									use:enhance={action}
 									data-label="Refreshing your morning brief"
 								>
-									<button class="text-button" disabled={!!busy || briefRunning}
+									<button class="text-button" disabled={inferencePaused || !!busy || briefRunning}
 										><RefreshCw size={15} />Refresh</button
 									>
 								</form>
@@ -586,7 +605,9 @@
 												use:enhance={action}
 												data-label="Preparing your morning brief"
 											>
-												<button class="button secondary" disabled={!!busy}>Prepare my brief</button>
+												<button class="button secondary" disabled={inferencePaused || !!busy}
+													>Prepare my brief</button
+												>
 											</form>
 										{/if}
 									</div>{/if}
@@ -608,7 +629,7 @@
 								<p class="section-description">
 									Find an agreement, prepare a conversation, or ask what changed.
 								</p>
-								<ChatStream context={data.context} disabled={!!busy} />
+								<ChatStream context={data.context} disabled={inferencePaused || !!busy} />
 								{#if latestAnswer}<div class="answer-result">
 										<Evidence people={data.people} answer={latestAnswer} />
 									</div>{/if}{#each [...data.chat]
@@ -652,6 +673,7 @@
 												>
 													<input type="hidden" name="id" value={preference.id} /><button
 														class="icon-button small"
+														disabled={inferencePaused}
 														aria-label="Forget this preference"><Trash2 size={15} /></button
 													>
 												</form>
@@ -674,7 +696,7 @@
 										required
 										placeholder="Follow bakery integration and Acme decisions"></textarea><button
 										class="button secondary"
-										disabled={!!busy}
+										disabled={inferencePaused || !!busy}
 										><Plus size={15} />{preferenceId ? 'Save changes' : 'Remember this'}</button
 									>
 								</form>
@@ -708,7 +730,7 @@
 										<button
 											type="button"
 											class="text-button"
-											disabled={!!busy || chatSession.state.running}
+											disabled={inferencePaused || !!busy || chatSession.state.running}
 											onclick={async () => {
 												chatSession.state.question = `Prepare me for ${meeting.title}.`;
 												chatSession.state.meetingId = meeting.id;
@@ -733,7 +755,7 @@
 									placeholder="Write the information you want to share"></textarea><button
 									class="button secondary"
 									onclick={() => (previewPromote = true)}
-									disabled={!promoteText.trim()}>Preview sharing</button
+									disabled={inferencePaused || !promoteText.trim()}>Preview sharing</button
 								>{#if previewPromote}<form
 										method="POST"
 										action="?/promote"
@@ -757,7 +779,9 @@
 										><small
 											>This note will be attributed to {data.context.persona.name} and available to project
 											members at this level.</small
-										><button class="button" disabled={!!busy}>Add to project memory</button>
+										><button class="button" disabled={inferencePaused || !!busy}
+											>Add to project memory</button
+										>
 									</form>{/if}
 							</div>
 						</details>
@@ -889,8 +913,11 @@
 							id="share-question"
 							name="question"
 							required
-							placeholder="What was approved in the January UAT sign-off?"
-						/><button class="button" disabled={!!busy}>Create preview</button>
+							disabled={inferencePaused}
+							placeholder={inferencePaused
+								? inferencePausedMessage
+								: 'What was approved in the January UAT sign-off?'}
+						/><button class="button" disabled={inferencePaused || !!busy}>Create preview</button>
 					</form>
 					{#if form?.answer}<Evidence people={data.people} answer={form.answer} />{/if}
 				</section>
@@ -1144,7 +1171,8 @@
 									<div class="composer-bottom">
 										<small
 											>Only this message and explicitly included history are delivered to the agent.</small
-										><button class="button" disabled={!!busy}><Mail size={17} />Send message</button
+										><button class="button" disabled={inferencePaused || !!busy}
+											><Mail size={17} />Send message</button
 										>
 									</div>
 								</form>{:else if selectedMail}<div class="thread-heading">
@@ -1192,7 +1220,8 @@
 													data-label="Retrying message processing"
 												>
 													<input type="hidden" name="id" value={mail.id} /><button
-														class="button secondary">Retry processing</button
+														class="button secondary"
+														disabled={inferencePaused || !!busy}>Retry processing</button
 													>
 												</form>
 											</div>{/if}
