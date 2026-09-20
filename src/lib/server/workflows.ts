@@ -96,9 +96,10 @@ function db() {
 		}
 		memory.registerErasureHook((workspaceId: string, aliases: string[], sourceIds: string[]) => {
 			cancelChatStreams(workspaceId);
-			d.prepare('DELETE FROM wf_people_guidance WHERE workspace_id=?').run(workspaceId);
+			let count = Number(
+				d.prepare('DELETE FROM wf_people_guidance WHERE workspace_id=?').run(workspaceId).changes
+			);
 			cancelModelCalls(workspaceId);
-			let count = 0;
 			const erasedOwners = memory.personas
 				.filter((p) =>
 					aliases.some((alias) =>

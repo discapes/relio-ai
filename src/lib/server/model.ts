@@ -69,7 +69,7 @@ export async function modelJSON<T>(
 			guard?.();
 			if (streamText && activity) activity.emit({ type: 'draft', text: '' });
 			const useThinking = thinking && attempt === 0;
-			const response = await fetch(`${endpoint}/chat/completions`, {
+			const request: RequestInit = {
 				method: 'POST',
 				headers: { 'content-type': 'application/json' },
 				signal: AbortSignal.any([
@@ -97,7 +97,22 @@ export async function modelJSON<T>(
 					response_format: { type: 'json_object' },
 					chat_template_kwargs: { enable_thinking: useThinking }
 				})
-			});
+			};
+			let response: Response;
+			try {
+				response = await fetch(`${endpoint}/chat/completions`, request);
+			} catch (error) {
+				const code = (error as { cause?: { code?: string } })?.cause?.code;
+				if (!['UND_ERR_SOCKET', 'ECONNRESET'].includes(code || '')) throw error;
+				request.signal?.throwIfAborted();
+				assertChatCurrent();
+				guard?.();
+				// A reused provider socket can close between requests. Retry this read-only inference once.
+				response = await fetch(`${endpoint}/chat/completions`, {
+					...request,
+					headers: { 'content-type': 'application/json', connection: 'close' }
+				});
+			}
 			if (!response.ok)
 				throw new Error(`Inference service returned ${response.status}. Retry the task.`);
 			let content = '';

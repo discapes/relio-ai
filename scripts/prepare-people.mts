@@ -22,13 +22,21 @@ const tasks = contexts
 			(!process.env.PREPARE_OWNER || ctx.persona.id === process.env.PREPARE_OWNER) &&
 			(!process.env.PREPARE_LEVEL || ctx.level === Number(process.env.PREPARE_LEVEL))
 	)
-	.flatMap((ctx) => people(ctx).map((person) => ({ ctx, person })));
+	.flatMap((ctx) => people(ctx).map((person) => ({ ctx, person })))
+	.filter(
+		({ person }) =>
+			!process.env.PREPARE_PEOPLE || process.env.PREPARE_PEOPLE.split('|').includes(person.name)
+	);
 for (const ctx of new Set(tasks.map((task) => task.ctx))) registerGuidancePreparation(ctx);
 process.once('exit', finishGuidancePreparation);
 const dir = resolve(process.env.DATA_DIR || 'data');
 mkdirSync(dir, { recursive: true });
 const journal = resolve(dir, 'people-preparation.jsonl');
 const concurrency = Math.max(1, Math.min(2, Number(process.env.PREPARE_CONCURRENCY || 2)));
+let stopping = false;
+process.on('SIGTERM', () => {
+	stopping = true;
+});
 let index = 0,
 	ready = 0,
 	failed = 0;
@@ -39,7 +47,7 @@ function log(value: object) {
 }
 log({ event: 'start', workspace, total: tasks.length, concurrency });
 async function worker() {
-	while (index < tasks.length) {
+	while (index < tasks.length && !stopping) {
 		const { ctx, person } = tasks[index++];
 		const key = { workspace, owner: ctx.persona.id, level: ctx.level, person: person.name };
 		if (preparedGuidance(ctx, person.id)) {
@@ -71,6 +79,6 @@ async function worker() {
 	}
 }
 await Promise.all(Array.from({ length: concurrency }, () => worker()));
-log({ event: 'complete', workspace, ready, failed, total: tasks.length });
+log({ event: stopping ? 'stopped' : 'complete', workspace, ready, failed, total: tasks.length });
 database().exec('PRAGMA wal_checkpoint(PASSIVE)');
 process.exitCode = failed ? 1 : 0;
