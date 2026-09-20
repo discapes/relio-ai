@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "seconds": 9.447,
+  "answer": {
+    "id": "1e89f693-09fe-452d-add7-709bc11c4276",
+    "text": "Saved to your personal memory:\n\nInclude the progress of the bakery integration in briefings, along with decisions expected from the customer.",
+    "citations": [],
+    "createdAt": "2026-09-20T00:06:15.672Z",
+    "kind": "chat",
+    "level": 3,
+    "question": "Mua kiinnostaa erityisesti bakeryn integraation eteneminen; nosta asiakkaalta odottavat päätökset mun briiffiin.",
+    "trace": [
+      "Resolved personal-memory intent using the employee request and their private preferences.",
+      "Updated or read only the selected employee’s personal memory."
+    ]
+  },
+  "preferences": [
+    {
+      "id": "9ee411c8-ea84-47d0-a81f-20cbbbf340de",
+      "text": "Include the progress of the bakery integration in briefings, along with decisions expected from the customer.",
+      "createdAt": "2026-09-20T00:06:15.670Z"
+    }
+  ]
+}

@@ -4,7 +4,7 @@ Prepared from the original parsed source records on 20 September 2026. These fix
 
 ## Shared setup
 
-Use **Ana Duarte**, RELEX Project Manager, as the initial employee (`ana.duarte@relexsolutions.example`). Her initial clearance is L2 for Acme. A separate explicitly privileged persona can demonstrate L3 and deletion; use the implemented authorisation policy. The workspace and Outlook simulator share the selected identity.
+Use **Ana Duarte**, RELEX Project Manager, as the initial employee (`ana.duarte@relexsolutions.example`). The implemented demo gives Ana L3 for Acme and explicit erasure permission. Marco provides the L2 comparison and Nadia the L1 customer-shareable view. The workspace and Outlook simulator share the selected identity.
 
 Use a clearly displayed project date of **Monday 6 July 2026**, after the archive's latest 2 July document. Preserve real generation timestamps separately. A presenter may advance demo time explicitly. Never imply that the historical corpus reflects current live customer operations.
 

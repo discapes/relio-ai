@@ -1,0 +1,312 @@
+{
+  "question": 7,
+  "durationMs": 145929,
+  "status": "generated",
+  "workspaceId": "practice_p7_1789862587681",
+  "generatedAt": "2026-09-20T00:03:07.749Z",
+  "erasure": {
+    "id": "805501fd-5b9c-49b9-bdf1-1ccd99ccfe4e",
+    "createdAt": "2026-09-20T00:03:10.412Z",
+    "sourcesRemoved": 115,
+    "artifactsRemoved": 0
+  },
+  "answer": {
+    "id": "30bf87ec-b03e-422c-bb73-00e0a6f1d0db",
+    "text": "The 24 September 2024 master-data workshop survives only as fragmented transcript, and the surviving utterances establish that the session was about finding out how bad the data is (Ana Duarte, T06U0001), that Priya Nair referred back to having said \"a third\" (T06U0016), and that the critical path is case pack (Ana Duarte, T06U0032). [1] [2] [3]\n\nOn remediation volume and staffing, Priya Nair said \"Thirteen hundred is doable. Thirteen hundred is two people for\" (T06U0041) and completed \"three weeks\" (T06U0043); asked whether she had two people, she said \"I have\" (T06U0046) and \"one and a half\" (T06U0047); Ana Duarte then concluded \"Then five weeks\" (T06U0048), which Priya confirmed and said puts them into November (T06U0049, T06U0050). The precise figure 1,317 does not appear anywhere in the September transcript. [4] [5] [6] [7] [8] [9] [10]\n\nThe same workshop records the pilot cohort reduction: Lena Fischer reported regional pushback on forty stores (T06U0068), that two of three regions could not support that many during their peak and she had agreed to reduce it (T06U0071, T06U0073), and set the number at twenty-five spread across three regions and mixed formats (T06U0075). Ana Duarte called it a material change to the plan and measurement baseline (T06U0077), said she would reissue the plan and store list request (T06U0089), asked Priya to note in the mail that it is twenty-five and why (T06U0094, T06U0095, T06U0096), and Priya said \"I will note it\" (T06U0097). [11] [12] [13] [14] [15] [16] [17] [18] [19] [20]\n\nPriya Nair's email of 3 September 2024 confirms the reduction in writing: \"Store list attached. Note it is 25 rather than 40 - the regional managers pushed back on the number and Lena agreed to reduce it\" (E09M005); the store list attachment itself is not among the surviving passages. Ana Duarte accepted the same day, 3 September 2024: \"I was not told but 25 is fine. I will update the plan\" (E09M004). [21] [22]\n\nThe written assessment itself is not among the surviving evidence. Tomas Lindholm promised the write-up in two weeks at the 18 April 2024 due-diligence call (T02U0139), and his 2 May 2024 email states \"Assessment written up as promised. Four conclusions\" (E11M005) - this email survives and names the four conclusions: ECC 6.0 fine, DC-2 as named risk, master data remediation workstream with case pack quantity as the blocking gap, and remaining shelf life as an open question. Priya Nair replied on 6 May 2024, \"Agreed on all four. I will own the remediation\" (E11M004). [23] [24] [25]\n\nThe 9 July 2024 handover discussion (speaker attribution unresolved) records that of three things only one is in the assessment properly (T04U0024) and that remaining shelf life is in the assessment only as an open question, not as a phase two blocker (T04U0030), because when it was written in May the answer was still pending (T04U0032). [26] [27] [28]\n\nLater independent reports: on 28 October 2024 Priya Nair reported \"Progress after four weeks: 780 of 1,317 done\", with two unresponsive suppliers accounting for about 200 articles (E13M005) - the earliest surviving source of the precise 1,317 figure. On 19 December 2024 she reported \"Done. All 1,317\", with the two unresponsive suppliers resolved by measuring delivered quantities over six months and inferring case pack, right for 190 of the 200 (E13M003). On 21 January 2025 she confirmed case pack for the cohort, thirteen hundred articles, finished on the nineteenth of December (T08U0003). [29] [30] [31]\n\nOn 20 December 2024 Ana Duarte recorded that shelf life \"remains at 48% and untouched\" and will become the critical path for phase two (E13M002). No September-era source in the surviving evidence states 48%; the April 2024 due-diligence call has Priya estimating shelf life \"Populated for maybe half\" (T02U0105) and Sofia Almeida said the same in the March 2024 demo (T01U0050), but neither states 48%. On 21 January 2025 Priya confirmed shelf life untouched and not in scope (T08U0022). [32] [33] [34] [35]\n\nEvidence gap: the workshop output document and the assessment write-up document are not among the surviving passages, so September-era figures rest on the fragmented transcript and the 3 September emails; the 1,317 figure is established only from October and December 2024 reporting, and the 48% shelf-life figure only from the 20 December 2024 note. The store list attachment to E09M005 is likewise unavailable.\n\nRecommendation: treat the 25-store cohort (workshop T06U0075 plus emails E09M005/E09M004), the case-pack-first sequencing (T06U0032), and the ~1,300-article volume with the two-people/three-weeks revised to one-and-a-half-people/five-weeks estimate (T06U0041, T06U0043, T06U0047, T06U0048) as established from September evidence; treat 1,317 as established from the 28 October and 19 December 2024 reports (E13M005, E13M003); treat 48% shelf life as a single-source December figure (E13M002) pending any original assessment; and do not attempt to reconstruct the missing September documents. [14] [21] [22] [3] [4] [5] [7] [8] [29] [30] [32]",
+    "citations": [
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0001",
+        "quote": "This is the session where we find out how bad the data",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Ana Duarte",
+        "position": "2:35 · utterance 1"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0016",
+        "quote": "I said a third and...",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Priya Nair",
+        "position": "3:43 · utterance 16"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0032",
+        "quote": "And, so the critical path is case pack.",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Ana Duarte",
+        "position": "5:16 · utterance 32"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0041",
+        "quote": "Thirteen hundred is doable. Thirteen hundred is two people for",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Priya Nair",
+        "position": "5:58 · utterance 41"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0043",
+        "quote": "three weeks.",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Priya Nair",
+        "position": "6:07 · utterance 43"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0046",
+        "quote": "I have",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Priya Nair",
+        "position": "6:19 · utterance 46"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0047",
+        "quote": "one and a half.",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Priya Nair",
+        "position": "6:23 · utterance 47"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0048",
+        "quote": "Then five weeks.",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Ana Duarte",
+        "position": "6:27 · utterance 48"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0049",
+        "quote": "Yeah.",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Priya Nair",
+        "position": "6:34 · utterance 49"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0050",
+        "quote": "Then five weeks, and that puts us into November, and I want that",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Priya Nair",
+        "position": "6:38 · utterance 50"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0068",
+        "quote": "While we are on the cohort. The regional managers have pushed back on forty stores.",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Lena Fischer",
+        "position": "8:14 · utterance 68"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0071",
+        "quote": "Two of the three regions say they cannot support that many",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Lena Fischer",
+        "position": "8:35 · utterance 71"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0073",
+        "quote": "during their peak. So I have agreed to reduce it.",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Lena Fischer",
+        "position": "8:45 · utterance 73"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0075",
+        "quote": "Twenty-five. Spread the same way, I mean three regions, mixed formats.",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Lena Fischer",
+        "position": "9:00 · utterance 75"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0077",
+        "quote": "That is a material change to the plan and to the measurement baseline.",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Ana Duarte",
+        "position": "9:11 · utterance 77"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0089",
+        "quote": "and I will reissue the plan and the store list request. Priya, that changes what you send",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Ana Duarte",
+        "position": "10:05 · utterance 89"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0094",
+        "quote": "And can you note in the mail that...",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Ana Duarte",
+        "position": "10:31 · utterance 94"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0095",
+        "quote": "it is twenty-five and why, because I do not want to be explaining this...",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Ana Duarte",
+        "position": "10:38 · utterance 95"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0096",
+        "quote": "in six months.",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Ana Duarte",
+        "position": "10:46 · utterance 96"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0097",
+        "quote": "I will note it.",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Priya Nair",
+        "position": "10:53 · utterance 97"
+      },
+      {
+        "sourceId": "emails/09_pilot-store-group#message-005",
+        "quote": "Store list attached. Note it is 25 rather than 40 - the regional managers pushed back on\nthe number and Lena agreed to reduce it. I assume you were told.",
+        "title": "Re: Pilot store group - confirmation",
+        "date": "2024-09-03T15:20:00",
+        "author": "Priya Nair",
+        "position": "Message 5"
+      },
+      {
+        "sourceId": "emails/09_pilot-store-group#message-004",
+        "quote": "I was not told but 25 is fine. I will update the plan.\n\nBest regards,",
+        "title": "Re: Pilot store group - confirmation",
+        "date": "2024-09-03T15:58:00",
+        "author": "Ana Duarte",
+        "position": "Message 4"
+      },
+      {
+        "sourceId": "transcripts/02_2024-04-18_technical-due-diligence#utterance-0139",
+        "quote": "You will have it in two weeks. It will say ECC is fine,",
+        "title": "Technical due diligence",
+        "date": "2024-04-18",
+        "author": "Tomas Lindholm",
+        "position": "11:47 · utterance 139"
+      },
+      {
+        "sourceId": "emails/11_data-assessment-followup#message-005",
+        "quote": "Priya,\n\nAssessment written up as promised. Four conclusions.\n\nECC 6.0 is fine and we have no concerns about the nightly batch for daily replenishment.\n\nDC-2 goes in as a named risk. Out of support middleware, intermittent failure, silent\nmode. We will design monitoring around it from day one rather than assume it works.\n\nMaster data needs a remediation workstream owned on your side. Case pack quantity is the\nblocking gap.\n\nThe open question from our call: is remaining shelf life obtainable? You said the total\nsits on the article and the arrival date is in the warehouse system. Could you find out\nwhether that is exposed outside the WMS? It changes the phase two design and I would\nrather know in May 2024 than in 2025.\n\nMed vänliga hälsningar,",
+        "title": "Technical assessment - follow up",
+        "date": "2024-05-02T10:15:00",
+        "author": "Tomas Lindholm",
+        "position": "Message 5"
+      },
+      {
+        "sourceId": "emails/11_data-assessment-followup#message-004",
+        "quote": "Hi,\n\nAgreed on all four. I will own the remediation, whatever Lena says about it.\n\nOn the warehouse question, I have asked. The person who owns that system is on secondment\nuntil August. I will chase in August.",
+        "title": "Re: Technical assessment - follow up",
+        "date": "2024-05-06T16:40:00",
+        "author": "Priya Nair",
+        "position": "Message 4"
+      },
+      {
+        "sourceId": "transcripts/04_2024-07-09_INTERNAL-handover-presales-to-delivery#utterance-0024",
+        "quote": "Three things and only one of them is in the assessment properly.",
+        "title": "Internal handover, pre-sales to delivery",
+        "date": "2024-07-09",
+        "author": "Them",
+        "position": "Turn 24 · speaker attribution unresolved"
+      },
+      {
+        "sourceId": "transcripts/04_2024-07-09_INTERNAL-handover-presales-to-delivery#utterance-0030",
+        "quote": "It is in the assessment as an open question. It not in the assessment as a phase two blocker, which is what it actually is.",
+        "title": "Internal handover, pre-sales to delivery",
+        "date": "2024-07-09",
+        "author": "Them",
+        "position": "Turn 30 · speaker attribution unresolved"
+      },
+      {
+        "sourceId": "transcripts/04_2024-07-09_INTERNAL-handover-presales-to-delivery#utterance-0032",
+        "quote": "so Because when I wrote it in May the answer was still pending. answer came back in August and by then assessment.",
+        "title": "Internal handover, pre-sales to delivery",
+        "date": "2024-07-09",
+        "author": "Them",
+        "position": "Turn 32 · speaker attribution unresolved"
+      },
+      {
+        "sourceId": "emails/13_master-data-remediation#message-005",
+        "quote": "Progress after four weeks: 780 of 1,317 done.\n\nSlower than I hoped. Two of the suppliers have not answered at all and between them they\naccount for about 200 articles.",
+        "title": "Re: Master data remediation - progress",
+        "date": "2024-10-28T16:50:00",
+        "author": "Priya Nair",
+        "position": "Message 5"
+      },
+      {
+        "sourceId": "emails/13_master-data-remediation#message-003",
+        "quote": "Done. All 1,317. The two unresponsive suppliers we resolved by measuring actual delivered\nquantities over six months and inferring the case pack, which is not ideal but it is\nright for 190 of the 200.\n\nI would like it recorded somewhere that this took my team three weeks of overtime in\nDecember.",
+        "title": "Re: Master data remediation - progress",
+        "date": "2024-12-19T18:15:00",
+        "author": "Priya Nair",
+        "position": "Message 3"
+      },
+      {
+        "sourceId": "transcripts/08_2025-01-21_uat-readiness-review#utterance-0003",
+        "quote": "Case pack for the cohort is done. Thirteen hundred articles, finished on the nineteenth of December.",
+        "title": "UAT readiness review",
+        "date": "2025-01-21",
+        "author": "Priya Nair",
+        "position": "0:16 · utterance 3"
+      },
+      {
+        "sourceId": "emails/13_master-data-remediation#message-002",
+        "quote": "Recorded, and thank you. I have put it in the steering report.\n\nOne thing for the record so it is not a surprise in six months: shelf life remains at 48%\nand untouched. That is correct for this phase and it will become the critical path for\nphase two.\n\nBest regards,",
+        "title": "Re: Master data remediation - progress",
+        "date": "2024-12-20T08:40:00",
+        "author": "Ana Duarte",
+        "position": "Message 2"
+      },
+      {
+        "sourceId": "transcripts/02_2024-04-18_technical-due-diligence#utterance-0105",
+        "quote": "you know Populated for maybe half, and wrong for",
+        "title": "Technical due diligence",
+        "date": "2024-04-18",
+        "author": "Priya Nair",
+        "position": "9:21 · utterance 105"
+      },
+      {
+        "sourceId": "transcripts/01_2024-03-20_solution-demo-value-workshop#utterance-0050",
+        "quote": "populated for maybe half the range...",
+        "title": "Solution demo & value workshop",
+        "date": "2024-03-20",
+        "author": "Sofia Almeida",
+        "position": "5:54 · utterance 50"
+      },
+      {
+        "sourceId": "transcripts/08_2025-01-21_uat-readiness-review#utterance-0022",
+        "quote": "Untouched. Not in scope. And before anyone asks, the warehouse question is still unanswered,",
+        "title": "UAT readiness review",
+        "date": "2025-01-21",
+        "author": "Priya Nair",
+        "position": "1:54 · utterance 22"
+      }
+    ],
+    "createdAt": "2026-09-20T00:05:36.301Z",
+    "kind": "evaluation",
+    "level": 3,
+    "question": "Using only the surviving runtime evidence after the erasure, what can still be established about the September 2024 master-data assessment and remediation figures? Distinguish September evidence from independent later reports. Do not reconstruct withdrawn evidence.",
+    "trace": [
+      "Read 2859 permitted source records at L3.",
+      "Checked the 24 September 2024 workshop transcript for surviving utterances on data quality, case pack, volume, staffing and timeline; confirmed 1,317 and 48% absent from September evidence",
+      "Attributed interrupted numbers to the completing speaker: 'three weeks' (T06U0043, Priya), 'one and a half' (T06U0047, Priya), 'Then five weeks' (T06U0048, Ana)",
+      "Verified the 1,317 figure first appears in the 28 October 2024 email (E13M005) and completion in the 19 December 2024 email (E13M003), corroborated 21 January 2025 (T08U0003)",
+      "Verified 48% appears only in E13M002 and compared with 'maybe half' estimates T02U0105 and T01U0050",
+      "Confirmed the assessment write-up document is absent; its content survives in E11M005 (2 May 2024) with Priya's 6 May agreement E11M004 and the 9 July handover T04U0024/T04U0030",
+      "Verified 35 quoted passages against runtime sources."
+    ]
+  }
+}

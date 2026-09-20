@@ -1,0 +1,51 @@
+{
+  "question": 1,
+  "prompt": "What did the master-data assessment report as complete in September 2024? Give every figure and the document each comes from.",
+  "durationMs": 210617,
+  "status": "generated",
+  "workspaceId": "practice_p1_1789863259725",
+  "generatedAt": "2026-09-20T00:14:19.772Z",
+  "answer": {
+    "id": "5f066e7f-13db-41b1-9ff4-8e264764cbea",
+    "text": "The master-data assessment reported as complete in September 2024 (Kwame Boateng, 30 September 2024) covered the remediation scope for the pilot cohort, with these figures: articles in cohort 4,214; missing case pack quantity 1,317; missing or default supplier lead time 3,105; shelf life populated 48%. The same message states case pack is the blocker, lead times can be worked around by deriving actuals from receipt history, and shelf life is out of scope for this phase. Kwame also attached a file listing the 1,317 articles missing case pack; that attachment is not in the archive, so its contents remain unavailable. [1]\n\nA related figure from the same month comes from the master-data workshop on 24 September 2024, where Kwame reported case pack quantity missing on thirty-one percent of active articles and shelf life populated on forty-eight percent. These are workshop observations rather than the assessment email, but they corroborate the 48% figure. [2] [3]\n\nNote the assessment email itself is the only source for the 4,214 / 1,317 / 3,105 breakdown; the attachment listing the 1,317 articles is not available. [1]",
+    "citations": [
+      {
+        "sourceId": "emails/13_master-data-remediation#message-006",
+        "quote": "Priya,\n\nAs agreed in the workshop, the remediation scope for the pilot cohort:\n\n  Articles in cohort                 4,214\n  Missing case pack quantity         1,317\n  Missing or default supplier lead   3,105\n  Shelf life populated               48%\n\nCase pack is the blocker. Lead times we can work around by deriving actuals from receipt\nhistory. Shelf life is out of scope for this phase.\n\nFile attached with the 1,317.",
+        "title": "Master data remediation - progress",
+        "date": "2024-09-30T10:05:00",
+        "author": "Kwame Boateng",
+        "position": "Message 6"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0014",
+        "quote": "quantity is missing on thirty-one percent of active articles.",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Kwame Boateng",
+        "position": "3:31 · utterance 14"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0025",
+        "quote": "And shelf life is populated on forty-eight percent.",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Kwame Boateng",
+        "position": "4:39 · utterance 25"
+      }
+    ],
+    "createdAt": "2026-09-20T00:17:50.386Z",
+    "kind": "chat",
+    "level": 3,
+    "question": "What did the master-data assessment report as complete in September 2024? Give every figure and the document each comes from.",
+    "trace": [
+      "Read 2974 permitted source records at L3.",
+      "Prepared 281 evidence observations across 4 source partitions.",
+      "Located the September 2024 master-data assessment email (2024-09-30, Kwame Boateng) and extracted all four figures verbatim.",
+      "Checked the same message for scope statements (case pack blocker, lead times derivable, shelf life out of scope) and the attachment note.",
+      "Cross-checked the 48% shelf life figure against the 24 September 2024 workshop transcript.",
+      "Confirmed no other September 2024 source reports additional assessment figures.",
+      "Verified 3 quoted passages against runtime sources."
+    ]
+  }
+}

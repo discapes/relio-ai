@@ -1,0 +1,82 @@
+{
+  "question": 2,
+  "durationMs": 47772,
+  "status": "generated",
+  "workspaceId": "practice_p2_1789861833614",
+  "generatedAt": "2026-09-19T23:50:33.676Z",
+  "answer": {
+    "id": "620da175-5d75-4116-8933-28f65aaa31fc",
+    "text": "In the ordering logic design workshop on 12 November 2024, Lena Fischer described Acme's current practice as \"Ninety-nine on everything, in theory, which is why we carry so much stock\" (T07U0073, T07U0075). Tomas Lindholm then proposed \"ninety-eight and ninety-five\" as a reduction, saying \"you should expect the inventory number to fall\" (T07U0077-T07U0079), and Lena Fischer responded \"Fine. Agreed.\" (T07U0083). The recorded agreement is therefore to reduce from the theoretical 99% to 98% and 95%, agreed in that workshop. [1] [2] [3] [4] [5] [6]\n\nMissing detail: the transcript does not record which categories or article groups receive 98% versus 95%. Tomas Lindholm's proposal states only \"ninety-eight and ninety-five is a reduction\" with no mapping (T07U0077-T07U0078), and no workshop output document is among the supplied evidence. The same session also recorded review cycles — \"Daily order, sort of daily delivery on the fast lines, twice weekly below\" (T07U0086) — but this delivery-cycle wording does not specify any service-level split by category. The category-to-service-level mapping is therefore unrecorded in the supplied evidence. [3] [4] [7]\n\nRecommendation: treat the exact category-to-service-level mapping as unrecorded and confirm it from the workshop output document or with the meeting participants rather than assuming a split carried over; the supplied transcript supports only the 98/95 reduction itself (T07U0077-T07U0079, T07U0083). [3] [4] [5] [6]",
+    "citations": [
+      {
+        "sourceId": "transcripts/07_2024-11-12_ordering-logic-design#utterance-0073",
+        "quote": "Ninety-nine on everything, in theory, which is",
+        "title": "Ordering logic design workshop",
+        "date": "2024-11-12",
+        "author": "Lena Fischer",
+        "position": "6:34 · utterance 73"
+      },
+      {
+        "sourceId": "transcripts/07_2024-11-12_ordering-logic-design#utterance-0075",
+        "quote": "why we carry so much stock.",
+        "title": "Ordering logic design workshop",
+        "date": "2024-11-12",
+        "author": "Lena Fischer",
+        "position": "6:44 · utterance 75"
+      },
+      {
+        "sourceId": "transcripts/07_2024-11-12_ordering-logic-design#utterance-0077",
+        "quote": "Then ninety-eight and ninety-five is a",
+        "title": "Ordering logic design workshop",
+        "date": "2024-11-12",
+        "author": "Tomas Lindholm",
+        "position": "6:49 · utterance 77"
+      },
+      {
+        "sourceId": "transcripts/07_2024-11-12_ordering-logic-design#utterance-0078",
+        "quote": "reduction and,",
+        "title": "Ordering logic design workshop",
+        "date": "2024-11-12",
+        "author": "Tomas Lindholm",
+        "position": "6:55 · utterance 78"
+      },
+      {
+        "sourceId": "transcripts/07_2024-11-12_ordering-logic-design#utterance-0079",
+        "quote": "you should expect the inventory number to fall and and the...",
+        "title": "Ordering logic design workshop",
+        "date": "2024-11-12",
+        "author": "Tomas Lindholm",
+        "position": "6:59 · utterance 79"
+      },
+      {
+        "sourceId": "transcripts/07_2024-11-12_ordering-logic-design#utterance-0083",
+        "quote": "Fine. Agreed.",
+        "title": "Ordering logic design workshop",
+        "date": "2024-11-12",
+        "author": "Lena Fischer",
+        "position": "7:25 · utterance 83"
+      },
+      {
+        "sourceId": "transcripts/07_2024-11-12_ordering-logic-design#utterance-0086",
+        "quote": "Daily order, sort of daily delivery on the fast lines, twice weekly below.",
+        "title": "Ordering logic design workshop",
+        "date": "2024-11-12",
+        "author": "Priya Nair",
+        "position": "7:42 · utterance 86"
+      }
+    ],
+    "createdAt": "2026-09-19T23:51:21.443Z",
+    "kind": "evaluation",
+    "level": 3,
+    "question": "What service levels were agreed for ordering, and in which meeting? Explain any missing detail in the recorded agreement.",
+    "trace": [
+      "Read 2974 permitted source records at L3.",
+      "Verified 99% current-practice statement spans T07U0073 and T07U0075 (sentence split across turns, both Lena Fischer)",
+      "Verified 98/95 proposal spans T07U0077-T07U0079, all Tomas Lindholm; no other speaker completed the numbers",
+      "Verified explicit agreement at T07U0083 (Lena Fischer, same session, 2024-11-12)",
+      "Checked T07U0086 review-cycle wording: contains no service-level numbers or category mapping, so no mapping inferred from it",
+      "Confirmed no workshop output document or later restatement of the 98/95 category split is present in the supplied passages",
+      "Verified 7 quoted passages against runtime sources."
+    ]
+  }
+}

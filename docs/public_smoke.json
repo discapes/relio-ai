@@ -1,0 +1,65 @@
+{
+  "started": "2026-09-20T00:14:21.280Z",
+  "modes": [
+    {
+      "name": "Ana Duarte",
+      "level": "3",
+      "prepared": true,
+      "sourceReceiptCount": 20
+    },
+    {
+      "name": "Ana Duarte",
+      "level": "2",
+      "prepared": true,
+      "sourceReceiptCount": 14
+    },
+    {
+      "name": "Ana Duarte",
+      "level": "1",
+      "prepared": true,
+      "sourceReceiptCount": 20
+    },
+    {
+      "name": "Marco Rossi",
+      "level": "2",
+      "prepared": true,
+      "sourceReceiptCount": 18
+    },
+    {
+      "name": "Marco Rossi",
+      "level": "1",
+      "prepared": true,
+      "sourceReceiptCount": 11
+    },
+    {
+      "name": "Nadia Haddad",
+      "level": "1",
+      "prepared": true,
+      "sourceReceiptCount": 10
+    }
+  ],
+  "errors": [],
+  "sourceResponses": [
+    {
+      "url": "https://receipt-workspace.hai1.iffe.eu/source/emails%2F01_shelf-life-field-mapping%23message-001/__data.json?x-sveltekit-invalidated=01",
+      "status": 200
+    }
+  ],
+  "httpStatus": 200,
+  "cardControls": {
+    "questionVisible": true,
+    "submitVisible": true,
+    "label": "Create preview"
+  },
+  "sourceHref": "/source/emails%2F01_shelf-life-field-mapping%23message-001",
+  "source": {
+    "title": "Shelf life field mapping - fresh export",
+    "bodyLength": 259,
+    "directStatus": 200
+  },
+  "emailLabel": "Simulated Outlook",
+  "mailboxThreads": 9,
+  "mobileOverflow": false,
+  "status": "passed",
+  "finished": "2026-09-20T00:14:36.774Z"
+}

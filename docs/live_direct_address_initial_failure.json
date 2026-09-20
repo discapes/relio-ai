@@ -1,0 +1,10 @@
+{
+  "scenario": "A18 direct-address live email",
+  "started": "2026-09-20T00:05:09.800Z",
+  "source": "Current source imports; isolated DATA_DIR; real configured GLM inference",
+  "checks": {},
+  "status": "failed",
+  "error": "Error: Source verification returned an incomplete answer. Retry.\n    at verifyDraft (/home/user/aaltoai/challenges/relex/solution_3/src/lib/server/workflows.ts:86:74)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Module.processMail (/home/user/aaltoai/challenges/relex/solution_3/src/lib/server/workflows.ts:245:54)\n    at async file:///home/user/aaltoai/challenges/relex/solution_3/[eval1]:9:24",
+  "finished": "2026-09-20T00:06:16.817Z",
+  "scratchRemoved": true
+}

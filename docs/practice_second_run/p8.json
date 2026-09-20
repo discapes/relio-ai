@@ -1,0 +1,171 @@
+{
+  "question": 8,
+  "durationMs": 47685,
+  "status": "generated",
+  "workspaceId": "practice_p8_1789862165691",
+  "generatedAt": "2026-09-19T23:56:05.741Z",
+  "answer": {
+    "id": "c79f0d6e-3067-41d9-ac00-b0966a2416f8",
+    "text": "The clearest example of something agreed and then never done is obtaining the remaining shelf life data field. In the April 2024 technical due diligence, Tomas Lindholm asked whether remaining shelf life was obtainable and Priya Nair agreed to ask the warehouse team [T02U0132, T02U0133]; Tomas noted it changes the design [T02U0134]. [1] [2] [3]\n\nIn May 2024 Priya confirmed she had asked and would chase in August [E11M004]. In August 2024 the answer came back: goods receipt date is captured but not exposed outside the WMS, and getting it would need either an extract nobody owns or a change request, which Priya said she would not raise for something outside the current phase [E11M002]. Tomas logged it as a phase two dependency and closed the thread [E11M001]. [4] [5] [6]\n\nIn July 2025 Nadia Haddad asked Priya directly for the field for the fresh ordering configuration [E01M012]. Priya confirmed MHDHB is total shelf life, not remaining, and said she would ask the warehouse team [E01M011]. In late July she said the warehouse team was partly on holiday and she would chase [E01M009]. In September 2025 she said the field was unowned and told Nadia to proceed with an approximation [E01M003]. Nadia had proposed the approximation and built it [E01M005]. [7] [8] [9] [10] [11]\n\nFresh went live in December 2025 running on the approximation, not the real field [T18U0009]. In June 2026 Marco Rossi told Robert Kahn the twelve-month ROI was missed because fresh depended on a data field identified as a dependency in April 2024 and never obtained [E20M004]. [12] [13]\n\nWho would have needed to notice: Priya Nair owned the chase on the Acme side [E11M004, E01M009]. Ana Duarte tracked the shelf life field mapping in weekly status reports from July 2025 onward [R01M016, R01M015, R01M014] and put it on the escalation agenda [E01M004]. Lena Fischer and Robert Kahn received the monthly steering reports, which flagged the open data dependency with Acme IT [R02M006]. The archive shows Priya chased, Ana escalated, and the workaround was accepted rather than the field obtained. [4] [9] [14] [15] [16] [17] [18]\n\nLimitation: the archive shows the field was never obtained as of the latest records (June 2026). It does not show whether any action after that date resolved it.",
+    "citations": [
+      {
+        "sourceId": "transcripts/02_2024-04-18_technical-due-diligence#utterance-0132",
+        "quote": "Can you find out?",
+        "title": "Technical due diligence",
+        "date": "2024-04-18",
+        "author": "Tomas Lindholm",
+        "position": "11:18 · utterance 132"
+      },
+      {
+        "sourceId": "transcripts/02_2024-04-18_technical-due-diligence#utterance-0133",
+        "quote": "I can ask.",
+        "title": "Technical due diligence",
+        "date": "2024-04-18",
+        "author": "Priya Nair",
+        "position": "11:22 · utterance 133"
+      },
+      {
+        "sourceId": "transcripts/02_2024-04-18_technical-due-diligence#utterance-0134",
+        "quote": "Please, right because it changes the design.",
+        "title": "Technical due diligence",
+        "date": "2024-04-18",
+        "author": "Tomas Lindholm",
+        "position": "11:28 · utterance 134"
+      },
+      {
+        "sourceId": "emails/11_data-assessment-followup#message-004",
+        "quote": "Hi,\n\nAgreed on all four. I will own the remediation, whatever Lena says about it.\n\nOn the warehouse question, I have asked. The person who owns that system is on secondment\nuntil August. I will chase in August.",
+        "title": "Re: Technical assessment - follow up",
+        "date": "2024-05-06T16:40:00",
+        "author": "Priya Nair",
+        "position": "Message 4"
+      },
+      {
+        "sourceId": "emails/11_data-assessment-followup#message-002",
+        "quote": "He is back and says it is captured but not exposed. Getting it out means either an extract\nthat nobody owns, or writing it back into SAP, which is a change request.\n\nI will not be raising a change request for something that is not in the current phase.",
+        "title": "Re: Technical assessment - follow up",
+        "date": "2024-08-22T17:20:00",
+        "author": "Priya Nair",
+        "position": "Message 2"
+      },
+      {
+        "sourceId": "emails/11_data-assessment-followup#message-001",
+        "quote": "Understood. Logging it as a phase two dependency and closing this thread.\n\nMed vänliga hälsningar,",
+        "title": "Technical assessment - follow up",
+        "date": "2024-08-22T17:55:00",
+        "author": "Tomas Lindholm",
+        "position": "Message 1"
+      },
+      {
+        "sourceId": "emails/01_shelf-life-field-mapping#message-012",
+        "quote": "Hi Priya,\n\nFor the fresh ordering configuration we need the remaining shelf life at the point of\norder, per article per site. Sofia has described where it comes from operationally but\nI need the actual field.\n\nIs it MARA-MHDHB, or is there something Acme-specific?\n\nThanks",
+        "title": "Shelf life field mapping - fresh export",
+        "date": "2025-07-08T09:14:00",
+        "author": "Nadia Haddad",
+        "position": "Message 12"
+      },
+      {
+        "sourceId": "emails/01_shelf-life-field-mapping#message-011",
+        "quote": "Hi,\n\nMHDHB is the total shelf life, not remaining. It is populated for part of the range.\n\nRemaining life at order time is not stored anywhere I know of. It would have to be\nderived from goods receipt date, and that is in the warehouse system rather than in SAP.\n\nI will ask the warehouse team.",
+        "title": "Re: Shelf life field mapping - fresh export",
+        "date": "2025-07-09T11:02:00",
+        "author": "Priya Nair",
+        "position": "Message 11"
+      },
+      {
+        "sourceId": "emails/01_shelf-life-field-mapping#message-009",
+        "quote": "Not yet. Half of them are on holiday. I will chase.",
+        "title": "Re: Shelf life field mapping - fresh export",
+        "date": "2025-07-23T08:51:00",
+        "author": "Priya Nair",
+        "position": "Message 9"
+      },
+      {
+        "sourceId": "emails/01_shelf-life-field-mapping#message-003",
+        "quote": "It is not impossible, it is unowned, which in practice is the same thing this year.\n\nProceed with your approximation.",
+        "title": "Re: Shelf life field mapping - fresh export",
+        "date": "2025-09-11T17:22:00",
+        "author": "Priya Nair",
+        "position": "Message 3"
+      },
+      {
+        "sourceId": "emails/01_shelf-life-field-mapping#message-005",
+        "quote": "Hi all,\n\nAdding Nadia (Öberg, not Haddad) who did something similar on another account.\n\nSince remaining shelf life is not available, I propose we proceed with an approximation:\ntotal shelf life from MHDHB minus average days-in-warehouse per article group, which we\ncan derive from stock turn.\n\nIt is not exact. For fast movers it will be close. For slow movers it will be wrong in\nthe direction of assuming the stock is fresher than it is.\n\nIf nobody objects I will build it that way so we are not blocked.",
+        "title": "Re: Shelf life field mapping - fresh export",
+        "date": "2025-09-04T14:20:00",
+        "author": "Nadia Haddad",
+        "position": "Message 5"
+      },
+      {
+        "sourceId": "transcripts/18_2025-12-11_fresh-cutover-call#utterance-0009",
+        "quote": "Yes, with the caveat everyone in this room knows. It runs on the approximation. Total shell life minus average days",
+        "title": "Fresh cutover call",
+        "date": "2025-12-11",
+        "author": "Nadia Haddad",
+        "position": "0:57 · utterance 9"
+      },
+      {
+        "sourceId": "emails/20_chain-wide-proposal#message-004",
+        "quote": "Robert,\n\nIndicative numbers attached. Summary here so you have it in the mail.\n\nChain wide for the three fresh categories, 340 stores: additional annual licence of\napproximately 420 thousand, plus implementation of approximately 260 thousand one off.\n\nOn your second point, and this is the honest version.\n\nThe twelve month expectation was missed for one reason above all others. The value case\ndepended on fresh, and fresh depended on a data field that we identified as a dependency\nin April 2024 and never obtained. Everything else largely went to plan. We built a\nworkaround in September 2025 which works acceptably on fast moving articles and poorly on\nslow moving ones, and your category manager has been compensating for the difference by\nhand ever since.\n\nFor the next number to be different, that field has to be available. It is not a RELEX\ndeliverable and I cannot commit to it on your behalf, which is why I am putting it in\nwriting rather than in a slide.\n\nIf it is not resolved, chain wide will reduce waste by less than the pilot suggests,\nbecause the slow moving articles are a larger share of the tail across 340 stores than\nacross 25.",
+        "title": "Re: Chain wide rollout - indicative numbers",
+        "date": "2026-06-26T17:15:00",
+        "author": "Marco Rossi",
+        "position": "Message 4"
+      },
+      {
+        "sourceId": "reports/01_weekly-status-thread#message-016",
+        "quote": "Hi All,\n\nHereby the weekly update.\n\nUpdate 21-07-2025 (Week 30)\n🟡Slight Delay\n\nQuestion\nWe need remaining shelf life at the point of order, per article per site. MARA-MHDHB appears to be total shelf life rather than remaining. Is remaining life stored anywhere, and if not, is goods receipt date available outside the WMS?\n\nRisk\nShelf life field mapping unresolved for two weeks. Blocks the ordering logic.\n\nTimeline\nOne week of float used. Not yet a concern.\n\n[Image removed by sender]\n\nTopics worked on last week\n1.                  Produce and dairy configuration 60% complete (Phase 3 - Business Configuration)\n2.                  Shelf life field mapping (Phase 2 - Technical Implementation) NOT FINISHED\n\nTopics planned for this week\n1.                Chase shelf life for the second time (Phase 2 - Technical Implementation)\n\nPotential risk identified 🟡Slight Delay\n1.                  Shelf life field mapping unresolved for two weeks. Blocks the ordering logic.\n\nIf there is anything else you'd like to see in these update emails, please don't hesitate to let us know.\n\nKind regards,\n\nBest regards,",
+        "title": "Re: Weekly Acme update",
+        "date": "2025-07-21T17:30:00",
+        "author": "Ana Duarte",
+        "position": "Message 16"
+      },
+      {
+        "sourceId": "reports/01_weekly-status-thread#message-015",
+        "quote": "Hi All,\n\nSorry for the delay in the weekly update!\n\nHereby the weekly update.\n\nUpdate 04-08-2025 (Week 32)\n🟡Slight Delay\n\nQuestion\nWe need remaining shelf life at the point of order, per article per site. MARA-MHDHB appears to be total shelf life rather than remaining. Is remaining life stored anywhere, and if not, is goods receipt date available outside the WMS?\n\nRisk\nShelf life still unresolved. Acme warehouse team unavailable.\n\nTimeline\nTwo weeks of float used.\n\n[Image removed by sender]\n\nTopics worked on last week\n1.                  Configuration continues on the parts that do not need shelf life (Phase 3 - Business Configuration)\n\nTopics planned for this week\n1.                Escalate shelf life if no answer this week (Phase 2 - Technical Implementation)\n\nPotential risk identified 🟡Slight Delay\n1.                  Shelf life still unresolved. Acme warehouse team unavailable.\n\nIf there is anything else you'd like to see in these update emails, please don't hesitate to let us know.\n\nKind regards,\n\nBest regards,",
+        "title": "Re: Weekly Acme update",
+        "date": "2025-08-04T16:15:00",
+        "author": "Ana Duarte",
+        "position": "Message 15"
+      },
+      {
+        "sourceId": "reports/01_weekly-status-thread#message-014",
+        "quote": "Hi All,\n\nHereby the weekly update.\n\nUpdate 18-08-2025 (Week 34)\n🟡Slight Delay\n\nQuestion\nRepeating from the last two updates. Is remaining shelf life stored anywhere, and if not, is goods receipt date available outside the WMS?\n\nRisk\nShelf life now four weeks open. Approaching the point where we need a workaround.\n\nTimeline\nHolding. The plan assumes shelf life resolves in August.\n\n[Image removed by sender]\n\nTopics worked on last week\n1.                  Chilled ready meals structure loaded (Phase 3 - Business Configuration)\n2.                  Shelf life field mapping (Phase 2 - Technical Implementation) NOT FINISHED\n\nTopics planned for this week\n1.                Shelf life escalation to steering\n\nPotential risk identified 🟡Slight Delay\n1.                  Shelf life now four weeks open. Approaching the point where we need a workaround.\n\nIf there is anything else you'd like to see in these update emails, please don't hesitate to let us know.\n\nKind regards,",
+        "title": "Re: Weekly Acme update",
+        "date": "2025-08-18T17:05:00",
+        "author": "Nadia Haddad",
+        "position": "Message 14"
+      },
+      {
+        "sourceId": "emails/01_shelf-life-field-mapping#message-004",
+        "quote": "This thread is now two months old and has thirteen messages in it, which usually means\nemail is the wrong medium.\n\nI am putting shelf life on the agenda for the Phase 2 escalation call on Friday. Priya,\nyou do not need to attend, but if the warehouse extract is genuinely impossible please\nsay so before Friday so we can plan around it rather than discuss it live.\n\nBest regards,",
+        "title": "Re: Shelf life field mapping - fresh export",
+        "date": "2025-09-09T08:40:00",
+        "author": "Ana Duarte",
+        "position": "Message 4"
+      },
+      {
+        "sourceId": "reports/02_monthly-steering-reports#message-006",
+        "quote": "Hi Robert, Lena,\n\nMonthly steering report, August 2025.\n\nStatus: 🟡Slight Delay\n\nA data dependency with Acme IT has been open for five weeks.\n\n- The field we need for shelf life aware ordering does not exist in the form required.\n- We are preparing a workaround so the build is not blocked.\n- No change to the December target at this stage.\n\n[Image removed by sender]\n\nWhat we need from you: Acme IT capacity to confirm the workaround is acceptable.",
+        "title": "Re: Acme monthly steering report",
+        "date": "2025-08-29T16:45:00",
+        "author": "Marco Rossi",
+        "position": "Message 6"
+      }
+    ],
+    "createdAt": "2026-09-19T23:56:53.423Z",
+    "kind": "evaluation",
+    "level": 3,
+    "question": "Find one thing in the archive that was agreed and then never done. Show the trail from the agreement to the present, and say who would have needed to notice. Limit certainty to the archive.",
+    "trace": [
+      "Read 2974 permitted source records at L3.",
+      "Checked earliest mention of remaining shelf life in the April 2024 due diligence transcript (T02U0132-T02U0134)",
+      "Confirmed Priya's May 2024 commitment to chase in August (E11M004)",
+      "Confirmed the August 2024 answer that the field is not exposed outside the WMS and Priya would not raise a change request (E11M002)",
+      "Confirmed Tomas logged it as a phase two dependency (E11M001)",
+      "Checked the July-September 2025 email thread showing the field remained unresolved and the approximation was adopted (E01M012, E01M011, E01M009, E01M003, E01M005)",
+      "Verified 18 quoted passages against runtime sources."
+    ]
+  },
+  "prompt": "Find one thing in the archive that was agreed and then never done. Show the trail from the agreement to the present, and say who would have needed to notice. Limit certainty to the archive."
+}

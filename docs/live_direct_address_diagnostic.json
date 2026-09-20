@@ -1,0 +1,150 @@
+{
+  "scenario": "A18 direct-address live retry after required-key validation",
+  "started": "2026-09-20T00:08:03.238Z",
+  "sourceHashes": {
+    "model": "ea9ba19c76daaf83f42017370f38173b43311fa8d46e3d6b1e997ecb97578de4",
+    "workflows": "764f2c23bd3f15b81be3a3aa7b599792138fbd51d3989a4f9866d342972dd867"
+  },
+  "modelCalls": [
+    {
+      "index": 0,
+      "inputContainsInternalCanary": false,
+      "inputContainsPrivateCanary": false,
+      "started": "2026-09-20T00:08:03.321Z",
+      "finished": "2026-09-20T00:08:25.716Z",
+      "httpStatus": 200,
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 125225,
+        "total_tokens": 125721,
+        "completion_tokens": 496,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0
+      },
+      "contentLength": 2303,
+      "keys": [
+        "participate",
+        "text",
+        "citations",
+        "trace",
+        "meeting"
+      ],
+      "participate": true,
+      "statementsCount": null,
+      "citationSourceIds": [
+        "E15M003",
+        "E15M002",
+        "E15M001"
+      ],
+      "shortText": "Hi Ana, hi Lena,\n\nThe January 2025 UAT approval covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. The agreed wording, sent by Ana on 21 January 2025 for signature, was: \"Acme Org confirms that user acceptance testing for core replenishment has been completed satisfactorily for the 25 store pilot cohort, covering ambient and dry goods categories. This sign-off does not extend to fresh categories, which remain in scope for a later phase, and does not constitute acceptance of the overall programme.\" Ana's email also noted two open UAT defec"
+    },
+    {
+      "index": 1,
+      "inputContainsInternalCanary": false,
+      "inputContainsPrivateCanary": false,
+      "started": "2026-09-20T00:08:25.722Z",
+      "finished": "2026-09-20T00:09:02.841Z",
+      "httpStatus": 200,
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 1733,
+        "total_tokens": 2250,
+        "completion_tokens": 517,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0
+      },
+      "contentLength": 2381,
+      "keys": [
+        "participate",
+        "text",
+        "citations",
+        "trace",
+        "meeting"
+      ],
+      "participate": true,
+      "statementsCount": null,
+      "citationSourceIds": [
+        "emails/15_uat-signoff#message-003",
+        "emails/15_uat-signoff#message-002",
+        "emails/15_uat-signoff#message-001"
+      ],
+      "shortText": "Hi Ana, hi Lena,\n\nThe January 2025 UAT approval covered core replenishment only, for the 25 store pilot cohort, covering ambient and dry goods categories. The agreed wording, sent by Ana on 21 January 2025 for signature, was: \"Acme Org confirms that user acceptance testing for core replenishment has been completed satisfactorily for the 25 store pilot cohort, covering ambient and dry goods categories. This sign-off does not extend to fresh categories, which remain in scope for a later phase, and does not constitute acceptance of the overall programme.\" Ana's email also noted two open UAT defec"
+    },
+    {
+      "index": 2,
+      "inputContainsInternalCanary": false,
+      "inputContainsPrivateCanary": false,
+      "started": "2026-09-20T00:09:02.842Z",
+      "finished": "2026-09-20T00:09:22.797Z",
+      "httpStatus": 200,
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 1759,
+        "total_tokens": 2258,
+        "completion_tokens": 499,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0
+      },
+      "contentLength": 2237,
+      "keys": [
+        "statements",
+        "trace"
+      ],
+      "statementsCount": 4,
+      "statementShapes": [
+        {
+          "keys": [
+            "text",
+            "sourceIds",
+            "evidenceGap"
+          ],
+          "sourceIds": [
+            "E15M003"
+          ],
+          "evidenceGap": false
+        },
+        {
+          "keys": [
+            "text",
+            "sourceIds",
+            "evidenceGap"
+          ],
+          "sourceIds": [
+            "E15M002"
+          ],
+          "evidenceGap": false
+        },
+        {
+          "keys": [
+            "text",
+            "sourceIds",
+            "evidenceGap"
+          ],
+          "sourceIds": [
+            "E15M002"
+          ],
+          "evidenceGap": false
+        },
+        {
+          "keys": [
+            "text",
+            "sourceIds",
+            "evidenceGap"
+          ],
+          "sourceIds": [
+            "E15M001",
+            "E15M003"
+          ],
+          "evidenceGap": false
+        }
+      ]
+    }
+  ],
+  "checks": {},
+  "processingMs": 79504,
+  "status": "failed",
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n... Skipped lines\n\n  'Lena,\\n' +\n    '\\n' +\n    'As discussed this afternoon, for signature.\\n' +\n    '\\n' +\n    '\"Acme Org confirms that user acceptance testing for core replenishment has been completed\\n' +\n...\n    '\\n' +\n+   'Best regards,'\n-   'Best regards,\\n' +\n-   'Ana Duarte\\n' +\n-   'Project Manager Image\\n' +\n-   '+351 913 882 145 | UTC +01:00\\n' +\n-   'ana.duarte@relexsolutions.example\\n' +\n-   'Rua do Ouro 42, 1100-063 Lisboa\\n' +\n-   'Connect with me\\n' +\n-   'Image\\n' +\n-   'Image\\n' +\n-   'Plan better. Sell more. Waste less\\n' +\n-   'relexsolutions.example Image\\n' +\n-   'LinkedInYouTube'\n\n    at file:///home/user/aaltoai/challenges/relex/solution_3/[eval1]:8:782\n    at Array.map (<anonymous>)\n    at file:///home/user/aaltoai/challenges/relex/solution_3/[eval1]:8:703\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+  "finished": "2026-09-20T00:09:24.058Z",
+  "durationMs": 80820,
+  "scratchRemoved": true
+}

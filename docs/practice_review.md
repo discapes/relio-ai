@@ -1,0 +1,27 @@
+# Independent practice review
+
+The reference answers in `practice_reference.md` were prepared directly from source records. `PRACTICE_ANSWERS.md` and `practice_live/` contain actual live-workflow outputs. Generation success and citation binding are recorded separately from semantic review. The runner adds evidence-handling reminders to some questions, such as distinguishing assessment from remediation and covering the chronology. For P7 it performs erasure first and asks about surviving evidence without repeating the erased identity. The exact prompts are printed with the live answers. The final P1/P3/P8 round uses the original supplied questions and the ordinary chat intent/research path in empty disposable workspaces; earlier rounds used the answer workflow’s evaluation mode.
+
+## Initial run
+
+P1 and P2 took 126.4 and 130.1 seconds respectively. P1 contained valid source excerpts with incorrect inline citation numbers. P2 correctly identified the missing service-level mapping, but exposed commentary about editing its draft. Both original outputs and timings are preserved in `practice_initial_answers.md` and `practice_initial_evaluation.json`. The workflow was subsequently changed to return structured statements and assign citation numbers on the server.
+
+## Current run
+
+The first complete structured-verifier outputs are preserved in `practice_previous_run/`; the second run is preserved in `practice_second_run/`. Intermediate reruns are preserved in `practice_third_run/` and `practice_fourth_run/`. Current outputs are under `practice_live/`.
+
+| Question | Review |
+| --- | --- |
+| P1 | Latest original-question research run took 210.6 seconds and returned three citations from 281 inventory observations. Exact September 30 counts and the workshop’s 31%/48% figures are supported. It omits clean store/product hierarchy, seven-day default lead times and approximate cohort/remediation counts. Its verifier trace incorrectly claims no other September source reports additional figures. |
+| P2 | Passed on rerun: 98/95 agreement and signatory are supported, and the category mapping is explicitly unrecorded. Seven citations bind correctly. Raw short source handles remain in prose alongside numeric references. |
+| P3 | Latest ordinary-chat run (91.3 seconds, nine citations) finds September 2024 but wrongly attributes Kwame’s “I do not need to receive it” to Nadia. Its November condition citation contains only “Then either”, omitting the completing turns. The verifier trace repeats the wrong speaker despite correct author metadata on the attached source. Empty citation-bracket punctuation also remains. Attribution verification does not pass. |
+| P4 | Rerun correctly gives limited scope, Lena as signatory, exact email wording and nine valid citations. The earlier date-arithmetic mistake is resolved. It still omits the unavailable-signed-attachment caveat; the email confirmations support the answer. |
+| P5 | Rerun passes core chronology and scope: half-range estimates, dated 48% measurements, latest 61% for three categories. Twelve citations bind. It omits the September 2025 retrospective repetition of the earlier half-range estimate, which is not a new measurement. The earlier inference failure is preserved. |
+| P6 | Rerun passes the scope change and current separate Meridian workstream with 13 relevant citations. A timeline heading starts in March 2024 although its earliest specific bakery-scope citation is July 2024; that date label needs qualification. |
+| P7 | Latest rerun passes core erasure behavior: 115 withdrawn records, 35 surviving citations, independent 780/1,317, later 48% and 25-store evidence retained with other people named. The earlier recovery recommendation and estimate label are resolved. It describes the transcript as fragmented and says “pending any original assessment”; explicitly explaining withdrawn evidence would be clearer. It does say not to reconstruct the missing September documents. |
+| P8 | Latest original-question research run took 327.1 seconds and returned 51 citations from 211 inventory observations. It again selects obtaining the shelf-life field, explicitly acknowledges that the promise to chase was fulfilled, and then calls obtaining the field an unfulfilled agreement without establishing that delivery commitment. It infers that Ana failed to turn the thread into a decision. The deletion-location list remains the clearer explicit commitment. Raw canonical source IDs remain in prose. |
+| P9 | Passed the core evidence distinction. It cites the June reconciliation finding, preserves the missing discrepancy figure and cause, and distinguishes job/file-arrival status from content validation. Numeric citations bind to the appropriate original passages. |
+
+A subsequent P3 run was interrupted before publication to give the model-quality agent a controlled inference slot; the current P3 file remains the completed attribution-failure result above. Subsequent model-quality changes need their own measured evaluation.
+
+These runs verify that citations point to original records; they also demonstrate that valid source IDs and exact quoted passages do not ensure correct attribution, complete coverage or the right interpretation of a commitment. The source-backed references remain available for submission preparation. Any replacement live output must be reviewed again; a successful model call alone does not resolve the recorded defects.

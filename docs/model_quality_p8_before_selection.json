@@ -1,0 +1,970 @@
+{
+  "question": "Find one thing in the archive that was agreed and then never done. Show the trail from the agreement to the present, and say who would have needed to notice.",
+  "durationMs": 51189,
+  "answer": {
+    "id": "15cbe270-5bc5-4815-ba6a-4473d8f47f62",
+    "text": "The clearest example of an agreement that was never carried out is the quarterly business review written into the SOW as an obligation. On 2024-06-11 Robert Kahn demanded it: \"Put the quarterly review in the SOW... Not as a nice idea, basically as an obligation\" , and Marco Rossi accepted: \"We will put it in\" . The trail then goes quiet for almost a year. At the 90-day business review on 2025-05-22, Lena Fischer notes the SOW agreed quarterly cadence but \"this is the first one\" and it \"has felt ad hoc\" [, , ]; Marco accepts to formalise the cadence . On 2025-06-24 Ana Duarte reports the cadence has now been set up — quarterly, next in September — so the original SOW obligation was left unformalised for roughly a year, and the archive contains no record that the SOW wording itself was ever amended. Who would have needed to notice: Marco Rossi, who accepted the SOW wording on 2024-06-11, and Robert Kahn, who demanded it as an obligation and attended the 90-day review where the gap surfaced. Recommendation: treat the 2025-06-24 cadence setup as the compensating control and confirm in writing whether the SOW text was ever changed, since the archive shows only the meeting-level agreement, not a document amendment. [1] [2] [3] [4] [5] [6] [7] [8] [9] [10]",
+    "citations": [
+      {
+        "sourceId": "transcripts/03_2024-06-11_commercial-sow-review#utterance-0057",
+        "quote": "Put the quarterly review in the SOW.",
+        "title": "Commercial and SOW review",
+        "date": "2024-06-11",
+        "author": "Robert Kahn",
+        "position": "4:56 · utterance 57"
+      },
+      {
+        "sourceId": "transcripts/03_2024-06-11_commercial-sow-review#utterance-0059",
+        "quote": "Not as a nice idea, basically as an obligation.",
+        "title": "Commercial and SOW review",
+        "date": "2024-06-11",
+        "author": "Robert Kahn",
+        "position": "5:06 · utterance 59"
+      },
+      {
+        "sourceId": "transcripts/03_2024-06-11_commercial-sow-review#utterance-0060",
+        "quote": "We will",
+        "title": "Commercial and SOW review",
+        "date": "2024-06-11",
+        "author": "Marco Rossi",
+        "position": "5:13 · utterance 60"
+      },
+      {
+        "sourceId": "transcripts/03_2024-06-11_commercial-sow-review#utterance-0062",
+        "quote": "put it in.",
+        "title": "Commercial and SOW review",
+        "date": "2024-06-11",
+        "author": "Marco Rossi",
+        "position": "5:19 · utterance 62"
+      },
+      {
+        "sourceId": "transcripts/12_2025-05-22_90-day-business-review#utterance-0098",
+        "quote": "One more. Can we formalise the QBR cadence? We agreed quarterly in,",
+        "title": "90-day post-go-live business review",
+        "date": "2025-05-22",
+        "author": "Lena Fischer",
+        "position": "7:53 · utterance 98"
+      },
+      {
+        "sourceId": "transcripts/12_2025-05-22_90-day-business-review#utterance-0100",
+        "quote": "the SOW and this is the first one,",
+        "title": "90-day post-go-live business review",
+        "date": "2025-05-22",
+        "author": "Lena Fischer",
+        "position": "8:04 · utterance 100"
+      },
+      {
+        "sourceId": "transcripts/12_2025-05-22_90-day-business-review#utterance-0102",
+        "quote": "technically on time but it has felt ad hoc.",
+        "title": "90-day post-go-live business review",
+        "date": "2025-05-22",
+        "author": "Lena Fischer",
+        "position": "8:15 · utterance 102"
+      },
+      {
+        "sourceId": "transcripts/12_2025-05-22_90-day-business-review#utterance-0104",
+        "quote": "Okay so, yes. I will set with the...",
+        "title": "90-day post-go-live business review",
+        "date": "2025-05-22",
+        "author": "Marco Rossi",
+        "position": "8:24 · utterance 104"
+      },
+      {
+        "sourceId": "transcripts/14_2025-06-24_steering-committee#utterance-0069",
+        "quote": "On the QBR, we agreed in May to formalise the...",
+        "title": "Steering committee",
+        "date": "2025-06-24",
+        "author": "Ana Duarte",
+        "position": "6:10 · utterance 69"
+      },
+      {
+        "sourceId": "transcripts/14_2025-06-24_steering-committee#utterance-0070",
+        "quote": "cadence and I have set it up. Quarterly, the next one is",
+        "title": "Steering committee",
+        "date": "2025-06-24",
+        "author": "Ana Duarte",
+        "position": "6:15 · utterance 70"
+      }
+    ],
+    "createdAt": "2026-09-20T00:28:35.306Z",
+    "kind": "chat",
+    "level": 3,
+    "question": "Find one thing in the archive that was agreed and then never done. Show the trail from the agreement to the present, and say who would have needed to notice.",
+    "trace": [
+      "Read 2974 permitted source records at L3.",
+      "Prepared 23 evidence observations across 4 source partitions.",
+      "Checked 2024-06-11 SOW review for the original demand and Marco Rossi's acceptance (T03U0057, T03U0059, T03U0060, T03U0062)",
+      "Checked 2025-05-22 90-day review for the first evidence the cadence was not formalised (T12U0098, T12U0100, T12U0102, T12U0104)",
+      "Checked 2025-06-24 steering for the later compensating setup of the cadence (T14U0069, T14U0070)",
+      "Confirmed no archive record shows the SOW text itself was amended",
+      "Identified Marco Rossi (accepting party) and Robert Kahn (demanding party, present at the 90-day review) as the people who would have needed to notice",
+      "Verified 10 quoted passages against runtime sources."
+    ]
+  },
+  "calls": [
+    {
+      "durationMs": 300,
+      "promptCharacters": 385,
+      "task": "Employee request:\nFind one thing in the archive that was agreed and then never done. Show the trail from the agreement to the present, and say who would have needed to notice.\nCurr",
+      "repair": false,
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 292,
+        "total_tokens": 313,
+        "completion_tokens": 21,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0
+      },
+      "output": {
+        "action": "question",
+        "text": "",
+        "ids": [],
+        "needsEvidence": true,
+        "research": "commitments"
+      }
+    },
+    {
+      "durationMs": 7865,
+      "promptCharacters": 48103,
+      "task": "Find candidate unfulfilled commitments for this question: Find one thing in the archive that was agreed and then never done. Show the trail from the agreement to the present, and s",
+      "repair": false,
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 13762,
+        "total_tokens": 14386,
+        "completion_tokens": 624,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "reasoning_tokens": 0
+      },
+      "output": {
+        "items": [
+          {
+            "fact": "On 2025-11-19 Marco Rossi accepted the action of coming back to Sofia Almeida with a list of every other place the surgery note appears, saying he did not want to send an incomplete list and asking for a few days; on 2026-03-12 Sofia wrote that she still had not had the list Marco promised, so the same accepted action remains undone.",
+            "sourceIds": [
+              "E04M003",
+              "E04M004",
+              "E04M001"
+            ],
+            "commitment": {
+              "acceptedAction": "I will come back to you on where else it appears. I do not want to give you a list that turns out to be incomplete, so give me a few days.",
+              "owner": "Marco Rossi",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "E04M003"
+              ],
+              "followupSourceIds": [
+                "E04M001"
+              ]
+            }
+          },
+          {
+            "fact": "On 2025-11-21 Ana Duarte reported that the old handover pack version remained in the document history on the project site, which she could not delete herself, and that she had raised it with RELEX IT; on 2026-03-12 Sofia Almeida wrote that the document history point was still open when they last spoke in November, with no later record of IT completing the deletion.",
+            "sourceIds": [
+              "E04M002",
+              "E04M001"
+            ],
+            "commitment": {
+              "acceptedAction": "The old version is still in the document history on the project site, which I cannot delete myself - I have raised it with our IT.",
+              "owner": "unknown",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "E04M002"
+              ],
+              "followupSourceIds": [
+                "E04M001"
+              ]
+            }
+          },
+          {
+            "fact": "On 2026-04-09 Katarina Voss recorded four actions from the processor review and asked for all four within four weeks; on 2026-04-30 she confirmed item 3 (confirmation that the November erasure request is fully closed, with a list of every location the data was held) remains open after Marco Rossi's 2026-04-29 reply said he owed item 3, and on 2026-06-23 she wrote to Marco again saying only 'Item 3.', so the same action remains outstanding.",
+            "sourceIds": [
+              "E08M004",
+              "E08M003",
+              "E08M002",
+              "E08M001"
+            ],
+            "commitment": {
+              "acceptedAction": "The erasure request made in November: confirmation that it is fully closed, with a list of every location the data was held.",
+              "owner": "Marco Rossi",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "E08M003",
+                "E08M004"
+              ],
+              "followupSourceIds": [
+                "E08M002",
+                "E08M001"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "durationMs": 16543,
+      "promptCharacters": 94422,
+      "task": "Find candidate unfulfilled commitments for this question: Find one thing in the archive that was agreed and then never done. Show the trail from the agreement to the present, and s",
+      "repair": false,
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 27924,
+        "total_tokens": 29004,
+        "completion_tokens": 1080,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "reasoning_tokens": 0
+      },
+      "output": {
+        "items": [
+          {
+            "fact": "On 2024-04-18 Tomas Lindholm asked Priya Nair whether remaining shelf life is stored anywhere and to find out, because it changes the design; Priya answered 'I can ask' and 'Noted'. The question stayed open: weekly updates of 2025-07-21 and 2025-08-04 repeat the same question (is remaining life stored anywhere, is goods receipt date available outside the WMS), and the 2025-08-04 update plans to escalate if no answer that week. The 2026-06-26 chain-wide proposal states the field was identified as a dependency in April 2024 and never obtained. The accepted action (Priya asking the warehouse-system question) was fulfilled when she asked, but the hoped-for outcome — an answer establishing whether remaining shelf life or goods receipt date is available — was never obtained; the same dependency remains unresolved through 2026-06-26.",
+            "sourceIds": [
+              "T02U0115",
+              "T02U0126",
+              "T02U0129",
+              "T02U0132",
+              "T02U0133",
+              "T02U0134",
+              "T02U0135",
+              "R01M016",
+              "R01M015",
+              "E20M004"
+            ],
+            "commitment": {
+              "acceptedAction": "Priya Nair to ask (Acme warehouse team) whether remaining shelf life is stored anywhere and whether goods receipt date is available outside the WMS ('Can you find out?' — 'I can ask.')",
+              "owner": "Priya Nair",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "T02U0132",
+                "T02U0133",
+                "T02U0134",
+                "T02U0135"
+              ],
+              "followupSourceIds": [
+                "R01M016",
+                "R01M015",
+                "E20M004"
+              ]
+            }
+          },
+          {
+            "fact": "On 2024-04-18 Priya Nair said she had asked for budget to upgrade the DC-2 middleware three times with nothing important depending on it; Tomas Lindholm said it would go in the assessment as a named risk and monitoring would be designed around it. The 2025-03-17 incident note records the 6 March DC-2 failure as 'the known issue from the April 2024 assessment', and the 2026-02-09 weekly update still reports the DC-2 feed failing twice in January 2026. Monitoring was built (file size check, 2025-03-21) but the underlying middleware upgrade was never done; the same failure mode persists through 2026-02-09.",
+            "sourceIds": [
+              "T02U0082",
+              "T02U0084",
+              "T02U0086",
+              "T02U0091",
+              "T02U0092",
+              "E16M003",
+              "R01M003"
+            ],
+            "commitment": {
+              "acceptedAction": "Tomas Lindholm to record the DC-2 middleware risk as a named risk in the assessment and design monitoring around it from day one ('Then it goes in the assessment as a named risk and we design monitoring around it from day one.')",
+              "owner": "Tomas Lindholm",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "T02U0091",
+                "T02U0092",
+                "T02U0094",
+                "T02U0095"
+              ],
+              "followupSourceIds": [
+                "E16M003",
+                "R01M003"
+              ]
+            }
+          },
+          {
+            "fact": "On 2025-03-14, after the second DC-2 failure, Ana Duarte wrote to Lena Fischer: 'I will have a named second person on the runbook permanently by the end of next week.' No later record in the archive confirms a named second person was added; the 2026-01-20 runbook forwarding incident shows distribution and contact-page control still failing, and no record states the second-person commitment was completed. The accepted action remains unverified and unfulfilled on the available evidence.",
+            "sourceIds": [
+              "E16M004",
+              "E16M005",
+              "E18M004",
+              "E18M003"
+            ],
+            "commitment": {
+              "acceptedAction": "Ana Duarte to have a named second person on the runbook permanently by the end of next week ('I will have a named second person on the runbook permanently by the end of next week.')",
+              "owner": "Ana Duarte",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "E16M004"
+              ],
+              "followupSourceIds": [
+                "E18M004",
+                "E18M003"
+              ]
+            }
+          },
+          {
+            "fact": "On 2026-01-21 Priya Nair asked that the consultancy holding her mobile number delete it and confirm: 'Please ask them to delete it and tell me when they have.' No later record in the archive shows the deletion request was made or that Priya was told it was done. The accepted action remains open on the available evidence.",
+            "sourceIds": [
+              "E18M001"
+            ],
+            "commitment": {
+              "acceptedAction": "Ask the consultancy to delete Priya Nair's mobile number and tell her when they have ('Please ask them to delete it and tell me when they have.')",
+              "owner": "unknown",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "E18M001"
+              ],
+              "followupSourceIds": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "durationMs": 22132,
+      "promptCharacters": 165040,
+      "task": "Find candidate unfulfilled commitments for this question: Find one thing in the archive that was agreed and then never done. Show the trail from the agreement to the present, and s",
+      "repair": false,
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 50747,
+        "total_tokens": 52764,
+        "completion_tokens": 2017,
+        "prompt_tokens_details": {
+          "cached_tokens": 512
+        },
+        "reasoning_tokens": 0
+      },
+      "output": {
+        "items": [
+          {
+            "fact": "On 2024-06-11 Robert Kahn asked that the quarterly review be put in the SOW 'not as a nice idea, basically as an obligation', and Marco Rossi accepted ('We will put it in'). The next dated evidence is 2025-05-22, when Lena Fischer notes the SOW agreed quarterly cadence but this 90-day review is the first one and it 'has felt ad hoc', and Marco accepts to formalise the QBR cadence. On 2025-06-24 Ana Duarte reports the cadence has now been set up (quarterly, next in September), so the original SOW obligation was left unformalised for roughly a year. Who would have needed to notice: Marco Rossi (who accepted the SOW wording) and Robert Kahn (who demanded it as an obligation and attended the 90-day review).",
+            "sourceIds": [
+              "T03U0057",
+              "T03U0059",
+              "T03U0060",
+              "T03U0062",
+              "T12U0098",
+              "T12U0100",
+              "T12U0102",
+              "T12U0104",
+              "T14U0069",
+              "T14U0070"
+            ],
+            "commitment": {
+              "acceptedAction": "Put the quarterly review in the SOW as an obligation",
+              "owner": "Marco Rossi",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "T03U0057",
+                "T03U0059",
+                "T03U0060",
+                "T03U0062"
+              ],
+              "followupSourceIds": [
+                "T12U0098",
+                "T12U0100",
+                "T12U0102",
+                "T12U0104",
+                "T14U0069",
+                "T14U0070"
+              ]
+            }
+          },
+          {
+            "fact": "On 2025-02-12 the internal account review set the action 'Marco, get Phase 2 scoped before the ninety-day review so we have something to show Kahn'. The 90-day review on 2025-05-22 shows Phase 2 was not scoped: Robert Kahn asks where the fresh waste reduction is and Marco says 'Fresh is Phase 2. We are scoping it now'. On 2025-06-24 Marco still only promises a scoping proposal for mid-July, so the pre-review deadline passed unmet. Who would have needed to notice: Marco Rossi (owner) and the account lead who set the action at the February review.",
+            "sourceIds": [
+              "T09U0049",
+              "T12U0008",
+              "T12U0011",
+              "T14U0036",
+              "T14U0039"
+            ],
+            "commitment": {
+              "acceptedAction": "Marco, get Phase 2 scoped before the ninety-day review so we have something to show Kahn",
+              "owner": "Marco Rossi",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "T09U0049",
+                "T09U0051"
+              ],
+              "followupSourceIds": [
+                "T12U0011",
+                "T14U0036",
+                "T14U0039"
+              ]
+            }
+          },
+          {
+            "fact": "On 2025-01-21 Lena Fischer agreed to sign UAT sign-off if Ana Duarte sent her something to sign, and Ana said 'I will send it today'. No later record shows the signed UAT sign-off or confirms it was sent; the next calls (2025-02-12, 2025-02-27) discuss go-live without mentioning it. Who would have needed to notice: Ana Duarte (who promised to send) and Lena Fischer (who was to sign).",
+            "sourceIds": [
+              "T08U0041",
+              "T08U0045",
+              "T08U0046"
+            ],
+            "commitment": {
+              "acceptedAction": "Send Lena something to sign for UAT sign-off (Ana: 'I will send it today')",
+              "owner": "Ana Duarte",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T08U0045",
+                "T08U0046"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "On 2025-02-12 the account review actioned 'Ana, DC-2 on the risk register with a named owner', and the account lead answered 'I will do that today'. On 2025-03-18, after the DC-2 feed failure during Kwame's holiday, Ana Duarte admits 'I raised the cover question in January and I did not close it', and no record shows a named DC-2 owner on a risk register; on 2025-06-10 Charlotte Meyer only then offers to hold the DC-2 permanent fix on the service risk register. Who would have needed to notice: Ana Duarte (owner of the action) and the account lead who set it.",
+            "sourceIds": [
+              "T09U0049",
+              "T09U0051",
+              "T11U0025",
+              "T13U0040",
+              "T13U0041"
+            ],
+            "commitment": {
+              "acceptedAction": "Ana, DC-2 on the risk register with a named owner",
+              "owner": "Ana Duarte",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "T09U0049",
+                "T09U0051"
+              ],
+              "followupSourceIds": [
+                "T11U0025",
+                "T13U0040",
+                "T13U0041"
+              ]
+            }
+          },
+          {
+            "fact": "On 2024-07-15 Tomas Lindholm committed to send Nadia Haddad's and Kwame Boateng's names and personal recovery emails to Priya Nair so she could raise access tickets ('I will ask them and send it over'; Priya: 'send them today', 'It takes about two weeks'). No later record confirms the names were sent or the tickets raised; the 2024-09-24 workshop proceeds without mentioning access. Who would have needed to notice: Tomas Lindholm (who promised to send) and Priya Nair (who needed the names to raise tickets).",
+            "sourceIds": [
+              "T05U0135",
+              "T05U0141",
+              "T05U0144",
+              "T05U0145",
+              "T05U0151"
+            ],
+            "commitment": {
+              "acceptedAction": "Tomas to ask Nadia and Kwame for personal recovery emails and send the names to Priya so she can raise access tickets",
+              "owner": "Tomas Lindholm",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T05U0145",
+                "T05U0151",
+                "T05U0155"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "On 2024-11-12 Sofia Almeida asked for her shelf-life threshold explanation ('Under five days remaining') to be written down, and Ana Duarte accepted: 'It goes the workshop output and into the phase two requirements. I will make sure it is in both.' No later record confirms it was captured; on 2025-06-24 Priya Nair says the shelf-life field question 'is now an email thread rather than a decision' and Ana says 'I will pick that up', indicating the phase-two requirement was still not settled. Who would have needed to notice: Ana Duarte (who accepted) and Sofia Almeida (who asked where it goes).",
+            "sourceIds": [
+              "T07U0057",
+              "T07U0059",
+              "T07U0060",
+              "T07U0061",
+              "T14U0057",
+              "T14U0060",
+              "T14U0062",
+              "T14U0063"
+            ],
+            "commitment": {
+              "acceptedAction": "Write the shelf-life threshold into the workshop output and the phase two requirements (Ana: 'I will make sure it is in both')",
+              "owner": "Ana Duarte",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "T07U0059",
+                "T07U0060",
+                "T07U0061"
+              ],
+              "followupSourceIds": [
+                "T14U0057",
+                "T14U0060",
+                "T14U0062",
+                "T14U0063"
+              ]
+            }
+          },
+          {
+            "fact": "On 2025-06-24 Robert Kahn required a fresh-waste baseline 'agreed in writing before fresh go live', and Ana Duarte took the action: 'Action on me. Baseline agreed in writing before fresh go live.' No later record in the archive shows the baseline agreed. Who would have needed to notice: Ana Duarte (action owner) and Robert Kahn (who set the requirement).",
+            "sourceIds": [
+              "T14U0135",
+              "T14U0138",
+              "T14U0141",
+              "T14U0147",
+              "T14U0148"
+            ],
+            "commitment": {
+              "acceptedAction": "Baseline agreed in writing before fresh go live",
+              "owner": "Ana Duarte",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "T14U0147",
+                "T14U0148"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "On 2024-09-24 Priya Nair agreed to confirm the pre-meeting ownership agreement (Priya's team owns remediation, RELEX supports) by email and to put it in the workshop output ('Then put it in the workshop output and I will confirm by email'), and Ana Duarte thanked her. No later record shows the email confirmation or the workshop output entry. Who would have needed to notice: Priya Nair (who promised the email) and Ana Duarte (who wanted it 'somewhere more official').",
+            "sourceIds": [
+              "T06U0057",
+              "T06U0062",
+              "T06U0064",
+              "T06U0066",
+              "T06U0067"
+            ],
+            "commitment": {
+              "acceptedAction": "Put the remediation-ownership agreement in the workshop output and confirm it by email",
+              "owner": "Priya Nair",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T06U0062",
+                "T06U0064",
+                "T06U0066"
+              ],
+              "followupSourceIds": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "durationMs": 15712,
+      "promptCharacters": 141380,
+      "task": "Find candidate unfulfilled commitments for this question: Find one thing in the archive that was agreed and then never done. Show the trail from the agreement to the present, and s",
+      "repair": false,
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 44622,
+        "total_tokens": 46696,
+        "completion_tokens": 2074,
+        "prompt_tokens_details": {
+          "cached_tokens": 512
+        },
+        "reasoning_tokens": 0
+      },
+      "output": {
+        "items": [
+          {
+            "fact": "On 2025-11-17 Sofia Almeida asked that a surgery reference be removed from the handover document and that Marco find where else it appears; Marco accepted ('We will take it out', 'I will own that') and Lena asked for proper follow-up. On 2026-04-09 Marco confirmed the November erasure request was not fully closed ('I have not closed'), and on 2026-06-16 Marco reported 'Still not fully closed. Three of four locations done', with Sofia noting it is seven months later and Robert directing 'Then close it.' The same accepted action remains undone at the last evidence date.",
+            "sourceIds": [
+              "T17U0077",
+              "T17U0078",
+              "T17U0091",
+              "T17U0096",
+              "T17U0098",
+              "T21U0091",
+              "T21U0093",
+              "T22U0108",
+              "T22U0111",
+              "T22U0113",
+              "T22U0117",
+              "T22U0125",
+              "T22U0127"
+            ],
+            "commitment": {
+              "acceptedAction": "Take the surgery reference out of the handover document and find where else it appears ('Take it out.' / 'Then find them.' / 'I will own that.')",
+              "owner": "Marco Rossi",
+              "state": "outstanding",
+              "acceptanceSourceIds": [
+                "T17U0077",
+                "T17U0078",
+                "T17U0091",
+                "T17U0096",
+                "T17U0098"
+              ],
+              "followupSourceIds": [
+                "T21U0091",
+                "T21U0093",
+                "T22U0108",
+                "T22U0111",
+                "T22U0113",
+                "T22U0117",
+                "T22U0125",
+                "T22U0127"
+              ]
+            }
+          },
+          {
+            "fact": "On 2025-11-17 Nadia Haddad accepted Priya Nair's condition to exclude the OP_ID operator field at the extract and confirm in writing ('I will confirm in writing tomorrow', 'we exclude it at source'), with Priya requiring the written record copied to Lena. On 2025-12-11 Kwame Boateng reported the field was 'Excluded at the extract from the twenty-first of November. Confirmed in writing to Priya', and Priya confirmed receipt. The accepted action was carried out.",
+            "sourceIds": [
+              "T17U0139",
+              "T17U0141",
+              "T17U0145",
+              "T17U0150",
+              "T17U0153",
+              "T18U0067",
+              "T18U0068",
+              "T18U0069"
+            ],
+            "commitment": {
+              "acceptedAction": "Exclude the OP_ID operator identifier field at the extract and confirm in writing to Priya, copied to Lena",
+              "owner": "Nadia Haddad",
+              "state": "fulfilled",
+              "acceptanceSourceIds": [
+                "T17U0139",
+                "T17U0141",
+                "T17U0145",
+                "T17U0150",
+                "T17U0153"
+              ],
+              "followupSourceIds": [
+                "T18U0067",
+                "T18U0068",
+                "T18U0069"
+              ]
+            }
+          },
+          {
+            "fact": "On 2026-03-17 Priya Nair accepted Nadia Haddad's request to open the conversation with the till-system team about intraday sales history 'this month rather than in May' ('I will open it this month'). No later document shows the conversation was opened or its outcome; on 2026-06-16 Sofia and Lena describe the warehouse data problem as still unsolved since April 2024, but that concerns a different, older data request, so the state of this specific March action is unknown.",
+            "sourceIds": [
+              "T20U0109",
+              "T20U0111",
+              "T20U0113",
+              "T20U0114",
+              "T22U0084",
+              "T22U0086",
+              "T22U0089"
+            ],
+            "commitment": {
+              "acceptedAction": "Open the conversation with the till-system team about intraday sales history this month rather than in May",
+              "owner": "Priya Nair",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T20U0109",
+                "T20U0111",
+                "T20U0113",
+                "T20U0114"
+              ],
+              "followupSourceIds": []
+            }
+          },
+          {
+            "fact": "On 2026-04-09 Marco Rossi accepted Katarina Voss's request to come back within a week with a written answer on the fifth sub-processor ('We will come back within a week'; Katarina: 'Please find out and put it in writing'). No later document reports that written answer; on 2026-07-02 an internal discussion says the four DPO-review actions are closed 'except the retention policy, so which is with legal', which does not establish the sub-processor answer was delivered, so the state is unknown.",
+            "sourceIds": [
+              "T21U0028",
+              "T21U0030",
+              "T21U0032",
+              "T23U0003"
+            ],
+            "commitment": {
+              "acceptedAction": "Find out where the fifth sub-processor's processing happens and come back within a week with a written answer",
+              "owner": "Marco Rossi",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T21U0028",
+                "T21U0030",
+                "T21U0032"
+              ],
+              "followupSourceIds": [
+                "T23U0003"
+              ]
+            }
+          },
+          {
+            "fact": "On 2026-04-09 Katarina Voss recorded that a twelve-month retention period on meeting recordings was agreed but she 'cannot find anywhere that it does' happen; Guest 1 stated 'We have a commitment and nobody whose job it is'. No owner was assigned in that meeting and no later document shows the retention rule implemented; on 2026-07-02 the internal discussion says the retention policy is 'with legal', which does not establish implementation, so the state is unknown.",
+            "sourceIds": [
+              "T21U0152",
+              "T21U0153",
+              "T21U0154",
+              "T21U0162",
+              "T21U0163",
+              "T21U0164",
+              "T23U0003"
+            ],
+            "commitment": {
+              "acceptedAction": "Implement the agreed twelve-month retention period on the meeting recordings (commitment recorded as having no owner)",
+              "owner": "unknown",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T21U0152",
+                "T21U0153",
+                "T21U0154",
+                "T21U0162",
+                "T21U0163",
+                "T21U0164"
+              ],
+              "followupSourceIds": [
+                "T23U0003"
+              ]
+            }
+          },
+          {
+            "fact": "On 2026-01-28 Marco Rossi recorded the accepted action 'Sofia to send the bake-off split by store format', which Sofia had agreed to ('I can. It is...'). No later document confirms the split was sent; on 2026-03-17 Ruth Oyelaran asked again 'Do you have that by store?' and Sofia again said she has it in a spreadsheet, but no record shows whether the January send happened, so the state is unknown.",
+            "sourceIds": [
+              "T19U0117",
+              "T19U0118",
+              "T19U0119",
+              "T20U0032",
+              "T20U0034",
+              "T20U0035",
+              "T20U0036",
+              "T20U0037"
+            ],
+            "commitment": {
+              "acceptedAction": "Sofia to send the bake-off split by store format",
+              "owner": "Sofia Almeida",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T19U0117",
+                "T19U0118",
+                "T19U0119"
+              ],
+              "followupSourceIds": [
+                "T20U0032",
+                "T20U0034",
+                "T20U0035",
+                "T20U0036",
+                "T20U0037"
+              ]
+            }
+          },
+          {
+            "fact": "On 2025-09-12 Lena Fischer accepted ownership of the UAT resourcing problem ('And the UAT resourcing is mine... Then I will fix that... I will add capacity'). On 2025-11-17 Marco reported Nadia had been running fresh UAT for the last two weeks after RELEX offered to drive UAT at their own cost, so the resourcing gap was addressed by other means; the original accepted action's own completion is not directly evidenced, so the state is unknown.",
+            "sourceIds": [
+              "T15U0027",
+              "T15U0029",
+              "T15U0030",
+              "T17U0002",
+              "T17U0004",
+              "T15U0104",
+              "T15U0106"
+            ],
+            "commitment": {
+              "acceptedAction": "Fix UAT resourcing on the Acme side and add capacity",
+              "owner": "Lena Fischer",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T15U0027",
+                "T15U0029",
+                "T15U0030"
+              ],
+              "followupSourceIds": [
+                "T17U0002",
+                "T17U0004",
+                "T15U0104",
+                "T15U0106"
+              ]
+            }
+          },
+          {
+            "fact": "On 2025-12-11 Sofia Almeida accepted Ana Duarte's request to log her overrides rather than make them silently, committing to do it for six weeks and then report whether she was still doing it. No later document records that six-week report or the logging practice, so the state is unknown.",
+            "sourceIds": [
+              "T18U0032",
+              "T18U0033",
+              "T18U0034",
+              "T18U0036",
+              "T18U0041",
+              "T18U0044",
+              "T18U0045"
+            ],
+            "commitment": {
+              "acceptedAction": "Log the overrides rather than just making them, for six weeks, then report whether she is still doing it",
+              "owner": "Sofia Almeida",
+              "state": "unknown",
+              "acceptanceSourceIds": [
+                "T18U0032",
+                "T18U0033",
+                "T18U0034",
+                "T18U0036",
+                "T18U0041",
+                "T18U0044"
+              ],
+              "followupSourceIds": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "durationMs": 8339,
+      "promptCharacters": 131751,
+      "task": "Task: Find one thing in the archive that was agreed and then never done. Show the trail from the agreement to the present, and say who would have needed to notice.\nPartitioned sour",
+      "repair": false,
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 39394,
+        "total_tokens": 40343,
+        "completion_tokens": 949,
+        "prompt_tokens_details": null,
+        "reasoning_tokens": 0
+      },
+      "output": {
+        "text": "The clearest example of an agreement that was never carried out is the quarterly business review written into the SOW as an obligation. On 2024-06-11 Robert Kahn demanded it: \"Put the quarterly review in the SOW... Not as a nice idea, basically as an obligation\" [T03U0057, T03U0059], and Marco Rossi accepted: \"We will put it in\" [T03U0060, T03U0062]. The trail then goes quiet for almost a year. At the 90-day business review on 2025-05-22, Lena Fischer notes the SOW agreed quarterly cadence but \"this is the first one\" and it \"has felt ad hoc\" [T12U0098, T12U0100, T12U0102]; Marco accepts to formalise the cadence [T12U0104]. On 2025-06-24 Ana Duarte reports the cadence has now been set up — quarterly, next in September [T14U0069, T14U0070] — so the original SOW obligation was left unformalised for roughly a year, and the archive contains no record that the SOW wording itself was ever amended. Who would have needed to notice: Marco Rossi, who accepted the SOW wording on 2024-06-11, and Robert Kahn, who demanded it as an obligation and attended the 90-day review where the gap surfaced. Recommendation: treat the 2025-06-24 cadence setup as the compensating control and confirm in writing whether the SOW text was ever changed, since the archive shows only the meeting-level agreement, not a document amendment.",
+        "citations": [
+          {
+            "sourceId": "transcripts/03_2024-06-11_commercial-sow-review#utterance-0057",
+            "quote": "Put the quarterly review in the SOW."
+          },
+          {
+            "sourceId": "transcripts/03_2024-06-11_commercial-sow-review#utterance-0059",
+            "quote": "Not as a nice idea, basically as an obligation."
+          },
+          {
+            "sourceId": "transcripts/03_2024-06-11_commercial-sow-review#utterance-0060",
+            "quote": "We will"
+          },
+          {
+            "sourceId": "transcripts/03_2024-06-11_commercial-sow-review#utterance-0062",
+            "quote": "put it in."
+          },
+          {
+            "sourceId": "transcripts/12_2025-05-22_90-day-business-review#utterance-0098",
+            "quote": "One more. Can we formalise the QBR cadence? We agreed quarterly in,"
+          },
+          {
+            "sourceId": "transcripts/12_2025-05-22_90-day-business-review#utterance-0100",
+            "quote": "the SOW and this is the first one,"
+          },
+          {
+            "sourceId": "transcripts/12_2025-05-22_90-day-business-review#utterance-0102",
+            "quote": "technically on time but it has felt ad hoc."
+          },
+          {
+            "sourceId": "transcripts/12_2025-05-22_90-day-business-review#utterance-0104",
+            "quote": "Okay so, yes. I will set with the..."
+          },
+          {
+            "sourceId": "transcripts/14_2025-06-24_steering-committee#utterance-0069",
+            "quote": "On the QBR, we agreed in May to formalise the..."
+          },
+          {
+            "sourceId": "transcripts/14_2025-06-24_steering-committee#utterance-0070",
+            "quote": "cadence and I have set it up. Quarterly, the next one is"
+          }
+        ],
+        "trace": [
+          "Checked 2024-06-11 SOW review for the original demand and Marco Rossi's acceptance (T03U0057, T03U0059, T03U0060, T03U0062)",
+          "Checked 2025-05-22 90-day review for the first evidence the cadence was not formalised (T12U0098, T12U0100, T12U0102, T12U0104)",
+          "Checked 2025-06-24 steering for the later compensating setup of the cadence (T14U0069, T14U0070)",
+          "Confirmed no archive record shows the SOW text itself was amended",
+          "Identified Marco Rossi (accepting party) and Robert Kahn (demanding party, present at the 90-day review) as the people who would have needed to notice"
+        ],
+        "intent": "project"
+      }
+    },
+    {
+      "durationMs": 7157,
+      "promptCharacters": 101017,
+      "task": "Verify this draft against the supplied source passages at claim level. Question: Find one thing in the archive that was agreed and then never done. Show the trail from the agreemen",
+      "repair": false,
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 30759,
+        "total_tokens": 31896,
+        "completion_tokens": 1137,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "reasoning_tokens": 0
+      },
+      "output": {
+        "statements": [
+          {
+            "text": "The clearest example of an agreement that was never carried out is the quarterly business review written into the SOW as an obligation. On 2024-06-11 Robert Kahn demanded it: \"Put the quarterly review in the SOW... Not as a nice idea, basically as an obligation\" [T03U0057, T03U0059], and Marco Rossi accepted: \"We will put it in\" [T03U0060, T03U0062]. The trail then goes quiet for almost a year. At the 90-day business review on 2025-05-22, Lena Fischer notes the SOW agreed quarterly cadence but \"this is the first one\" and it \"has felt ad hoc\" [T12U0098, T12U0100, T12U0102]; Marco accepts to formalise the cadence [T12U0104]. On 2025-06-24 Ana Duarte reports the cadence has now been set up — quarterly, next in September [T14U0069, T14U0070] — so the original SOW obligation was left unformalised for roughly a year, and the archive contains no record that the SOW wording itself was ever amended. Who would have needed to notice: Marco Rossi, who accepted the SOW wording on 2024-06-11, and Robert Kahn, who demanded it as an obligation and attended the 90-day review where the gap surfaced. Recommendation: treat the 2025-06-24 cadence setup as the compensating control and confirm in writing whether the SOW text was ever changed, since the archive shows only the meeting-level agreement, not a document amendment.",
+            "citations": [
+              {
+                "sourceId": "transcripts/03_2024-06-11_commercial-sow-review#utterance-0057",
+                "quote": "Put the quarterly review in the SOW."
+              },
+              {
+                "sourceId": "transcripts/03_2024-06-11_commercial-sow-review#utterance-0059",
+                "quote": "Not as a nice idea, basically as an obligation."
+              },
+              {
+                "sourceId": "transcripts/03_2024-06-11_commercial-sow-review#utterance-0060",
+                "quote": "We will"
+              },
+              {
+                "sourceId": "transcripts/03_2024-06-11_commercial-sow-review#utterance-0062",
+                "quote": "put it in."
+              },
+              {
+                "sourceId": "transcripts/12_2025-05-22_90-day-business-review#utterance-0098",
+                "quote": "One more. Can we formalise the QBR cadence? We agreed quarterly in,"
+              },
+              {
+                "sourceId": "transcripts/12_2025-05-22_90-day-business-review#utterance-0100",
+                "quote": "the SOW and this is the first one,"
+              },
+              {
+                "sourceId": "transcripts/12_2025-05-22_90-day-business-review#utterance-0102",
+                "quote": "technically on time but it has felt ad hoc."
+              },
+              {
+                "sourceId": "transcripts/12_2025-05-22_90-day-business-review#utterance-0104",
+                "quote": "Okay so, yes. I will set with the..."
+              },
+              {
+                "sourceId": "transcripts/14_2025-06-24_steering-committee#utterance-0069",
+                "quote": "On the QBR, we agreed in May to formalise the..."
+              },
+              {
+                "sourceId": "transcripts/14_2025-06-24_steering-committee#utterance-0070",
+                "quote": "cadence and I have set it up. Quarterly, the next one is"
+              }
+            ],
+            "trace": [
+              "Checked 2024-06-11 SOW review for the original demand and Marco Rossi's acceptance (T03U0057, T03U0059, T03U0060, T03U0062)",
+              "Checked 2025-05-22 90-day review for the first evidence the cadence was not formalised (T12U0098, T12U0100, T12U0102, T12U0104)",
+              "Checked 2025-06-24 steering for the later compensating setup of the cadence (T14U0069, T14U0070)",
+              "Confirmed no archive record shows the SOW text itself was amended",
+              "Identified Marco Rossi (accepting party) and Robert Kahn (demanding party, present at the 90-day review) as the people who would have needed to notice"
+            ],
+            "intent": "project"
+          }
+        ],
+        "trace": [
+          "Checked 2024-06-11 SOW review for the original demand and Marco Rossi's acceptance (T03U0057, T03U0059, T03U0060, T03U0062)",
+          "Checked 2025-05-22 90-day review for the first evidence the cadence was not formalised (T12U0098, T12U0100, T12U0102, T12U0104)",
+          "Checked 2025-06-24 steering for the later compensating setup of the cadence (T14U0069, T14U0070)",
+          "Confirmed no archive record shows the SOW text itself was amended",
+          "Identified Marco Rossi (accepting party) and Robert Kahn (demanding party, present at the 90-day review) as the people who would have needed to notice"
+        ],
+        "intent": "project"
+      }
+    },
+    {
+      "durationMs": 2752,
+      "promptCharacters": 101177,
+      "task": "Verify this draft against the supplied source passages at claim level. Question: Find one thing in the archive that was agreed and then never done. Show the trail from the agreemen",
+      "repair": true,
+      "finishReason": "stop",
+      "usage": {
+        "prompt_tokens": 30786,
+        "total_tokens": 31574,
+        "completion_tokens": 788,
+        "prompt_tokens_details": {
+          "cached_tokens": 30720
+        },
+        "reasoning_tokens": 0
+      },
+      "output": {
+        "statements": [
+          {
+            "text": "The clearest example of an agreement that was never carried out is the quarterly business review written into the SOW as an obligation. On 2024-06-11 Robert Kahn demanded it: \"Put the quarterly review in the SOW... Not as a nice idea, basically as an obligation\" [T03U0057, T03U0059], and Marco Rossi accepted: \"We will put it in\" [T03U0060, T03U0062]. The trail then goes quiet for almost a year. At the 90-day business review on 2025-05-22, Lena Fischer notes the SOW agreed quarterly cadence but \"this is the first one\" and it \"has felt ad hoc\" [T12U0098, T12U0100, T12U0102]; Marco accepts to formalise the cadence [T12U0104]. On 2025-06-24 Ana Duarte reports the cadence has now been set up — quarterly, next in September [T14U0069, T14U0070] — so the original SOW obligation was left unformalised for roughly a year, and the archive contains no record that the SOW wording itself was ever amended. Who would have needed to notice: Marco Rossi, who accepted the SOW wording on 2024-06-11, and Robert Kahn, who demanded it as an obligation and attended the 90-day review where the gap surfaced. Recommendation: treat the 2025-06-24 cadence setup as the compensating control and confirm in writing whether the SOW text was ever changed, since the archive shows only the meeting-level agreement, not a document amendment.",
+            "sourceIds": [
+              "transcripts/03_2024-06-11_commercial-sow-review#utterance-0057",
+              "transcripts/03_2024-06-11_commercial-sow-review#utterance-0059",
+              "transcripts/03_2024-06-11_commercial-sow-review#utterance-0060",
+              "transcripts/03_2024-06-11_commercial-sow-review#utterance-0062",
+              "transcripts/12_2025-05-22_90-day-business-review#utterance-0098",
+              "transcripts/12_2025-05-22_90-day-business-review#utterance-0100",
+              "transcripts/12_2025-05-22_90-day-business-review#utterance-0102",
+              "transcripts/12_2025-05-22_90-day-business-review#utterance-0104",
+              "transcripts/14_2025-06-24_steering-committee#utterance-0069",
+              "transcripts/14_2025-06-24_steering-committee#utterance-0070"
+            ],
+            "evidenceGap": false
+          }
+        ],
+        "trace": [
+          "Checked 2024-06-11 SOW review for the original demand and Marco Rossi's acceptance (T03U0057, T03U0059, T03U0060, T03U0062)",
+          "Checked 2025-05-22 90-day review for the first evidence the cadence was not formalised (T12U0098, T12U0100, T12U0102, T12U0104)",
+          "Checked 2025-06-24 steering for the later compensating setup of the cadence (T14U0069, T14U0070)",
+          "Confirmed no archive record shows the SOW text itself was amended",
+          "Identified Marco Rossi (accepting party) and Robert Kahn (demanding party, present at the 90-day review) as the people who would have needed to notice"
+        ]
+      }
+    }
+  ]
+}

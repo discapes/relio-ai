@@ -152,6 +152,7 @@ test('an in-flight answer cannot publish after erasure changes the memory epoch'
 			await released;
 		}
 		return modelResponse({
+			action: 'question',
 			text: 'Kwame Boateng supplied this update. [1]',
 			statements: [{ text: 'Kwame Boateng supplied this update.', sourceIds: [source.id] }],
 			citations: [{ sourceId: source.id, quote: source.text }],
@@ -208,8 +209,146 @@ test.after(() => {
 	rmSync(directory, { recursive: true, force: true });
 });
 
-test('uncited factual drafts go through verification and unsupported paragraphs cannot publish',async()=>{
- const ctx=memory.context('uncited-draft','ana');let calls=0;
- globalThis.fetch=async()=>{calls++;return modelResponse({text:'The project budget is exactly 900 million.',citations:[],statements:[{text:'The project budget is exactly 900 million.',sourceIds:[]}]});};
- try{await assert.rejects(()=>workflows.answerQuestion(ctx,'What is the project budget?'),/lacks verified source support/);assert.equal(calls,2);assert.equal(workflows.workspaceData(ctx).chat.length,0);}finally{globalThis.fetch=originalFetch;}
+test('uncited factual drafts go through verification and unsupported paragraphs cannot publish', async () => {
+	const ctx = memory.context('uncited-draft', 'ana');
+	let calls = 0;
+	globalThis.fetch = async () => {
+		calls++;
+		return modelResponse({
+			action: 'question',
+			text: 'The project budget is exactly 900 million.',
+			citations: [],
+			statements: [{ text: 'The project budget is exactly 900 million.', sourceIds: [] }]
+		});
+	};
+	try {
+		await assert.rejects(
+			() => workflows.answerQuestion(ctx, 'What is the project budget?'),
+			/incomplete structured output/
+		);
+		assert.equal(calls, 4);
+		assert.equal(workflows.workspaceData(ctx).chat.length, 0);
+	} finally {
+		globalThis.fetch = originalFetch;
+	}
+});
+
+test('failed email inference preserves ingestion and retry delivers one result', async () => {
+	const ctx = memory.context('mail-recovery', 'ana');
+	const mail = workflows.sendMail(ctx, {
+		id: 'recoverable',
+		subject: 'A schedule update',
+		to: ['lena.fischer@acme-org.example'],
+		cc: [workflows.AGENT_EMAIL],
+		body: 'The next review is Thursday.'
+	});
+	globalThis.fetch = async () => new Response('unavailable', { status: 503 });
+	try {
+		await assert.rejects(() => workflows.processMail(ctx, mail.id), /503/);
+		assert.ok(memory.getSource(ctx, 'runtime/recoverable'));
+		assert.equal(
+			workflows.workspaceData(ctx).mails.find((m) => m.id === mail.id)?.status,
+			'Processing failed'
+		);
+		globalThis.fetch = async () => modelResponse({ participate: false, text: '', citations: [] });
+		await workflows.processMail(ctx, mail.id);
+		await workflows.processMail(ctx, mail.id);
+		assert.equal(workflows.workspaceData(ctx).mails.filter((m) => m.id === mail.id).length, 1);
+		assert.equal(
+			workflows.workspaceData(ctx).mails.find((m) => m.id === mail.id)?.status,
+			'Memory updated'
+		);
+	} finally {
+		globalThis.fetch = originalFetch;
+	}
+});
+
+test('erasure during email inference prevents stale reply and calendar publication', async () => {
+	const ctx = memory.context('mail-erasure', 'ana');
+	const mail = workflows.sendMail(ctx, {
+		id: 'inflight-mail',
+		subject: 'A technical review',
+		to: [workflows.AGENT_EMAIL],
+		cc: ['lena.fischer@acme-org.example'],
+		body: 'Kwame Boateng will join the review.'
+	});
+	let started!: () => void, release!: () => void;
+	const waiting = new Promise<void>((resolve) => (started = resolve));
+	const resume = new Promise<void>((resolve) => (release = resolve));
+	globalThis.fetch = async () => {
+		started();
+		await resume;
+		return modelResponse({
+			participate: true,
+			text: 'Kwame Boateng will attend.',
+			citations: [],
+			meeting: { title: 'Kwame review', date: '2026-07-09T10:00:00+03:00' }
+		});
+	};
+	try {
+		const pending = workflows.processMail(ctx, mail.id);
+		await waiting;
+		workflows.erase(ctx, 'kwame-boateng');
+		release();
+		await assert.rejects(pending, /changed|erased|unavailable/i);
+		const data = workflows.workspaceData(memory.context(ctx.workspaceId, 'ana'));
+		assert.ok(!data.mails.some((m) => m.id === mail.id || m.id === `reply-${mail.id}`));
+		assert.ok(!/kwame|boateng/i.test(JSON.stringify(data.meetings)));
+	} finally {
+		release();
+		globalThis.fetch = originalFetch;
+	}
+});
+
+test('natural personal goals use private request context without loading project evidence', async () => {
+	const ctx = memory.context('goal-intent', 'ana');
+	let calls = 0;
+	let input = '';
+	globalThis.fetch = async (_url, init) => {
+		calls++;
+		input = prompt(init);
+		return modelResponse({
+			action: 'remember',
+			text: 'Follow bakery integration and customer decisions.',
+			needsEvidence: false,
+			research: 'standard'
+		});
+	};
+	try {
+		const answer = await workflows.answerQuestion(ctx, 'Pidä bakeryn eteneminen mun briiffissä.');
+		assert.equal(calls, 1);
+		assert.ok(!input.includes('Permitted evidence records'));
+		assert.equal(answer.citations.length, 0);
+		assert.equal(workflows.preferences(ctx).length, 1);
+		assert.equal(workflows.preferences(memory.context(ctx.workspaceId, 'marco')).length, 0);
+	} finally {
+		globalThis.fetch = originalFetch;
+	}
+});
+
+test('meeting preparation receives the simulated event and permitted private goals', async () => {
+	const ctx = memory.context('meeting-preparation', 'ana');
+	workflows.savePreference(ctx, 'Prioritise bakery decisions.');
+	const source = memory.sources(ctx)[0];
+	let input = '';
+	globalThis.fetch = async (_url, init) => {
+		input += prompt(init);
+		return modelResponse({
+			text: 'Recommendation: review the cited project update.',
+			citations: [{ sourceId: source.id, quote: source.text }],
+			statements: [
+				{ text: 'Recommendation: review the cited project update.', sourceIds: [source.id] }
+			]
+		});
+	};
+	try {
+		const answer = await workflows.generateBrief(ctx, 'bakery');
+		assert.equal(answer.kind, 'meeting');
+		assert.ok(input.includes('2026-07-08T10:00:00+03:00'));
+		assert.ok(input.includes('simulated meeting'));
+		assert.ok(input.includes('Prioritise bakery decisions.'));
+		assert.equal(answer.citations[0].sourceId, source.id);
+	} finally {
+		globalThis.fetch = originalFetch;
+	}
 });

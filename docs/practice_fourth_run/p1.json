@@ -1,0 +1,131 @@
+{
+  "question": 1,
+  "durationMs": 38562,
+  "status": "generated",
+  "workspaceId": "practice_p1_1789862746331",
+  "generatedAt": "2026-09-20T00:05:46.379Z",
+  "answer": {
+    "id": "691d7177-2d7b-4ec0-bcb8-8633fe9188ed",
+    "text": "The September 2024 master-data assessment (Kwame Boateng's email of 30 September 2024) reported the remediation scope for the pilot cohort with these figures: 4,214 articles in the cohort, 1,317 missing case pack quantity, 3,105 missing or default supplier lead time, and shelf life populated on 48%. It stated case pack is the blocker, lead times can be worked around by deriving actuals from receipt history, and shelf life is out of scope for that phase. The attached file with the 1,317 articles is not available in the supplied evidence. [1]\n\nThe 24 September 2024 master-data workshop had already quantified case pack quantity as missing on thirty-one percent of active articles (Kwame Boateng, completing a sentence begun across turns with Priya Nair). The workshop also noted store master is clean and the product hierarchy was being discussed, but no completion status for remediation was reported at that point. [2] [3] [4] [5] [6]\n\nThe underlying assessment findings date from May 2024 (Tomas Lindholm's write-up of 2 May 2024): ECC 6.0 is fine with no concerns about the nightly batch for daily replenishment; DC-2 goes in as a named risk (out-of-support middleware, intermittent failure, silent mode); master data needs a remediation workstream owned on the client side, with case pack quantity the blocking gap; and remaining shelf life obtainability was an open question. Priya Nair agreed on all four and said she would own the remediation (6 May 2024). [7] [8]\n\nDistinguishing assessment from remediation completion: nothing in September 2024 reports any remediation as complete. The case pack remediation was completed later, on 19 December 2024, when Priya Nair reported \"Done. All 1,317\", with the two unresponsive suppliers resolved by measuring actual delivered quantities over six months and inferring the case pack, right for 190 of the 200 articles. Ana Duarte recorded it in the steering report on 20 December 2024 and noted shelf life remains at 48% and untouched, correct for that phase and becoming the critical path for phase two. At the 21 January 2025 UAT readiness review, Priya Nair confirmed case pack for the cohort is done (about thirteen hundred articles, finished 19 December) and that lead times she has not touched, still mostly sevens. [9] [10] [11] [12] [13]\n\nSo the September 2024 assessment reported scope figures and priorities, not completions: 4,214 cohort articles, 1,317 missing case pack, 3,105 missing or default lead times, 48% shelf life populated. The only item later reported complete was case pack (1,317 articles, 19 December 2024); lead times were never remediated (derived from receipt history instead per the assessment workaround) and shelf life remained at 48%, explicitly out of scope for that phase. [1] [9] [10] [12] [13]",
+    "citations": [
+      {
+        "sourceId": "emails/13_master-data-remediation#message-006",
+        "quote": "Priya,\n\nAs agreed in the workshop, the remediation scope for the pilot cohort:\n\n  Articles in cohort                 4,214\n  Missing case pack quantity         1,317\n  Missing or default supplier lead   3,105\n  Shelf life populated               48%\n\nCase pack is the blocker. Lead times we can work around by deriving actuals from receipt\nhistory. Shelf life is out of scope for this phase.\n\nFile attached with the 1,317.",
+        "title": "Master data remediation - progress",
+        "date": "2024-09-30T10:05:00",
+        "author": "Kwame Boateng",
+        "position": "Message 6"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0011",
+        "quote": "The number.",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Priya Nair",
+        "position": "3:17 · utterance 11"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0012",
+        "quote": "Case pack",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Kwame Boateng",
+        "position": "3:22 · utterance 12"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0013",
+        "quote": "Mm-hm.",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Priya Nair",
+        "position": "3:27 · utterance 13"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0014",
+        "quote": "quantity is missing on thirty-one percent of active articles.",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Kwame Boateng",
+        "position": "3:31 · utterance 14"
+      },
+      {
+        "sourceId": "transcripts/06_2024-09-24_master-data-workshop#utterance-0017",
+        "quote": "You did. Store master is clean. Product hierarchy is",
+        "title": "Master data workshop",
+        "date": "2024-09-24",
+        "author": "Kwame Boateng",
+        "position": "3:50 · utterance 17"
+      },
+      {
+        "sourceId": "emails/11_data-assessment-followup#message-005",
+        "quote": "Priya,\n\nAssessment written up as promised. Four conclusions.\n\nECC 6.0 is fine and we have no concerns about the nightly batch for daily replenishment.\n\nDC-2 goes in as a named risk. Out of support middleware, intermittent failure, silent\nmode. We will design monitoring around it from day one rather than assume it works.\n\nMaster data needs a remediation workstream owned on your side. Case pack quantity is the\nblocking gap.\n\nThe open question from our call: is remaining shelf life obtainable? You said the total\nsits on the article and the arrival date is in the warehouse system. Could you find out\nwhether that is exposed outside the WMS? It changes the phase two design and I would\nrather know in May 2024 than in 2025.\n\nMed vänliga hälsningar,",
+        "title": "Technical assessment - follow up",
+        "date": "2024-05-02T10:15:00",
+        "author": "Tomas Lindholm",
+        "position": "Message 5"
+      },
+      {
+        "sourceId": "emails/11_data-assessment-followup#message-004",
+        "quote": "Hi,\n\nAgreed on all four. I will own the remediation, whatever Lena says about it.\n\nOn the warehouse question, I have asked. The person who owns that system is on secondment\nuntil August. I will chase in August.",
+        "title": "Re: Technical assessment - follow up",
+        "date": "2024-05-06T16:40:00",
+        "author": "Priya Nair",
+        "position": "Message 4"
+      },
+      {
+        "sourceId": "emails/13_master-data-remediation#message-003",
+        "quote": "Done. All 1,317. The two unresponsive suppliers we resolved by measuring actual delivered\nquantities over six months and inferring the case pack, which is not ideal but it is\nright for 190 of the 200.\n\nI would like it recorded somewhere that this took my team three weeks of overtime in\nDecember.",
+        "title": "Re: Master data remediation - progress",
+        "date": "2024-12-19T18:15:00",
+        "author": "Priya Nair",
+        "position": "Message 3"
+      },
+      {
+        "sourceId": "emails/13_master-data-remediation#message-002",
+        "quote": "Recorded, and thank you. I have put it in the steering report.\n\nOne thing for the record so it is not a surprise in six months: shelf life remains at 48%\nand untouched. That is correct for this phase and it will become the critical path for\nphase two.\n\nBest regards,",
+        "title": "Re: Master data remediation - progress",
+        "date": "2024-12-20T08:40:00",
+        "author": "Ana Duarte",
+        "position": "Message 2"
+      },
+      {
+        "sourceId": "transcripts/08_2025-01-21_uat-readiness-review#utterance-0003",
+        "quote": "Case pack for the cohort is done. Thirteen hundred articles, finished on the nineteenth of December.",
+        "title": "UAT readiness review",
+        "date": "2025-01-21",
+        "author": "Priya Nair",
+        "position": "0:16 · utterance 3"
+      },
+      {
+        "sourceId": "transcripts/08_2025-01-21_uat-readiness-review#utterance-0011",
+        "quote": "I have not touched. They are",
+        "title": "UAT readiness review",
+        "date": "2025-01-21",
+        "author": "Priya Nair",
+        "position": "0:58 · utterance 11"
+      },
+      {
+        "sourceId": "transcripts/08_2025-01-21_uat-readiness-review#utterance-0012",
+        "quote": "still mostly sevens.",
+        "title": "UAT readiness review",
+        "date": "2025-01-21",
+        "author": "Priya Nair",
+        "position": "1:04 · utterance 12"
+      }
+    ],
+    "createdAt": "2026-09-20T00:06:24.937Z",
+    "kind": "evaluation",
+    "level": 3,
+    "question": "What did the master-data assessment report as complete in September 2024? Give every figure and the document each comes from. Distinguish assessment findings from remediation completion.",
+    "trace": [
+      "Read 2974 permitted source records at L3.",
+      "E13M006 (2024-09-30) contains all September assessment figures: 4,214 cohort, 1,317 case pack, 3,105 lead time, 48% shelf life; attachment not supplied",
+      "T06U0011-T06U0014: the 31% figure spans an interrupted sentence completed by Kwame Boateng",
+      "E11M005 (2024-05-02) is the earliest assessment write-up with four conclusions; E11M004 records agreement",
+      "E13M003 (2024-12-19) is the completion report: all 1,317, 190 of 200 via inferred case pack; E13M002 confirms recording and shelf life at 48% untouched",
+      "T08U0003, T08U0011-T08U0012 confirm case pack done 19 December and lead times untouched, still mostly sevens",
+      "Verified 13 quoted passages against runtime sources."
+    ]
+  },
+  "prompt": "What did the master-data assessment report as complete in September 2024? Give every figure and the document each comes from. Distinguish assessment findings from remediation completion."
+}

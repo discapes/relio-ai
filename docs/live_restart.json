@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "finished": "2026-09-20T00:10:32.130Z",
+  "checks": {
+    "initialWorkspace": "5548eada-5347-4699-8f69-f4fb6a3dbcc6",
+    "erasureEpoch": 1,
+    "preferencePersisted": true,
+    "removedSource404": true,
+    "survivingSource200": true,
+    "resetIsolated": true
+  }
+}

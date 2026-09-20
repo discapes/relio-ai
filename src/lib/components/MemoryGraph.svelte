@@ -2,7 +2,8 @@
 	import type { Claim, Source } from '$lib/types';
 	let { claims, sources }: { claims: Claim[]; sources: Source[] } = $props();
 	let selected = $state('');
-	const visible = $derived(claims.slice(0, 24));
+	let visibleCount = $state(24);
+	const visible = $derived(claims.slice(0, visibleCount));
 	const active = $derived(claims.find((c) => c.id === selected) ?? visible[0]);
 	const linked = $derived(
 		active ? sources.filter((s) => active.sourceIds.includes(s.id)).slice(0, 6) : []
@@ -34,6 +35,9 @@
 				onclick={() => (selected = claim.id)}
 				title={claim.text}>{i + 1}. {claim.kind.replaceAll('_', ' ')}</button
 			>{/each}
+		{#if claims.length > visibleCount}<button onclick={() => (visibleCount += 24)}
+				>Show more claims ({claims.length - visibleCount} remaining)</button
+			>{/if}
 	</div>
 	<svg
 		viewBox="0 0 720 470"

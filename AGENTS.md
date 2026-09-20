@@ -9,11 +9,15 @@ src/lib/server/memory.ts Parsed corpus import, scoped reads, identities and pers
 src/lib/server/model.ts Bounded inference, source handles and exact source binding.
 src/lib/server/workflows.ts Personal memory, answers, briefings, verified semantic claims, email delivery, durable work and meeting extraction.
 src/lib/server/session.ts Isolated workspace cookies and demo identity/access resolution.
+src/lib/server/submission.ts Allowlisted submission documents, restricted by level and erasure epoch.
 src/routes/ Workspace, memory, people, Outlook simulator, sources and scoped search/state endpoints.
 src/lib/components/ Evidence presentation, PNG/text cards and source-connected knowledge graph.
 tests/ Deterministic persistence, access, erasure, delivery and private-context tests; browser workflows and accessibility.
-scripts/ Baseline preparation, live capability/practice evaluation, startup and screenshot capture.
-docs/ Product architecture, demo scenarios, independent evidence references, implementation status and submission documents.
+scripts/ Baseline preparation, live capability/practice evaluation, atomic deployment, startup and screenshot capture.
+.releases/ Git-ignored immutable production builds; current symlink selects the deployed release.
+docs/ Product architecture, demo scenarios, reviewed answers, raw evaluations, model-quality diagnostics, validation and submission documents.
+scripts/quality-probe.mts Controlled original-question evaluations with preserved outputs.
+scripts/reverify-extraction.mts Document-balanced revalidation of captured model candidates.
 deploy/ Node systemd user service configuration.
 
 Run npm run check, npm test, npm run build and npm run test:e2e. Perform final desktop/mobile Chromium visual review after functional checks. Record actual live-model evidence and remaining limitations in docs/VALIDATION.md. Commit coherent phases and keep this file current.

@@ -1,0 +1,24 @@
+{
+  "question": 2,
+  "durationMs": 24361,
+  "status": "generated",
+  "workspaceId": "practice_p2_1789861027473",
+  "generatedAt": "2026-09-19T23:37:07.518Z",
+  "answer": {
+    "id": "72497a29-21b2-4f99-a555-1ebb75445d01",
+    "text": "The only recorded agreement on service levels for ordering is in the ordering logic design workshop of 12 November 2024. Tomas Lindholm raised service level as a parameter to set, Lena Fischer said the current practice was \"Ninety-nine on everything, in theory, which is why we carry so much stock\" , and Tomas proposed \"ninety-eight and ninety-five\" as a reduction, noting inventory should fall . Lena then said \"Fine. Agreed.\" . So the agreed service levels were 98 and 95, replacing an implicit 99, for the pilot cohort's ordering parameters.\n\nWhat is missing from the record: the transcript does not state which articles or categories get 98 versus 95, nor the exact wording of what was agreed beyond Lena's one-word acceptance. The discussion is compressed - Tomas's proposal is split across fragments and the mapping of the two numbers to specific article groups is never spoken. The workshop output document that Ana said would capture parameters is not in the archive, so the precise allocation cannot be verified. Note also this agreement covers the ambient/dry-goods pilot phase; no service level for fresh ordering was ever recorded - the fresh build was blocked on shelf life data and later ran on an approximation, with no service level discussion in any surviving record.\n\nRecommendation: treat 98/95 as agreed in principle for the pilot cohort but confirm the category-to-level mapping against the workshop output before quoting it, since the transcript alone does not fix it.",
+    "citations": [],
+    "createdAt": "2026-09-19T23:37:31.877Z",
+    "kind": "evaluation",
+    "level": 3,
+    "question": "What service levels were agreed for ordering, and in which meeting? Explain any missing detail in the recorded agreement.",
+    "trace": [
+      "Read 2974 permitted source records at L3.",
+      "Searched transcripts and emails for 'service level' discussion; only the 2024-11-12 ordering logic design workshop contains it",
+      "Confirmed Lena Fischer's acceptance immediately after Tomas Lindholm's 98/95 proposal in the same transcript",
+      "Checked whether the workshop output document or any later record specifies which categories get which level; none exists in the archive",
+      "Checked fresh-phase records for any service level agreement; none found - fresh ordering ran on a shelf-life approximation with no service level recorded",
+      "Verified 0 quoted passages against runtime sources."
+    ]
+  }
+}

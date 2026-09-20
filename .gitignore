@@ -25,3 +25,5 @@ vite.config.ts.timestamp-*
 /data/
 /test-results/
 /playwright-report/
+
+.releases/

@@ -1,0 +1,436 @@
+{
+  "question": 8,
+  "prompt": "Find one thing in the archive that was agreed and then never done. Show the trail from the agreement to the present, and say who would have needed to notice.",
+  "durationMs": 327109,
+  "status": "generated",
+  "workspaceId": "practice_p8_1789862925636",
+  "generatedAt": "2026-09-20T00:08:45.695Z",
+  "answer": {
+    "id": "9d2f9e3f-cc5d-4d9d-9666-040b27590356",
+    "text": "The clearest example of something agreed and then never done is the goods receipt date / remaining shelf life data field in Acme's warehouse system. On 2024-04-18, Tomas Lindholm asked whether remaining shelf life is stored anywhere as opposed to total; Priya Nair answered no, Acme stores total on the article, and she does not know about the warehouse system; Tomas asked her to find out because it changes the design, and Priya said \"I can ask\" and \"Noted\" [transcripts/02_2024-04-18_technical-due-diligence#utterance-0115, transcripts/02_2024-04-18_technical-due-diligence#utterance-0118, transcripts/02_2024-04-18_technical-due-diligence#utterance-0126, transcripts/02_2024-04-18_technical-due-diligence#utterance-0131, transcripts/02_2024-04-18_technical-due-diligence#utterance-0132, transcripts/02_2024-04-18_technical-due-diligence#utterance-0133, transcripts/02_2024-04-18_technical-due-diligence#utterance-0134, transcripts/02_2024-04-18_technical-due-diligence#utterance-0135]. On 2024-05-02 Tomas's written assessment made it one of four conclusions: \"Could you find out whether that is exposed outside the WMS? It changes the phase two design and I would rather know in May 2024 than in 2025\" [emails/11_data-assessment-followup#message-005]. On 2024-05-06 Priya accepted: \"Agreed on all four. I will own the remediation... On the warehouse question, I have asked. The person who owns that system is on secondment until August. I will chase in August\" [emails/11_data-assessment-followup#message-004]. [1] [2] [3] [4] [5] [6] [7] [8] [9] [10]\n\nThe trail to the present: on 2024-08-20 Tomas followed up asking whether goods receipt date is available outside the WMS [emails/11_data-assessment-followup#message-003], and on 2024-08-22 Priya reported the system owner is back and says it is captured but not exposed; getting it out means either an extract that nobody owns or writing it back into SAP, which is a change request she will not raise outside the current phase [emails/11_data-assessment-followup#message-002]. Tomas logged it as a phase two dependency and closed the thread [emails/11_data-assessment-followup#message-001] — so the promise to chase was fulfilled, but the field was never obtained. The 2024-07-09 internal handover noted it as the first item on the phase-two dependency list, with the real owner being whoever runs phase two, which is not appointed [transcripts/04_2024-07-09_INTERNAL-handover-presales-to-delivery#utterance-0027, transcripts/04_2024-07-09_INTERNAL-handover-presales-to-delivery#utterance-0030, transcripts/04_2024-07-09_INTERNAL-handover-presales-to-delivery#utterance-0036, transcripts/04_2024-07-09_INTERNAL-handover-presales-to-delivery#utterance-0038, transcripts/04_2024-07-09_INTERNAL-handover-presales-to-delivery#utterance-0040]. On 2024-11-12 Priya said she asked the warehouse team, got no answer, and will ask again [transcripts/07_2024-11-12_ordering-logic-design#utterance-0032, transcripts/07_2024-11-12_ordering-logic-design#utterance-0033]. On 2025-01-21 Priya said she has stopped chasing it because nothing in phase one depends on it; Ana said it becomes phase two's problem [transcripts/08_2025-01-21_uat-readiness-review#utterance-0024, transcripts/08_2025-01-21_uat-readiness-review#utterance-0027]. On 2025-06-24 steering, Priya reported the field still does not exist in the form Nadia wants; it is \"an email thread rather than a decision\"; Ana said she will pick it up; Lena noted it has never once been resolved since the first meeting with Marco [transcripts/14_2025-06-24_steering-committee#utterance-0057, transcripts/14_2025-06-24_steering-committee#utterance-0059, transcripts/14_2025-06-24_steering-committee#utterance-0061, transcripts/14_2025-06-24_steering-committee#utterance-0062, transcripts/14_2025-06-24_steering-committee#utterance-0063, transcripts/14_2025-06-24_steering-committee#utterance-0066]. [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28]\n\nFrom 2025-07-08 to 2025-09-11 the field mapping thread ran for two months: Nadia asked for the actual field for remaining shelf life at point of order [emails/01_shelf-life-field-mapping#message-012]; Priya confirmed MHDHB is total shelf life, not remaining, populated for part of the range, and that remaining life would have to be derived from goods receipt date in the warehouse system [emails/01_shelf-life-field-mapping#message-011]; the warehouse team was unavailable [emails/01_shelf-life-field-mapping#message-009], then reported the same \"captured but not exposed\" answer [emails/01_shelf-life-field-mapping#message-007]. Priya's verdict: \"It is not impossible, it is unowned, which in practice is the same thing this year\" [emails/01_shelf-life-field-mapping#message-003]. On 2025-09-04 Nadia proposed the approximation (total shelf life from MHDHB minus average days-in-warehouse per article group) and said she would build it if nobody objected [emails/01_shelf-life-field-mapping#message-005]; she later confirmed \"We proceeded. Nobody objected\" [emails/01_shelf-life-field-mapping#message-001]. At the 2025-12-11 cutover, fresh went live on the approximation, possibly two days optimistic on the slowest tenth, and Nadia noted the warehouse data was first asked for in April 2024 [transcripts/18_2025-12-11_fresh-cutover-call#utterance-0009, transcripts/18_2025-12-11_fresh-cutover-call#utterance-0011, transcripts/18_2025-12-11_fresh-cutover-call#utterance-0018, transcripts/18_2025-12-11_fresh-cutover-call#utterance-0019, transcripts/18_2025-12-11_fresh-cutover-call#utterance-0024, transcripts/18_2025-12-11_fresh-cutover-call#utterance-0026]. [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41]\n\nThe consequences persisted: at the 2026-06-16 QBR, Sofia still does about a day and a half of manual work per week on slow-moving fresh lines because her data problem was never solved; the field lives in the warehouse system, first asked about April 2024 [transcripts/22_2026-06-16_q2-business-review#utterance-0068, transcripts/22_2026-06-16_q2-business-review#utterance-0070, transcripts/22_2026-06-16_q2-business-review#utterance-0071, transcripts/22_2026-06-16_q2-business-review#utterance-0079, transcripts/22_2026-06-16_q2-business-review#utterance-0084, transcripts/22_2026-06-16_q2-business-review#utterance-0086]. On 2026-06-26 Marco Rossi stated the twelve-month ROI expectation was missed mainly because fresh depended on this data field, identified as a dependency in April 2024 and never obtained [emails/20_chain-wide-proposal#message-004]. On 2026-06-29 Lena identified the warehouse system owner as Nils Ackermann under logistics IT, noting Priya has asked him twice, in 2024 and again in 2025; Robert Kahn said he will ask him [emails/20_chain-wide-proposal#message-002, emails/20_chain-wide-proposal#message-001]. No record shows that ask being completed. [42] [43] [44] [45] [46] [47] [48] [49] [50]\n\nWho would have needed to notice: Priya Nair owned the question from April 2024 and chased it repeatedly (May, August, November 2024, 2025) — she noticed and escalated, but could not obtain the field [emails/11_data-assessment-followup#message-004, emails/11_data-assessment-followup#message-002, transcripts/07_2024-11-12_ordering-logic-design#utterance-0032, emails/01_shelf-life-field-mapping#message-011]. Ana Duarte, as project manager, accepted it as phase two's problem in January 2025 and said she would pick it up in June 2025 — she is the person who would have needed to convert the open thread into a decision and did not [transcripts/08_2025-01-21_uat-readiness-review#utterance-0027, transcripts/14_2025-06-24_steering-committee#utterance-0063]. Lena Fischer flagged at the June 2025 steering that it had never been resolved since the first meeting — she noticed but it stayed open [transcripts/14_2025-06-24_steering-committee#utterance-0064, transcripts/14_2025-06-24_steering-committee#utterance-0066]. Ultimately the owner of the warehouse system (Nils Ackermann, per Lena) was the person whose action was needed and was never secured; Robert Kahn's June 2026 offer to ask him directly is the latest attempt, with no recorded outcome [emails/20_chain-wide-proposal#message-002, emails/20_chain-wide-proposal#message-001]. [10] [12] [19] [30] [22] [27] [51] [28] [49] [50]\n\nIn short: the field was agreed as an action in April–May 2024, chased by Priya as promised, but never obtained because the extract was unowned and no change request was raised; Ana, as the person who took it over for phase two, and the warehouse system owner, were the ones who would have needed to notice and act, and the archive shows no point where either did. [10] [12] [13] [22] [27] [49] [50]",
+    "citations": [
+      {
+        "sourceId": "transcripts/02_2024-04-18_technical-due-diligence#utterance-0115",
+        "quote": "Is remaining shelf life stored",
+        "title": "Technical due diligence",
+        "date": "2024-04-18",
+        "author": "Tomas Lindholm",
+        "position": "10:05 · utterance 115"
+      },
+      {
+        "sourceId": "transcripts/02_2024-04-18_technical-due-diligence#utterance-0118",
+        "quote": "anywhere? As opposed to total.",
+        "title": "Technical due diligence",
+        "date": "2024-04-18",
+        "author": "Tomas Lindholm",
+        "position": "10:14 · utterance 118"
+      },
+      {
+        "sourceId": "transcripts/02_2024-04-18_technical-due-diligence#utterance-0126",
+        "quote": "Then no. We store total on the article. What is I mean...",
+        "title": "Technical due diligence",
+        "date": "2024-04-18",
+        "author": "Priya Nair",
+        "position": "10:52 · utterance 126"
+      },
+      {
+        "sourceId": "transcripts/02_2024-04-18_technical-due-diligence#utterance-0131",
+        "quote": "I do not know. but...",
+        "title": "Technical due diligence",
+        "date": "2024-04-18",
+        "author": "Priya Nair",
+        "position": "11:15 · utterance 131"
+      },
+      {
+        "sourceId": "transcripts/02_2024-04-18_technical-due-diligence#utterance-0132",
+        "quote": "Can you find out?",
+        "title": "Technical due diligence",
+        "date": "2024-04-18",
+        "author": "Tomas Lindholm",
+        "position": "11:18 · utterance 132"
+      },
+      {
+        "sourceId": "transcripts/02_2024-04-18_technical-due-diligence#utterance-0133",
+        "quote": "I can ask.",
+        "title": "Technical due diligence",
+        "date": "2024-04-18",
+        "author": "Priya Nair",
+        "position": "11:22 · utterance 133"
+      },
+      {
+        "sourceId": "transcripts/02_2024-04-18_technical-due-diligence#utterance-0134",
+        "quote": "Please, right because it changes the design.",
+        "title": "Technical due diligence",
+        "date": "2024-04-18",
+        "author": "Tomas Lindholm",
+        "position": "11:28 · utterance 134"
+      },
+      {
+        "sourceId": "transcripts/02_2024-04-18_technical-due-diligence#utterance-0135",
+        "quote": "Noted.",
+        "title": "Technical due diligence",
+        "date": "2024-04-18",
+        "author": "Priya Nair",
+        "position": "11:33 · utterance 135"
+      },
+      {
+        "sourceId": "emails/11_data-assessment-followup#message-005",
+        "quote": "Priya,\n\nAssessment written up as promised. Four conclusions.\n\nECC 6.0 is fine and we have no concerns about the nightly batch for daily replenishment.\n\nDC-2 goes in as a named risk. Out of support middleware, intermittent failure, silent\nmode. We will design monitoring around it from day one rather than assume it works.\n\nMaster data needs a remediation workstream owned on your side. Case pack quantity is the\nblocking gap.\n\nThe open question from our call: is remaining shelf life obtainable? You said the total\nsits on the article and the arrival date is in the warehouse system. Could you find out\nwhether that is exposed outside the WMS? It changes the phase two design and I would\nrather know in May 2024 than in 2025.\n\nMed vänliga hälsningar,",
+        "title": "Technical assessment - follow up",
+        "date": "2024-05-02T10:15:00",
+        "author": "Tomas Lindholm",
+        "position": "Message 5"
+      },
+      {
+        "sourceId": "emails/11_data-assessment-followup#message-004",
+        "quote": "Hi,\n\nAgreed on all four. I will own the remediation, whatever Lena says about it.\n\nOn the warehouse question, I have asked. The person who owns that system is on secondment\nuntil August. I will chase in August.",
+        "title": "Re: Technical assessment - follow up",
+        "date": "2024-05-06T16:40:00",
+        "author": "Priya Nair",
+        "position": "Message 4"
+      },
+      {
+        "sourceId": "emails/11_data-assessment-followup#message-003",
+        "quote": "Priya,\n\nIt is August. Any word on whether goods receipt date is available outside the WMS?\n\nMed vänliga hälsningar,",
+        "title": "Re: Technical assessment - follow up",
+        "date": "2024-08-20T09:05:00",
+        "author": "Tomas Lindholm",
+        "position": "Message 3"
+      },
+      {
+        "sourceId": "emails/11_data-assessment-followup#message-002",
+        "quote": "He is back and says it is captured but not exposed. Getting it out means either an extract\nthat nobody owns, or writing it back into SAP, which is a change request.\n\nI will not be raising a change request for something that is not in the current phase.",
+        "title": "Re: Technical assessment - follow up",
+        "date": "2024-08-22T17:20:00",
+        "author": "Priya Nair",
+        "position": "Message 2"
+      },
+      {
+        "sourceId": "emails/11_data-assessment-followup#message-001",
+        "quote": "Understood. Logging it as a phase two dependency and closing this thread.\n\nMed vänliga hälsningar,",
+        "title": "Technical assessment - follow up",
+        "date": "2024-08-22T17:55:00",
+        "author": "Tomas Lindholm",
+        "position": "Message 1"
+      },
+      {
+        "sourceId": "transcripts/04_2024-07-09_INTERNAL-handover-presales-to-delivery#utterance-0027",
+        "quote": "Remaining shelf-life does not exist. Not as a field, sort of not not anywhere we can reach. It is in the warehouse system as an arrival date and it is not exposed.",
+        "title": "Internal handover, pre-sales to delivery",
+        "date": "2024-07-09",
+        "author": "Them",
+        "position": "Turn 27 · speaker attribution unresolved"
+      },
+      {
+        "sourceId": "transcripts/04_2024-07-09_INTERNAL-handover-presales-to-delivery#utterance-0030",
+        "quote": "It is in the assessment as an open question. It not in the assessment as a phase two blocker, which is what it actually is.",
+        "title": "Internal handover, pre-sales to delivery",
+        "date": "2024-07-09",
+        "author": "Them",
+        "position": "Turn 30 · speaker attribution unresolved"
+      },
+      {
+        "sourceId": "transcripts/04_2024-07-09_INTERNAL-handover-presales-to-delivery#utterance-0036",
+        "quote": "Right. Kwame, note that as the first item on the phase two dependency list, and it needs a date and an owner.",
+        "title": "Internal handover, pre-sales to delivery",
+        "date": "2024-07-09",
+        "author": "Me",
+        "position": "Turn 36 · speaker attribution unresolved"
+      },
+      {
+        "sourceId": "transcripts/04_2024-07-09_INTERNAL-handover-presales-to-delivery#utterance-0038",
+        "quote": "right Priya nominally. But she has told Tomas twice twice that she will not raise a change request for something outside the current phase, and she is right, so the real owner is whoever runs phase two.",
+        "title": "Internal handover, pre-sales to delivery",
+        "date": "2024-07-09",
+        "author": "Me",
+        "position": "Turn 38 · speaker attribution unresolved"
+      },
+      {
+        "sourceId": "transcripts/04_2024-07-09_INTERNAL-handover-presales-to-delivery#utterance-0040",
+        "quote": "like Which is not appointed.",
+        "title": "Internal handover, pre-sales to delivery",
+        "date": "2024-07-09",
+        "author": "Them",
+        "position": "Turn 40 · speaker attribution unresolved"
+      },
+      {
+        "sourceId": "transcripts/07_2024-11-12_ordering-logic-design#utterance-0032",
+        "quote": "I asked the warehouse team. I did not get an answer. I...",
+        "title": "Ordering logic design workshop",
+        "date": "2024-11-12",
+        "author": "Priya Nair",
+        "position": "2:53 · utterance 32"
+      },
+      {
+        "sourceId": "transcripts/07_2024-11-12_ordering-logic-design#utterance-0033",
+        "quote": "will ask again.",
+        "title": "Ordering logic design workshop",
+        "date": "2024-11-12",
+        "author": "Priya Nair",
+        "position": "3:01 · utterance 33"
+      },
+      {
+        "sourceId": "transcripts/08_2025-01-21_uat-readiness-review#utterance-0024",
+        "quote": "and I have stopped chasing it because nothing,",
+        "title": "UAT readiness review",
+        "date": "2025-01-21",
+        "author": "Priya Nair",
+        "position": "2:05 · utterance 24"
+      },
+      {
+        "sourceId": "transcripts/08_2025-01-21_uat-readiness-review#utterance-0027",
+        "quote": "Understood. It becomes phase two's problem.",
+        "title": "UAT readiness review",
+        "date": "2025-01-21",
+        "author": "Ana Duarte",
+        "position": "2:22 · utterance 27"
+      },
+      {
+        "sourceId": "transcripts/14_2025-06-24_steering-committee#utterance-0057",
+        "quote": "No, and this is the shell life",
+        "title": "Steering committee",
+        "date": "2025-06-24",
+        "author": "Priya Nair",
+        "position": "5:02 · utterance 57"
+      },
+      {
+        "sourceId": "transcripts/14_2025-06-24_steering-committee#utterance-0059",
+        "quote": "me for a field that does not exist in the form she wants it.",
+        "title": "Steering committee",
+        "date": "2025-06-24",
+        "author": "Priya Nair",
+        "position": "5:13 · utterance 59"
+      },
+      {
+        "sourceId": "transcripts/14_2025-06-24_steering-committee#utterance-0061",
+        "quote": "email thread rather...",
+        "title": "Steering committee",
+        "date": "2025-06-24",
+        "author": "Priya Nair",
+        "position": "5:27 · utterance 61"
+      },
+      {
+        "sourceId": "transcripts/14_2025-06-24_steering-committee#utterance-0062",
+        "quote": "than a decision.",
+        "title": "Steering committee",
+        "date": "2025-06-24",
+        "author": "Priya Nair",
+        "position": "5:30 · utterance 62"
+      },
+      {
+        "sourceId": "transcripts/14_2025-06-24_steering-committee#utterance-0063",
+        "quote": "I will pick that up.",
+        "title": "Steering committee",
+        "date": "2025-06-24",
+        "author": "Ana Duarte",
+        "position": "5:33 · utterance 63"
+      },
+      {
+        "sourceId": "transcripts/14_2025-06-24_steering-committee#utterance-0066",
+        "quote": "meeting meeting with Marco and I have never once heard it resolved.",
+        "title": "Steering committee",
+        "date": "2025-06-24",
+        "author": "Lena Fischer",
+        "position": "5:51 · utterance 66"
+      },
+      {
+        "sourceId": "emails/01_shelf-life-field-mapping#message-012",
+        "quote": "Hi Priya,\n\nFor the fresh ordering configuration we need the remaining shelf life at the point of\norder, per article per site. Sofia has described where it comes from operationally but\nI need the actual field.\n\nIs it MARA-MHDHB, or is there something Acme-specific?\n\nThanks",
+        "title": "Shelf life field mapping - fresh export",
+        "date": "2025-07-08T09:14:00",
+        "author": "Nadia Haddad",
+        "position": "Message 12"
+      },
+      {
+        "sourceId": "emails/01_shelf-life-field-mapping#message-011",
+        "quote": "Hi,\n\nMHDHB is the total shelf life, not remaining. It is populated for part of the range.\n\nRemaining life at order time is not stored anywhere I know of. It would have to be\nderived from goods receipt date, and that is in the warehouse system rather than in SAP.\n\nI will ask the warehouse team.",
+        "title": "Re: Shelf life field mapping - fresh export",
+        "date": "2025-07-09T11:02:00",
+        "author": "Priya Nair",
+        "position": "Message 11"
+      },
+      {
+        "sourceId": "emails/01_shelf-life-field-mapping#message-009",
+        "quote": "Not yet. Half of them are on holiday. I will chase.",
+        "title": "Re: Shelf life field mapping - fresh export",
+        "date": "2025-07-23T08:51:00",
+        "author": "Priya Nair",
+        "position": "Message 9"
+      },
+      {
+        "sourceId": "emails/01_shelf-life-field-mapping#message-007",
+        "quote": "Hi,\n\nWarehouse team says goods receipt date is captured but not exposed outside the WMS. To\nget it to you we would need either an extract from the WMS, which nobody owns, or to\nwrite it back into SAP, which is a change request.\n\nAdding @Kwame Boateng who I think looked at the WMS extract for something else.",
+        "title": "Re: Shelf life field mapping - fresh export",
+        "date": "2025-08-20T16:33:00",
+        "author": "Priya Nair",
+        "position": "Message 7"
+      },
+      {
+        "sourceId": "emails/01_shelf-life-field-mapping#message-003",
+        "quote": "It is not impossible, it is unowned, which in practice is the same thing this year.\n\nProceed with your approximation.",
+        "title": "Re: Shelf life field mapping - fresh export",
+        "date": "2025-09-11T17:22:00",
+        "author": "Priya Nair",
+        "position": "Message 3"
+      },
+      {
+        "sourceId": "emails/01_shelf-life-field-mapping#message-005",
+        "quote": "Hi all,\n\nAdding Nadia (Öberg, not Haddad) who did something similar on another account.\n\nSince remaining shelf life is not available, I propose we proceed with an approximation:\ntotal shelf life from MHDHB minus average days-in-warehouse per article group, which we\ncan derive from stock turn.\n\nIt is not exact. For fast movers it will be close. For slow movers it will be wrong in\nthe direction of assuming the stock is fresher than it is.\n\nIf nobody objects I will build it that way so we are not blocked.",
+        "title": "Re: Shelf life field mapping - fresh export",
+        "date": "2025-09-04T14:20:00",
+        "author": "Nadia Haddad",
+        "position": "Message 5"
+      },
+      {
+        "sourceId": "emails/01_shelf-life-field-mapping#message-001",
+        "quote": "We proceeded. Nobody objected.",
+        "title": "Shelf life field mapping - fresh export",
+        "date": "2025-10-30T12:02:00",
+        "author": "Nadia Haddad",
+        "position": "Message 1"
+      },
+      {
+        "sourceId": "transcripts/18_2025-12-11_fresh-cutover-call#utterance-0009",
+        "quote": "Yes, with the caveat everyone in this room knows. It runs on the approximation. Total shell life minus average days",
+        "title": "Fresh cutover call",
+        "date": "2025-12-11",
+        "author": "Nadia Haddad",
+        "position": "0:57 · utterance 9"
+      },
+      {
+        "sourceId": "transcripts/18_2025-12-11_fresh-cutover-call#utterance-0011",
+        "quote": "in warehouse by article group. It",
+        "title": "Fresh cutover call",
+        "date": "2025-12-11",
+        "author": "Nadia Haddad",
+        "position": "1:09 · utterance 11"
+      },
+      {
+        "sourceId": "transcripts/18_2025-12-11_fresh-cutover-call#utterance-0018",
+        "quote": "On the slowest tenth,",
+        "title": "Fresh cutover call",
+        "date": "2025-12-11",
+        "author": "Nadia Haddad",
+        "position": "1:40 · utterance 18"
+      },
+      {
+        "sourceId": "transcripts/18_2025-12-11_fresh-cutover-call#utterance-0019",
+        "quote": "possibly two days optimistic.",
+        "title": "Fresh cutover call",
+        "date": "2025-12-11",
+        "author": "Nadia Haddad",
+        "position": "1:44 · utterance 19"
+      },
+      {
+        "sourceId": "transcripts/18_2025-12-11_fresh-cutover-call#utterance-0024",
+        "quote": "Not without the warehouse data, which was first asked for in",
+        "title": "Fresh cutover call",
+        "date": "2025-12-11",
+        "author": "Nadia Haddad",
+        "position": "2:07 · utterance 24"
+      },
+      {
+        "sourceId": "transcripts/18_2025-12-11_fresh-cutover-call#utterance-0026",
+        "quote": "April 2024.",
+        "title": "Fresh cutover call",
+        "date": "2025-12-11",
+        "author": "Nadia Haddad",
+        "position": "2:16 · utterance 26"
+      },
+      {
+        "sourceId": "transcripts/22_2026-06-16_q2-business-review#utterance-0068",
+        "quote": "My planners trust the system now. In March last year two stores went back to spreadsheets,",
+        "title": "Q2 quarterly business review",
+        "date": "2026-06-16",
+        "author": "Lena Fischer",
+        "position": "5:35 · utterance 68"
+      },
+      {
+        "sourceId": "transcripts/22_2026-06-16_q2-business-review#utterance-0070",
+        "quote": "is on a spreadsheet now except Sofia, so and Sofia is on one because we,",
+        "title": "Q2 quarterly business review",
+        "date": "2026-06-16",
+        "author": "Lena Fischer",
+        "position": "5:52 · utterance 70"
+      },
+      {
+        "sourceId": "transcripts/22_2026-06-16_q2-business-review#utterance-0071",
+        "quote": "never solved her data problem, not because she does not and the...",
+        "title": "Q2 quarterly business review",
+        "date": "2026-06-16",
+        "author": "Lena Fischer",
+        "position": "5:59 · utterance 71"
+      },
+      {
+        "sourceId": "transcripts/22_2026-06-16_q2-business-review#utterance-0079",
+        "quote": "moving fresh lines, about a day and a half.",
+        "title": "Q2 quarterly business review",
+        "date": "2026-06-16",
+        "author": "Sofia Almeida",
+        "position": "6:34 · utterance 79"
+      },
+      {
+        "sourceId": "transcripts/22_2026-06-16_q2-business-review#utterance-0084",
+        "quote": "The reason is a data field that lives in the warehouse",
+        "title": "Q2 quarterly business review",
+        "date": "2026-06-16",
+        "author": "Sofia Almeida",
+        "position": "7:02 · utterance 84"
+      },
+      {
+        "sourceId": "transcripts/22_2026-06-16_q2-business-review#utterance-0086",
+        "quote": "system, which we first asked about April 2024.",
+        "title": "Q2 quarterly business review",
+        "date": "2026-06-16",
+        "author": "Sofia Almeida",
+        "position": "7:14 · utterance 86"
+      },
+      {
+        "sourceId": "emails/20_chain-wide-proposal#message-004",
+        "quote": "Robert,\n\nIndicative numbers attached. Summary here so you have it in the mail.\n\nChain wide for the three fresh categories, 340 stores: additional annual licence of\napproximately 420 thousand, plus implementation of approximately 260 thousand one off.\n\nOn your second point, and this is the honest version.\n\nThe twelve month expectation was missed for one reason above all others. The value case\ndepended on fresh, and fresh depended on a data field that we identified as a dependency\nin April 2024 and never obtained. Everything else largely went to plan. We built a\nworkaround in September 2025 which works acceptably on fast moving articles and poorly on\nslow moving ones, and your category manager has been compensating for the difference by\nhand ever since.\n\nFor the next number to be different, that field has to be available. It is not a RELEX\ndeliverable and I cannot commit to it on your behalf, which is why I am putting it in\nwriting rather than in a slide.\n\nIf it is not resolved, chain wide will reduce waste by less than the pilot suggests,\nbecause the slow moving articles are a larger share of the tail across 340 stores than\nacross 25.",
+        "title": "Re: Chain wide rollout - indicative numbers",
+        "date": "2026-06-26T17:15:00",
+        "author": "Marco Rossi",
+        "position": "Message 4"
+      },
+      {
+        "sourceId": "emails/20_chain-wide-proposal#message-002",
+        "quote": "It sits under logistics IT. The owner is Nils Ackermann. Priya has asked him twice, in\n2024 and again in 2025.\n\nMit freundlichen Grüßen",
+        "title": "Re: Chain wide rollout - indicative numbers",
+        "date": "2026-06-29T10:15:00",
+        "author": "Lena Fischer",
+        "position": "Message 2"
+      },
+      {
+        "sourceId": "emails/20_chain-wide-proposal#message-001",
+        "quote": "Then I will ask him.",
+        "title": "Chain wide rollout - indicative numbers",
+        "date": "2026-06-29T10:22:00",
+        "author": "Robert Kahn",
+        "position": "Message 1"
+      },
+      {
+        "sourceId": "transcripts/14_2025-06-24_steering-committee#utterance-0064",
+        "quote": "Please do, so because we have been I mean...",
+        "title": "Steering committee",
+        "date": "2025-06-24",
+        "author": "Lena Fischer",
+        "position": "5:38 · utterance 64"
+      }
+    ],
+    "createdAt": "2026-09-20T00:14:12.801Z",
+    "kind": "chat",
+    "level": 3,
+    "question": "Find one thing in the archive that was agreed and then never done. Show the trail from the agreement to the present, and say who would have needed to notice.",
+    "trace": [
+      "Read 2974 permitted source records at L3.",
+      "Prepared 211 evidence observations across 4 source partitions.",
+      "Verified the earliest agreement: April 2024 due diligence ask (T02U0115, T02U0118, T02U0126, T02U0131–T02U0135) and May 2024 assessment conclusion (E11M005).",
+      "Verified Priya's acceptance and promise to chase in August (E11M004), and confirmed the August chase happened and what it returned (E11M003, E11M002, E11M001).",
+      "Verified the internal handover noting the dependency list item and unappointed owner (T04U0027, T04U0030, T04U0036, T04U0038, T04U0040).",
+      "Verified the November 2024 re-ask and January 2025 handover to phase two (T07U0032–T07U0033, T08U0024, T08U0027).",
+      "Verified the June 2025 steering discussion and Ana's commitment to pick it up (T14U0057–T14U0066).",
+      "Verified 51 quoted passages against runtime sources."
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "workspaceId": "practice_1789860552630",
+  "runAt": "2026-09-19T23:33:29.223Z",
+  "results": [
+    {
+      "question": 1,
+      "durationMs": 126385,
+      "citations": 9,
+      "status": "generated"
+    },
+    {
+      "question": 2,
+      "durationMs": 130142,
+      "citations": 3,
+      "status": "generated"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+import { execFileSync } from 'node:child_process';
+import { cp, mkdir, rename, symlink } from 'node:fs/promises';
+import { resolve } from 'node:path';
+execFileSync('npm', ['run', 'build'], { stdio: 'inherit' });
+const root = resolve('.releases');
+await mkdir(root, { recursive: true });
+const revision = new Date().toISOString().replaceAll(/[:.]/g, '-');
+await cp('build', resolve(root, revision), { recursive: true });
+const staged = resolve(root, `next-${revision}`);
+await symlink(revision, staged);
+await rename(staged, resolve(root, 'current'));
+execFileSync('systemctl', ['--user', 'restart', 'receipt-workspace'], { stdio: 'inherit' });
+console.log(`Published ${revision}`);
