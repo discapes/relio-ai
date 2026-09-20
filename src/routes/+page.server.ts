@@ -13,13 +13,21 @@ export const load: PageServerLoad = ({ cookies, setHeaders, url }) => {
 		? 'Session security was updated. This browser now has a fresh isolated demo workspace; previous workspace data remains saved.'
 		: undefined;
 	if (sessionNotice) cookies.delete('relex_session_notice', { path: '/' });
-	if (url.searchParams.get('view') === 'people') workflows.ensurePeopleGuidance(ctx);
+	const guidancePeople = url.searchParams.get('view') === 'people' ? memory.people(ctx) : undefined;
+	const guidanceSnapshot = guidancePeople
+		? {
+				fingerprint: workflows.guidanceFingerprint(ctx),
+				personIds: new Set(guidancePeople.map((person) => person.id))
+			}
+		: undefined;
+	if (guidancePeople)
+		workflows.ensurePeopleGuidance(ctx, guidancePeople, guidanceSnapshot!.fingerprint);
 	const personGuidance =
 		url.searchParams.get('view') === 'people' && url.searchParams.get('person')
-			? workflows.preparedGuidance(ctx, url.searchParams.get('person')!)
+			? workflows.preparedGuidance(ctx, url.searchParams.get('person')!, guidanceSnapshot)
 			: null;
 	return {
-		...workflows.workspaceData(ctx),
+		...workflows.workspaceData(ctx, guidancePeople),
 		personGuidance,
 		sessionNotice,
 		reviewerGuide: reviewerGuide(ctx, url.searchParams.get('view') || '')
