@@ -22,10 +22,12 @@ Run preparation from the project directory:
 node --import tsx scripts/prepare-people.mts
 ```
 
-The script appends outcomes to `data/people-preparation.jsonl` and skips existing valid results. Rerunning resumes missing or failed profiles without repeating completed calls. `PREPARE_WORKSPACE`, `PREPARE_OWNER` and `PREPARE_LEVEL` restrict a run; `PREPARE_CONCURRENCY=1` reduces the default two workers. The configured Verda endpoint and original evidence verification remain in use.
+The script appends outcomes to `data/people-preparation.jsonl` and skips existing valid results. Rerunning resumes missing or failed profiles without repeating completed calls. `PREPARE_WORKSPACE`, `PREPARE_OWNER` and `PREPARE_LEVEL` restrict a run; `PREPARE_CONCURRENCY=1` reduces the default two workers. The configured Verda endpoint and original evidence verification remain in use. Guidance requests place the stable permitted evidence before the changing task and private context to support provider prefix reuse. Source content remains explicitly untrusted. Newly generated guides request 3–5 short paragraphs and at most 250 words; completed guides are preserved.
 
 The live browser service has its own bounded background queue. After a process interruption, revisiting People queues any missing profiles whose interrupted job needs recovery. Completed guidance stays available even if inference is temporarily unavailable.
 
 ## Validation
 
 Four focused deterministic checks cover context reuse and isolation, fresh-demo reset preservation, erasure exclusion, queue deduplication and interrupted preparation recovery. The full deterministic suite passes 72 tests. The public People browser workflow passes. Desktop and mobile captures show stored guidance with the generation button absent; mobile has no horizontal overflow. The 110 baseline guides and 20 guides for an existing personalized browser context are being prepared resumably. Final batch counts are recorded when generation completes.
+
+All 13 answers completed before the first deployment retained their exact IDs after the service restarted. An additional 13 focused workflow/preparation tests passed after the guidance-only prompt ordering change.
