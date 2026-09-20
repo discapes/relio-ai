@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import { invalidateAll, goto, afterNavigate } from '$app/navigation';
+	import { invalidateAll, goto, afterNavigate, beforeNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 	import { onMount } from 'svelte';
 	import type { SubmitFunction } from '@sveltejs/kit';
@@ -73,8 +73,15 @@
 	let previewPromote = $state(false);
 	let showMemory = $state(false);
 	let showDemo = $state(false);
+	let navigating = false;
+	let pollController: AbortController | undefined;
+	beforeNavigate(() => {
+		navigating = true;
+		pollController?.abort();
+	});
 	afterNavigate(() => {
 		showDemo = false;
+		navigating = false;
 	});
 	let to = $state('');
 	let cc = $state('');
@@ -112,49 +119,78 @@
 	let searchBusy = $state(false);
 	let searchTotal = $state(0);
 	let sourceOffset = $state(0);
-	async function loadMoreSources() {
+	let searchRequest: AbortController | undefined;
+	let searchGeneration = 0;
+	const sourceScope = $derived(
+		JSON.stringify({
+			workspaceId: data.context.workspaceId,
+			epoch: data.context.epoch,
+			personaId: data.context.persona.id,
+			level: data.context.level
+		})
+	);
+	function cancelSourceRequest() {
+		searchGeneration++;
+		searchRequest?.abort();
+		searchBusy = false;
+	}
+	async function fetchSources(query: string, offset: number) {
+		cancelSourceRequest();
+		const generation = searchGeneration;
+		const scope = sourceScope;
+		const controller = new AbortController();
+		searchRequest = controller;
 		searchBusy = true;
 		try {
-			const next = await fetch(
-				`/search?q=${encodeURIComponent(search)}&offset=${sourceOffset}`
-			).then((r) => r.json());
-			searchedSources = [...(sourceOffset ? searchedSources || [] : []), ...next.sources];
-			sourceOffset += next.sources.length;
+			const response = await fetch(`/search?q=${encodeURIComponent(query)}&offset=${offset}`, {
+				signal: controller.signal,
+				cache: 'no-store'
+			});
+			if (!response.ok) throw new Error('Source search failed.');
+			const next = await response.json();
+			const current = await fetch('/state', { signal: controller.signal, cache: 'no-store' }).then(
+				(r) => r.json()
+			);
+			if (
+				generation !== searchGeneration ||
+				scope !== sourceScope ||
+				query !== search ||
+				controller.signal.aborted
+			)
+				return;
+			if (Object.entries(JSON.parse(scope)).some(([key, value]) => current[key] !== value)) {
+				await invalidateAll();
+				return;
+			}
+			searchedSources = [...(offset ? searchedSources || [] : []), ...next.sources];
+			sourceOffset = offset + next.sources.length;
 			searchTotal = next.total;
+		} catch {
+			/* A changed query or access scope discards its pending response. */
 		} finally {
-			searchBusy = false;
+			if (generation === searchGeneration) searchBusy = false;
 		}
+	}
+	function loadMoreSources() {
+		return fetchSources(search, sourceOffset);
 	}
 	$effect(() => {
 		const query = search;
-		const scope = data.context.epoch;
-		void scope;
-		if (!query.trim()) {
-			searchedSources = null;
-			sourceOffset = 0;
-			searchTotal = 0;
-			return;
-		}
-		const controller = new AbortController();
+		void sourceScope;
+		cancelSourceRequest();
+		searchedSources = null;
+		sourceOffset = 0;
+		searchTotal = 0;
+		if (!query.trim()) return;
 		const timer = setTimeout(() => {
-			searchBusy = true;
-			void fetch(`/search?q=${encodeURIComponent(query)}`, { signal: controller.signal })
-				.then((r) => r.json())
-				.then((result) => {
-					searchedSources = result.sources;
-					sourceOffset = result.sources.length;
-					searchTotal = result.total;
-				})
-				.catch(() => {})
-				.finally(() => {
-					searchBusy = false;
-				});
+			void fetchSources(query, 0);
 		}, 200);
 		return () => {
 			clearTimeout(timer);
-			controller.abort();
+			cancelSourceRequest();
 		};
 	});
+	afterNavigate(cancelSourceRequest);
 	const visibleSources = $derived(searchedSources || data.sources);
 	const visibleClaims = $derived(
 		data.claims.filter((c) =>
@@ -227,9 +263,13 @@
 	}
 	onMount(() => {
 		const timer = setInterval(() => {
-			void fetch('/state')
+			if (navigating || pollController) return;
+			const controller = new AbortController();
+			pollController = controller;
+			void fetch('/state', { signal: controller.signal })
 				.then((r) => r.json())
 				.then(async (state) => {
+					if (controller.signal.aborted || navigating) return;
 					if (
 						state.workspaceId !== data.context.workspaceId ||
 						state.epoch !== data.context.epoch ||
@@ -250,13 +290,19 @@
 						previewPromote = false;
 						composing = false;
 						await invalidateAll();
-					} else if (running.length && !busy) {
+					} else if (running.length && !busy && !data.reviewerGuide) {
 						await invalidateAll();
 					}
 				})
-				.catch(() => {});
+				.catch(() => {})
+				.finally(() => {
+					if (pollController === controller) pollController = undefined;
+				});
 		}, 4500);
-		return () => clearInterval(timer);
+		return () => {
+			clearInterval(timer);
+			pollController?.abort();
+		};
 	});
 </script>
 
@@ -396,6 +442,7 @@
 				</form>
 			</section>{/if}
 		<main id="main">
+			{#if data.sessionNotice}<p class="notice" role="status">{data.sessionNotice}</p>{/if}
 			{#if (busy && busy !== 'Reading project evidence') || running.length}<div
 					class="working"
 					role="status"

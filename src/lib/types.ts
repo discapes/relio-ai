@@ -98,6 +98,7 @@ export interface Meeting {
 	purpose: string;
 }
 export interface WorkspaceData {
+	sessionNotice?: string;
 	reviewerGuide?: ReviewerDocument | null;
 	context: Context;
 	personas: Persona[];

@@ -8,7 +8,12 @@ src/lib/types.ts Shared request, source, claim, artifact and interface contracts
 src/lib/server/memory.ts Parsed corpus import, scoped reads, identities and persistent person erasure.
 src/lib/server/model.ts Bounded Verda inference, provider delta streaming, source handles and exact source binding.
 src/lib/server/workflows.ts Personal memory, answers, briefings, verified semantic claims, email delivery, durable work and meeting extraction.
-src/lib/server/session.ts Isolated workspace cookies and demo identity/access resolution.
+src/lib/server/session.ts Signed isolated workspace cookies, persistent server-only signing key and demo identity/access resolution.
+src/lib/server/erasure-context.ts Transcript speaker-exchange and personal-reference dependency removal.
+src/lib/server/meeting-selection.ts Latest permitted transcript dates with explicit audience scope.
+src/lib/server/transcript-passages.ts Exact-record completion of unfinished adjacent same-speaker transcript fragments.
+docs/ADVERSARIAL_REVIEW.md Independent whole-product findings and bounded retests; internal only.
+docs/ADVERSARIAL_TRIAGE.md Finding decisions, fixes, regressions and remaining boundaries; internal only.
 src/lib/server/reviewer.ts Reviewer-facing design, usage, architecture and scoped practice references.
 src/lib/components/GuideArticle.svelte Same-shell prose, responsive evidence tables and source links for reviewer pages.
 docs/DESIGN.md One-page reviewer design covering provenance, stale facts, deletion and inference location.

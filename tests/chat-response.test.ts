@@ -150,7 +150,7 @@ test('detached other-owner background briefing cannot stream private content int
 test('session change while request JSON is pending prevents late stream registration', async () => {
 	const { POST } = await import('../src/routes/chat/stream/+server');
 	const { cancelChatStreams } = await import('../src/lib/server/chat-activity');
-	const ctx = memory.context('stream-registration-race', 'ana', 1);
+	const ctx = memory.context('70000000-0000-4000-8000-000000000001', 'ana', 1);
 	let release!: (input: unknown) => void;
 	const body = new Promise((resolve) => (release = resolve));
 	const cookieValues: Record<string, string> = {
@@ -158,9 +158,17 @@ test('session change while request JSON is pending prevents late stream registra
 		relex_persona: ctx.persona.id,
 		relex_level: '1'
 	};
+	const cookies = {
+		get: (name: string) => cookieValues[name],
+		set: (name: string, value: string) => {
+			cookieValues[name] = value;
+		}
+	};
+	const { setWorkspaceCookie } = await import('../src/lib/server/session');
+	setWorkspaceCookie(cookies as never, ctx.workspaceId);
 	const pending = POST({
 		request: { headers: new Headers({ origin: 'http://localhost' }), json: () => body },
-		cookies: { get: (name: string) => cookieValues[name] },
+		cookies,
 		url: new URL('http://localhost/chat/stream')
 	} as never);
 	cancelChatStreams(ctx.workspaceId);
@@ -169,4 +177,39 @@ test('session change while request JSON is pending prevents late stream registra
 		context: { workspaceId: ctx.workspaceId, personaId: ctx.persona.id, level: 1, epoch: ctx.epoch }
 	});
 	await assert.rejects(Promise.resolve(pending), (error: any) => error.status === 409);
+});
+
+test('provisional chunks cannot display erased names before final validation', async () => {
+	let ctx = memory.context('erased-provisional', 'ana');
+	memory.addSource(ctx, source);
+	workflows.erase(ctx, 'kwame-boateng');
+	ctx = memory.context(ctx.workspaceId, 'ana');
+	globalThis.fetch = async (_url, init) => {
+		const body = JSON.parse(String(init?.body));
+		if (body.messages[0].content.startsWith('Classify'))
+			return json({ action: 'question', needsEvidence: true });
+		if (body.stream) {
+			const text = JSON.stringify({
+				text: 'The completed answer says Kwame Boateng handled this pilot.',
+				citations: [{ sourceId: source.id, quote: source.text }]
+			});
+			const chunks = [...text]
+				.map((content) => 'data: ' + JSON.stringify({ choices: [{ delta: { content } }] }) + '\n\n')
+				.join('');
+			return new Response(chunks + 'data: [DONE]\n\n', {
+				headers: { 'content-type': 'text/event-stream' }
+			});
+		}
+		return json(completion);
+	};
+	try {
+		const events: ChatEvent[] = [];
+		const output = chatResponse(ctx, 'Who handled this pilot?', new AbortController().signal);
+		for await (const line of streamLines(output.body!)) events.push(JSON.parse(line));
+		assert.ok(!JSON.stringify(events).includes('Kwame'));
+		assert.ok(events.some((event) => event.type === 'error'));
+		assert.equal(workflows.workspaceData(ctx).chat.length, 0);
+	} finally {
+		globalThis.fetch = original;
+	}
 });
