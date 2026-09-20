@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { mkdtempSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-process.env.DATA_DIR = mkdtempSync(join(tmpdir(), 'receipt-stream-tests-'));
+process.env.DATA_DIR = mkdtempSync(join(tmpdir(), 'relio-stream-tests-'));
 process.env.DISABLE_BACKGROUND = '1';
 import * as memory from '../src/lib/server/memory';
 import * as workflows from '../src/lib/server/workflows';

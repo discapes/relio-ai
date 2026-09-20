@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { resolve } from 'node:path';
 import type { Source } from '../src/lib/types';
 
-const directory = mkdtempSync(resolve(tmpdir(), 'receipt-privacy-'));
+const directory = mkdtempSync(resolve(tmpdir(), 'relio-privacy-'));
 process.env.DATA_DIR = directory;
 process.env.DISABLE_BACKGROUND = '1';
 const memory = await import('../src/lib/server/memory');

@@ -2,7 +2,7 @@ import { chromium } from '@playwright/test';
 import { execFileSync } from 'node:child_process';
 import { writeFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
-const base = 'https://receipt-workspace.hai1.iffe.eu';
+const base = 'https://relio-ai.eu';
 const browser = await chromium.launch();
 const context = await browser.newContext();
 const page = await context.newPage();

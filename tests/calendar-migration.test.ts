@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { mkdtempSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-process.env.DATA_DIR = mkdtempSync(join(tmpdir(), 'receipt-calendar-migration-'));
+process.env.DATA_DIR = mkdtempSync(join(tmpdir(), 'relio-calendar-migration-'));
 process.env.DISABLE_BACKGROUND = '1';
 const { database } = await import('../src/lib/server/database');
 const db = database();
