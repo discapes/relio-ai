@@ -303,10 +303,12 @@ function preparationRunning(ctx: Context, fingerprint: string) {
 		}
 	});
 }
-export function ensurePeopleGuidance(ctx: Context) {
-	const fingerprint = guidanceFingerprint(ctx);
+export function ensurePeopleGuidance(
+	ctx: Context,
+	people = memory.people(ctx),
+	fingerprint = guidanceFingerprint(ctx)
+) {
 	if (preparationRunning(ctx, fingerprint)) return;
-	const people = memory.people(ctx);
 	const snapshot = { fingerprint, personIds: new Set(people.map((p) => p.id)) };
 	for (const person of people) {
 		if (preparedGuidance(ctx, person.id, snapshot)) continue;
@@ -1352,12 +1354,11 @@ export function reset(ctx: Context) {
 	cancelChatStreams(ctx.workspaceId);
 	return memory.resetWorkspace(ctx.workspaceId);
 }
-export function workspaceData(ctx: Context): WorkspaceData {
+export function workspaceData(ctx: Context, personList = memory.people(ctx)): WorkspaceData {
 	db();
 	const sourceList = memory.sources(ctx),
 		claimList = memory.claims(ctx);
 	const brief = artifacts(ctx, 'brief').find((answer) => answer.level === ctx.level) || null;
-	const personList = memory.people(ctx);
 	const linkedIds = new Set([
 		...claimList.flatMap((c) => c.sourceIds),
 		...personList.flatMap((p) => p.sourceIds.slice(0, 3))
