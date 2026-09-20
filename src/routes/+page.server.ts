@@ -1,4 +1,3 @@
-import { affiliation } from '$lib/people';
 import { reviewerGuide } from '$lib/server/reviewer';
 import { fail } from '@sveltejs/kit';
 import { sessionContext, setWorkspaceCookie } from '$lib/server/session';
@@ -14,8 +13,14 @@ export const load: PageServerLoad = ({ cookies, setHeaders, url }) => {
 		? 'Session security was updated. This browser now has a fresh isolated demo workspace; previous workspace data remains saved.'
 		: undefined;
 	if (sessionNotice) cookies.delete('relex_session_notice', { path: '/' });
+	if (url.searchParams.get('view') === 'people') workflows.ensurePeopleGuidance(ctx);
+	const personGuidance =
+		url.searchParams.get('view') === 'people' && url.searchParams.get('person')
+			? workflows.preparedGuidance(ctx, url.searchParams.get('person')!)
+			: null;
 	return {
 		...workflows.workspaceData(ctx),
+		personGuidance,
 		sessionNotice,
 		reviewerGuide: reviewerGuide(ctx, url.searchParams.get('view') || '')
 	};
@@ -78,19 +83,8 @@ export const actions: Actions = {
 	})),
 	retryMail: action((ctx, d) => ({ jobId: workflows.retryMail(ctx, value(d, 'id')) })),
 	retryJob: action((ctx, d) => ({
-		jobId: workflows.queueJob(ctx, value(d, 'kind') === 'extract' ? 'extract' : 'brief')
+		jobId: workflows.retryPreparation(ctx, value(d, 'id'))
 	})),
-	guidance: action(async (ctx, d) => {
-		const person = memory.people(ctx).find((p) => p.id === value(d, 'personId'));
-		if (!person) throw new Error('Person unavailable.');
-		return {
-			answer: await workflows.answerQuestion(
-				ctx,
-				`Prepare ${affiliation(person).kind === 'relex' ? 'a collaboration brief for a RELEX colleague, focused on responsibilities, decisions and open handoffs' : affiliation(person).kind === 'customer' ? 'customer conversation guidance, focused on expressed priorities and responses to proposals' : 'conversation context, focused on recorded contributions and open questions'} for ${person.name}. Describe their role, expressed priorities, proposals and responses observed in the archive. Separate observed facts from recommendations about the next conversation. Do not infer personality or unsupported psychological traits.`,
-				'guidance'
-			)
-		};
-	}),
 	share: action(async (ctx, d) => ({
 		answer: await workflows.answerQuestion(
 			memory.context(ctx.workspaceId, ctx.persona.id, 1),

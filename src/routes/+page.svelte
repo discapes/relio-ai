@@ -290,7 +290,11 @@
 						previewPromote = false;
 						composing = false;
 						await invalidateAll();
-					} else if (running.length && !busy && !data.reviewerGuide) {
+					} else if (
+						(running.length || (view === 'people' && selectedPerson && !data.personGuidance)) &&
+						!busy &&
+						!data.reviewerGuide
+					) {
 						await invalidateAll();
 					}
 				})
@@ -462,7 +466,7 @@
 						use:enhance={action}
 						data-label="Retrying background preparation"
 					>
-						<input type="hidden" name="kind" value={job.kind} /><button
+						<input type="hidden" name="id" value={job.id} /><button
 							class="text-button"
 							disabled={!!busy}>Retry preparation</button
 						>
@@ -899,22 +903,7 @@
 								<small>{person.email}</small>{#if person.aliases.length}<p class="alias-list">
 										Recorded names: {person.aliases.join(', ')}
 									</p>{/if}
-								<form
-									method="POST"
-									action="?/guidance"
-									use:enhance={action}
-									data-label="Preparing evidence-backed stakeholder guidance"
-								>
-									<input type="hidden" name="personId" value={person.id} /><button
-										class="button"
-										disabled={!!busy}
-										><MessageSquare size={16} />{affiliation(person).kind === 'customer'
-											? 'Prepare customer conversation'
-											: affiliation(person).kind === 'relex'
-												? 'Prepare collaboration brief'
-												: 'Prepare conversation context'}</button
-									>
-								</form>
+
 								<p class="section-description">
 									{affiliation(person).kind === 'customer'
 										? 'Review expressed priorities, responses to proposals and suggested next steps.'
@@ -922,7 +911,12 @@
 											? 'Review responsibilities, shared decisions and open handoffs with this colleague.'
 											: 'Review their recorded role, contributions and open questions.'}
 								</p>
-								{#if form?.answer}<Evidence people={data.people} answer={form.answer} />{/if}
+								{#if data.personGuidance}<Evidence
+										people={data.people}
+										answer={data.personGuidance}
+									/>{:else}<p class="subtle" role="status">
+										Preparing guidance for this project view…
+									</p>{/if}
 								<h3 class="section-subheading">Source connections</h3>
 								{#each person.sourceIds.slice(0, 8) as id}{@const s = data.sources.find(
 										(s) => s.id === id

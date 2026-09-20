@@ -64,3 +64,5 @@ Deploy updates with `node scripts/deploy.mjs`. It builds an immutable release, a
 Interrupted running jobs become visible failed jobs on restart; queued jobs resume when the application is opened. Retry a failed brief/extraction from the workspace or a failed email from its thread. A model outage leaves previous valid dated briefs available. Inference-generated prose can still need correction; source receipts and the full archive remain available for inspection.
 
 See `docs/SOLUTION.md`, `docs/DESIGN.md`, `docs/PITCH.md` and `docs/demo_scenarios.md` for architecture, submission design and the demonstration. `docs/STREAMING.md` describes chat progress, provisional output and cancellation.
+
+People guidance is prepared and retained in SQLite. See [prepared People operations](docs/PREPARED_PEOPLE.md) for resumable batch generation and scope/persistence behavior.

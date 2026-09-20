@@ -5,6 +5,7 @@ import { resolve } from 'node:path';
 export function openDatabase(path: string) {
 	const db = new DatabaseSync(path);
 	db.exec(`PRAGMA journal_mode = WAL;
+ PRAGMA busy_timeout = 5000;
  CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY, value TEXT NOT NULL);`);
 	return db;
 }
