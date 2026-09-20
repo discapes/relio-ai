@@ -11,10 +11,14 @@ src/lib/server/workflows.ts Personal memory, answers, briefings, verified semant
 src/lib/server/session.ts Isolated workspace cookies and demo identity/access resolution.
 src/lib/server/submission.ts Allowlisted submission documents, restricted by level and erasure epoch.
 src/routes/ Workspace, memory, people, Outlook simulator, sources and scoped search/state endpoints.
+src/lib/people.ts Scoped recorded-name matching and email-evidenced organization labels.
+src/lib/components/NameText.svelte Escaped name links to selected People profiles across sources, mail, claims and evidence.
+src/lib/presentation/citations.ts Inline reference tokens and document/passage grouping with original receipt numbers.
 src/lib/components/ Evidence presentation, Figtree PNG/text cards, status badges and source-connected knowledge graph.
 src/app.css RELEX semantic palette, shared controls, responsive layout and locally bundled Figtree typography.
 src/lib/assets/relex_logo.svg Official RELEX RGB wordmark; orig: relex-primary-logo-RGB-vector.svg.
 src/lib/assets/favicon.png Official RELEX symbol; orig: cropped-relex-mark-square-192x192.png.
+docs/CITATION_UX.md Grouped citation behavior, exact-reference preservation and bounded presentation changes.
 docs/BRANDING.md Color roles, font/logo attribution and isolated review server on port 41851.
 docs/screenshots/ Reviewed public RELEX-branded desktop/mobile, graph/focus, claims, source, email, people, erasure and submission views.
 docs/FIGTREE_LICENSE.txt Figtree OFL-1.1 license; orig: @fontsource-variable/figtree/LICENSE.

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import { invalidateAll } from '$app/navigation';
+	import { invalidateAll, goto } from '$app/navigation';
 	import { page } from '$app/state';
 	import { onMount } from 'svelte';
 	import type { SubmitFunction } from '@sveltejs/kit';
@@ -25,6 +25,8 @@
 		Users
 	} from '@lucide/svelte';
 	import Evidence from '$lib/components/Evidence.svelte';
+	import NameText from '$lib/components/NameText.svelte';
+	import { affiliation } from '$lib/people';
 	import Badge from '$lib/components/Badge.svelte';
 	import relexLogo from '$lib/assets/relex_logo.svg';
 	import MemoryGraph from '$lib/components/MemoryGraph.svelte';
@@ -48,7 +50,8 @@
 	let search = $state('');
 	let memoryTab = $state('sources');
 	let personSearch = $state('');
-	let selectedPerson = $state('');
+	const selectedPerson = $derived(page.url.searchParams.get('person') || '');
+	let organization = $state('all');
 	let confirmErase = $state(false);
 	let question = $state('');
 	let preferenceText = $state('');
@@ -143,8 +146,12 @@
 		)
 	);
 	const people = $derived(
-		data.people.filter((p) =>
-			`${p.name} ${p.role}`.toLowerCase().includes(personSearch.toLowerCase())
+		data.people.filter(
+			(p) =>
+				`${p.name} ${p.role} ${affiliation(p).label} ${p.aliases.join(' ')}`
+					.toLowerCase()
+					.includes(personSearch.toLowerCase()) &&
+				(organization === 'all' || affiliation(p).kind === organization)
 		)
 	);
 	const person = $derived(data.people.find((p) => p.id === selectedPerson));
@@ -216,7 +223,6 @@
 						form = undefined;
 						searchedSources = null;
 						search = '';
-						selectedPerson = '';
 						mailId = '';
 						body = '';
 						to = '';
@@ -441,9 +447,11 @@
 								>
 							</div>
 							<div class="card-body">
-								{#if data.brief}<Evidence answer={data.brief} compact />{:else}<div
-										class="brief-empty"
-									>
+								{#if data.brief}<Evidence
+										people={data.people}
+										answer={data.brief}
+										compact
+									/>{:else}<div class="brief-empty">
 										<Sparkles size={30} />
 										<h3>Your briefing is being prepared</h3>
 										<p>
@@ -506,13 +514,13 @@
 									</div>
 								</form>
 								{#if form?.answer}<div class="answer-result">
-										<Evidence answer={form.answer} />
+										<Evidence people={data.people} answer={form.answer} />
 									</div>{/if}{#each [...data.chat]
 									.reverse()
 									.slice(0, 8) as answer}{#if answer.id !== form?.answer?.id}<div
 											class="answer-result"
 										>
-											<Evidence {answer} />
+											<Evidence people={data.people} {answer} />
 										</div>{/if}{/each}
 							</div>
 						</section>
@@ -596,9 +604,11 @@
 												timeZone: 'Europe/Helsinki'
 											}).format(new Date(meeting.date))}</span
 										>
-										<h3>{meeting.title}</h3>
-										<p>{meeting.purpose}</p>
-										<small>{meeting.attendees.join(' · ')}</small>
+										<h3><NameText text={meeting.title} people={data.people} /></h3>
+										<p><NameText text={meeting.purpose} people={data.people} /></p>
+										<small
+											><NameText text={meeting.attendees.join(' · ')} people={data.people} /></small
+										>
 										<form
 											method="POST"
 											action="?/refreshBrief"
@@ -689,7 +699,7 @@
 							<h2>Evidence connections</h2>
 							<span class="subtle">Select a numbered claim to inspect its sources</span>
 						</div>
-						<MemoryGraph claims={visibleClaims} sources={data.sources} />
+						<MemoryGraph people={data.people} claims={visibleClaims} sources={data.sources} />
 					</section>{:else if memoryTab === 'claims'}<div class="claims-grid">
 						{#each visibleClaims.slice(0, 60) as claim}<article class="card claim-card">
 								<div class="pills">
@@ -697,7 +707,7 @@
 										status={claim.status}>{claim.status}</Badge
 									><span class="subtle">L{claim.level}</span>
 								</div>
-								<p>{claim.text}</p>
+								<p><NameText text={claim.text} people={data.people} /></p>
 								<div class="claim-sources">
 									{#each claim.sourceIds.slice(0, 4) as id, i}<a
 											href={`/source/${encodeURIComponent(id)}`}
@@ -714,23 +724,33 @@
 								class="subtle">Search the complete archive or load more passages</span
 							>
 						</div>
-						{#each visibleSources as source}<a
-								class="source-row"
-								href={`/source/${encodeURIComponent(source.id)}`}
-								><span class="source-icon"
+						{#each visibleSources as source}<article class="source-row">
+								<span class="source-icon"
 									>{#if source.type === 'email'}<Mail size={19} />{:else}<FileText
 											size={19}
 										/>{/if}</span
 								>
 								<div>
 									<div class="source-title">
-										<strong>{source.title}</strong><span class="badge">L{source.level}</span>
+										<a href={`/source/${encodeURIComponent(source.id)}`}
+											><strong>{source.title}</strong></a
+										><span class="badge">L{source.level}</span>
 									</div>
-									<small>{source.author} · {source.date} · {source.position}</small>
-									<p>{source.text.slice(0, 190)}{source.text.length > 190 ? '…' : ''}</p>
+									<small
+										><NameText text={source.author} people={data.people} /> · {source.date} · {source.position}</small
+									>
+									<p>
+										<NameText text={source.text.slice(0, 190)} people={data.people} />{source.text
+											.length > 190
+											? '…'
+											: ''}
+									</p>
 								</div>
-								<ArrowUpRight size={18} /></a
-							>{/each}{#if !visibleSources.length}<div class="empty">
+								<a
+									aria-label={`Open source: ${source.title}`}
+									href={`/source/${encodeURIComponent(source.id)}`}><ArrowUpRight size={18} /></a
+								>
+							</article>{/each}{#if !visibleSources.length}<div class="empty">
 								No passages match this search.
 							</div>{/if}
 					</section>{/if}
@@ -765,7 +785,7 @@
 							placeholder="What was approved in the January UAT sign-off?"
 						/><button class="button" disabled={!!busy}>Create preview</button>
 					</form>
-					{#if form?.answer}<Evidence answer={form.answer} />{/if}
+					{#if form?.answer}<Evidence people={data.people} answer={form.answer} />{/if}
 				</section>
 			{:else if view === 'people'}
 				<div class="page-heading">
@@ -786,11 +806,27 @@
 								/></label
 							>
 						</div>
+						<div class="people-filter">
+							<label for="organization">Organization</label><select
+								id="organization"
+								bind:value={organization}
+								><option value="all">All organizations</option><option value="customer"
+									>Acme · Customer</option
+								><option value="relex">RELEX</option><option value="partner"
+									>Meridian · Partner</option
+								><option value="other">Other organizations</option><option value="unknown"
+									>Unconfirmed / multiple</option
+								></select
+							>
+						</div>
 						<div class="people-list">
 							{#each people as p}<button
 									class:selected={person?.id === p.id}
 									onclick={() => {
-										selectedPerson = p.id;
+										void goto(`/?view=people&person=${encodeURIComponent(p.id)}`, {
+											keepFocus: true,
+											noScroll: true
+										});
 										confirmErase = false;
 									}}
 									><span class="avatar"
@@ -800,16 +836,21 @@
 											.slice(0, 2)
 											.join('')}</span
 									><span
-										><strong>{p.name}</strong><small>{p.role || 'Project participant'}</small></span
+										><strong>{p.name}</strong><span class="organization-label"
+											>{affiliation(p).label}</span
+										><small>{p.role || 'Project participant'}</small></span
 									><ChevronRight size={16} /></button
 								>{/each}
 						</div>
 					</section>
 					<section class="card person-detail">
 						{#if person}<div class="card-body">
-								<span class="eyebrow">PROJECT PARTICIPANT</span>
+								<span class="badge" title={affiliation(person).basis}
+									>{affiliation(person).label}</span
+								>
 								<h2>{person.name}</h2>
 								<p>{person.role}</p>
+								<p class="subtle">{affiliation(person).basis}</p>
 								<small>{person.email}</small>{#if person.aliases.length}<p class="alias-list">
 										Recorded names: {person.aliases.join(', ')}
 									</p>{/if}
@@ -821,13 +862,22 @@
 								>
 									<input type="hidden" name="personId" value={person.id} /><button
 										class="button"
-										disabled={!!busy}><Sparkles size={16} />Prepare conversation guidance</button
+										disabled={!!busy}
+										><Sparkles size={16} />{affiliation(person).kind === 'customer'
+											? 'Prepare customer conversation'
+											: affiliation(person).kind === 'relex'
+												? 'Prepare collaboration brief'
+												: 'Prepare conversation context'}</button
 									>
 								</form>
 								<p class="section-description">
-									Guidance separates observed reactions from suggested next steps.
+									{affiliation(person).kind === 'customer'
+										? 'Review expressed priorities, responses to proposals and suggested next steps.'
+										: affiliation(person).kind === 'relex'
+											? 'Review responsibilities, shared decisions and open handoffs with this colleague.'
+											: 'Review their recorded role, contributions and open questions.'}
 								</p>
-								{#if form?.answer}<Evidence answer={form.answer} />{/if}
+								{#if form?.answer}<Evidence people={data.people} answer={form.answer} />{/if}
 								<h3 class="section-subheading">Source connections</h3>
 								{#each person.sourceIds.slice(0, 8) as id}{@const s = data.sources.find(
 										(s) => s.id === id
@@ -1000,7 +1050,7 @@
 										>
 									</div>
 								</form>{:else if selectedMail}<div class="thread-heading">
-									<h2>{selectedMail.subject}</h2>
+									<h2><NameText text={selectedMail.subject} people={data.people} /></h2>
 									<button class="button secondary" onclick={() => compose(selectedMail)}
 										>Reply</button
 									>
@@ -1010,17 +1060,28 @@
 											<span class="avatar"
 												>{mail.from.includes('memory') ? 'R' : mail.from[0]?.toUpperCase()}</span
 											>
-											<div><strong>{mail.from}</strong><small>{mail.date}</small></div>
+											<div>
+												<strong><NameText text={mail.from} people={data.people} /></strong><small
+													>{mail.date}</small
+												>
+											</div>
 											<span class="badge">{mail.status.replaceAll('_', ' ')}</span>
 										</div>
 										<div class="mail-recipients">
-											<p><strong>To:</strong> {mail.to.join(', ')}</p>
-											<p><strong>Cc:</strong> {mail.cc.join(', ') || '—'}</p>
+											<p>
+												<strong>To:</strong>
+												<NameText text={mail.to.join(', ')} people={data.people} />
+											</p>
+											<p>
+												<strong>Cc:</strong>
+												<NameText text={mail.cc.join(', ') || '—'} people={data.people} />
+											</p>
 										</div>
-										<div class="mail-body">{mail.body}</div>
-										{#if mail.answer}<Evidence answer={mail.answer} />{/if}{#if mail.error}<div
-												class="notice error-notice"
-											>
+										<div class="mail-body"><NameText text={mail.body} people={data.people} /></div>
+										{#if mail.answer}<Evidence
+												people={data.people}
+												answer={mail.answer}
+											/>{/if}{#if mail.error}<div class="notice error-notice">
 												{mail.error}
 												<form
 													method="POST"

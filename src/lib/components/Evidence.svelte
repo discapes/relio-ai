@@ -1,6 +1,34 @@
 <script lang="ts">
-	import type { Answer } from '$lib/types';
-	let { answer, compact = false }: { answer: Answer; compact?: boolean } = $props();
+	import type { Answer, Person } from '$lib/types';
+	import NameText from './NameText.svelte';
+	import { citationTokens, groupCitations, passagePosition } from '$lib/presentation/citations';
+	let {
+		answer,
+		compact = false,
+		people = []
+	}: { answer: Answer; compact?: boolean; people?: Person[] } = $props();
+	const instanceId = $props.id();
+	let container: HTMLDivElement;
+	let selected = $state<number[]>([]);
+	const groups = $derived(groupCitations(answer.citations));
+	const receiptId = (number: number) => `${instanceId}-receipt-${number}`;
+	function reveal(event: MouseEvent, numbers: number[]) {
+		const target = container.querySelector<HTMLElement>(`[data-receipt="${numbers[0]}"]`);
+		if (!target) return;
+		event.preventDefault();
+		selected = numbers;
+		for (const number of numbers) {
+			let parent = container.querySelector<HTMLElement>(
+				`[data-receipt="${number}"]`
+			)?.parentElement;
+			while (parent && parent !== container) {
+				if (parent instanceof HTMLDetailsElement) parent.open = true;
+				parent = parent.parentElement;
+			}
+		}
+		target.focus({ preventScroll: true });
+		target.scrollIntoView({ block: 'center', behavior: 'instant' });
+	}
 	let copied = $state(false);
 	let exporting = $state(false);
 	let exportError = $state('');
@@ -13,6 +41,7 @@
 			? briefParts.slice(0, 3).join('\n\n')
 			: answer.text
 	);
+	const tokens = $derived(citationTokens(shownText, answer.citations));
 	const sourceLink = (id: string) => `/source/${encodeURIComponent(id)}`;
 	function exportText() {
 		return `${answer.text}\n\n${answer.citations.map((c, i) => `[${i + 1}] ${c.title} · ${c.date} · ${c.author}\n${c.quote}`).join('\n\n')}\n\nGenerated ${answer.createdAt}. Customer-shareable evidence. Downloaded copies remain outside application erasure.`;
@@ -75,11 +104,22 @@
 	}
 </script>
 
-<div class:compact class="evidence">
+<div class:compact class="evidence" bind:this={container}>
 	{#if answer.question && ['chat', 'share'].includes(answer.kind)}<p class="question-text">
-			{answer.question}
+			<NameText text={answer.question} {people} />
 		</p>{/if}
-	<div class="answer-text">{shownText}</div>
+	<div class="answer-text">
+		{#each tokens as token}{#if token.type === 'text'}<NameText
+					text={token.text}
+					{people}
+				/>{:else}<a
+					class="inline-citation"
+					href={`#${receiptId(token.numbers[0])}`}
+					aria-label={`Show evidence ${token.label}: ${answer.citations[token.numbers[0] - 1].title}`}
+					title={`Show ${token.numbers.length} cited excerpt${token.numbers.length === 1 ? '' : 's'}`}
+					onclick={(event) => reveal(event, token.numbers)}>{token.label}</a
+				>{/if}{/each}
+	</div>
 	{#if answer.kind === 'brief' && answer.text.length > 2000}<button
 			type="button"
 			class="text-button brief-expand"
@@ -88,21 +128,52 @@
 		>{/if}
 	{#if answer.citations.length}<details class="receipts" open={!compact}>
 			<summary
-				>{answer.citations.length} source receipt{answer.citations.length === 1 ? '' : 's'}</summary
+				>Evidence · {groups.length} document{groups.length === 1 ? '' : 's'} · {answer.citations
+					.length} excerpt{answer.citations.length === 1 ? '' : 's'}</summary
 			>
 			<div class="receipt-list">
-				{#each answer.citations as citation, i}<a
-						class="receipt"
-						href={sourceLink(citation.sourceId)}
-						><span class="receipt-number">{i + 1}</span>
-						<div>
-							<strong>{citation.title}</strong><small
-								>{citation.date} · {citation.author} · {citation.position}</small
-							>
-							<blockquote>{citation.quote}</blockquote>
-						</div>
-						<span aria-hidden="true">↗</span></a
-					>{/each}
+				{#each groups as group}
+					<details class="document-evidence">
+						<summary
+							><span>{group.title}</span><small
+								>{group.meeting ? 'Meeting' : 'Document'} · {group.excerpts.length} excerpt{group
+									.excerpts.length === 1
+									? ''
+									: 's'}{group.meeting ? ` · ${group.excerpts[0].date}` : ''}</small
+							></summary
+						>
+						{#each group.passages as passage}
+							<section class="evidence-passage" aria-label={passagePosition(passage)}>
+								{#if group.meeting}<h4>{passagePosition(passage)}</h4>{/if}
+								{#each passage as citation}
+									<div
+										class="receipt"
+										class:receipt-selected={selected.includes(citation.number)}
+										id={receiptId(citation.number)}
+										data-receipt={citation.number}
+										tabindex="-1"
+									>
+										<span class="receipt-number">{citation.number}</span>
+										<div>
+											<small
+												><NameText text={citation.author} {people} /> · {citation.position}{group.meeting
+													? ''
+													: ` · ${citation.date}`}</small
+											>
+											<blockquote><NameText text={citation.quote} {people} /></blockquote>
+											<a
+												class="source-evidence-link"
+												href={sourceLink(citation.sourceId)}
+												aria-label={`Open source for excerpt ${citation.number}: ${citation.title}`}
+												>Open source <span aria-hidden="true">↗</span></a
+											>
+										</div>
+									</div>
+								{/each}
+							</section>
+						{/each}
+					</details>
+				{/each}
 			</div>
 		</details>{/if}
 	{#if answer.trace.length}<details class="trace">
@@ -128,3 +199,73 @@
 		{#if exportError}<p class="error" role="alert">{exportError}</p>{/if}
 		<small>Downloaded copies remain outside subsequent application erasure.</small>{/if}
 </div>
+
+<style>
+	.inline-citation {
+		display: inline-block;
+		padding: 0 7px;
+		margin: 0 2px;
+		border: 1px solid var(--border-strong, var(--border));
+		border-radius: 5px;
+		background: var(--surface-selected);
+		color: var(--text);
+		font-size: 0.86em;
+		font-weight: 650;
+		line-height: 1.65;
+		text-decoration: none;
+		white-space: normal;
+		vertical-align: baseline;
+	}
+	.inline-citation:hover {
+		text-decoration: underline;
+	}
+	.inline-citation:focus-visible,
+	.receipt:focus {
+		outline: 2px solid var(--text);
+		outline-offset: 3px;
+	}
+	.document-evidence {
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		overflow: clip;
+	}
+	.document-evidence > summary {
+		padding: 12px;
+		background: var(--surface-subtle);
+	}
+	.document-evidence > summary small {
+		display: block;
+		margin: 5px 0 0 18px;
+		font-weight: 400;
+	}
+	.evidence-passage {
+		margin: 12px;
+		border-top: 1px solid var(--border);
+		padding-top: 10px;
+	}
+	.evidence-passage h4 {
+		margin: 0 0 8px;
+		font-size: 14px;
+		font-weight: 600;
+	}
+	.evidence-passage .receipt {
+		background: transparent;
+		border: 0;
+		border-radius: 0;
+		margin: 0;
+		padding: 10px 4px;
+	}
+	.evidence-passage .receipt + .receipt {
+		border-top: 1px solid var(--border);
+	}
+	.evidence-passage .receipt-selected {
+		background: var(--surface-selected);
+		border-radius: 5px;
+	}
+	.source-evidence-link {
+		display: inline-block;
+		margin-top: 8px;
+		font-size: 14px;
+		text-decoration: underline;
+	}
+</style>

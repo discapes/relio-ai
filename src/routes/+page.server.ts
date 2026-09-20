@@ -1,3 +1,4 @@
+import { affiliation } from '$lib/people';
 import { fail } from '@sveltejs/kit';
 import { sessionContext } from '$lib/server/session';
 import * as workflows from '$lib/server/workflows';
@@ -76,7 +77,7 @@ export const actions: Actions = {
 		return {
 			answer: await workflows.answerQuestion(
 				ctx,
-				`Prepare evidence-backed stakeholder guidance for ${person.name}. Describe their role, expressed priorities, proposals and responses observed in the archive. Separate observed facts from recommendations about the next conversation. Do not infer personality or unsupported psychological traits.`,
+				`Prepare ${affiliation(person).kind === 'relex' ? 'a collaboration brief for a RELEX colleague, focused on responsibilities, decisions and open handoffs' : affiliation(person).kind === 'customer' ? 'customer conversation guidance, focused on expressed priorities and responses to proposals' : 'conversation context, focused on recorded contributions and open questions'} for ${person.name}. Describe their role, expressed priorities, proposals and responses observed in the archive. Separate observed facts from recommendations about the next conversation. Do not infer personality or unsupported psychological traits.`,
 				'guidance'
 			)
 		};
