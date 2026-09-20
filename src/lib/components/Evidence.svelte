@@ -209,7 +209,7 @@
 		border-radius: 5px;
 		background: var(--surface-selected);
 		color: var(--text);
-		font-size: 0.86em;
+		font-size: max(13px, 0.9em);
 		font-weight: 650;
 		line-height: 1.65;
 		text-decoration: none;
@@ -245,7 +245,7 @@
 	}
 	.evidence-passage h4 {
 		margin: 0 0 8px;
-		font-size: 14px;
+		font-size: 15px;
 		font-weight: 600;
 	}
 	.evidence-passage .receipt {
@@ -265,7 +265,7 @@
 	.source-evidence-link {
 		display: inline-block;
 		margin-top: 8px;
-		font-size: 14px;
+		font-size: 15px;
 		text-decoration: underline;
 	}
 </style>

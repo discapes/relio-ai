@@ -1,15 +1,16 @@
 import { affiliation } from '$lib/people';
+import { reviewerGuide } from '$lib/server/reviewer';
 import { fail } from '@sveltejs/kit';
 import { sessionContext } from '$lib/server/session';
 import * as workflows from '$lib/server/workflows';
 import * as memory from '$lib/server/memory';
 import type { Actions, PageServerLoad } from './$types';
 import type { Context, Level } from '$lib/types';
-export const load: PageServerLoad = ({ cookies, setHeaders }) => {
+export const load: PageServerLoad = ({ cookies, setHeaders, url }) => {
 	setHeaders({ 'cache-control': 'private, no-store' });
 	const ctx = sessionContext(cookies);
 	if (ctx.persona.projects.includes(ctx.projectId)) workflows.prepareWorkspace(ctx);
-	return workflows.workspaceData(ctx);
+	return { ...workflows.workspaceData(ctx), reviewerGuide: reviewerGuide(ctx, url.searchParams.get('view') || '') };
 };
 const value = (data: FormData, key: string) => String(data.get(key) || '').trim();
 const list = (data: FormData, key: string) =>

@@ -1,6 +1,5 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import { stringify } from 'devalue';
 
 test('many cited turns stay grouped and inline references reveal exact evidence by keyboard', async ({
 	page
@@ -15,13 +14,12 @@ test('many cited turns stay grouped and inline references reveal exact evidence 
 		quote: `Recorded observation ${index + 1} from Ana Duarte.`
 	}));
 	await page.route('**/*', async (route) => {
-		if (route.request().method() === 'POST' && route.request().url().includes('?/ask')) {
+		if (route.request().method() === 'POST' && route.request().url().endsWith('/chat/stream')) {
 			await route.fulfill({
-				contentType: 'application/json',
-				body: JSON.stringify({
-					type: 'success',
-					status: 200,
-					data: stringify({
+				contentType: 'application/x-ndjson',
+				body:
+					JSON.stringify({
+						type: 'final',
 						answer: {
 							id: 'citation-browser-fixture',
 							kind: 'chat',
@@ -34,8 +32,7 @@ test('many cited turns stay grouped and inline references reveal exact evidence 
 							citations,
 							trace: []
 						}
-					})
-				})
+					}) + '\n'
 			});
 		} else await route.continue();
 	});

@@ -1,6 +1,6 @@
 # Live practice answers
 
-Generated through the application answer workflow, using isolated runtime workspaces and glm-5.3-flash on the configured Helsinki endpoint. Each question records its date and source citations. P7 uses a fresh workspace erased before generation. Independent expected answers are in practice_reference.md.
+Generated through the application answer workflow, using isolated runtime workspaces and GLM 5.3 Flash on Verda (formerly DataCrunch) in Helsinki. Each question records its date and source citations. P7 uses a fresh workspace erased before generation. Independent expected answers are in practice_reference.md.
 
 ## P1
 

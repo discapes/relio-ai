@@ -34,7 +34,7 @@ The organisers supplied a synthetic archive of 45 documents covering March 2024 
 
 SvelteKit and TypeScript provide server loads, form actions and the browser interface. Node's SQLite driver stores sources, extracted claims, personal preferences, generated artifacts, email, meetings, jobs and erasure receipts. Sources and claims carry project/access scope. Generated artifacts also carry an owner and erasure epoch.
 
-The application host and team-provided inference deployment are in Helsinki. The configured API is `http://127.0.0.1:8000/v1`, reached through the host's SSH tunnel. The model is `glm-5.3-flash`; `INFERENCE_URL` and `INFERENCE_MODEL` override defaults. Permitted evidence is sent to that endpoint. Application code alone cannot establish the inference service's logging, cache retention or backup policy.
+The application runs on the team’s Hetzner host in Helsinki. GLM 5.3 Flash inference runs separately on Verda (formerly DataCrunch) in Helsinki. The configured API is `http://127.0.0.1:8000/v1`, reached through the host's SSH tunnel. The model is `glm-5.3-flash`; `INFERENCE_URL` and `INFERENCE_MODEL` override defaults. Permitted evidence is sent to that endpoint. Application code alone cannot establish the inference service's logging, cache retention or backup policy.
 
 Ordinary questions use full permitted source context. Exhaustive and chronology questions first build an inventory from document partitions, then answer from relevant original records and neighbouring turns. Extraction prepares dated claims from document groups. A further model pass reviews proposed claims against cited original passages before publication. Record-level validation rejects document-only references and requests bounded repair. Document-balanced selection preserves coverage across the supplied archive. These model steps can still omit or misinterpret evidence; practice evaluation records those failures.
 
@@ -54,7 +54,7 @@ The server selects evidence before constructing model input. Source endpoints, s
 
 Historical classification uses message audiences and internal/restricted document metadata. The assignments are application policy assumptions because authoritative access annotations are absent from the archive. Production use requires an organisation-owned classification policy and identity integration.
 
-Demo controls select a server-defined employee and clearance: Ana has L3 and erasure permission, Marco has L2, Nadia has L1, and a fourth identity belongs to another project. These controls represent the identity-provider boundary. Personal preferences and conversations belong to their employee within the browser's workspace. Explicitly sharing a private note previews its content and chosen level, then creates an attributed shared source.
+Switch view in the top bar selects a server-defined employee and clearance: Ana has L3 and erasure permission, Marco has L2, Nadia has L1, and a fourth identity belongs to another project. These controls represent the identity-provider boundary. Personal preferences and conversations belong to their employee within the browser's workspace. Explicitly sharing a private note previews its content and chosen level, then creates an attributed shared source.
 
 ## Prepared work and time
 

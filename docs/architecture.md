@@ -4,7 +4,7 @@ The application uses SQLite and a cookie-selected isolated workspace. Demo ident
 
 Source IDs preserve the parsed corpus IDs. Runtime messages have random IDs. Source text and exact citations remain separately inspectable. Claims link to source IDs. Artifacts carry workspace, owner, level, source dependencies and epoch. Publication verifies the current epoch. Erasure invalidates derivatives and cleans runtime sources, mailbox content and personal state; persisted suppression prevents reimport.
 
-The model client uses the Helsinki endpoint with bounded concurrency. Structured JSON is validated and citations bind to permitted exact source passages. The model sees only sources returned for the effective Context. Customer export and email participation use fresh scoped requests with no private history.
+The model client uses GLM 5.3 Flash on Verda (formerly DataCrunch) in Helsinki with bounded concurrency. Structured JSON is validated and citations bind to permitted exact source passages. The model sees only sources returned for the effective Context. Customer export and email participation use fresh scoped requests with no private history.
 
 The UI uses server loads and form actions. POST actions: ask(question), refreshBrief, preference(text,id?), forgetPreference(id), promote(text,level), sendMail(threadId?,subject,to,cc,body,eventId), retryMail(id), guidance(personId), share(question), erase(personId), reset. Persona changes use /session; source views use /source/[id] and are checked against the current Context. All UI actions return {error? ,answer? ,success?}; successful mutations invalidate the page data.
 

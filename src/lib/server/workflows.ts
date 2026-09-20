@@ -1,4 +1,10 @@
 import { randomUUID } from 'node:crypto';
+import {
+	assertChatCurrent,
+	chatStage,
+	cancelChatStreams,
+	withoutChatActivity
+} from './chat-activity';
 import { database } from './database';
 import * as memory from './memory';
 import {
@@ -32,6 +38,7 @@ const now = () => new Date().toISOString();
 let initialized = false;
 let scheduler: ReturnType<typeof setInterval> | undefined;
 function requireCurrent(ctx: Context) {
+	assertChatCurrent();
 	if (memory.epoch(ctx.workspaceId) !== ctx.epoch || !ctx.persona.projects.includes(ctx.projectId))
 		throw new Error('Project access changed. Reload before continuing.');
 }
@@ -70,6 +77,7 @@ function db() {
 				d.prepare(`UPDATE ${table} SET owner=? WHERE owner=?`).run(opaque, legacy);
 		}
 		memory.registerErasureHook((workspaceId: string, aliases: string[], sourceIds: string[]) => {
+			cancelChatStreams(workspaceId);
 			cancelModelCalls(workspaceId);
 			let count = 0;
 			const erasedOwners = memory.personas
@@ -111,14 +119,17 @@ function db() {
 			return count;
 		});
 		initialized = true;
-		scheduler ||= setInterval(() => {
-			void scheduledRefresh();
-		}, 60_000);
+		scheduler ||= withoutChatActivity(() =>
+			setInterval(() => {
+				void scheduledRefresh();
+			}, 60_000)
+		);
 		scheduler.unref();
 	}
 	return d;
 }
 function saveArtifact(ctx: Context, answer: Answer) {
+	requireCurrent(ctx);
 	if (memory.isSuppressed(ctx.workspaceId, JSON.stringify(answer)))
 		throw new Error(
 			'Generated content refers to erased personal information. Retry with surviving evidence.'
@@ -365,6 +376,10 @@ async function researchInventory(
 					return undefined;
 				}
 			);
+			chatStage(
+				'research',
+				`Reviewed a group of ${documents.size} documents and located ${(output.items || []).length} relevant evidence observations.`
+			);
 			const items = output.items || [];
 			if (commitmentFocus) {
 				const rank = { outstanding: 0, unknown: 1, fulfilled: 2 };
@@ -470,6 +485,8 @@ export async function answerQuestion(
 	question: string,
 	kind = 'chat'
 ): Promise<Answer> {
+	requireCurrent(ctx);
+	chatStage('interpreting', 'Interpreting your question and checking your personal preferences.');
 	if (memory.isSuppressed(ctx.workspaceId, question))
 		throw new Error(
 			'This question contains identifying information erased from this workspace. Rephrase without that identity.'
@@ -531,6 +548,10 @@ export async function answerQuestion(
 			});
 	}
 	const permitted = memory.sources(ctx);
+	chatStage(
+		'sources',
+		`Found ${permitted.length} permitted records across ${new Set(permitted.map((source) => source.documentId)).size} documents at L${ctx.level}.`
+	);
 	if (!permitted.length)
 		return saveArtifact(ctx, {
 			id: randomUUID(),
@@ -542,6 +563,11 @@ export async function answerQuestion(
 			question,
 			trace: ['Checked project membership and permitted source records.']
 		});
+	if (research)
+		chatStage(
+			'research',
+			'Reviewing source documents for the requested chronology, figures or commitments.'
+		);
 	let inventory = research
 		? await researchInventory(ctx, question, permitted, commitmentFocus)
 		: [];
@@ -604,6 +630,10 @@ export async function answerQuestion(
 			? 'Some records were withdrawn by person erasure. Use surviving evidence only. Never recommend recovering erased material from reference fixtures, attachments, old exports or prior copies. Explain resulting evidence gaps without reintroducing the erased identity.'
 			: '';
 	const prompt = `Task: ${scopedQuestion}\nPartitioned source inventory: ${JSON.stringify(inventory)}. Cover the requested inventory or chronology completely; check these observations against original sources. For an unfulfilled agreement, select an outstanding acceptedAction with explicit acceptance and later follow-up about that same action. A fulfilled ask/chase action cannot establish an unfulfilled promise to deliver the desired outcome.\n${erasureContext}\n${privateContext}\nReturn {"text":"answer with inline [1] citations", "citations":[{"sourceId":"existing-id","quote":"exact supporting passage"}],"trace":["concise observable evidence checks"],"remember":"only if user explicitly asks to remember/follow a preference, otherwise empty","intent":"personal_memory only for a question about the employee own remembered preferences; otherwise project"}. Only use supplied project evidence for facts. For chronology/origin questions, locate the earliest supported occurrence and later changes; names and fields may be spoken in full rather than as abbreviations. Prepared memory entries are navigation hints to check against the original records, not independent evidence: ${JSON.stringify(prepared)}.\nPermitted evidence records:\n${evidenceText(answerSources)}`;
+	chatStage(
+		'drafting',
+		`Composing an answer from ${answerSources.length} permitted source records. Draft text will appear as the model writes it.`
+	);
 	const draft = await modelJSON<ModelAnswer>(
 		evidenceRules,
 		prompt,
@@ -611,7 +641,9 @@ export async function answerQuestion(
 		ctx.workspaceId,
 		false,
 		kind === 'chat' || kind === 'share' ? 3 : 1,
-		['text', 'citations']
+		['text', 'citations'],
+		undefined,
+		true
 	);
 	if (!draft.text || typeof draft.text !== 'string')
 		throw new Error('The model returned an incomplete answer. Retry.');
@@ -651,6 +683,10 @@ export async function answerQuestion(
 		});
 	}
 	requireCurrent(ctx);
+	chatStage(
+		'verifying',
+		'Checking the draft against original passages, including numbers, dates and attribution.'
+	);
 	const { result, citations } = await verifyDraft(
 		draft,
 		scopedQuestion,
@@ -680,6 +716,11 @@ export async function answerQuestion(
 			`Verified ${citations.length} quoted passages against runtime sources.`
 		]
 	};
+	requireCurrent(ctx);
+	chatStage(
+		'binding',
+		`Bound ${citations.length} source excerpts to the checked answer. Saving your conversation.`
+	);
 	return saveArtifact(ctx, answer);
 }
 export async function generateBrief(ctx: Context, meetingId?: string) {
@@ -819,16 +860,21 @@ function schedulePump() {
 	if (process.env.DISABLE_BACKGROUND === '1') return;
 	if (!pumpScheduled) {
 		pumpScheduled = true;
-		setTimeout(() => {
-			pumpScheduled = false;
-			void runJobs();
-		}, 50).unref();
+		withoutChatActivity(() =>
+			setTimeout(() => {
+				pumpScheduled = false;
+				void runJobs();
+			}, 50).unref()
+		);
 	}
 }
 const activeJobs = new Set<string>();
 let backgroundActive = false;
 let mailActive = false;
-export async function runJobs() {
+export function runJobs() {
+	return withoutChatActivity(runDetachedJobs);
+}
+async function runDetachedJobs() {
 	const queued = db()
 		.prepare(
 			"SELECT * FROM wf_jobs WHERE status='queued' ORDER BY CASE WHEN kind LIKE 'mail:%' THEN 0 WHEN kind LIKE 'brief%' THEN 1 ELSE 2 END,created_at"
@@ -1107,6 +1153,7 @@ export function erase(ctx: Context, personId: string) {
 	return memory.erasePerson(ctx, personId);
 }
 export function reset(ctx: Context) {
+	cancelChatStreams(ctx.workspaceId);
 	return memory.resetWorkspace(ctx.workspaceId);
 }
 export function workspaceData(ctx: Context): WorkspaceData {

@@ -11,7 +11,7 @@
 	--surface-subtle: #fafbfb;
 	--surface-selected: #e6f2ff;
 	--text: #0a3256;
-	--muted: #617072;
+	--muted: #546467;
 	--border: #dde0e1;
 	--control-border: #617072;
 	--action: #177abf;
@@ -90,7 +90,7 @@ p {
 	line-height: 1.65;
 }
 small {
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--muted);
 	line-height: 1.5;
 }
@@ -143,7 +143,7 @@ small {
 	background: var(--surface-subtle);
 }
 .workspace strong {
-	font-size: 14px;
+	font-size: 15px;
 	overflow-wrap: anywhere;
 }
 .workspace small {
@@ -157,7 +157,7 @@ small {
 	font-weight: 700;
 }
 .nav-label {
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: 700;
 	letter-spacing: 0.6px;
 	margin: 0 12px 14px;
@@ -173,7 +173,7 @@ nav a {
 	gap: 11px;
 	padding: 13px 12px;
 	border-radius: 7px;
-	font-size: 14px;
+	font-size: 15px;
 }
 nav a[aria-current] {
 	background: var(--surface-selected);
@@ -188,7 +188,7 @@ nav a[aria-current] {
 	display: flex;
 	align-items: center;
 	gap: 8px;
-	font-size: 14px;
+	font-size: 15px;
 	margin-top: 12px;
 }
 .main-wrap {
@@ -203,7 +203,7 @@ header {
 	align-items: center;
 	justify-content: space-between;
 	gap: 16px;
-	font-size: 14px;
+	font-size: 15px;
 	overflow-wrap: anywhere;
 }
 .separator {
@@ -234,7 +234,7 @@ main {
 	max-width: 550px;
 }
 .eyebrow {
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: 650;
 	letter-spacing: 1.2px;
 	margin-bottom: 12px;
@@ -251,7 +251,7 @@ main {
 	border: 1px solid var(--action);
 	border-radius: 7px;
 	font-weight: 600;
-	font-size: 14px;
+	font-size: 15px;
 }
 .button:hover {
 	background: var(--action-hover);
@@ -283,7 +283,7 @@ main {
 	color: var(--text);
 }
 .stat > span {
-	font-size: 14px;
+	font-size: 15px;
 	display: block;
 	padding-right: 30px;
 }
@@ -356,7 +356,7 @@ table {
 	width: 100%;
 	border-collapse: collapse;
 	text-align: left;
-	font-size: 14px;
+	font-size: 15px;
 }
 th {
 	padding: 13px 10px;
@@ -376,7 +376,7 @@ td small {
 	display: inline-block;
 	padding: 5px 8px;
 	border-radius: 5px;
-	font-size: 14px;
+	font-size: 15px;
 	background: var(--surface-selected);
 	color: var(--text);
 }
@@ -389,7 +389,7 @@ td small {
 	color: var(--text);
 }
 .table-footer {
-	font-size: 14px;
+	font-size: 15px;
 	margin-top: 16px;
 }
 .empty {
@@ -414,7 +414,7 @@ footer {
 	display: flex;
 	justify-content: space-between;
 	gap: 16px;
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--muted);
 }
 .settings-width {
@@ -561,14 +561,14 @@ textarea {
 input,
 textarea,
 select {
-	font-size: 14px;
+	font-size: 15px;
 }
 label {
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: 550;
 }
 small {
-	font-size: 14px;
+	font-size: 15px;
 }
 a,
 button,
@@ -608,22 +608,26 @@ p {
 	padding: 6px;
 }
 .workspace strong {
-	font-size: 14px;
+	font-size: 15px;
 }
 .workspace small {
-	font-size: 14px;
+	font-size: 15px;
 }
 .nav-label {
-	font-size: 14px;
+	font-size: 15px;
 	letter-spacing: 1.5px;
 	color: var(--muted);
 	margin-left: 12px;
 }
 .sidebar nav a {
-	font-size: 14px;
-	padding: 13px 12px;
+	font-size: 15px;
+	padding: 13px 10px;
 	color: var(--text);
-	gap: 12px;
+	gap: 9px;
+	white-space: nowrap;
+}
+.sidebar nav a > svg {
+	flex-shrink: 0;
 }
 .sidebar nav a[aria-current] {
 	background: var(--surface-selected);
@@ -637,7 +641,7 @@ p {
 	background: var(--surface-selected);
 	padding: 2px 6px;
 	border-radius: 4px;
-	font-size: 14px;
+	font-size: 15px;
 }
 .demo-nav {
 	border-top: 1px solid var(--border);
@@ -655,7 +659,7 @@ p {
 	gap: 12px;
 	padding: 12px;
 	width: 100%;
-	font-size: 14px;
+	font-size: 15px;
 	border: 0;
 	background: transparent;
 	color: var(--muted);
@@ -682,7 +686,7 @@ p {
 	gap: 8px;
 	align-items: center;
 	color: var(--muted);
-	font-size: 14px;
+	font-size: 15px;
 	margin: 20px 8px;
 }
 .connection > span,
@@ -703,10 +707,10 @@ p {
 }
 .profile strong {
 	display: block;
-	font-size: 14px;
+	font-size: 15px;
 }
 .profile small {
-	font-size: 14px;
+	font-size: 15px;
 	display: block;
 }
 .avatar {
@@ -720,13 +724,13 @@ p {
 	color: var(--text);
 	font-weight: 650;
 	border-radius: 50%;
-	font-size: 14px;
+	font-size: 15px;
 }
 .topbar {
 	min-height: 72px;
 	padding: 18px 36px;
 	background: var(--surface);
-	font-size: 14px;
+	font-size: 15px;
 }
 .header-right {
 	display: flex;
@@ -737,7 +741,7 @@ p {
 	display: flex;
 	align-items: center;
 	gap: 6px;
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--text);
 	padding: 7px 10px;
 	border-radius: 6px;
@@ -751,7 +755,7 @@ p {
 	display: inline-flex;
 	align-items: center;
 	gap: 7px;
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--text);
 	border: 0;
 	background: none;
@@ -770,12 +774,12 @@ main {
 	margin-bottom: 30px;
 }
 .page-heading p:not(.eyebrow) {
-	font-size: 14px;
+	font-size: 15px;
 	margin-top: 10px;
 	max-width: 640px;
 }
 .eyebrow {
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: 700;
 	letter-spacing: 1.8px;
 	color: var(--text);
@@ -789,11 +793,11 @@ main {
 	flex-shrink: 0;
 }
 .date-mark strong {
-	font-size: 14px;
+	font-size: 15px;
 	display: block;
 }
 .date-mark small {
-	font-size: 14px;
+	font-size: 15px;
 	display: block;
 	margin-top: 4px;
 }
@@ -848,7 +852,7 @@ main {
 	display: flex;
 	align-items: center;
 	gap: 7px;
-	font-size: 14px;
+	font-size: 15px;
 	padding: 13px 24px 18px;
 	background: var(--surface-selected);
 	color: var(--muted);
@@ -864,7 +868,7 @@ main {
 	background: var(--surface-subtle);
 	border-top: 1px solid var(--border);
 	padding: 12px 24px;
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--muted);
 }
 .brief-empty {
@@ -878,13 +882,13 @@ main {
 	font-size: 19px;
 }
 .brief-empty p {
-	font-size: 14px;
+	font-size: 15px;
 	margin: 10px 0 21px;
 }
 .answer-text {
 	white-space: pre-wrap;
 	line-height: 1.8;
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--text);
 }
 .question-text {
@@ -894,7 +898,7 @@ main {
 	margin-bottom: 14px;
 }
 .evidence details summary {
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--text);
 	font-weight: 600;
 	cursor: pointer;
@@ -926,19 +930,19 @@ main {
 	min-width: 0;
 }
 .receipt strong {
-	font-size: 14px;
+	font-size: 15px;
 	display: block;
 }
 .receipt small {
 	display: block;
-	font-size: 14px;
+	font-size: 15px;
 	margin-top: 4px;
 }
 .receipt-number {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 14px;
+	font-size: 15px;
 	width: 20px;
 	height: 20px;
 	flex-shrink: 0;
@@ -946,7 +950,7 @@ main {
 	background: var(--surface-selected);
 }
 .receipt blockquote {
-	font-size: 14px;
+	font-size: 15px;
 	line-height: 1.6;
 	margin: 8px 0 0;
 	color: var(--text);
@@ -956,26 +960,26 @@ main {
 }
 .trace ol {
 	padding-left: 22px;
-	font-size: 14px;
+	font-size: 15px;
 	line-height: 1.8;
 	color: var(--muted);
 }
 .generation-date {
 	display: block;
 	margin-top: 17px;
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--text);
 }
 .compact .answer-text {
-	font-size: 14px;
+	font-size: 15px;
 }
 .section-description {
-	font-size: 14px;
+	font-size: 15px;
 	margin-bottom: 18px;
 	color: var(--muted);
 }
 .subtle {
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--text);
 }
 .suggestions {
@@ -988,7 +992,7 @@ main {
 	display: flex;
 	gap: 7px;
 	align-items: center;
-	font-size: 14px;
+	font-size: 15px;
 	padding: 8px 10px;
 	background: var(--surface-selected);
 	border: 1px solid var(--control-border);
@@ -1022,14 +1026,14 @@ main {
 	display: flex;
 	align-items: center;
 	gap: 5px;
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--text);
 }
 .button {
 	background: var(--action);
 	border-color: var(--action);
 	border-radius: 7px;
-	font-size: 14px;
+	font-size: 15px;
 	min-height: 39px;
 	padding: 10px 14px;
 }
@@ -1065,7 +1069,7 @@ main {
 }
 .preference p {
 	flex: 1;
-	font-size: 14px;
+	font-size: 15px;
 	line-height: 1.7;
 	color: var(--text);
 }
@@ -1095,16 +1099,16 @@ main {
 	margin-top: 20px;
 }
 .stack-form label {
-	font-size: 14px;
+	font-size: 15px;
 }
 .stack-form .button {
 	align-self: flex-start;
 }
 .stack-form textarea {
-	font-size: 14px;
+	font-size: 15px;
 }
 .muted {
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--text);
 }
 .meeting {
@@ -1116,32 +1120,32 @@ main {
 	border-top: 0;
 }
 .meeting .eyebrow {
-	font-size: 14px;
+	font-size: 15px;
 	letter-spacing: 0.4px;
 	margin-bottom: 7px;
 	display: block;
 }
 .meeting h3 {
-	font-size: 14px;
+	font-size: 15px;
 	letter-spacing: -0.2px;
 }
 .meeting p {
-	font-size: 14px;
+	font-size: 15px;
 	margin: 7px 0;
 }
 .meeting small {
-	font-size: 14px;
+	font-size: 15px;
 	display: block;
 }
 .meeting form {
 	margin-top: 12px;
 }
 .meeting .text-button {
-	font-size: 14px;
+	font-size: 15px;
 }
 .personal-note summary {
 	padding: 18px 22px;
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: 600;
 	cursor: pointer;
 	color: var(--text);
@@ -1153,10 +1157,10 @@ main {
 	gap: 12px;
 }
 .personal-note label {
-	font-size: 14px;
+	font-size: 15px;
 }
 .personal-note textarea {
-	font-size: 14px;
+	font-size: 15px;
 }
 .demo-controls {
 	margin: 20px 36px 0;
@@ -1169,10 +1173,10 @@ main {
 	gap: 15px;
 }
 .demo-controls strong {
-	font-size: 14px;
+	font-size: 15px;
 }
 .demo-controls p {
-	font-size: 14px;
+	font-size: 15px;
 }
 .session-form {
 	display: flex;
@@ -1181,7 +1185,7 @@ main {
 }
 .session-form label {
 	flex: 1;
-	font-size: 14px;
+	font-size: 15px;
 }
 .session-form select {
 	margin-top: 6px;
@@ -1198,12 +1202,12 @@ main {
 	border: 1px solid var(--border);
 	border-radius: 8px;
 	margin-bottom: 20px;
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--text);
 }
 .working small {
 	margin-left: auto;
-	font-size: 14px;
+	font-size: 15px;
 }
 .spinner {
 	width: 15px;
@@ -1224,7 +1228,7 @@ main {
 	border: 1px solid var(--success-text);
 	border-radius: 8px;
 	margin-bottom: 20px;
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--success-text);
 }
 .error-notice {
@@ -1241,7 +1245,7 @@ main {
 	display: block;
 }
 .count-label span {
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--muted);
 }
 .memory-toolbar {
@@ -1267,7 +1271,7 @@ main {
 	border: 0;
 	border-radius: 5px;
 	padding: 10px 13px;
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--muted);
 }
 .segmented .chosen {
@@ -1281,14 +1285,14 @@ main {
 	border-color: var(--control-border);
 }
 .search input {
-	font-size: 14px;
+	font-size: 15px;
 }
 .source-list .list-head {
 	display: flex;
 	justify-content: space-between;
 	padding: 18px 23px;
 	border-bottom: 1px solid var(--border);
-	font-size: 14px;
+	font-size: 15px;
 }
 .source-row {
 	display: flex;
@@ -1322,10 +1326,10 @@ main {
 	margin-bottom: 5px;
 }
 .source-title strong {
-	font-size: 14px;
+	font-size: 15px;
 }
 .badge {
-	font-size: 14px;
+	font-size: 15px;
 	padding: 4px 6px;
 	background: var(--surface-selected);
 	color: var(--text);
@@ -1333,10 +1337,10 @@ main {
 	white-space: nowrap;
 }
 .source-row small {
-	font-size: 14px;
+	font-size: 15px;
 }
 .source-row p {
-	font-size: 14px;
+	font-size: 15px;
 	line-height: 1.6;
 	margin-top: 8px;
 	color: var(--muted);
@@ -1362,7 +1366,7 @@ main {
 }
 .claim-card p {
 	margin-top: 16px;
-	font-size: 14px;
+	font-size: 15px;
 }
 .claim-sources {
 	display: flex;
@@ -1374,7 +1378,7 @@ main {
 	display: flex;
 	gap: 4px;
 	align-items: center;
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--text);
 }
 .share-card {
@@ -1388,7 +1392,7 @@ main {
 	font-size: 17px;
 }
 .share-card p {
-	font-size: 14px;
+	font-size: 15px;
 	margin-top: 6px;
 }
 .share-card > form {
@@ -1420,7 +1424,7 @@ main {
 	gap: 20px;
 	flex-wrap: wrap;
 	justify-content: center;
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--muted);
 }
 .graph-legend span {
@@ -1450,7 +1454,7 @@ main {
 	background: var(--surface-subtle);
 	border: 1px solid var(--control-border);
 	border-radius: 6px;
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--text);
 }
 .graph-controls .chosen {
@@ -1465,22 +1469,22 @@ main {
 }
 .graph-detail p {
 	margin: 12px 0;
-	font-size: 14px;
+	font-size: 15px;
 }
 .graph-detail > strong {
-	font-size: 14px;
+	font-size: 15px;
 	display: block;
 	margin-top: 18px;
 }
 .graph-detail > a {
 	display: block;
 	padding: 10px 0;
-	font-size: 14px;
+	font-size: 15px;
 	border-bottom: 1px solid var(--border);
 }
 .graph-detail small {
 	display: block;
-	font-size: 14px;
+	font-size: 15px;
 	margin-top: 3px;
 }
 .people-layout {
@@ -1514,11 +1518,11 @@ main {
 	flex: 1;
 }
 .people-list strong {
-	font-size: 14px;
+	font-size: 15px;
 	display: block;
 }
 .people-list small {
-	font-size: 14px;
+	font-size: 15px;
 	display: block;
 	margin-top: 4px;
 }
@@ -1530,7 +1534,7 @@ main {
 	margin: 23px 0 12px;
 }
 .alias-list {
-	font-size: 14px;
+	font-size: 15px;
 	margin-top: 16px;
 }
 .section-subheading {
@@ -1543,14 +1547,14 @@ main {
 	gap: 12px;
 	border-top: 1px solid var(--border);
 	padding: 13px 0;
-	font-size: 14px;
+	font-size: 15px;
 }
 .person-source > span {
 	flex: 1;
 }
 .person-source small {
 	display: block;
-	font-size: 14px;
+	font-size: 15px;
 	margin-top: 4px;
 }
 .person-empty,
@@ -1574,7 +1578,7 @@ main {
 }
 .person-empty p,
 .mail-empty p {
-	font-size: 14px;
+	font-size: 15px;
 	max-width: 420px;
 }
 .erasure-box {
@@ -1586,7 +1590,7 @@ main {
 	color: var(--danger-text);
 }
 .erasure-box p {
-	font-size: 14px;
+	font-size: 15px;
 	margin: 10px 0 15px;
 }
 .button.danger {
@@ -1608,13 +1612,13 @@ main {
 	border-bottom: 1px solid var(--border);
 }
 .erasure-receipt strong {
-	font-size: 14px;
+	font-size: 15px;
 }
 .erasure-receipt p {
-	font-size: 14px;
+	font-size: 15px;
 }
 .erasure-receipt small {
-	font-size: 14px;
+	font-size: 15px;
 }
 .scenario-bar {
 	display: flex;
@@ -1626,7 +1630,7 @@ main {
 	border: 1px solid var(--border);
 	border-radius: 9px;
 	margin-bottom: 22px;
-	font-size: 14px;
+	font-size: 15px;
 }
 .scenario-bar > span {
 	font-weight: 600;
@@ -1637,10 +1641,10 @@ main {
 	border: 1px solid var(--control-border);
 	border-radius: 5px;
 	padding: 9px 12px;
-	font-size: 14px;
+	font-size: 15px;
 }
 .scenario-bar small {
-	font-size: 14px;
+	font-size: 15px;
 	margin-left: auto;
 }
 .outlook {
@@ -1656,7 +1660,7 @@ main {
 	padding: 14px 20px;
 	background: #0e5682;
 	color: #fff;
-	font-size: 14px;
+	font-size: 15px;
 }
 .outlook-mark {
 	font-weight: 700;
@@ -1665,12 +1669,12 @@ main {
 	padding: 5px 9px;
 }
 .outlook-top > span:nth-last-child(2) {
-	font-size: 14px;
+	font-size: 15px;
 	margin-left: auto;
 	color: #e0edf4;
 }
 .sim-badge {
-	font-size: 14px;
+	font-size: 15px;
 	padding: 5px 7px;
 	border-radius: 4px;
 	border: 1px solid #71a0bb;
@@ -1692,7 +1696,7 @@ main {
 	justify-content: space-between;
 	padding: 20px 18px;
 	border-bottom: 1px solid #dfe5e9;
-	font-size: 14px;
+	font-size: 15px;
 	color: #4d6877;
 }
 .mail-list > button {
@@ -1713,24 +1717,24 @@ main {
 	padding-left: 15px;
 }
 .mail-list strong {
-	font-size: 14px;
+	font-size: 15px;
 	display: block;
 }
 .mail-list small {
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--muted);
 	display: block;
 	margin-top: 7px;
 }
 .mail-list p {
-	font-size: 14px;
+	font-size: 15px;
 	line-height: 1.5;
 	margin-top: 8px;
 	color: var(--muted);
 }
 .mail-date {
 	display: block;
-	font-size: 14px;
+	font-size: 15px;
 	margin-top: 9px;
 	color: var(--muted);
 }
@@ -1764,11 +1768,11 @@ main {
 	min-width: 0;
 }
 .mail-message-heading strong {
-	font-size: 14px;
+	font-size: 15px;
 	display: block;
 }
 .mail-message-heading small {
-	font-size: 14px;
+	font-size: 15px;
 	display: block;
 	margin-top: 4px;
 }
@@ -1776,13 +1780,13 @@ main {
 	margin: 14px 0;
 }
 .mail-recipients p {
-	font-size: 14px;
+	font-size: 15px;
 	line-height: 1.6;
 	color: var(--muted);
 }
 .mail-body {
 	white-space: pre-wrap;
-	font-size: 14px;
+	font-size: 15px;
 	line-height: 1.8;
 	color: #3a515e;
 }
@@ -1803,7 +1807,7 @@ main {
 	display: flex;
 	align-items: center;
 	gap: 15px;
-	font-size: 14px;
+	font-size: 15px;
 	border-bottom: 1px solid #e0e7eb;
 	padding: 7px 0;
 }
@@ -1814,11 +1818,11 @@ main {
 }
 .mail-field strong {
 	font-weight: 400;
-	font-size: 14px;
+	font-size: 15px;
 }
 .mail-field input {
 	border: 0;
-	font-size: 14px;
+	font-size: 15px;
 	padding: 9px 0;
 }
 .include-agent {
@@ -1829,7 +1833,7 @@ main {
 	background: var(--surface-selected);
 	padding: 12px;
 	border-radius: 6px;
-	font-size: 14px;
+	font-size: 15px;
 }
 .include-agent input {
 	width: 16px;
@@ -1839,13 +1843,13 @@ main {
 }
 .include-agent small {
 	display: block;
-	font-size: 14px;
+	font-size: 15px;
 	margin-top: 4px;
 }
 .composer > textarea {
 	border: 0;
 	padding: 18px 0;
-	font-size: 14px;
+	font-size: 15px;
 }
 .composer-bottom {
 	display: flex;
@@ -1856,7 +1860,7 @@ main {
 	border-top: 1px solid #dfe6ea;
 }
 .composer-bottom small {
-	font-size: 14px;
+	font-size: 15px;
 	max-width: 300px;
 }
 .outlook .button {
@@ -1868,49 +1872,8 @@ main {
 	color: #246785;
 	border-color: #bfced8;
 }
-.about-flow {
-	display: flex;
-	align-items: center;
-	gap: 24px;
-	margin-bottom: 30px;
-	padding: 30px;
-	background: var(--surface-selected);
-	border: 1px solid var(--border);
-	border-radius: 12px;
-}
-.about-flow > div {
-	flex: 1;
-}
-.about-flow strong {
-	display: block;
-	font-size: 17px;
-	margin: 12px 0 7px;
-}
-.about-flow p {
-	font-size: 14px;
-}
-.about-flow > svg {
-	flex-shrink: 0;
-	color: var(--muted);
-}
-.about-grid {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 22px;
-}
-.about-grid h2 {
-	font-size: 18px;
-	margin: 16px 0;
-}
-.about-grid p {
-	font-size: 14px;
-	margin-top: 12px;
-}
-.about-grid .card > svg {
-	color: var(--muted);
-}
 footer {
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--text);
 	padding: 12px 36px 26px;
 }
@@ -1919,7 +1882,7 @@ footer {
 	padding: 50px 35px;
 }
 .back-link {
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--text);
 }
 .source-heading {
@@ -1942,12 +1905,12 @@ footer {
 	border-radius: 9px;
 }
 .source-meta dt {
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--muted);
 	margin-bottom: 6px;
 }
 .source-meta dd {
-	font-size: 14px;
+	font-size: 15px;
 	margin: 0;
 }
 .source-text {
@@ -1964,14 +1927,14 @@ footer {
 	padding: 15px 0;
 }
 .source-mail p {
-	font-size: 14px;
+	font-size: 15px;
 }
 .source-note {
 	margin-top: 22px;
-	font-size: 14px;
+	font-size: 15px;
 }
 .empty {
-	font-size: 14px;
+	font-size: 15px;
 	color: var(--muted);
 }
 @media (min-width: 1600px) {
@@ -1986,6 +1949,9 @@ footer {
 	}
 }
 @media (max-width: 1200px) {
+	.nav-count {
+		display: none;
+	}
 	.sidebar {
 		width: 215px;
 		padding-inline: 16px;
@@ -2050,9 +2016,6 @@ footer {
 	.header-right {
 		gap: 10px;
 	}
-	.header-right > .text-button {
-		display: none;
-	}
 	.people-layout {
 		grid-template-columns: 225px minmax(0, 1fr);
 	}
@@ -2084,7 +2047,7 @@ footer {
 	}
 	.sidebar nav a {
 		padding: 10px 9px;
-		font-size: 14px;
+		font-size: 15px;
 		gap: 7px;
 		white-space: nowrap;
 		flex-shrink: 0;
@@ -2111,7 +2074,7 @@ footer {
 		display: none;
 	}
 	.demo-nav a {
-		font-size: 14px;
+		font-size: 15px;
 		padding: 9px;
 		background: var(--surface-subtle);
 		gap: 7px;
@@ -2129,14 +2092,14 @@ footer {
 	.topbar {
 		padding: 13px 20px;
 		min-height: 52px;
-		font-size: 14px;
+		font-size: 15px;
 		gap: 10px;
 	}
 	.separator {
 		padding: 0 8px;
 	}
 	.access-pill {
-		font-size: 14px;
+		font-size: 15px;
 		padding: 6px;
 	}
 	.access-pill svg {
@@ -2152,13 +2115,13 @@ footer {
 		flex-wrap: wrap;
 	}
 	.page-heading p:not(.eyebrow) {
-		font-size: 14px;
+		font-size: 15px;
 	}
 	.page-heading h1 {
 		font-size: 31px;
 	}
 	.eyebrow {
-		font-size: 14px;
+		font-size: 15px;
 	}
 	.section-heading {
 		padding-top: 20px;
@@ -2174,24 +2137,24 @@ footer {
 	}
 	.brief-context {
 		padding-inline: 20px;
-		font-size: 14px;
+		font-size: 15px;
 	}
 	.brief-context > span:last-child {
 		margin-left: 13px;
 	}
 	.brief-bottom {
-		font-size: 14px;
+		font-size: 15px;
 		padding-inline: 20px;
 	}
 	.suggestions button {
-		font-size: 14px;
+		font-size: 15px;
 	}
 	.ask-form small {
-		font-size: 14px;
+		font-size: 15px;
 		max-width: 170px;
 	}
 	.answer-text {
-		font-size: 14px;
+		font-size: 15px;
 	}
 	.demo-controls {
 		margin: 15px 20px 0;
@@ -2212,7 +2175,7 @@ footer {
 		overflow: auto;
 	}
 	.segmented button {
-		font-size: 14px;
+		font-size: 15px;
 		padding: 9px;
 		white-space: nowrap;
 	}
@@ -2222,11 +2185,11 @@ footer {
 	}
 	.source-list .list-head {
 		padding: 15px;
-		font-size: 14px;
+		font-size: 15px;
 		gap: 10px;
 	}
 	.source-list .list-head .subtle {
-		font-size: 14px;
+		font-size: 15px;
 		text-align: right;
 		max-width: 130px;
 	}
@@ -2238,13 +2201,13 @@ footer {
 		padding: 8px;
 	}
 	.source-title strong {
-		font-size: 14px;
+		font-size: 15px;
 	}
 	.source-row small {
-		font-size: 14px;
+		font-size: 15px;
 	}
 	.source-row p {
-		font-size: 14px;
+		font-size: 15px;
 	}
 	.source-row > svg {
 		display: none;
@@ -2275,23 +2238,10 @@ footer {
 	}
 	.graph-legend {
 		gap: 12px;
-		font-size: 14px;
+		font-size: 15px;
 	}
 	.graph-controls button {
-		font-size: 14px;
-	}
-	.about-flow {
-		flex-direction: column;
-		align-items: stretch;
-		padding: 25px;
-		gap: 15px;
-	}
-	.about-flow > svg {
-		transform: rotate(90deg);
-		align-self: center;
-	}
-	.about-grid {
-		grid-template-columns: 1fr;
+		font-size: 15px;
 	}
 	.mail-layout {
 		grid-template-columns: 1fr;
@@ -2325,7 +2275,7 @@ footer {
 		font-size: 20px;
 	}
 	.mail-empty p {
-		font-size: 14px;
+		font-size: 15px;
 	}
 	.scenario-bar {
 		padding: 14px;
@@ -2333,10 +2283,10 @@ footer {
 	}
 	.scenario-bar > span {
 		width: 100%;
-		font-size: 14px;
+		font-size: 15px;
 	}
 	.scenario-bar button {
-		font-size: 14px;
+		font-size: 15px;
 	}
 	.scenario-bar small {
 		margin-left: 0;
@@ -2345,7 +2295,7 @@ footer {
 		padding: 12px 16px;
 	}
 	.outlook-top strong {
-		font-size: 14px;
+		font-size: 15px;
 	}
 	.mail-field {
 		gap: 10px;
@@ -2355,13 +2305,13 @@ footer {
 		color: var(--muted);
 	}
 	.mail-field strong {
-		font-size: 14px;
+		font-size: 15px;
 	}
 	.composer-bottom {
 		align-items: flex-start;
 	}
 	.composer-bottom small {
-		font-size: 14px;
+		font-size: 15px;
 	}
 	.composer-bottom .button {
 		flex-shrink: 0;
@@ -2379,41 +2329,41 @@ footer {
 	}
 	.source-text {
 		padding: 22px;
-		font-size: 14px;
+		font-size: 15px;
 	}
 	.source-note {
-		font-size: 14px;
+		font-size: 15px;
 	}
 	footer {
 		padding: 10px 20px 25px;
 		flex-direction: column;
 		gap: 7px;
-		font-size: 14px;
+		font-size: 15px;
 	}
 	.working {
-		font-size: 14px;
+		font-size: 15px;
 	}
 	.header-right .text-button {
 		display: inline;
-		font-size: 14px;
+		font-size: 15px;
 	}
 	.source-title {
 		gap: 7px;
 	}
 	.receipt strong {
-		font-size: 14px;
+		font-size: 15px;
 	}
 	.receipt small {
-		font-size: 14px;
+		font-size: 15px;
 	}
 	.receipt blockquote {
-		font-size: 14px;
+		font-size: 15px;
 	}
 	.graph-wrap svg {
 		min-height: 200px;
 	}
 	.erasure-receipt small {
-		font-size: 14px;
+		font-size: 15px;
 	}
 }
 .related-claims {
@@ -2428,7 +2378,7 @@ footer {
 	border-radius: 6px;
 	padding: 12px;
 	text-align: left;
-	font-size: 14px;
+	font-size: 15px;
 	line-height: 1.6;
 }
 .related-claims .badge {
@@ -2499,13 +2449,13 @@ textarea::placeholder {
 	gap: 0.4rem;
 }
 .people-filter label {
-	font-size: 0.8rem;
+	font-size: 0.875rem;
 	color: var(--muted);
 }
 .organization-label {
 	display: block;
 	color: var(--action-hover);
-	font-size: 0.8rem;
+	font-size: 0.875rem;
 	margin: 0.15rem 0;
 }
 .source-row .source-title a {
@@ -2514,4 +2464,24 @@ textarea::placeholder {
 }
 .source-row .source-title a:hover {
 	text-decoration: underline;
+}
+
+@media print {
+	.app-shell:has(.guide-article) .sidebar,
+	.app-shell:has(.guide-article) .topbar,
+	.app-shell:has(.guide-article) .demo-controls,
+	.app-shell:has(.guide-article) .working,
+	.app-shell:has(.guide-article) footer {
+		display: none;
+	}
+	.app-shell:has(.guide-article) .main-wrap {
+		margin: 0;
+	}
+	.app-shell:has(.guide-article) main {
+		padding: 0;
+		max-width: none;
+	}
+	body:has(.guide-article) {
+		background: white;
+	}
 }

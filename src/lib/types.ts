@@ -98,6 +98,7 @@ export interface Meeting {
 	purpose: string;
 }
 export interface WorkspaceData {
+	reviewerGuide?: ReviewerDocument | null;
 	context: Context;
 	personas: Persona[];
 	sources: Source[];
@@ -112,4 +113,10 @@ export interface WorkspaceData {
 	receipts: { id: string; createdAt: string; sourcesRemoved: number; artifactsRemoved: number }[];
 	stats: { documents: number; sources: number; claims: number };
 	archiveDate: string;
+}
+export interface ReviewerDocument {
+	view: string;
+	title: string;
+	text: string;
+	unavailable?: string;
 }

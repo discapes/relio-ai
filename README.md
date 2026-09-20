@@ -4,11 +4,11 @@ Receipt gives RELEX employees a prepared Acme project briefing, a private assist
 
 Application: https://receipt-workspace.hai1.iffe.eu · fixed port **34342**.
 
-Judges can open **How it works → Submission documents** for the design, reviewed practice answers, actual generated evaluations and validation. These source-bearing reference documents require Acme L3 and are withdrawn after erasure in that workspace.
+The sidebar links directly to **Design**, **How to use**, **How it works** and **Practice answers**. The practice reference requires Acme L3 and is withdrawn after erasure in that workspace. Architecture and usage pages remain available in every view. Internal evaluation reports stay in the repository.
 
 ## Run
 
-Requires Node 24.18+, the parsed sibling repository `../corpus_parsed/acme`, and the Helsinki inference endpoint at `http://127.0.0.1:8000/v1` with `glm-5.3-flash`.
+Requires Node 24.18+, the parsed sibling repository `../corpus_parsed/acme`, and the Verda (formerly DataCrunch) inference deployment in Helsinki, reached at `http://127.0.0.1:8000/v1` with `glm-5.3-flash`.
 
 ```sh
 npm install
@@ -32,7 +32,7 @@ Start on My workspace. Inspect a source receipt, save a followed topic or ask an
 
 Email demo is a simulator with editable recipients and message content. Use the bakery scheduling example to add knowledge or the UAT example to demonstrate a useful intervention. Messages without the project agent stay in the employee's simulated mailbox. Model processing is visible and can continue while you navigate.
 
-Demo controls switch the simulated employee/access level. Ana has L3 and erasure rights; Marco has L2; Nadia has L1; the colleague persona belongs to another project. These controls represent the production identity-provider boundary. Each browser has an isolated persisted workspace. Starting a fresh demo creates a separate workspace and preserves the old one.
+Switch view in the top bar switches the simulated employee/access level. Ana has L3 and erasure rights; Marco has L2; Nadia has L1; the colleague persona belongs to another project. These controls represent the production identity-provider boundary. Each browser has an isolated persisted workspace. Starting a fresh demo creates a separate workspace and preserves the old one.
 
 ## Checks
 
@@ -63,4 +63,4 @@ Deploy updates with `node scripts/deploy.mjs`. It builds an immutable release, a
 
 Interrupted running jobs become visible failed jobs on restart; queued jobs resume when the application is opened. Retry a failed brief/extraction from the workspace or a failed email from its thread. A model outage leaves previous valid dated briefs available. Inference-generated prose can still need correction; source receipts and the full archive remain available for inspection.
 
-See `docs/SOLUTION.md`, `docs/DESIGN.md`, `docs/PITCH.md` and `docs/demo_scenarios.md` for architecture, submission design and the demonstration.
+See `docs/SOLUTION.md`, `docs/DESIGN.md`, `docs/PITCH.md` and `docs/demo_scenarios.md` for architecture, submission design and the demonstration. `docs/STREAMING.md` describes chat progress, provisional output and cancellation.

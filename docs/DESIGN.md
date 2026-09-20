@@ -1,33 +1,19 @@
-# Receipt — one-page design
+# Design
 
-Receipt gives RELEX employees a personal morning brief and a shared, source-backed memory of their customer project. A visible project agent receives emails in Cc, remembers delivered information and contributes when the model judges that a reply would materially help the conversation. An employee-side Outlook simulator demonstrates collection and participation.
+Receipt gives RELEX employees a shared customer-project memory and a personal morning brief. It starts with the supplied Acme archive and accepts new messages through an employee-side email simulator. Adding the project agent to a message’s recipients makes that delivered message available to project memory. The agent can contribute a cited reply when it judges that doing so helps the conversation.
 
-## Inputs and flow
+## How provenance is stored
 
-The Acme seed contains 45 documents: 110 emails, 25 report updates and 2,839 transcript utterances. Parsed JSON is imported into isolated SQLite runtime workspaces. Source IDs, authors, dates and message/utterance positions survive import. New simulated mail reaches shared memory when addressed to the project agent.
+SQLite stores each email message, report update and transcript turn with its original record ID, document, author, date, position and access level. Extracted claims retain their supporting record IDs. Saved answers contain their text, exact evidence excerpts and source references, plus the employee, access level and workspace version that produced them. A separate model pass checks a draft against original passages; the server then binds citation numbers to available records. Clicking a citation opens the excerpt and its surrounding conversation.
 
-`Permitted sources → model interpretation and verification → saved claims, answers and briefings → inspectable source receipts`
+## How stale facts are caught
 
-SvelteKit and TypeScript provide the product and server workflows. SQLite stores sources, derivatives, employee preferences, email, jobs and erasure state. Ordinary questions use full permitted context; complex research first inventories source partitions. Document-grouped extraction produces dated claims. The graph links claims to sources and related claims from the same discussion.
+Claims carry dated descriptions and statuses such as proposed, agreed, corrected and superseded. For chronology or commitment questions, the system first reviews document groups, then checks relevant original passages and neighbouring turns. Prompts require later corrections, scope changes and unresolved follow-ups to remain visible. New delivered mail and changed personal preferences queue fresh briefings; a daily scheduler checks for a new briefing after 06:00 Helsinki time. Source dates and answer preparation times are shown separately. This process can still miss an earlier decision or a later follow-up: a recent preparation time does not establish that a fact is current.
 
-## Provenance, attribution and currency
+## How deletion propagates
 
-A model verification pass checks draft answers against cited passages and neighbouring transcript turns. The server binds references to available source IDs and attaches exact runtime text. Instructions preserve proposals versus approvals, signatories, effective scope, later corrections and evidence gaps. Source dates remain separate from generation time. The UAT example must retain the 25-store ambient/dry-goods scope, fresh exclusion and Lena's confirmation; the signed attachment is absent.
+An authorised employee selects a person for erasure. The application removes or cleans identifying runtime evidence and recipient metadata, invalidates derived claims and answers, and removes affected mail, calendar and personal state. It cancels active inference and increments the workspace version so earlier work cannot publish. Hashed identifiers prevent ordinary reimport after restart. A receipt records deletion counts. Independently supported information can survive with other people still named. Alias and nearby-pronoun handling is heuristic and can withdraw extra context. Deletion covers the selected workspace; original fixtures, other workspaces, downloaded copies and infrastructure backups have separate retention boundaries.
 
-## Access and private memory
+## Where inference runs
 
-Project membership and cumulative levels are enforced before model input: L1 customer-shareable, L2 RELEX internal and L3 restricted. Historical assignments use audience/document metadata under a demo policy. Customer cards and external email use fresh L1 context. Employee-owned preferences and conversation customise briefs and meeting preparation; email participation and customer sharing exclude them. Demo persona controls represent future identity integration.
-
-## Autonomous work
-
-Saved briefs use persistent jobs, source/preference-triggered refresh and daily checks after 06:00 Helsinki time. The email model decides whether useful participation warrants a reply; routine exchanges can receive silence. Server controls handle audience scope and duplicate prevention. Calendar events are simulated and may be derived from explicitly scheduled incoming messages. Stakeholder guidance separates observed evidence from recommendations.
-
-## Deletion propagation
-
-Authorised erasure removes personal authored evidence, identifying passages and recipient metadata from runtime copies. It clears derived claims/answers, removes affected personal/mail state and blocks old inference results through an incremented epoch. A receipt records counts without the person's name. Hashed identifier suppression persists across restart. Independent surviving evidence remains answerable with other people named.
-
-The operation covers one application workspace. Original fixtures, other workspaces, downloaded exports and infrastructure-managed caches/backups have separate boundaries. Reset starts a new workspace. Alias/pronoun handling is heuristic; conservative withdrawal can remove additional context.
-
-## Location and validation
-
-The application host and team-provided GLM-5.3-Flash deployment are in Helsinki. Inference uses the SSH-tunnel endpoint `http://127.0.0.1:8000/v1`. Email transport, calendar and sign-in are demonstration integrations. Semantic interpretation remains a model judgment. Final evidence belongs in [VALIDATION.md](VALIDATION.md); submission companions are the [reviewed practice answers](practice_reference.md), [latest generated evaluation and limitations](model_quality_review.md), [solution guide](SOLUTION.md) and [pitch](PITCH.md).
+GLM 5.3 Flash runs on Verda, formerly DataCrunch, in Helsinki. The application and SQLite database run separately on a Hetzner host in Helsinki; a local SSH tunnel connects the application to inference. Server-side project membership and three cumulative access levels filter evidence before model input. Customer sharing and external email exclude private employee memory. Provider logging and backup retention are outside the application’s deletion mechanism. Sign-in, email transport and calendar integrations are simulated in this demonstration.

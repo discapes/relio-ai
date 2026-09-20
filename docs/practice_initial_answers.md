@@ -1,6 +1,6 @@
 # Live practice answers
 
-Generated through the deployed application workflow against an isolated runtime workspace on 2026-09-19T23:29:12.694Z. Model: glm-5.3-flash through the configured Helsinki endpoint. The independent source-checked reference is in practice_reference.md.
+Generated through the deployed application workflow against an isolated runtime workspace on 2026-09-19T23:29:12.694Z. Model: GLM 5.3 Flash on Verda (formerly DataCrunch) in Helsinki. The independent source-checked reference is in practice_reference.md.
 
 ## P1
 
