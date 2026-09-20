@@ -5,7 +5,10 @@ Active RELEX project implementation. Read ../spec/README.md and the full product
 SvelteKit + TypeScript, SQLite and GLM 5.3 Flash inference on Verda (formerly DataCrunch) in Helsinki. Run Node directly on the host and reuse port 34342. Tests use isolated data; coordinate browser tests with the running service. Follow the parent workspace writing and source-handling instructions.
 
 src/lib/types.ts Shared request, source, claim, artifact and interface contracts.
-src/lib/server/memory.ts Parsed corpus import, scoped reads, identities and persistent person erasure.
+src/lib/server/memory.ts Parsed corpus import, synchronous scoped read reuse, indexed People discovery, identities and persistent person erasure.
+scripts/profile-workspace.mts Temporary-database timing of People discovery and page-load work.
+tests/memory-reads.test.ts Original People-output equivalence, scoped read invalidation, access and erasure checks.
+docs/PERFORMANCE.md Bottleneck measurements, read-scope lifetime and isolated production validation on port 42937.
 src/lib/server/model.ts Bounded Verda inference, provider delta streaming, source handles and exact source binding.
 src/lib/server/workflows.ts Personal memory, answers, briefings, verified semantic claims, email delivery, durable work and meeting extraction.
 src/lib/server/session.ts Signed isolated workspace cookies, persistent server-only signing key and demo identity/access resolution.
