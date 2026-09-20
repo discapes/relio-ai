@@ -39,6 +39,7 @@ for (const file of files) {
 		} catch {
 			continue;
 		}
+		if (!event.requestId) continue;
 		if (!includeAutomation && event.automation) {
 			skipped++;
 			continue;

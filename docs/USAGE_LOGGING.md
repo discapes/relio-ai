@@ -1,6 +1,6 @@
 # Internal demo usage logging
 
-Relio records visitor actions in local NDJSON files for the team. There is no external analytics service or reviewer-facing analytics page. Logging is an observer: it does not start inference, create workspaces, alter application actions, or read response streams.
+Relio records visitor actions in local NDJSON files for the team. There is no external analytics service or reviewer-facing analytics page. Only calls inside an HTTP request scope are collected; standalone workflow invocations and unit-test model completions produce no usage records. Logging is an observer: it does not start inference, create workspaces, alter application actions, or read response streams.
 
 ## Events and interpretation
 
@@ -12,7 +12,7 @@ The browser records completed navigation, links and buttons, user-operated discl
 
 A button click, form submission and server action can describe different stages of one interaction. The report lists them separately. Page counts combine `page.open` with `browser.navigation`; automatic invalidation is excluded. Source links, People selections and graph selection are recognizable from the path, target, label and selected value. Browser payloads are grouped under `browser` and describe client observations; they are not authoritative identities or proof of successful actions.
 
-Request metadata includes user agent, sanitized referrer, socket peer IP and the `X-Forwarded-For` value supplied by Caddy. The application listens on localhost. Caddy's default forwarding behavior replaces untrusted inbound forwarded headers. Rootless container networking may replace the visitor address before it reaches Caddy, so forwarded IP is recorded as an observation and is not guaranteed to identify a public visitor. Requests made directly to the local port can supply their own forwarding header.
+Request metadata includes user agent, sanitized referrer, socket peer IP and the `X-Forwarded-For` value supplied by Caddy. The application listens on localhost. Caddy's default forwarding behavior replaces untrusted inbound forwarded headers. Rootless container networking may replace the visitor address before it reaches Caddy, so forwarded IP is recorded as an observation and is not guaranteed to identify a public visitor. Live verification found `forwardedIp=172.18.0.1` and `peerIp=127.0.0.1`: the current proxy network hides the public visitor address. A supplied spoofed forwarding header was replaced. Requests made directly to the local port can supply their own forwarding header.
 
 Cookie-derived IDs are explicitly named `cookieWorkspaceId`, `cookiePersonaId` and `cookieLevel`; these are unverified log hints until the normal route resolves its context. The analytics endpoint never resolves a workspace. Workspace IDs and random browser IDs represent sessions/browser storage, rather than verified people. The report excludes user agents matching common automation markers by default; this cannot distinguish every automated visit or identify the team reliably.
 
@@ -46,3 +46,7 @@ Collection is best effort. A full disk, malformed payload, blocked beacon, brows
 The implementation is checked with isolated unit tests for disabled logging, a failing disk writer, bounded fields, excluded automatic requests, malformed events and file rotation. Browser tests cover navigation/control logging and the same controls when analytics delivery fails. Existing streaming tests continue to use a mock model response, so validation performs no inference. The browser test server uses port 43729 and a temporary database containing copied prepared baseline data. The live application database is never modified by these tests.
 
 Validation on 20 September 2026: `npm run check` passed, all 93 unit tests passed, and the production build passed. All 21 browser scenarios passed across the prepared-baseline run and targeted follow-ups: the empty-brief scenario uses a separate fresh database, while prepared guidance and graph scenarios use the copied baseline. The two analytics tests passed against the final build. Desktop and 390px mobile screenshots were visually reviewed. No production restart or live inference was performed during implementation.
+
+A follow-up request-scope regression test passed: an unscoped workflow completion produced no log row, while a scoped page event was recorded in a temporary directory.
+
+The report omits records without a request ID, including five predeployment unit-test completion rows and internal dropped-event counters. Raw log files retain these rows unchanged; they do not count toward visitor activity.

@@ -137,8 +137,9 @@ const writer = createUsageWriter({
 });
 export function recordUsage(event: string, details: UsageRecord = {}) {
 	try {
-		if (usageEnabled())
-			writer.write({ ...scope.getStore(), ...details, at: new Date().toISOString(), event });
+		const context = scope.getStore();
+		if (usageEnabled() && context)
+			writer.write({ ...context, ...details, at: new Date().toISOString(), event });
 	} catch {
 		/* Observer only. */
 	}
