@@ -22,7 +22,7 @@ Meeting preparation uses the simulated calendar displayed in your workspace. Pre
 
 Project memory lets you search source passages, inspect extracted claims and follow their evidence connections in the graph. Names highlighted in source text, mail headers, surrounding conversation and answers link to People. Organization labels distinguish RELEX, Acme and partners using recorded email domains. Unknown or conflicting affiliations remain identified as such.
 
-In People, select a customer for conversation guidance or a RELEX colleague for a collaboration brief. The response separates recorded priorities and reactions from suggested next steps. Recorded names show the aliases used to connect mentions; an ambiguous name is left unlinked.
+In People, select a customer to read prepared conversation guidance or a RELEX colleague to read their collaboration brief. Guidance is saved between visits; changes to project evidence or your personal context prepare an updated version automatically. The response separates recorded priorities and reactions from suggested next steps. Recorded names show the aliases used to connect mentions; an ambiguous name is left unlinked.
 
 ## Try the email workflow
 

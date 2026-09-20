@@ -38,6 +38,8 @@ docs/BRANDING.md Color roles, font/logo attribution and isolated review server o
 docs/screenshots/ Reviewed public RELEX-branded desktop/mobile, graph/focus, claims, source, email, people, erasure and design views.
 docs/FIGTREE_LICENSE.txt Figtree OFL-1.1 license; orig: @fontsource-variable/figtree/LICENSE.
 tests/ Deterministic persistence, access, erasure, delivery and private-context tests; browser workflows and accessibility.
+docs/PREPARED_PEOPLE.md Prepared guidance scope, durable storage, resumable generation and persistence checks.
+scripts/prepare-people.mts Resumable personalized People guidance preparation with retained results and per-context filters.
 scripts/ Baseline preparation, live capability/practice evaluation, atomic deployment, startup and screenshot capture.
 .releases/ Git-ignored immutable production builds; current symlink selects the deployed release.
 docs/ Product architecture, demo scenarios, reviewed answers, raw evaluations, model-quality diagnostics, validation and submission documents.

@@ -1,4 +1,5 @@
-import { randomUUID } from 'node:crypto';
+import { randomUUID, createHash } from 'node:crypto';
+import { affiliation } from '../people';
 import {
 	assertChatCurrent,
 	chatStage,
@@ -49,6 +50,8 @@ function db() {
 	const d = database();
 	if (!initialized) {
 		d.exec(`CREATE TABLE IF NOT EXISTS wf_artifacts(id TEXT PRIMARY KEY,workspace_id TEXT NOT NULL,owner TEXT NOT NULL,level INTEGER NOT NULL,epoch INTEGER NOT NULL,kind TEXT NOT NULL,payload TEXT NOT NULL);
+  CREATE TABLE IF NOT EXISTS wf_guidance_preparations(workspace_id TEXT NOT NULL,owner TEXT NOT NULL,level INTEGER NOT NULL,fingerprint TEXT NOT NULL,worker_pid INTEGER NOT NULL,PRIMARY KEY(workspace_id,owner,level,fingerprint,worker_pid));
+  CREATE TABLE IF NOT EXISTS wf_people_guidance(workspace_id TEXT NOT NULL,project_id TEXT NOT NULL,owner TEXT NOT NULL,level INTEGER NOT NULL,epoch INTEGER NOT NULL,person_id TEXT NOT NULL,fingerprint TEXT NOT NULL,payload TEXT NOT NULL,PRIMARY KEY(workspace_id,project_id,owner,level,epoch,person_id,fingerprint));
   CREATE TABLE IF NOT EXISTS wf_preferences(id TEXT PRIMARY KEY,workspace_id TEXT NOT NULL,owner TEXT NOT NULL,payload TEXT NOT NULL);
   CREATE TABLE IF NOT EXISTS wf_mail(id TEXT NOT NULL,workspace_id TEXT NOT NULL,owner TEXT NOT NULL,payload TEXT NOT NULL,PRIMARY KEY(workspace_id,id));
   CREATE TABLE IF NOT EXISTS wf_meetings(id TEXT NOT NULL,workspace_id TEXT NOT NULL,level INTEGER NOT NULL,payload TEXT NOT NULL,PRIMARY KEY(workspace_id,id));
@@ -93,6 +96,7 @@ function db() {
 		}
 		memory.registerErasureHook((workspaceId: string, aliases: string[], sourceIds: string[]) => {
 			cancelChatStreams(workspaceId);
+			d.prepare('DELETE FROM wf_people_guidance WHERE workspace_id=?').run(workspaceId);
 			cancelModelCalls(workspaceId);
 			let count = 0;
 			const erasedOwners = memory.personas
@@ -172,6 +176,149 @@ function artifacts(ctx: Context, kind?: string): Answer[] {
 		.all(ctx.workspaceId, ctx.persona.id, ctx.level, ctx.epoch)
 		.map((r) => JSON.parse(String(r.payload)) as Answer)
 		.filter((a) => !kind || a.kind === kind);
+}
+// Prepared guidance retains the exact evidence and private context used by the manual action.
+export function guidanceFingerprint(ctx: Context): string {
+	return createHash('sha256')
+		.update(
+			JSON.stringify({
+				project: ctx.projectId,
+				owner: ctx.persona.id,
+				role: ctx.persona.role,
+				name: ctx.persona.name,
+				level: ctx.level,
+				sources: memory.sources(ctx),
+				preferences: preferences(ctx),
+				conversation: artifacts(ctx, 'chat')
+					.slice(0, 4)
+					.reverse()
+					.map((a) => ({ question: a.question, answer: a.text }))
+			})
+		)
+		.digest('hex');
+}
+export function preparedGuidance(
+	ctx: Context,
+	personId: string,
+	snapshot?: { fingerprint: string; personIds: Set<string> }
+): Answer | null {
+	db();
+	if (
+		!ctx.persona.projects.includes(ctx.projectId) ||
+		!(snapshot?.personIds.has(personId) ?? memory.people(ctx).some((p) => p.id === personId))
+	)
+		return null;
+	const fingerprint = snapshot?.fingerprint ?? guidanceFingerprint(ctx);
+	// Baseline reuse requires identical evidence and private context; erased workspaces never read it.
+	const workspaces = ctx.epoch === 0 ? [ctx.workspaceId, 'prepared-baseline'] : [ctx.workspaceId];
+	for (const workspace of workspaces) {
+		const row = db()
+			.prepare(
+				'SELECT payload FROM wf_people_guidance WHERE workspace_id=? AND project_id=? AND owner=? AND level=? AND epoch=? AND person_id=? AND fingerprint=?'
+			)
+			.get(workspace, ctx.projectId, ctx.persona.id, ctx.level, ctx.epoch, personId, fingerprint);
+		if (row) return JSON.parse(String(row.payload));
+	}
+	return null;
+}
+const preparingGuidance = new Map<string, Promise<Answer>>();
+export async function preparePersonGuidance(ctx: Context, personId: string): Promise<Answer> {
+	requireCurrent(ctx);
+	const existing = preparedGuidance(ctx, personId);
+	if (existing) return existing;
+	const person = memory.people(ctx).find((p) => p.id === personId);
+	if (!person) throw new Error('Person unavailable.');
+	const fingerprint = guidanceFingerprint(ctx);
+	const key = [ctx.workspaceId, ctx.persona.id, ctx.level, ctx.epoch, personId, fingerprint].join(
+		':'
+	);
+	if (preparingGuidance.has(key)) return preparingGuidance.get(key)!;
+	const promise = (async () => {
+		const answer = await answerQuestion(
+			ctx,
+			`Prepare ${affiliation(person).kind === 'relex' ? 'a collaboration brief for a RELEX colleague, focused on responsibilities, decisions and open handoffs' : affiliation(person).kind === 'customer' ? 'customer conversation guidance, focused on expressed priorities and responses to proposals' : 'conversation context, focused on recorded contributions and open questions'} for ${person.name}. Describe their role, expressed priorities, proposals and responses observed in the archive. Separate observed facts from recommendations about the next conversation. Do not infer personality or unsupported psychological traits. Write 3–5 useful short paragraphs totaling at most 250 words. Select the few material observations and actionable next steps for this person; use sufficient exact evidence for those selected facts. Avoid an exhaustive biography or an archive-wide inventory.`,
+			'guidance'
+		);
+		requireCurrent(ctx);
+		if (!answer.text.trim()) throw new Error('Guidance generation returned no content.');
+		if (guidanceFingerprint(ctx) !== fingerprint)
+			throw new Error('Project or personal context changed during preparation.');
+		db()
+			.prepare('INSERT OR IGNORE INTO wf_people_guidance VALUES(?,?,?,?,?,?,?,?)')
+			.run(
+				ctx.workspaceId,
+				ctx.projectId,
+				ctx.persona.id,
+				ctx.level,
+				ctx.epoch,
+				personId,
+				fingerprint,
+				JSON.stringify(answer)
+			);
+		return answer;
+	})();
+	preparingGuidance.set(key, promise);
+	try {
+		return await promise;
+	} finally {
+		preparingGuidance.delete(key);
+	}
+}
+export function retryPreparation(ctx: Context, jobId: string) {
+	const row = db()
+		.prepare('SELECT kind,payload FROM wf_jobs WHERE workspace_id=? AND owner=? AND id=?')
+		.get(ctx.workspaceId, ctx.persona.id, jobId);
+	if (!row) throw new Error('Preparation unavailable.');
+	const payload = JSON.parse(String(row.payload));
+	if (payload.level !== ctx.level || payload.epoch !== ctx.epoch)
+		throw new Error('Switch to the original project view to retry this preparation.');
+	return queueJob(ctx, String(row.kind), payload);
+}
+export function registerGuidancePreparation(ctx: Context) {
+	db()
+		.prepare('INSERT OR IGNORE INTO wf_guidance_preparations VALUES(?,?,?,?,?)')
+		.run(ctx.workspaceId, ctx.persona.id, ctx.level, guidanceFingerprint(ctx), process.pid);
+}
+export function finishGuidancePreparation() {
+	db().prepare('DELETE FROM wf_guidance_preparations WHERE worker_pid=?').run(process.pid);
+}
+function preparationRunning(ctx: Context, fingerprint: string) {
+	const rows = db()
+		.prepare(
+			'SELECT workspace_id,worker_pid FROM wf_guidance_preparations WHERE owner=? AND level=? AND fingerprint=?'
+		)
+		.all(ctx.persona.id, ctx.level, fingerprint);
+	return rows.some((row) => {
+		if (
+			row.workspace_id !== ctx.workspaceId &&
+			!(ctx.epoch === 0 && row.workspace_id === 'prepared-baseline')
+		)
+			return false;
+		try {
+			process.kill(Number(row.worker_pid), 0);
+			return true;
+		} catch {
+			return false;
+		}
+	});
+}
+export function ensurePeopleGuidance(ctx: Context) {
+	const fingerprint = guidanceFingerprint(ctx);
+	if (preparationRunning(ctx, fingerprint)) return;
+	const people = memory.people(ctx);
+	const snapshot = { fingerprint, personIds: new Set(people.map((p) => p.id)) };
+	for (const person of people) {
+		if (preparedGuidance(ctx, person.id, snapshot)) continue;
+		const kind = `guidance:L${ctx.level}:${person.id}:${fingerprint.slice(0, 16)}`;
+		const prior = db()
+			.prepare('SELECT status,error FROM wf_jobs WHERE workspace_id=? AND owner=? AND kind=?')
+			.get(ctx.workspaceId, ctx.persona.id, kind);
+		if (
+			!prior ||
+			(prior.status === 'failed' && String(prior.error).includes('Application restarted'))
+		)
+			queueJob(ctx, kind, { personId: person.id });
+	}
 }
 export function preferences(ctx: Context): Preference[] {
 	return db()
@@ -931,6 +1078,8 @@ async function runDetachedJobs() {
 				const ctx = memory.context(String(row.workspace_id), String(row.owner), payload.level);
 				if (ctx.epoch !== payload.epoch) throw new Error('Memory changed; refresh this task.');
 				if (String(row.kind).startsWith('brief')) await generateBrief(ctx);
+				else if (String(row.kind).startsWith('guidance:'))
+					await preparePersonGuidance(ctx, String(payload.personId));
 				else if (String(row.kind).startsWith('extract')) await extractMemory(ctx);
 				else if (isMail) await processMail(ctx, String(payload.mailId));
 				const current = db().prepare('SELECT payload FROM wf_jobs WHERE id=?').get(id);
