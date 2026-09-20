@@ -15,7 +15,8 @@ src/lib/components/ Evidence presentation, Figtree PNG/text cards, status badges
 src/app.css RELEX semantic palette, shared controls, responsive layout and locally bundled Figtree typography.
 src/lib/assets/relex_logo.svg Official RELEX RGB wordmark; orig: relex-primary-logo-RGB-vector.svg.
 src/lib/assets/favicon.png Official RELEX symbol; orig: cropped-relex-mark-square-192x192.png.
-docs/BRANDING.md Color roles, font attribution and isolated review server on port 41851.
+docs/BRANDING.md Color roles, font/logo attribution and isolated review server on port 41851.
+docs/screenshots/ Reviewed public RELEX-branded desktop/mobile, graph/focus, claims, source, email, people, erasure and submission views.
 docs/FIGTREE_LICENSE.txt Figtree OFL-1.1 license; orig: @fontsource-variable/figtree/LICENSE.
 tests/ Deterministic persistence, access, erasure, delivery and private-context tests; browser workflows and accessibility.
 scripts/ Baseline preparation, live capability/practice evaluation, atomic deployment, startup and screenshot capture.
