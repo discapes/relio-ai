@@ -1,6 +1,6 @@
 import type { Context } from '../types';
 import type { ChatEvent } from '../chat-stream';
-import { epoch } from './memory';
+import { epoch, isSuppressed } from './memory';
 import { answerQuestion } from './workflows';
 import { registerChat, withChatActivity } from './chat-activity';
 
@@ -21,6 +21,14 @@ export function chatResponse(ctx: Context, question: string, requestSignal: Abor
 			};
 			const emit = (event: ChatEvent) => {
 				check();
+				if (event.type === 'draft' && ctx.epoch > 0) {
+					if (isSuppressed(ctx.workspaceId, event.text))
+						throw new Error(
+							'The draft referred to erased information and was withdrawn. Please retry using surviving project evidence.'
+						);
+					// Hold trailing words so a split multiword identity is checked before display.
+					event = { ...event, text: event.text.replace(/(?:\S+\s*){1,5}$/, '') };
+				}
 				if (!closed) controller.enqueue(encoder.encode(JSON.stringify(event) + '\n'));
 			};
 			const timer = setInterval(() => {

@@ -1,7 +1,7 @@
 import { affiliation } from '$lib/people';
 import { reviewerGuide } from '$lib/server/reviewer';
 import { fail } from '@sveltejs/kit';
-import { sessionContext } from '$lib/server/session';
+import { sessionContext, setWorkspaceCookie } from '$lib/server/session';
 import * as workflows from '$lib/server/workflows';
 import * as memory from '$lib/server/memory';
 import type { Actions, PageServerLoad } from './$types';
@@ -10,7 +10,15 @@ export const load: PageServerLoad = ({ cookies, setHeaders, url }) => {
 	setHeaders({ 'cache-control': 'private, no-store' });
 	const ctx = sessionContext(cookies);
 	if (ctx.persona.projects.includes(ctx.projectId)) workflows.prepareWorkspace(ctx);
-	return { ...workflows.workspaceData(ctx), reviewerGuide: reviewerGuide(ctx, url.searchParams.get('view') || '') };
+	const sessionNotice = cookies.get('relex_session_notice')
+		? 'Session security was updated. This browser now has a fresh isolated demo workspace; previous workspace data remains saved.'
+		: undefined;
+	if (sessionNotice) cookies.delete('relex_session_notice', { path: '/' });
+	return {
+		...workflows.workspaceData(ctx),
+		sessionNotice,
+		reviewerGuide: reviewerGuide(ctx, url.searchParams.get('view') || '')
+	};
 };
 const value = (data: FormData, key: string) => String(data.get(key) || '').trim();
 const list = (data: FormData, key: string) =>
@@ -93,13 +101,7 @@ export const actions: Actions = {
 	erase: action((ctx, d) => ({ receipt: workflows.erase(ctx, value(d, 'personId')) })),
 	reset: async ({ cookies }) => {
 		const next = workflows.reset(sessionContext(cookies));
-		cookies.set('relex_workspace', next, {
-			path: '/',
-			httpOnly: true,
-			sameSite: 'lax',
-			secure: process.env.ORIGIN?.startsWith('https://') === true,
-			maxAge: 60 * 60 * 24 * 30
-		});
+		setWorkspaceCookie(cookies, next);
 		return { success: true };
 	}
 };

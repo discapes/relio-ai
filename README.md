@@ -57,7 +57,7 @@ The interface uses RELEX navy, blue and pale blue with locally bundled Figtree. 
 
 ## Operations
 
-The systemd user unit is `receipt-workspace.service` and runs Node on the host. Source configuration is in `deploy/receipt-workspace.service`. Use `systemctl --user status receipt-workspace`, `systemctl --user restart receipt-workspace`, and `journalctl --user -u receipt-workspace -n 100` for operations. SQLite state is in `data/app.sqlite`; preserve this directory across deployment.
+The systemd user unit is `receipt-workspace.service` and runs Node on the host. Source configuration is in `deploy/receipt-workspace.service`. Use `systemctl --user status receipt-workspace`, `systemctl --user restart receipt-workspace`, and `journalctl --user -u receipt-workspace -n 100` for operations. SQLite state is in `data/app.sqlite`; preserve this directory across deployment. Browser sessions use an HMAC signing key at `DATA_DIR/.session-secret`, created atomically with mode 0600. Preserve that key with the database across restarts and releases. Losing or replacing it starts fresh browser workspaces. The upgrade from unsigned cookies displays a one-time notice and creates a fresh isolated demo; previous database rows remain unchanged.
 
 Deploy updates with `node scripts/deploy.mjs`. It builds an immutable release, atomically switches `.releases/current`, and restarts the service. Running browser assets remain tied to their release while the next version builds. Runtime SQLite data stays outside release directories.
 

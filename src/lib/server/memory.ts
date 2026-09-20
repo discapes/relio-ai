@@ -2,6 +2,7 @@ import { createHash, randomUUID } from 'node:crypto';
 import { readFileSync, readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { database } from './database';
+import { transcriptDependents } from './erasure-context';
 import type { Claim, Context, Level, Person, Persona, Source } from '../types';
 
 export const personas: Persona[] = [
@@ -548,31 +549,12 @@ export function erasePerson(ctx: Context, id: string) {
 				.filter((p) => p.id !== person.id)
 				.flatMap((p) => [p.name, ...p.aliases.filter((a) => !a.includes(' ') && !a.includes('@'))])
 		);
-		const contextual = new Set<string>();
-		// A named or uniquely role-labelled passage anchors nearby pronoun continuations.
-		// The window stays within one document and stops at an explicitly named other person.
-		const grouped = new Map<string, Source[]>();
-		for (const source of allSources) {
-			const group = grouped.get(source.documentId) ?? [];
-			group.push(source);
-			grouped.set(source.documentId, group);
-		}
-		for (const group of grouped.values()) {
-			if (!group.some((s) => s.type === 'meeting_transcript')) continue;
-			for (let i = 0; i < group.length; i++) {
-				if (!identifies(group[i].text, group[i].documentId) && !contains(group[i].author, aliases))
-					continue;
-				for (let j = i + 1; j <= Math.min(i + 5, group.length - 1); j++) {
-					const text = group[j].text;
-					if (otherNames(text)) break;
-					if (
-						/\b(she|her|hers|he|him|his|they|their|theirs|them)\b/i.test(text) ||
-						descriptions.some((role) => contains(text, [role]))
-					)
-						contextual.add(group[j].id);
-				}
-			}
-		}
+		const contextual = transcriptDependents(
+			allSources,
+			identifies,
+			(author) => contains(author, aliases),
+			otherNames
+		);
 		const changed: string[] = [];
 		let removed = 0;
 		for (const source of allSources) {
