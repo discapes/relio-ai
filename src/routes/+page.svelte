@@ -505,7 +505,6 @@
 				</form>
 			</section>{/if}
 		<main id="main">
-			{#if inferencePaused}<p class="notice" role="status">{inferencePausedMessage}</p>{/if}
 			{#if data.sessionNotice}<p class="notice" role="status">{data.sessionNotice}</p>{/if}
 			{#if (busy && busy !== 'Reading project evidence') || running.length}<div
 					class="working"
