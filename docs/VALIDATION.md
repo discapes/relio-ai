@@ -173,3 +173,9 @@ The deployed instance sets `PUBLIC_INFERENCE_PAUSED=true` in `.env`. The questio
 Svelte check passed with zero errors or warnings, all 95 deterministic tests passed, and the production build succeeded. Existing browser workflows ran with the pause disabled and background inference disabled on isolated port 42681. Twenty passed with an empty database; the graph workflow required prepared claims and passed after copying the 148 baseline claims into the isolated database. The Ask focus locator now uses the button role.
 
 Separate Chromium checks against https://relio-ai.eu confirmed the disabled controls, exact placeholder, accessible saved sources, zero inference submissions and zero browser errors. Desktop (1440×1050) and mobile (390×844) captures were visually reviewed; mobile has no horizontal overflow. Captures are in workspace `artifacts/relex_inference_paused/`.
+
+## Search indexing, 21 September
+
+Both public Relio domains send `X-Robots-Tag: noindex, nofollow` on every response through Caddy, covering the pitch PDF and other static files. The HTML template includes the equivalent robots meta tag. `static/robots.txt` allows crawling so search engines can read the noindex directive. Google removes existing entries after recrawling; see [Google's noindex documentation](https://developers.google.com/search/docs/crawling-indexing/block-indexing).
+
+Svelte check reported zero errors or warnings, all 95 deterministic tests passed, and the production build completed. Caddy configuration validation passed; the Caddy service was recreated and its startup configuration matched the saved Compose source. Live HTTPS checks verified the header on the home page, project-memory page, pitch PDF and robots.txt on both domains. The published HTML meta tag and robots.txt content also passed checks on both domains.
