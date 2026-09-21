@@ -76,3 +76,5 @@ tests/usage.test.ts Logger failure containment, rotation, input bounds and autom
 tests/browser/usage.spec.ts Browser navigation/control collection and failed-delivery behavior.
 
 src/lib/inference.ts UI pause setting and message; PUBLIC_INFERENCE_PAUSED=true disables inference controls on the deployed demo. Set false and restart to restore them.
+
+static/robots.txt Allows crawlers to read the site-wide noindex directives; src/app.html includes robots metadata and the public proxy adds X-Robots-Tag to every Relio response, including PDFs.

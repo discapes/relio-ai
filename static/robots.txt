@@ -1,3 +1,4 @@
-# allow crawling everything by default
+# Crawlers must fetch pages to read the site-wide noindex directive.
+# Search indexing is disabled by X-Robots-Tag and the HTML robots meta tag.
 User-agent: *
-Disallow:
+Allow: /
