@@ -137,9 +137,11 @@ def report(results, path):
     details = []
     for x in results:
         title = html.escape(x['model']+' / '+x['provider'])
+        prior = x.get('prior_attempt')
+        earlier = ('<p>Earlier attempt: '+html.escape((prior.get('stages') or [{}])[0].get('error',''))+'</p>') if prior else ''
         stages = ''.join('<h3>'+html.escape(s['stage'])+' · '+str(s['seconds'])+' s · '+str(s.get('attempts',1))+' attempt(s)</h3><pre>'+
                          html.escape(s.get('raw_response') or s.get('error') or '')+'</pre>' for s in x['stages'])
-        details.append(f'<details><summary>{title}</summary>{stages}</details>')
+        details.append(f'<details><summary>{title}</summary>{earlier}{stages}</details>')
     page = '''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Relio model timing</title>
 <style>body{font:16px/1.5 system-ui;background:#f6f7f9;color:#18283a;margin:0 auto;padding:32px;max-width:1200px}h1{margin-bottom:0}p{max-width:85ch}.table{overflow:auto}table{border-collapse:collapse;background:white;width:100%}th,td{padding:12px;text-align:left;border-bottom:1px solid #dde3e8}th{white-space:nowrap;background:#e6eef2}details{background:white;margin:12px 0;padding:14px;border:1px solid #dde3e8;border-radius:8px}summary{cursor:pointer;font-weight:650}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f2f5f7;padding:14px;border-radius:5px}small{color:#496174}</style>
 <h1>Relio inference comparison</h1><p><strong>Question:</strong> '''+html.escape(QUESTION)+'''</p><p>Each run uses the same Acme source excerpts and three staged JSON calls: interpret, draft, verify. Providers are pinned with fallback disabled. No reasoning parameter or output-token cap is sent. Total time includes network and all three calls. End-to-end TPS is completion tokens divided by total time; it is not the provider's generation-only throughput. Reasoning tokens appear when OpenRouter reports them.</p>
