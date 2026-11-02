@@ -50,6 +50,8 @@ tests/ Deterministic persistence, access, erasure, delivery and private-context 
 docs/PREPARED_PEOPLE.md Prepared archive reuse after private chat, inference-free page loads, opt-in daily refresh and resumable generation.
 scripts/prepare-people.mts Resumable personalized People guidance preparation with retained results and per-context filters.
 scripts/ Baseline preparation, live capability/practice evaluation, atomic deployment, startup and screenshot capture.
+scripts/export-seed.py Exports prepared-baseline results into DATA_DIR/seed.sqlite without visitor data, settings, jobs or worker locks. Missing runtime app.sqlite initializes from this seed; retain the seed and parsed corpus across demo resets.
+tests/seed.test.ts Seed export privacy, runtime isolation and reset restoration checks.
 scripts/publish-build.mjs npm postbuild hook: copies successful production builds into immutable releases and atomically selects the next service startup release.
 .releases/ Git-ignored immutable production builds; current symlink selects the release loaded at service startup.
 docs/ Product architecture, demo scenarios, reviewed answers, raw evaluations, model-quality diagnostics, validation and submission documents.

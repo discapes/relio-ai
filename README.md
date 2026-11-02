@@ -26,6 +26,20 @@ DISABLE_BACKGROUND=1 npx tsx scripts/prepare.mts
 
 Preparation uses full permitted source text and publishes verified batches. New browser workspaces copy the prepared baseline at their level. Personal preferences and later email updates trigger their own persisted refresh jobs. Failed jobs expose retry controls. Daily refresh after 06:00 Europe/Helsinki is available with `ENABLE_SCHEDULED_REFRESH=1`; it is disabled in the demo.
 
+### Seed data and demo resets
+
+`DATA_DIR/seed.sqlite` is the reusable prepared demo database. When `app.sqlite` is missing, startup copies the seed into a new runtime database. Visitor workspaces and subsequent edits live in `app.sqlite`; the seed remains unchanged. Keep the seed with the separately stored parsed corpus when resetting runtime data.
+
+After preparing briefs, claims and People guidance, publish their baseline with:
+
+```sh
+python3 scripts/export-seed.py data/app.sqlite data/seed.sqlite
+```
+
+The exporter retains only `prepared-baseline` rows, excluding worker locks, jobs, settings and visitor data. It verifies SQLite integrity and atomically replaces the seed. The seed contains model results that cannot be reproduced from the parsed corpus without inference. Back it up separately; it is excluded from Git with the data directory.
+
+To reset a demo, stop `receipt-workspace.service`, remove only `DATA_DIR/app.sqlite` and its `-wal`/`-shm` companions, then start the service. This permanently removes runtime workspaces while preserving prepared demo content. Keep `seed.sqlite`, `.session-secret` and the corpus. Each new browser workspace still imports its own corpus copy; automated visitors can therefore grow the runtime database substantially.
+
 ## Use
 
 Start on My workspace. Inspect a source receipt, save a followed topic or ask an arbitrary project question. Project memory provides full-archive search, a claim list and a graph connecting claims to supporting records. People provides attributed source records, generated stakeholder guidance and authorised deletion.
