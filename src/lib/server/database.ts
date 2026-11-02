@@ -1,5 +1,5 @@
 import { DatabaseSync } from 'node:sqlite';
-import { mkdirSync } from 'node:fs';
+import { copyFileSync, existsSync, mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 export function openDatabase(path: string) {
@@ -14,7 +14,10 @@ export function database() {
 	if (!connection) {
 		const dir = resolve(process.env.DATA_DIR || 'data');
 		mkdirSync(dir, { recursive: true, mode: 0o700 });
-		connection = openDatabase(resolve(dir, 'app.sqlite'));
+		const path = resolve(dir, 'app.sqlite');
+		const seed = resolve(dir, 'seed.sqlite');
+		if (!existsSync(path) && existsSync(seed)) copyFileSync(seed, path);
+		connection = openDatabase(path);
 	}
 	return connection;
 }
