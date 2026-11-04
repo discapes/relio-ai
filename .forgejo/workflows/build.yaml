@@ -5,5 +5,5 @@ on:
   workflow_dispatch:
 jobs:
   image:
-    uses: https://forgejo.miikat.dev/agentic/infra/.forgejo/workflows/reusable.yaml@master
+    uses: agentic/infra/.forgejo/workflows/reusable.yaml@master
     secrets: inherit
