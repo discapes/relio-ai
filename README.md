@@ -2,7 +2,7 @@
 
 Relio gives RELEX employees a prepared Acme project briefing, a private assistant and shared project memory with source receipts. The email demonstration represents the employee's Outlook: adding the visible project agent in To/Cc delivers a message into shared memory and lets the agent decide whether a reply would help.
 
-Application: https://relio-ai.eu · fixed port **34342**. The previous hostname remains an alias. Caddy supplies forwarded host/protocol headers so form submissions and chat use the browser’s actual origin on either hostname. Browser cookies remain scoped to each domain; opening the new domain creates its own workspace and loads prepared baseline content.
+Application: https://relio-ai.eu. The prepared demo runs as a Comprise Podman service on `hnew2`, with inference and background processing disabled. Traefik routes HTTPS to container port 3000. New browser workspaces load prepared baseline content.
 
 The sidebar links directly to **Design**, **How to use**, **How it works** and **Practice answers**. Practice answers retain the passages supported by the current view and surviving evidence after erasure. Architecture and usage pages remain available in every view. Internal evaluation reports stay in the repository.
 
@@ -71,9 +71,9 @@ The interface uses RELEX navy, blue and pale blue with locally bundled Figtree. 
 
 ## Operations
 
-The systemd user unit is `receipt-workspace.service` and runs Node on the host. Source configuration is in `deploy/receipt-workspace.service`. Use `systemctl --user status receipt-workspace`, `systemctl --user restart receipt-workspace`, and `journalctl --user -u receipt-workspace -n 100` for operations. SQLite state is in `data/app.sqlite`; preserve this directory across deployment. Browser sessions use an HMAC signing key at `DATA_DIR/.session-secret`, created atomically with mode 0600. Preserve that key with the database across restarts and releases. Losing or replacing it starts fresh browser workspaces. The upgrade from unsigned cookies displays a one-time notice and creates a fresh isolated demo; previous database rows remain unchanged.
+Forgejo Actions builds AMD64 and ARM64 images through `agentic/infra`'s reusable workflow and publishes `registry.miikat.dev/relio-ai:latest`. The Dockerfile uses the existing npm lockfile and includes the runtime guide documents. Deployment is managed by `comprise3/services/relio-ai.yaml` in the infra repository; run `./comprise apply --service relio-ai --yes` there after publication.
 
-Run `npm run build` followed by `systemctl --user restart receipt-workspace.service` to deploy updates. A successful build runs the postbuild script, copies the production output into an immutable release and atomically switches `.releases/current`. The restart loads that release. `node scripts/deploy.mjs` performs both steps. A failed build leaves the selected release unchanged. Running browser assets remain tied to their release while the next version builds. Runtime SQLite data stays outside release directories.
+On `hnew2`, `/home/svc-relio-ai/data/relio-ai-data` holds the prepared seed, runtime SQLite database and session signing key. `/home/svc-relio-ai/data/relio-ai-corpus` holds the read-only parsed corpus. Both are declared for backup. Preserve the session key alongside the runtime database to retain browser workspaces. The initial deployment uses the prepared seed without archived visitor workspaces.
 
 Interrupted running jobs become visible failed jobs on restart; queued jobs resume when the application is opened. Retry a failed brief/extraction from the workspace or a failed email from its thread. A model outage leaves previous valid dated briefs available. Inference-generated prose can still need correction; source receipts and the full archive remain available for inspection.
 
