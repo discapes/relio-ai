@@ -2,7 +2,7 @@
 
 Active RELEX project implementation. Read ../spec/README.md and the full product conversation before changing behavior. Every delegated agent inherits full conversation history (fork_turns: all).
 
-SvelteKit + TypeScript, SQLite and GLM 5.3 Flash inference on Verda (formerly DataCrunch) in Helsinki. Run Node directly on the host and reuse port 34342. Tests use isolated data; coordinate browser tests with the running service. Follow the parent workspace writing and source-handling instructions.
+SvelteKit + TypeScript and SQLite. The public demo runs in a Comprise Podman container on hnew2 at https://relio-ai.eu with inference and background processing disabled. Forgejo Actions publishes registry.miikat.dev/relio-ai:latest through the infra reusable workflow. Local development uses port 34342. Tests use isolated data; coordinate browser tests with the running service. Follow the parent workspace writing and source-handling instructions.
 
 src/lib/types.ts Shared request, source, claim, artifact and interface contracts.
 src/lib/server/memory.ts Parsed corpus import, synchronous scoped read reuse, indexed People discovery, identities and persistent person erasure.
