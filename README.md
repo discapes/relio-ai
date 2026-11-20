@@ -38,6 +38,8 @@ python3 scripts/export-seed.py data/app.sqlite data/seed.sqlite
 
 The exporter retains only `prepared-baseline` rows, excluding worker locks, jobs, settings and visitor data. It verifies SQLite integrity and atomically replaces the seed. The seed contains model results that cannot be reproduced from the parsed corpus without inference. Back it up separately; it is excluded from Git with the data directory.
 
+Set `DEMO_WORKSPACE_IDLE_HOURS=24` on a disposable demo to expire visitor workspaces after a day without activity. Every five minutes the app removes up to 32 expired workspaces and their scoped records. SQLite reuses the freed pages for future visits. The prepared baseline and seed survive pruning. Leave the variable unset to retain workspaces indefinitely.
+
 To reset a demo, stop `receipt-workspace.service`, remove only `DATA_DIR/app.sqlite` and its `-wal`/`-shm` companions, then start the service. This permanently removes runtime workspaces while preserving prepared demo content. Keep `seed.sqlite`, `.session-secret` and the corpus. Each new browser workspace still imports its own corpus copy; automated visitors can therefore grow the runtime database substantially.
 
 ## Use

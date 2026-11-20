@@ -2,6 +2,7 @@ import { createHash, randomUUID } from 'node:crypto';
 import { readFileSync, readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { database } from './database';
+import { demoPruning } from './demo-pruning';
 import { transcriptDependents } from './erasure-context';
 import type { Claim, Context, Level, Person, Persona, Source } from '../types';
 
@@ -45,6 +46,7 @@ export function resolvePersona(id: string): Persona | undefined {
 	return personas.find((p) => p.id === (personaAliases[id] ?? id));
 }
 let initialized = false;
+let retention: ReturnType<typeof demoPruning>;
 export function db() {
 	const connection = database();
 	if (!initialized) {
@@ -57,6 +59,16 @@ export function db() {
    CREATE TABLE IF NOT EXISTS memory_receipts(workspace_id TEXT NOT NULL,id TEXT NOT NULL,created_at TEXT NOT NULL,sources_removed INTEGER NOT NULL,artifacts_removed INTEGER NOT NULL,PRIMARY KEY(workspace_id,id));
    CREATE INDEX IF NOT EXISTS memory_source_scope ON memory_sources(workspace_id,project_id,level);
   `);
+		retention = demoPruning(connection, process.env.DEMO_WORKSPACE_IDLE_HOURS);
+		if (retention) {
+			const policy = retention;
+			setInterval(() => {
+				try {
+					const count = policy.prune();
+					if (count) console.info(`Expired ${count} demo workspaces`);
+				} catch (error) { console.error('Demo pruning failed', error); }
+			}, 5 * 60_000).unref();
+		}
 		initialized = true;
 	}
 	return connection;
@@ -260,7 +272,9 @@ function records(): { source: Source; basis: string }[] {
 }
 export function ensureWorkspace(id: string) {
 	if (!/^[a-zA-Z0-9_-]{1,100}$/.test(id)) throw new Error('Invalid workspace identifier.');
-	if (db().prepare('SELECT id FROM memory_workspaces WHERE id=?').get(id)) return;
+	const connection = db();
+	retention?.touch(id);
+	if (connection.prepare('SELECT id FROM memory_workspaces WHERE id=?').get(id)) return;
 	transaction(() => {
 		db().prepare('INSERT INTO memory_workspaces VALUES (?,0,?)').run(id, new Date().toISOString());
 		const insert = db().prepare('INSERT INTO memory_sources VALUES (?,?,?,?,?,?)');
